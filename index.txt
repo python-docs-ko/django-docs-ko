@@ -1,21 +1,20 @@
-
 .. _index:
 
 ====================
-Django documentation
+Django 문서(한국어판)
 ====================
 
-.. rubric:: Everything you need to know about Django (and then some).
+.. rubric:: 장고에 관해 알아야 할 모든 것(and then some).
 
-Getting help
+도움말
 ============
 
-Having trouble? We'd like to help!
+문제가 있나요? 도와드리고 싶어요!
 
-* Try the :doc:`FAQ <faq/index>` -- it's got answers to many common questions.
+* :doc:`FAQ <faq/index>` 문서를 참고하세요 -- 가장 흔한 질문에 대한 답변들입니다.
 
-* Looking for specific information? Try the :ref:`genindex`, :ref:`modindex` or
-  the :doc:`detailed table of contents <contents>`.
+* 특정 주제를 찾으신다면, 다음 문서를 둘러보세요. :ref:`genindex`, :ref:`modindex`,
+  :doc:`detailed table of contents <contents>`.
 
 * Search for information in the `archives of the django-users mailing list`_, or
   `post a question`_.
