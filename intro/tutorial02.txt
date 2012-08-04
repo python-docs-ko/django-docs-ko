@@ -1,42 +1,39 @@
 =====================================
-Writing your first Django app, part 2
+첫번째 장고 앱 만들기! part 2
 =====================================
 
-This tutorial begins where :doc:`Tutorial 1 </intro/tutorial01>` left off. We're
-continuing the Web-poll application and will focus on Django's
-automatically-generated admin site.
+본 자습서는 :doc:`Tutorial 1 </intro/tutorial01>` 에 이어 계속됩니다. 앞서 개발한 설문조사 애플리케이션과 함께 장고에서 자동으로 생성되는 관리자 사이트에 대해 알아보도록 하겠습니다.
 
-.. admonition:: Philosophy
+.. admonition:: 철학
 
-    Generating admin sites for your staff or clients to add, change and delete
-    content is tedious work that doesn't require much creativity. For that
-    reason, Django entirely automates creation of admin interfaces for models.
+    관리자나 고객들이 컨텐츠를 추가, 변경, 삭제할 수 있는 관리자 사이트를 생성하는 것은
+    그다지 창조적이지 않은 지루한 작업 입니다. 이러한 작업을
+    위해서 장고는 모델을 위한 관리자 인터페이스 생성을 완전히 자동화 하였습니다니다.
 
-    Django was written in a newsroom environment, with a very clear separation
-    between "content publishers" and the "public" site. Site managers use the
-    system to add news stories, events, sports scores, etc., and that content is
-    displayed on the public site. Django solves the problem of creating a
-    unified interface for site administrators to edit content.
+    장고는 뉴스를 준비하는 환경을 위해 만들어졌으며,
+    "컨텐츠 발행인"과 "공개" 사이트를 완벽히 분리하였습니. 사이트 관리자들은
+    새로운 스토리나 이벤트, 스포츠 점수 결과 등을 추가하기 위해 시스템을 이용하며,
+    이런 컨텐츠들은 공개 사이트에 노출됩니다. 장고는 사이트 관리자들이 컨텐츠를 수정할 수 있는
+    통합 인터페이스를 제공함으로서 문제를 해결합니다.
 
-    The admin isn't intended to be used by site visitors. It's for site
-    managers.
+    관리자 사이트는 사이트 방문자를 위한 것이 아닙니다. 이는 
+    관리자들을 위한 것 입니다.
 
-Activate the admin site
+관리자 사이트 활성화 하기
 =======================
 
-The Django admin site is not activated by default -- it's an opt-in thing. To
-activate the admin site for your installation, do these three things:
+관리자 사이트는 디폴트로 활성화 되지 않습니다. -- 선택사항 입니다. 관리자 사이트를 활성화 시키기 위해 다음 세 가지의 작업이 필요합니다:
 
-* Uncomment ``"django.contrib.admin"`` in the :setting:`INSTALLED_APPS` setting.
+* :setting:`INSTALLED_APPS` 설정에 있는 ``"django.contrib.admin"`` 의 주석을 제거하세요.
 
-* Run ``python manage.py syncdb``. Since you have added a new application
-  to :setting:`INSTALLED_APPS`, the database tables need to be updated.
+* ``python manage.py syncdb`` 명령어를 실행하세요. 여러분이 :setting:`INSTALLED_APPS` 에
+  새로운 어플리케이션을 설치하였기 때문에 데이터베이스 테이블을 업데이트 해야 합니다.
 
-* Edit your ``mysite/urls.py`` file and uncomment the lines that reference
-  the admin -- there are three lines in total to uncomment. This file is a
-  URLconf; we'll dig into URLconfs in the next tutorial. For now, all you
-  need to know is that it maps URL roots to applications. In the end, you
-  should have a ``urls.py`` file that looks like this:
+* ``mysite/urls.py`` 파일을 열어 관리 사이트와 관련된 행의 주석을
+  제거하세요 -- 총 세 개 행의 주석을 제거해야 합니다. 이 파일은 
+  URL 설정(URLconf) 파일이며 다음 자습서에서 보다 자세히 알아보겠습니다. 지금 여러분이 알아야 할 부분은
+  URL roots 를 어플리케이션에 연결시키는 것 입니다. 연결 후 여러분은
+  아래와 같은 ``urls.py`` 파일을 확인하실 수 있습니다:
 
   .. parsed-literal::
 
@@ -58,48 +55,45 @@ activate the admin site for your installation, do these three things:
           **url(r'^admin/', include(admin.site.urls)),**
       )
 
-  (The bold lines are the ones that needed to be uncommented.)
+  (굵게 표시된 행이 주석이 제거된 행 입니다.)
 
-Start the development server
+개발 서버 실행하기
 ============================
 
-Let's start the development server and explore the admin site.
+이제 개발 서버를 실행 시키고 본격적으로 관리자 사이트를 탐험해 보도록 하겠습니다.
 
-Recall from Tutorial 1 that you start the development server like so:
+첫 번째 자습서에서 배운 내용을 참고하여 아래와 같이 개발 서버를 실행 해 보세요:
 
 .. code-block:: bash
 
     python manage.py runserver
 
-Now, open a Web browser and go to "/admin/" on your local domain -- e.g.,
-http://127.0.0.1:8000/admin/. You should see the admin's login screen:
+이제 웹 브라우저를 실행하고 로컬 도메인의 "/admin/" 으로 이동하세요 -- 예:
+http://127.0.0.1:8000/admin/. 관리자 사이트의 로그인 화면을 볼 수 있을 것 입니다:
 
 .. image:: _images/admin01.png
-   :alt: Django admin login screen
+   :alt: 장고 관리자 사이트 로그인 화면
 
-.. admonition:: Doesn't match what you see?
+.. admonition:: 여러분에게 보이는 페이지와 다른가요?
 
-    If at this point, instead of the above login page, you get an error
-    page reporting something like::
+    만약 위에서 보이는 로그인 페이지 대신에 아래와 같은 
+    error page reporting이 보인다면::
 
         ImportError at /admin/
         cannot import name patterns
         ...
 
-    then you're probably using a version of Django that doesn't match this
-    tutorial version. You'll want to either switch to the older tutorial or the
-    newer Django version.
+    여러분이 사용하시는 장고의 버젼이 본 자습서의 버젼과
+    맞지 않을 수 있습니다. 사용하시는 장고 버젼과 맞는 자습서를 참고 하거나, 
+    새로운 버젼의 장고를 사용하시기 바랍니다.
 
-Enter the admin site
+관리자 사이트 들어가기
 ====================
 
-Now, try logging in. (You created a superuser account in the first part of this
-tutorial, remember?  If you didn't create one or forgot the password you can
-:ref:`create another one <topics-auth-creating-superusers>`.) You should see
-the Django admin index page:
+자, 이제 로그인 해 보세요. (첫번째 자습서에서 최고 관리자 계정을 생성한 것을 기억 하시나요?만약 생성하지 않았거나, 비밀번호가 기억나지 않는다면 :ref:`다른 계정을 생성 해 보세요 <topics-auth-creating-superusers>`.) 아마 장고 관리자 사이트의 초기 페이지를 확인할 수 있을 것 입니다:
 
 .. image:: _images/admin02t.png
-   :alt: Django admin index page
+   :alt: 장고 관리자 사이트 초기 페이지
 
 You should see a few types of editable content, including groups, users
 and sites. These are core features Django ships with by default.
