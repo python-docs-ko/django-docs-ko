@@ -15,7 +15,7 @@ API 안정성
 
 - 만약, 어떠한 이유로 인해, 안정적이라고 선언한 API를 삭제하거나 변경해야할 일이 생긴다면, 사용을 금지하되 최소 두 번의 마이너 버전 릴리스가 일어나는 동안은 남겨둘 것입니다. 사용 금지된 메소드가 호출될 때에는 경고가 발생합니다.
 
-  Django의 버전 번호 규칙 및 어떻게 해서 기능이 사용 금지되는지에 대하여 자세히 알고 싶다면 :ref:`official-releases`를 참고하십시오.
+  Django의 버전 번호 규칙 및 어떻게 해서 기능이 사용 금지되는지에 대하여 자세히 알고 싶다면 :ref:`official-releases`\ 를 참고하십시오.
 
 - 이러한 API들의 하위 호환성을 깨뜨리는 것은 버그 또는 보안상의 헛점으로 인하여 불가피한 경우에 한합니다.
 
@@ -48,7 +48,7 @@ API 안정성
 
 - :doc:`시그널 </topics/signals>`
 
-- :doc:`템플릿 </topics/templates>`, 언어 포함, 파이썬 수준의 :doc:`template APIs </ref/templates/index>` 및 :doc:`custom template tags and libraries </howto/custom-template-tags>`. 앞으로 새로운 템플릿 태그를 추가할 수 있으며 그 이름은 의도하지 않게 외부의 템플릿 태그와 충돌할 수 있습니다. 그러한 태그를 추가하기 전에, Django 중복되는 이름을 가진 태그를 로드하려고 할 때에는 오류를 일으키게끔 할 것입니다.
+- :doc:`템플릿 </topics/templates>`, 언어 포함, 파이썬 수준의 :doc:`template APIs </ref/templates/index>` 및 :doc:`맞춤 템플릿 태그 및 라이브러리 </howto/custom-template-tags>`. 앞으로 새로운 템플릿 태그를 추가할 수 있으며 그 이름은 의도하지 않게 외부의 템플릿 태그와 충돌할 수 있습니다. 그러한 태그를 추가하기 전에, Django 중복되는 이름을 가진 태그를 로드하려고 할 때에는 오류를 일으키게끔 할 것입니다.
 
 - :doc:`테스팅 </topics/testing>`
 
