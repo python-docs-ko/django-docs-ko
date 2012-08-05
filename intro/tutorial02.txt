@@ -14,7 +14,7 @@
     "컨텐츠 발행인"과 "공개" 사이트를 완벽히 분리하였습니. 사이트 관리자들은
     새로운 스토리나 이벤트, 스포츠 점수 결과 등을 추가하기 위해 시스템을 이용하며,
     이런 컨텐츠들은 공개 사이트에 노출됩니다. 장고는 사이트 관리자들이 컨텐츠를 수정할 수 있는
-    통합 인터페이스를 제공함으로서 문제를 해결합니다다.
+    통합 인터페이스를 제공함으로서 문제를 해결합니다.
 
     관리자 사이트는 사이트 방문자를 위한 것이 아닙니다. 이는 
     관리자들을 위한 것 입니다.
@@ -84,84 +84,78 @@ http://127.0.0.1:8000/admin/. 관리자 사이트의 로그인 화면을 볼 수
         ...
 
     여러분이 사용하시는 장고의 버젼이 본 자습서의 버젼과
-    맞지 않을 수 있습니다. 사용하시는 장고 버젼과 맞는 자습서를 참고 하거나, 
+    맞지 않을 수 있습니다. 사용하시는 장고 버젼에 맞는 자습서를 참고 하거나, 
     새로운 버젼의 장고를 사용하시기 바랍니다.
 
 관리자 사이트 들어가기
 ====================
 
-자, 이제 로그인 해 보세요. (첫번째 자습서에서 최고 관리자 계정을 생성한 것을 기억 하시나요?만약 생성하지 않았거나, 비밀번호가 기억나지 않는다면 :ref:`다른 계정을 생성 해 보세요 <topics-auth-creating-superusers>`.) 아마 장고 관리자 사이트의 초기 페이지를 확인할 수 있을 것 입니다:
+자, 이제 로그인 해 보세요. (첫번째 자습서에서 최고 관리자 계정을 생성한 것을 기억 하시나요? 만약 생성하지 않았거나, 비밀번호가 기억나지 않는다면 :ref:`다른 계정을 생성<topics-auth-creating-superusers>` 해 보세요.) 장고 관리자 사이트의 초기 페이지를 확인할 수 있을 것 입니다:
 
 .. image:: _images/admin02t.png
    :alt: 장고 관리자 사이트 초기 페이지
 
-You should see a few types of editable content, including groups, users
-and sites. These are core features Django ships with by default.
+Groups, users, sites 등 몇 개의 수정 가능한 컨텐츠를 확인할 수 있는데, 이들은 장고에서 기본적으로 제공하는 핵심 기능 입니다.
 
-Make the poll app modifiable in the admin
+관리자 사이트에서 수정 가능한 설문조사 앱 만들기
 =========================================
 
-But where's our poll app? It's not displayed on the admin index page.
+그러데 우리의 설문조사 앱은 어디에 있나요?아직 관리자 사이트 초기 페이지에 보이지 않습니다.
 
-Just one thing to do: We need to tell the admin that ``Poll``
-objects have an admin interface. To do this, create a file called
-``admin.py`` in your ``polls`` directory, and edit it to look like this::
+단 한가지 할 일: 우선 관리자 사이트에게 ``Poll``
+오브젝트가 관리자 인터페이스가 필요하다고 알려줘야 합니다. 이를 위해  ``polls`` 디렉토리 안에 ``admin.py`` 파일을 생성하고 아래와 같이 수정합니다::
 
     from polls.models import Poll
     from django.contrib import admin
 
     admin.site.register(Poll)
 
-You'll need to restart the development server to see your changes. Normally,
-the server auto-reloads code every time you modify a file, but the action of
-creating a new file doesn't trigger the auto-reloading logic.
+수정사항을 확인하기 위해 개발 서버를 재시작 해야 합니다. 일반적으로 파일이 수정되면 서버는 자동으로 수정된 코드를 다시 불러오지만 새로 생성된 파일은 자동으로 불러오지 않습니다.
 
-Explore the free admin functionality
+무료 관리 기능 탐험하기
 ====================================
 
-Now that we've registered ``Poll``, Django knows that it should be displayed on
-the admin index page:
+자, 이제 ``Poll`` 이 등록되었고, 장고는 ``Poll`` 을 관리 사이트 초기 페이지에 보여줘야 함을 알고 있습니다:
 
 .. image:: _images/admin03t.png
-   :alt: Django admin index page, now with polls displayed
+   :alt: polls가 보여지는 장고 관리자 사이트 초기 페이지 
 
-Click "Polls." Now you're at the "change list" page for polls. This page
-displays all the polls in the database and lets you choose one to change it.
-There's the "What's up?" poll we created in the first tutorial:
+이제 "Polls."를 클릭하면 polls의 "change list" 를 볼 수 있습니다. 이 페이지에서는 데이터베이스의 모든 poll이 보여지게 되며 이중 한개를 선택하여 변경할 수 있습니다.
+여기에 우리가 첫 번째 자습서에서 생성한 "What's up?" poll을 확인할 수 있습니다:
 
 .. image:: _images/admin04t.png
-   :alt: Polls change list page
+   :alt: Poll 변경 리스트 페이지
 
-Click the "What's up?" poll to edit it:
+Poll을 수정하기 위해 "What's up?" poll을 클릭하세요:
 
 .. image:: _images/admin05t.png
-   :alt: Editing form for poll object
+   :alt: Poll 객체 수정 폼
 
-Things to note here:
+여기서 짚고 넘어가기:
 
-* The form is automatically generated from the Poll model.
+* 폼은 Poll 모델로 부터 자동적으로 생성되었습니다.
 
-* The different model field types (:class:`~django.db.models.DateTimeField`,
-  :class:`~django.db.models.CharField`) correspond to the appropriate HTML
-  input widget. Each type of field knows how to display itself in the Django
-  admin.
+* 서로 다른 모델의 필드 타입 (:class:`~django.db.models.DateTimeField`,
+  :class:`~django.db.models.CharField`) 에 따라 적절한 HTML 입력 위젯이 
+  보여집니다. 각각의 필드는 장고의 관리자 싸이트에서 어떻게 보여질지 스스로 알고
+  있습니다.
 
-* Each :class:`~django.db.models.DateTimeField` gets free JavaScript
-  shortcuts. Dates get a "Today" shortcut and calendar popup, and times get
-  a "Now" shortcut and a convenient popup that lists commonly entered times.
+* 각각의 :class:`~django.db.models.DateTimeField` 에는 간편한 JavaScript
+  기능이 제공됩니다. 날짜는 "Today" 바로입력과 달력 팝업이 제공되며, 시간에는
+  "Now" 바로입력과 일반적으로 시간 입력에 사용되는 간편한 팝업이 제공됩니다.
 
-The bottom part of the page gives you a couple of options:
+페이지 하단에는 몇가지 옵션이 제공됩니다:
 
-* Save -- Saves changes and returns to the change-list page for this type of
-  object.
+* Save -- 변경사항을 저장하고 현재 객체 타입의 변경된 목록 페이지를 
+  보여줍니다.
 
-* Save and continue editing -- Saves changes and reloads the admin page for
-  this object.
+* Save and continue editing -- 변경사항을 저장하고 현 객체의 관리 페이지를 
+  다시 보여줍니다.
 
-* Save and add another -- Saves changes and loads a new, blank form for this
-  type of object.
+* Save and add another -- 변경사항을 저장하고 현재 객체 타입의 신규 정보를 등록할 수 있는  
+  비어있는 폼을 보여줍니다.
 
-* Delete -- Displays a delete confirmation page.
+* Delete -- 삭제 확인 페이지를 보여줍니다.
 
 If the value of "Date published" doesn't match the time when you created the
 poll in Tutorial 1, it probably means you forgot to set the correct value for
@@ -325,7 +319,7 @@ Now that the Poll admin page is looking good, let's make some tweaks to the
 Here's what it looks like at this point:
 
 .. image:: _images/admin04t.png
-   :alt: Polls change list page
+   :alt: Poll 변경 리스트 페이지
 
 By default, Django displays the ``str()`` of each object. But sometimes it'd be
 more helpful if we could display individual fields. To do that, use the
