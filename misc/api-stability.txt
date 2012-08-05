@@ -22,50 +22,49 @@ API 안정성
 안정적인 API
 ============
 
-일반적인 경우에, -- :doc:`internals area </internals/index>`\ 에 있는 어떠한 예외도 포함하여 이 문서에서 다루는 모든 것은 1.0에서 안정적인 것으로 간주합니다. 여기에는 다음과 같은 API를 포함합니다.
+일반적인 경우에, -- :doc:`내부 영역 </internals/index>`\ 에 있는 어떠한 예외도 포함하여 이 문서에서 다루는 모든 것은 1.0에서 안정적인 것으로 간주합니다. 여기에는 다음과 같은 API를 포함합니다.
 
 - :doc:`인증 </topics/auth>`
 
 - :doc:`캐싱 </topics/cache>`.
 
-- :doc:`Model definition, managers, querying and transactions
-  </topics/db/index>`
+- :doc:`모델 정의, 관리자, 질의 및 트랜잭션 </topics/db/index>`
 
-- :doc:`Sending email </topics/email>`.
+- :doc:`이메일 보내기 </topics/email>`.
 
-- :doc:`File handling and storage </topics/files>`
+- :doc:`파일 처리 및 스토리지 </topics/files>`
 
-- :doc:`Forms </topics/forms/index>`
+- :doc:`폼 </topics/forms/index>`
 
-- :doc:`HTTP request/response handling </topics/http/index>`. including 파일 업로드, 미들웨어, 세션, URL resolution, 뷰 및 shortcut API를 포함.
+- :doc:`HTTP 요청/응답 처리 </topics/http/index>`. 파일 업로드, 미들웨어, 세션, URL resolution, 뷰 및 shortcut API를 포함.
 
-- :doc:`Generic views </topics/http/generic-views>`.
+- :doc:`제너릭 뷰 </topics/http/generic-views>`.
 
-- :doc:`Internationalization </topics/i18n/index>`.
+- :doc:`국제화 </topics/i18n/index>`.
 
-- :doc:`Pagination </topics/pagination>`
+- :doc:`페이지네이션 </topics/pagination>`
 
-- :doc:`Serialization </topics/serialization>`
+- :doc:`직렬화 </topics/serialization>`
 
-- :doc:`Signals </topics/signals>`
+- :doc:`시그널 </topics/signals>`
 
-_- :doc:`Templates </topics/templates>`, 언어 포함, 파이썬 수준의 :doc:`template APIs </ref/templates/index>` 및 :doc:`custom template tags and libraries </howto/custom-template-tags>`. 앞으로 새로운 템플릿 태그를 추가할 수 있으며 그 이름은 의도하지 않게 외부의 템플릿 태그와 충돌할 수 있습니다. 그러한 태그를 추가하기 전에, Django 중복되는 이름을 가진 태그를 로드하려고 할 때에는 오류를 일으키게끔 할 것입니다.
+- :doc:`템플릿 </topics/templates>`, 언어 포함, 파이썬 수준의 :doc:`template APIs </ref/templates/index>` 및 :doc:`custom template tags and libraries </howto/custom-template-tags>`. 앞으로 새로운 템플릿 태그를 추가할 수 있으며 그 이름은 의도하지 않게 외부의 템플릿 태그와 충돌할 수 있습니다. 그러한 태그를 추가하기 전에, Django 중복되는 이름을 가진 태그를 로드하려고 할 때에는 오류를 일으키게끔 할 것입니다.
 
-- :doc:`Testing </topics/testing>`
+- :doc:`테스팅 </topics/testing>`
 
-- :doc:`django-admin utility </ref/django-admin>`.
+- :doc:`django-admin 유틸리티 </ref/django-admin>`.
 
-- :doc:`Built-in middleware </ref/middleware>`
+- :doc:`내장된 미들웨어 </ref/middleware>`
 
-- :doc:`Request/response objects </ref/request-response>`.
+- :doc:`요청/응답 개체 </ref/request-response>`.
 
-- :doc:`설정 </ref/settings>`. :doc:`list of built-in settings </ref/settings>`\ 이 완전하다고 여기고는 있지만 새로운 설정이 미래에 추가될 가능성이 다분합니다. 그러한 점에서 "'안정적'이라는 말이 '완전함'을 의미하지는 않는다."고 하겠습니다.
+- :doc:`설정 </ref/settings>`. :doc:`내장 settings 목록 </ref/settings>`\ 이 완전하다고 여기고는 있지만 새로운 설정이 미래에 추가될 가능성이 다분합니다. 그러한 점에서 "'안정적'이라는 말이 '완전함'을 의미하지는 않는다."고 하겠습니다.
 
-- :doc:`Built-in signals </ref/signals>`. settings와 마찬가지로, 앞으로 새로운 시그널을 추가하게 될 수는 있지만, 기존에 사용되던 것들은 해치지 않을 것입니다.
+- :doc:`내장된 시그널 </ref/signals>`. 설정과 마찬가지로 앞으로 새로운 시그널을 추가하게 될 수는 있지만, 기존에 사용되던 것들은 해치지 않을 것입니다.
 
-- :doc:`Unicode handling </ref/unicode>`.
+- :doc:`유니코드 처리 </ref/unicode>`.
 
-- :doc:`HOWTO guides </howto/index>`에서 다루는 것들.
+- :doc:`하우투 안내서 </howto/index>`\ 에서 다루는 것들.
 
 ``django.utils``
 ----------------
@@ -89,14 +88,14 @@ _- :doc:`Templates </topics/templates>`, 언어 포함, 파이썬 수준의 :doc
 보안 픽스
 ---------
 
-:ref:`security reporting policy <reporting-security-issues>`\ 에 따라 보안상의 문제점을 발견한 경우, 그것을 고치기 위해 필요한 모든 조치를 취할 것이며 이는 하위 호환성을 깨뜨릴 수도 있습니다. 호환성을 보장하는 것보다 보안이 더 중요하기 때문입니다.
+:ref:`보안 보고 정책 <reporting-security-issues>`\ 에 따라 보안상의 문제점을 발견한 경우, 그것을 고치기 위해 필요한 모든 조치를 취할 것이며 이는 하위 호환성을 깨뜨릴 수도 있습니다. 호환성을 보장하는 것보다 보안이 더 중요하기 때문입니다.
 
 공헌받은 애플리케이션 (``django.contrib``)
 ------------------------------------------
 
 이러한 API 안정성에 대하여 모든 노력을 다할 것이며, 어떠한 contrib 앱에 대하여도 깨뜨릴 계획이 없지만, 릴리스가 거듭되는 동안 외부의 상황이 달라질 수도 있습니다. 웹은 진화해가므로, Django도 그에 발맞추어야 하는 것입니다.
 
-그렇다 하더라도, contrib 앱에 대한 어떠한 변화가 일어나든 중요한 보장을 할 것입니다. 우리는 contrib 앱의 변화가 필요할 때에는 항상 그것의 이전 버전을 사용할 수 있음을 확실히 할 것입니다. 따라서, 만약 Django 1.5가 하위 호환성이 없는 ``django.contrib.flatpages``를 탑재한다면, Django 1.4 버전을 Django 1.5와 함께 사용할 수 있도록 할 것입니다. 이는 계속 업그레이드를 쉽게 할 수 있도록 해줄 것입니다.
+그렇다 하더라도, contrib 앱에 대한 어떠한 변화가 일어나든 중요한 보장을 할 것입니다. 우리는 contrib 앱의 변화가 필요할 때에는 항상 그것의 이전 버전을 사용할 수 있음을 확실히 할 것입니다. 따라서, 만약 Django 1.5가 하위 호환성이 없는 ``django.contrib.flatpages``\ 를 탑재한다면, Django 1.4 버전을 Django 1.5와 함께 사용할 수 있도록 할 것입니다. 이는 계속 업그레이드를 쉽게 할 수 있도록 해줄 것입니다.
 
 과거를 살펴볼 때, ``django.contrib``\ 에 있는 앱이 core에 비하여 오히려 더 안정적이었기 때문에, 사실상 이러한 예외가 발생하지는 않을 것입니다. 그렇다 하더라도, ``django.contrib``\ 에 의존적인 앱을 만들지 않는 것이 좋습니다.
 
@@ -116,7 +115,7 @@ Local flavors
 
 .. versionchanged:: 1.3
 
-:mod:`django.contrib.localflavor`는 특정 국가 및 문화권에 대하여 유용한 다양한 코드를 담고 있습니다. 이 자료는 지역적인 것이며 Django의 릴리스 일정과는 별개로 변경이 일어납니다. 한 지방을 둘로 분할한다거나, 기존의 지명이 변경되는 것을 예로 들 수 있습니다.
+:mod:`django.contrib.localflavor`\ 는 특정 국가 및 문화권에 대하여 유용한 다양한 코드를 담고 있습니다. 이 자료는 지역적인 것이며 Django의 릴리스 일정과는 별개로 변경이 일어납니다. 한 지방을 둘로 분할한다거나, 기존의 지명이 변경되는 것을 예로 들 수 있습니다.
 
 이러한 변경은 두 가지 상반된 호환성 문제를 가집니다. 이름이 바뀌어서 더 이상 쓰이지 않는 지명을 선택 위젯에 표시하는 것은 사용자 인터페이스 측면에서는 좋지 못합니다. 그렇지만 하위 호환성을 최대한 유지하려면 더 이상 유효하지 않은 것들까지 포함한 과거 기록을 데이터베이스 내에 남겨두어야 할 수도 있습니다.
 
