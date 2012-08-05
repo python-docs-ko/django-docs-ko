@@ -22,11 +22,11 @@ API 안정성
 안정적인 API
 ============
 
-일반적인 경우에, -- :doc:`internals area </internals/index>`_에 있는 어떠한 예외도 포함하여 이 문서에서 다루는 모든 것은 1.0에서 안정적인 것으로 간주합니다. 여기에는 다음과 같은 API를 포함합니다.
+일반적인 경우에, -- :doc:`internals area </internals/index>`\ 에 있는 어떠한 예외도 포함하여 이 문서에서 다루는 모든 것은 1.0에서 안정적인 것으로 간주합니다. 여기에는 다음과 같은 API를 포함합니다.
 
-- :doc:`Authorization </topics/auth>`
+- :doc:`인증 </topics/auth>`
 
-- :doc:`Caching </topics/cache>`.
+- :doc:`캐싱 </topics/cache>`.
 
 - :doc:`Model definition, managers, querying and transactions
   </topics/db/index>`
@@ -49,8 +49,7 @@ API 안정성
 
 - :doc:`Signals </topics/signals>`
 
-_- :doc:`Templates </topics/templates>`, 언어 포함, 파이썬 수준의 :doc:`template APIs </ref/templates/index>` 및 :doc:`custom template tags
-  and libraries </howto/custom-template-tags>`. 앞으로 새로운 템플릿 태그를 추가할 수 있으며 그 이름은 의도하지 않게 외부의 템플릿 태그와 충돌할 수 있습니다. 그러한 태그를 추가하기 전에, Django 중복되는 이름을 가진 태그를 로드하려고 할 때에는 오류를 일으키게끔 할 것입니다.
+_- :doc:`Templates </topics/templates>`, 언어 포함, 파이썬 수준의 :doc:`template APIs </ref/templates/index>` 및 :doc:`custom template tags and libraries </howto/custom-template-tags>`. 앞으로 새로운 템플릿 태그를 추가할 수 있으며 그 이름은 의도하지 않게 외부의 템플릿 태그와 충돌할 수 있습니다. 그러한 태그를 추가하기 전에, Django 중복되는 이름을 가진 태그를 로드하려고 할 때에는 오류를 일으키게끔 할 것입니다.
 
 - :doc:`Testing </topics/testing>`
 
@@ -60,8 +59,7 @@ _- :doc:`Templates </topics/templates>`, 언어 포함, 파이썬 수준의 :doc
 
 - :doc:`Request/response objects </ref/request-response>`.
 
-- :doc:`Settings </ref/settings>`. :doc:`list of
-  built-in settings </ref/settings>`이 완전하다고 여기고는 있지만 새로운 설정이 미래에 추가될 가능성이 다분합니다. 그러한 점에서 "'안정적'이라는 말이 '완전함'을 의미하지는 않는다."고 하겠습니다.
+- :doc:`설정 </ref/settings>`. :doc:`list of built-in settings </ref/settings>`\ 이 완전하다고 여기고는 있지만 새로운 설정이 미래에 추가될 가능성이 다분합니다. 그러한 점에서 "'안정적'이라는 말이 '완전함'을 의미하지는 않는다."고 하겠습니다.
 
 - :doc:`Built-in signals </ref/signals>`. settings와 마찬가지로, 앞으로 새로운 시그널을 추가하게 될 수는 있지만, 기존에 사용되던 것들은 해치지 않을 것입니다.
 
@@ -72,7 +70,7 @@ _- :doc:`Templates </topics/templates>`, 언어 포함, 파이썬 수준의 :doc
 ``django.utils``
 ----------------
 
-``django.utils``에 있는 대부분의 모듈은 내부적인 사용을 위하여 디자인하였습니다. :doc:`django.utils </ref/utils>` 중 다음에 대해서만 안정적이라고 볼 수 있습니다.
+``django.utils``\ 에 있는 대부분의 모듈은 내부적인 사용을 위하여 디자인하였습니다. :doc:`django.utils </ref/utils>` 중 다음에 대해서만 안정적이라고 볼 수 있습니다.
 
 - ``django.utils.cache``
 - ``django.utils.datastructures.SortedDict`` -- 단일 클래스에 한하며, 모듈 내의 나머지 것들은 내부적으로 쓰임.
@@ -91,7 +89,7 @@ _- :doc:`Templates </topics/templates>`, 언어 포함, 파이썬 수준의 :doc
 보안 픽스
 ---------
 
-:ref:`security reporting policy <reporting-security-issues>`에 따라 보안상의 문제점을 발견한 경우, 그것을 고치기 위해 필요한 모든 조치를 취할 것이며 이는 하위 호환성을 깨뜨릴 수도 있습니다. 호환성을 보장하는 것보다 보안이 더 중요하기 때문입니다.
+:ref:`security reporting policy <reporting-security-issues>`\ 에 따라 보안상의 문제점을 발견한 경우, 그것을 고치기 위해 필요한 모든 조치를 취할 것이며 이는 하위 호환성을 깨뜨릴 수도 있습니다. 호환성을 보장하는 것보다 보안이 더 중요하기 때문입니다.
 
 공헌받은 애플리케이션 (``django.contrib``)
 ------------------------------------------
@@ -100,7 +98,7 @@ _- :doc:`Templates </topics/templates>`, 언어 포함, 파이썬 수준의 :doc
 
 그렇다 하더라도, contrib 앱에 대한 어떠한 변화가 일어나든 중요한 보장을 할 것입니다. 우리는 contrib 앱의 변화가 필요할 때에는 항상 그것의 이전 버전을 사용할 수 있음을 확실히 할 것입니다. 따라서, 만약 Django 1.5가 하위 호환성이 없는 ``django.contrib.flatpages``를 탑재한다면, Django 1.4 버전을 Django 1.5와 함께 사용할 수 있도록 할 것입니다. 이는 계속 업그레이드를 쉽게 할 수 있도록 해줄 것입니다.
 
-과거를 살펴볼 때, ``django.contrib``에 있는 앱이 core에 비하여 오히려 더 안정적이었기 때문에, 사실상 이러한 예외가 발생하지는 않을 것입니다. 그렇다 하더라도, ``django.contrib``에 의존적인 앱을 만들지 않는 것이 좋습니다.
+과거를 살펴볼 때, ``django.contrib``\ 에 있는 앱이 core에 비하여 오히려 더 안정적이었기 때문에, 사실상 이러한 예외가 발생하지는 않을 것입니다. 그렇다 하더라도, ``django.contrib``\ 에 의존적인 앱을 만들지 않는 것이 좋습니다.
 
 내부용으로 표시된 API
 ---------------------
@@ -124,11 +122,11 @@ Local flavors
 
 그리하여, Django는 지역적 특성을 갖는 API에 대해서는 다음과 같은 정책을 따릅니다.
 
-* Django를 릴리스할 때에는, :mod:`django.contrib.localflavor`에 포함된 자료와 알고리즘은, 힘이 닿는 한 최선을 다해서, 지역의 정부 부처에서 공식적으로 발표된 정책을 반영합니다. 지방이 추가, 변경, 삭제되는 경우에는 Django의 localflavor에 반영합니다.
+* Django를 릴리스할 때에는, :mod:`django.contrib.localflavor`\ 에 포함된 자료와 알고리즘은, 힘이 닿는 한 최선을 다해서, 지역의 정부 부처에서 공식적으로 발표된 정책을 반영합니다. 지방이 추가, 변경, 삭제되는 경우에는 Django의 localflavor에 반영합니다.
 
 * 이러한 변경은 이전의 안정적인 릴리스에 백포팅하지 않습니다. 마이너 버전을 업그레이드하는 경우 자료의 마이그레이션이나 UI 변경을 위한 감사를 요구하지 않습니다. 그러므로, 최근의 지방 목록을 얻고자 한다면, Django를 업그레이드하거나, 지방 목록을 직접 백포트하셔야 합니다.
 
-* 하나의 릴리스에 대하여, 영향을 받는 localflavor 모듈이 임포트되면 ``RuntimeWarning``을 일으킵니다.
+* 하나의 릴리스에 대하여, 영향을 받는 localflavor 모듈이 임포트되면 ``RuntimeWarning``\ 을 일으킵니다.
 
 * 하위 호환되지 않는 변경이 일어남으로써 주의를 요하는 사항은 릴리스 노트에서 발표할 것입니다. 또한 localflavor 모듈의 문서에도 표시합니다.
 
