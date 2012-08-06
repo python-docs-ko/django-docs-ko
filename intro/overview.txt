@@ -1,28 +1,19 @@
-==================
-Django at a glance
-==================
-
-Because Django was developed in a fast-paced newsroom environment, it was
-designed to make common Web-development tasks fast and easy. Here's an informal
-overview of how to write a database-driven Web app with Django.
-
-The goal of this document is to give you enough technical specifics to
-understand how Django works, but this isn't intended to be a tutorial or
-reference -- but we've got both! When you're ready to start a project, you can
-:doc:`start with the tutorial </intro/tutorial01>` or :doc:`dive right into more
-detailed documentation </topics/index>`.
-
-Design your model
+=================
+장고 한눈에 살펴보기
 =================
 
-Although you can use Django without a database, it comes with an
-object-relational mapper in which you describe your database layout in Python
-code.
+장고는 빠른 페이스의 뉴스룸 환경에서 개발되었기 때문에 일반적인 웹개발 작업을 빠르고 쉽게 하도록 디자인 되었습니다. 이것은 장고로 데이터베이스 기반의 웹 어플리케이션을 작성하는 것 에 대한 간략한 개요입니다.
 
-The :doc:`data-model syntax </topics/db/models>` offers many rich ways of
-representing your models -- so far, it's been solving two years' worth of
-database-schema problems. Here's a quick example, which might be saved in
-the file ``mysite/news/models.py``::
+이 문서의 목표는 장고가 어떻게 동작하는지 이해하는데 충분한 기술적 세부 사항을 전달하는 것 입니다. 이것은 튜터리얼이나 레퍼런스를 대신할수는 없습니다. 하지만 우린 그 두가지를 다 가지고 있지요! 프로젝트를 시작할 준비가 되었으면 :doc:`튜터리얼로 시작 </intro/tutorial01>` 하거나 :doc:`좀더 세부적인 문서 </topics/index>`\ 로 곧장 뛰어들수 있습니다.
+
+모델 설계
+========
+
+장고를 데이터베이스 없이 사용할수는 있어도 어쨋든 파이썬 코드로 데이터베이스 레이아웃을 설명하는 객체 관계 매퍼(ORM)이 제공됩니다. 
+
+:doc:`데이터-모델 문법 </topics/db/models>`\ 은 모델을 표현할수 있는 풍부한 방법을 
+제공합니다. -- so far, it's been solving two years' worth of
+database-schema problems.  ``mysite/news/models.py`` 정도로 저장할만한 간단한 예제 입니다. ::
 
     class Reporter(models.Model):
         full_name = models.CharField(max_length=70)
@@ -39,7 +30,7 @@ the file ``mysite/news/models.py``::
         def __unicode__(self):
             return self.headline
 
-Install it
+설치하기
 ==========
 
 Next, run the Django command-line utility to create the database tables
