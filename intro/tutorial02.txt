@@ -39,19 +39,19 @@
 
       from django.conf.urls import patterns, include, url
 
-      # Uncomment the next two lines to enable the admin:
+      # 관리자 사이트를 활성화 시키기 위해 다음 두 줄의 주석을 제거 해 주세요.:
       **from django.contrib import admin**
       **admin.autodiscover()**
 
       urlpatterns = patterns('',
-          # Examples:
+          # 예제:
           # url(r'^$', '{{ project_name }}.views.home', name='home'),
           # url(r'^{{ project_name }}/', include('{{ project_name }}.foo.urls')),
 
-          # Uncomment the admin/doc line below to enable admin documentation:
+          # 관리자 싸이트 문서를 활성화 시키기 위해 admin/doc 의 주석을 제거 해 주세요.:
           # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
-          # Uncomment the next line to enable the admin:
+          # 관리자 사이트를 활성화 시키기 위해 다음 줄의 주석을 제거 해 주세요.:
           **url(r'^admin/', include(admin.site.urls)),**
       )
 
@@ -355,7 +355,7 @@ Django 의 템플릿 시스템을 이용하면 쉽게 변경할 수 있습니다
 기본적으로 :setting:`TEMPLATE_DIRS` 는 비어있습니다. 이제 Django에게 어디에 우리의 템플릿이 있는지 알려주기 위해 한 줄 추가 해 봅시다.::
 
     TEMPLATE_DIRS = (
-        '/home/my_username/mytemplates', # Change this to your own directory.
+        '/home/my_username/mytemplates', # 여러분의 디렉토리로 변경 해 주세요.
     )
 
 이제 Django 소스코드의 기본 Django 관리자 템플릿 디렉토리 (``django/contrib/admin/templates``) 에 있는 ``admin/base_site.html``를 여러분이 :setting:`TEMPLATE_DIRS`에 지정한 디렉토리의 ``admin`` 하위 디렉토리로 복사합니다. 예를 들어, 만약 여러분의 :setting:`TEMPLATE_DIRS` 에 위와 같이 ``'/home/my_username/mytemplates'`` 가 포함되어 있다면, ``django/contrib/admin/templates/admin/base_site.html`` 를
