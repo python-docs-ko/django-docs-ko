@@ -1,16 +1,13 @@
 =====================================
-Writing your first Django app, part 4
-=====================================
+첫번째 장고 앱 만들기! part 4
+====================================
 
-This tutorial begins where :doc:`Tutorial 3 </intro/tutorial03>` left off. We're
-continuing the Web-poll application and will focus on simple form processing and
-cutting down our code.
+본 자습서는 :doc:`Tutorial 3 </intro/tutorial03>`\ 에 이어서 계속 됩니다. 우리는 웹 설문조사 어플리케이션을 만들고 있고,  우리 코드의 양을 줄이고, 간단한 폼처리를 하는데 초점을 맞출 것 입니다.
 
-Write a simple form
+간단한 폼 사용하기.
 ===================
 
-Let's update our poll detail template ("polls/detail.html") from the last
-tutorial, so that the template contains an HTML ``<form>`` element:
+HTML ``<form>`` 요소를 포함하고 있는 앞 장에서 사용한 설문조사 세부 템플릿을 수정하자:
 
 .. code-block:: html+django
 
@@ -27,13 +24,13 @@ tutorial, so that the template contains an HTML ``<form>`` element:
     <input type="submit" value="Vote" />
     </form>
 
-A quick rundown:
+간략하게 설명하면:
 
-* The above template displays a radio button for each poll choice. The
+* 위의 템플릿은 각 설문 선택지의 라디오버튼을 표시한다. The
   ``value`` of each radio button is the associated poll choice's ID. The
   ``name`` of each radio button is ``"choice"``. That means, when somebody
   selects one of the radio buttons and submits the form, it'll send the
-  POST data ``choice=3``. This is HTML Forms 101.
+  POST data ``choice=3``. 이것이 HTML Forms 101 이다.
 
 * We set the form's ``action`` to ``/polls/{{ poll.id }}/vote/``, and we
   set ``method="post"``. Using ``method="post"`` (as opposed to
@@ -64,17 +61,13 @@ view, so that it looks like the following::
         return render_to_response('polls/detail.html', {'poll': p},
                                    context_instance=RequestContext(request))
 
-The details of how this works are explained in the documentation for
-:ref:`RequestContext <subclassing-context-requestcontext>`.
+이것이 작동하는 것에 대한 자세한 내용은 :ref:`RequestContext <subclassing-context-requestcontext>` 부분의 문서를 참고하라.
 
-Now, let's create a Django view that handles the submitted data and does
-something with it. Remember, in :doc:`Tutorial 3 </intro/tutorial03>`, we
-created a URLconf for the polls application that includes this line::
+이제 전송된 자료를 다룰 장고 뷰를 만들고, 그것을 가지고 무엇인가를 해보자. :doc:`자습서 3 </intro/tutorial03>`\ 에서 이 라인을 포함하는 설물조사 어플리케이션을 위해 URLconf를 만들것을 기억하라::
 
     (r'^(?P<poll_id>\d+)/vote/$', 'vote'),
 
-We also created a dummy implementation of the ``vote()`` function. Let's
-create a real version. Add the following to ``polls/views.py``::
+또, 우리는 ``vote()``\ 더미의 실행 함수를 만들었다. 실제 버전을 만들어보자. ``polls/views.py``\ 에 다음을 추가하자::
 
     from django.shortcuts import get_object_or_404, render_to_response
     from django.http import HttpResponseRedirect, HttpResponse
@@ -87,7 +80,7 @@ create a real version. Add the following to ``polls/views.py``::
         try:
             selected_choice = p.choice_set.get(pk=request.POST['choice'])
         except (KeyError, Choice.DoesNotExist):
-            # Redisplay the poll voting form.
+            # 설문조사 폼을 다시 보여주기.
             return render_to_response('polls/detail.html', {
                 'poll': p,
                 'error_message': "You didn't select a choice.",
@@ -95,12 +88,12 @@ create a real version. Add the following to ``polls/views.py``::
         else:
             selected_choice.votes += 1
             selected_choice.save()
-            # Always return an HttpResponseRedirect after successfully dealing
+            # 전송된 POST 자료를 성공적으로 처리한 뒤에는 항상 HttpResponseRedirect를 반환하라.
             # with POST data. This prevents data from being posted twice if a
-            # user hits the Back button.
+            # 자료가 두 번 전송되는 경우를 막아준다.
             return HttpResponseRedirect(reverse('polls.views.results', args=(p.id,)))
 
-This code includes a few things we haven't covered yet in this tutorial:
+위 코드는 이 자습서에서 아직 다루지 않은 몇 가지를 포함하고 있다:
 
 * :attr:`request.POST <django.http.HttpRequest.POST>` is a dictionary-like
   object that lets you access submitted data by key name. In this case,
@@ -114,53 +107,47 @@ This code includes a few things we haven't covered yet in this tutorial:
   <django.http.HttpRequest.POST>` in our code, to ensure that data is only
   altered via a POST call.
 
-* ``request.POST['choice']`` will raise :exc:`KeyError` if ``choice`` wasn't
-  provided in POST data. The above code checks for :exc:`KeyError` and
-  redisplays the poll form with an error message if ``choice`` isn't given.
+* 만약 POST 자료에 ``choice``\ 가 없으면, ``request.POST['choice']``\
+  는 :exc:`KeyError`\ 를 일으킨다. 위의 코드는 :exc:`KeyError`\ 를 체크하고, ``choice``\ 가 주어지지 않은 경우에는
+  설문조사 양식을 다시보여준다.
 
-* After incrementing the choice count, the code returns an
-  :class:`~django.http.HttpResponseRedirect` rather than a normal
-  :class:`~django.http.HttpResponse`.
-  :class:`~django.http.HttpResponseRedirect` takes a single argument: the
-  URL to which the user will be redirected (see the following point for how
-  we construct the URL in this case).
+* 설문지의 수가 증가한 이후에, 코드는 평범한 
+  :class:`~django.http.HttpResponse` 보다는 
+  :class:`~django.http.HttpResponseRedirect`\ 를 반환한다  :class:`~django.http.HttpResponseRedirect`\ 는 하나의 인수를 받는다: 
+  사용자가 재전송할 URL. (이 경우에 우리가 URL을 
+  어떻게 구성하는지 다음 항목을 보라).
 
-  As the Python comment above points out, you should always return an
+  위 소스안의 파이썬 주석내용대로, POST 자료를 성공적으로 처리한 후에는 항상
   :class:`~django.http.HttpResponseRedirect` after successfully dealing with
-  POST data. This tip isn't specific to Django; it's just good Web
-  development practice.
+  POST data. 이것은 장고에만 특정한 팁이 아니다,
+  좋은 웹 개발관례일 뿐이다.
 
-* We are using the :func:`~django.core.urlresolvers.reverse` function in the
-  :class:`~django.http.HttpResponseRedirect` constructor in this example.
-  This function helps avoid having to hardcode a URL in the view function.
-  It is given the name of the view that we want to pass control to and the
-  variable portion of the URL pattern that points to that view. In this
+* 우리는 이 예제에서  :class:`~django.http.HttpResponseRedirect` 생성자 안의 
+  :func:`~django.core.urlresolvers.reverse` 함수를 사용하고 있다.
+  이 함수는  함수에서 URL을 하드코딩하는 행위를 안하게 도와준다.
+  제어를 전달하기 원하는 view의 이름을 제공하고, URL패턴의 변수부분이 그 뷰를 가리킨다.
+  이 경우에, URLconf를 사용하여 우리는 자습서 3에서 설정하였다. In this
   case, using the URLconf we set up in Tutorial 3, this
-  :func:`~django.core.urlresolvers.reverse` call will return a string like
+  아래와 같은 문자열을 반환할 것이다.
   ::
 
     '/polls/3/results/'
 
-  ... where the ``3`` is the value of ``p.id``. This redirected URL will
-  then call the ``'results'`` view to display the final page. Note that you
-  need to use the full name of the view here (including the prefix).
+  ... ``3``\ 은 ``p.id``\ 의 값이다. 이 리다이렉트된 URL은
+  마지막 페이지를 보여주기위해 ``'results'`` 뷰를 호출한다. 뷰 이름(풀네임)을
+   사용해야한다는 것을 주의하라(접두사를 포함하여).
 
-As mentioned in Tutorial 3, ``request`` is a :class:`~django.http.HttpRequest`
-object. For more on :class:`~django.http.HttpRequest` objects, see the
-:doc:`request and response documentation </ref/request-response>`.
+자습서 3에서 언급했듯이, ``request``\ 은 :class:`~django.http.HttpRequest`\ 개체이다. :class:`~django.http.HttpRequest` 개체에 대해 더 알고 싶다면 :doc:`request and response documentation </ref/request-response>`\ 을 보라.
 
-After somebody votes in a poll, the ``vote()`` view redirects to the results
-page for the poll. Let's write that view::
+어떤 이가 설문조사에 설문을 하고난 뒤에는, ``vote()`` 뷰는 설문조사 결과 페이지로 리다이렉트한다. 그 뷰를 작성해보자::
 
     def results(request, poll_id):
         p = get_object_or_404(Poll, pk=poll_id)
         return render_to_response('polls/results.html', {'poll': p})
 
-This is almost exactly the same as the ``detail()`` view from :doc:`Tutorial 3
-</intro/tutorial03>`. The only difference is the template name. We'll fix this
-redundancy later.
+이것은 :doc:`Tutorial 3</intro/tutorial03>`\ 의 ``detail()`` view와 거의 동일하다. 다른점은 템플릿 이름밖에 없다. 우리는 후에 이 쓸데없는 것들을 수정할 것이다.
 
-Now, create a ``results.html`` template:
+이제, ``results.html`` 템플릿을 만들자:
 
 .. code-block:: html+django
 
@@ -174,49 +161,39 @@ Now, create a ``results.html`` template:
 
     <a href="/polls/{{ poll.id }}/">Vote again?</a>
 
-Now, go to ``/polls/1/`` in your browser and vote in the poll. You should see a
-results page that gets updated each time you vote. If you submit the form
-without having chosen a choice, you should see the error message.
+이제, 웹브라주여에서 ``/polls/1/`` 페이지로 가자, 그리고 설문조사를 해보자. 당신이 설문조사를 할 때마다 값이 반영된 결과페이지를 볼것이다. 만약 당신이 설문지를 선택하지 않고 폼을 전송했다면, 에러메시지를 보게될 것이다.
 
-Use generic views: Less code is better
+제네릭 뷰 사용하기 : 적은 코드가 더 좋음
 ======================================
 
-The ``detail()`` (from :doc:`Tutorial 3 </intro/tutorial03>`) and ``results()``
-views are stupidly simple -- and, as mentioned above, redundant. The ``index()``
-view (also from Tutorial 3), which displays a list of polls, is similar.
+``detail()`` ( :doc:`자습 3 </intro/tutorial03>`\ 에서의) 과 ``results()``
+뷰는 매우 비슷하다. -- 그리고, 위에서 언급한 것 처럼 장황하다. 설문 목록들을 보여주는 ``index()`` 뷰(이것도 자습서 3에서), 는 비슷하다.
 
-These views represent a common case of basic Web development: getting data from
-the database according to a parameter passed in the URL, loading a template and
-returning the rendered template. Because this is so common, Django provides a
-shortcut, called the "generic views" system.
+이 뷰들은 기본적인 웹 개발의 일반적인 케이스들:(URL로 전달된 매개변수로부터 데이터베이스에서 자료를 얻고, 템플릿을 불러오며, 처리된 템플릿을 반환하는)을 제공한다. 매우 일반적인 것들이기 때문에, 장고는 "제네릭 뷰" 시스템이라 불리는 지름길을 제공한다.
 
-Generic views abstract common patterns to the point where you don't even need
-to write Python code to write an app.
+앱을 쓰기위해 파이썬 코드를 쓸 필요가 없을 정도로 제네릭 뷰는 일반적인(역자주-중복되고, 장황한) 패턴들을 제거한다.
 
-Let's convert our poll app to use the generic views system, so we can delete a
-bunch of our own code. We'll just have to take a few steps to make the
-conversion. We will:
+제네릭 뷰 시스템을 사용해서 우리의 설문자 앱을 바꿔보자. 그리고 우리의 코드를 삭제할 수도 있다. 변환하기에는 몇 단계를 거쳐야 한다. 우리는:
 
-1. Convert the URLconf.
+1. URLconf를 변환한다.
 
-2. Delete some of the old, unneeded views.
+2. 오래되고 불필요한 뷰들 일부를 삭제한다.
 
-3. Fix up URL handling for the new views.
+3. 새로운 뷰들을 위해 URL 다루기를 수정한다.
 
-Read on for details.
+자세한 내용을 읽어보라.
 
-.. admonition:: Why the code-shuffle?
+.. admonition:: 왜 코드 섞기(code-shuffle)(역자주:코드를 이렇게 저렇게 수정하는 것)인가?
 
-    Generally, when writing a Django app, you'll evaluate whether generic views
-    are a good fit for your problem, and you'll use them from the beginning,
-    rather than refactoring your code halfway through. But this tutorial
-    intentionally has focused on writing the views "the hard way" until now, to
-    focus on core concepts.
+    일반적으로, 장고 앱을 작성할 때, 당신은 제네릭 뷰가 당신의 문제에 
+    잘 맞는지 평가할 것이고, 절반정도 작성된 당신의 코드를 
+    리펙토링 하기보다는 처음부터 제네릭 뷰를 사용할 것이다. 그러나 이 자습서는
+    지금까지 핵심개념들을 배우기위해 의도적으로 "힘든 방법으로",
+    뷰 작성하기에 초점을 맞춰왔다.
 
-    You should know basic math before you start using a calculator.
+    계산기를 사용하기전에 기본적인 산수를 알아야하지 않겠는가.
 
-First, open the ``polls/urls.py`` URLconf. It looks like this, according to the
-tutorial so far::
+먼저, ``polls/urls.py``\ 의 URLconf를 보라. 지금까지의 자습서 내용대로라면 아래와 같은 내용이 보일것이다.
 
     from django.conf.urls import patterns, include, url
 
@@ -227,7 +204,7 @@ tutorial so far::
         url(r'^(?P<poll_id>\d+)/vote/$', 'vote'),
     )
 
-Change it like so::
+아래와 같이 변경하라::
 
     from django.conf.urls import patterns, include, url
     from django.views.generic import DetailView, ListView
@@ -251,24 +228,22 @@ Change it like so::
         url(r'^(?P<poll_id>\d+)/vote/$', 'polls.views.vote'),
     )
 
-We're using two generic views here:
-:class:`~django.views.generic.list.ListView` and
-:class:`~django.views.generic.detail.DetailView`. Respectively, those
-two views abstract the concepts of "display a list of objects" and
-"display a detail page for a particular type of object."
+여기에서 제네릭 뷰 두 개를 사용하고 있다: 
+:class:`~django.views.generic.list.ListView` 와
+:class:`~django.views.generic.detail.DetailView`.. 이 두 개의 뷰들은 각각, "개체들의 목록을 보여주기" 와 "개체의 특정한 형식에 맞춘 세부 페이지 보여주기" 란 개념을 가지고 있다. 
 
-* Each generic view needs to know what model it will be acting
-  upon. This is provided using the ``model`` parameter.
+* 각 제네릭 뷰는 제네릭 뷰가 어떤 모델에 작용할지 알아야한다
+  .. 그것은 ``model`` 파라미터를 사용하여 제공된다.
 
-* The :class:`~django.views.generic.list.DetailView` generic view
-  expects the primary key value captured from the URL to be called
-  ``"pk"``, so we've changed ``poll_id`` to ``pk`` for the generic
-  views.
+* :class:`~django.views.generic.list.DetailView` 제네릭 뷰는
+  ``"pk"``라 불리는 URL에서 가져온 기본 키 값을 받을 준비를 하고 있다
+  , 그래서 우리는 ``poll_id``\ 를  ``pk``\ 로 변경했다
+  .
 
-* We've added a name, ``poll_results``, to the results view so
-  that we have a way to refer to its URL later on (see the
-  documentation about :ref:`naming URL patterns
-  <naming-url-patterns>` for information). We're also using the
+* 우리는 results 뷰에 ``poll_results``\ 란 이름을 추가했다,
+  그렇게 하면 URL 이후에 오는 변수를 참조할 수 있게 된다.(
+  이것에 관한 정보는 :ref:`naming URL patterns
+  <naming-url-patterns>` 문서를 보라). We're also using the
   :func:`~django.conf.urls.url` function from
   :mod:`django.conf.urls` here. It's a good habit to use
   :func:`~django.conf.urls.url` when you are providing a
