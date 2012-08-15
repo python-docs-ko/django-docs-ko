@@ -44,9 +44,9 @@ HTML ``<form>`` 요소를 포함하고 있는 앞 장에서 사용한 설문조�
   (Cross Site Request Forgeries)에 대해 고민해야한다.고맙게도, 장고는 
   사이트 간 요청 위조(CSRF)에 대해 보호하기위한 사용하기 쉬운 시스템을 가지고 있기 때문에,
   너무 심각하게 고민할 필요가 없다. 간단히 말하면, 내부 URL들을 향하는 모든 POST 폼은 
-  템플릿 태그 :ttag:`{% csrf_token %}<csrf_token>`/ 을 사용해야한다.
+  템플릿 태그 :ttag:`{% csrf_token %}<csrf_token>`\ 을 사용해야한다.
 
-:ttag:`{% csrf_token %}<csrf_token>`\ 태그는 템플릿 문접에서 평범하게 접근이 불가능한 요청(request) 개체로부터의 정보를 필요로 한다. 이부분을 적용하기 위해, 다음과 같은 작은 조정이 ``detail`` 뷰에 필요하다 ::
+:ttag:`{% csrf_token %}<csrf_token>` 태그는 템플릿 문법에서 평범하게 접근이 불가능한 요청(request) 개체로부터의 정보를 필요로 한다. 이부분을 적용하기 위해, 다음과 같은 작은 조정이 ``detail`` 뷰에 필요하다 ::
 
     from django.template import RequestContext
     # ...
@@ -57,7 +57,7 @@ HTML ``<form>`` 요소를 포함하고 있는 앞 장에서 사용한 설문조�
 
 이것이 작동하는 것에 대한 자세한 내용은 :ref:`RequestContext <subclassing-context-requestcontext>` 부분의 문서를 참고하라.
 
-이제 전송된 자료를 다룰 장고 뷰를 만들고, 그것을 가지고 무엇인가를 해보자. :doc:`자습서 3 </intro/tutorial03>`\ 에서 아 라인을 포함하는 설물조사 어플리케이션을 위해 URLconf를 만들것을 기억하라::
+이제 전송된 자료를 다룰 장고 뷰를 만들고, 그것을 가지고 무엇인가를 해보자. :doc:`자습서 3 </intro/tutorial03>`\ 에서 설문조사 어플리케이션을 위해 아래에 나와있는 코드를 포함하는 URLconf를 만들었었다. ::
 
     (r'^(?P<poll_id>\d+)/vote/$', 'vote'),
 
@@ -89,17 +89,13 @@ HTML ``<form>`` 요소를 포함하고 있는 앞 장에서 사용한 설문조�
 
 위 코드는 이 자습서에서 아직 다루지 않은 몇 가지를 포함하고 있다:
 
-* :attr:`request.POST <django.http.HttpRequest.POST>` is a dictionary-like
-  object that lets you access submitted data by key name. In this case,
-  ``request.POST['choice']`` returns the ID of the selected choice, as a
-  string. :attr:`request.POST <django.http.HttpRequest.POST>` values are
-  always strings.
+* :attr:`request.POST <django.http.HttpRequest.POST>` 는 키로 전송된 자료에 
+  접근할 수 있도록 해주는 사전과 같은 객체이다. 이 경우에서 ``request.POST['choice']``\ 는 
+  선택된 설문지의 ID를 문자열로 반환한다. :attr:`request.POST <django.http.HttpRequest.POST>`\ 의 값은 항상 문자열들이다.
 
-  Note that Django also provides :attr:`request.GET
-  <django.http.HttpRequest.GET>` for accessing GET data in the same way --
-  but we're explicitly using :attr:`request.POST
-  <django.http.HttpRequest.POST>` in our code, to ensure that data is only
-  altered via a POST call.
+  Django는 같은 방법으로 GET 자료에 접근하기 위해 :attr:`request.GET <django.http.HttpRequest.GET>`\ 를
+  제공한다. 그러나 POST 요청으로만 자료가 수정되게하기 위해서, 우리는 
+  명시적으로 코드에 :attr:`request.POST <django.http.HttpRequest.POST>`\ 를 사용하고 있다. 
 
 * 만약 POST 자료에 ``choice``\ 가 없으면, ``request.POST['choice']``\
   는 :exc:`KeyError`\ 를 일으킨다. 위의 코드는 :exc:`KeyError`\ 를 체크하고, ``choice``\ 가 주어지지 않은 경우에는
@@ -111,27 +107,23 @@ HTML ``<form>`` 요소를 포함하고 있는 앞 장에서 사용한 설문조�
   사용자가 재전송할 URL. (이 경우에 우리가 URL을 
   어떻게 구성하는지 다음 항목을 보라).
 
-  위 소스안의 파이썬 주석내용대로, POST 자료를 성공적으로 처리한 후에는 항상
-  :class:`~django.http.HttpResponseRedirect` after successfully dealing with
-  POST data. 이것은 장고에만 특정한 팁이 아니다,
-  좋은 웹 개발관례일 뿐이다.
+  위 소스안의 주석내용대로, POST 자료를 성공적으로 처리한 후에는 항상
+  :class:`~django.http.HttpResponseRedirect`\ 를 반환해야한다. 이것은 
+  장고에만 특정한 팁이 아니다. 좋은 웹 개발관례일 뿐이다.
 
 * 우리는 이 예제에서  :class:`~django.http.HttpResponseRedirect` 생성자 안의 
   :func:`~django.core.urlresolvers.reverse` 함수를 사용하고 있다.
   이 함수는  함수에서 URL을 하드코딩하는 행위를 안하게 도와준다.
-  제어를 전달하기 원하는 view의 이름을 제공하고, URL패턴의 변수부분이 그 뷰를 가리킨다.
-  이 경우에, URLconf를 사용하여 우리는 자습서 3에서 설정하였다. In this
-  case, using the URLconf we set up in Tutorial 3, this
+  제어를 전달하기 원하는 뷰의 이름을 제공하고, URL패턴의 변수부분이 그 뷰를 가리킨다.
+  이 경우에, URLconf를 사용하여 우리는 자습서 3에서 설정하였다. 
   아래와 같은 문자열을 반환할 것이다.
   ::
 
     '/polls/3/results/'
 
-  ... ``3``\ 은 ``p.id``\ 의 값이다. 이 리다이렉트된 URL은
-  마지막 페이지를 보여주기위해 ``'results'`` 뷰를 호출한다. 뷰 이름(풀네임)을
-   사용해야한다는 것을 주의하라(접두사를 포함하여).
+  ... ``3``\ 은 ``p.id``\ 의 값이다. 이 리다이렉트된 URL은 마지막 페이지를 보여주기위해 ``'results'`` 뷰를 호출한다. 뷰 이름(풀네임)을 사용해야한다는 것을 주의하라(접두사를 포함하여) .
 
-자습서 3에서 언급했듯이, ``request``\ 은 :class:`~django.http.HttpRequest`\ 개체이다. :class:`~django.http.HttpRequest` 개체에 대해 더 알고 싶다면 :doc:`request and response documentation </ref/request-response>`\ 을 보라.
+자습서 3에서 언급했듯이, ``request``\ 는 :class:`~django.http.HttpRequest`\ 개체이다. :class:`~django.http.HttpRequest` 개체에 대해 더 알고 싶다면 :doc:`request and response documentation </ref/request-response>`\ 을 참고하라.
 
 어떤 이가 설문조사에 설문을 하고난 뒤에는, ``vote()`` 뷰는 설문조사 결과 페이지로 리다이렉트한다. 그 뷰를 작성해보자 ::
 
@@ -139,7 +131,7 @@ HTML ``<form>`` 요소를 포함하고 있는 앞 장에서 사용한 설문조�
         p = get_object_or_404(Poll, pk=poll_id)
         return render_to_response('polls/results.html', {'poll': p})
 
-이것은 :doc:`Tutorial 3</intro/tutorial03>`\ 의 ``detail()`` view와 거의 동일하다. 다른점은 템플릿 이름밖에 없다. 우리는 후에 이 쓸데없는 것들을 수정할 것이다.
+이것은 :doc:`Tutorial 3</intro/tutorial03>`\ 의 ``detail()`` 뷰와 거의 동일하다. 다른점은 템플릿 이름밖에 없다. 우리는 후에 이 쓸데없는 것들을 수정할 것이다.(역자주:쓸데없는 것이라고 한 이유는 위 파일이 필요없어지기 때문입니다.)
 
 이제, ``results.html`` 템플릿을 만들자:
 
@@ -155,19 +147,19 @@ HTML ``<form>`` 요소를 포함하고 있는 앞 장에서 사용한 설문조�
 
     <a href="/polls/{{ poll.id }}/">Vote again?</a>
 
-이제, 웹브라주여에서 ``/polls/1/`` 페이지로 가자, 그리고 설문조사를 해보자. 당신이 설문조사를 할 때마다 값이 반영된 결과페이지를 볼것이다. 만약 당신이 설문지를 선택하지 않고 폼을 전송했다면, 에러메시지를 보게될 것이다.
+이제, 웹 브라우저에서 ``/polls/1/`` 페이지로 가자, 그리고 설문조사를 해보자. 당신이 설문조사를 할 때마다 값이 반영된 결과페이지를 볼것이다. 만약 당신이 설문지를 선택하지 않고 폼을 전송했다면, 에러메시지를 보게될 것이다.
 
 제네릭 뷰 사용하기 : 적은 코드가 더 좋음
 ======================================
 
-``detail()`` ( :doc:`자습 3 </intro/tutorial03>`\ 에서의) 과 ``results()``
-뷰는 매우 비슷하다. -- 그리고, 위에서 언급한 것 처럼 장황하다. 설문 목록들을 보여주는 ``index()`` 뷰(이것도 자습서 3에서), 는 비슷하다.
+``detail()`` ( :doc:`자습서 3 </intro/tutorial03>`\ 에서의) 과 ``results()``
+뷰는 매우 비슷하다. -- 그리고, 위에서 언급한 것 처럼 장황하다. 설문 목록들을 보여주는 ``index()`` 뷰(이것도 자습서 3에서)도 마찬가지이다.
 
-이 뷰들은 기본적인 웹 개발의 일반적인 케이스들:(URL로 전달된 매개변수로부터 데이터베이스에서 자료를 얻고, 템플릿을 불러오며, 처리된 템플릿을 반환하는)을 제공한다. 매우 일반적인 것들이기 때문에, 장고는 "제네릭 뷰" 시스템이라 불리는 지름길을 제공한다.
+이 뷰들은 기본적인 웹 개발의 일반적인 케이스들:(URL로 전달된 매개변수로부터 데이터베이스에서 자료를 얻고, 템플릿을 불러오며, 처리된 템플릿을 반환하는)을 제공한다. 이것들이 매우 일반적인 것들이기 때문에, 장고는 "제네릭 뷰" 시스템이라 불리는 지름길을 제공한다.
 
 앱을 쓰기위해 파이썬 코드를 쓸 필요가 없을 정도로 제네릭 뷰는 일반적인(역자주-중복되고, 장황한) 패턴들을 제거한다.
 
-제네릭 뷰 시스템을 사용해서 우리의 설문자 앱을 바꿔보자. 그리고 우리의 코드를 삭제할 수도 있다. 변환하기에는 몇 단계를 거쳐야 한다. 우리는:
+제네릭 뷰 시스템을 사용해서 우리의 설문조사 앱을 바꿔보자. 그리고 우리의 코드를 삭제할 수도 있다. 변환하기에는 몇 단계를 거쳐야 한다. 우리는:
 
 1. URLconf를 변환한다.
 
@@ -181,13 +173,13 @@ HTML ``<form>`` 요소를 포함하고 있는 앞 장에서 사용한 설문조�
 
     일반적으로, 장고 앱을 작성할 때, 당신은 제네릭 뷰가 당신의 문제에 
     잘 맞는지 평가할 것이고, 절반정도 작성된 당신의 코드를 
-    리펙토링 하기보다는 처음부터 제네릭 뷰를 사용할 것이다. 그러나 이 자습서는
+    다시 작성하기보다는 처음부터 제네릭 뷰를 사용할 것이다. 그러나 이 자습서는
     지금까지 핵심개념들을 배우기위해 의도적으로 "힘든 방법으로",
     뷰 작성하기에 초점을 맞춰왔다.
 
     계산기를 사용하기전에 기본적인 산수를 알아야하지 않겠는가.
 
-먼저, ``polls/urls.py``\ 의 URLconf를 보라. 지금까지의 자습서 내용대로라면 아래와 같은 내용이 보일것이다.
+먼저, ``polls/urls.py``\ 의 URLconf를 보자. 지금까지의 자습서 내용대로라면 아래와 같은 내용이 보일것이다. ::
 
     from django.conf.urls import patterns, include, url
 
@@ -224,24 +216,21 @@ HTML ``<form>`` 요소를 포함하고 있는 앞 장에서 사용한 설문조�
 
 여기에서 제네릭 뷰 두 개를 사용하고 있다: 
 :class:`~django.views.generic.list.ListView` 와
-:class:`~django.views.generic.detail.DetailView`.. 이 두 개의 뷰들은 각각, "개체들의 목록을 보여주기" 와 "개체의 특정한 형식에 맞춘 세부 페이지 보여주기" 란 개념을 가지고 있다. 
+:class:`~django.views.generic.detail.DetailView`. 이 두 개의 뷰들은 각각, "개체들의 목록을 보여주기" 와 "개체의 특정한 형식에 맞춘 세부 페이지 보여주기" 란 개념을 가지고 있다. 
 
 * 각 제네릭 뷰는 제네릭 뷰가 어떤 모델에 작용할지 알아야한다
   .. 그것은 ``model`` 파라미터를 사용하여 제공된다.
 
-* :class:`~django.views.generic.list.DetailView` 제네릭 뷰는
-  ``"pk"``라 불리는 URL에서 가져온 기본 키 값을 받을 준비를 하고 있다
-  , 그래서 우리는 ``poll_id``\ 를  ``pk``\ 로 변경했다
-  .
+* :class:`~django.views.generic.list.DetailView` 제네릭 뷰는 
+  URL에서 가져온 기본 키 값(``"pk"``\ 라 불리는)을 받을 준비를 
+  하고 있다. 그래서 우리는 ``poll_id``\ 를  ``pk``\ 로 변경했다.
 
 * 우리는 results 뷰에 ``poll_results``\ 란 이름을 추가했다,
   그렇게 하면 URL 이후에 오는 변수를 참조할 수 있게 된다.(
   이것에 관한 정보는 :ref:`naming URL patterns
-  <naming-url-patterns>` 문서를 보라). We're also using the
-  :func:`~django.conf.urls.url` function from
-  :mod:`django.conf.urls` here. It's a good habit to use
-  :func:`~django.conf.urls.url` when you are providing a
-  pattern name like this.
+  <naming-url-patterns>` 문서를 보라). 또 우리는 여기에서 :mod:`django.conf.urls`\ 의
+  :func:`~django.conf.urls.url` 함수를 사용했다. 이와같은 패턴 이름을 제공하는 경우에
+  :func:`~django.conf.urls.url`\ 사용은 좋은 습관이다.
 
 기본적으로 :class:`~django.views.generic.list.DetailView` 제네릭 뷰는 ``<app name>/<model name>_detail.html``\ 이라 불리는 템플릿을 사용한다.
 우리는 ``"polls/poll_detail.html"`` 템플릿을 사용할 것이다. 자동생성되는 기본 템플릿 이름 대신에 특정한 템릿 이름을 사용하여 장고에게 전달하기 위해 ``template_name`` 를 사용한다. 또한 우리는 ``results`` 리스트 뷰를 위해 ``template_name``\ 를 지정해야한다 -- 비록 둘 다  같은 :class:`~django.views.generic.list.DetailView`\ 이긴 하지만. 이것은 results 뷰와 detail 뷰가 달리 표현되는 것을 보장한다.
