@@ -1,98 +1,86 @@
-Quick install guide
-===================
+빠른 설치 안내
+=================== 
 
-Before you can use Django, you'll need to get it installed. We have a
-:doc:`complete installation guide </topics/install>` that covers all the
-possibilities; this guide will guide you to a simple, minimal installation
-that'll work while you walk through the introduction.
+Django를 사용하기 위해선 설치가 필요합니다. 우리는 :doc:` 설치 완벽 가이드 </topics/install>` 에 모든 내용을 포함하고 있으며, 이 안내는 간단하고 최소한의 설치를 필요로 합니다. 
 
-Install Python
+파이썬 설치하기
 --------------
 
-Being a Python Web framework, Django requires Python. It works with any Python
-version from 2.5 to 2.7 (due to backwards incompatibilities in Python 3.0,
-Django does not currently work with Python 3.0; see :doc:`the Django FAQ
-</faq/install>` for more information on supported Python versions and the 3.0
-transition), these versions of Python include a lightweight database called
-SQLite_ so you won't need to set up a database just yet.
+Django는 파이썬 웹 프레임워크로, Django는 파이썬을 필요로 합니다. 파이썬 2.5 ~ 2.7 버전을 사용합니다.(파이썬 3.0 과의 하위 호환성이 보장되지 않기에,
+Django에서는 파이썬 3.0을 사용할 수 없습니다; 파이썬 3.0 버전 지원에 대한 좀 더 자세한 사항은 다음에서 확인해 주세요. 보기 :doc:`Django FAQ
+</faq/install>`)  이 파이썬 버전에서는 경량 데이터 베이스인 SQLite_ 을 포함하고 있기에, 데이터데이스에 대한 설정이 따로 필요하지 않습니다.
 
-.. _sqlite: http://sqlite.org/
+.. _sqlite는 다음 사이트에서 얻을 수 있습니다. http://sqlite.org/
 
-Get Python at http://www.python.org. If you're running Linux or Mac OS X, you
-probably already have it installed.
+파이썬은 다음 사이트에서 얻을 수 있습니다. http://www.python.org. 만약 Mac OS X나 리눅스를 사용한다면, 이미 설치되어 있을 수 있습니다.
 
-.. admonition:: Django on Jython
+.. 경고::Jython위 Django
 
-    If you use Jython_ (a Python implementation for the Java platform), you'll
-    need to follow a few additional steps. See :doc:`/howto/jython` for details.
+    만약 Jython_ (자바 플랫폼을 위해 구현된 Python)을 사용한다면
+    몇가지 추가 설치가 필요합니다. 보기:doc:`/howto/jython` 에 자세히 나와 있습니다.
 
-.. _jython: http://www.jython.org/
+.. _jython 사이트 입니다. http://www.jython.org/
 
-You can verify that Python is installed by typing ``python`` from your shell;
-you should see something like::
+파이썬이 정확하게 설치가 되어 있다면, 쉘에서 'python' 명령어를 입력 했을 때, 다음과 같이 표시가 될 것입니다.
 
     Python 2.5.1 (r251:54863, Jan 17 2008, 19:35:17)
     [GCC 4.0.1 (Apple Inc. build 5465)] on darwin
     Type "help", "copyright", "credits" or "license" for more information.
     >>>
 
-Set up a database
+데이터 베이스 설정
 -----------------
 
-If you installed Python 2.5 or later, you can skip this step for now.
+파이썬 2.5 버전 이상이 설치되어 있다면 다음 과정을 하지 않아도 됩니다.
 
-If not, or if you'd like to work with a "large" database engine like PostgreSQL,
-MySQL, or Oracle, consult the :ref:`database installation information
-<database-installation>`.
+PostgreSQL,MySQL, Oracle 같은 큰 데이터베이스에서 동작이 필요하다면, :ref:`데이터 베이스 설치 정보
+<database-installation>`을 참고하세요.
 
-Remove any old versions of Django
+이전 Django 버전 지우기
 ---------------------------------
 
-If you are upgrading your installation of Django from a previous version, you
-will need to :ref:`uninstall the old Django version before installing the new
-version <removing-old-versions-of-django>`.
+이전 버전의 Django가 설치되어 있다면 업그레이드가 필요합니다. 다음 문서를 참고 해주세요. :ref:`새로운 버전 설치 전에 이전 Django 버전 삭제하기 <removing-old-versions-of-django>`.
 
-Install Django
+Django 설치하기
 --------------
 
-You've got three easy options to install Django:
+Django를 설치 하기 위한 쉬운 3가지 옵션:
 
-* Install a version of Django :doc:`provided by your operating system
-  distribution </misc/distributions>`. This is the quickest option for those
-  who have operating systems that distribute Django.
+* Django 버전 설치하기  :doc:` 운영체제가 배포하는 버전 설치하기
+  </misc/distributions>`. 이것은 
+  운영체제가 배포하는 Django를 빠르게 설치하기 위한 옵션입니다.
 
-* :ref:`Install an official release <installing-official-release>`. This
-  is the best approach for users who want a stable version number and aren't
-  concerned about running a slightly older version of Django.
+* :ref:` 공식 릴리스 설치하기<installing-official-release>`. 이것은
+  이전 Django  버전 실행이 약간 불안하다면 
+  최신 버전의 Django를 설치하는 것이 최선의 방법이다.
 
-* :ref:`Install the latest development version
-  <installing-development-version>`. This is best for users who want the
-  latest-and-greatest features and aren't afraid of running brand-new code.
+* :ref: 최신 개발 버전 설치하기
+  <installing-development-version>`. 이것은 최신과 최고의 새로운 코드 실행에 걱정이 없는
+  사용자들에게 가장 좋은 방법입니다.
 
-.. admonition:: Always refer to the documentation that corresponds to the
-    version of Django you're using!
+.. 경고:: 이용하고 있는 Django의 버전에 
+    해당하는 문서를 확인하세요!
 
-    If you do either of the first two steps, keep an eye out for parts of the
-    documentation marked **new in development version**. That phrase flags
-    features that are only available in development versions of Django, and
-    they likely won't work with an official release.
+    첫 번째, 두 번째 단계 중 하나를 실행 하면 ** 개발 버전의 새로운 기능 ** 문서에 표시된 
+    일부분이 보일 것입니다. 몇가지 플래그 들은
+    개발 버전에서만 사용 할 수 있을 것이며, 
+    공식 릴리즈 버전과 호환이 되지 않을 수 있습니다.
 
 
-Verifying
+확인
 ---------
 
-To verify that Django can be seen by Python, type ``python`` from your shell.
-Then at the Python prompt, try to import Django::
+Django가 정확하게 설치 되어 있는지, 쉘에서 'python' 명령어를 입력 하면 파이썬에 의해 알 수 있습니다.
+파이썬 메시지에 다음과 같이 Django의 버전을 가지고 올 것입니다. Then at the Python prompt, try to import Django::
 
     >>> import django
     >>> print django.get_version()
     1.3
 
 
-That's it!
-----------
+끝!----------
 
-That's it -- you can now :doc:`move onto the tutorial </intro/tutorial01>`.
+이제 끝났습니다. 다음으로 이동하세요~ :doc:` 자습서(tutorial) 이동하기</intro/tutorial01>`.
 
 
 
