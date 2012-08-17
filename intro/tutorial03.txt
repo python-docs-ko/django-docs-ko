@@ -2,81 +2,61 @@
 Writing your first Django app, part 3
 =====================================
 
-This tutorial begins where :doc:`Tutorial 2 </intro/tutorial02>` left off. We're
-continuing the Web-poll application and will focus on creating the public
-interface -- "views."
+이 자습서는 :doc:`Tutorial 2 </intro/tutorial02>`의 마지막에 이어서 시작 합니다. 우리는 계속해서 "뷰"라고 하는 퍼블릭 인터페이스를 작성하는데 중점을 두고 웹-투표 애플리케이션을 계속 합니다.
 
-Philosophy
+철학
 ==========
 
-A view is a "type" of Web page in your Django application that generally serves
-a specific function and has a specific template. For example, in a Weblog
-application, you might have the following views:
+뷰는 Django 애플리케이션에서 특정한 기능을 수행하거나, 특정한 템플릿을 가지는 웹 페이지의 "유형" 입니다. 예를 들어 웹블로그 애플리케이션은 아래와 같은 뷰들을 가질 것 입니다.
 
-* Blog homepage -- displays the latest few entries.
+* 블로그 홈페이지 -- 최신 엔트리 몇 개를 표시 합니다.
 
-* Entry "detail" page -- permalink page for a single entry.
+* 엔트리 "세부" 페이지 -- 한 개의 엔트리를 위한 퍼머링크 페이지입니다.
 
-* Year-based archive page -- displays all months with entries in the
-  given year.
+* 연도별 아카이브 페이지 -- 주어진 연도에 있는 모든 달들을 엔트리와 함께 나타냅니다.
+   
 
-* Month-based archive page -- displays all days with entries in the
-  given month.
+* 월별 아카이브 페이지 -- 주어진 달에 있는 모든 날들을 엔트리와 함께 나타냅니다.
+   
 
-* Day-based archive page -- displays all entries in the given day.
+* 일별 아카이브 페이지 -- 주어진 날에 있는 모든 엔트리를 나타냅니다.
 
-* Comment action -- handles posting comments to a given entry.
+* 코멘트 달기 -- 주어진 엔트리에 코멘트를 포스팅 합니다.
 
-In our poll application, we'll have the following four views:
+투표 애플리케이션에는 아래와 같이 네 개의 뷰가 있습니다.
 
-* Poll "index" page -- displays the latest few polls.
+* 투표 "인덱스" 페이지 -- 몇 개의 최신 투표를 나타냅니다.
 
-* Poll "detail" page -- displays a poll question, with no results but
-  with a form to vote.
+* 투표 "세부" 페이지 -- 투표의 질문을 투표 할 수 있는 폼과 함께 나타냅니다. 투표 결과는 보여주지 않습니다.
+   
 
-* Poll "results" page -- displays results for a particular poll.
+* 투표 "결과" 페이지 -- 특정 투표의 결과를 나타냅니다.
 
-* Vote action -- handles voting for a particular choice in a particular
-  poll.
+* 투표 하기 -- 특정 투표에서 특정 선택지에 투표합니다.
+   
 
-In Django, each view is represented by a simple Python function.
+Django 에서 개별 뷰는 간단한 파이썬 함수로 나타냅니다.
 
-Design your URLs
+URL 디자인 하기
 ================
 
-The first step of writing views is to design your URL structure. You do this by
-creating a Python module, called a URLconf. URLconfs are how Django associates
-a given URL with given Python code.
+URL 구조를 디자인 하는 것은 뷰를 작성하는 첫 번째 단계입니다. URLconf라는 파이썬 모듈을 생성함으로써, URL구조를 디자인 할 수 있습니다. URLconfs는 Django가 주어진 URL을 주어진 파이썬 코드와 연결하는 방법 입니다.
 
-When a user requests a Django-powered page, the system looks at the
-:setting:`ROOT_URLCONF` setting, which contains a string in Python dotted
-syntax. Django loads that module and looks for a module-level variable called
-``urlpatterns``, which is a sequence of tuples in the following format::
+사용자가 Django-powered 페이지를 요청 할 때, 시스템은 Python dotted syntax에 있는 문자열을 포함하는 :setting:'ROOT_URLCONF' 설정을 참고 합니다. Django 는 URLconf 모듈을 로드 합니다. 그리고, 아래와 같은 포맷의 튜플인 모듈-레벨 변수인 ``urlpatterns``를 검색 합니다.
 
     (regular expression, Python callback function [, optional dictionary])
 
-Django starts at the first regular expression and makes its way down the list,
-comparing the requested URL against each regular expression until it finds one
-that matches.
+Django는 첫 번째 정규표현식을 시작으로, 일치하는 결과를 찾을 때 까지 요청 받은 URL을 각각의 정규표현식과 비교하면서 리스트 아래로 내려갑니다.
 
-When it finds a match, Django calls the Python callback function, with an
-:class:`~django.http.HttpRequest` object as the first argument, any "captured"
-values from the regular expression as keyword arguments, and, optionally,
-arbitrary keyword arguments from the dictionary (an optional third item in the
-tuple).
+ 일치하는 결과를 찾으면, Django는 파이썬 콜백 함수를 호출 합니다. 이 때, :class:`~django.http.HttpRequest` 객체를 첫 번째 인자로 하고, 정규표현식에서 찾은 임의의 값을 키워드 인자로 가집니다. 옵션으로 그 사전에서 임의의 키워드(튜플의 세 번째 아이템)를 가져다가 사용 합니다.
 
-For more on :class:`~django.http.HttpRequest` objects, see the
-:doc:`/ref/request-response`. For more details on URLconfs, see the
-:doc:`/topics/http/urls`.
+:class:`~django.http.HttpRequest` 객체에 대해서 자세히 알고 싶다면, :doc:`/ref/request-response` 를 참고 하세요. URLconfs 에 대해서 자세히 알고 싶다면, :doc:`/topics/http/urls`를 참고 하세요.
 
-When you ran ``django-admin.py startproject mysite`` at the beginning of
-Tutorial 1, it created a default URLconf in ``mysite/urls.py``. It also
-automatically set your :setting:`ROOT_URLCONF` setting (in ``settings.py``) to
-point at that file::
+자습서 1에서 처음 ``django-admin.py startproject mysite`` 를 실행 했을때, 기본 URLconf를 ``mysite/urls.py``에 생성 했습니다.  게다가 자동으로 :setting:`ROOT_URLCONF`을 =(``settings.py`` 안에 있는) ``mysite/urls.py``를 가리키도록 설정 했습니다.::
 
     ROOT_URLCONF = 'mysite.urls'
 
-Time for an example. Edit ``mysite/urls.py`` so it looks like this::
+예제를 보겠습니다. ``mysite/urls.py``를 아래와 같이 수정 합니다.::
 
     from django.conf.urls import patterns, include, url
 
@@ -91,85 +71,58 @@ Time for an example. Edit ``mysite/urls.py`` so it looks like this::
         url(r'^admin/', include(admin.site.urls)),
     )
 
-This is worth a review. When somebody requests a page from your Web site -- say,
-"/polls/23/", Django will load this Python module, because it's pointed to by
-the :setting:`ROOT_URLCONF` setting. It finds the variable named ``urlpatterns``
-and traverses the regular expressions in order. When it finds a regular
-expression that matches -- ``r'^polls/(?P<poll_id>\d+)/$'`` -- it loads the
-function ``detail()`` from ``polls/views.py``. Finally, it calls that
-``detail()`` function like so::
+여기 까지의 내용을 설명하면. 누군가 웹 사이트에 "/polls/23/"이라는 요청을 하면, Django는 :setting:`ROOT_URLCONF` 설정이 가리키고 있기 때문에 위의 파이썬 모듈을 로드 할 것 입니다. 위의 파이썬 모듈은 ``urlpatterns``라는 이름을 가진 변수를 찾습니다. 그리고, 정규표현식들을 순서대로 순회 합니다. 위의 파이썬 모듈이 일치하는 정규표현식을 찾았을때 -- ``r'^polls/(?P<poll_id>\d+)/$'`` -- 위의 파이썬 모듈은 ``polls/views.py``에 있는 ``detail()`` 함수를 로드 합니다. 끝으로 파이썬 모듈은 아래와 같이 ``detail()`` 함수를 호출 합니다.
 
     detail(request=<HttpRequest object>, poll_id='23')
 
-The ``poll_id='23'`` part comes from ``(?P<poll_id>\d+)``. Using parentheses
-around a pattern "captures" the text matched by that pattern and sends it as an
-argument to the view function; the ``?P<poll_id>`` defines the name that will be
-used to identify the matched pattern; and ``\d+`` is a regular expression to
-match a sequence of digits (i.e., a number).
+``poll_id='23'``는  ``(?P<poll_id>\d+)``에서 온 것 입니다.  패턴 주위에 괄호()를 사용해서 그 패턴과 일치하는 텍스트를 "포"하고, 뷰 함수에게 인자로 보냅니다; ``?P<poll_id>``는 일치하는 패턴을 인식하는데 사용 할 이름을 정의 합니다. 그리고 ``\d+``는 숫자가 나와야 할 순서를 의미하는 정규표현식입니다.(역자 주: 정규착 표현식에서 \d는 0~9 사이의 숫자를 의미하고 +는 앞 문자가 1번 이상 나타나면 된다는 것을 의미 합니다. 따라서, 1개 이상의 숫자가 있으면 된다는 뜻입니다.
 
-Because the URL patterns are regular expressions, there really is no limit on
-what you can do with them. And there's no need to add URL cruft such as ``.php``
--- unless you have a sick sense of humor, in which case you can do something
-like this::
+ URL 패턴들은 정규표현식이기 때문에, 무엇을 하든 제한이 없습니다. 그리고, 아래와 같은 악취미가 있지 않는 한 ``.php``같은 URL 부스러기 들을 붙일 필요가 없습니다 ::
 
     (r'^polls/latest\.php$', 'polls.views.index'),
 
-But, don't do that. It's silly.
+위 처럼, 하지마세요. 바보 같으니까요.
 
-Note that these regular expressions do not search GET and POST parameters, or
-the domain name. For example, in a request to ``http://www.example.com/myapp/``,
-the URLconf will look for ``myapp/``. In a request to
-``http://www.example.com/myapp/?page=3``, the URLconf will look for ``myapp/``.
+이런 정규표현식들은 GET, POST 파라미터들 또는 도메인 이름을 검색하지는 않는 다는 것을 기억하십시오. 예를 들어 ``http://www.example.com/myapp/``을 향한 요청에서, URLconf는 ``myapp/``만 찾을 것 입니다. ``http://www.example.com/myapp/?page=3``를 향한 요청에서, URLconf는 ``myapp/``만 찾을 것 입니다.
 
-If you need help with regular expressions, see `Wikipedia's entry`_ and the
-documentation of the :mod:`re` module. Also, the O'Reilly book "Mastering
-Regular Expressions" by Jeffrey Friedl is fantastic.
+만약, 정규표현식에 대해 도움이 필요하면, `Wikipedia's entry`_ 그리고 :mod:`re` 모듈의 문서를 참고 하십시오. 또, Jeffrey Friedl 의 오라일리의 책 "Mastering Regular Expressions" 도 끝내줍니다.
 
-Finally, a performance note: these regular expressions are compiled the first
-time the URLconf module is loaded. They're super fast.
+Finally, a performance note : 처음 URLconf 모듈이 로드 되었을때, 이 정규표현식들은 컴파일 되었습니다. 그래서, 매우 빠릅니다.
 
 .. _Wikipedia's entry: http://en.wikipedia.org/wiki/Regular_expression
 
-Write your first view
+첫 번째 뷰 작성 하기
 =====================
 
-Well, we haven't created any views yet -- we just have the URLconf. But let's
-make sure Django is following the URLconf properly.
+우리는 URLconf 만 만들었습니다. 아직 아무 뷰도 생성 하지 않았습니다. 그렇지만 이전에 Django가 아래의 URLconf를 철저히 따르고 있는지 확실히 하십시오. 
 
-Fire up the Django development Web server:
+이제 Django 개발 웹 서버를 구동합니다.
 
 .. code-block:: bash
 
     python manage.py runserver
 
-Now go to "http://localhost:8000/polls/" on your domain in your Web browser.
-You should get a pleasantly-colored error page with the following message::
+웹브라우져에서 "http://localhost:8000/polls/" 로 이동 하십시오.
+당신은 유쾌하게 컬러링된 아래 메세지의 에러 페이지를 보게 될 것 입니다.::
 
     ViewDoesNotExist at /polls/
 
     Could not import polls.views.index. View does not exist in module polls.views.
 
-This error happened because you haven't written a function ``index()`` in the
-module ``polls/views.py``.
+이 오류는 ``polls/views.py`` 모듈에 ``index()`` 함수를 작성한 적이 없기 때문에 발생 합니다.
 
-Try "/polls/23/", "/polls/23/results/" and "/polls/23/vote/". The error
-messages tell you which view Django tried (and failed to find, because you
-haven't written any views yet).
+"/polls/23/", "/polls/23/results/" 그리고 "/polls/23/vote/" 도 시도해 보십시오. 오류 메세지들은 Django가 어떤 뷰에 접근 하려고 했는지 알려줍니다(그리고, 당신이 뷰들을 작성 하지 않았기 때문에 찾기에 실패 합니다).
 
-Time to write the first view. Open the file ``polls/views.py``
-and put the following Python code in it::
+첫 번째 뷰를 작성 합니다. ``polls/views.py``를 열어서 아래의 파이썬 코드를 입력 합니다.::
 
     from django.http import HttpResponse
 
     def index(request):
         return HttpResponse("Hello, world. You're at the poll index.")
 
-This is the simplest view possible. Go to "/polls/" in your browser, and you
-should see your text.
+실제로 가능한 가장 간단한 뷰 입니다. 브라우저에서 "/polls/" 로 이동하면, 당신이 작성한 텍스트를 볼 수 있어야 합니다.
 
-Now lets add a few more views. These views are slightly different, because
-they take an argument (which, remember, is passed in from whatever was
-captured by the regular expression in the URLconf)::
+뷰를 몇 개 더 추가해 봅니다. 이 뷰들은 인자를 가지기 때문에 조금씩 다릅니다. (기억하세요, URLconf에서 정규표현식으로 무엇이 '포착'되었든지 인자로 들어옵니다.)
 
     def detail(request, poll_id):
         return HttpResponse("You're looking at poll %s." % poll_id)
@@ -180,30 +133,19 @@ captured by the regular expression in the URLconf)::
     def vote(request, poll_id):
         return HttpResponse("You're voting on poll %s." % poll_id)
 
-Take a look in your browser, at "/polls/34/". It'll run the `detail()` method
-and display whatever ID you provide in the URL. Try "/polls/34/results/" and
-"/polls/34/vote/" too -- these will display the placeholder results and voting
-pages.
+브라우저에서 "/polls/34/"를 둘러보세요. `detail()` 메소드를 실행하고, URL에 입력한 ID를 나타냅니다. "/polls/34/results/"과 "/polls/34/vote/"도 시도해 보세요. -- 이 URL들은 placeholder results와 투표 페이지 를 보여줍니다.
 
-Write views that actually do something
+실제로 동작하는 뷰 작성 하기
 ======================================
 
-Each view is responsible for doing one of two things: Returning an
-:class:`~django.http.HttpResponse` object containing the content for the
-requested page, or raising an exception such as :exc:`~django.http.Http404`. The
-rest is up to you.
+ 각각의 뷰는 둘 중에 하나를 수행합니다. 요청받은 페이지에 대한 컨텐츠를 가지고 있는 :class:`~django.http.HttpResponse` 객체를 반환 하거나 :exc:`~django.http.Http404` 같은 예외를 발생합니다. 나머지는 당신에게 달렸습니다.
 
-Your view can read records from a database, or not. It can use a template
-system such as Django's -- or a third-party Python template system -- or not.
-It can generate a PDF file, output XML, create a ZIP file on the fly, anything
-you want, using whatever Python libraries you want.
+당신의 뷰는 데이터베이스에서 레코드들을 읽을수도, 아닐수도 있습니다. Django에 있는 것 같은 템플릿 시스템 --또는 서드 파티 파이썬 템플릿 시스템 -- 을 사용할수도, 안할수도 있습니다.
+PDF 파일을 생성하거나, XML을 출력하거나, ZIP파일을 생성하거나, 당신이 무엇을 원하든 간에 원하는 파이썬 라이브러리들을 사용 하십시오. 
 
-All Django wants is that :class:`~django.http.HttpResponse`. Or an exception.
+모든 Django가 필요한 것은 :class:`~django.http.HttpResponse` 입니다. 또는 예외 입니다.
 
-Because it's convenient, let's use Django's own database API, which we covered
-in :doc:`Tutorial 1 </intro/tutorial01>`. Here's one stab at the ``index()``
-view, which displays the latest 5 poll questions in the system, separated by
-commas, according to publication date::
+사용하기 편리하므로, 우리가 :doc:`Tutorial 1 </intro/tutorial01>`에서 다루었던 Django가 가지고 있는 데이터베이스 API를 사용해 봅시다. 날짜 순서로 정렬하고, 콤마로 나눈, 시스템에 있는 최근 5개의 투표 질문들을 보여주는``index()`` 뷰를 만들어봅시다.
 
     from polls.models import Poll
     from django.http import HttpResponse
@@ -213,9 +155,8 @@ commas, according to publication date::
         output = ', '.join([p.question for p in latest_poll_list])
         return HttpResponse(output)
 
-There's a problem here, though: The page's design is hard-coded in the view. If
-you want to change the way the page looks, you'll have to edit this Python code.
-So let's use Django's template system to separate the design from Python::
+위의 코드에는 문제가 있습니다. 페이지 디자인을 뷰에 하드 코딩 했습니다. 만약 페이지가 보이는 형태를 변경 하려고 한다면, 파이썬 코드를 수정 해야 합니다.
+그래서 디자인을 파이썬으로부터 분리하기 위해서 Django 템플릿 시스템을 이용합니다. 
 
     from django.template import Context, loader
     from polls.models import Poll
@@ -229,28 +170,22 @@ So let's use Django's template system to separate the design from Python::
         })
         return HttpResponse(t.render(c))
 
-That code loads the template called "polls/index.html" and passes it a context.
-The context is a dictionary mapping template variable names to Python objects.
+위의 코드는 "polls/index.html" 템플릿을 로드하고 컨텍스트를 전달 합니다.
+컨텍스트는 파이썬 객체들 이름을 가진 사전 매핑 템플릿 변수 입니다.
 
-Reload the page. Now you'll see an error::
+페이지를 새로고침 하십시오. 에러를 보게 될것 입니다::
 
     TemplateDoesNotExist at /polls/
     polls/index.html
 
-Ah. There's no template yet. First, create a directory, somewhere on your
-filesystem, whose contents Django can access. (Django runs as whatever user your
-server runs.) Don't put them under your document root, though. You probably
-shouldn't make them public, just for security's sake.
-Then edit :setting:`TEMPLATE_DIRS` in your ``settings.py`` to tell Django where
-it can find templates -- just as you did in the "Customize the admin look and
-feel" section of Tutorial 2.
+아. 아직 템플릿이 없군요. 첫 번째, 당신의 파일시스템 아무곳에나 Django가 접근 할 수 있는 곳에 디렉토리를 생성 하십시오. (Django runs as whatever user your
+server runs.) 대신, 그 파일들은 문서 root에 넣지 마세요. 보안 문제가 있으므로, 디렉토리를 퍼블릭으로 만들지 않아야 합니다.
+그리고, ``settings.py``의 :setting:`TEMPLATE_DIRS`를 수정해서, Django에게 어디서 템플릿들을 찾을 수 있는지 알려 주십시오.  -- 자습서 2의 "Customize the admin look and feel" 섹션에서 한것 처럼 하면 됩니다.
 
-When you've done that, create a directory ``polls`` in your template directory.
-Within that, create a file called ``index.html``. Note that our
-``loader.get_template('polls/index.html')`` code from above maps to
-"[template_directory]/polls/index.html" on the filesystem.
+위의 내용을 완료 했다면, ``polls`` 디렉토리를 템플릿 디렉토리에 생성 하십시오.
+그 안에 ``index.html`` 파일을 생성하십시오. 우리의 ``loader.get_template('polls/index.html')`` 코드는 파일 시스템에 있는  "[template_directory]/polls/index.html" 과 매핑 된다는 것을 기억하십시오.
 
-Put the following code in that template:
+아래의 코드를 템플릿에 입력하십시오.
 
 .. code-block:: html+django
 
@@ -264,17 +199,12 @@ Put the following code in that template:
         <p>No polls are available.</p>
     {% endif %}
 
-Load the page in your Web browser, and you should see a bulleted-list
-containing the "What's up" poll from Tutorial 1. The link points to the poll's
-detail page.
+웹 브라우저에서 페이지를 로드하면, 자습서 1의 "What's up" 투표를 포함하는 bulleted-list를 볼 수 있어야 합니다. 이 링크는 투표의 세부 페이지를 가리킵니다.
 
-A shortcut: render_to_response()
+지름길: render_to_response()
 --------------------------------
 
-It's a very common idiom to load a template, fill a context and return an
-:class:`~django.http.HttpResponse` object with the result of the rendered
-template. Django provides a shortcut. Here's the full ``index()`` view,
-rewritten::
+render_to_response()는 템플릿을 로드하고, 컨텍스트를 채우고, :class:`~django.http.HttpResponse` 객체를 렌더링된 템플릿의 결과와 함께 반환하기 위해 자주 사용하는 구문입니다. Django는 지름길을 제공 합니다. 전체 ``index()`` 뷰를 재작성했습니다.
 
     from django.shortcuts import render_to_response
     from polls.models import Poll
@@ -283,20 +213,14 @@ rewritten::
         latest_poll_list = Poll.objects.all().order_by('-pub_date')[:5]
         return render_to_response('polls/index.html', {'latest_poll_list': latest_poll_list})
 
-Note that once we've done this in all these views, we no longer need to import
-:mod:`~django.template.loader`, :class:`~django.template.Context` and
-:class:`~django.http.HttpResponse`.
+모든 뷰에서 한 번만 위의 작업을 하면, 더이상 :mod:`~django.template.loader`, :class:`~django.template.Context` 그리고 :class:`~django.http.HttpResponse`를 불러올 필요가 없다는 것을 기억하십시오.
 
-The :func:`~django.shortcuts.render_to_response` function takes a template name
-as its first argument and a dictionary as its optional second argument. It
-returns an :class:`~django.http.HttpResponse` object of the given template
-rendered with the given context.
+:func:`~django.shortcuts.render_to_response` 함수는 템플릿 이름을 첫 번째 인자로, 선택 가능한 두 번째 인자로 사전을 갖습니다. :func:`~django.shortcuts.render_to_response` 함수는 주어진 컨텍스트와 함께 렌더링된 템플릿 객체의  :class:`~django.http.HttpResponse` 를 반환 합니다.
 
-Raising 404
+404 띄우기
 ===========
 
-Now, let's tackle the poll detail view -- the page that displays the question
-for a given poll. Here's the view::
+세부 투표 뷰를 봅시다. -- 세부 투표 뷰는 주어진 투표에 대한 제목을 표시합니다. 아래에 뷰가 있습니다::
 
     from django.http import Http404
     # ...
@@ -307,22 +231,18 @@ for a given poll. Here's the view::
             raise Http404
         return render_to_response('polls/detail.html', {'poll': p})
 
-The new concept here: The view raises the :exc:`~django.http.Http404` exception
-if a poll with the requested ID doesn't exist.
+위의 코드에는 이전에 보지 못한 개념이 있습니다. 투표와 함께 요청받은 ID가 존재 하지 않으면 뷰가 :exc:`~django.http.Http404`예외를 띄웁니다.
 
-We'll discuss what you could put in that ``polls/detail.html`` template a bit
-later, but if you'd like to quickly get the above example working, just::
+`polls/detail.html``에 무엇을 넣을지는 조금 나중에 고민 할 것 입니다. 그렇지만, 빠르게 예제를 동작하게 만들고 싶다면, 단지::
 
     {{ poll }}
 
-will get you started for now.
+코드가 지금 당장 코드를 시작 할 수 있게 할 것 입니다.
 
-A shortcut: get_object_or_404()
+지름길: get_object_or_404()
 -------------------------------
 
-It's a very common idiom to use :meth:`~django.db.models.query.QuerySet.get`
-and raise :exc:`~django.http.Http404` if the object doesn't exist. Django
-provides a shortcut. Here's the ``detail()`` view, rewritten::
+get_object_or404()는 :meth:`~django.db.models.query.QuerySet.get`를 사용기위해서 자주 사용하는 구문입니다. 객체가 없을 때는 :exc:`~django.http.Http404`를 띄웁니다. Django 는 지름길을 제공 합니다. ``detail()`` 뷰를 재작성 했습니다.::
 
     from django.shortcuts import render_to_response, get_object_or_404
     # ...
@@ -330,69 +250,47 @@ provides a shortcut. Here's the ``detail()`` view, rewritten::
         p = get_object_or_404(Poll, pk=poll_id)
         return render_to_response('polls/detail.html', {'poll': p})
 
-The :func:`~django.shortcuts.get_object_or_404` function takes a Django model
-as its first argument and an arbitrary number of keyword arguments, which it
-passes to the module's :meth:`~django.db.models.query.QuerySet.get` function.
-It raises :exc:`~django.http.Http404` if the object doesn't exist.
+:func:`~django.shortcuts.get_object_or_404`함수는 Django 모델을 첫 번째 인자로 받고,  :meth:`~django.db.models.query.QuerySet.get` 함수에서 전달된 임의의 숫자를 키워드 인자로 받습니다. 만약, 객체가 존재하지 않으면, :exc:`~django.http.Http404`를 띄웁니다.
 
-.. admonition:: Philosophy
+.. 충고:: 철학
 
-    Why do we use a helper function :func:`~django.shortcuts.get_object_or_404`
-    instead of automatically catching the
-    :exc:`~django.core.exceptions.ObjectDoesNotExist` exceptions at a higher
-    level, or having the model API raise :exc:`~django.http.Http404` instead of
+     왜 우리가 더 높은 레벨에서 :exc:`~django.core.exceptions.ObjectDoesNotExist`를 사용해서 자동으로 예외를 처리하는 대신 헬퍼 함수인 :func:`~django.shortcuts.get_object_or_404`를 사용 했을까요? 
+     
+     
+     또는 :exc:`~django.core.exceptions.ObjectDoesNotExist`를 사용하는 대신  :exc:`~django.http.Http404`를 띄우는 모델 API를 가지도록 했을까요?
     :exc:`~django.core.exceptions.ObjectDoesNotExist`?
 
-    Because that would couple the model layer to the view layer. One of the
-    foremost design goals of Django is to maintain loose coupling.
+    그 이유는 모델 계층을 뷰 계층에 결합 하기 때문입니다.  
+    Django의 으뜸가는 디자인 목표중 하나는 느슨한 결합을 유지하는 것입니다.
 
-There's also a :func:`~django.shortcuts.get_list_or_404` function, which works
-just as :func:`~django.shortcuts.get_object_or_404` -- except using
-:meth:`~django.db.models.query.QuerySet.filter` instead of
-:meth:`~django.db.models.query.QuerySet.get`. It raises
-:exc:`~django.http.Http404` if the list is empty.
+ 물론 :func:`~django.shortcuts.get_object_or_404`와 거의 똑같이 동작하는 :func:`~django.shortcuts.get_list_or_404` 함수도 있습니다. -- :meth:`~django.db.models.query.QuerySet.get` 대신 :meth:`~django.db.models.query.QuerySet.filter`를 사용하는 경우는 제외합니다. :func:`~django.shortcuts.get_list_or_404` 는 리스트가 비어 있을 경우에 :exc:`~django.http.Http404`를 띄웁니다. 
 
-Write a 404 (page not found) view
+404 (page not found) 뷰 작성하기
 =================================
 
-When you raise :exc:`~django.http.Http404` from within a view, Django
-will load a special view devoted to handling 404 errors. It finds it
-by looking for the variable ``handler404`` in your root URLconf (and
-only in your root URLconf; setting ``handler404`` anywhere else will
-have no effect), which is a string in Python dotted syntax -- the same
-format the normal URLconf callbacks use. A 404 view itself has nothing
-special: It's just a normal view.
+ 뷰에서 :exc:`~django.http.Http404`를 일으키면,  Django는 404 오류를 다루기로한 특별한 뷰를 로드 할 것 입니다.  Django는 루트 URLconf(그리고 오직 루트 URLconf에서 ``handler404``를 설정해야 합니다. 이외의 위치에서는 모두 무시합니다.)에서 ``handler404`` python dotted syntax 내의 문자열 변수를 찾음으로써 404오류를 다루기로한 특별한 뷰를 찾을 것입니다.  -- 같은 형태로 일반적인 URLconf 콜백들을 사용 합니다. 404 뷰 자체로는 특별한게 아무것도 없습니다. 일반적인 뷰일 뿐입니다.
 
-You normally won't have to bother with writing 404 views. If you don't set
-``handler404``, the built-in view :func:`django.views.defaults.page_not_found`
-is used by default. In this case, you still have one obligation: create a
-``404.html`` template in the root of your template directory. The default 404
-view will use that template for all 404 errors. If :setting:`DEBUG` is set to
-``False`` (in your settings module) and if you didn't create a ``404.html``
-file, an ``Http500`` is raised instead. So remember to create a ``404.html``.
+일반적으로는 404 뷰들을 만드는데 신경쓸 필요가 없습니다.  만약 ``handler404``를 설정하지 않으면, 내장된 :func:`django.views.defaults.page_not_found`를 기본적으로 사용합니다.  이 경우에도 여전히 한 가지 할 일이 남아 있기는 합니다. ``404.html`` 템플릿을 root템플릿 디렉토리에 생성 해야 합니다. 기본적인 404 뷰는 그 템플릿을 모든 404 오류에 사용 할 것입니다.  만약 :setting:`DEBUG`를 ``False`` (in your settings module)로 설정 하거나, ``404.html``
+파일을 만들지 않으면, ``Http500``을 대신 띄웁니다.  그런 이유로 ``404.html``을 생성하는 것을 기억하십시오.
 
-A couple more things to note about 404 views:
+404 뷰들에 대해서 몇 가지더 알아두어야 할 것이 있습니다.
 
-* If :setting:`DEBUG` is set to ``True`` (in your settings module) then your
-  404 view will never be used (and thus the ``404.html`` template will never
-  be rendered) because the traceback will be displayed instead.
+* :setting:`DEBUG`를 ``True``로 설정 했다면(설정 모듈 안에서) 404 뷰는 절대로 사용하지 않을 것입니다. (그리고 ``404.html`` 템플릿은 절대 렌더 되지 않습니다). 왜냐하면 traceback을 대신 표시하기 때문입니다. 
+   
+   
 
-* The 404 view is also called if Django doesn't find a match after checking
-  every regular expression in the URLconf.
+* 404 뷰는 Django가 URLconf 내의 모든 정규표현식을 검색하고도, 일치하는 표현을 찾지 못했을 때도 호출합니다.
+   
 
-Write a 500 (server error) view
+500 (server error) 뷰 작성하기
 ===============================
 
-Similarly, your root URLconf may define a ``handler500``, which points
-to a view to call in case of server errors. Server errors happen when
-you have runtime errors in view code.
+비슷하게, 루트 URLconf는 서버 오류인 경우에 호출하기 위한 뷰를 가리키는 ``handler500``을 정의 하고 있을 것 입니다. 서버 오류는 뷰 코드에서 런타임 에러가 있을때 발생합니다.
 
-Use the template system
+템플릿 시스템 사용하기
 =======================
 
-Back to the ``detail()`` view for our poll application. Given the context
-variable ``poll``, here's what the "polls/detail.html" template might look
-like:
+투표 어플리케이션의 ``detail()`` 뷰로 돌아가 보도록 합니다. ``poll``이 컨텍스트 변수로 주어졌을때, "polls/detail.html" 템플릿이 어떻게 되는지 보도록 합니다.:
 
 .. code-block:: html+django
 
@@ -403,24 +301,17 @@ like:
     {% endfor %}
     </ul>
 
-The template system uses dot-lookup syntax to access variable attributes. In
-the example of ``{{ poll.question }}``, first Django does a dictionary lookup
-on the object ``poll``. Failing that, it tries an attribute lookup -- which
-works, in this case. If attribute lookup had failed, it would've tried a
-list-index lookup.
+ 템플릿 시스템은 변수 어트리뷰트들에 접근 하기 위해서 dot-lookup 구문을 사용 합니다.  ``{{ poll.question }}``의 예제에서 보면, Django는 처음에 ``poll`` 객체에서 사전을 찾습니다. 찾기에 실패하면, 어트리뷰트를 조회 합니다. -- 이 경우에는 잘 동작 합니다. 만약, 어트리뷰트 조회에 실패하면, list-index 조회를 시도 합니다.
 
-Method-calling happens in the :ttag:`{% for %}<for>` loop:
-``poll.choice_set.all`` is interpreted as the Python code
-``poll.choice_set.all()``, which returns an iterable of Choice objects and is
-suitable for use in the :ttag:`{% for %}<for>` tag.
+:ttag:`{% for %}<for>` 루프에서 메소드 호출이 발생합니다:
+``poll.choice_set.all`` 은 파이썬 코드 ``poll.choice_set.all()``로 변환 합니다. 파이썬 코드 ``poll.choice_set.all()``는 선택한 객체들의 an iterable을 반환하고, :ttag:`{% for %}<for>` 태그에서 사용하기 적당합니다.
 
-See the :doc:`template guide </topics/templates>` for more about templates.
+템플릿에 대한 자세한 내용은 :doc:`template guide </topics/templates>` 를 보세요.
 
-Simplifying the URLconfs
+URLconfs를 단순화 하기
 ========================
 
-Take some time to play around with the views and template system. As you edit
-the URLconf, you may notice there's a fair bit of redundancy in it::
+뷰와 템플릿 시스템사이를 종횡무진 하기에는 시간이 좀 걸립니다. URLconf를 수정 하는 동안, 내부에 상당한 양의 불필요한 중복이 있다는 것을 알아차렸을 것입니다.
 
     urlpatterns = patterns('',
         url(r'^polls/$', 'polls.views.index'),
@@ -429,11 +320,9 @@ the URLconf, you may notice there's a fair bit of redundancy in it::
         url(r'^polls/(?P<poll_id>\d+)/vote/$', 'polls.views.vote'),
     )
 
-Namely, ``polls.views`` is in every callback.
+다시말해 ``polls.views``가 모든 콜백에 있습니다.
 
-Because this is a common case, the URLconf framework provides a shortcut for
-common prefixes. You can factor out the common prefixes and add them as the
-first argument to :func:`~django.conf.urls.patterns`, like so::
+왜냐하면 공통적인 경우에, URLconf 프레임워크는 공통적인 prefixs들에 대한 지름길을 제공 합니다. 당신은 공통적인 prefixe들을 뽑아 낼수 있습니다. 그리고, 뽑아낸 prefixes들을 :func:`~django.conf.urls.patterns`에 아래와 같이 첫 번째 인자로 추가 할 수 있습니다. ::
 
     urlpatterns = patterns('polls.views',
         url(r'^polls/$', 'index'),
@@ -442,13 +331,10 @@ first argument to :func:`~django.conf.urls.patterns`, like so::
         url(r'^polls/(?P<poll_id>\d+)/vote/$', 'vote'),
     )
 
-This is functionally identical to the previous formatting. It's just a bit
-tidier.
+이 방법은 이전의 포매팅과 기능적으로 일치 합니다. 더 깔끔합니다.
 
-Since you generally don't want the prefix for one app to be applied to every
-callback in your URLconf, you can concatenate multiple
-:func:`~django.conf.urls.patterns`. Your full ``mysite/urls.py`` might
-now look like this::
+일반적으로 URLconf의 모든 콜백에 하나의 애플리케이션을 위한 prefix를 적용하고 싶지 않다면, 여러개의 :func:`~django.conf.urls.patterns`를 연결 할 수 있습니다.
+. ``mysite/urls.py`` 전체는 아래와 같습니다. ::
 
     from django.conf.urls import patterns, include, url
 
@@ -466,25 +352,16 @@ now look like this::
         url(r'^admin/', include(admin.site.urls)),
     )
 
-Decoupling the URLconfs
+URLconf의 결합도 낮추기
 =======================
 
-While we're at it, we should take the time to decouple our poll-app URLs from
-our Django project configuration. Django apps are meant to be pluggable -- that
-is, each particular app should be transferable to another Django installation
-with minimal fuss.
+하는 김에 우리는 Django 프로젝트 설정으로 부터 우리의 투표-앱 URL 들을 분리하는 시간을 가져야 합니다. Django 앱들은 플러그인 처럼 사용 할수 있도록  만들었습니다. -- 각각의 특정한 앱이 최소한의 수정으로 다른 Django installation 으로 이전 가능해야 합니다.
 
-Our poll app is pretty decoupled at this point, thanks to the strict directory
-structure that ``python manage.py startapp`` created, but one part of it is
-coupled to the Django settings: The URLconf.
+이 시점에서 투표 앱은 상당히 결합도가 낮습니다. ``python manage.py startapp``가 생성한 엄격한 디렉토리 구조에 감사하기 바랍니다. 그렇나, 단 하나 URLconf가 Django 설정들과 결합되어 있습니다.
 
-We've been editing the URLs in ``mysite/urls.py``, but the URL design of an
-app is specific to the app, not to the Django installation -- so let's move the
-URLs within the app directory.
+ ``mysite/urls.py``에 있는 URL들은 수정했습니다. 그러나, 앱의 URL 디자인은 Django installation이 아니라, 특정 앱 지향적입니다. -- 그래서 URL들을 앱 디렉토리 안으로 이동 합니다. 
 
-Copy the file ``mysite/urls.py`` to ``polls/urls.py``. Then, change
-``mysite/urls.py`` to remove the poll-specific URLs and insert an
-:func:`~django.conf.urls.include`, leaving you with::
+``mysite/urls.py`` 파일을  ``polls/urls.py``로 복사 하십시오.  그리고, ``mysite/urls.py``에서 투표-한정 URL들을 제거 하고, :func:`~django.conf.urls.include`를 그 자리에 추가 하도록 변경 합니다::
 
     from django.conf.urls import patterns, include, url
 
@@ -496,25 +373,18 @@ Copy the file ``mysite/urls.py`` to ``polls/urls.py``. Then, change
         url(r'^admin/', include(admin.site.urls)),
     )
 
-:func:`~django.conf.urls.include` simply references another URLconf.
-Note that the regular expression doesn't have a ``$`` (end-of-string match
-character) but has the trailing slash. Whenever Django encounters
-:func:`~django.conf.urls.include`, it chops off whatever part of the
-URL matched up to that point and sends the remaining string to the included
-URLconf for further processing.
+:func:`~django.conf.urls.include`은 간단하게 다른 URLconf를 참조 합니다.
+정규표현식은 ``$``(문자열의 끝과 일치하는 문자)를 가지지 않고, trailling slash를 가지는 점을 기억하십시오.  어디든지 Django가 :func:`~django.conf.urls.include` 함수를 만나면, 해당 시점에서 URL의 일치하는 부분을 잘라냅니다. 그리고, 남은 문자열을 추가 처리를 위해서 불러들인 URLconf로 전송 합니다. 
 
-Here's what happens if a user goes to "/polls/34/" in this system:
+사용자가 이 시스템에서  "/polls/34/"으로 이동하는 경우 무슨 일이 생기는지 보십시오:
 
-* Django will find the match at ``'^polls/'``
+* Django는 ``'^polls/'``에서 일치하는 것을 찾을것입니다.
 
-* Then, Django will strip off the matching text (``"polls/"``) and send the
-  remaining text -- ``"34/"`` -- to the 'polls.urls' URLconf for
-  further processing.
+* 그리고나서, Django 는 일치하는 문자(``"polls/"``)를 벗겨 낼것 입니다.
+  남은 문자 -- ``"34/"`` --를  'polls.urls' URLconf로 추가 처리를 위해서 보냅니다.
+   
 
-Now that we've decoupled that, we need to decouple the ``polls.urls``
-URLconf by removing the leading "polls/" from each line, and removing the
-lines registering the admin site. Your ``polls/urls.py`` file should now look like
-this::
+ 이제, URLconf와 Django 설정의 결합도를 낮추었습니다. 우리는 개별 라인 맨 앞에 있는 "polls/"를 삭제하고, 관리자 사이트에 등록한 라인들을 삭제 함으로써 ``polls.urls``와 URLconf의 결합도를 낮추었습니다. ``polls/urls.py`` 파일은 지금 아래와 같아야 합니다. ::
 
     from django.conf.urls import patterns, include, url
 
@@ -525,12 +395,9 @@ this::
         url(r'^(?P<poll_id>\d+)/vote/$', 'vote'),
     )
 
-The idea behind :func:`~django.conf.urls.include` and URLconf
-decoupling is to make it easy to plug-and-play URLs. Now that polls are in their
-own URLconf, they can be placed under "/polls/", or under "/fun_polls/", or
-under "/content/polls/", or any other path root, and the app will still work.
+:func:`~django.conf.urls.include`와 URLconf의 결합도를 낮추는 아이디어는 URL들의 플러그인플레이를 쉽게 만들어 줍니다.  이제 투표들은 각자 URLconf를 가지고 있습니다. 투표들은 "/polls/" 밑에도 있을 수 있고,  "/fun_polls/" 밑에도, "/content/polls/" 밑에도, 그리고 다른 어떠한 루트 경로 에도 있을 수 있습니다. 그리고 앱은 여전히 잘 동작 할 것 입니다.
 
-All the poll app cares about is its relative path, not its absolute path.
+모든 투표 앱들은 절대 경로가 아니라, 상대 경로를 사용 합니다.
 
-When you're comfortable with writing views, read :doc:`part 4 of this tutorial
-</intro/tutorial04>` to learn about simple form processing and generic views.
+ 뷰를 작성 하는 것에 익숙해 지면 단순한 폼 처리와 제너릭 뷰를 배우기 위해서 :doc:`part 4 of this tutorial
+</intro/tutorial04>`를 읽어보십시오.
