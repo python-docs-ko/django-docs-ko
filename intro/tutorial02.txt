@@ -103,7 +103,9 @@ Groups, users, sites 등 몇 개의 수정 가능한 컨텐츠를 확인할 수 
 그러데 우리의 설문조사 앱은 어디에 있나요? 아직 관리자 사이트 첫 페이지에 보이지 않습니다.
 
 단 한가지 할 일: 우선 관리자 사이트에게 ``Poll``
-개체가 관리자 인터페이스가 필요하다고 알려줘야 합니다. 이를 위해  ``polls`` 디렉토리 안에 ``admin.py`` 파일을 생성하고 아래와 같이 수정합니다::
+개체가 관리자 인터페이스가 필요하다고 알려줘야 합니다. 이를 위해  ``polls`` 디렉토리 안에 ``admin.py`` 파일을 생성하고 아래와 같이 수정합니다.
+
+::
 
     from polls.models import Poll
     from django.contrib import admin
@@ -188,7 +190,9 @@ Poll을 수정하기 위해 "What's up?" poll을 클릭하세요:
 
 단지 두 개의 필드에서는 크게 인상적이지 않을 지 모르지만 수십개의 필드가 있는 폼에서는 직관적인 순서를 선택하는 것이 보다 세세한 사용성 측면에서 중요합니다.
 
-또한 수십개의 필드를 포함한 폼을 다룰 때에는 이들을 폼의 필드셋(fieldsets)으로 분리할 수도 있습니다.::
+또한 수십개의 필드를 포함한 폼을 다룰 때에는 이들을 폼의 필드셋(fieldsets)으로 분리할 수도 있습니다.
+
+::
 
     class PollAdmin(admin.ModelAdmin):
         fieldsets = [
@@ -205,13 +209,15 @@ Poll을 수정하기 위해 "What's up?" poll을 클릭하세요:
    :alt: 필드셋을 보여주는 폼
 
 각각의 필드셋에는 여러분이 원하는 HTML 클래스를 할당할 수 있습니다. Django 는 특정 필드셋이 처음에 접혀 있는 모습으로 보여질 수 있도록``"collapse"`` 클래스를 제공합니다.
-이는 잘 사용하지 않지만 많은 필드를 가지고 있는 길이가 긴 폼이 있을 때 유용 할 것입니다.:
+이는 잘 사용하지 않지만 많은 필드를 가지고 있는 길이가 긴 폼이 있을 때 유용할 것입니다.
 
-        class PollAdmin(admin.ModelAdmin):
-            fieldsets = [
-                (None,               {'fields': ['question']}),
-                ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
-            ]
+::
+
+    class PollAdmin(admin.ModelAdmin):
+        fieldsets = [
+            (None,               {'fields': ['question']}),
+            ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
+        ]
 
 .. image:: _images/admin09.png
    :alt: 처음에 접혀있는 필드셋
@@ -241,7 +247,9 @@ Poll을 수정하기 위해 "What's up?" poll을 클릭하세요:
 그러나 시스템에 Choice 개체를 추가하는 작업은 비효율적인 작업입니다 .
 만약 여러분이 Poll 개체를 만들 때 여러개의 Choice를 추가할 수 있다면 더 좋을 것 입니다. 자, 그럼 어떻게 하는지 알아봅시다.
 
-Choice 모델을 호출하는 ``register()`` 를 제거하세요. 그런 다음 ``Poll`` 을 불러오기 위해 등록 코드를 수정하세요.:
+Choice 모델을 호출하는 ``register()`` 를 제거하세요. 그런 다음 ``Poll`` 을 불러오기 위해 등록 코드를 수정하세요.
+
+::
 
     class ChoiceInline(admin.StackedInline):
         model = Choice
@@ -265,7 +273,7 @@ Choice 모델을 호출하는 ``register()`` 를 제거하세요. 그런 다음 
 
 이렇게 작동합니다.: 관련된 세개의 슬롯 -- ``extra`` 에 의해 선택된 -- 이 있고 언제든지 생성된 개체의 "수정" 페이지로 되돌아올 수 있으며, 또다른 세개의 추가 슬롯을 사용할 수도 있다.
 
-한 가자 작은 문제에 대해 생각 해 봅시다. 관련된 Choice 개체를 입력하기 위해 모든 필드가 넓은 공간에 보여지고 있습니다. 이러한 이유로 Django 는 표를 이용하여 연관된 개체를 한 줄로 보여줍니다.; 다른과 같이 ``ChoiceInline`` 를 변경하세요.::
+한 가지 작은 문제에 대해 생각 해 봅시다. 관련된 Choice 개체를 입력하기 위해 모든 필드가 넓은 공간에 보여지고 있습니다. 이러한 이유로 Django 는 표를 이용하여 연관된 개체를 한 줄로 보여줍니다.; 다른과 같이 ``ChoiceInline`` 를 변경하세요.::
 
     class ChoiceInline(admin.TabularInline):
         #...
