@@ -1,8 +1,7 @@
-Getting started
+시작하기
 ===============
 
-New to Django? Or to Web development in general? Well, you came to the right
-place: read this material to quickly get up and running.
+Django, 혹은 일반적인 웹 개발이 처음이신가요? 그렇다면 바로 찾아오셨습니다. 다음의 문서를 훑어보고 바로 시작해보세요.
 
 .. toctree::
    :maxdepth: 1
@@ -17,20 +16,14 @@ place: read this material to quickly get up and running.
    
 .. seealso::
 
-    If you're new to Python_, you might want to start by getting an idea of what
-    the language is like. Django is 100% Python, so if you've got minimal
-    comfort with Python you'll probably get a lot more out of Django.
+    파이썬_\ 이 처음이시라면, 그에 대해 살펴보시는 것이 좋습니다. 장고는 100% 파이썬으로 만들어졌기 때문에, 파이썬에 대해 약간 알고 있으면 Django를 이해하는 데에 도움이 됩니다.
     
-    If you're new to programming entirely, you might want to start with this
-    `list of Python resources for non-programmers`_
+    프로그래밍에 대한 경험이 전혀 없으시다면, `프로그래머가 아닌 사람들을 위한 파이썬 자료`_\ 를 참고하시기 바랍니다.
     
-    If you already know a few other languages and want to get up to speed with
-    Python quickly, we recommend `Dive Into Python`_ (also available in a
-    `dead-tree version`_). If that's not quite your style, there are quite
-    a few other `books about Python`_.
+    이미 다른 언어를 몇가지 알고 있고 있는 상태에서 파이썬을 배우고자 한다면 `파이썬으로 뛰어들기`_(`종이 책`_\ 으로도 나와있습니다)를 추천합니다. 그외에 `파이썬에 관한 책들`_\ 도 있습니다.
     
-    .. _python: http://python.org/
-    .. _list of Python resources for non-programmers: http://wiki.python.org/moin/BeginnersGuide/NonProgrammers
-    .. _dive into python: http://diveintopython.net/
-    .. _dead-tree version: http://www.amazon.com/exec/obidos/ASIN/1590593561/ref=nosim/jacobian20
-    .. _books about Python: http://wiki.python.org/moin/PythonBooks
+    .. _파이썬: http://python.org/
+    .. _프로그래머가 아닌 사람들을 위한 파이썬 자료: http://wiki.python.org/moin/BeginnersGuide/NonProgrammers
+    .. _파이썬으로 뛰어들기: http://diveintopython.net/
+    .. _종이 책: http://www.amazon.com/exec/obidos/ASIN/1590593561/ref=nosim/jacobian20
+    .. _파이썬에 관한 책들: http://wiki.python.org/moin/PythonBooks
