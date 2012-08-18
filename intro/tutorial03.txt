@@ -1,5 +1,5 @@
 =====================================
-Writing your first Django app, part 3
+첫 번째 Django 앱 만들기, part 3
 =====================================
 
 이 자습서는 :doc:`Tutorial 2 </intro/tutorial02>`\ 의 마지막에 이어서 시작 합니다. 우리는 계속해서 "뷰"라고 하는 퍼블릭 인터페이스를 작성하는데 중점을 두고 웹-투표 애플리케이션을 계속 합니다.
@@ -42,13 +42,14 @@ URL 디자인 하기
 
 URL 구조를 디자인 하는 것은 뷰를 작성하는 첫 번째 단계입니다. URLconf라는 파이썬 모듈을 생성함으로써, URL구조를 디자인 할 수 있습니다. URLconfs는 Django가 주어진 URL을 주어진 파이썬 코드와 연결하는 방법 입니다.
 
-사용자가 Django-powered 페이지를 요청 할 때, 시스템은 Python dotted syntax에 있는 문자열을 포함하는 :setting:'ROOT_URLCONF' 설정을 참고 합니다. Django 는 URLconf 모듈을 로드 합니다. 그리고, 아래와 같은 포맷의 튜플인 모듈-레벨 변수인 ``urlpatterns``를 검색 합니다.
+사용자가 Django-powered 페이지를 요청 할 때, 시스템은 Python dotted syntax에 있는 문자열을 포함하는 :setting:'ROOT_URLCONF' 설정을 참고 합니다. Django 는 URLconf 모듈을 로드 합니다. 그리고, 아래와 같은 포맷의 튜플인 모듈-레벨 변수인 ``urlpatterns``\ 를 검색합니다.
 
+::
     (regular expression, Python callback function [, optional dictionary])
 
 Django는 첫 번째 정규표현식을 시작으로, 일치하는 결과를 찾을 때 까지 요청 받은 URL을 각각의 정규표현식과 비교하면서 리스트 아래로 내려갑니다.
 
- 일치하는 결과를 찾으면, Django는 파이썬 콜백 함수를 호출 합니다. 이 때, :class:`~django.http.HttpRequest` 객체를 첫 번째 인자로 하고, 정규표현식에서 찾은 임의의 값을 키워드 인자로 가집니다. 옵션으로 그 사전에서 임의의 키워드(튜플의 세 번째 아이템)를 가져다가 사용 합니다.
+일치하는 결과를 찾으면, Django는 파이썬 콜백 함수를 호출 합니다. 이 때, :class:`~django.http.HttpRequest` 객체를 첫 번째 인자로 하고, 정규표현식에서 찾은 임의의 값을 키워드 인자로 가집니다. 옵션으로 그 사전에서 임의의 키워드(튜플의 세 번째 아이템)를 가져다가 사용 합니다.
 
 :class:`~django.http.HttpRequest` 객체에 대해서 자세히 알고 싶다면, :doc:`/ref/request-response`\ 를 참고 하세요. URLconfs 에 대해서 자세히 알고 싶다면, :doc:`/topics/http/urls`\ 를 참고 하세요.
 
@@ -58,7 +59,9 @@ Django는 첫 번째 정규표현식을 시작으로, 일치하는 결과를 찾
 
     ROOT_URLCONF = 'mysite.urls'
 
-예제를 보겠습니다. ``mysite/urls.py``\ 를 아래와 같이 수정 합니다.::
+예제를 보겠습니다. ``mysite/urls.py``\ 를 아래와 같이 수정합니다.
+
+::
 
     from django.conf.urls import patterns, include, url
 
@@ -79,7 +82,7 @@ Django는 첫 번째 정규표현식을 시작으로, 일치하는 결과를 찾
 
     detail(request=<HttpRequest object>, poll_id='23')
 
-``poll_id='23'``\ 는  ``(?P<poll_id>\d+)``\ 에서 온 것 입니다.  패턴 주위에 괄호()를 사용해서 그 패턴과 일치하는 텍스트를 "포"하고, 뷰 함수에게 인자로 보냅니다; ``?P<poll_id>``는 일치하는 패턴을 인식하는데 사용 할 이름을 정의 합니다. 그리고 ``\d+``는 숫자가 나와야 할 순서를 의미하는 정규표현식입니다.(역자 주: 정규착 표현식에서 \d는 0~9 사이의 숫자를 의미하고 +는 앞 문자가 1번 이상 나타나면 된다는 것을 의미 합니다. 따라서, 1개 이상의 숫자가 있으면 된다는 뜻입니다.
+``poll_id='23'``\ 는  ``(?P<poll_id>\d+)``\ 에서 온 것 입니다.  패턴 주위에 괄호()를 사용해서 그 패턴과 일치하는 텍스트를 "포"하고, 뷰 함수에게 인자로 보냅니다; ``?P<poll_id>``\ 는 일치하는 패턴을 인식하는데 사용 할 이름을 정의 합니다. 그리고 ``\d+``\ 는 숫자가 나와야 할 순서를 의미하는 정규표현식입니다.(역자 주: 정규착 표현식에서 \d는 0~9 사이의 숫자를 의미하고 +는 앞 문자가 1번 이상 나타나면 된다는 것을 의미 합니다. 따라서, 1개 이상의 숫자가 있으면 된다는 뜻입니다.
 
 URL 패턴들은 정규표현식이기 때문에, 무엇을 하든 제한이 없습니다. 그리고, 아래와 같은 악취미가 있지 않는 한 ``.php``\ 같은 URL 부스러기 들을 붙일 필요가 없습니다.
 
@@ -195,7 +198,7 @@ PDF 파일을 생성하거나, XML을 출력하거나, ZIP파일을 생성하거
 
 아. 아직 템플릿이 없군요. 첫 번째, 당신의 파일시스템 아무 곳에나 Django가 접근할 수 있는 곳에 디렉토리를 생성하십시오. (Django runs as whatever user your
 server runs.) 대신, 그 파일들은 문서 root에 넣지 마세요. 보안 문제가 있으므로, 디렉토리를 퍼블릭으로 만들지 않아야 합니다.
-그리고, ``settings.py``의 :setting:`TEMPLATE_DIRS`를 수정해서, Django에게 어디서 템플릿들을 찾을 수 있는지 알려 주십시오.  -- 자습서 2의 "Customize the admin look and feel" 섹션에서 한것 처럼 하면 됩니다.
+그리고, ``settings.py``\ 의 :setting:`TEMPLATE_DIRS`\ 를 수정해서, Django에게 어디서 템플릿들을 찾을 수 있는지 알려 주십시오.  -- 자습서 2의 "Customize the admin look and feel" 섹션에서 한것 처럼 하면 됩니다.
 
 위의 내용을 완료 했다면, ``polls`` 디렉토리를 템플릿 디렉토리에 생성하십시오.
 그 안에 ``index.html`` 파일을 생성하십시오. 우리의 ``loader.get_template('polls/index.html')`` 코드는 파일 시스템에 있는  "[template_directory]/polls/index.html" 과 매핑 된다는 것을 기억하십시오.
@@ -248,7 +251,7 @@ render_to_response()는 템플릿을 로드하고, 컨텍스트를 채우고, :c
             raise Http404
         return render_to_response('polls/detail.html', {'poll': p})
 
-위의 코드에는 이전에 보지 못한 개념이 있습니다. 투표와 함께 요청받은 ID가 존재 하지 않으면 뷰가 :exc:`~django.http.Http404`예외를 띄웁니다.
+위의 코드에는 이전에 보지 못한 개념이 있습니다. 투표와 함께 요청받은 ID가 존재 하지 않으면 뷰가 :exc:`~django.http.Http404` 예외를 띄웁니다.
 
 `polls/detail.html``에 무엇을 넣을지는 조금 나중에 고민 할 것 입니다. 그렇지만, 빠르게 예제를 동작하게 만들고 싶다면, 단지::
 
@@ -271,7 +274,7 @@ get_object_or404()는 :meth:`~django.db.models.query.QuerySet.get`\ 를 사용�
 
 :func:`~django.shortcuts.get_object_or_404` 함수는 Django 모델을 첫 번째 인자로 받고, :meth:`~django.db.models.query.QuerySet.get` 함수에서 전달된 임의의 숫자를 키워드 인자로 받습니다. 만약, 객체가 존재하지 않으면, :exc:`~django.http.Http404`\ 를 띄웁니다.
 
-.. 충고:: 철학
+.. admonition:: 철학
 
      왜 우리가 더 높은 레벨에서 :exc:`~django.core.exceptions.ObjectDoesNotExist`를 사용해서 자동으로 예외를 처리하는 대신 헬퍼 함수인 :func:`~django.shortcuts.get_object_or_404`를 사용 했을까요? 
      
@@ -289,8 +292,8 @@ get_object_or404()는 :meth:`~django.db.models.query.QuerySet.get`\ 를 사용�
 
 뷰에서 :exc:`~django.http.Http404`를 일으키면,  Django는 404 오류를 다루기로한 특별한 뷰를 로드 할 것 입니다.  Django는 루트 URLconf(그리고 오직 루트 URLconf에서 ``handler404``를 설정해야 합니다. 이외의 위치에서는 모두 무시합니다.)에서 ``handler404`` python dotted syntax 내의 문자열 변수를 찾음으로써 404오류를 다루기로한 특별한 뷰를 찾을 것입니다.  -- 같은 형태로 일반적인 URLconf 콜백들을 사용 합니다. 404 뷰 자체로는 특별한게 아무것도 없습니다. 일반적인 뷰일 뿐입니다.
 
-일반적으로는 404 뷰들을 만드는데 신경쓸 필요가 없습니다.  만약 ``handler404``를 설정하지 않으면, 내장된 :func:`django.views.defaults.page_not_found`를 기본적으로 사용합니다.  이 경우에도 여전히 한 가지 할 일이 남아 있기는 합니다. ``404.html`` 템플릿을 root템플릿 디렉토리에 생성 해야 합니다. 기본적인 404 뷰는 그 템플릿을 모든 404 오류에 사용 할 것입니다.  만약 :setting:`DEBUG`를 ``False`` (in your settings module)로 설정 하거나, ``404.html``
-파일을 만들지 않으면, ``Http500``을 대신 띄웁니다.  그런 이유로 ``404.html``을 생성하는 것을 기억하십시오.
+일반적으로는 404 뷰들을 만드는데 신경쓸 필요가 없습니다.  만약 ``handler404``를 설정하지 않으면, 내장된 :func:`django.views.defaults.page_not_found`\ 를 기본적으로 사용합니다.  이 경우에도 여전히 한 가지 할 일이 남아 있기는 합니다. ``404.html`` 템플릿을 root템플릿 디렉토리에 생성 해야 합니다. 기본적인 404 뷰는 그 템플릿을 모든 404 오류에 사용 할 것입니다.  만약 :setting:`DEBUG`를 ``False`` (in your settings module)로 설정 하거나, ``404.html``
+파일을 만들지 않으면, ``Http500``\ 을 대신 띄웁니다.  그런 이유로 ``404.html``\ 을 생성하는 것을 기억하십시오.
 
 404 뷰들에 대해서 몇 가지더 알아두어야 할 것이 있습니다.
 
@@ -304,12 +307,12 @@ get_object_or404()는 :meth:`~django.db.models.query.QuerySet.get`\ 를 사용�
 500 (server error) 뷰 작성하기
 ===============================
 
-비슷하게, 루트 URLconf는 서버 오류인 경우에 호출하기 위한 뷰를 가리키는 ``handler500``을 정의 하고 있을 것 입니다. 서버 오류는 뷰 코드에서 런타임 에러가 있을때 발생합니다.
+비슷하게, 루트 URLconf는 서버 오류인 경우에 호출하기 위한 뷰를 가리키는 ``handler500``\ 을 정의하고 있을 것입니다. 서버 오류는 뷰 코드에서 런타임 에러가 있을때 발생합니다.
 
 템플릿 시스템 사용하기
 =======================
 
-투표 어플리케이션의 ``detail()`` 뷰로 돌아가 보도록 합니다. ``poll``이 컨텍스트 변수로 주어졌을때, "polls/detail.html" 템플릿이 어떻게 되는지 보도록 합니다.:
+투표 어플리케이션의 ``detail()`` 뷰로 돌아가 보도록 합니다. ``poll``\ 이 컨텍스트 변수로 주어졌을때, "polls/detail.html" 템플릿이 어떻게 되는지 보도록 합니다.:
 
 .. code-block:: html+django
 
@@ -401,9 +404,9 @@ URLconf의 결합도 낮추기
     )
 
 :func:`~django.conf.urls.include`\ 은 간단하게 다른 URLconf를 참조 합니다.
-정규표현식은 ``$``(문자열의 끝과 일치하는 문자)를 가지지 않고, trailling slash를 가지는 점을 기억하십시오.  어디든지 Django가 :func:`~django.conf.urls.include` 함수를 만나면, 해당 시점에서 URL의 일치하는 부분을 잘라냅니다. 그리고, 남은 문자열을 추가 처리를 위해서 불러들인 URLconf로 전송 합니다. 
+정규표현식은 ``$``\ (문자열의 끝과 일치하는 문자)를 가지지 않고, trailling slash를 가지는 점을 기억하십시오.  어디든지 Django가 :func:`~django.conf.urls.include` 함수를 만나면, 해당 시점에서 URL의 일치하는 부분을 잘라냅니다. 그리고, 남은 문자열을 추가 처리를 위해서 불러들인 URLconf로 전송 합니다. 
 
-사용자가 이 시스템에서  "/polls/34/"으로 이동하는 경우 무슨 일이 생기는지 보십시오:
+사용자가 이 시스템에서  "/polls/34/"\ 로 이동하는 경우 무슨 일이 생기는지 보십시오.
 
 * Django는 ``'^polls/'``\ 에서 일치하는 것을 찾을 것입니다.
 
@@ -411,7 +414,7 @@ URLconf의 결합도 낮추기
   남은 문자 -- ``"34/"`` --를  'polls.urls' URLconf로 추가 처리를 위해서 보냅니다.
    
 
- 이제, URLconf와 Django 설정의 결합도를 낮추었습니다. 우리는 개별 라인 맨 앞에 있는 "polls/"를 삭제하고, 관리자 사이트에 등록한 라인들을 삭제 함으로써 ``polls.urls``와 URLconf의 결합도를 낮추었습니다. ``polls/urls.py`` 파일은 지금 아래와 같아야 합니다. ::
+이제, URLconf와 Django 설정의 결합도를 낮추었습니다. 우리는 개별 라인 맨 앞에 있는 "polls/"를 삭제하고, 관리자 사이트에 등록한 라인들을 삭제 함으로써 ``polls.urls``와 URLconf의 결합도를 낮추었습니다. ``polls/urls.py`` 파일은 지금 아래와 같아야 합니다. ::
 
     from django.conf.urls import patterns, include, url
 
@@ -424,7 +427,7 @@ URLconf의 결합도 낮추기
 
 :func:`~django.conf.urls.include`\ 와 URLconf의 결합도를 낮추는 아이디어는 URL들의 플러그인플레이를 쉽게 만들어 줍니다.  이제 투표들은 각자 URLconf를 가지고 있습니다. 투표들은 "/polls/" 밑에도 있을 수 있고,  "/fun_polls/" 밑에도, "/content/polls/" 밑에도, 그리고 다른 어떠한 루트 경로 에도 있을 수 있습니다. 그리고 앱은 여전히 잘 동작 할 것 입니다.
 
-모든 투표 앱들은 절대 경로가 아니라, 상대 경로를 사용 합니다.
+모든 투표 앱들은 절대 경로가 아니라, 상대 경로를 사용합니다.
 
- 뷰를 작성 하는 것에 익숙해 지면 단순한 폼 처리와 제너릭 뷰를 배우기 위해서 :doc:`part 4 of this tutorial
-</intro/tutorial04>`를 읽어보십시오.
+뷰를 작성 하는 것에 익숙해 지면 단순한 폼 처리와 제너릭 뷰를 배우기 위해서 :doc:`part 4 of this tutorial
+</intro/tutorial04>`\ 를 읽어보십시오.
