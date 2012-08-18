@@ -1,5 +1,5 @@
-﻿=====================================
-첫번째 장고 앱 만들기! part1
+=====================================
+첫 번째 Django 앱 만들기! part1
 =====================================
 
 예제로 배워봅시다.
@@ -11,12 +11,12 @@
 * 공개된 사이트는 사람들이 투표내용을 볼 수 있으며 투표에에 참여 할 수 있습니다.
 * 관리자 사이트는 당신(관리자)이 설문조사에 대하여 추가, 수정, 삭제를 할 수 있습니다.
 
-우리는 여러분이 이미 :doc:`Django 설치</intro/install>`를 완료 하였다고 가정하에 진행 하도록 하겠습니다. 여러분은 파이썬 인터프리터를 실행하여  ``import django``를 입력해 봄으로써 Django가 설치 되어 있는지 확인 할 수 있습니다. 만약 에러없이 실행된다면, Django 설치가 완료된 것입니다.
+우리는 여러분이 이미 :doc:`Django 설치</intro/install>`\ 를 완료 하였다고 가정하에 진행 하도록 하겠습니다. 여러분은 파이썬 인터프리터를 실행하여  ``import django``\ 를 입력해 봄으로써 Django가 설치되어 있는지 확인할 수 있습니다. 만약 에러 없이 실행된다면, Django 설치가 완료된 것입니다.
 
 .. admonition:: 도움말은 어디서 얻을 수 있나요?:
 
     만약 여러분이 이 자습서를 따라하는 도중 문제가 발생 할 경우 
-     `django-users`__ 로 메시지를 보내 주시거나 또는 `#django on irc.freenode.net`__ 에서
+     `django-users`__\ 로 메시지를 보내 주시거나 또는 `#django on irc.freenode.net`__\ 에서
     당신에게 도움을 줄 다른 Django 사용자와 채팅을 할 수 있습니다.
 
 __ http://groups.google.com/group/django-users
@@ -25,7 +25,7 @@ __ irc://irc.freenode.net/django
 프로젝트 만들기
 ==================
 
-만약 여러분이 처음으로 Django를 사용 하는 것이라면, 여러분은 몇가지 초기 설정에 신경 써야 합니다. 즉, 여러분은 Django :term:`project` 를 구축하는데 몇가지 자동 생성되는 코드를 필요로 합니다 -- Django의 인스턴스를 위한 세팅들(데이터베이스 설정을 포함), Django의 특별한 옵션과 애플리캐이션의 특별한 설정들.
+만약 여러분이 처음으로 Django를 사용 하는 것이라면, 여러분은 몇가지 초기 설정에 신경 써야 합니다. 즉, 여러분은 Django :term:`project` 를 구축하는데 몇가지 자동 생성되는 코드를 필요로 합니다 -- Django의 인스턴스를 위한 세팅들(데이터베이스 설정을 포함), Django의 특별한 옵션과 애플리케이션의 특별한 설정들.
 
 명령행에서 , ``cd`` 디렉토리 (코드가 생성될 디렉토리)로 디렉토리 이동 후 다음 명령어 실행:
 
@@ -44,10 +44,10 @@ __ irc://irc.freenode.net/django
 
 .. admonition:: Mac OS X 권한
 
-   만약 여러분이 Mac OS X를 사용 하신다면, 여러분은 ``django-admin.py startproject``를 실행 할 때 
+   만약 여러분이 Mac OS X를 사용 하신다면, 여러분은 ``django-admin.py startproject``\ 를 실행할 때 
    "permission denied" 메시지를  볼 수 있을 것입니다. OS X와 같은 유닉스 기반 시스템은, 프로그램을 실행하기 전에 해당 파일에 "executable(실행)" 
-   표시를 해줘야 하기 때문입니다. 실생 표시를 하기 위해서는, 터미널 앱을 열고 
-    :doc:`django-admin.py</ref/django-admin>` 가 설치되어 있는 디렉토리로 이동합니다. (``cd``명령을 사용)
+   표시를 해줘야 하기 때문입니다. 실행 표시를 하기 위해서는, 터미널 앱을 열고 
+   :doc:`django-admin.py</ref/django-admin>`\ 가 설치되어 있는 디렉토리로 이동합니다. (``cd``명령을 사용)
    그리고 ``sudo chmod +x django-admin.py`` 명령어를 실행합니다.
 
 .. 참고::
@@ -57,11 +57,11 @@ __ irc://irc.freenode.net/django
 
 :doc:`django-admin.py </ref/django-admin>`는 여러분이 Django를 ``python setup.py`` 명령으로 설치를 하였다면 여러분의 시스템 경로에 존재 할 것입니다. 만약 찾을 수 없다면 여러분은 
 ``site-packages/django/bin`` 여기에서 찾을 수 있을 것 이고, ``site-packages`` 는 파이썬의 설치 경로입니다. 
-불편하다면 :doc:`django-admin.py </ref/django-admin>` 을 :file:`/usr/local/bin`로 심볼릭링크를 걸어 둘 것을 고려 해 볼 수 있습니다.
+불편하다면 :doc:`django-admin.py </ref/django-admin>` 을 :file:`/usr/local/bin`\ 로 심볼릭링크를 걸어두는 것을 고려해 볼 수 있습니다.
 
 .. admonition:: 어디에서 이 코드가 실행 되나요?
 
-    만약 여러분이 PHP개발 자라면, 아마도 여러분은 웹 서버의 document root 디렉토리(``/var/www``과 비슷한)에 코드를 Django와 같이 올리려 할 것 입니다.
+    만약 여러분이 PHP개발 자라면, 아마도 여러분은 웹 서버의 document root 디렉토리(``/var/www``\ 과 비슷한)에 코드를 Django와 같이 올리려 할 것 입니다.
     하지만 파이썬 코드를 웹 서버와 같이 올려 두는 것은 위험에 노출 될 가능 성이 있기 때문에 그렇게 하지 않는 편이 좋습니다.
     많은 사람들은 웹을 통하여 여러분의 코드를 볼 수 있고, 그럴 경우 보안상 좋지 않습니다.
 
@@ -97,7 +97,7 @@ __ irc://irc.freenode.net/django
 
 * :file:`mysite/settings.py`: Django에서 필요한 설정 및 구성을 하는 파일 입니다. :doc:`/topics/settings` 문서에서 여러분의 Django설정을 어떻게 해야 하는지 알려 줄 것입니다.
 
-* :file:`mysite/urls.py`: Django 프로젝트에서 URL을 설정 합니다; Django site의 "목차(사이트 맵)"입니다. 여러분들은 :doc:`/topics/http/urls`에서 URL에 관한 더 많은 정보를 읽어 볼 수 있습니다.
+* :file:`mysite/urls.py`: Django 프로젝트에서 URL을 설정 합니다; Django site의 "목차(사이트 맵)"입니다. 여러분들은 :doc:`/topics/http/urls`\ 에서 URL에 관한 더 많은 정보를 읽어 볼 수 있습니다.
 
 * :file:`mysite/wsgi.py`: 여러분의 프로젝트가 WSGI 호환 서버에서 서비스를 하기 위한 진입점 입니다. 자세한 사항은 :doc:`/howto/deployment/wsgi/index` 에서 확인 하세요.
 
@@ -106,7 +106,7 @@ __ irc://irc.freenode.net/django
 개발 서버
 ----------------------
 
-동작 하는 지 확인해 봅시다. 만약 여러분의 현재 위치가 밖깥쪽의 :file:`mysite` 디렉토로 가 아닐경우 그 위치로 이동합니다, 그리고 ``python manage.py runserver`` 명령어를 실행합니다. 이제 여러분은 명령행에서 다음과 같이 출력 되는 것을 볼 수 있을 것입니다::
+동작하는지 확인해 봅시다. 만약 여러분의 현재 위치가 밖깥쪽의 :file:`mysite` 디렉토리가 아닐경우 그 위치로 이동합니다, 그리고 ``python manage.py runserver`` 명령어를 실행합니다. 이제 여러분은 명령행에서 다음과 같이 출력 되는 것을 볼 수 있을 것입니다::
 
     Validating models...
     0 errors found.
@@ -118,7 +118,7 @@ __ irc://irc.freenode.net/django
 이제 여러분은 Django 개발 서버를 시작 했습니다. 이것은 경량 웹 서버로서 순수하게 파이썬으로 제작되었습니다. 우리는 여러분이 프로덕션 서버 -- Apache와 같은 -- 를 구축하지 않고
 서버가 준비되기 전까지 뭔가를 빨리 개발 할 수 있도록 이것을 Django에 포함 시켰습니다.
 
-중요사항!: 절때! 서비스 서버환경으로 사용하지 마십시오. 이 서버는 오직 개발하는 동안만 사용 하도록 계획된 것입니다. (우리의 목적은 웹 프레임워크를 만드는 것이지 웹서버를 만드는 것이 아닙니다.)
+중요사항: 절대 서비스 서버환경으로 사용하지 마십시오. 이 서버는 오직 개발하는 동안만 사용 하도록 계획된 것입니다. (우리의 목적은 웹 프레임워크를 만드는 것이지 웹서버를 만드는 것이 아닙니다.)
 
 서버 동작을 확인 하기 위해서 웹 브라우저에서 http://127.0.0.1:8000/를 방문해 보세요. 여러분은 유쾌하고 라이트 블루 파스텔톤의 "Welcome to Django" 페이지를 볼 수 있을 것입니다.
 성공!
@@ -141,17 +141,17 @@ __ irc://irc.freenode.net/django
 
         python manage.py runserver 0.0.0.0:8000
 
-    개발 서버에 관한해서는 :djadmin:`runserver`에서 찾으실 수 있습니다.
+    개발 서버에 관해서는 :djadmin:`runserver`\ 에서 찾으실 수 있습니다.
 
 데이터베이스 설치
 --------------
 
-이제, :file:`mysite/settings.py`파일을 수정해 봅시다. 이 파일은 Django 설정을 하는 모듈 수준의 변수를 가진 파이선의 표준 모듈입니다. 여러분의 데이터 베이스와 맞도록 :setting:`DATABASES` ``'default'`` 키를 수정 하세요.
+이제, :file:`mysite/settings.py` 파일을 수정해 봅시다. 이 파일은 Django 설정을 하는 모듈 수준의 변수를 가진 파이선의 표준 모듈입니다. 여러분의 데이터 베이스와 맞도록 :setting:`DATABASES` ``'default'`` 키를 수정 하세요.
 
 * :setting:`ENGINE <DATABASE-ENGINE>` --
   ``'django.db.backends.postgresql_psycopg2'``,
   ``'django.db.backends.mysql'``, ``'django.db.backends.sqlite3'`` 또는
-  ``'django.db.backends.oracle'``중 선택하세요. 다른 백엔드 또한 준비 되어 있습니다.( :setting:`also available <DATABASE-ENGINE>`).
+  ``'django.db.backends.oracle'`` 중 선택하세요. 다른 백엔드 또한 준비 되어 있습니다.( :setting:`also available <DATABASE-ENGINE>`).
 
 * :setting:`NAME` -- 여러분의 데이터 베이스 이름 입니다. 만약 여러분이 SQLite를 사용한다면, 데이터베이스가 여러분의 컴퓨터에 있는 파일이 될 것입니다; 
   그 경우, :setting:`NAME` 은 파일 명을 포함하는 절대 경로 가됩니다(full path). 만약 파일이 존재하지 않는다면, 여러분이 데이터베이스를 최초 싱크 할 때 자동으로 만들어 질 것입니다.(하단 참조).
@@ -173,9 +173,9 @@ __ irc://irc.freenode.net/django
 
     여러분이 SQLite을 사용 하신다면, 여러분은 아무것도 만들 필요가 없습니다 - 데이터베이스 파일이 필요 할 때 자동으로 생성됩니다.
 
-여러분이 :file:`settings.py`을 수정 할 때, :setting:`TIME_ZONE` 을 여러분의 타임존에 맞게 수정하세요. 기본값은 미국 중부 시간입니다(시카고).
+여러분이 :file:`settings.py`\ 을 수정 할 때, :setting:`TIME_ZONE`\ 을 여러분의 타임존에 맞게 수정하세요. 기본값은 미국 중부 시간입니다(시카고).
 
-또한,  파일 제일 아래쪽에 있는 :setting:`INSTALLED_APPS` 을 확인하세요. 여기에는 Django 인스턴스에서 사용하는 모든 애플리케이션의 이름을 갖고 있습니다. 앱은 여러 프로젝트에서 사용 할 수 있고, 여러분은 다른 프로젝트에서 사용 가능하도록 패키지 하여 재 배포를 할 수 있습니다.
+또한,  파일 제일 아래쪽에 있는 :setting:`INSTALLED_APPS`\ 을 확인하세요. 여기에는 Django 인스턴스에서 사용하는 모든 애플리케이션의 이름을 갖고 있습니다. 앱은 여러 프로젝트에서 사용 할 수 있고, 여러분은 다른 프로젝트에서 사용 가능하도록 패키지 하여 재 배포를 할 수 있습니다.
 
 기본적으로, :setting:`INSTALLED_APPS` Djanog 프로젝트 생성시 다음과 같은 앱을 포함하고 있습니다:
 
@@ -206,8 +206,8 @@ __ irc://irc.freenode.net/django
 .. admonition:: 미니멀리즘을 위해
 
     위에서 말했듯이, 기본 응용프로그램은 일반적인 케이스에 포함하지만, 모든사람이 다 필요로 하지 않습니다. 만약 여러분이 일부 또는 전부가 필요없다면,
-    :djadmin:`syncdb`명령은 오직 :setting:`INSTALLED_APPS` 안에 설정된 앱에 대해서만 테이블을 생성 하기때문에 
-	:djadmin:`syncdb`를 실행 하기 전에  자유롭게 :setting:`INSTALLED_APPS` 에서 주석 처리를 하거나 삭제 할 수 있습니다.
+    :djadmin:`syncdb` 명령은 오직 :setting:`INSTALLED_APPS` 안에 설정된 앱에 대해서만 테이블을 생성 하기때문에 
+    :djadmin:`syncdb`를 실행 하기 전에  자유롭게 :setting:`INSTALLED_APPS`\ 에서 주석 처리를 하거나 삭제 할 수 있습니다.
 
 .. _creating-models:
 
@@ -224,15 +224,15 @@ __ irc://irc.freenode.net/django
 	프로젝트는 웹사이트에 대한 구성 및 특정 앱들의 집합입니다. 프로젝트는 다양한 앱을 포함하고 있습니다.
 	앱은 다양한 프로젝트에서 사용 할 수 있습니다.
 
-여러분의 앱은 `Python path`_ 어딘가에 있습니다. 이 자습서에서 우리는 :file:`manage.py` 을 이용하여 투표앱을 만들 것입니다. 이것은 ``mysite``의 서브모듈보다도 더 중요한 모듈입니다.
+여러분의 앱은 `Python path`_ 어딘가에 있습니다. 이 자습서에서 우리는 :file:`manage.py`\ 을 이용하여 투표앱을 만들 것입니다. 이것은 ``mysite``\ 의 서브모듈보다도 더 중요한 모듈입니다.
 
-여러분이 앱을 만들기 위해서는  :file:`manage.py`와 같은 디렉토리에서 다음과 같은 명령어를 입력 합니다:
+여러분이 앱을 만들기 위해서는  :file:`manage.py`\ 와 같은 디렉토리에서 다음과 같은 명령어를 입력 합니다:
 
 .. code-block:: bash
 
     python manage.py startapp polls
 
-이 명령어는 다음과 같은 구조를 갖는  :file:`polls`디렉토리를 만들 것입니다::
+이 명령어는 다음과 같은 구조를 갖는  :file:`polls` 디렉토리를 만들 것입니다::
 
     polls/
         __init__.py
@@ -274,10 +274,10 @@ Django에서 데이터베이스 웹 앱 작성의 첫 단계는 데이터베이�
 여기에서 여러분은 선택적으로 :class:`~django.db.models.Field` 의 첫번째 인자를 사람이 읽을 수 있는 이름으로 지정 할 수 있습니다. 그것은 Django의 내부적으로 사용되고, 두가지로 설명 해 줍니다.
 만약 이 필드를 제공하지 않는다면, Django는 기계가 읽을수 있는 이름만을 사용해야 합니다. 예제에서, 우리는 ``Poll.pub_date``에 대해서만 사람이 읽을 수 있는 이름을 정의 했습니다. 이 모델에서는 다른 모든 필드는 기계가 읽을 수 있는 이름도 충분히 사람이 읽을 수 있는 이름이기 때문입니다.
 
-일부 :class:`~django.db.models.Field` 클레스들은 필수 요소를 필요로 합니다.
-예를 들어 :class:`~django.db.models.CharField`는 :attr:`~django.db.models.Field.max_length`를 필수로 필요합니다. 이것은 데이터베이스 스키마에서만 사용 하는 것이 아니라 데이터 검증에서도 사용 합니다. 우리는 그것을 곧 보게 될 것입니다.
+일부 :class:`~django.db.models.Field` 클래스들은 필수 요소를 필요로 합니다.
+예를 들어 :class:`~django.db.models.CharField`\ 는 :attr:`~django.db.models.Field.max_length`\ 를 필수로 필요합니다. 이것은 데이터베이스 스키마에서만 사용 하는 것이 아니라 데이터 검증에서도 사용 합니다. 우리는 그것을 곧 보게 될 것입니다.
 
-마지막으로, :class:`~django.db.models.ForeignKey`를 이용하여 릴레이션쉽을 정의 했습니다. 이것은 Choice가 하나의 Poll과 관계가 있다고 Django에게 알려줍니다. Django는 다음과 같은 공통의 데이터베이스 릴레이션쉽을 제공합니다:
+마지막으로, :class:`~django.db.models.ForeignKey`\ 를 이용하여 릴레이션쉽을 정의 했습니다. 이것은 Choice가 하나의 Poll과 관계가 있다고 Django에게 알려줍니다. Django는 다음과 같은 공통의 데이터베이스 릴레이션쉽을 제공합니다:
 many-to-ones, many-to-manys, one-to-ones.
 
 .. _`Python path`: http://docs.python.org/tutorial/modules.html#the-module-search-path
@@ -297,7 +297,9 @@ many-to-ones, many-to-manys, one-to-ones.
     Django앱은 "플러그" 입니다: 여러분은 여러 프로젝트에서 앱을 사용 할 수 있으며,
     앱을 재배포 할 수 있습니다. 왜냐하면 앱들은 Django설치와 밀접하게 묶일 필요가 없기 때문입니다.
 
-:file:`settings.py` 파일에서 :setting:`INSTALLED_APPS` 에  ``'polls'``을 포함하도록 수정합니다. 그러면 다음과 같이 보일 것입니다::
+:file:`settings.py` 파일에서 :setting:`INSTALLED_APPS`\ 에  ``'polls'``\ 을 포함하도록 수정합니다. 그러면 다음과 같이 보일 것입니다.
+
+::
 
     INSTALLED_APPS = (
         'django.contrib.auth',
@@ -313,7 +315,7 @@ many-to-ones, many-to-manys, one-to-ones.
         'polls',
     )
 
-이제 Django는 ``polls``앱이 포함되었다는 것을 알게 됩니다. 다음 명령어를 실행해 봅시다:
+이제 Django는 ``polls`` 앱이 포함되었다는 것을 알게 됩니다. 다음 명령어를 실행해 봅시다:
 
 .. code-block:: bash
 
@@ -349,7 +351,7 @@ many-to-ones, many-to-manys, one-to-ones.
 
 * 왜래키 릴레이션쉽은 ``REFERENCES`` 문으로 명시됩니다.
 
-* 그것은 사용중인 데이터베이스에 맞게 ``auto_increment`` (MySQL), ``serial`` (PostgreSQL), ``integer primary key``(SQLite)등과 같이 필드 유형에 맞게 자동으로 사용됩니다. 같은 필드 이름의 인용을 위해 사용된다. -- e.g., 큰따옴표 또는 작은 따옴표. 
+* 그것은 사용중인 데이터베이스에 맞게 ``auto_increment`` (MySQL), ``serial`` (PostgreSQL), ``integer primary key``(SQLite) 등과 같이 필드 유형에 맞게 자동으로 사용됩니다. 같은 필드 이름의 인용을 위해 사용된다. -- e.g., 큰따옴표 또는 작은 따옴표. 
   이 자습서의 저자는 PostgreSQL를 이용하여 실행 하였으므로, 예제의출력물 역시 PostgreSQL 문법에 따릅니다.
 
 * :djadmin:`sql` 명령어는 실제로 여러분의 데이터 베이스에 SQL문을 실행하지 않습니다.
@@ -375,10 +377,10 @@ many-to-ones, many-to-manys, one-to-ones.
 
     python manage.py syncdb
 
-:djadmin:`syncdb` 명령은 :setting:`INSTALLED_APPS`있는 앱중 이미 데이터베이스에 존재하는 앱을 제외한 모든 앱에 대하여 :djadmin:`sqlall`를 실행 합니다. 이것은 여러분이 syncdb 명령을 마지막으로 실행한 이후에 일어난 모든 앱에 대한 테이블과 초기 데이터, 인덱스를 만듭니다.
-:djadmin:`syncdb` 는 원할 때 마다 호출이 가능 하며, 이것은 오직 생성되지 않은 테이블에 대해서만 테이블을 생성합니다.
+:djadmin:`syncdb` 명령은 :setting:`INSTALLED_APPS` 있는 앱중 이미 데이터베이스에 존재하는 앱을 제외한 모든 앱에 대하여 :djadmin:`sqlall`\ 를 실행 합니다. 이것은 여러분이 syncdb 명령을 마지막으로 실행한 이후에 일어난 모든 앱에 대한 테이블과 초기 데이터, 인덱스를 만듭니다.
+:djadmin:`syncdb` 는 원할 때 마다 호출이 가능하며, 이것은 오직 생성되지 않은 테이블에 대해서만 테이블을 생성합니다.
 
- ``manage.py`` 유틸리티가 무엇을 할 수 있는지에 대한 정보는 :doc:`django-admin.py 문서 </ref/django-admin>` 를 읽어 보십시오.
+``manage.py`` 유틸리티가 무엇을 할 수 있는지에 대한 정보는 :doc:`django-admin.py 문서 </ref/django-admin>`\ 를 읽어 보십시오.
 
 API와 놀기
 ====================
@@ -393,12 +395,14 @@ API와 놀기
 
 .. admonition:: manage.py 건너뛰기
 
-    만약  :file:`manage.py`을 사용하지 않는다 해도 문제없습니다. 단지 ``mysite.settings`` 에 ``DJANGO_SETTINGS_MODULE`` 환경변수를 설정하고
-    :file:`manage.py` 파일이 있는 같은 디렉토리에서 ``python``을 실행 하면됩니다. (또는 그 디렉토리가 파이썬 경로에 위치 하거나 ``import mysite`` 해야 사용 할 수 있습니다).
+    만약  :file:`manage.py`\ 를 사용하지 않는다 해도 문제없습니다. 단지 ``mysite.settings``\ 에 ``DJANGO_SETTINGS_MODULE`` 환경변수를 설정하고
+    :file:`manage.py` 파일이 있는 같은 디렉토리에서 ``python``\ 을 실행 하면됩니다. (또는 그 디렉토리가 파이썬 경로에 위치 하거나 ``import mysite`` 해야 사용 할 수 있습니다).
 
-    더 많은 정보를 원단하면 :doc:`django-admin.py문서 </ref/django-admin>`를 확인 하세요.
+    더 많은 정보를 원한다면 :doc:`django-admin.py문서 </ref/django-admin>`\ 를 확인하세요.
 
-일단 쉘에서  :doc:`database API </topics/db/queries>`를 확인해 보세요::
+일단 쉘에서  :doc:`database API </topics/db/queries>`\ 를 확인해 보세요.
+
+::
 
     >>> from polls.models import Poll, Choice   # Import the model classes we just wrote.
 
@@ -438,7 +442,9 @@ API와 놀기
     [<Poll: Poll object>]
 
 
-잠시만요. ``<Poll: Poll object>``는 완전히 이 객체 자체를 표현 하지 객체의 내용을 표현 하지 않습니다. 우리는 polls 모델을 수정하여(``polls/models.py`` 파일) ``Poll`` 과``Choice``에  :meth:`~django.db.models.Model.__unicode__` 를 추가하여 원하는 내용을 표현 할 수 있습니다::
+잠시만요. ``<Poll: Poll object>``\ 는 완전히 이 객체 자체를 표현 하지 객체의 내용을 표현 하지 않습니다. 우리는 polls 모델을 수정하여(``polls/models.py`` 파일) ``Poll``\ 과``Choice``\ 에 :meth:`~django.db.models.Model.__unicode__`\ 를 추가하여 원하는 내용을 표현 할 수 있습니다.
+
+::
 
     class Poll(models.Model):
         # ...
@@ -450,19 +456,21 @@ API와 놀기
         def __unicode__(self):
             return self.choice
 
-:meth:`~django.db.models.Model.__unicode__` 메소드를 추가 하는 것은 여러분의 모델에서 매우 중요합니다. 이것은 대화식 프롬프트에서 사용 할 때 뿐만 아니라,Django에서 자동 생성되는 관리자 화면에서 표현 할 때도 사용됩니다.
+:meth:`~django.db.models.Model.__unicode__` 메소드를 추가 하는 것은 여러분의 모델에서 매우 중요합니다. 이것은 대화식 프롬프트에서 사용 할 때 뿐만 아니라, Django에서 자동 생성되는 관리자 화면에서 표현 할 때도 사용됩니다.
 
-.. admonition:: 왜 :meth:`~django.db.models.Model.__unicode__` 은 되고 :meth:`~django.db.models.Model.__str__`은 안되나요?
+.. admonition:: 왜 :meth:`~django.db.models.Model.__unicode__` 은 되고 :meth:`~django.db.models.Model.__str__`\ 은 안되나요?
 
-    만약 여러분이 파이썬에 익숙한 경우,여러분은 :meth:`~django.db.models.Model.__unicode__` 메소드 대신 :meth:`~django.db.models.Model.__str__`를 추가하는 습관이 있을 수 있습니다. 우리가
-    :meth:`~django.db.models.Model.__unicode__` 을 사용 하는 이유는 Django 모델에서는 기본적으로 유니코드를 사용하기로 약속 했기 때문입니다. 데이터가 반환될때 여러분의 데이터베이스에 있는 모든데이터는
+    만약 여러분이 파이썬에 익숙한 경우,여러분은 :meth:`~django.db.models.Model.__unicode__` 메소드 대신 :meth:`~django.db.models.Model.__str__`\ 를 추가하는 습관이 있을 수 있습니다. 우리가
+    :meth:`~django.db.models.Model.__unicode__`\ 을 사용 하는 이유는 Django 모델에서는 기본적으로 유니코드를 사용하기로 약속 했기 때문입니다. 데이터가 반환될때 여러분의 데이터베이스에 있는 모든 데이터는
     유니코드로 변환되어 반환됩니다.
 
-    Django 모델은 기본적으로 :meth:`~django.db.models.Model.__str__` 메소드는 :meth:`~django.db.models.Model.__unicode__` 를 호출한 결과를 UTF-8 바이트 스트링으로 변환하여 보여줍니다. 이 말은 ``unicode(p)``는 유니코드 문자열을, ``str(p)`` 은 UTF-8로 변환된 기본 문자열을 반환 한다는 뜻 입니다.
+    Django 모델은 기본적으로 :meth:`~django.db.models.Model.__str__` 메소드는 :meth:`~django.db.models.Model.__unicode__`\ 를 호출한 결과를 UTF-8 바이트 스트링으로 변환하여 보여줍니다. 이 말은 ``unicode(p)``\ 는 유니코드 문자열을, ``str(p)``\ 은 UTF-8로 변환된 기본 문자열을 반환한다는 뜻입니다.
 
-    이 모든것이 혼란스럽다면 모델에서 :meth:`~django.db.models.Model.__unicode__` 메소드만 사용 한 다는 것을 기억하세요. 운이 좋다면, 이 모든 것은 잘 동작 할 것입니다.
+    이 모든것이 혼란스럽다면 모델에서 :meth:`~django.db.models.Model.__unicode__` 메소드만 사용한다는 것을 기억하세요. 운이 좋다면, 이 모든 것은 잘 동작할 것입니다.
 
-다음은 일반적인 파이썬 방법입니다. 데모를 위해 여기에 사용자 정의 메소드를 추가하세요.::
+다음은 일반적인 파이썬 방법입니다. 데모를 위해 여기에 사용자 정의 메소드를 추가하세요.
+
+::
 
     import datetime
     from django.utils import timezone
@@ -472,9 +480,11 @@ API와 놀기
         def was_published_recently(self):
             return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
-참고로 추가한  ``import datetime``과 ``from django.utils import timezone``은 각각 파이썬의 표준 메소드인 :mod:`datetime` 과 Django의 time-zone-related 유틸리테에 들어있는  :mod:`django.utils.timezone`을 참조하세요. 여러분이 파이썬 시간 처리에 대해 익수하지 않은경우, 여러분은 :doc:`time zone support docs </topics/i18n/timezones>`에서 배울 수 있습니다.
+참고로 추가한 ``import datetime``\ 과 ``from django.utils import timezone``\ 은 각각 파이썬의 표준 메소드인 :mod:`datetime` 과 Django의 time-zone-related 유틸리테에 들어있는  :mod:`django.utils.timezone`을 참조하세요. 여러분이 파이썬 시간 처리에 대해 익수하지 않은경우, 여러분은 :doc:`time zone support docs </topics/i18n/timezones>`\ 에서 배울 수 있습니다.
 
-저장 후 ``python manage.py shell`` 이용하여 새로운 파이썬 대화형 쉘을 실행하세요::
+저장 후 ``python manage.py shell`` 이용하여 새로운 파이썬 대화형 쉘을 실행하세요.
+
+::
 
     >>> from polls.models import Poll, Choice
 
@@ -548,6 +558,6 @@ API와 놀기
     >>> c = p.choice_set.filter(choice__startswith='Just hacking')
     >>> c.delete()
 
-모델관계에 대한 자세한 사항은 :doc:`Accessing related objects </ref/models/relations>`을 확인 하세요. API에서 이중밑줄(__)을 어떻게 사용 하는지에 대한 자세한 사항은 :ref:`Field lookups <field-lookups-intro>`에서 확인하세요. 데이터베이스 API에대한 자세한 사항은 :doc:`Database API reference </topics/db/queries>`에서 확인하세요.
+모델관계에 대한 자세한 사항은 :doc:`Accessing related objects </ref/models/relations>`\ 을 확인 하세요. API에서 이중밑줄(__)을 어떻게 사용 하는지에 대한 자세한 사항은 :ref:`Field lookups <field-lookups-intro>`에서 확인하세요. 데이터베이스 API에대한 자세한 사항은 :doc:`Database API reference </topics/db/queries>`\ 에서 확인하세요.
 
-이제 여러분이 API를 익숙하게 사용 하신다면, :doc:`part 2 of this tutorial </intro/tutorial02>`로 가서 Django에서 자동으로 생성되는 관리자에 대하여 확인하세요.
+이제 여러분이 API를 익숙하게 사용 하신다면, :doc:`part 2 of this tutorial </intro/tutorial02>`\ 로 가서 Django에서 자동으로 생성되는 관리자에 대하여 확인하세요.
