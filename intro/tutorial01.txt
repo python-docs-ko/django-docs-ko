@@ -13,7 +13,7 @@
 
 우리는 여러분이 이미 :doc:`Django 설치</intro/install>`\ 를 완료 하였다고 가정하에 진행 하도록 하겠습니다. 여러분은 파이썬 인터프리터를 실행하여  ``import django``\ 를 입력해 봄으로써 Django가 설치되어 있는지 확인할 수 있습니다. 만약 에러 없이 실행된다면, Django 설치가 완료된 것입니다.
 
-.. admonition:: 도움말은 어디서 얻을 수 있나요?:
+.. admonition:: 도움말은 어디서 얻을 수 있나요?
 
     만약 여러분이 이 자습서를 따라하는 도중 문제가 발생 할 경우 
      `django-users`__\ 로 메시지를 보내 주시거나 또는 `#django on irc.freenode.net`__\ 에서
@@ -39,7 +39,7 @@ __ irc://irc.freenode.net/django
 
    만약 여러분이 리눅스 배포판 패키지 관리자를 이용하여 Django를 설치 하였다면 
    (e.g. apt-get or yum) ``django-admin.py`` 파일의 이름이 
-   ``django-admin``로 변경 되었을 수도 있습니다. 그럴 경우 여러분은 이 문서에서 계속적으로 각 명령에 
+   ``django-admin``\ 로 변경 되었을 수도 있습니다. 그럴 경우 여러분은 이 문서에서 계속적으로 각 명령에 
    ``.py`` 을 생략하여 사용 할 수 있습니다.
 
 .. admonition:: Mac OS X 권한
@@ -55,8 +55,8 @@ __ irc://irc.freenode.net/django
     여러분은 파이썬이나 Django 구성요소에 내장된 이름을 프로젝트 이름을 정하는 것을 피해야 합니다. 특히, 
     ``django`` (Django자체와 충돌 발생)나 ``test``(파이썬 패키지에 내장되어 있어 충돌이 발생)과 같은 이름사용을 주의해야 한다는 것 입니다.
 
-:doc:`django-admin.py </ref/django-admin>`는 여러분이 Django를 ``python setup.py`` 명령으로 설치를 하였다면 여러분의 시스템 경로에 존재 할 것입니다. 만약 찾을 수 없다면 여러분은 
-``site-packages/django/bin`` 여기에서 찾을 수 있을 것 이고, ``site-packages`` 는 파이썬의 설치 경로입니다. 
+:doc:`django-admin.py </ref/django-admin>`\ 는 여러분이 Django를 ``python setup.py`` 명령으로 설치를 하였다면 여러분의 시스템 경로에 존재 할 것입니다. 만약 찾을 수 없다면 여러분은 
+``site-packages/django/bin`` 여기에서 찾을 수 있을 것 이고, ``site-packages``\ 는 파이썬의 설치 경로입니다. 
 불편하다면 :doc:`django-admin.py </ref/django-admin>` 을 :file:`/usr/local/bin`\ 로 심볼릭링크를 걸어두는 것을 고려해 볼 수 있습니다.
 
 .. admonition:: 어디에서 이 코드가 실행 되나요?
@@ -120,7 +120,7 @@ __ irc://irc.freenode.net/django
 
 중요사항: 절대 서비스 서버환경으로 사용하지 마십시오. 이 서버는 오직 개발하는 동안만 사용 하도록 계획된 것입니다. (우리의 목적은 웹 프레임워크를 만드는 것이지 웹서버를 만드는 것이 아닙니다.)
 
-서버 동작을 확인 하기 위해서 웹 브라우저에서 http://127.0.0.1:8000/를 방문해 보세요. 여러분은 유쾌하고 라이트 블루 파스텔톤의 "Welcome to Django" 페이지를 볼 수 있을 것입니다.
+서버 동작을 확인 하기 위해서 웹 브라우저에서 http://127.0.0.1:8000/\ 를 방문해 보세요. 여러분은 유쾌하고 라이트 블루 파스텔톤의 "Welcome to Django" 페이지를 볼 수 있을 것입니다.
 성공!
 
 .. admonition:: 포트 변경하기
@@ -165,7 +165,7 @@ __ irc://irc.freenode.net/django
 
 * :setting:`HOST` -- 데이터베이스가 있는 호스트데이터 베이스가 동일한 물리적 장치에 있다면 비어있는 문자열을 사용합니다. (SQLite 에서는 사용하지 않습니다).
 
-만약 여러분이 새로운 데이터 베이스를 사용 하길 원하신다면, 쉽게 사용 가능 한 SQLite를 추천합니다. :setting:`ENGINE`에  ``'django.db.backends.sqlite3'`` 를 입력하고 :setting:`NAME` 에 데이터베이스 파일이 저장 될 경로를 입력 하시면 됩니다. SQLite는 파이썬 2.5 이상부터 포함되어 있어서 여러분은 데이터베이스 지원을 위해서 아무것도 설치 할 필요가 없습니다.
+만약 여러분이 새로운 데이터 베이스를 사용 하길 원하신다면, 쉽게 사용 가능 한 SQLite를 추천합니다. :setting:`ENGINE`\ 에  ``'django.db.backends.sqlite3'``\ 를 입력하고 :setting:`NAME`\ 에 데이터베이스 파일이 저장될 경로를 입력하시면 됩니다. SQLite는 파이썬 2.5 이상부터 포함되어 있어서 여러분은 데이터베이스 지원을 위해서 아무것도 설치할 필요가 없습니다.
 
 .. 참고::
 
@@ -207,7 +207,7 @@ __ irc://irc.freenode.net/django
 
     위에서 말했듯이, 기본 응용프로그램은 일반적인 케이스에 포함하지만, 모든사람이 다 필요로 하지 않습니다. 만약 여러분이 일부 또는 전부가 필요없다면,
     :djadmin:`syncdb` 명령은 오직 :setting:`INSTALLED_APPS` 안에 설정된 앱에 대해서만 테이블을 생성 하기때문에 
-    :djadmin:`syncdb`를 실행 하기 전에  자유롭게 :setting:`INSTALLED_APPS`\ 에서 주석 처리를 하거나 삭제 할 수 있습니다.
+    :djadmin:`syncdb`\ 를 실행 하기 전에  자유롭게 :setting:`INSTALLED_APPS`\ 에서 주석 처리를 하거나 삭제 할 수 있습니다.
 
 .. _creating-models:
 
@@ -272,7 +272,7 @@ Django에서 데이터베이스 웹 앱 작성의 첫 단계는 데이터베이�
 각 :class:`~django.db.models.Field` 인스턴스의 이름은(e.g. ``question`` 또는 ``pub_date`` )기계친화적인 필드이름 입니다. 여러분은 이것을 여러분의 파이썬 코드에서 사용하고, 데이터베이스는 필드 이름으로 사용합니다.
 
 여기에서 여러분은 선택적으로 :class:`~django.db.models.Field` 의 첫번째 인자를 사람이 읽을 수 있는 이름으로 지정 할 수 있습니다. 그것은 Django의 내부적으로 사용되고, 두가지로 설명 해 줍니다.
-만약 이 필드를 제공하지 않는다면, Django는 기계가 읽을수 있는 이름만을 사용해야 합니다. 예제에서, 우리는 ``Poll.pub_date``에 대해서만 사람이 읽을 수 있는 이름을 정의 했습니다. 이 모델에서는 다른 모든 필드는 기계가 읽을 수 있는 이름도 충분히 사람이 읽을 수 있는 이름이기 때문입니다.
+만약 이 필드를 제공하지 않는다면, Django는 기계가 읽을수 있는 이름만을 사용해야 합니다. 예제에서, 우리는 ``Poll.pub_date``\ 에 대해서만 사람이 읽을 수 있는 이름을 정의 했습니다. 이 모델에서는 다른 모든 필드는 기계가 읽을 수 있는 이름도 충분히 사람이 읽을 수 있는 이름이기 때문입니다.
 
 일부 :class:`~django.db.models.Field` 클래스들은 필수 요소를 필요로 합니다.
 예를 들어 :class:`~django.db.models.CharField`\ 는 :attr:`~django.db.models.Field.max_length`\ 를 필수로 필요합니다. 이것은 데이터베이스 스키마에서만 사용 하는 것이 아니라 데이터 검증에서도 사용 합니다. 우리는 그것을 곧 보게 될 것입니다.
@@ -343,7 +343,7 @@ many-to-ones, many-to-manys, one-to-ones.
 
 * 정확한 출력은 사용중인 데이터베이스에 따라 달라집니다.
 
-* 테이블 이름은 앱 이름(``polls``)과 소문자 모델이름 --``poll``, ``choice``과 합성되어 자동으로 생성됩니다.(여러분은 이동작을 재 정의 할 수 있습니다.)
+* 테이블 이름은 앱 이름(``polls``)과 소문자 모델이름 --``poll``, ``choice``\ 과 합성되어 자동으로 생성됩니다.(여러분은 이동작을 재 정의 할 수 있습니다.)
 
 * Primary key는(IDs) 자동으로 추가됩니다. (여러분은 이것 또한 재정의 할 수 있습니다.)
 
@@ -351,7 +351,7 @@ many-to-ones, many-to-manys, one-to-ones.
 
 * 왜래키 릴레이션쉽은 ``REFERENCES`` 문으로 명시됩니다.
 
-* 그것은 사용중인 데이터베이스에 맞게 ``auto_increment`` (MySQL), ``serial`` (PostgreSQL), ``integer primary key``(SQLite) 등과 같이 필드 유형에 맞게 자동으로 사용됩니다. 같은 필드 이름의 인용을 위해 사용된다. -- e.g., 큰따옴표 또는 작은 따옴표. 
+* 그것은 사용중인 데이터베이스에 맞게 ``auto_increment`` (MySQL), ``serial`` (PostgreSQL), ``integer primary key`` (SQLite) 등과 같이 필드 유형에 맞게 자동으로 사용됩니다. 같은 필드 이름의 인용을 위해 사용된다. -- e.g., 큰따옴표 또는 작은 따옴표. 
   이 자습서의 저자는 PostgreSQL를 이용하여 실행 하였으므로, 예제의출력물 역시 PostgreSQL 문법에 따릅니다.
 
 * :djadmin:`sql` 명령어는 실제로 여러분의 데이터 베이스에 SQL문을 실행하지 않습니다.
@@ -391,7 +391,7 @@ API와 놀기
 
     python manage.py shell
 
-:file:`manage.py` 파일 이 여러분의 :file:`settings.py`에서 Djanog에게 파이썬 가져오기 경로를 ``DJANGO_SETTINGS_MODULE`` 환경설정을 통해 제공 하기 때문에 우리는 단순히  "python"이라고 입력 하면 됩니다.
+:file:`manage.py` 파일 이 여러분의 :file:`settings.py`\ 에서 Djanog에게 파이썬 가져오기 경로를 ``DJANGO_SETTINGS_MODULE`` 환경설정을 통해 제공 하기 때문에 우리는 단순히  "python"이라고 입력 하면 됩니다.
 
 .. admonition:: manage.py 건너뛰기
 
@@ -442,7 +442,7 @@ API와 놀기
     [<Poll: Poll object>]
 
 
-잠시만요. ``<Poll: Poll object>``\ 는 완전히 이 객체 자체를 표현 하지 객체의 내용을 표현 하지 않습니다. 우리는 polls 모델을 수정하여(``polls/models.py`` 파일) ``Poll``\ 과``Choice``\ 에 :meth:`~django.db.models.Model.__unicode__`\ 를 추가하여 원하는 내용을 표현 할 수 있습니다.
+잠시만요. ``<Poll: Poll object>``\ 는 완전히 이 객체 자체를 표현 하지 객체의 내용을 표현 하지 않습니다. 우리는 polls 모델을 수정하여(``polls/models.py`` 파일) ``Poll``\ 과 ``Choice``\ 에 :meth:`~django.db.models.Model.__unicode__`\ 를 추가하여 원하는 내용을 표현 할 수 있습니다.
 
 ::
 
@@ -480,7 +480,7 @@ API와 놀기
         def was_published_recently(self):
             return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
-참고로 추가한 ``import datetime``\ 과 ``from django.utils import timezone``\ 은 각각 파이썬의 표준 메소드인 :mod:`datetime` 과 Django의 time-zone-related 유틸리테에 들어있는  :mod:`django.utils.timezone`을 참조하세요. 여러분이 파이썬 시간 처리에 대해 익수하지 않은경우, 여러분은 :doc:`time zone support docs </topics/i18n/timezones>`\ 에서 배울 수 있습니다.
+참고로 추가한 ``import datetime``\ 과 ``from django.utils import timezone``\ 은 각각 파이썬의 표준 메소드인 :mod:`datetime` 과 Django의 time-zone-related 유틸리테에 들어있는  :mod:`django.utils.timezone`\ 을 참조하세요. 여러분이 파이썬 시간 처리에 대해 익숙하지 않은경우, 여러분은 :doc:`time zone support docs </topics/i18n/timezones>`\ 에서 배울 수 있습니다.
 
 저장 후 ``python manage.py shell`` 이용하여 새로운 파이썬 대화형 쉘을 실행하세요.
 
