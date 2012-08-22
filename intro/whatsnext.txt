@@ -1,237 +1,151 @@
 =================
-What to read next
+더 읽을 거리
 =================
 
-So you've read all the :doc:`introductory material </intro/index>` and have
-decided you'd like to keep using Django. We've only just scratched the surface
-with this intro (in fact, if you've read every single word you've still read
-less than 10% of the overall documentation).
+:doc:`소개 자료 </intro/index>`\ 를 모두 읽고 Django를 사용하기로 하셨군요. 우리는 겉핡기를 했을 뿐입니다(사실, 그걸 다 읽었다고 해도 전체 문서의 십분의 일도 읽지 못한 셈입니다).
 
-So what's next?
+자 그럼 다음은 무엇이 있을까요.
 
-Well, we've always been big fans of learning by doing. At this point you should
-know enough to start a project of your own and start fooling around. As you need
-to learn new tricks, come back to the documentation.
+지금까지는 항상 무언가를 직접 행하면서 배워왔습니다. 이제부터는 스스로 프로젝트를 할 수 있을 만큼 지식을 쌓아나가야 합니다. 새로운 트릭을 배우고 싶다면 문서를 읽는 수고를 들일 필요가 있습니다.
 
-We've put a lot of effort into making Django's documentation useful, easy to
-read and as complete as possible. The rest of this document explains more about
-how the documentation works so that you can get the most out of it.
+우리는 Django의 문서를 유용하면서도 가능한 읽기 쉽도록 만들기 위해 많은 노력을 기울였습니다. 이 문서의 나머지 부분은 어떻게 문서를 최대한 활용할 수 있는지를 설명합니다.
 
-(Yes, this is documentation about documentation. Rest assured we have no plans
-to write a document about how to read the document about documentation.)
+(네, 이것은 문서에 대한 문서입니다. 읽는 방법에 대한 문서를 쓸 계획은 없으니 안심하세요.)
 
-Finding documentation
+문서 찾기
 =====================
 
-Django's got a *lot* of documentation -- almost 200,000 words -- so finding what
-you need can sometimes be tricky. A few good places to start are the :ref:`search`
-and the :ref:`genindex`.
+Django에는 -- 거의 이십만 개의 단어로 이루어진 -- *많은* 문서가 있기 때문에 때로는 필요한 것을 찾기가 힘들 수도 있습니다. :ref:`search`\ 나 :ref:`genindex`\ 에서 시작하는 것도 좋은 방법입니다.
 
-Or you can just browse around!
+그냥 둘러보셔도 좋구요!
 
-How the documentation is organized
+문서 구성 방식
 ==================================
 
-Django's main documentation is broken up into "chunks" designed to fill
-different needs:
+Django의 주요 문서는 필요에 따라 몇몇 "덩어리"로 나뉘어져 있습니다.
 
-* The :doc:`introductory material </intro/index>` is designed for people new
-  to Django -- or to Web development in general. It doesn't cover anything
-  in depth, but instead gives a high-level overview of how developing in
-  Django "feels".
+* doc:`소개 자료 </intro/index>`\ 는 Django 또는 일반적인 웹 개발을 처음 접하는 사람들을 위해 만들었습니다. 깊은 내용을 다루지는 않지만, 그 대신에 Django의 "느낌"이 나게끔 개발할 수 있도록 높은 수준에서의 개요를 제공합니다.
 
-* The :doc:`topic guides </topics/index>`, on the other hand, dive deep into
-  individual parts of Django. There are complete guides to Django's
-  :doc:`model system </topics/db/index>`, :doc:`template engine
-  </topics/templates>`, :doc:`forms framework </topics/forms/index>`, and much
-  more.
+* 한편 :doc:`주제별 안내서 </topics/index>`\ 는, Django의 각 부분을 심도있게 탐구합니다. Django의 :doc:`모델 시스템 </topics/db/index>`, :doc:`템플릿 엔진 </topics/templates>`, :doc:`폼 프레임워크 </topics/forms/index>` 등 각각의 주제에 대한 완전한 안내서입니다.
 
-  This is probably where you'll want to spend most of your time; if you work
-  your way through these guides you should come out knowing pretty much
-  everything there is to know about Django.
+  이것은 아마 당신이 시간 대부분을 보내고자 할 것입니다. 이 안내서를 통해 방법을 알고자한다면 Django 대해 알아야 할 거의 모든 것이 나와 있습니다.
 
-* Web development is often broad, not deep -- problems span many domains.
-  We've written a set of :doc:`how-to guides </howto/index>` that answer
-  common "How do I ...?" questions. Here you'll find information about
-  :doc:`generating PDFs with Django </howto/outputting-pdf>`, :doc:`writing
-  custom template tags </howto/custom-template-tags>`, and more.
+* 웹 개발은 깊이 있지 않지만 대개 광범위합니다 -- 문제는 많은 영역에 놓여있습니다. 우리는 :doc:`하우투 가이드 </howto/index>`\ 를 일반적인 "~을 어떻게 할까? 하는 질문의 답으로 글을 썼습니다. 여러분은 :doc:`Django에서 PDF 생성하기 </howto/outputting-pdf>`\ 와 :doc:`커스텀 템플릿 태그 작성법 </howto/custom-template-tags>` 등의 정보를 찾아볼 수 있을 것입니다.
 
-  Answers to really common questions can also be found in the :doc:`FAQ
-  </faq/index>`.
+  일반적인 질문에 대한 답변도 :doc:`FAQ </faq/index>`\ 에서 또한 찾을 수 있을 것입니다.
 
-* The guides and how-to's don't cover every single class, function, and
-  method available in Django -- that would be overwhelming when you're
-  trying to learn. Instead, details about individual classes, functions,
-  methods, and modules are kept in the :doc:`reference </ref/index>`. This is
-  where you'll turn to find the details of a particular function or
-  whathaveyou.
+* 이 안내서나 하우투는 Django에서 사용 가능한 모든 싱글 클래스, 함수, 메소드를 포함하지 않습니다. 그것은 당신이 Django를 배우려고 할때 많은 부분을 차지할 것입니다. 대신, 각 클래스, 함수, 메서드 및 모듈에 대한 자세한 내용은 :doc:`참조 </ref/index>`\ 를 유지합니다. 이것은 당신은 특정한 기능이나 whathaveyou의 세부 정보를 찾는 것 가능한 곳입니다.
 
-* Finally, there's some "specialized" documentation not usually relevant to
-  most developers. This includes the :doc:`release notes </releases/index>`,
-  :doc:`documentation of obsolete features </obsolete/index>`,
-  :doc:`internals documentation </internals/index>` for those who want to add
-  code to Django itself, and a :doc:`few other things that simply don't fit
-  elsewhere </misc/index>`.
+* 마지막으로, 일반적으로 대부분의 개발자와 관련이 없는 "특수한" 문서들이 존재합니다. :doc:`릴리즈 노트 </releases/index>`, :doc:`오래된 기능의 문서 </obsolete/index>`, :doc:`내부 문서 </internals/index>`와 같이 Django 자체에 코드를 추가하려는 사람들에게 필요한 문서도 있고, :doc:`특정한 범주에 묶기 어려운 기타 문서들 </misc/index>`\ 도 있습니다.
 
 
-How documentation is updated
+문서는 어떻게 업데이트되는가
 ============================
 
-Just as the Django code base is developed and improved on a daily basis, our
-documentation is consistently improving. We improve documentation for several
-reasons:
+Django의 코드 기반이 하루하루 개발되고 개선되는 것처럼, 문서도 지속적으로 개선이 이루어집니다. 우리는 다음과 같은 몇 가지의 이유로 문서를 개선해나갑니다.
 
-* To make content fixes, such as grammar/typo corrections.
+* 문법 오류 또는 오탈자와 같은 내용상의 수정을 위해.
 
-* To add information and/or examples to existing sections that need to be
-  expanded.
+* 보충이 필요한 기존 섹션에 정보 및 예제를 추가하기 위해.
 
-* To document Django features that aren't yet documented. (The list of
-  such features is shrinking but exists nonetheless.)
+* 아직 문서화되지 않은 Django 기능을 문서화하기 위해.(목록이 점점 줄어들고 있기는 하지만 여전히 남아있습니다.)
 
-* To add documentation for new features as new features get added, or as
-  Django APIs or behaviors change.
+* 새로운 Django API 나 적용이 바뀌었을때 새로운 기능을 문서에 추가.
 
-Django's documentation is kept in the same source control system as its code. It
-lives in the `django/trunk/docs`_ directory of our Subversion repository. Each
-document online is a separate text file in the repository.
+Django의 문서는 코드와 동일한 소스 제어 시스템에 보관합니다. 그것은 서브버전 저장소의 `django/trunk/docs`_ 디렉토리에 있습니다. 각 온라인 문서는 저장소에 별도로 존재하는 텍스트 파일입니다.
 
 .. _django/trunk/docs: https://code.djangoproject.com/browser/django/trunk/docs
 
-Where to get it
+구할 수 있는 곳
 ===============
 
-You can read Django documentation in several ways. They are, in order of
-preference:
+Django 문서는 다음과 같은 다양한 방법을 통해 구해서 읽을 수 있습니다.
 
-On the Web
+웹에서
 ----------
 
-The most recent version of the Django documentation lives at
-http://docs.djangoproject.com/en/dev/. These HTML pages are generated
-automatically from the text files in source control. That means they reflect the
-"latest and greatest" in Django -- they include the very latest corrections and
-additions, and they discuss the latest Django features, which may only be
-available to users of the Django development version. (See "Differences between
-versions" below.)
+Django 문서의 가장 최신 버전은 http://docs.djangoproject.com/en/dev/\ 에 있습니다. 이런 HTML 페이지는 소스 컨트롤 내 텍스트 파일에서 자동으로 생성됩니다. 그것은 Django 내에서 "최신과 최고"를 반영되었다는 의미입니다 -- 그것은 가장 최신의 수정이나 추가, Django 개발 버전 사용자가 최신 Django 기능 토론합니다. (아래의 "버전 간의 차이점" 참조.)
 
-We encourage you to help improve the docs by submitting changes, corrections and
-suggestions in the `ticket system`_. The Django developers actively monitor the
-ticket system and use your feedback to improve the documentation for everybody.
+우리는 당신이 '티켓 시스템'\ 에서 변경, 수정 및 제안을 제출하여 문서를 개선하는 도움되는 것을 권장합니다. Django 개발자들이 적극적으로 티켓 시스템을 모니터링하고 모든 사람에 대한 문서를 개선하기 위해 당신의 피드백을 사용합니다.
 
-Note, however, that tickets should explicitly relate to the documentation,
-rather than asking broad tech-support questions. If you need help with your
-particular Django setup, try the `django-users mailing list`_ or the `#django
-IRC channel`_ instead.
+그러나 그 티켓은 광범위한 기술 지원 질문보다는 명시적으로 문서와 관련있을 것임에 주의하세요. 당신은 특정 Django 설정에 도움이 필요한 경우 티켓보다는 `django-users 메일링 리스트`_ 또는 `#django IRC 채널`_\ 을 활용하시기 바랍니다.
 
-.. _ticket system: https://code.djangoproject.com/simpleticket?component=Documentation
-.. _django-users mailing list: http://groups.google.com/group/django-users
-.. _#django IRC channel: irc://irc.freenode.net/django
+.. _티켓 시스템: https://code.djangoproject.com/simpleticket?component=Documentation
+.. _django-users 메일링 리스트: http://groups.google.com/group/django-users
+.. _#django IRC 채널: irc://irc.freenode.net/django
 
-In plain text
+일반적인 텍스트
 -------------
 
-For offline reading, or just for convenience, you can read the Django
-documentation in plain text.
+오프라인으로 읽기 위해서나, 혹은 단순히 편의상 일반 텍스트로 Django 문서를 읽을 수 있습니다.
 
-If you're using an official release of Django, note that the zipped package
-(tarball) of the code includes a ``docs/`` directory, which contains all the
-documentation for that release.
+당신은 Django의 공식 릴리즈를 사용하는 경우, 코드에 포함된 ``docs/`` 디렉토리의 압축된 패키지(tarball), 이것은 해당 릴리즈에 대한 모든 문서를 포함합니다.
 
-If you're using the development version of Django (aka the Subversion "trunk"),
-note that the ``docs/`` directory contains all of the documentation. You can
-``svn update`` it, just as you ``svn update`` the Python code, in order to get
-the latest changes.
+당신이 Django의 개발 버전을 사용한다면(즉, 서브버전 "trunk"), ``docs/`` 디렉토리에 모든 문서가 있습니다. 당신은 최신의 변경 사항을 얻기 위해 ``svn update`` 를 할수 있고 마찬가지로 파이썬 코드에서 ``svn update`` 할 수 있습니다.
 
-You can check out the latest Django documentation from Subversion using this
-shell command:
+당신은 이 쉘 명령을 사용하여 서브버전으로 부터 최신의 Django 문서를 확인할 수 있습니다.
 
 .. code-block:: bash
 
     $ svn co https://code.djangoproject.com/svn/django/trunk/docs/ django_docs
 
-One low-tech way of taking advantage of the text documentation is by using the
-Unix ``grep`` utility to search for a phrase in all of the documentation. For
-example, this will show you each mention of the phrase "max_length" in any
-Django document:
+텍스트 문서를 활용하는 낮은 기술은 모든 문서에서 구문 검색을 위해 유닉스의 ``grep`` 유틸리티를 사용하는 것입니다. 예를 들어, 이것은 당신에게 어떤 Django 문서에서 구문 "MAX_LENGTH"의 각 언급을 보여줍니다.
 
 .. code-block:: bash
 
     $ grep -r max_length /path/to/django/docs/
 
-As HTML, locally
+로컬 HTML로
 ----------------
 
-You can get a local copy of the HTML documentation following a few easy steps:
+당신은 몇가지 간단한 단계를 거쳐 HTML 문서를 로컬에 가져올 수 있습니다.
 
-* Django's documentation uses a system called Sphinx__ to convert from
-  plain text to HTML. You'll need to install Sphinx by either downloading
-  and installing the package from the Sphinx Web site, or with ``pip``:
+* Django 설명서는 HTML로 일반 텍스트로 변환하는 Sphinx__\ 라는 시스템을 사용합니다. 당신은 Sphinx 웹 사이트에서 또는 ``pip``\ 으로 패키지를 다운로드하고 설치하여 Sphinx를 설치해야 합니다.
 
   .. code-block:: bash
 
         $ sudo pip install Sphinx
 
-* Then, just use the included ``Makefile`` to turn the documentation into
-  HTML:
+그후, HTML에서 문서를 바꾸기 위한 포함된 ``Makefile``\ 을 사용하면 됩니다.
 
   .. code-block:: bash
 
         $ cd path/to/django/docs
         $ make html
 
-  You'll need `GNU Make`__ installed for this.
+  이것을 위해 `GNU Make`__\ 를 설치할 필요가 있습니다.
 
-  If you're on Windows you can alternatively use the included batch file:
+  만약 당신이 윈도우즈상에 있다면 포함된 배치(batch) 파일을 사용할 수 있습니다.
 
   .. code-block:: bat
 
         cd path\to\django\docs
         make.bat html
 
-* The HTML documentation will be placed in ``docs/_build/html``.
+* HTML 문서는 ``docs/_build/html``\ 에 위치하게 될 것입니다.
 
 .. note::
 
-    Generation of the Django documentation will work with Sphinx version 0.6
-    or newer, but we recommend going straight to Sphinx 1.0.2 or newer.
+    Django 문서의 생성은 Sphinx 버전 0.6 이상에서 작동하기는 하지만, 우리는 Sphinx 1.0.2 이상 버전으로 곧장 가는 것을 추천합니다.
 
 __ http://sphinx.pocoo.org/
 __ http://www.gnu.org/software/make/
 
-Differences between versions
+버전 간의 차이점
 ============================
 
-As previously mentioned, the text documentation in our Subversion repository
-contains the "latest and greatest" changes and additions. These changes often
-include documentation of new features added in the Django development version
--- the Subversion ("trunk") version of Django. For that reason, it's worth
-pointing out our policy on keeping straight the documentation for various
-versions of the framework.
+앞서 이야기 했듯이, 우리의 서브버전 저장소의 텍스트 문서는 "최신 그리고 최고" 변경 및 추가를 포함하고 있습니다. 이러한 변경은 가끔 Django 개발 버전에 새로운 기능 추가의 문서를 포함합니다. -- Django의 서브버전 ("trunk") 버전. 그러한 연유로, 다양한 버전의 프레임워크를 위해 올바른 문서를 지키는 일에 대한 우리의 정책을 짚고 넘어가도록 하겠습니다.
 
-We follow this policy:
+우리의 정책은 다음과 같습니다.
 
-* The primary documentation on djangoproject.com is an HTML version of the
-  latest docs in Subversion. These docs always correspond to the latest
-  official Django release, plus whatever features we've added/changed in
-  the framework *since* the latest release.
+* djangoproject.com에 대한 주요 문서의 서브버전에서 최신 문서의 HTML 버전입니다. 이 문서는 항상 최신 공식 Django 릴리스와 어떤 기능의 최신 릴리스 *이후* 프레임워크에 추가/변경 사항을 일치시킵니다.
 
-* As we add features to Django's development version, we try to update the
-  documentation in the same Subversion commit transaction.
+* 우리는 Django의 개발 버전에 기능을 추가하기 때문에, 우리는 같은 서브버전에 커밋 트랜잭션의 문서를 업데이트하려고 합니다.
 
-* To distinguish feature changes/additions in the docs, we use the phrase:
-  "New in version X.Y", being X.Y the next release version (hence, the one
-  being developed).
+* 문서의 기능 변경 및 추가 사항을 구분하기 위해 "New in version X.Y"와 같은 구문를 사용하며, X.Y는 다음 릴리즈 버전이 됩니다(즉, 현재 개발 중입니다).
 
-* Documentation for a particular Django release is frozen once the version
-  has been released officially. It remains a snapshot of the docs as of the
-  moment of the release. We will make exceptions to this rule in
-  the case of retroactive security updates or other such retroactive
-  changes. Once documentation is frozen, we add a note to the top of each
-  frozen document that says "These docs are frozen for Django version XXX"
-  and links to the current version of that document.
+* 특정 Django 릴리즈 문서는 버전이 공식적으로 릴리즈 되고 나면 동결됩니다. 이 릴리스 시점의 문서의 스냅샷이 남습니다. 우리는 소급하여 보안 업데이트하거나 다른 소급 변경의 경우에는 이 규칙에 대한 예외를 적용할 것입니다. 일단 문서가 동결되고, 우리는 "이 문서는 Django 버전 XXX에 의해 동결되었다"와 해당 문서의 현재 버전에 링크 각 동결 문서의 상단에 메모를 추가합니다.
 
-* The `main documentation Web page`_ includes links to documentation for
-  all previous versions.
+* `메인 문서 웹 페이지`_\ 는 모든 이전 버전의 문서에 대한 링크를 포함합니다.
 
-.. _main documentation Web page: http://docs.djangoproject.com/en/dev/
+.. _메인 문서 웹 페이지: http://docs.djangoproject.com/en/dev/
