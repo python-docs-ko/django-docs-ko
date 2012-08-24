@@ -4,7 +4,7 @@
 Django 문서(한국어판)
 ====================
 
-.. rubric:: 장고에 관해 알아야 할 모든 것(and then some).
+.. rubric:: 장고에 대하여 알아야 할 모든 것.
 
 도움말
 ============
@@ -14,36 +14,34 @@ Django 문서(한국어판)
 * :doc:`FAQ <faq/index>` 문서를 참고하세요 -- 가장 흔한 질문에 대한 답변들입니다.
 
 * 특정 주제를 찾으신다면, 다음 문서를 둘러보세요. :ref:`genindex`, :ref:`modindex`,
-  :doc:`detailed table of contents <contents>`.
+  :doc:`상세한 목차 <contents>`.
 
-* Search for information in the `archives of the django-users mailing list`_, or
-  `post a question`_.
+* `django-users 메일링 리스트의 아카이브`_\ 에서 정보를 검색하거나, `질문을 올리세요`_.
 
-* Ask a question in the `#django IRC channel`_, or search the `IRC logs`_ to see
-  if it's been asked before.
+* `#django IRC 채널`_\ 에서 물어보거나, 이전에 있었던 질문인지 `IRC 기록`_\ 에서 검색해보세요.
 
-* Report bugs with Django in our `ticket tracker`_.
+* Django에 대한 버그를 발견하시면 `티켓 추적 시스템`_\ 에 보고해주세요.
 
-.. _archives of the django-users mailing list: http://groups.google.com/group/django-users/
-.. _post a question: http://groups.google.com/group/django-users/
-.. _#django IRC channel: irc://irc.freenode.net/django
-.. _IRC logs: http://django-irc-logs.com/
-.. _ticket tracker: https://code.djangoproject.com/
+.. _django-users 메일링 리스트의 아카이브: http://groups.google.com/group/django-users/
+.. _질문을 올리세요: http://groups.google.com/group/django-users/
+.. _#django IRC 채널: irc://irc.freenode.net/django
+.. _IRC 기록: http://django-irc-logs.com/
+.. _티켓 추적 시스템: https://code.djangoproject.com/
 
-First steps
+첫걸음
 ===========
 
-* **From scratch:**
-  :doc:`Overview <intro/overview>` |
-  :doc:`Installation <intro/install>`
+* **시작하기:**
+  :doc:`개요 <intro/overview>` |
+  :doc:`설치 <intro/install>`
 
-* **Tutorial:**
-  :doc:`Part 1 <intro/tutorial01>` |
-  :doc:`Part 2 <intro/tutorial02>` |
-  :doc:`Part 3 <intro/tutorial03>` |
-  :doc:`Part 4 <intro/tutorial04>`
+* **자습서:**
+  :doc:`1부 <intro/tutorial01>` |
+  :doc:`2부 <intro/tutorial02>` |
+  :doc:`3부 <intro/tutorial03>` |
+  :doc:`4부 <intro/tutorial04>`
 
-The model layer
+모델 계층
 ===============
 
 * **Models:**
@@ -73,7 +71,7 @@ The model layer
   :doc:`Providing initial data <howto/initial-data>` |
   :doc:`Optimize database access <topics/db/optimization>`
 
-The template layer
+템플릿 계층
 ==================
 
 * **For designers:**
@@ -84,7 +82,7 @@ The template layer
   :doc:`Template API <ref/templates/api>` |
   :doc:`Custom tags and filters <howto/custom-template-tags>`
 
-The view layer
+뷰 계층
 ==============
 
 * **The basics:**
@@ -116,7 +114,7 @@ The view layer
   :doc:`Overview <topics/http/middleware>` |
   :doc:`Built-in middleware classes <ref/middleware>`
 
-Forms
+폼
 =====
 
 * **The basics:**
@@ -135,7 +133,7 @@ Forms
   :doc:`Form preview <ref/contrib/formtools/form-preview>` |
   :doc:`Form wizard <ref/contrib/formtools/form-wizard>`
 
-The development process
+개발 프로세스
 =======================
 
 * **Settings:**
@@ -160,7 +158,7 @@ The development process
   :doc:`Handling static files <howto/static-files>` |
   :doc:`Tracking code errors by email <howto/error-reporting>`
 
-Other batteries included
+기타 내장된 배터리들
 ========================
 
 * :doc:`Admin site <ref/contrib/admin/index>` | :doc:`Admin actions <ref/contrib/admin/actions>` | :doc:`Admin documentation generator<ref/contrib/admin/admindocs>`
@@ -197,25 +195,25 @@ Other batteries included
 * :doc:`Validators <ref/validators>`
 * Function-based generic views (Deprecated) :doc:`Overview<topics/generic-views>` | :doc:`Built-in generic views<ref/generic-views>` | :doc:`Migration guide<topics/generic-views-migration>`
 
-The Django open-source project
+Django 오픈 소스 프로젝트
 ==============================
 
-* **Community:**
+* **커뮤니티:**
   :doc:`How to get involved <internals/contributing/index>` |
   :doc:`The release process <internals/release-process>` |
   :doc:`Team of committers <internals/committers>` |
   :doc:`The Django source code repository <internals/svn>`
 
-* **Design philosophies:**
-  :doc:`Overview <misc/design-philosophies>`
+* **디자인 철학:**
+  :doc:`개요 <misc/design-philosophies>`
 
-* **Documentation:**
+* **문서화:**
   :doc:`About this documentation <internals/contributing/writing-documentation>`
 
-* **Third-party distributions:**
+* **서드 파티 분배:**
   :doc:`Overview <misc/distributions>`
 
-* **Django over time:**
-  :doc:`API stability <misc/api-stability>` |
+* **장기간의 유지보수 계획:**
+  :doc:`API 안정성 <misc/api-stability>` |
   :doc:`Release notes and upgrading instructions <releases/index>` |
   :doc:`Deprecation Timeline <internals/deprecation>`
