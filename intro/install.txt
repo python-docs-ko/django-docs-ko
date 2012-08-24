@@ -1,86 +1,73 @@
-ºü¸¥ ¼³Ä¡ ¾È³»
-=================== 
+ë¹ ë¥¸ ì„¤ì¹˜ ì•ˆë‚´
+===================
 
-Django¸¦ »ç¿ëÇÏ±â À§ÇØ¼± ¼³Ä¡°¡ ÇÊ¿äÇÕ´Ï´Ù. ¿ì¸®´Â :doc:` ¼³Ä¡ ¿Ïº® °¡ÀÌµå </topics/install>` ¿¡ ¸ðµç ³»¿ëÀ» Æ÷ÇÔÇÏ°í ÀÖÀ¸¸ç, ÀÌ ¾È³»´Â °£´ÜÇÏ°í ÃÖ¼ÒÇÑÀÇ ¼³Ä¡¸¦ ÇÊ¿ä·Î ÇÕ´Ï´Ù. 
+Djangoë¥¼ ì‚¬ìš©í•˜ê¸° ìœ„í•´ì„  ì„¤ì¹˜ê°€ í•„ìš”í•©ë‹ˆë‹¤. ì—¬ê¸°ì„œëŠ” ì†Œê°œë¥¼ ìœ„í•´ í•„ìš”í•œ ìµœì†Œí•œì˜ ì„¤ì¹˜ ë°©ë²•ì„ ê°„ë‹¨ížˆ ì•ˆë‚´í•©ë‹ˆë‹¤. ìžì„¸í•œ ì„¤ì¹˜ ë°©ë²•ì— ëŒ€í•´ì„œëŠ” :doc:`ì„¤ì¹˜ ì™„ë²½ ì•ˆë‚´ì„œ </topics/install>`\ ë¥¼ ì°¸ì¡°í•˜ì„¸ìš”.
 
-ÆÄÀÌ½ã ¼³Ä¡ÇÏ±â
+íŒŒì´ì¬ ì„¤ì¹˜í•˜ê¸°
 --------------
 
-Django´Â ÆÄÀÌ½ã À¥ ÇÁ·¹ÀÓ¿öÅ©·Î, Django´Â ÆÄÀÌ½ãÀ» ÇÊ¿ä·Î ÇÕ´Ï´Ù. ÆÄÀÌ½ã 2.5 ~ 2.7 ¹öÀüÀ» »ç¿ëÇÕ´Ï´Ù.(ÆÄÀÌ½ã 3.0 °úÀÇ ÇÏÀ§ È£È¯¼ºÀÌ º¸ÀåµÇÁö ¾Ê±â¿¡,
-Django¿¡¼­´Â ÆÄÀÌ½ã 3.0À» »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù; ÆÄÀÌ½ã 3.0 ¹öÀü Áö¿ø¿¡ ´ëÇÑ Á» ´õ ÀÚ¼¼ÇÑ »çÇ×Àº ´ÙÀ½¿¡¼­ È®ÀÎÇØ ÁÖ¼¼¿ä. º¸±â :doc:`Django FAQ
-</faq/install>`)  ÀÌ ÆÄÀÌ½ã ¹öÀü¿¡¼­´Â °æ·® µ¥ÀÌÅÍ º£ÀÌ½ºÀÎ SQLite_ À» Æ÷ÇÔÇÏ°í ÀÖ±â¿¡, µ¥ÀÌÅÍµ¥ÀÌ½º¿¡ ´ëÇÑ ¼³Á¤ÀÌ µû·Î ÇÊ¿äÇÏÁö ¾Ê½À´Ï´Ù.
+DjangoëŠ” íŒŒì´ì¬ ì›¹ í”„ë ˆìž„ì›Œí¬ì´ë¯€ë¡œ, íŒŒì´ì¬ì„ í•„ìš”ë¡œ í•©ë‹ˆë‹¤. Djangoì—ì„œëŠ” íŒŒì´ì¬ 2.5 ~ 2.7 ë²„ì „ì„ ì‚¬ìš©í•˜ë©°, í•´ë‹¹ ë²„ì „ì˜ íŒŒì´ì¬ì—ëŠ” ê²½ëŸ‰ ë°ì´í„° ë² ì´ìŠ¤ì¸ SQLite_\ ì´ í¬í•¨ë˜ì–´ ìžˆê¸°ì—, ë°ì´í„°ë°ì´ìŠ¤ì— ëŒ€í•œ ì„¤ì •ì´ ë”°ë¡œ í•„ìš”í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.(íŒŒì´ì¬ 3.0ê³¼ì˜ í•˜ìœ„ í˜¸í™˜ì„±ì´ ë³´ìž¥ë˜ì§€ ì•Šê¸°ì—, Djangoì—ì„œëŠ” íŒŒì´ì¬ 3.0ì„ ì‚¬ìš©í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤. íŒŒì´ì¬ 3.0 ë²„ì „ ì§€ì›ì— ëŒ€í•œ ì¢€ ë” ìžì„¸í•œ ì‚¬í•­ì€ :doc:`Django FAQ </faq/install>`\ ë¥¼ ì°¸ê³ í•˜ì„¸ìš”.) 
 
-.. _sqlite´Â ´ÙÀ½ »çÀÌÆ®¿¡¼­ ¾òÀ» ¼ö ÀÖ½À´Ï´Ù. http://sqlite.org/
+.. _sqlite: http://sqlite.org/
 
-ÆÄÀÌ½ãÀº ´ÙÀ½ »çÀÌÆ®¿¡¼­ ¾òÀ» ¼ö ÀÖ½À´Ï´Ù. http://www.python.org. ¸¸¾à Mac OS X³ª ¸®´ª½º¸¦ »ç¿ëÇÑ´Ù¸é, ÀÌ¹Ì ¼³Ä¡µÇ¾î ÀÖÀ» ¼ö ÀÖ½À´Ï´Ù.
+íŒŒì´ì¬ì€ http://www.python.org\ ì—ì„œ êµ¬í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤. ë§Œì•½ Mac OS Xë‚˜ ë¦¬ëˆ…ìŠ¤ë¥¼ ì‚¬ìš©í•œë‹¤ë©´, ì´ë¯¸ ì„¤ì¹˜ë˜ì–´ ìžˆì„ ìˆ˜ë„ ìžˆìŠµë‹ˆë‹¤.
 
-.. °æ°í::JythonÀ§ Django
+.. admonition:: Django on Jython
 
-    ¸¸¾à Jython_ (ÀÚ¹Ù ÇÃ·§ÆûÀ» À§ÇØ ±¸ÇöµÈ Python)À» »ç¿ëÇÑ´Ù¸é
-    ¸î°¡Áö Ãß°¡ ¼³Ä¡°¡ ÇÊ¿äÇÕ´Ï´Ù. º¸±â:doc:`/howto/jython` ¿¡ ÀÚ¼¼È÷ ³ª¿Í ÀÖ½À´Ï´Ù.
+    ë§Œì•½ Jython_\ (ìžë°” í”Œëž«í¼ì„ ìœ„í•´ êµ¬í˜„ëœ Python)ì„ ì‚¬ìš©í•œë‹¤ë©´ ëª‡ ê°€ì§€ ì¶”ê°€ ì„¤ì¹˜ê°€ í•„ìš”í•©ë‹ˆë‹¤. :doc:`/howto/jython`\ ë¥¼ ì°¸ê³ í•˜ì„¸ìš”.
 
-.. _jython »çÀÌÆ® ÀÔ´Ï´Ù. http://www.jython.org/
+.. _jython: http://www.jython.org/
 
-ÆÄÀÌ½ãÀÌ Á¤È®ÇÏ°Ô ¼³Ä¡°¡ µÇ¾î ÀÖ´Ù¸é, ½©¿¡¼­ 'python' ¸í·É¾î¸¦ ÀÔ·Â ÇßÀ» ¶§, ´ÙÀ½°ú °°ÀÌ Ç¥½Ã°¡ µÉ °ÍÀÔ´Ï´Ù.
+íŒŒì´ì¬ì´ ì„¤ì¹˜ë˜ì–´ ìžˆëŠ”ì§€ëŠ”, ì‰˜ì—ì„œ ``python`` ëª…ë ¹ì–´ë¥¼ ìž…ë ¥í•˜ì—¬ ë‹¤ìŒê³¼ ê°™ì´ í‘œì‹œë˜ëŠ” ê²ƒìœ¼ë¡œ í™•ì¸í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 
     Python 2.5.1 (r251:54863, Jan 17 2008, 19:35:17)
     [GCC 4.0.1 (Apple Inc. build 5465)] on darwin
     Type "help", "copyright", "credits" or "license" for more information.
     >>>
 
-µ¥ÀÌÅÍ º£ÀÌ½º ¼³Á¤
+ë°ì´í„°ë² ì´ìŠ¤ ì„¤ì •
 -----------------
 
-ÆÄÀÌ½ã 2.5 ¹öÀü ÀÌ»óÀÌ ¼³Ä¡µÇ¾î ÀÖ´Ù¸é ´ÙÀ½ °úÁ¤À» ÇÏÁö ¾Ê¾Æµµ µË´Ï´Ù.
+íŒŒì´ì¬ 2.5 ë²„ì „ ì´ìƒì´ ì„¤ì¹˜ë˜ì–´ ìžˆë‹¤ë©´ ì´ ë¶€ë¶„ì„ ê±´ë„ˆë›°ì–´ë„ ë©ë‹ˆë‹¤.
 
-PostgreSQL,MySQL, Oracle °°Àº Å« µ¥ÀÌÅÍº£ÀÌ½º¿¡¼­ µ¿ÀÛÀÌ ÇÊ¿äÇÏ´Ù¸é, :ref:`µ¥ÀÌÅÍ º£ÀÌ½º ¼³Ä¡ Á¤º¸
-<database-installation>`À» Âü°íÇÏ¼¼¿ä.
+íŒŒì´ì¬ 2.5ë³´ë‹¤ ë‚®ì€ ë²„ì „ì„ ì‚¬ìš©í•œë‹¤ê±°ë‚˜, PostgreSQL, MySQL, Oracleê³¼ ê°™ì€ "í°" ë°ì´í„°ë² ì´ìŠ¤ì—ì„œ ë™ìž‘ì´ í•„ìš”í•˜ë‹¤ë©´, :ref:`ë°ì´í„° ë² ì´ìŠ¤ ì„¤ì¹˜ ì •ë³´
+<database-installation>`\ ë¥¼ ì°¸ê³ í•˜ì„¸ìš”.
 
-ÀÌÀü Django ¹öÀü Áö¿ì±â
+ì´ì „ Django ë²„ì „ ì œê±°
 ---------------------------------
 
-ÀÌÀü ¹öÀüÀÇ Django°¡ ¼³Ä¡µÇ¾î ÀÖ´Ù¸é ¾÷±×·¹ÀÌµå°¡ ÇÊ¿äÇÕ´Ï´Ù. ´ÙÀ½ ¹®¼­¸¦ Âü°í ÇØÁÖ¼¼¿ä. :ref:`»õ·Î¿î ¹öÀü ¼³Ä¡ Àü¿¡ ÀÌÀü Django ¹öÀü »èÁ¦ÇÏ±â <removing-old-versions-of-django>`.
+ì´ì „ ë²„ì „ì˜ Djangoë¡œë¶€í„° ì—…ê·¸ë ˆì´ë“œí•˜ê³ ìž í•œë‹¤ë©´, :ref:`ìƒˆë¡œìš´ ë²„ì „ì„ ì„¤ì¹˜í•˜ê¸° ì „ì— ì´ì „ ë²„ì „ì˜ Djangoë¥¼ ì œê±° <removing-old-versions-of-django>`\ í•˜ì—¬ì•¼ í•©ë‹ˆë‹¤.
 
-Django ¼³Ä¡ÇÏ±â
+Django ì„¤ì¹˜í•˜ê¸°
 --------------
 
-Django¸¦ ¼³Ä¡ ÇÏ±â À§ÇÑ ½¬¿î 3°¡Áö ¿É¼Ç:
+Djangoë¥¼ ì„¤ì¹˜í•˜ëŠ” ë°ì—ëŠ” ë‹¤ìŒê³¼ ê°™ì€ ì„¸ ê°€ì§€ì˜ ì‰¬ìš´ ë°©ë²•ì´ ìžˆìŠµë‹ˆë‹¤.
 
-* Django ¹öÀü ¼³Ä¡ÇÏ±â  :doc:` ¿î¿µÃ¼Á¦°¡ ¹èÆ÷ÇÏ´Â ¹öÀü ¼³Ä¡ÇÏ±â
-  </misc/distributions>`. ÀÌ°ÍÀº 
-  ¿î¿µÃ¼Á¦°¡ ¹èÆ÷ÇÏ´Â Django¸¦ ºü¸£°Ô ¼³Ä¡ÇÏ±â À§ÇÑ ¿É¼ÇÀÔ´Ï´Ù.
+* :doc:`ìš´ì˜ì²´ì œì—ì„œ ì œê³µí•˜ëŠ” Django ë²„ì „ </misc/distributions>`\ ì„ ì„¤ì¹˜í•©ë‹ˆë‹¤. Djangoì™€ í•¨ê»˜ ë°°í¬ë˜ëŠ” ìš´ì˜ì²´ì œë¥¼ ì‚¬ìš©í•˜ëŠ” ê²½ìš°ì— ê°€ìž¥ ë¹ ë¥´ê²Œ êµ¬ì„±í•  ìˆ˜ ìžˆëŠ” ë°©ë²•ìž…ë‹ˆë‹¤.
 
-* :ref:` °ø½Ä ¸±¸®½º ¼³Ä¡ÇÏ±â<installing-official-release>`. ÀÌ°ÍÀº
-  ÀÌÀü Django  ¹öÀü ½ÇÇàÀÌ ¾à°£ ºÒ¾ÈÇÏ´Ù¸é 
-  ÃÖ½Å ¹öÀüÀÇ Django¸¦ ¼³Ä¡ÇÏ´Â °ÍÀÌ ÃÖ¼±ÀÇ ¹æ¹ýÀÌ´Ù.
+* :ref:` ê³µì‹ ë¦´ë¦¬ìŠ¤ ì„¤ì¹˜í•˜ê¸° <installing-official-release>`. ì•½ê°„ ì§€ë‚˜ê°„ ë²„ì „ì´ë¼ í• ì§€ë¼ë„ ì•ˆì •ì ì¸ Django ë²„ì „ì„ ì›í•˜ëŠ” ì‚¬ìš©ìžì—ê²Œ ìµœì„ ì˜ ì„ íƒìž…ë‹ˆë‹¤.
 
-* :ref: ÃÖ½Å °³¹ß ¹öÀü ¼³Ä¡ÇÏ±â
-  <installing-development-version>`. ÀÌ°ÍÀº ÃÖ½Å°ú ÃÖ°íÀÇ »õ·Î¿î ÄÚµå ½ÇÇà¿¡ °ÆÁ¤ÀÌ ¾ø´Â
-  »ç¿ëÀÚµé¿¡°Ô °¡Àå ÁÁÀº ¹æ¹ýÀÔ´Ï´Ù.
+* :ref: ìµœì‹  ê°œë°œ ë²„ì „ ì„¤ì¹˜í•˜ê¸° <installing-development-version>`. ë”°ëˆë”°ëˆí•œ ìµœì‹ ì˜ ì½”ë“œë¥¼ ì‹¤í–‰ì‹œí‚¤ëŠ” ë°ì— ì£¼ì €í•¨ì´ ì—†ëŠ” ì‚¬ìš©ìžì—ê²ŒëŠ” ìµœì„ ì˜ ì„ íƒì´ ë  ê²ƒìž…ë‹ˆë‹¤.
 
-.. °æ°í:: ÀÌ¿ëÇÏ°í ÀÖ´Â DjangoÀÇ ¹öÀü¿¡ 
-    ÇØ´çÇÏ´Â ¹®¼­¸¦ È®ÀÎÇÏ¼¼¿ä!
+.. admonition:: ë¬¸ì„œë¥¼ ì½ìœ¼ì‹¤ ë•ŒëŠ” í•­ìƒ ì´ìš©í•˜ê³  ìžˆëŠ” Djangoì˜ ë²„ì „ì— ë§žëŠ”ì§€ í™•ì¸í•˜ì„¸ìš”!
 
-    Ã¹ ¹øÂ°, µÎ ¹øÂ° ´Ü°è Áß ÇÏ³ª¸¦ ½ÇÇà ÇÏ¸é ** °³¹ß ¹öÀüÀÇ »õ·Î¿î ±â´É ** ¹®¼­¿¡ Ç¥½ÃµÈ 
-    ÀÏºÎºÐÀÌ º¸ÀÏ °ÍÀÔ´Ï´Ù. ¸î°¡Áö ÇÃ·¡±× µéÀº
-    °³¹ß ¹öÀü¿¡¼­¸¸ »ç¿ë ÇÒ ¼ö ÀÖÀ» °ÍÀÌ¸ç, 
-    °ø½Ä ¸±¸®Áî ¹öÀü°ú È£È¯ÀÌ µÇÁö ¾ÊÀ» ¼ö ÀÖ½À´Ï´Ù.
+    ìœ„ì˜ ì²« ë²ˆì§¸ë‚˜ ë‘ ë²ˆì§¸ ë°©ë²•ì„ ì„ íƒí•˜ì‹  ê²½ìš°ì—ëŠ” ë¬¸ì„œì—ì„œ **new in development version**\ ìœ¼ë¡œ í‘œì‹œëœ ë¶€ë¶„ì€ ì³ë‹¤ë³´ì§€ ë§ˆì„¸ìš”. ê·¸ë ‡ê²Œ í‘œì‹œëœ ë¶€ë¶„ì€ ê°œë°œ ë²„ì „ì—ì„œë§Œ ì‚¬ìš©í•  ìˆ˜ ìžˆëŠ” ê¸°ëŠ¥ì´ë¯€ë¡œ, ê³µì‹ ë¦´ë¦¬ì¦ˆ ë²„ì „ê³¼ëŠ” í˜¸í™˜ì´ ë˜ì§€ ì•Šì„ ìˆ˜ë„ ìžˆìŠµë‹ˆë‹¤.
 
 
-È®ÀÎ
+í™•ì¸
 ---------
 
-Django°¡ Á¤È®ÇÏ°Ô ¼³Ä¡ µÇ¾î ÀÖ´ÂÁö, ½©¿¡¼­ 'python' ¸í·É¾î¸¦ ÀÔ·Â ÇÏ¸é ÆÄÀÌ½ã¿¡ ÀÇÇØ ¾Ë ¼ö ÀÖ½À´Ï´Ù.
-ÆÄÀÌ½ã ¸Þ½ÃÁö¿¡ ´ÙÀ½°ú °°ÀÌ DjangoÀÇ ¹öÀüÀ» °¡Áö°í ¿Ã °ÍÀÔ´Ï´Ù. Then at the Python prompt, try to import Django::
+íŒŒì´ì¬ì—ì„œ Djangoê°€ ë³´ì´ëŠ”ì§€ í™•ì¸í•˜ë ¤ë©´, ì‰˜ì—ì„œ ``python`` ëª…ë ¹ì–´ë¥¼ ìž…ë ¥í•œ ë‹¤ìŒ, Djangoë¥¼ ìž„í¬íŠ¸í•´ë´…ë‹ˆë‹¤.
 
     >>> import django
     >>> print django.get_version()
     1.3
 
 
-³¡!----------
+ë!
+----------
 
-ÀÌÁ¦ ³¡³µ½À´Ï´Ù. ´ÙÀ½À¸·Î ÀÌµ¿ÇÏ¼¼¿ä~ :doc:` ÀÚ½À¼­(tutorial) ÀÌµ¿ÇÏ±â</intro/tutorial01>`.
+ì´ì œ ëë‚¬ìŠµë‹ˆë‹¤. :doc:`ìžìŠµì„œë¥¼ ì½ì–´ë³´ì„¸ìš” </intro/tutorial01>`.
 
 
 
