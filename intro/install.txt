@@ -49,7 +49,7 @@ Django를 설치하는 데에는 다음과 같은 세 가지의 쉬운 방법이
 
 * :ref:`공식 릴리스 설치하기 <installing-official-release>`\ . 약간 지나간 버전이라 할지라도 안정적인 Django 버전을 원하는 사용자에게 최선의 선택입니다.
 
-* :ref: 최신 개발 버전 설치하기 <installing-development-version>`\ . 따끈따끈한 최신의 코드를 실행시키는 데에 주저함이 없는 사용자에게는 최선의 선택이 될 것입니다.
+* :ref:`최신 개발 버전 설치하기 <installing-development-version>`\ . 따끈따끈한 최신의 코드를 실행시키는 데에 주저함이 없는 사용자에게는 최선의 선택이 될 것입니다.
 
 .. admonition:: 문서를 읽으실 때는 항상 이용하고 있는 Django의 버전에 맞는지 확인하세요!
 
