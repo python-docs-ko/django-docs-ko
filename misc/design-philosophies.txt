@@ -1,312 +1,241 @@
 ===================
-Design philosophies
+설계 철학
 ===================
 
-This document explains some of the fundamental philosophies Django's developers
-have used in creating the framework. Its goal is to explain the past and guide
-the future.
+이 문서는, Django의 개발자들이 프레임워크를 창안하는 데에 있어 중요하게 여기는 근본 원리에 대해 몇 가지를 설명하고 있습니다. 과거를 돌아보고  미래로 나아갈 길을 안내하는 것이 바로 이 문서의 목표입니다.
 
-Overall
+개요
 =======
 
 .. _loose-coupling:
 
-Loose coupling
+느슨한 결합
 --------------
 
 .. index:: coupling; loose
 
-A fundamental goal of Django's stack is `loose coupling and tight cohesion`_.
-The various layers of the framework shouldn't "know" about each other unless
-absolutely necessary.
+Django 스택의 근본 목표는 바로 `느슨한 결합과 강한 응집`_\ 입니다. 프레임워크의 다양한 계층들은 절대적으로 필요한 것을 제외하고는 다른 계층에 대해서 "알아서는" 안됩니다.
 
-For example, the template system knows nothing about Web requests, the database
-layer knows nothing about data display and the view system doesn't care which
-template system a programmer uses.
+예를 들어서, 템플릿 시스템은 웹이 요청하는 것들에 관해 전혀 알지 못하고, 데이터베이스 계층은 데이터 표시하는 것에 대해 전혀 알지 못하고, 그리고 뷰 시스템은 프로그래머가 어떤 템플릿 시스템 사용하는지에는 상관하지 않습니다.
 
-Although Django comes with a full stack for convenience, the pieces of the
-stack are independent of another wherever possible.
+비록 Django가 편리성을 위한 전체 스택을 갖추고 있지만, 스택의 일부분은 다른 것들과 가능한 한 독립되어 있습니다.
 
-.. _`loose coupling and tight cohesion`: http://c2.com/cgi/wiki?CouplingAndCohesion
+.. _`느슨한 결합과 강한 응집`: http://c2.com/cgi/wiki?CouplingAndCohesion
 
 .. _less-code:
 
-Less code
+적은 코드
 ---------
 
-Django apps should use as little code as possible; they should lack boilerplate.
-Django should take full advantage of Python's dynamic capabilities, such as
-introspection.
+Django 앱은 가능한 한 적은 코드를 사용해야 합니다. Django는 인트로스펙션과 같은 Python의 동적인 능력으로부터 오는 장점을 최대한 취하려고 합니다.
 
 .. _quick-development:
 
-Quick development
+빠른 개발
 -----------------
 
-The point of a Web framework in the 21st century is to make the tedious aspects
-of Web development fast. Django should allow for incredibly quick Web
-development.
+21세기 웹 프레임워크의 핵심은 바로 웹 개발의 지겨운 부분을 신속성있게 바꾸는 것입니다. Django는 웹 개발의 속도를 극적으로 높이고자 합니다.
 
 .. _dry:
 
-Don't repeat yourself (DRY)
+중복 방지(DRY)
 ---------------------------
 
 .. index::
    single: DRY
    single: Don't repeat yourself
 
-Every distinct concept and/or piece of data should live in one, and only one,
-place. Redundancy is bad. Normalization is good.
+개별성을 갖는 개념 및 데이터는 단 한 곳에, 단 한 벌만 존재해야 합니다. 과잉은 나쁜 것이며, 정규화(normalization)는 좋은 것입니다.
 
-The framework, within reason, should deduce as much as possible from as little
-as possible.
+이러한 이유로 인해 프레임워크는 가능한 만큼 최대한 줄여야 합니다.
 
 .. seealso::
 
-    The `discussion of DRY on the Portland Pattern Repository`__
+    `포틀랜드 패턴 저장소의 DRY에 대한 논의`__
 
     __ http://c2.com/cgi/wiki?DontRepeatYourself
     
 .. _explicit-is-better-than-implicit:
 
-Explicit is better than implicit
+명시적인 구현
 --------------------------------
 
-This is a core Python principle listed in :pep:`20`, and it means Django
-shouldn't do too much "magic." Magic shouldn't happen unless there's a really
-good reason for it. Magic is worth using only if it creates a huge convenience
-unattainable in other ways, and it isn't implemented in a way that confuses
-developers who are trying to learn how to use the feature.
+이것은 :pep:`20`\ 에 나열된 파이썬 원리의 핵심이며, Django가 너무 많이 "마술"을 부려서는 안 된다는 것을 의미하고  마술은 그것이 정말 좋은 이유가 아니라면 일어나선 안된다는 것입니다. 마술은 오직 그것이 다른 방법으로는 도달하기 어려운 매우 큰 어떤 편리함을 만들어 내는 데 사용될 때에만 가치가 있으며, 기능을 사용하는 방법을 배우려고 노력하고 있는 개발자가 혼란스러워하는 방법으로 구현되지 않습니다.
 
 .. _consistency:
 
-Consistency
+일관성
 -----------
 
-The framework should be consistent at all levels. Consistency applies to
-everything from low-level (the Python coding style used) to high-level (the
-"experience" of using Django).
+프레임워크는 모든 수준에서 모순이 없이 일관되어야 합니다. 일관성은 (파이썬 코딩 스타일이 사용된) 저수준으로부터 고수준(Django 사용하기의 "경험")까지 거의 모든 것에 적용됩니다.
 
-Models
+모델
 ======
 
-Explicit is better than implicit
+명시적인 구현
 --------------------------------
 
-Fields shouldn't assume certain behaviors based solely on the name of the
-field. This requires too much knowledge of the system and is prone to errors.
-Instead, behaviors should be based on keyword arguments and, in some cases, on
-the type of the field.
+필드들은 순전히 필드라고 이름 지어진 것을 기반으로 한 특정 동작을 당연하다고 여겨선 안됩니다. 결국 너무 많은 시스템 정보를 요청하고 그래서 오류가 자주 발생 하게 됩니다. 대신에, 동작들은 인자 키워드에 기반되어야 하고 그리고 때로는 필드의 형식에 기반되어야 합니다.
 
-Include all relevant domain logic
+모든 적절한 도메인 로직을 포함
 ---------------------------------
 
-Models should encapsulate every aspect of an "object," following Martin
-Fowler's `Active Record`_ design pattern.
+모델은 모든 "개체"의 측면을 요약해야 하고, 마틴 파울러의 `액티브 레코드`_ 디자인 패턴을 따라야 합니다.
 
-This is why both the data represented by a model and information about
-it (its human-readable name, options like default ordering, etc.) are
-defined in the model class; all the information needed to understand a
-given model should be stored *in* the model.
+이것이 바로 모델에 의하여 표현되는 데이터 및 그에 대한 정보(사람이 읽을 수 있는 이름, 기본 정렬순서와 같은 선택사항 등)가 모델 클래스 내에 정의되어 있는 이유입니다. 모델을 이해하기 위해 필요한 모든 정보는 모델 *내*\ 에 저장되어야 합니다.
 
-.. _`Active Record`: http://www.martinfowler.com/eaaCatalog/activeRecord.html
+.. _`액티브 레코드`: http://www.martinfowler.com/eaaCatalog/activeRecord.html
 
-Database API
+데이터베이스 API
 ============
 
-The core goals of the database API are:
+데이터베이스 API는 다음과 같은 핵심목표를 갖습니다.
 
-SQL efficiency
+SQL 효율
 --------------
 
-It should execute SQL statements as few times as possible, and it should
-optimize statements internally.
+SQL문은 가능한 한 짧은 시간 내에 실행되어야 하고, 내부적으로 문을 최적화해야 합니다.
 
-This is why developers need to call ``save()`` explicitly, rather than the
-framework saving things behind the scenes silently.
+저장하는 일을 프레임워크에서 조용히 처리하기보다는 개발자가 ``save()``를 명시적으로 호출하여야 하는 것이 그러한 이유에서입니다.
 
-This is also why the ``select_related()`` ``QuerySet`` method exists. It's an
-optional performance booster for the common case of selecting "every related
-object."
+또한 ``select_related()`` ``QuerySet`` 메소드가 존재하는 이유이기도 합니다. "모든 연관된 개체"를 선택하는 일반적인 경우를 위한 성능 부스터 입니다.
 
-Terse, powerful syntax
+간결하고 강력한 구문
 ----------------------
 
-The database API should allow rich, expressive statements in as little syntax
-as possible. It should not rely on importing other modules or helper objects.
+데이터베이스 API는 가능한 적은 구문으로 풍부하고 표현력이 높은 문장을 제공해야 합니다. 다른 모듈이나 도우미 개체 불러오기에 의지해서는 안 됩니다.
 
-Joins should be performed automatically, behind the scenes, when necessary.
+조인(join)은 필요할 때 이면에서 자동적으로 수행되어야 합니다.
 
-Every object should be able to access every related object, systemwide. This
-access should work both ways.
+모든 개체는 연관된 모든 개체에 시스템 전역에서 접근해져야 합니다. 이 접근은 양방향에서 작동해야 합니다.
 
-Option to drop into raw SQL easily, when needed
+필요할 때에는 날것의 SQL을 쉽게 사용할 수 있을 것
 -----------------------------------------------
 
-The database API should realize it's a shortcut but not necessarily an
-end-all-be-all. The framework should make it easy to write custom SQL -- entire
-statements, or just custom ``WHERE`` clauses as custom parameters to API calls.
+데이터베이스 API는 이것이 지름길일 뿐, 반드시 필요한 것이 되어서는 안된다는 점을 인지하여야 합니다. 프레임워크는 맞춤 SQL -- 전체 문장 또는 맞춤 ``WHERE`` 절만을 API 호출의 맞춤 파라미터로서-- 을 작성하기 쉬워야 합니다.
 
-URL design
+URL 디자인
 ==========
 
-Loose coupling
+느슨한 결합
 --------------
 
-URLs in a Django app should not be coupled to the underlying Python code. Tying
-URLs to Python function names is a Bad And Ugly Thing.
+Django 앱 내의 URL들은 근본적인 파이썬 코드를 위해 연결지어져선 안 됩니다. 파이썬 함수 이름에 URL을 묶는 것은 추악한 것입니다.
 
-Along these lines, the Django URL system should allow URLs for the same app to
-be different in different contexts. For example, one site may put stories at
-``/stories/``, while another may use ``/news/``.
+이러한 노선을 따라, Django URL 시스템은 동일한 앱을 대하여 문맥에 따른 URL을 허용합니다. 예를 들어, 어떤 사이트는 기사를 ``/stories/``에 두고, 다른 사이트는 ``/news/``에 두는 것도 가능합니다.
 
-Infinite flexibility
+무한한 유연성
 --------------------
 
-URLs should be as flexible as possible. Any conceivable URL design should be
-allowed.
+URL은 가능한 융통성이 있어야 합니다. 상상할 수 있는 어떠한 URL 디자인도 허용되어야 합니다.
 
-Encourage best practices
+모범 사례를 권장
 ------------------------
 
-The framework should make it just as easy (or even easier) for a developer to
-design pretty URLs than ugly ones.
+프레임워크는 추한 것 보다는 아름다운 URL을 디자인 하기 위해 개발자를 위하여 그냥 쉽게 만들어야 합니다.
 
-File extensions in Web-page URLs should be avoided.
+웹페이지 URL내에 파일 확장자들은 피해야 합니다.
 
-Vignette-style commas in URLs deserve severe punishment.
+URL 내의 비네트 스타일의 쉼표는 중벌을 받아 마땅합니다.
 
 .. _definitive-urls:
 
-Definitive URLs
+완전한 URL
 ---------------
 
 .. index:: urls; definitive
 
-Technically, ``foo.com/bar`` and ``foo.com/bar/`` are two different URLs, and
-search-engine robots (and some Web traffic-analyzing tools) would treat them as
-separate pages. Django should make an effort to "normalize" URLs so that
-search-engine robots don't get confused.
+기술적으로, ``foo.com/bar``와 ``foo.com/bar/``는 서로 다른 URL이며, 검색 엔진 로봇과 몇몇 웹 트래픽 분석 도구들은 이를 별도의 페이지로 취급합니다. Django는 검색 엔진 로봇이 헷갈리지 않도록 URL을 "정규화"하려고 노력합니다.
 
-This is the reasoning behind the :setting:`APPEND_SLASH` setting.
+이것이 :setting:`APPEND_SLASH` 설정이 있는 이유입니다.
 
-Template system
+템플릿 시스템
 ===============
 
 .. _separation-of-logic-and-presentation:
 
-Separate logic from presentation
+표현과 로직의 분리
 --------------------------------
 
-We see a template system as a tool that controls presentation and
-presentation-related logic -- and that's it. The template system shouldn't
-support functionality that goes beyond this basic goal.
+우리는 템플릿 시스템을 표현 및 표현 관련 로직을 제어하는 도구이며, 그 이상도 이하도 아니라고 생각합니다. 템플릿 시스템은 이러한 기본 목표를 초월하는 기능을 지원해서는 안됩니다.
 
-If we wanted to put everything in templates, we'd be using PHP. Been there,
-done that, wised up.
+템플릿에 모두 다 우겨넣을 생각이었다면, PHP를 사용하고 있을 것입니다. 그런 짓에는 신물이 납니다.
 
-Discourage redundancy
+중복 제거
 ---------------------
 
-The majority of dynamic Web sites use some sort of common sitewide design --
-a common header, footer, navigation bar, etc. The Django template system should
-make it easy to store those elements in a single place, eliminating duplicate
-code.
+대다수 동적인 웹 사이트들은 일종의 공통 사이트와이드 디자인을 사용합니다. -- 공통의 헤더, 푸터, 네비게이션 바, 기타 등등. Django 템플릿 시스템은 단일한 장소에, 중복된 코드를 빼내고, 쉽게 축적할 수 있도록 해야 합니다.
 
-This is the philosophy behind :ref:`template inheritance
-<template-inheritance>`.
+이는 :ref:`템플릿 상속 <template-inheritance>`\ 을 뒷받침하는 철학입니다.
 
-Be decoupled from HTML
+HTML에 얽매이지 않기
 ----------------------
 
-The template system shouldn't be designed so that it only outputs HTML. It
-should be equally good at generating other text-based formats, or just plain
-text.
+템플릿 시스템이 오직 HTML만 출력하도록 설계되어서는 안 됩니다. 다른 텍스트 기반 포맷이라든지 그냥 일반 텍스트를 생성하는 기능도 마찬가지로 훌륭하여야 합니다.
 
-XML should not be used for template languages
+XML을 템플릿 언어로서 사용하지 말 것
 ---------------------------------------------
 
 .. index:: xml; suckiness of
 
-Using an XML engine to parse templates introduces a whole new world of human
-error in editing templates -- and incurs an unacceptable level of overhead in
-template processing.
+XML 엔진을 템플릿 분석에 사용하는 것은, 템플릿을 편집하는 사람에 의해 발생하는 오류라는 새로운 세계의 문을 열어젖히는 일입니다. 또한 템플릿 처리에 있어 감내하기 힘든 수준의 과부하를 일으킵니다.
 
-Assume designer competence
+디자이너의 역량을 가정
 --------------------------
 
-The template system shouldn't be designed so that templates necessarily are
-displayed nicely in WYSIWYG editors such as Dreamweaver. That is too severe of
-a limitation and wouldn't allow the syntax to be as nice as it is. Django
-expects template authors are comfortable editing HTML directly.
+템플릿 시스템은 드림위버와 같은 위지윅(WYSIWYG) 편집기에서 반드시 잘 보이도록 설계하지는 않습니다. 이는 좋은 구문을 만들어내는 데에 중대한 제약이 되기 때문입니다. Django는 템플릿을 작성하는 사람이 HTML을 직접 편집하는 데에 거리낌이 없을 것으로 기대합니다.
 
-Treat whitespace obviously
+공백을 분명히 다루기
 --------------------------
 
-The template system shouldn't do magic things with whitespace. If a template
-includes whitespace, the system should treat the whitespace as it treats text
--- just display it. Any whitespace that's not in a template tag should be
-displayed.
+템플릿 시스템은 공백을 가지고 마술을 부려서는 안 됩니다. 만일 템플릿이 공백을 포함하면, 시스템은 텍스트를 다루는 것처럼 공백을 다루어야 합니다.
+-- 그냥 그것을 표시합니다. 템플릿 태그에 있지 않은 공백은 표시 되어야 합니다.
 
-Don't invent a programming language
+프로그래밍 언어를 새로 개발하지 말 것
 -----------------------------------
 
-The template system intentionally doesn't allow the following:
+템플릿 시스템은 의도적으로 다음과 같은 것을 허용하지 않습니다.
 
-* Assignment to variables
-* Advanced logic
+* 변수의 할당
+* 진일보한 로직
 
-The goal is not to invent a programming language. The goal is to offer just
-enough programming-esque functionality, such as branching and looping, that is
-essential for making presentation-related decisions.
+템플릿 시스템의 목표는 프로그래밍 언어를 창안하는 것이 아닙니다. 표현의 처리에 있어 불가결한 분기와 루핑 등의 프로그래밍 비슷한 기능을 제공할 뿐입니다.
 
-The Django template system recognizes that templates are most often written by
-*designers*, not *programmers*, and therefore should not assume Python
-knowledge.
+Django 템플릿 시스템은 템플릿은 *프로그래머*\가 아닌 *디자이너*\ 가 가장 많이 사용하는 것이며, 파이썬에 대한 지식을 가정해서는 안된다는 점을 인식합니다.
 
-Safety and security
+안정성과 보안성
 -------------------
 
-The template system, out of the box, should forbid the inclusion of malicious
-code -- such as commands that delete database records.
+독창적인 템플릿 시스템은 악의적인 코드가 끼어들 가능성을 배제하여야 합니다.
 
-This is another reason the template system doesn't allow arbitrary Python code.
+이것은 템플릿 시스템이 임의의 파이썬 코드를 허용하지 않는 또 다른 이유입니다.
 
-Extensibility
+확장성
 -------------
 
-The template system should recognize that advanced template authors may want
-to extend its technology.
+템플릿 시스템은 진일보한 템플릿 작가들이 그것의 기술을 확장하길 원할 수도 있음을 인지해야 합니다.
 
-This is the philosophy behind custom template tags and filters.
+이것이 맞춤 템플릿 태그 및 필터가 존재하는 이유입니다.
 
-Views
+뷰
 =====
 
-Simplicity
+단순성
 ----------
 
-Writing a view should be as simple as writing a Python function. Developers
-shouldn't have to instantiate a class when a function will do.
+뷰 작성하기는 파이썬 함수를 작성하는 것처럼 가능한 한 단순하여야 합니다. 개발자는 함수가 수행하려고 할 때 클래스를 인스턴스화할 필요가 없습니다.
 
-Use request objects
+요청 개체의 사용
 -------------------
 
-Views should have access to a request object -- an object that stores metadata
-about the current request. The object should be passed directly to a view
-function, rather than the view function having to access the request data from
-a global variable. This makes it light, clean and easy to test views by passing
-in "fake" request objects.
+뷰는 요청 개체 -- 현재 요청에 대한 메타데이터를 저장하는 개체 -- 에 대하여 접근할 수 있어야 합니다. 뷰 함수가 전역 변수로부터 요청 데이터에 접근하기보다는, 개체가 뷰 함수에 직접적으로 전달되어야 합니다. 이것이 가볍고, 깔끔하며, "가짜" 요청 개체를 전달함으로써 뷰를 테스트하기 쉽습니다.
 
-Loose coupling
+느슨한 결합
 --------------
 
-A view shouldn't care about which template system the developer uses -- or even
-whether a template system is used at all.
+뷰는 개발자가 어떤 템플릿 시스템을 사용하는지, 혹은 템플릿 시스템을 아예 사용하지 않는지에 대해 관여하지 않아야 합니다.
 
-Differentiate between GET and POST
+GET과 POST의 차별화
 ----------------------------------
 
-GET and POST are distinct; developers should explicitly use one or the other.
-The framework should make it easy to distinguish between GET and POST data.
+GET과 POST는 다른 것이며, 개발자는 둘 중 하나를 명확하게 사용하여야 합니다. 프레임워크는 GET과 POST를 구분하는 것이 쉽도록 해주어야 합니다.
