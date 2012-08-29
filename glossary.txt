@@ -1,75 +1,66 @@
 .. _glossary:
 
 ========
-Glossary
+용어
 ========
 
 .. glossary::
 
     field
-        An attribute on a :term:`model`; a given field usually maps directly to
-        a single database column.
+        :term:`model`\ 의 어트리뷰트. 하나의 field는 종종 데이터베이스의 한 컬럼에 대응됨.
 
-        See :doc:`/topics/db/models`.
+        :doc:`/topics/db/models` 참조.
 
     generic view
-        A higher-order :term:`view` function that provides an abstract/generic
-        implementation of a common idiom or pattern found in view development.
+        뷰 개발에 있어 일반적인 idiom 또는 패턴에 대한 추상적/일반적 구현을 제공하는 보다 높은 order의 :term:`뷰(view)` 함수.
 
-        See :doc:`/ref/generic-views`.
+        :doc:`/ref/generic-views` 참조.
 
     model
-        Models store your application's data.
+        모델은 애플리케이션의 데이터를 저장함.
 
-        See :doc:`/topics/db/models`.
+        :doc:`/topics/db/models` 참조.
 
     MTV
-        "Model-template-view"; a software pattern, similar in style to MVC, but
-        a better description of the way Django does things.
+        "모델-템플릿-뷰"; 소프트웨어의 패턴으로서, MVC와 유사하지만, 그보다 Django의 방식을 더 잘 설명하는 용어.
 
-        See :ref:`the FAQ entry <faq-mtv>`.
+        :ref:`FAQ 항목 <faq-mtv>` 참조.
 
     MVC
-        `Model-view-controller`__; a software pattern. Django :ref:`follows MVC
-        to some extent <faq-mtv>`.
+        `모델-뷰-컨트롤러`__ 소프트웨어 패턴. Django는 :ref:`MVC를 따름 <faq-mtv>`.
 
         __ http://en.wikipedia.org/wiki/Model-view-controller
 
     project
-        A Python package -- i.e. a directory of code -- that contains all the
-        settings for an instance of Django. This would include database
-        configuration, Django-specific options and application-specific
-        settings.
+        Django의 인스턴스에 대한 모든 설정을 담은 파이썬 패키지 -- 디렉토리 또는 코드 --.
+        데이터베이스 설정, Django 설정 및 애플리케이션 설정 등을 포함.
 
     property
-        Also known as "managed attributes", and a feature of Python since
-        version 2.2. This is a neat way to implement attributes whose usage
-        resembles attribute access, but whose implementation uses method calls.
+        "managed attributes"라고도 하며, 파이썬 버전 2.2부터 제공되는 기능.
+        어트리뷰트 접근과 유사한 사용법을 갖는 어트리뷰트를 구현하는 깔끔한 방법이지만, 그 구현은 함수 호출을 사용함.
 
-        See :func:`property`.
+        :func:`property` 참조.
 
     queryset
-        An object representing some set of rows to be fetched from the database.
+        데이터베이스로부터 얻어낸 행의 집합을 나타내는 개체.
 
-        See :doc:`/topics/db/queries`.
+        :doc:`/topics/db/queries` 참조.
 
     slug
-        A short label for something, containing only letters, numbers,
-        underscores or hyphens. They're generally used in URLs. For
-        example, in a typical blog entry URL:
+        짧은 라벨로서, 문자, 숫자, 밑줄 또는 하이픈만을 포함.
+        일반적으로 URL에 사용. 예를 들어, 블로그 엔트리 URL은 다음과 같다고 할 때,
 
         .. parsed-literal::
 
             https://www.djangoproject.com/weblog/2008/apr/12/**spring**/
 
-        the last bit (``spring``) is the slug.
+        마지막 부분(``spring``)이 slug임.
 
     template
-        A chunk of text that acts as formatting for representing data. A
-        template helps to abstract the presentation of data from the data
-        itself.
+        데이터를 표현하기 위한 형식으로서 쓰이는 텍스트의 덩이리.
+        템플릿은 데이터 자체와 그에 대한 표현을 분리하여 추상화하는 데에 도움이 됨.
 
-        See :doc:`/topics/templates`.
+        :doc:`/topics/templates` 참조.
 
     view
-        A function responsible for rending a page.
+        페이지를 렌더링하는 역할을 하는 함수.
