@@ -101,13 +101,11 @@ compilemessages
 
 .. django-admin:: compilemessages
 
-Compiles .po files created with ``makemessages`` to .mo files for use with
-the builtin gettext support. See :doc:`/topics/i18n/index`.
+``makemessages``\ 로 생성한 .po 파일을 내장된 gettext 지원에 사용할 수 있도록 .mo 파일로 컴파일합니다. :doc:`/topics/i18n/index` 참조.
 
-Use the :djadminopt:`--locale` option to specify the locale to process.
-If not provided, all locales are processed.
+로케일을 지정하려면 :djadminopt:`--locale` 옵션을 사용합니다. 생략한 경우, 모든 로케일에 대하여 처리합니다.
 
-Example usage::
+용례::
 
     django-admin.py compilemessages --locale=br_PT
 
@@ -399,90 +397,79 @@ makemessages
 
 .. django-admin:: makemessages
 
-Runs over the entire source tree of the current directory and pulls out all
-strings marked for translation. It creates (or updates) a message file in the
-conf/locale (in the django tree) or locale (for project and application)
-directory. After making changes to the messages files you need to compile them
-with ``compilemessages`` for use with the builtin gettext support. See the
-:ref:`i18n documentation <how-to-create-language-files>` for details.
+현재 디렉토리의 전체 소스 트리를 돌면서 번역 표시가 된 문자열을 뽑아냅니다. (django 트리 내의) conf/locale 또는 (프로젝트 및 애플리케이션의 경우) locale 디렉토리에 메시지 파일을 생성하거나 수정합니다. 내장된 gettext 지원을 상ㅇ하기 위해서는 메시지 파일을 변경한 후에 ``compilemessages``\ 로 컴파일하여야 합니다. 자세한 내용은 :ref:`i18n 문서 <how-to-create-language-files>`\ 를 참조하세요.
 
 .. django-admin-option:: --all
 
-Use the ``--all`` or ``-a`` option to update the message files for all
-available languages.
+사용가능한 모든 언어에 대하여 메시지 파일을 수정하려면 ``--all`` 또는 ``-a`` 옵션을 사용합니다.
 
-Example usage::
+용례::
 
     django-admin.py makemessages --all
 
 .. django-admin-option:: --extension
 
-Use the ``--extension`` or ``-e`` option to specify a list of file extensions
-to examine (default: ".html", ".txt").
+검사할 파일 확장자의 목록을 정의하려면 ``--extension`` 또는 ``-e`` 옵션을 사용합니다(기본값: ".html", ".txt").
 
-Example usage::
+용례::
 
     django-admin.py makemessages --locale=de --extension xhtml
 
-Separate multiple extensions with commas or use -e or --extension multiple times::
+쉼표로 여러 확장자를 구분하거나 -e 또는 --extension 옵션을 여러 번 사용합니다.
+
+::
 
     django-admin.py makemessages --locale=de --extension=html,txt --extension xml
 
-Use the :djadminopt:`--locale` option to specify the locale to process.
+처리할 로케일을 지정하려면 :djadminopt:`--locale` 옵션을 사용합니다.
 
-Example usage::
+용례::
 
     django-admin.py makemessages --locale=br_PT
 
 .. django-admin-option:: --domain
 
-Use the ``--domain`` or ``-d`` option to change the domain of the messages files.
-Currently supported:
+메시지 파일의 도메인을 변경하려면 ``--domain`` 또는 ``-d`` 옵션을 사용합니다.
+현재 지원 형식::
 
-* ``django`` for all ``*.py``, ``*.html`` and ``*.txt`` files (default)
-* ``djangojs`` for ``*.js`` files
+* ``django``: 모든 ``*.py``, ``*.html`` 및 ``*.txt`` 파일 (기본값)
+* ``djangojs``: ``*.js`` 파일
 
 .. django-admin-option:: --symlinks
 
 .. versionadded:: 1.2
 
-Use the ``--symlinks`` or ``-s`` option to follow symlinks to directories when
-looking for new translation strings.
+새로운 번역 문자열을 찾을 때 디렉토리에 대한 심볼릭 링크를 따라가려면 ``--symlinks`` 또는 ``-s`` 옵션을 사용합니다.
 
-Example usage::
+용례::
 
     django-admin.py makemessages --locale=de --symlinks
 
 .. django-admin-option:: --ignore
 
-Use the ``--ignore`` or ``-i`` option to ignore files or directories matching
-the given :mod:`glob`-style pattern. Use multiple times to ignore more.
+``--ignore`` 또는 ``-i`` 옵션을 사용하면 :mod:`glob`-스타일 패턴과 일치하는 파일이나 디렉토리를 무시합니다. 여러 번 사용하여 무시할 패턴을 추가로 지정할 수 있습니다.
 
-These patterns are used by default: ``'CVS'``, ``'.*'``, ``'*~'``
+기본으로 적용되는 패턴: ``'CVS'``, ``'.*'``, ``'*~'``
 
-Example usage::
+용례::
 
     django-admin.py makemessages --locale=en_US --ignore=apps/* --ignore=secret/*.html
 
 .. django-admin-option:: --no-default-ignore
 
-Use the ``--no-default-ignore`` option to disable the default values of
-:djadminopt:`--ignore`.
+``--no-default-ignore`` 옵션을 사용하면 :djadminopt:`--ignore`의 기본값을 적용하지 않습니다.
 
 .. django-admin-option:: --no-wrap
 
 .. versionadded:: 1.3
 
-Use the ``--no-wrap`` option to disable breaking long message lines into
-several lines in language files.
+``--no-wrap`` 옵션을 사용하면 언어 파일의 긴 메시지를 여러 행으로 분할하지 않습니다.
 
 .. django-admin-option:: --no-location
 
 .. versionadded:: 1.4
 
-Use the ``--no-location`` option to not write '``#: filename:line``'
-comment lines in language files. Note that using this option makes it harder
-for technically skilled translators to understand each message's context.
+``--no-location`` 옵션을 사용하면 언어 파일에 '``#: filename:line``' 주석 행을 기록하지 않습니다. 이 옵션을 사용할 경우 숙련된 번역자가 각 메시지의 문맥을 이해하는 데에 어려움을 겪을 수도 있으므로 주의하시기 바랍니다.
 
 reset <appname appname ...>
 ---------------------------
@@ -621,7 +608,7 @@ Write stderr to the *FILE* file.
 Umask to use when daemonizing. The value is interpeted as an octal number
 (default value is ``022``).
 
-Example usage::
+용례::
 
     django-admin.py runfcgi socket=/tmp/fcgi.sock method=prefork daemonize=true \
         pidfile=/var/run/django-fcgi.pid
@@ -681,7 +668,7 @@ and JavaScript files for the Django admin interface. Normally, the development
 server serves these files out of the Django source tree magically, but you'd
 want to use this if you made any changes to those files for your own site.
 
-Example usage::
+용례::
 
     django-admin.py runserver --adminmedia=/tmp/new-admin-style/
 
@@ -699,7 +686,7 @@ means any Python code changes you make while the server is running will *not*
 take effect if the particular Python modules have already been loaded into
 memory.
 
-Example usage::
+용례::
 
     django-admin.py runserver --noreload
 
@@ -718,7 +705,7 @@ Use the ``--ipv6`` (or shorter ``-6``) option to tell Django to use IPv6 for
 the development server. This changes the default IP address from
 ``127.0.0.1`` to ``::1``.
 
-Example usage::
+용례::
 
     django-admin.py runserver --ipv6
 
@@ -1202,7 +1189,7 @@ change the password whose username matches the current user.
 Use the ``--database`` option to specify the database to query for the user. If
 it's not supplied, Django will use the ``default`` database.
 
-Example usage::
+용례::
 
     django-admin.py changepassword ringo
 
@@ -1290,7 +1277,7 @@ allows for the following options:
 
 .. django-admin-option:: --pythonpath
 
-Example usage::
+용례::
 
     django-admin.py syncdb --pythonpath='/home/djangoprojects/myproject'
 
@@ -1305,7 +1292,7 @@ setting the Python path for you.
 
 .. django-admin-option:: --settings
 
-Example usage::
+용례::
 
     django-admin.py syncdb --settings=mysite.settings
 
@@ -1319,7 +1306,7 @@ Note that this option is unnecessary in ``manage.py``, because it uses
 
 .. django-admin-option:: --traceback
 
-Example usage::
+용례::
 
     django-admin.py syncdb --traceback
 
@@ -1329,7 +1316,7 @@ output a full stack trace whenever an exception is raised.
 
 .. django-admin-option:: --verbosity
 
-Example usage::
+용례::
 
     django-admin.py syncdb --verbosity 2
 
