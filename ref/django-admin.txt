@@ -397,7 +397,7 @@ makemessages
 
 .. django-admin:: makemessages
 
-현재 디렉토리의 전체 소스 트리를 돌면서 번역 표시가 된 문자열을 뽑아냅니다. (django 트리 내의) conf/locale 또는 (프로젝트 및 애플리케이션의 경우) locale 디렉토리에 메시지 파일을 생성하거나 수정합니다. 내장된 gettext 지원을 상ㅇ하기 위해서는 메시지 파일을 변경한 후에 ``compilemessages``\ 로 컴파일하여야 합니다. 자세한 내용은 :ref:`i18n 문서 <how-to-create-language-files>`\ 를 참조하세요.
+현재 디렉토리의 전체 소스 트리를 돌면서 번역 표시가 된 문자열을 뽑아냅니다. (django 트리 내의) conf/locale 또는 (프로젝트 및 애플리케이션의 경우) locale 디렉토리에 메시지 파일을 생성하거나 수정합니다. 내장된 gettext 지원을 사용하기 위해서는 메시지 파일을 변경한 후에 ``compilemessages``\ 로 컴파일하여야 합니다. 자세한 내용은 :ref:`i18n 문서 <how-to-create-language-files>`\ 를 참조하세요.
 
 .. django-admin-option:: --all
 
@@ -429,8 +429,9 @@ makemessages
 
 .. django-admin-option:: --domain
 
-메시지 파일의 도메인을 변경하려면 ``--domain`` 또는 ``-d`` 옵션을 사용합니다.
-현재 지원 형식::
+메시지 파일의 도메인을 변경하려면 ``--domain`` 또는 ``-d`` 옵션을 사용합니다. 현재 지원하는 형식은 다음과 같습니다.
+
+::
 
 * ``django``: 모든 ``*.py``, ``*.html`` 및 ``*.txt`` 파일 (기본값)
 * ``djangojs``: ``*.js`` 파일
@@ -447,7 +448,7 @@ makemessages
 
 .. django-admin-option:: --ignore
 
-``--ignore`` 또는 ``-i`` 옵션을 사용하면 :mod:`glob`-스타일 패턴과 일치하는 파일이나 디렉토리를 무시합니다. 여러 번 사용하여 무시할 패턴을 추가로 지정할 수 있습니다.
+``--ignore`` 또는 ``-i`` 옵션을 사용하면 :mod:`glob` 스타일의 패턴에 일치하는 파일이나 디렉토리를 무시합니다. 여러 번 사용하여 무시할 패턴을 추가로 지정할 수 있습니다.
 
 기본으로 적용되는 패턴: ``'CVS'``, ``'.*'``, ``'*~'``
 
@@ -457,7 +458,7 @@ makemessages
 
 .. django-admin-option:: --no-default-ignore
 
-``--no-default-ignore`` 옵션을 사용하면 :djadminopt:`--ignore`의 기본값을 적용하지 않습니다.
+``--no-default-ignore`` 옵션을 사용하면 :djadminopt:`--ignore`\ 의 기본값을 적용하지 않습니다.
 
 .. django-admin-option:: --no-wrap
 
