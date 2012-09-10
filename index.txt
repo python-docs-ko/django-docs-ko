@@ -117,8 +117,8 @@ Django 문서(한국어판)
 폼
 =====
 
-* **The basics:**
-  :doc:`Overview <topics/forms/index>` |
+* **기초:**
+  :doc:`개요 <topics/forms/index>` |
   :doc:`Form API <ref/forms/api>` |
   :doc:`Built-in fields <ref/forms/fields>` |
   :doc:`Built-in widgets <ref/forms/widgets>`
