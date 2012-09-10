@@ -61,7 +61,7 @@ HTML ``<form>`` 요소를 포함하고 있는 앞 장에서 사용한 설문조�
 
     (r'^(?P<poll_id>\d+)/vote/$', 'vote'),
 
-또, 우리는 ``vote()``\ 를 가상으로 만들었습니다. 실제로 구현을 해봅시다. ``polls/views.py``\ 에 다음을 추가합시다::
+또, 우리는 ``vote()``\ 함수를 가상으로 만들었습니다. 실제로 구현을 해봅시다. ``polls/views.py``\ 에 다음을 추가합시다::
 
     from django.shortcuts import get_object_or_404, render_to_response
     from django.http import HttpResponseRedirect, HttpResponse
@@ -87,7 +87,7 @@ HTML ``<form>`` 요소를 포함하고 있는 앞 장에서 사용한 설문조�
             # 자료가 두 번 전송되는 경우를 막아준다.
             return HttpResponseRedirect(reverse('polls.views.results', args=(p.id,)))
 
-위 코드는 이 자습서에서 아직 다루지 않은 몇 가지를 포함하고 있습다:
+위 코드는 이 자습서에서 아직 다루지 않은 몇 가지를 포함하고 있습니다:
 
 * :attr:`request.POST <django.http.HttpRequest.POST>` 는 키로 전송된 자료에 
   접근할 수 있도록 해주는 사전과 같은 객체입니다. 이 경우에서 ``request.POST['choice']``\ 는 
