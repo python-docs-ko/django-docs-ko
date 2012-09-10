@@ -91,10 +91,10 @@ HTML ``<form>`` 요소를 포함하고 있는 앞 장에서 사용한 설문조�
 
 * :attr:`request.POST <django.http.HttpRequest.POST>` 는 키로 전송된 자료에 
   접근할 수 있도록 해주는 사전과 같은 객체입니다. 이 경우에서 ``request.POST['choice']``\ 는 
-  선택된 설문지의 ID를 문자열로 반환합다. :attr:`request.POST <django.http.HttpRequest.POST>`\ 의 값은 항상 문자열들입다.
+  선택된 설문지의 ID를 문자열로 반환합니다. :attr:`request.POST <django.http.HttpRequest.POST>`\ 의 값은 항상 문자열들입니다.
 
   Django는 같은 방법으로 GET 자료에 접근하기 위해 :attr:`request.GET <django.http.HttpRequest.GET>`\ 를
-  제공합다. 그러나 POST 요청으로만 자료가 수정되게하기 위해서, 우리는 
+  제공합니다. 그러나 POST 요청으로만 자료가 수정되게하기 위해서, 우리는 
   명시적으로 코드에 :attr:`request.POST <django.http.HttpRequest.POST>`\ 를 사용하고 있다. 
 
 * 만약 POST 자료에 ``choice``\ 가 없으면, ``request.POST['choice']``\
@@ -113,9 +113,9 @@ HTML ``<form>`` 요소를 포함하고 있는 앞 장에서 사용한 설문조�
 
 * 우리는 이 예제에서  :class:`~django.http.HttpResponseRedirect` 생성자 안의 
   :func:`~django.core.urlresolvers.reverse` 함수를 사용하고 있습니다.
-  이 함수는  함수에서 URL을 하드코딩하는 행위를 안하게 도와줍다.
+  이 함수는  함수에서 URL을 하드코딩하는 행위를 안하게 도와줍니다.
   제어를 전달하기 원하는 뷰의 이름을 제공하고, URL패턴의 변수부분이 그 뷰를 가리킵니다.
-  이 경우에, URLconf를 사용하여 우리는 자습서 3에서 설정하였습다. 
+  이 경우에, URLconf를 사용하여 우리는 자습서 3에서 설정하였습니다. 
   아래와 같은 문자열을 반환할 것입니다.
   ::
 
