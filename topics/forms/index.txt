@@ -72,10 +72,10 @@ Django의 :class:`~django.http.HttpRequest` 클래스를 사용하여 폼 제출
 .. code-block:: python
 
    def contact(request):
-       if request.method == 'POST': # If the form has been submitted...
-           form = ContactForm(request.POST) # A form bound to the POST data
-           if form.is_valid(): # All validation rules pass
-               # Process the data in form.cleaned_data
+       if request.method == 'POST': # 폼이 제출되었을 경우...
+           form = ContactForm(request.POST) # 폼은 POST 데이터에 바인드됨
+           if form.is_valid(): # 모든 유효성 검증 규칙을 통과
+               # form.cleaned_data에 있는 데이터를 처리
                # ...
                return HttpResponseRedirect('/thanks/') # Redirect after POST
        else:
@@ -101,22 +101,12 @@ Django의 :class:`~django.http.HttpRequest` 클래스를 사용하여 폼 제출
 
 폼을 통해 파일 업로드를 다루는 방법은 :ref:`binding-uploaded-files`\ 에서 볼 수 있습니다.
 
-Processing the data from a form
+폼에서 데이터를 처리하기
 -------------------------------
 
-Once ``is_valid()`` returns ``True``, you can process the form submission safe
-in the knowledge that it conforms to the validation rules defined by your form.
-While you could access ``request.POST`` directly at this point, it is better to
-access ``form.cleaned_data``. This data has not only been validated but will
-also be converted in to the relevant Python types for you. In the above example,
-``cc_myself`` will be a boolean value. Likewise, fields such as ``IntegerField``
-and ``FloatField`` convert values to a Python int and float respectively. Note
-that read-only fields are not available in ``form.cleaned_data`` (and setting
-a value in a custom ``clean()`` method won't have any effect) because these
-fields are displayed as text rather than as input elements, and thus are not
-posted back to the server.
+``is_valid()``\ 가 ``True``\ 를 반환하였다면, 여러분의 폼에 의해 정의된 유효성 검증 규칙에 들어맞는다는 것을 의미하며 폼 제출을 안전하게 처리할 수 있습니다. 이 시점에 ``request.POST``\ 에 접근할 수는 있지만, ``form.cleaned_data``\ 에 접근하는 것을 권장합니다. 이 데이터는 유효성 검증을 거쳤을 뿐만 아니라 적합한 파이썬 유형으로 변환도 되어 있습니다. 위의 예제에서, ``cc_myself``\ 는 불린 값이 될 것입니다. 마찬가지로, ``IntegerField``\ 와 ``FloatField``\ 는 각각 파이썬의 int와 float로 변환됩니다. 읽기 전용인 데이터는 ``form.cleaned_data``\ 에서 사용할 수 없다는 점에 (또한 맞춤 ``clean()`` 메소드에 값을 설정하는 것은 아무런 영향을 끼치지 않음에) 주의하시기 바랍니다. 왜냐하면 이러한 필드들은 input 엘리먼트가 아닌 텍스트로 표시되며, 서버에 다시 포스트되지 않기 때문입니다.
 
-Extending the above example, here's how the form data could be processed:
+위의 예제를 확장하여, 폼 데이터가 어떻게 처리될 수 있는지 살펴봅시다.
 
 .. code-block:: python
 
@@ -134,7 +124,7 @@ Extending the above example, here's how the form data could be processed:
         send_mail(subject, message, sender, recipients)
         return HttpResponseRedirect('/thanks/') # Redirect after POST
 
-For more on sending email from Django, see :doc:`/topics/email`.
+Django에서 이메일을 보내는 자세한 방법에 대해서는 :doc:`/topics/email`\ 을 참고하세요.
 
 Displaying a form using a template
 ----------------------------------
