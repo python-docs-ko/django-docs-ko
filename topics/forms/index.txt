@@ -46,7 +46,7 @@ Django의 :class:`~django.http.HttpRequest` 클래스를 사용하여 폼 제출
 ============
 
 폼 개체는, 폼이 받아들여지기 위해 반드시 갖추어야 하는 폼 필드의 순서와 유효성 검증 규칙의 모음을 캡슐화합니다.
-폼 클래스는 ``django.forms.Form``\ 의 하위 클래스로서 생성되며 선언적인 스타일을 사용합니다. 이러한 스타일은 Django의 데이터베이스 모델을 사용해보았다면 익숙할 것입니다.
+폼 클래스는 ``django.forms.Form``\ 의 하위 클래스로서 생성되며 선언적인 스타일을 사용합니다. Django의 데이터베이스 모델을 사용해보았다면 이러한 스타일에 익숙할 것입니다.
 
 예로서, "contact me" 기능을 구현하기 위해서 폼을 사용하는 것을 고려해봅시다.
 
@@ -126,32 +126,23 @@ Django의 :class:`~django.http.HttpRequest` 클래스를 사용하여 폼 제출
 
 Django에서 이메일을 보내는 자세한 방법에 대해서는 :doc:`/topics/email`\ 을 참고하세요.
 
-Displaying a form using a template
+템플릿을 사용하여 폼을 보이기
 ----------------------------------
 
-Forms are designed to work with the Django template language. In the above
-example, we passed our ``ContactForm`` instance to the template using the
-context variable ``form``. Here's a simple example template::
+폼은 Django 템플릿 언어와 함께 사용하도록 만들어졌습니다. 위의 예제에서, 우리는 문맥 변수 ``form``\ 을 사용하여 ``ContactForm`` 인스턴스를 템플릿에 전달했습니다. 템플릿의 간단한 예는 다음과 같습니다.
 
     <form action="/contact/" method="post">{% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Submit" />
     </form>
 
-The form only outputs its own fields; it is up to you to provide the surrounding
-``<form>`` tags and the submit button.
+폼은 그에 속한 필드만 출력합니다. ``<form>`` 태그로 둘러싸고 제출 버튼을 다는 일은 여러분이 직접 해주어야합니다.
 
-.. admonition:: Forms and Cross Site Request Forgery protection
+.. admonition:: 폼과 교차 사이트 요청 위조 방지
 
-   Django ships with an easy-to-use :doc:`protection against Cross Site Request
-   Forgeries </ref/contrib/csrf>`. When submitting a form via POST with
-   CSRF protection enabled you must use the :ttag:`csrf_token` template tag
-   as in the preceding example. However, since CSRF protection is not
-   directly tied to forms in templates, this tag is omitted from the
-   following examples in this document.
+   Django는 사용하기 쉬운 :doc:`교차 사이트 요청 위조 방지 기능 </ref/contrib/csrf>`\ 을 탑재하고 있습니다. POST를 통해 폼을 제출할 때 CSRF 방지를 사용하려면 위의 예제와 같이 :ttag:`csrf_token` 템플릿 태그를 사용하여야 합니다. 하지만, CSRF 방지는 템플릿에서 폼에 직접 관련되지 않기 때문에, 이 문서에서 다루는 이후의 예제에서는 이 태그를 생략합니다.
 
-``form.as_p`` will output the form with each form field and accompanying label
-wrapped in a paragraph. Here's the output for our example template::
+``form.as_p``\ 는 각각의 폼 필드와 라벨을 함께 문단(역자 주: paragraph, 즉 <p> 태그)으로 감싸서 출력합니다. 예제 템플릿의 출력은 다음과 같습니다.
 
    <form action="/contact/" method="post">
    <p><label for="id_subject">Subject:</label>
@@ -165,21 +156,15 @@ wrapped in a paragraph. Here's the output for our example template::
    <input type="submit" value="Submit" />
    </form>
 
-Note that each form field has an ID attribute set to ``id_<field-name>``, which
-is referenced by the accompanying label tag. This is important for ensuring
-forms are accessible to assistive technology such as screen reader software. You
-can also :ref:`customize the way in which labels and ids are generated
-<ref-forms-api-configuring-label>`.
+각 폼 필드는 ID 어트리뷰트로 ``id_<field-name>`` 값을 가지며, 함께 오는 라벨 태그가 이를 참조함을 눈여겨보시기 바랍니다. 스크린 리더 소프트웨어와 같이 장애인을 위한 접근성을 제공하는 기술을 위해 중요합니다. :ref:`customize the way in which labels and ids are generated
+<ref-forms-api-configuring-label>`\ 를 참고하세요.
 
-You can also use ``form.as_table`` to output table rows (you'll need to provide
-your own ``<table>`` tags) and ``form.as_ul`` to output list items.
+또한 ``form.as_table``\ 을 사용하여 테이블의 행을 출력할 수 있으며(이 때에도 ``<table>`` 태그는 직접 써주어야 합니다), ``form.as_ul``을 사용하여 목록 아이템을 출력할 수 있습니다.
 
-Customizing the form template
+폼 템플릿 커스터마이징
 -----------------------------
 
-If the default generated HTML is not to your taste, you can completely customize
-the way a form is presented using the Django template language. Extending the
-above example::
+디폴트로 생성된 HTML이 구미에 맞지 않다면, Django 템플릿 언어를 사용하여 원하는 대로 완전히 고칠 수 있습니다. 앞의 예제를 확장하여 보도록 하겠습니다.
 
     <form action="/contact/" method="post">
         {{ form.non_field_errors }}
@@ -206,18 +191,13 @@ above example::
         <p><input type="submit" value="Send message" /></p>
     </form>
 
-Each named form-field can be output to the template using
-``{{ form.name_of_field }}``, which will produce the HTML needed to display the
-form widget. Using ``{{ form.name_of_field.errors }}`` displays a list of form
-errors, rendered as an unordered list. This might look like::
+각각의 명명된 폼 필드는 ``{{ form.name_of_field }}``\ 를 사용하여 템플릿으로 출력되며, 폼 위젯을 표출하기 위한 HTML을 만들어냅니다. ``{{ form.name_of_field.errors }}``\ 를 사용하여 폼 오류의 목록을 표출하고, 정렬되지 않은 목록(역자 주: unordered list, 즉 ul)으로 렌더링합니다. 이는 다음과 같이 보일 것입니다.
 
    <ul class="errorlist">
        <li>Sender is required.</li>
    </ul>
 
-The list has a CSS class of ``errorlist`` to allow you to style its appearance.
-If you wish to further customize the display of errors you can do so by looping
-over them::
+위의 목록은 그 외양을 정의할 수 있도록 ``errorlist``\ 의 CSS 클래스를 갖습니다. 오류의 표출을 더 커스터마이즈하고자 한다면 다음과 같이 루핑을 할 수 있습니다.
 
     {% if form.subject.errors %}
         <ol>
@@ -227,12 +207,10 @@ over them::
         </ol>
     {% endif %}
 
-Looping over the form's fields
+폼의 필드에 대하여 루핑
 ------------------------------
 
-If you're using the same HTML for each of your form fields, you can reduce
-duplicate code by looping through each field in turn using a ``{% for %}``
-loop::
+폼 필드 각각에 대하여 동일한 HTML을 사용한다면, ``{% for %}`` 루프를 사용하여 각 필드에 대하여 중복으로 발생하는 코드를 줄일 수 있습니다.
 
     <form action="/contact/" method="post">
         {% for field in form %}
@@ -244,38 +222,33 @@ loop::
         <p><input type="submit" value="Send message" /></p>
     </form>
 
-Within this loop, ``{{ field }}`` is an instance of :class:`BoundField`.
-``BoundField`` also has the following attributes, which can be useful in your
-templates:
+이 루프 내에서, ``{{ field }}``\ 는 :class:`BoundField`\ 의 인스턴스입니다. ``BoundField``\ 는 다음과 같이 템플릿에서 유용한 어트리뷰트를 갖습니다.
 
 ``{{ field.label }}``
-    The label of the field, e.g. ``Email address``.
+    필드의 라벨. 예: ``Email 주소``.
 
 ``{{ field.label_tag }}``
-    The field's label wrapped in the appropriate HTML ``<label>`` tag,
-    e.g. ``<label for="id_email">Email address</label>``
+    필드의 라벨로서, 적절한 HTML ``<label>`` 태그로 감싸진 것.
+    예: ``<label for="id_email">Email 주소</label>``
 
 ``{{ field.value }}`` 
-    The value of the field. e.g ``someone@example.com``
+    필드의 값. 예: ``someone@example.com``
 
 ``{{ field.html_name }}``
-    The name of the field that will be used in the input element's name
-    field. This takes the form prefix into account, if it has been set.
+    입력 엘리먼트의 이름 필드에 사용될 필드의 이름.
+    설정되지 않은 경우, 폼 접두어를 취함.
 
 ``{{ field.help_text }}``
-    Any help text that has been associated with the field.
+    필드에 연관된 도움말 텍스트.
 
 ``{{ field.errors }}``
-    Outputs a ``<ul class="errorlist">`` containing any validation errors
-    corresponding to this field. You can customize the presentation of
-    the errors with a ``{% for error in field.errors %}`` loop. In this
-    case, each object in the loop is a simple string containing the error
-    message.
+    이 필드에 관련된 유효성 검증 오류를 포함하는 ``<ul class="errorlist">``\ 를 출력.
+    ``{% for error in field.errors %}`` 루프를 사용함으로써 오류의 표현을 커스터마이즈할 수 있음.
+    이 경우, 루프의 각 개체는 오류 메시지를 담은 간단한 문자열임.
 
 ``field.is_hidden``
-    This attribute is ``True`` if the form field is a hidden field and
-    ``False`` otherwise. It's not particularly useful as a template
-    variable, but could be useful in conditional tests such as::
+    이 어트리뷰트는 필드가 숨김 필드이면 ``True``\ 이고, 그렇지 않으면 ``False``\ 임.
+    템플릿 변수로서는 그리 유용하지 않지만, 다음과 같은 조건 검사에 유용함.
 
         {% if field.is_hidden %}
            {# Do something special #}
