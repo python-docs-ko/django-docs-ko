@@ -131,6 +131,8 @@ Django에서 이메일을 보내는 자세한 방법에 대해서는 :doc:`/topi
 
 폼은 Django 템플릿 언어와 함께 사용하도록 만들어졌습니다. 위의 예제에서, 우리는 문맥 변수 ``form``\ 을 사용하여 ``ContactForm`` 인스턴스를 템플릿에 전달했습니다. 템플릿의 간단한 예는 다음과 같습니다.
 
+::
+
     <form action="/contact/" method="post">{% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Submit" />
@@ -143,6 +145,8 @@ Django에서 이메일을 보내는 자세한 방법에 대해서는 :doc:`/topi
    Django는 사용하기 쉬운 :doc:`교차 사이트 요청 위조 방지 기능 </ref/contrib/csrf>`\ 을 탑재하고 있습니다. POST를 통해 폼을 제출할 때 CSRF 방지를 사용하려면 위의 예제와 같이 :ttag:`csrf_token` 템플릿 태그를 사용하여야 합니다. 하지만, CSRF 방지는 템플릿에서 폼에 직접 관련되지 않기 때문에, 이 문서에서 다루는 이후의 예제에서는 이 태그를 생략합니다.
 
 ``form.as_p``\ 는 각각의 폼 필드와 라벨을 함께 문단(역자 주: paragraph, 즉 <p> 태그)으로 감싸서 출력합니다. 예제 템플릿의 출력은 다음과 같습니다.
+
+::
 
    <form action="/contact/" method="post">
    <p><label for="id_subject">Subject:</label>
@@ -165,6 +169,8 @@ Django에서 이메일을 보내는 자세한 방법에 대해서는 :doc:`/topi
 -----------------------------
 
 디폴트로 생성된 HTML이 구미에 맞지 않다면, Django 템플릿 언어를 사용하여 원하는 대로 완전히 고칠 수 있습니다. 앞의 예제를 확장하여 보도록 하겠습니다.
+
+::
 
     <form action="/contact/" method="post">
         {{ form.non_field_errors }}
@@ -193,11 +199,15 @@ Django에서 이메일을 보내는 자세한 방법에 대해서는 :doc:`/topi
 
 각각의 명명된 폼 필드는 ``{{ form.name_of_field }}``\ 를 사용하여 템플릿으로 출력되며, 폼 위젯을 표출하기 위한 HTML을 만들어냅니다. ``{{ form.name_of_field.errors }}``\ 를 사용하여 폼 오류의 목록을 표출하고, 정렬되지 않은 목록(역자 주: unordered list, 즉 ul)으로 렌더링합니다. 이는 다음과 같이 보일 것입니다.
 
+::
+
    <ul class="errorlist">
        <li>Sender is required.</li>
    </ul>
 
 위의 목록은 그 외양을 정의할 수 있도록 ``errorlist``\ 의 CSS 클래스를 갖습니다. 오류의 표출을 더 커스터마이즈하고자 한다면 다음과 같이 루핑을 할 수 있습니다.
+
+::
 
     {% if form.subject.errors %}
         <ol>
@@ -211,6 +221,8 @@ Django에서 이메일을 보내는 자세한 방법에 대해서는 :doc:`/topi
 ------------------------------
 
 폼 필드 각각에 대하여 동일한 HTML을 사용한다면, ``{% for %}`` 루프를 사용하여 각 필드에 대하여 중복으로 발생하는 코드를 줄일 수 있습니다.
+
+::
 
     <form action="/contact/" method="post">
         {% for field in form %}
@@ -228,7 +240,7 @@ Django에서 이메일을 보내는 자세한 방법에 대해서는 :doc:`/topi
     필드의 라벨. 예: ``Email 주소``.
 
 ``{{ field.label_tag }}``
-    필드의 라벨로서, 적절한 HTML ``<label>`` 태그로 감싸진 것.
+    필드의 라벨로서, 적절한 HTML ``<label>`` 태그로 감싼 것.
     예: ``<label for="id_email">Email 주소</label>``
 
 ``{{ field.value }}`` 
@@ -249,6 +261,8 @@ Django에서 이메일을 보내는 자세한 방법에 대해서는 :doc:`/topi
 ``field.is_hidden``
     이 어트리뷰트는 필드가 숨김 필드이면 ``True``\ 이고, 그렇지 않으면 ``False``\ 임.
     템플릿 변수로서는 그리 유용하지 않지만, 다음과 같은 조건 검사에 유용함.
+
+::
 
         {% if field.is_hidden %}
            {# Do something special #}
