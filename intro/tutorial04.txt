@@ -121,7 +121,7 @@ HTML ``<form>`` 요소를 포함하고 있는 앞 장에서 사용한 설문조�
 
     '/polls/3/results/'
 
-  ... ``3``\ 은 ``p.id``\ 의 값이다. 이 리다이렉트된 URL은 마지막 페이지를 보여주기위해 ``'results'`` 뷰를 호출합다. 뷰 이름(풀네임)을 사용해야한다는 것을 주의하세요(접두사를 포함하여) .
+  ... ``3``\ 은 ``p.id``\ 의 값이다. 이 리다이렉트된 URL은 마지막 페이지를 보여주기위해 ``'results'`` 뷰를 호출합니다. 뷰 이름(풀네임)을 사용해야한다는 것을 주의하세요(접두사를 포함하여) .
 
 자습서 3에서 언급했듯이, ``request``\ 는 :class:`~django.http.HttpRequest`\ 개체입니다. :class:`~django.http.HttpRequest` 개체에 대해 더 알고 싶다면 :doc:`request and response documentation </ref/request-response>`\ 을 참고하세요.
 
