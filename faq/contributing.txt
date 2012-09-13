@@ -4,9 +4,9 @@ FAQ: 오픈소스 참여방법(Contributing code)
 Django 오픈소스 시작은 어떻게하나?--------------------------------------------------
 
 감사합니다이 주제와 관련된 문서전체를 작성했습니다.
-문서의 타이틀은:`Contributing to Django </internals/contributing/index>`입니다.
+문서의 타이틀은:doc:`Contributing to Django </internals/contributing/index>`입니다.
 
-저는 몇 주전 티켓시스템에 버그픽스를 제출했습니다. 그런데 왜 저의 패치가무시되고 있죠?--------------------------------------------------------------------------------------------
+저는 몇 주전 티켓시스템에 버그픽스를 제출했습니다. 그런데 왜 저의 패치가무시되고 있죠?-------------------------------------------------------------------------------------------
 
 걱정마세요: 당신을 무시하는 것이 아닙니다!
 
@@ -37,14 +37,14 @@ that area of the code, to understand the problem and verify the fix:( 체크인�
 
 언제 그리고 어떻게 코어팀에게 내가작업한 패치에 대해서 상기시켜줄 수 있나?------------------------------------------------------------------
 
-주의를 끌 수 있는 한가지 방법은 메일링리스트에 정중하고 시의적절한 메시지를 남기는 것이다.
-정확한 시점을 결정하기 위해서, 당신은 스케쥴을 유심히 보아야 할 것이다. 만약에
-코어개발자가 기능구현 마감시점 또는 planning phase를 관리하는 시점이라면, 당신의 글은 관심을 받기 힘들 것이다. 그러나, 코어개발자가 특정버그를 잡는 시점이라면 당신은 충분히 관심을 받을 수 있을 것이다.(이 시점은 버그가 잡히기 직전 또는 베타릴리즈가 다가 올 때등을 예로 들 수 있다.)
+주의를 끌 수 있는 한가지 방법은 메일링리스트에 정중하고 시의적절한 메시지를 남기는 것입니다.
+정확한 시점을 결정하기 위해서, 당신은 스케쥴을 유심히 보아야 할 것입니다. 만약에
+코어개발자가 기능구현 마감시점 또는 planning phase를 관리하는 시점이라면, 당신의 글은 관심을 받기 힘들겁니다. 그러나, 코어개발자가 특정버그를 잡는 시점이라면 당신은 충분히 관심을 받을 수 있습니다.(이 시점은 버그가 잡히기 직전 또는 베타릴리즈가 다가 올 때등을 예로 들 수 있음)
 
-IRC역시 좋은 방법이 될 수 있다, 다시 강조하지만 가능한 전략적으로 다가서라.
-예를 들자면, bug sprint 하는 시점이 정말로 좋은 타이밍이다.
+IRC역시 좋은 방법이 될 수 있으며, 다시 강조하지만 가능한 전략적이고 시의적절하게 대처하세요.
+예를 들자면, bug sprint 하는 시점이 정말로 좋은 타이밍입니다
 
-또 하나의 방법은 여러개의 연관성있는 티켓들을 한꺼번에 제시하는 것이다. 코어개발자가 버그를 잡기위해서 작업하는 부분이  한동안 보지 못했던 부분인 경우가 있습니다. 이런 경우 모든 상세코드가 어떻게 잘 동작하는지 기억해 내기 위해 시간이 조금 걸릴 수 있습니다. If you collect several minor bug fixes together into
+또 하나의 방법은 여러개의 연관성있는 티켓들을 한꺼번에 제시하는 것입니다. 코어개발자가 버그를 잡기위해서 작업하는 부분이  한동안 보지 못했던 부분인 경우가 있습니다. 이런 경우 모든 상세코드가 어떻게 잘 동작하는지 기억해 내기 위해 시간이 조금 걸릴 수 있습니다. If you collect several minor bug fixes together into
 a similarly themed group, you make an attractive target, as the cost of coming
 up to speed on an area of code can be spread over multiple tickets.
 
@@ -61,9 +61,4 @@ up to speed on an area of code can be spread over multiple tickets.
 
 Whatever the reason, please keep in mind that while you may hit a particular
 bug regularly, it doesn't necessarily follow that every single Django user
-will hit the same bug. 사용자들은 각각 다른 방식으로, 다른 조건아래 다른 파트에 부하(스트레스)를 주면서 Django를 사용합니다. When we evaluate the
-relative priorities, we are generally trying to consider the needs of the
-entire community, not just the severity for one particular user. This doesn't
-mean that we think your problem is unimportant -- just that in the limited
-time we have available, we will always err on the side of making 10 people
-happy rather than making 1 person happy.
+will hit the same bug. 사용자들은 각각 다른 방식으로, 다른 조건아래 다른 파트에 부하(스트레스)를 주면서 Django를 사용합니다. 우리가 우선순위를 결정할때는, 일반적으로 전체 커뮤니티의 니즈를 최대한 고려합니다. 특정사용하만을 위해서 결정하지 않습니다. 이는 당신의 이슈가 중요하지 않다는 이야기가 아닙니다 - 저희는 항상 제한된 시간안에 단지 한명 보다는 10명을 기쁘게 해주려고 합니다.
