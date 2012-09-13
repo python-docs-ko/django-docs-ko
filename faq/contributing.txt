@@ -24,70 +24,44 @@ that area of the code, to understand the problem and verify the fix:( 체크인�
   데이타베이스를 건드리는 경우라면, 이 지침서는 이 코드에 친숙하지 않은 사용자를 위해서도 충분한가?
   familiar with it?
 
-* If there are several patches attached to the ticket, is it clear what
-  each one does, which ones can be ignored and which matter?
+* 티켓에 몇개의 패치가 포함되어 있는 경우, 각 패치가 하는 역할이 명확한가?
+  즉, 어떠한 것이 무시되어야 하며, 또 어떠한 것이 중요한지 명확한가?
 
 * 패치는 유닛테스트를 포함하고 있나요?만약에 포함하고 있지 않다면, 설명가능한 명백한 이유가 있나요?
-  왜?A test expresses succinctly what the problem is,
-  and shows that the patch actually fixes it.
+  왜?하나의 테스트는 문제가 무엇인지 간단명료하게 표현되나?
+  그리고 그 패치가 실제로 수정함을 보여주고 있나?
 
-If your patch stands no chance of inclusion in Django, we won't ignore it --
-we'll just close the ticket. So if your ticket is still open, it doesn't mean
-we're ignoring you; it just means we haven't had time to look at it yet.
+만약 당신이 제출한 패치가 Django에 포함되지 않는 경우, 우리는 무시하지 않을 것이다.
+다만 우리는 티켓을 클로즈(close)할 것이다. 즉 만약 당신의 티켓이 계속 오픈상태로 있다면 그것은 무시되는 것이 아니다.
+단지 우리가 아직까지도 티켓을 볼 시간이 없다는 것을 뜻한다.
 
-When and how might I remind the core team of a patch I care about?
-------------------------------------------------------------------
+언제 그리고 어떻게 코어팀에게 내가작업한 패치에 대해서 상기시켜줄 수 있나?------------------------------------------------------------------
 
-A polite, well-timed message to the mailing list is one way to get attention.
-To determine the right time, you need to keep an eye on the schedule. If you
-post your message when the core developers are trying to hit a feature
-deadline or manage a planning phase, you're not going to get the sort of
-attention you require. However, if you draw attention to a ticket when the
-core developers are paying particular attention to bugs -- just before a bug
-fixing sprint, or in the lead up to a beta release for example -- you're much
-more likely to get a productive response.
+주의를 끌 수 있는 한가지 방법은 메일링리스트에 정중하고 시의적절한 메시지를 남기는 것이다.
+정확한 시점을 결정하기 위해서, 당신은 스케쥴을 유심히 보아야 할 것이다. 만약에
+코어개발자가 기능구현 마감시점 또는 planning phase를 관리하는 시점이라면, 당신의 글은 관심을 받기 힘들 것이다. 그러나, 코어개발자가 특정버그를 잡는 시점이라면 당신은 충분히 관심을 받을 수 있을 것이다.(이 시점은 버그가 잡히기 직전 또는 베타릴리즈가 다가 올 때등을 예로 들 수 있다.)
 
-Gentle IRC reminders can also work -- again, strategically timed if possible.
-During a bug sprint would be a very good time, for example.
+IRC역시 좋은 방법이 될 수 있다, 다시 강조하지만 가능한 전략적으로 다가서라.
+예를 들자면, bug sprint 하는 시점이 정말로 좋은 타이밍이다.
 
-Another way to get traction is to pull several related tickets together. When
-the core developers sit down to fix a bug in an area they haven't touched for
-a while, it can take a few minutes to remember all the fine details of how
-that area of code works. If you collect several minor bug fixes together into
+또 하나의 방법은 여러개의 연관성있는 티켓들을 한꺼번에 제시하는 것이다. 코어개발자가 버그를 잡기위해서 작업하는 부분이  한동안 보지 못했던 부분인 경우가 있습니다. 이런 경우 모든 상세코드가 어떻게 잘 동작하는지 기억해 내기 위해 시간이 조금 걸릴 수 있습니다. If you collect several minor bug fixes together into
 a similarly themed group, you make an attractive target, as the cost of coming
 up to speed on an area of code can be spread over multiple tickets.
 
-Please refrain from emailing core developers personally, or repeatedly raising
-the same issue over and over. This sort of behavior will not gain you any
-additional attention -- certainly not the attention that you need in order to
-get your pet bug addressed.
+코어개발자에게 개인적으로 메일을 쓰거나 동일한 이슈에 여러번 반복적으로 문의하는 것을 삼가해주세요. 이러한 행동으로 말미암아 추가적인 관심을 끌기 어렵게 만들 수 있습니다. 당신이 버그가 수정이 되려면 이러한 행동은 삼가해 주시기 바랍니다.
 
-But I've reminded you several times and you keep ignoring my patch!
--------------------------------------------------------------------
+그러나 제가 여러번 언급했 듯이 저의 패치에 대해서는 계속 무시해 주십시요.!!-------------------------------------------------------------------
 
-Seriously - we're not ignoring you. If your patch stands no chance of
-inclusion in Django, we'll close the ticket. For all the other tickets, we
-need to prioritize our efforts, which means that some tickets will be
-addressed before others.
+진지하게 말씀드립니다.- 정말로 저희는 당신을 무시하지 않습니다. 만약 당신의 패치가 Django 에 포함되지 않는다면, 저희는 티켓을 종결(close)할 겁니다. 모든 티켓들은 우선순위가 매겨집니다, 즉 특정 티켓들은 또 다른 티켓보다 먼저 리뷰될 수 있습니다.
 
-One of the criteria that is used to prioritize bug fixes is the number of
-people that will likely be affected by a given bug. Bugs that have the
-potential to affect many people will generally get priority over those that
-are edge cases.
+특정 버그하나에 얼마나 많은 사람이 영향을 받느냐에 따라서 그 버그에 대한 우선 순위가 매기질 수 있습니다. 일반적으로 많은 사람에게 영향을 줄 수 있는 버그는 그 외의 버그들 보다 우선순위가 높아 질겁니다. 
 
-Another reason that bugs might be ignored for while is if the bug is a symptom
-of a larger problem. While we can spend time writing, testing and applying
-lots of little patches, sometimes the right solution is to rebuild. If a
-rebuild or refactor of a particular component has been proposed or is
-underway, you may find that bugs affecting that component will not get as much
-attention. Again, this is just a matter of prioritizing scarce resources. By
-concentrating on the rebuild, we can close all the little bugs at once, and
-hopefully prevent other little bugs from appearing in the future.
+특정 버그가 다른 특정한 문제의 한 증상인 경우, 그 버그는 한동안 무시될 수 있습니다. 저희가 코딩하고 테스트하고 수많은 패치들을 적용하는 동안에도
+종종 좋은 솔류션들이 적용될 수 있습니다. 만약 특정 컴포넌트에 대한 리빌드(rebuild) 또는 리팩터(refactor)가 진행되는 중이라면, 이와 관련된 컴퍼넌트와 관련된 버그들은 많은 주목을 받지는 못할 것입니다. 다시한번 말하지만, 이것은 단지 한정된 자원때문에 발생하는 우선순위의 문제입니다. 리빌드(rebuild)에 집중함으로써, 모든 작은 버그들이 한꺼번에 종결(close)될 있으며, 바라건대 이로써 향후에 발생할 작은 버그들이 양산되는 것을 막아주기도 합니다.
 
 Whatever the reason, please keep in mind that while you may hit a particular
 bug regularly, it doesn't necessarily follow that every single Django user
-will hit the same bug. Different users use Django in different ways, stressing
-different parts of the code under different conditions. When we evaluate the
+will hit the same bug. 사용자들은 각각 다른 방식으로, 다른 조건아래 다른 파트에 부하(스트레스)를 주면서 Django를 사용합니다. When we evaluate the
 relative priorities, we are generally trying to consider the needs of the
 entire community, not just the severity for one particular user. This doesn't
 mean that we think your problem is unimportant -- just that in the limited
