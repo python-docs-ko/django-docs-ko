@@ -92,7 +92,7 @@ Django의 :class:`~django.http.HttpRequest` 클래스를 사용하여 폼 제출
 2. 폼이 제출된 경우, 폼의 바인드된 인스턴스가 ``request.POST``\ 를 사용하여 생성됩니다. 제출된 자료가 유효한 경우에는 처리되어 사용자에게 "thanks" 페이지가 리다이렉트됩니다.
 3. 폼이 제출되었지만 유효하지 않은 경우, 바인드된 폼 인스턴스가 템플릿에 전달됩니다.
 
-**바인드된(bound)** 폼과 **바인드되지 않은(unbound)** 폼의 차이는 중요합니다. 바인드되지 않은 폼은 그에 연관된 어떠한 데이터도 갖지 않으며, 사용자에게 렌더될 때에는 비어 있거나 기본값을 갖습니다. 바인드된 폼은 제출된 자료를 갖고 있으며, 자료가 유효한지 사용자에게 알려줄 수 있습니다. 유효하지 않은 바인드된 폼이 렌더될 때는, 사용자에게 무엇이 잘못되었는지 알리는 오류 메시지를 포함할 수 있습니다.
+**바인드된(bound)** 폼과 **바인드되지 않은(unbound)** 폼의 차이는 중요합니다. 바인드되지 않은 폼은 그에 연관된 어떠한 데이터도 갖지 않으며, 사용자에게 렌더될 때에는 비어 있거나 기본값을 갖습니다. 바인드된 폼은 제출된 자료를 갖고 있으며, 데이터가 유효한지 사용자에게 알려줄 수 있습니다. 유효하지 않은 바인드된 폼이 렌더될 때는, 사용자에게 무엇이 잘못되었는지 알리는 오류 메시지를 포함할 수 있습니다.
 
 바인드된 폼과 바인드되지 않은 폼 사이의 차이점에 대한 자세한 정보는 :ref:`ref-forms-api-bound-unbound`\ 를 참고하세요.
 
@@ -104,7 +104,7 @@ Django의 :class:`~django.http.HttpRequest` 클래스를 사용하여 폼 제출
 폼에서 데이터를 처리하기
 -------------------------------
 
-``is_valid()``\ 가 ``True``\ 를 반환하였다면, 여러분의 폼에 의해 정의된 유효성 검증 규칙에 들어맞는다는 것을 의미하며 폼 제출을 안전하게 처리할 수 있습니다. 이 시점에 ``request.POST``\ 에 접근할 수는 있지만, ``form.cleaned_data``\ 에 접근하는 것을 권장합니다. 이 데이터는 유효성 검증을 거쳤을 뿐만 아니라 적합한 파이썬 유형으로 변환도 되어 있습니다. 위의 예제에서, ``cc_myself``\ 는 불린 값이 될 것입니다. 마찬가지로, ``IntegerField``\ 와 ``FloatField``\ 는 각각 파이썬의 int와 float로 변환됩니다. 읽기 전용인 데이터는 ``form.cleaned_data``\ 에서 사용할 수 없다는 점에 (또한 맞춤 ``clean()`` 메소드에 값을 설정하는 것은 아무런 영향을 끼치지 않음에) 주의하시기 바랍니다. 왜냐하면 이러한 필드들은 input 엘리먼트가 아닌 텍스트로 표시되며, 서버에 다시 포스트되지 않기 때문입니다.
+``is_valid()``\ 가 ``True``\ 를 반환하였다면, 폼에서 정의된 유효성 검증 규칙에 들어맞는다는 것을 의미하므로, 폼 제출을 안전하게 처리할 수 있습니다. 이떄 ``request.POST``\ 에 접근할 수는 있지만, ``form.cleaned_data``\ 에 접근하는 것을 권장합니다. 이 데이터는 유효성 검증을 거쳤을 뿐만 아니라 적합한 파이썬 유형으로 변환도 되어 있습니다. 위의 예제에서, ``cc_myself``\ 는 불린 값이 될 것입니다. 마찬가지로, ``IntegerField``\ 와 ``FloatField``\ 는 각각 파이썬의 int와 float로 변환됩니다. 읽기 전용인 데이터는 ``form.cleaned_data``\ 에서 사용할 수 없다는 점에 (또한 맞춤 ``clean()`` 메소드에 값을 설정하는 것은 아무런 영향을 끼치지 않음에) 주의하시기 바랍니다. 왜냐하면 이러한 필드들은 input 엘리먼트가 아닌 텍스트로 표시되며, 서버에 다시 포스트되지 않기 때문입니다.
 
 위의 예제를 확장하여, 폼 데이터가 어떻게 처리될 수 있는지 살펴봅시다.
 
@@ -124,7 +124,7 @@ Django의 :class:`~django.http.HttpRequest` 클래스를 사용하여 폼 제출
         send_mail(subject, message, sender, recipients)
         return HttpResponseRedirect('/thanks/') # Redirect after POST
 
-Django에서 이메일을 보내는 자세한 방법에 대해서는 :doc:`/topics/email`\ 을 참고하세요.
+Django에서 이메일을 보내는 자세한 방법에 대해서는 :doc:`/topics/email`\ 을 참고하기 바랍니다.
 
 템플릿을 사용하여 폼을 보이기
 ----------------------------------
@@ -142,7 +142,7 @@ Django에서 이메일을 보내는 자세한 방법에 대해서는 :doc:`/topi
 
 .. admonition:: 폼과 교차 사이트 요청 위조 방지
 
-   Django는 사용하기 쉬운 :doc:`교차 사이트 요청 위조 방지 기능 </ref/contrib/csrf>`\ 을 탑재하고 있습니다. POST를 통해 폼을 제출할 때 CSRF 방지를 사용하려면 위의 예제와 같이 :ttag:`csrf_token` 템플릿 태그를 사용하여야 합니다. 하지만, CSRF 방지는 템플릿에서 폼에 직접 관련되지 않기 때문에, 이 문서에서 다루는 이후의 예제에서는 이 태그를 생략합니다.
+   Django는 사용하기 쉬운 :doc:`교차 사이트 요청 위조 방지 기능 </ref/contrib/csrf>`\ 을 탑재하고 있습니다. POST를 통해 폼을 제출할 때 CSRF 방지를 사용하려면 위의 예제와 같이 :ttag:`csrf_token` 템플릿 태그를 사용하여야 합니다. 하지만, CSRF 방지는 템플릿에서 폼에 직접 관련되지 않으므로, 이 문서에서 다루는 이후의 예제에서는 이 태그를 생략하겠습니다.
 
 ``form.as_p``\ 는 각각의 폼 필드와 라벨을 함께 문단(역자 주: paragraph, 즉 <p> 태그)으로 감싸서 출력합니다. 예제 템플릿의 출력은 다음과 같습니다.
 
@@ -163,7 +163,7 @@ Django에서 이메일을 보내는 자세한 방법에 대해서는 :doc:`/topi
 각 폼 필드는 ID 어트리뷰트로 ``id_<field-name>`` 값을 가지며, 함께 오는 라벨 태그가 이를 참조함을 눈여겨보시기 바랍니다. 스크린 리더 소프트웨어와 같이 장애인을 위한 접근성을 제공하는 기술을 위해 중요합니다. :ref:`customize the way in which labels and ids are generated
 <ref-forms-api-configuring-label>`\ 를 참고하세요.
 
-또한 ``form.as_table``\ 을 사용하여 테이블의 행을 출력할 수 있으며(이 때에도 ``<table>`` 태그는 직접 써주어야 합니다), ``form.as_ul``을 사용하여 목록 아이템을 출력할 수 있습니다.
+또한 ``form.as_table``\ 을 사용하여 테이블의 행을 출력할 수 있으며(이 때에도 ``<table>`` 태그는 직접 써주어야 합니다), ``form.as_ul``\ 을 사용하여 목록 아이템을 출력할 수 있습니다.
 
 폼 템플릿 커스터마이징
 -----------------------------
@@ -268,27 +268,21 @@ Django에서 이메일을 보내는 자세한 방법에 대해서는 :doc:`/topi
            {# Do something special #}
         {% endif %}
 
-Looping over hidden and visible fields
+숨김 필드 또는 보임 필드에 대하여 루핑하기
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you're manually laying out a form in a template, as opposed to relying on
-Django's default form layout, you might want to treat ``<input type="hidden">``
-fields differently than non-hidden fields. For example, because hidden fields
-don't display anything, putting error messages "next to" the field could cause
-confusion for your users -- so errors for those fields should be handled
-differently.
+Django의 기본 폼 레이아웃에 의존하지 않고 수작업으로 템플릿에서 폼의 레이아웃을 잡는다면, 숨김 필드(``<input type="hidden">``\ )와 보임 필드를 서로 다르게 취급하고 싶을 수도 있습니다. 한 가지 예로서, 숨김 필드는 아무 것도 보여주지 않으므로, 그 필드의 "옆에" 오류 메시지를 집어넣는다면 사용자에게 혼란을 초래할 것이기 때문에 이러한 필드는 다르게 취급해야 할 것입니다.
 
-Django provides two methods on a form that allow you to loop over the hidden
-and visible fields independently: ``hidden_fields()`` and
-``visible_fields()``. Here's a modification of an earlier example that uses
-these two methods::
+Django에는 숨김 필드 및 보임 필드에 대하여 독립적으로 루핑할 수 있는 두 가지 메소드, ``hidden_fields()``\ 와 ``visible_fields()``\ 가 있습니다. 두 메소드를 사용하도록 앞의 예제를 수정하여보겠습니다.
+
+::
 
     <form action="/contact/" method="post">
-        {# Include the hidden fields #}
+        {# 숨김 필드 #}
         {% for hidden in form.hidden_fields %}
         {{ hidden }}
         {% endfor %}
-        {# Include the visible fields #}
+        {# 보임 필드 #}
         {% for field in form.visible_fields %}
             <div class="fieldWrapper">
                 {{ field.errors }}
@@ -298,17 +292,14 @@ these two methods::
         <p><input type="submit" value="Send message" /></p>
     </form>
 
-This example does not handle any errors in the hidden fields. Usually, an
-error in a hidden field is a sign of form tampering, since normal form
-interaction won't alter them. However, you could easily insert some error
-displays for those form errors, as well.
+이 예제에서는 숨김 필드에서 발생하는 어떠한 오류에 대해서도 처리를 하지 않습니다. 보통 숨김 필드에서 발생하는 오류는 폼이 조작되었을 가능성을 암시하는데, 그 이유는 일반적인 폼 인터랙션은 숨김 필드를 변경하지 않기 때문입니다. 하지만, 오류 표시를 삽입하는 것도 쉽게 할 수 있습니다.
 
-Reusable form templates
+폼 템플릿의 재사용
 -----------------------
 
-If your site uses the same rendering logic for forms in multiple places, you
-can reduce duplication by saving the form's loop in a standalone template and
-using the :ttag:`include` tag to reuse it in other templates::
+만일 여러분의 사이트에서 폼에 대한 동일한 렌더링 로직을 여러 곳에서 사용한다면, 독립적인 템플릿에서 폼의 루프를 줄이고 :ttag:`include` 태그를 써서 다른 템플릿에서 재사용하는 방법으로 중복을 줄일 수 있습니다.
+
+::
 
     <form action="/contact/" method="post">
         {% include "form_snippet.html" %}
@@ -324,22 +315,21 @@ using the :ttag:`include` tag to reuse it in other templates::
         </div>
     {% endfor %}
 
-If the form object passed to a template has a different name within the
-context, you can alias it using the ``with`` argument of the :ttag:`include`
-tag::
+템플릿에 전달된 폼 개체가 문맥상 다른 이름을 갖는다면, :ttag:`include` 태그의 ``with`` 인자를 써서 별칭을 붙일 수 있습니다.
+
+::
 
     <form action="/comments/add/" method="post">
         {% include "form_snippet.html" with form=comment_form %}
         <p><input type="submit" value="Submit comment" /></p>
     </form>
 
-If you find yourself doing this often, you might consider creating a custom
-:ref:`inclusion tag<howto-custom-template-tags-inclusion-tags>`.
+이러한 일을 자주 수행한다면, 맞춤 :ref:`inclusion tag<howto-custom-template-tags-inclusion-tags>`\ 를 만드는 것을 고려해볼 수 있습니다.
 
 Further topics
 ==============
 
-This covers the basics, but forms can do a whole lot more:
+이로써 기초를 다루었습니다만, 폼으로 할 수 있는 일이 더 많습니다.
 
 .. toctree::
    :maxdepth: 2
@@ -351,5 +341,4 @@ This covers the basics, but forms can do a whole lot more:
 .. seealso::
 
     :doc:`The Forms Reference </ref/forms/index>`
-        Covers the full API reference, including form fields, form widgets,
-        and form and field validation.
+        폼 필드, 폼 위젯, 폼과 필드의 유효성 검증 등을 포함하는 전체 API 레퍼런스를 다룹니다.
