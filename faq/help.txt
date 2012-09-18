@@ -4,13 +4,13 @@ FAQ: 도움받기
 내가 이것을 할 수 있을까요? 왜 저것은 안되죠? 어디로가면 도움을 받을 수 있을까요?
 --------------------------------------------------------------
 
-만약 이 FAQ에 당신의 질문에 대한 답이 없다면, django-users mailing list를 이용하세요. 
+만약 이 FAQ에 당신의 질문에 대한 답이 없다면, `djagno-users 메일링 리스트(django-users mailing list)`_\ 를 이용하세요. 
 장고와 관련된 설치, 사용, 디버깅에 관한 질문을 자유롭게 올려보세요.
 
 
 
 IRC를 더 좋아하신다면, 당신의 문제를 해결해 할 수 있도록 도와주는 사람들의 커뮤니티가 
-있는 Freenode IRC network의 #django IRC channel 이 있습니다.
+있는 Freenode IRC network의 `django IRC 채널(#django IRC channel)`_\ 이 있습니다.
 
 .. _`djagno-users 메일링 리스트(django-users mailing list)`: http://groups.google.com/group/django-users
 .. _`django IRC 채널(#django IRC channel)`: irc://irc.freenode.net/django
@@ -18,11 +18,11 @@ IRC를 더 좋아하신다면, 당신의 문제를 해결해 할 수 있도록 �
 django-users에 왜 내 글은 나오지 않는거죠?
 -----------------------------------------------
 
-django-users_ 에는 많은 가입자들이 있습니다. 질문들에 답변을 할 많은 사람들이 
+django-users_\ 에는 많은 가입자들이 있습니다. 질문들에 답변을 할 많은 사람들이 
 있다는 측면에서 커뮤니티에는 좋은 일이죠. 그러나 안타깝게도, 스패머들에게는 
 매력적인 목표이기도하다는 의미이기도 하지요.
 
-스팸 문제를 해결하기위해, 당신이 django-users_ mailing list 에 가입할 때, 
+스팸 문제를 해결하기위해, 당신이 django-users_ 메일링 리스트에 가입할 때, 
 우리는 당신이 메일링리스트로 보낸 첫 메시지를 수동으로 검토합니다. 
 이것은 스패머를 잡는다는 의미도 있지만, 당신의 첫 질문에 대한 답을 얻는 데에 
 시간이 좀 더 걸릴 수 있다는 것을 의미하기도 합니다. 
@@ -37,10 +37,10 @@ django-users_ 에는 많은 가입자들이 있습니다. 질문들에 답변을
 
 
 대부분의 오픈소스 메일링리스트들이 그렇듯이, 
-django-users의 사람들은 자원봉사자들이에요. 당신의 질문에 답을 해주는 사람이 
+django-users_\ 의 사람들은 자원봉사자들이에요. 당신의 질문에 답을 해주는 사람이 
 없다는 것은, 답을 아는 사람이 없기 때문일 수도 있고, 이해를 못해서일 수도 있고, 
 혹은 도움을 줄 수 있는 모든 사람이 바빠서 그럴 수도 있어요. 
-그럴 때 당신이 할 수 있는 한가지는 Freenode IRC의 `#django IRC channel`_ 로 와서 질문을 올리는 것입니다.
+그럴 때 당신이 할 수 있는 한가지는 Freenode IRC의 `django IRC 채널(#django IRC channel)`_\ 로 와서 질문을 올리는 것입니다.
 
 당신은 우리의 두번째 메일링리스트인 django-developers_ 를 발견할 수도 있어요, 
 하지만 이 메일링 리스트로 질문을 보내지 말아주세요. 이 리스트는 Django 개발에 관련된 내용을 
@@ -57,13 +57,13 @@ django-users의 사람들은 자원봉사자들이에요. 당신의 질문에 �
 내가 보안관련 문제를 찾은거 같아요! 어떻게 하죠?
 --------------------------------------------------------
 
-만약 Django에 관한 보안 관련 문제를 찾은거 같다면, security@djangoproject.com로 메일을 보내주세요.
+만약 Django에 관한 보안 관련 문제를 찾은거 같다면, security@djangoproject.com\ 로 메일을 보내주세요.
 이 메일은 오랫동안 높은 신뢰를 얻은 Django 개발자들에게만 열려진 비공개 리스트입니다, 
 그 리스트의 기록은 공개적으로 읽을 수 없습니다.
 
 보안 이슈의 민감한 특성을 감안하여, 만약 당신이 보안 문제를 발견한 것 같다면, 
-*제발* 공개 메일링 리스트로 메시지를 보내지 말아주세요. Django :ref:`policy for handling security issues <reporting-security-issues>`;
+*제발* 공개 메일링 리스트로 메시지를 보내지 말아주세요. Django 에는 :ref:`보안 이슈를 다루는 정책(policy for handling security issues) <reporting-security-issues>`이 있습니다.;
 결함이 노출되어있는 동안에, 그 결함의 공개된 정보를 통하여 입을 피해를 최소화 하길 원합니다.
 
 
-.. _`policy for handling security issues`: ../contributing/#reporting-security-issues
+.. _`보안 이슈를 다루는 정책(policy for handling security issues) <reporting-security-issues>`: ../contributing/#reporting-security-issues
