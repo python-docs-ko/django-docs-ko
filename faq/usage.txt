@@ -1,28 +1,28 @@
-FAQ: Using Django
+FAQ: 장고의 사용
 =================
 
-Why do I get an error about importing DJANGO_SETTINGS_MODULE?
+왜 저는 DJANGO_SETTINGS_MODULE을 임포팅(importing)을하면 에러가 발생하나요? 
 -------------------------------------------------------------
 
-Make sure that:
+확인하세요:
 
-* The environment variable DJANGO_SETTINGS_MODULE is set to a
-  fully-qualified Python module (i.e. "mysite.settings").
+* DJANGO_SETTINGS_MODULE 환경변수를 fully-qualified 파이썬 모듈로 세팅을 하세요
+  (i.e. "mysite.settings").
 
-* Said module is on ``sys.path`` (``import mysite.settings`` should work).
+* 모듈을 설정하세요``sys.path`` (``import mysite.settings`` 가 작동해야합니다.).
 
-* The module doesn't contain syntax errors (of course).
+* 이 모듈은 구문오류를 포합하고있지 않습니다.(물론이죠).
 
-* If you're using mod_python but *not* using Django's request handler,
-  you'll need to work around a mod_python bug related to the use of
-  ``SetEnv``; before you import anything from Django you'll need to do
-  the following::
+* 만약 사용자께서 장고 요청 handler 사용하는것이 *아닌*, mod_python을 사용하는 중이라면,
+  사용자 께서는 ``SetEng``;의 사용과 관련된 mod_python 버그 주위에 대하여 작업을 하실필요가 있습니다. 
+  사용자께서 사용자가 해야할 필요가있는 장고로 부터 어떠한것을 임포트(import)하기전에 말이죠.
+  다음사항을 따르세요::
 
         os.environ.update(req.subprocess_env)
 
   (where ``req`` is the mod_python request object).
 
-I can't stand your template language. Do I have to use it?
+저는 당신의 템플릿 언어에 stand할수가 없습니다. 제가 반드시 그것을 사용해야할까요?
 ----------------------------------------------------------
 
 We happen to think our template engine is the best thing since chunky bacon,
@@ -30,17 +30,16 @@ but we recognize that choosing a template language runs close to religion.
 There's nothing about Django that requires using the template language, so
 if you're attached to ZPT, Cheetah, or whatever, feel free to use those.
 
-Do I have to use your model/database layer?
+제가 당신의 model/database 계층을 사용해야 합니까?
 -------------------------------------------
 
-Nope. Just like the template system, the model/database layer is decoupled from
-the rest of the framework.
+아니요. 그 템플릿 시스템 처럼, 그 모델/데이터베이스 계층은 프레임워크의 나머지로부터 decoupled 됩니다.
 
 The one exception is: If you use a different database library, you won't get to
 use Django's automatically-generated admin site. That app is coupled to the
 Django database layer.
 
-How do I use image and file fields?
+어떻게 제가 이미지와 피일필드를 사용할수있나요?
 -----------------------------------
 
 Using a :class:`~django.db.models.FileField` or an
