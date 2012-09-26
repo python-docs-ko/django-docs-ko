@@ -1,7 +1,7 @@
-Handling HTTP requests
+HTTP 요청 다루기
 ======================
 
-Information on handling HTTP requests in Django:
+Django에서의 HTTP 요청 처리에 대한 정보:
 
 .. toctree::
    :maxdepth: 1
