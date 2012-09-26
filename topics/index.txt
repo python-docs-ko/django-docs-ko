@@ -1,7 +1,7 @@
-Using Django
+Django 사용하기
 ============
 
-Introductions to all the key parts of Django you'll need to know:
+Django에 대하여 알아야 할 주요 부분에 대한 소개:
 
 .. toctree::
    :maxdepth: 1
@@ -28,7 +28,7 @@ Introductions to all the key parts of Django you'll need to know:
    settings
    signals
 
-Deprecated features
+사용 금지된 기능
 -------------------
 
 .. toctree::
