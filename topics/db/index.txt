@@ -1,11 +1,9 @@
-Models and databases
+모델과 데이터베이스
 ====================
 
 .. module:: django.db
 
-A model is the single, definitive source of data about your data. It contains
-the essential fields and behaviors of the data you're storing. Generally, each
-model maps to a single database table.
+모델은, 여러분의 데이터에 대한 단일하고도 완전한 정보의 원천입니다. 그곳에는 여러분이 저장할 데이터의 필수적인 필드와 습성이 있습니다. 일반적으로, 각 모델은 데이터베이스의 테이블 한 개와 대응됩니다.
 
 .. toctree::
    :maxdepth: 1
