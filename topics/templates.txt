@@ -1,51 +1,35 @@
 ============================
-The Django template language
+Django 템플릿 언어
 ============================
 
-.. admonition:: About this document
+.. admonition:: 이 문서에 대하여
 
-    This document explains the language syntax of the Django template system. If
-    you're looking for a more technical perspective on how it works and how to
-    extend it, see :doc:`/ref/templates/api`.
+    이 문서는 Django 템플릿 시스템의 언어 구문을 설명합니다. 만약에 보다 기술적인 관점에서 작동원리와 확장 방법을 알고 싶다면, :doc:`/ref/templates/api`를 살펴보기 바랍니다.
 
-Django's template language is designed to strike a balance between power and
-ease. It's designed to feel comfortable to those used to working with HTML. If
-you have any exposure to other text-based template languages, such as Smarty_
-or CheetahTemplate_, you should feel right at home with Django's templates.
+Django의 템플릿 언어는 강력함과 용이성 사이의 균형을 잡고자 설계되었습니다. HTML 작업을 하는 동안 편안함을 느낄 수 있도록 합니다. Smarty_\ 나 CheetahTemplate_\ 등의 텍스트 기반 템플릿 언어를 접해본 적이 있다면, Django의 템플릿이 편안하게 느껴질 것입니다.
 
-.. admonition:: Philosophy
+.. admonition:: 철학
 
-    If you have a background in programming, or if you're used to languages
-    like PHP which mix programming code directly into HTML, you'll want to
-    bear in mind that the Django template system is not simply Python embedded
-    into HTML. This is by design: the template system is meant to express
-    presentation, not program logic.
+    프로그래밍에 대한 배경지식이 있거나, PHP와 같이 프로그램 코드를 HTML과 직접 뒤섞는 언어를 사용해왔다면, Django 템플릿 시스템은 단순히 HTML에 파이썬을 심어놓은 것이 아니라는 점을 유념하시기 바랍니다. 템플릿 시스템은 프로그램 로직이 아닌, 프리젠테이션을 표현하기 위하여 설계된 것이기 때문입니다.
 
-    The Django template system provides tags which function similarly to some
-    programming constructs -- an :ttag:`if` tag for boolean tests, a :ttag:`for`
-    tag for looping, etc. -- but these are not simply executed as the
-    corresponding Python code, and the template system will not execute
-    arbitrary Python expressions. Only the tags, filters and syntax listed below
-    are supported by default (although you can add :doc:`your own extensions
-    </howto/custom-template-tags>` to the template language as needed).
+    Django 템플릿 시스템은 프로그래밍 구조와 유사한 태그를 제공합니다. -- :ttag:`if` 태그는 부울 테스트에 사용되며, :ttag:`for` 태그는 루핑에 사용됩니다. -- 그러나 이런 것들은 대응되는 파이썬 코드로서 수행되는 것이 아니며, 템플릿 시스템은 임의의 파이썬 표현을 실행시키지 않습니다. 아래에 나열한 태그, 필터 및 구문만 기본적으로 지원됩니다(단, 필요에 따라 스스로 :doc:`맞춤 템플릿 태그 </howto/custom-template-tags>`\ 를 추가할 수도 있습니다).
 
 .. _`The Django template language: For Python programmers`: ../templates_python/
 .. _Smarty: http://smarty.php.net/
 .. _CheetahTemplate: http://www.cheetahtemplate.org/
 
-Templates
+템플릿
 =========
 
 .. highlightlang:: html+django
 
-A template is simply a text file. It can generate any text-based format (HTML,
-XML, CSV, etc.).
+템플릿은 단순한 텍스트 파일입니다. 템플릿으로 어떠한 텍스트 기반 형식이든 만들어낼 수 있습니다(HTML, XML, CSV 등).
 
-A template contains **variables**, which get replaced with values when the
-template is evaluated, and **tags**, which control the logic of the template.
+템플릿에 있는 **변수**\ 는 템플릿이 평가될 때 값으로 대치되며, **태그**\ 는 템플릿의 로직을 제어합니다.
 
-Below is a minimal template that illustrates a few basics. Each element will be
-explained later in this document.::
+다음은 몇 가지 기초를 설명하기 위한 간단한 템플릿입니다. 각 요소에 대해서는 이 문서에서 설명할 것입니다.
+
+::
 
     {% extends "base_generic.html" %}
 
@@ -64,45 +48,31 @@ explained later in this document.::
     {% endfor %}
     {% endblock %}
 
-.. admonition:: Philosophy
+.. admonition:: 철학
 
-    Why use a text-based template instead of an XML-based one (like Zope's
-    TAL)? We wanted Django's template language to be usable for more than
-    just XML/HTML templates. At World Online, we use it for emails,
-    JavaScript and CSV. You can use the template language for any text-based
-    format.
+    왜 (Zope의 TAL과 같은) XML 기반의 템플릿이 아닌 텍스트 기반의 템플릿을 사용할까요? 우리는 Django의 템플릿 언어가 XML/HTML 템플릿보다 더욱 usable하기를 원했습니다. 월드 온라인에서 우리는 이메일, 자바스크립트, CSV를 사용하였습니다. 어떠한 텍스트 기반의 형식을 위해서든지 템플릿 언어를 사용할 수 있습니다.
 
-    Oh, and one more thing: Making humans edit XML is sadistic!
+    아, 한 가지 더. 인간으로 하여금 XML을 작성하도록 하는 것은 가혹해요!
 
-Variables
+변수
 =========
 
-Variables look like this: ``{{ variable }}``. When the template engine
-encounters a variable, it evaluates that variable and replaces it with the
-result. Variable names consist of any combination of alphanumeric characters
-and the underscore (``"_"``). The dot (``"."``) also appears in variable
-sections, although that has a special meaning, as indicated below.
-Importantly, *you cannot have spaces or punctuation characters in variable
-names.*
+변수는 ``{{ 변수 }}``\ 와 같이 생겼습니다. 템플릿 엔진이 변수를 만나면, 평가하여 그 결과로 치환합니다. 변수명은 영문자와 밑줄(``"_"``)로 구성됩니다. 점(``"."``)에는 특별한 의미가 있습니다. 중요한 점으로, *변수명에는 공백이나 특수문자를 사용할 수 없습니다.*
 
-Use a dot (``.``) to access attributes of a variable.
+점(``.``)은 변수의 속성에 접근할 때에 사용합니다.
 
-.. admonition:: Behind the scenes
+.. admonition:: 배후에서 일어나는 일
 
-    Technically, when the template system encounters a dot, it tries the
-    following lookups, in this order:
+    기술적으로, 템플릿 시스템이 점을 만나면, 다음과 같은 조회를 차례대로 시도합니다.
 
-    * Dictionary lookup
-    * Attribute lookup
-    * Method call
-    * List-index lookup
+    * 사전 조회
+    * 속성 조회
+    * 메소드 호출
+    * 리스트-인덱스 조회
 
-In the above example, ``{{ section.title }}`` will be replaced with the
-``title`` attribute of the ``section`` object.
+위의 예제에서, ``{{ section.title }}``\ 은 ``section`` 개체의 ``title`` 속성으로 치환됩니다.
 
-If you use a variable that doesn't exist, the template system will insert
-the value of the :setting:`TEMPLATE_STRING_IF_INVALID` setting, which is set
-to ``''`` (the empty string) by default.
+변수가 존재하지 않을 경우, 템플릿 시스템은 :setting:`TEMPLATE_STRING_IF_INVALID` 설정값을 삽입하는데, 그 기본값은 ``''``(공백 문자)입니다.
 
 Filters
 =======
