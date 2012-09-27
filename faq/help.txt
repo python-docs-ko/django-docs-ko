@@ -62,7 +62,7 @@ django-users_\ 의 사람들은 자원봉사자들이에요. 당신의 질문에
 그 리스트의 기록은 공개적으로 읽을 수 없습니다.
 
 보안 이슈의 민감한 특성을 감안하여, 만약 당신이 보안 문제를 발견한 것 같다면, 
-*제발* 공개 메일링 리스트로 메시지를 보내지 말아주세요. Django 에는 :ref:`보안 이슈를 다루는 정책(policy for handling security issues) <reporting-security-issues>`이 있습니다;
+*제발* 공개 메일링 리스트로 메시지를 보내지 말아주세요. Django 에는 :ref:`보안 이슈를 다루는 정책(policy for handling security issues) <reporting-security-issues>` 이 있습니다;
 결함이 노출되어있는 동안에, 그 결함의 공개된 정보를 통하여 입을 피해를 최소화 하길 원합니다.
 
 
