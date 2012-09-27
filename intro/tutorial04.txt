@@ -2,14 +2,12 @@
 첫 번째 Django 앱 만들기! part 4
 ====================================
 
-본 튜토리얼은 :doc:`튜토리얼 3 </intro/tutorial03>`\ 에 이어서 계속됩니다. 우리는 웹 설문조사 어플리케이션을 만들고 있는 중이죠, 이 장에서는  우리 코드의 양을 줄이고, 간단한 폼처리를 하는데 집중할 것입니다.
+본 튜토리얼은 :doc:`튜토리얼 3 </intro/tutorial03>`\ 에 이어서 계속됩니다. 우리는 웹 설문조사 어플리케이션을 만들고 있는 중이죠. 이 장에서는 코드의 양을 줄이고, 간단한 폼 처리를 하는데 집중할 것입니다.
 
-간단한 폼 사용하기.
+간단한 폼 사용하기
 ===================
 
 HTML ``<form>`` 요소를 포함하고 있는 앞 장에서 사용한 설문조사 세부 템플릿을 수정합시다.
-
-::
 
 .. code-block:: html+django
 
@@ -32,7 +30,7 @@ HTML ``<form>`` 요소를 포함하고 있는 앞 장에서 사용한 설문조�
   ``value``\ 는 연결된 설문조사 선택지의 ID입니다. 각 라디오 버튼의 ``name``
   은 ``"choice"``\ 입니다. 이것은, 누군가 라디오버튼중 하나를 선택하고, 
   폼을 제출하면, 폼은 POST 자료 ``choice=3``\ 를 전송한다는 것을 의미합니다.
-  이것이 HTML Forms 101(역자주: HTML FORMS의 기본)이죠.
+  이것이 HTML 폼의 기본이죠.
 
 * 우리는 폼의 ``action``\ 을 ``/polls/{{ poll.id }}/vote/``\ 로 지정하고, 
   ``method="post"``\ 로 지정했습다. 이 폼을 제출하는 행위가 서버측 자료를 변경할
@@ -40,7 +38,7 @@ HTML ``<form>`` 요소를 포함하고 있는 앞 장에서 사용한 설문조�
   매우 중요합니다. 서버측 자료를 변경할 폼을 만들때는, 항상 ``method="post"``\ 을 
   사용하세요. 이 정보는 Django에 국한된 정보가 아니라, 단지 좋은 웹 개발 관례일 뿐입니다.
 
-* ``forloop.counter``\ 는 :ttag:`for` 태그가 반복을 한 횟 수를 나타냅니다.
+* ``forloop.counter``\ 는 :ttag:`for` 태그가 반복을 한 횟수를 나타냅니다.
 
 * 우리는 POST 폼(자료를 수정하는 효과를 가진)을 만들고 있으므로, 사이트 간 요청 위조
   (Cross Site Request Forgeries)에 대해 고민해야합니다. 고맙게도, Django는 
@@ -102,7 +100,7 @@ HTML ``<form>`` 요소를 포함하고 있는 앞 장에서 사용한 설문조�
   선택된 설문지의 ID를 문자열로 반환합니다. :attr:`request.POST <django.http.HttpRequest.POST>`\ 의 값은 항상 문자열들입니다.
 
   Django는 같은 방법으로 GET 자료에 접근하기 위해 :attr:`request.GET <django.http.HttpRequest.GET>`\ 를
-  제공합니다. 그러나 POST 요청으로만 자료가 수정되게하기 위해서, 우리는 
+  제공합니다. 그러나 POST 요청으로만 자료가 수정되게 하기 위해서, 우리는 
   명시적으로 코드에 :attr:`request.POST <django.http.HttpRequest.POST>`\ 를 사용하고 있다. 
 
 * 만약 POST 자료에 ``choice``\ 가 없으면, ``request.POST['choice']``\
@@ -128,17 +126,19 @@ HTML ``<form>`` 요소를 포함하고 있는 앞 장에서 사용한 설문조�
 
     '/polls/3/results/'
 
-  ... ``3``\ 은 ``p.id``\ 의 값이다. 이 리다이렉트된 URL은 마지막 페이지를 보여주기위해 ``'results'`` 뷰를 호출합니다. 뷰 이름(풀네임)을 사용해야한다는 것을 주의하세요(접두사를 포함하여).
+  ... ``3``\ 은 ``p.id``\ 의 값이다. 이 리다이렉트된 URL은 마지막 페이지를 보여주기 위해 ``'results'`` 뷰를 호출합니다. 뷰 이름(풀네임)을 사용해야한다는 것을 주의하세요(접두사를 포함하여).
 
-튜토리얼 3에서 언급했듯이, ``request``\ 는 :class:`~django.http.HttpRequest`\ 개체입니다. :class:`~django.http.HttpRequest` 개체에 대해 더 알고 싶다면 :doc:`request and response documentation </ref/request-response>`\ 을 참고하세요.
+튜토리얼 3에서 언급했듯이, ``request``\ 는 :class:`~django.http.HttpRequest`\ 개체입니다. :class:`~django.http.HttpRequest` 개체에 대해 더 알고 싶다면 :doc:`요청 및 응답 문서 </ref/request-response>`\ 을 참고하세요.
 
-어떤 이가 설문조사에 설문을 하고난 뒤에는, ``vote()`` 뷰는 설문조사 결과 페이지로 리다이렉트합니다. 그 뷰를 작성해봅시다 ::
+어떤 이가 설문조사에 설문을 하고난 뒤에는, ``vote()`` 뷰는 설문조사 결과 페이지로 리다이렉트합니다. 그 뷰를 작성해봅시다.
+
+::
 
     def results(request, poll_id):
         p = get_object_or_404(Poll, pk=poll_id)
         return render_to_response('polls/results.html', {'poll': p})
 
-이것은 :doc:`Tutorial 3</intro/tutorial03>`\ 의 ``detail()`` 뷰와 거의 동일합니다. 다른점은 템플릿 이름밖에 없습니다. 우리는 후에 이 쓸데없는 것들을 수정할 것입니다.(역자주:쓸데없는 것이라고 한 이유는 위 파일이 필요 없어지기 때문입니다.)
+이것은 :doc:`Tutorial 3</intro/tutorial03>`\ 의 ``detail()`` 뷰와 거의 동일합니다. 다른 점은 템플릿 이름 밖에 없습니다. 우리는 후에 이 쓸데없는 것들을 수정할 것입니다.(역자주:쓸데없는 것이라고 한 이유는 위 파일이 필요없어지기 때문입니다.)
 
 이제, ``results.html`` 템플릿을 만듭시다.
 
@@ -162,11 +162,11 @@ HTML ``<form>`` 요소를 포함하고 있는 앞 장에서 사용한 설문조�
 ``detail()`` ( :doc:`튜토리얼 3 </intro/tutorial03>`\ 에서의) 과 ``results()``
 뷰는 매우 비슷했습니다. -- 그리고, 위에서 언급한 것 처럼 장황합니다. 설문 목록들을 보여주는 ``index()`` 뷰(이것도 튜토리얼 3에서)도 마찬가지입니다.
 
-이 뷰들은 기본적인 웹 개발의 일반적인 케이스들:(URL로 전달된 매개변수를 이용해서 데이터베이스에서 자료를 얻고, 템플릿을 불러오며, 처리된 템플릿을 반환하는)을 제공합니다. 이것들이 매우 일반적인 것들이기 때문에, Django는 "제너릭 뷰" 시스템이라 불리는 지름길을 제공한다.
+이 뷰들은 기본적인 웹 개발의 일반적인 케이스들(URL로 전달된 매개변수를 이용해서 데이터베이스에서 자료를 얻고, 템플릿을 불러오며, 처리된 템플릿을 반환하는)을 제공합니다. 이것들이 매우 일반적인 것들이기 때문에, Django는 "제너릭 뷰(generia view)" 시스템이라 불리는 지름길을 제공합니다.
 
 앱을 만들기위해 파이썬 코드를 쓸 필요가 없을 정도로 제너릭 뷰는 일반적인(역자주-중복되고, 장황한) 패턴들을 제거합니다.
 
-제너릭 뷰 시스템을 사용해서 우리의 설문조사 앱을 바꿔봅시다. 그리고 이미 만든 우리의 코드를 삭제할 수도 있습니다. 제너릭 뷰로 변환하기에는 몇 단계를 거쳐야 합니다. 우리는:
+제너릭 뷰 시스템을 사용해서 우리의 설문조사 앱을 바꿔봅시다. 그리고 이미 만든 우리의 코드를 삭제할 수도 있습니다. 제너릭 뷰로 변환하기에는 다음과 같은 몇 단계를 거쳐야 합니다.
 
 1. URLconf를 변환한다.
 
@@ -235,8 +235,7 @@ HTML ``<form>`` 요소를 포함하고 있는 앞 장에서 사용한 설문조�
 
 * 우리는 results 뷰에 ``poll_results``\ 란 이름을 추가했습니다,
   그렇게 하면 URL 이후에 오는 변수를 참조할 수 있게 되죠.(
-  이것에 관한 정보는 :ref:`naming URL patterns
-  <naming-url-patterns>` 문서를 참고하세요). 또 :mod:`django.conf.urls`\ 의
+  이것에 관한 정보는 :ref:`URL 패턴 명명 <naming-url-patterns>` 문서를 참고하세요). 또 :mod:`django.conf.urls`\ 의
   :func:`~django.conf.urls.url` 함수를 사용했습니다. 이와같은 패턴 이름을 제공하는 경우에
   :func:`~django.conf.urls.url`\ 사용은 좋은 습관입니다.
 
@@ -244,13 +243,13 @@ HTML ``<form>`` 요소를 포함하고 있는 앞 장에서 사용한 설문조�
 우리는 ``"polls/poll_detail.html"`` 템플릿을 사용할 것입니다. 자동생성되는 기본 템플릿 이름 대신에 특정한 템플릿 이름을 사용하여 
 Django에게 전달하기 위해서는 ``template_name`` 를 사용해야 합니다. 그래서 ``results`` 리스트 뷰를 위해 ``template_name``\ 를 지정했습니다 -- 비록 둘 다  같은 :class:`~django.views.generic.list.DetailView`\ 이긴 하지만. 이렇게 하면 results 뷰와 detail 뷰를 다르게 표현할 수 있죠.
 
-비슷하게,  기존 ``"polls/index.html"`` 템플릿을 사용하기위해 ``template_name``\ 을 사용해서 :class:`~django.views.generic.list.ListView`\ 에 전달합니다.
+비슷하게,  기존 ``"polls/index.html"`` 템플릿을 사용하기 위해 ``template_name``\ 을 사용해서 :class:`~django.views.generic.list.ListView`\ 에 전달합니다.
 
 이전 튜토리얼에서, 템플릿에는 ``poll`` 과 ``latest_poll_list``\의 컨텍스트 변수를 포함한 컨텍스트가 제공되었습니다. DetailView를 위한 ``poll`` 변수는 자동으로 제공됩니다 -- Django 모델(``Poll``)을 사용하고 있기 때문에, Django는 컨텍스트 변수에 대한 적절한 이름을 확인할 수 있습니다. 그러나, ListView를 위해, 자동적으로 생성되는 컨텍스트 변수는 ``poll_list``\ 입니다. ``poll_list`` 대신 사용하고 싶은 ``latest_poll_list``\ 를 ``context_object_name``\ 옵션에 지정하시면 됩니다. 다른 방법으로, 새로운 기본 컨텍스트 변수들과 매치되는 당신만으로 템플릿으로 바꿀 수 있습니다. -- 그러나 Django에게 당신이 원하는 변수를 전달하는 것이 훨씬 쉽습니다.(역자주:context_object_name를 지정하는 것이 훨씬 쉽다는 말입니다.)
 
-이제 ``polls/views.py``\ 파일에서 ``index()``, ``detail()`` 그리고 ``results()`` 뷰들을 지울 수 있습니다. 그 뷰들은 더이상 필요하지 않습니다.-- 그 뷰들이 제대릭 뷰로 대체된 것입니다.
+이제 ``polls/views.py``\ 파일에서 ``index()``, ``detail()`` 그리고 ``results()`` 뷰들을 지울 수 있습니다. 그 뷰들은 더이상 필요하지 않습니다.-- 그 뷰들이 제너릭 뷰로 대체된 것입니다.
 
-마지막으로 해야 할 것은 제너릭 뷰들의 사용을 처리하는 URL 다루기를 수정하는 것입니다. 위의 vote 뷰에서, 우리의 URL들을 하드코딩하는 것을 피하기 위해 :func:`~django.core.urlresolvers.reverse`  함수를 사용했습니다. 이제 우린 generic view로 전환을 했으니. :func:`~django.core.urlresolvers.reverse` 함수가 새로운 generic view를 호출하도록 바꿔야합니다. 더이상 우리는 단순히 view 함수를 사용할 수 없습니다 -- 제너릭 뷰들은 여러번 사용하거나, 사용되어질 수 있다 --그러나 우리는 우리에게 주어진 이름을 사용할 수 있다(역자주: 뷰를 삭제했으므로 사용할 수 없다는 말이고, 대신에 ``name``\ 을 지정하여 제너릭 뷰를 사용할 수 있다는 뜻).
+마지막으로 해야 할 것은 제너릭 뷰들의 사용을 처리하는 URL 다루기를 수정하는 것입니다. 위의 vote 뷰에서, 우리의 URL들을 하드코딩하는 것을 피하기 위해 :func:`~django.core.urlresolvers.reverse`  함수를 사용했습니다. 이제 우린 제너릭 뷰로 전환을 했으니. :func:`~django.core.urlresolvers.reverse` 함수가 새로운 제너릭 뷰를 호출하도록 바꿔야합니다. 더이상 우리는 단순히 view 함수를 사용할 수 없습니다 -- 제너릭 뷰들은 여러번 사용하거나, 사용되어질 수 있다 --그러나 우리는 우리에게 주어진 이름을 사용할 수 있다(역자주: 뷰를 삭제했으므로 사용할 수 없다는 말이고, 대신에 ``name``\ 을 지정하여 제너릭 뷰를 사용할 수 있다는 뜻).
 
 ::
 
