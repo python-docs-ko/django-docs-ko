@@ -273,7 +273,7 @@ Django에서 데이터베이스 웹 앱 작성의 첫 단계는 데이터베이�
         choice = models.CharField(max_length=200)
         votes = models.IntegerField()
 
-코드는 간단합니다. 각 모델은 :class:`django.db.models.Model`의 서브클래스로 표현됩니다. 각 모델은 몇개의 클래스 변수를 갖고 있고, 이것은 각각 데이터베이스 필드로 표현됩니다.
+코드는 간단합니다. 각 모델은 :class:`django.db.models.Model`\ 의 서브클래스로 표현됩니다. 각 모델은 몇개의 클래스 변수를 갖고 있고, 이것은 각각 데이터베이스 필드로 표현됩니다.
 
 각 필드는 :class:`~django.db.models.Field` 클래스의 인스턴스로 표현됩니다. -- e.g., :class:`~django.db.models.CharField`\ 는 character 필드 그리고 :class:`~django.db.models.DateTimeField`\ 은 datetime 필드. 이것은 Django에게 데이터의 필드가 어떤 타입인지 알려줍니다.
 
