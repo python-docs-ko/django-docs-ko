@@ -74,88 +74,72 @@ Django의 템플릿 언어는 강력함과 용이성 사이의 균형을 잡고�
 
 변수가 존재하지 않을 경우, 템플릿 시스템은 :setting:`TEMPLATE_STRING_IF_INVALID` 설정값을 삽입하는데, 그 기본값은 ``''``(공백 문자)입니다.
 
-Filters
+필터
 =======
 
-You can modify variables for display by using **filters**.
+**필터**\ 를 사용함으로써 변수의 표시에 변화를 줄 수 있습니다.
 
-Filters look like this: ``{{ name|lower }}``. This displays the value of the
-``{{ name }}`` variable after being filtered through the :tfilter:`lower`
-filter, which converts text to lowercase. Use a pipe (``|``) to apply a filter.
+필터는 ``{{ name|lower }}``\ 와 같이 생겼습니다. 이것은 ``{{ name }}`` 변수에 :tfilter:`lower` 필터를 적용시켜서, 텍스트를 소문자로 변경시킨 결과를 표출합니다.
+파이프(``|``)를 사용하여 필터를 적용합니다.
 
-Filters can be "chained." The output of one filter is applied to the next.
-``{{ text|escape|linebreaks }}`` is a common idiom for escaping text contents,
-then converting line breaks to ``<p>`` tags.
+필터는 "연쇄적으로" 사용하여, 필터의 결과가 그 다음 필터에 적용되도록 할 수 있습니다.
+``{{ text|escape|linebreaks }}``\ 는 텍스트 컨텐츠를 이스케이프한 다음, 행 바꿈을 ``<p>`` 태그로 바꾸기 위해 종종 사용되곤 합니다.
 
-Some filters take arguments. A filter argument looks like this: ``{{
-bio|truncatewords:30 }}``. This will display the first 30 words of the ``bio``
-variable.
+어떤 필터는 인자를 취합니다. 필터 인자는 ``{{bio|truncatewords:30 }}``\ 과 같이 사용합니다. 이것은 ``bio`` 변수의 처음 30 단어를 보여줍니다.
 
-Filter arguments that contain spaces must be quoted; for example, to join a
-list with commas and spaced you'd use ``{{ list|join:", " }}``.
+필터 인자에 공백이 포함된 경우에는 반드시 따옴표로 둘러싸야 합니다. 예를 들어 목록을 쉼표와 공백으로 join하는 경우 ``{{ list|join:", " }}``\ 과 같이 사용합니다.
 
-Django provides about thirty built-in template filters. You can read all about
-them in the :ref:`built-in filter reference <ref-templates-builtins-filters>`.
-To give you a taste of what's available, here are some of the more commonly
-used template filters:
+Django는 서른 개 정도의 내장 템플릿 필터를 제공합니다. :ref:`내장 필터 레퍼런스 <ref-templates-builtins-filters>`를 참고하기 바랍니다.
+어떤 것을 사용할 수 있는지 맛보기를 위해, 자주 사용되는 템플릿 필터들을 소개합니다.
 
 :tfilter:`default`
-    If a variable is false or empty, use given default. Otherwise, use the
-    value of the variable
+    변수가 false 또는 비어 있는 경우, 지정된 defalut를 사용합니다. 그렇지 않으면 변수의 값을 사용합니다
 
-    For example::
+    예::
 
         {{ value|default:"nothing" }}
 
-    If ``value`` isn't provided or is empty, the above will display
-    "``nothing``".
+    ``value``\ 가 제공되지 않았거나 비어 있는 경우, 위에서는 "``nothing``"\ 을 출력합니다.
 
 :tfilter:`length`
-    Returns the length of the value. This works for both strings and lists;
-    for example::
+    값의 길이를 반환합니다. 문자열과 목록에 대하여 사용할 수 있습니다.
+    예::
 
         {{ value|length }}
 
-    If ``value`` is ``['a', 'b', 'c', 'd']``, the output will be ``4``.
+    ``value``\ 가 ``['a', 'b', 'c', 'd']``\ 라면, 결과는 ``4``\ 가 됩니다.
 
 :tfilter:`striptags`
-    Strips all [X]HTML tags. For example::
+    S모든 [X]HTML 태그를 제거합니다. 예::
 
         {{ value|striptags }}
 
-    If ``value`` is ``"<b>Joel</b> <button>is</button> a
-    <span>slug</span>"``, the output will be ``"Joel is a slug"``.
+    ``value``\ 가 ``"<b>Joel</b> <button>is</button> a
+    <span>slug</span>"``\ 인 경우, 결과는 ``"Joel is a slug"``\ 가 됩니다.
 
-Again, these are just a few examples; see the :ref:`built-in filter reference
-<ref-templates-builtins-filters>` for the complete list.
+일부의 예를 들었을 뿐이므로, :ref:`내장 필터 레퍼런스
+<ref-templates-builtins-filters>`\ 에서 전체 목록을 보시기 바랍니다.
 
-You can also create your own custom template filters; see
-:doc:`/howto/custom-template-tags`.
+템플릿 필터를 직접 만들 수도 있습니다. :doc:`/howto/custom-template-tags`\ 를 읽어보세요.
 
 .. seealso::
 
-    Django's admin interface can include a complete reference of all template
-    tags and filters available for a given site. See
-    :doc:`/ref/contrib/admin/admindocs`.
+    Django의 관리자 인터페이스는 해당 사이트에서 사용 가능한 모든 템플릿 태그와 필터의 전체 레퍼런스를 포함할 수 있습니다.
+    :doc:`/ref/contrib/admin/admindocs`\ 를 참고하세요.
 
-Tags
+태그
 ====
 
-Tags look like this: ``{% tag %}``. Tags are more complex than variables: Some
-create text in the output, some control flow by performing loops or logic, and
-some load external information into the template to be used by later variables.
+태그는 ``{% tag %}``\ 와 같이 생겼습니다. 태그는 변수에 비해 더 복잡합니다. 어떤 것은 텍스트를 생성하고, 어떤 것은 루프 또는 로직을 수행하며 외부적인 정보를 나중에 변수에 의해 사용될 템플릿에 적재합니다.
 
-Some tags require beginning and ending tags (i.e. ``{% tag %} ... tag contents
-... {% endtag %}``).
+어떤 태그는 시작과 끝 태그를 필요로 합니다(예: ``{% tag %} ... 태그 내용 ... {% endtag %}``).
 
-Django ships with about two dozen built-in template tags. You can read all about
-them in the :ref:`built-in tag reference <ref-templates-builtins-tags>`. To give
-you a taste of what's available, here are some of the more commonly used
-tags:
+Django에는 스무 개가 넘는 템플릿 태그가 내장되어 있습니다. :ref:`내장 태그 레퍼런스 <ref-templates-builtins-tags>`\ 에서 읽어볼 수 있습니다. 어떤 것이 가능한지 맛보기를 위해, 자주 사용되는 태그의 예를 들어보겠습니다.
 
 :ttag:`for`
-    Loop over each item in an array.  For example, to display a list of athletes
-    provided in ``athlete_list``::
+    배열의 각 원소에 대하여 루프. 예를 들어, ``athlete_list``\ 에 들어 있는 선수의 목록을 출력하기 위하여 다음과 같이 할 수 있습니다.
+
+::
 
         <ul>
         {% for athlete in athlete_list %}
@@ -164,8 +148,7 @@ tags:
         </ul>
 
 :ttag:`if` and ``else``
-    Evaluates a variable, and if that variable is "true" the contents of the
-    block are displayed::
+    변수를 평가하여, 변수가 "true"\ 이면 블록의 컨텐츠를 표시::
 
         {% if athlete_list %}
             Number of athletes: {{ athlete_list|length }}
@@ -173,10 +156,11 @@ tags:
             No athletes.
         {% endif %}
 
-    In the above, if ``athlete_list`` is not empty, the number of athletes
-    will be displayed by the ``{{ athlete_list|length }}`` variable.
+    위에서는, ``athlete_list``\ 가 비어있지 않다면, ``{{ athlete_list|length }}`` 변수에 의하여 선수의 숫자가 출력됩니다.
 
-    You can also use filters and various operators in the :ttag:`if` tag::
+    또한 :ttag:`if` 태그 내에 필터 및 각종 연산자를 사용할 수 있습니다.
+
+::
 
         {% if athlete_list|length > 1 %}
            Team: {% for athlete in athlete_list %} ... {% endfor %}
@@ -184,38 +168,36 @@ tags:
            Athlete: {{ athlete_list.0.name }}
         {% endif %}
 
-:ttag:`block` and :ttag:`extends`
-    Set up `template inheritance`_ (see below), a powerful way
-    of cutting down on "boilerplate" in templates.
+:ttag:`block` 및 :ttag:`extends`
+    `템플릿 상속`_ (아래 참조), 템플릿의 "보일러플레이트"를 줄여주는 강력한 방법입니다.
 
-Again, the above is only a selection of the whole list; see the :ref:`built-in
-tag reference <ref-templates-builtins-tags>` for the complete list.
+위에서 소개한 것은 일부에 불과하므로, :ref:`내장 태그 레퍼런스 <ref-templates-builtins-tags>`\ 에서 전체 목록을 살펴보시기 바랍니다.
 
-You can also create your own custom template tags; see
-:doc:`/howto/custom-template-tags`.
+또한 맞춤 템플릿 태그를 만들 수도 있습니다. :doc:`/howto/custom-template-tags`\ 를 참고하세요.
 
 .. seealso::
 
-    Django's admin interface can include a complete reference of all template
-    tags and filters available for a given site. See
-    :doc:`/ref/contrib/admin/admindocs`.
+    Django의 관리자 인터페이스는 해당 사이트에서 사용 가능한 모든 템플릿 태그와 필터의 전체 레퍼런스를 포함할 수 있습니다.
+    :doc:`/ref/contrib/admin/admindocs`\ 를 참고하세요.
 
-Comments
+주석
 ========
 
-To comment-out part of a line in a template, use the comment syntax: ``{# #}``.
+템플릿에서 한 행을 주석 처리하기 위한 주석 구문은 ``{# #}``\ 입니다.
 
-For example, this template would render as ``'hello'``::
+예를 들어, 이 템플릿은 ``'hello'``\ 로 렌더됩니다.
+
+::
 
     {# greeting #}hello
 
-A comment can contain any template code, invalid or not. For example::
+주석은 다음과 같이 템플릿 코드가 유효하든 아니든 간에 포함시킬 수 있습니다.
+
+::
 
     {# {% if foo %}bar{% else %} #}
 
-This syntax can only be used for single-line comments (no newlines are permitted
-between the ``{#`` and ``#}`` delimiters). If you need to comment out a
-multiline portion of the template, see the :ttag:`comment` tag.
+이 구문은 단일 행 주석에만 사용할 수 있습니다(``{#`` 및 ``#}`` 분리자 사이에 개행은 허용되지 않습니다). 템플릿에서 여러 줄을 주석으로 처리하고자 한다면, :ttag:`comment` 태그를 살펴보세요.
 
 .. _template-inheritance:
 
