@@ -45,30 +45,25 @@ FAQ: 장고의 사용
 모델 안에서 클래스:`~django.db.models.FileField` 또는
 :class:`~django.db.models.ImageField` 몇가지 스텝이 있습니다:
 
-#. 사용자의 설정파일 안에서, 사용자께선 정의를 할 필요가 있습니다 :setting:`MEDIA_ROOT` as
-   사용자께서 업로드된 파일을 저장하기위해 장고the full path to a directory where you'd like Django to store uploaded
-   files. (For performance, these files are not stored in the database.)
-   Define :setting:`MEDIA_URL` as the base public URL of that directory.
-   Make sure that this directory is writable by the Web server's user
-   account.
-설정 파일에서 정의해야합니다 : 설정 :`MEDIA_ROOT`로
-    당신은 장고 업로드 저장하고자하는 디렉토리에 대한 전체 경로
-    파일. (성능을 위해 이러한 파일은 데이터베이스에 저장되지 않습니다.)
-    정의 : 설정을`MEDIA_URL`해당 디렉토리의 기본 공용 URL 있습니다.
-    이 디렉토리는 웹 서버의 사용자에 의해 쓰기되어 있는지 확인합니다
-    계정입니다.
-#. Add the :class:`~django.db.models.FileField` or
-   :class:`~django.db.models.ImageField` to your model, making sure to
-   define the :attr:`~django.db.models.FileField.upload_to` option to tell
-   Django to which subdirectory of :setting:`MEDIA_ROOT` it should upload
-   files.
-
-#. All that will be stored in your database is a path to the file
-   (relative to :setting:`MEDIA_ROOT`). You'll most likely want to use the
-   convenience :attr:`~django.core.files.File.url` attribute provided by
-   Django. For example, if your :class:`~django.db.models.ImageField` is
-   called ``mug_shot``, you can get the absolute path to your image in a
-   template with ``{{ object.mug_shot.url }}``.
+#. 사용자의 설정파일 안에서, 사용자께선 정의를 할 필요가 있습니다.
+   사용자께서 장고에 업로드 된 파일을 저장하는 곳에 디렉토리에 대한 
+   전체경로로써 이렇게 설정하세요:setting:`MEDIA_ROOT`
+   files. (성능을 위해, 이 파일들은 데이터베이스에 저장되지 않습니다.)
+   정의하세요. 그 디렉토리의 기본 공용 URL로써 :setting:`MEDIA_URL` 을 정의하세요.
+   웹 서버의 사용자에 의해 이 디렉토리가 쓰기되어 있는지 확인하세요.
+   
+#. 사용자의 모델에 :class:`~django.db.models.FileField` 또는
+   :class:`~django.db.models.ImageField`을 추가하세요. 그러면서 반드시 업로드 해야하는
+   :setting:`MEDIA_ROOT`의 하위 디렉토리 위치에 장고를 tell하는 옵션을 
+   :attr:`~django.db.models.FileField.upload_to`로 정의를 확실히 해야합니다.
+  
+#. 사용자의 데이터베이스 안에 저장될 모든것이 파일의 path입니다.
+   (:setting:`MEDIA_ROOT`과 상대적으로.). 사용자께서는 장고에의해 제공된 편리한
+   :attr:`~django.core.files.File.url` 속성을 사용하기를 원하는것이~ 
+   You'll most likely want to use the convenience :attr:`~django.core.files.File.url` attribute provided by
+   Django. 예를들어, 사용자께서 :class:`~django.db.models.ImageField`를 ``mug_shot``으로
+   불린다면, 사용자께서는 ``{{ object.mug_shot.url }}``과 함께 템플릿안에 사용자이미지에
+   정확한 path를 얻을수있습니다.
 
 어떻게 제가 모든 제 템플릿에 variable이 사용가능하도록 만들수 있을까요?
 -------------------------------------------------------
