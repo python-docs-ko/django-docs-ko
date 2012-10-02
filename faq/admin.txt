@@ -1,108 +1,70 @@
-FAQ: The admin
+FAQ: 관리자
 ==============
 
-I can't log in. When I enter a valid username and password, it just brings up the login page again, with no error messages.
----------------------------------------------------------------------------------------------------------------------------
+로그인을 할 수 가 없습니다. 올바른 사용자이름과 패스워드를 입력하면, 오류메세지를 나타내지 않고, 로그인 페이지를 다시 보여줍니다. ---------------------------------------------------------------------------------------------------------------------------
 
-The login cookie isn't being set correctly, because the domain of the cookie
-sent out by Django doesn't match the domain in your browser. Try these two
-things:
+로그인 쿠키가 올바르게 설정되지 않았습니다, 왜냐하면 Django가 보내는 쿠키의 도메인이 당신이 사용하는 브라우져의 도메인과 일치 하지 않기 때문 입니다. 아래의 두 가지 방법을 시도해 보십시오 :
 
-* Set the :setting:`SESSION_COOKIE_DOMAIN` setting in your admin config
-  file to match your domain. For example, if you're going to
-  "http://www.example.com/admin/" in your browser, in
-  "myproject.settings" you should set ``SESSION_COOKIE_DOMAIN = 'www.example.com'``.
+* 당신의 관리자 설정 파일에 있는 :setting:`SESSION_COOKIE_DOMAIN` 값을 
+  당신의 도메인과 같도록 설정 하십시오. 예를 들어, 
+  브라우저에서 "http://www.example.com/admin/" 로 접속 하려고 한다면,
+  "myproject.settings" 값을 ``SESSION_COOKIE_DOMAIN = 'www.example.com'``로 설정 해야 합니다.
 
-* Some browsers (Firefox?) don't like to accept cookies from domains that
-  don't have dots in them. If you're running the admin site on "localhost"
-  or another domain that doesn't have a dot in it, try going to
-  "localhost.localdomain" or "127.0.0.1". And set
-  :setting:`SESSION_COOKIE_DOMAIN` accordingly.
+* 파이어 폭스 같은 몇몇 브라우져들에서는 점(dot, .)을 포함하지 않는 도메인들로 부터 쿠키를 받지 않으려는  경향이 있습니다.
+   만약, 관리자 사이트를 "localhost"에서 실행하고 있거나,
+  점(dot, .)을 포함하지 않는 도메인에서 실행 중이라면,
+  "localhost.localdomain" 이나  "127.0.0.1"을 시도해 보십시오. 그리고
+  :setting:`SESSION_COOKIE_DOMAIN`을 그에 따라 설정 하십시오.
 
-I can't log in. When I enter a valid username and password, it brings up the login page again, with a "Please enter a correct username and password" error.
+로그인을 할 수 가 없습니다. 올바른 사용자이름과 패스워드를 입력하면, "올바른 사용자이름과 패스워드를 입력해 주십시오"라는 오류 메세지와 함께, 로그인 페이지를 다시 보여줍니다.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-If you're sure your username and password are correct, make sure your user
-account has ``is_active`` and ``is_staff`` set to True. The admin site only
-allows access to users with those two fields both set to True.
+만약, 사용자이름과 비밀번호가 정확하다고 확신한다면, 사용자 계정이 ``is_active`` 그리고 ``is_staff``를 가지고 있고, True로 설정 되어 있는지 확인 하십시오. 관리자 사이트는 위의 두개의 필드가 모두 True로 설정된 사용자만 접근 하도록 허락합니다.
 
-How can I prevent the cache middleware from caching the admin site?
--------------------------------------------------------------------
+어떻게 캐시 미들웨어가 관리자 사이트를 캐싱하는 것을 방지 할 수 있습니까?-------------------------------------------------------------------
 
-Set the :setting:`CACHE_MIDDLEWARE_ANONYMOUS_ONLY` setting to ``True``. See the
-:doc:`cache documentation </topics/cache>` for more information.
+:setting:`CACHE_MIDDLEWARE_ANONYMOUS_ONLY` 설정을 ``True``로 설정 하십시오. 더욱 자세한 정보는 :doc:`cache documentation </topics/cache>` 을 참고 하십시오.
 
-How do I automatically set a field's value to the user who last edited the object in the admin?
------------------------------------------------------------------------------------------------
+어떻게 자동으로 필드의 값을 관리자상태에서 마지막으로 개체를 변경한 사용자로 변경 할 수 있습니까?-----------------------------------------------------------------------------------------------
 
-The :class:`~django.contrib.admin.ModelAdmin` class provides customization hooks
-that allow you to transform an object as it saved, using details from the
-request. By extracting the current user from the request, and customizing the
-:meth:`~django.contrib.admin.ModelAdmin.save_model` hook, you can update an
-object to reflect the user that edited it. See :ref:`the documentation on
-ModelAdmin methods <model-admin-methods>` for an example.
+ :class:`~django.contrib.admin.ModelAdmin` 클래스는 당신에게  요청의 세부사항을 사용해서 개체를 저장된 그대로 변환 할 수 있도록하는 커스터마이제이션 훅을 제공 합니다. 현재 사용자를 요청으로 부터 분리 함으로써, 그리고 :meth:`~django.contrib.admin.ModelAdmin.save_model` 훅을 커스터마이징 함으로써, 당신은 그것을 수정한 유저를 반영한 개체를 업데이트 할 수 있습니다. :ref:`the documentation on
+ModelAdmin methods <model-admin-methods>`를 예제로 참고 하십시오.
 
-How do I limit admin access so that objects can only be edited by the users who created them?
----------------------------------------------------------------------------------------------
+어떻게 개체를 생성한 사용자만 수정 할 수 있도록 관리자의 접근을 제한 할 수 있습니까?---------------------------------------------------------------------------------------------
 
-The :class:`~django.contrib.admin.ModelAdmin` class also provides customization
-hooks that allow you to control the visibility and editability of objects in the
-admin. Using the same trick of extracting the user from the request, the
-:meth:`~django.contrib.admin.ModelAdmin.queryset` and
-:meth:`~django.contrib.admin.ModelAdmin.has_change_permission` can be used to
-control the visibility and editability of objects in the admin.
+ :class:`~django.contrib.admin.ModelAdmin` 클래스는 또한 당신이 관리자에서 개체들을 보거나, 수정 하는 것을 통제 할 수 있도록 커스터마이제이션 훅을 제공 합니다.  요청으로부터 유저를 추출 한 것과 같은 속임수를 사용해서, :meth:`~django.contrib.admin.ModelAdmin.queryset`와 
+:meth:`~django.contrib.admin.ModelAdmin.has_change_permission` 는 관리자에서 개체들을 보거나 수정 하는 것을 통제 할 수 있습니다.
 
-My admin-site CSS and images showed up fine using the development server, but they're not displaying when using mod_wsgi.
+ 개발 서버를 사용 할 때는  내 관리자 사이트의 CSS와 이미지가  잘 나오는데, mod_wsgi를 사용 할 때는 나타나지 않습니다.
 ---------------------------------------------------------------------------------------------------------------------------
 
-See :ref:`serving the admin files <serving-the-admin-files>`
-in the "How to use Django with mod_wsgi" documentation.
+ "How to use Django with mod_wsgi" 문서안에 :ref:`serving the admin files <serving-the-admin-files>`를 보십시오.
 
-My "list_filter" contains a ManyToManyField, but the filter doesn't display.
+ 제 "list_filter"는 ManyToManyField를 가지고 있는데, 필터가 보이지 않습니다.
 ----------------------------------------------------------------------------
 
-Django won't bother displaying the filter for a ``ManyToManyField`` if there
-are fewer than two related objects.
+ 만약에 적어도 두 개의 관련된 개체들이 있다면, Django는 ``ManyToManyField``가 필터를 나타내는 것을 방해하지 않을 것 입니다.
 
-For example, if your ``list_filter`` includes ``sites``, and there's only one
-site in your database, it won't display a "Site" filter. In that case,
-filtering by site would be meaningless.
+예를들어, ``list_filter``가 ``sites``를 포함하고, 데이터베이스에 오직 하나의 사이트가 있다면, "Site" 필터는 나타나지 않을 것 입니다. 이러한 경우에 , 사이트에 의한 필터링은 아무 의미가 없습니다.
 
-How can I customize the functionality of the admin interface?
--------------------------------------------------------------
+어떻게 관리자 인터페이스의 기능을 커스터마이즈 할 수 있습니까?-------------------------------------------------------------
 
-You've got several options. If you want to piggyback on top of an add/change
-form that Django automatically generates, you can attach arbitrary JavaScript
-modules to the page via the model's ``class Admin`` ``js`` parameter. That
-parameter is a list of URLs, as strings, pointing to JavaScript modules that
-will be included within the admin form via a ``<script>`` tag.
+당신은 몇 가지 옵션들을 가지고 있습니다. 만약, 당신이 Django가 자동으로 생성한 add/change의 위에 얹고싶다면(piggyback), 모델의 ``class Admin`` ``js`` 파라미터를 통해서 페이지에 임의의 자바스크립트 모듈들을 추가 할 수 있습니다. 파라미터들은 ``<script>`` 태그를 통해서 관리자 폼에 포함 될 자바스크립트 모듈들을 가리키는, 문자열 형태의 URL 리스트들입니다.
 
-If you want more flexibility than simply tweaking the auto-generated forms,
-feel free to write custom views for the admin. The admin is powered by Django
-itself, and you can write custom views that hook into the authentication
-system, check permissions and do whatever else they need to do.
+만약 자동으로 생성된 폼을 단순히 살짝 수정한 것 보다 더욱 유연하게 하고 싶다면,  관리자를 위한 맞춤 뷰들을 자유롭게 작성 하십시오. 관리자는 Django가 만든 것 입니다. 그리고, 인증 시스템 내부에 접근하고, 권한을 점검하는 등 필요한 모든 것을 하는 맞춤 뷰를 작성 할 수 있습니다.
 
-If you want to customize the look-and-feel of the admin interface, read the
-next question.
+ 만약, 관리자 인터페이스의 look-and-feel 을 커스터 마이즈 하고 싶다면, 다음 질문을 읽어 보십시오. 
 
-The dynamically-generated admin site is ugly! How can I change it?
-------------------------------------------------------------------
+동적으로 생성된 관리자 사이트는 보기 싫어요!어떻게 변경 할 수 있습니까?How can I change it?------------------------------------------------------------------
 
-We like it, but if you don't agree, you can modify the admin site's
-presentation by editing the CSS stylesheet and/or associated image files. The
-site is built using semantic HTML and plenty of CSS hooks, so any changes you'd
-like to make should be possible by editing the stylesheet. We've got a
-:doc:`guide to the CSS used in the admin </obsolete/admin-css>` to get you started.
+ 우리는 좋아하지만, 동의하지 않는 다면, CSS 스타일시트나 관련된 이미지 파일들을 변경함으로써 관리자 사이트의 모습을 수정 할 수 있습니다.  그 사이트는 는 시맨틱 HTML 그리고 수없이 많은 CSS 훅으로 구성되어 있으므로, 당신이 원하는 어떤 변경도 스타일시트를 변경함으로써 가능 해야만 합니다. 우리는 당신이 시작하는데 필요한 :doc:`guide to the CSS used in the admin </obsolete/admin-css>` 를 만들었습니다.
 
-What browsers are supported for using the admin?
-------------------------------------------------
+어떤 브라우져들에서 관리자를 사용 할 수 있습니까?------------------------------------------------
 
-The admin provides a fully-functional experience to `YUI's A-grade`_ browsers,
-with the notable exception of IE6, which is not supported.
+ 관리자는 IE6만 예외로 하고, `YUI's A-grade` 브라우저들에게 기능적으로 완벽한 경험을 제공 합니다. 
 
 There *may* be minor stylistic differences between supported browsers—for
-example, some browsers may not support rounded corners. These are considered
-acceptable variations in rendering.
+example, some browsers may not support rounded corners. 이러한 것들은 렌더링에서의 허용 가능한 변화로 간주합니다.
 
 .. _YUI's A-grade: http://yuilibrary.com/yui/docs/tutorials/gbs/ 
 
