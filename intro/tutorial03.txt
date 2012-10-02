@@ -280,10 +280,10 @@ get_object_or404()는 :meth:`~django.db.models.query.QuerySet.get`\ 를 사용�
 
 .. admonition:: 철학
 
-     왜 우리가 더 높은 레벨에서 :exc:`~django.core.exceptions.ObjectDoesNotExist`\ 를 사용해서 자동으로 예외를 처리하는 대신 헬퍼 함수인 :func:`~django.shortcuts.get_object_or_404`\ 를 사용했을까요? 
+    왜 우리가 더 높은 레벨에서 :exc:`~django.core.exceptions.ObjectDoesNotExist`\ 를 사용해서 자동으로 예외를 처리하는 대신 헬퍼 함수인 :func:`~django.shortcuts.get_object_or_404`\ 를 사용했을까요? 
      
      
-     또는 :exc:`~django.core.exceptions.ObjectDoesNotExist`\ 를 사용하는 대신  :exc:`~django.http.Http404`\ 를 띄우는 모델 API를 가지도록 했을까요?
+    또는 :exc:`~django.core.exceptions.ObjectDoesNotExist`\ 를 사용하는 대신  :exc:`~django.http.Http404`\ 를 띄우는 모델 API를 가지도록 했을까요?
 
     그 이유는 모델 계층을 뷰 계층에 결합하기 때문입니다.  
     Django의 으뜸가는 디자인 목표중 하나는 느슨한 결합을 유지하는 것입니다.
