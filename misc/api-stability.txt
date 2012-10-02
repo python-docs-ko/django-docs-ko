@@ -22,7 +22,7 @@ API 안정성
 안정적인 API
 ============
 
-일반적인 경우에, -- :doc:`내부 영역 </internals/index>`\ 에 있는 어떠한 예외도 포함하여 이 문서에서 다루는 모든 것은 1.0에서 안정적인 것으로 간주합니다. 여기에는 다음과 같은 API를 포함합니다.
+일반적인 경우에, :doc:`내부 영역 </internals/index>`\ 에 있는 어떤 예외도 포함하여, 이 문서에서 다루는 모든 것은 1.0에서 안정적인 것으로 간주합니다. 여기에는 다음과 같은 API를 포함합니다.
 
 - :doc:`인증 </topics/auth>`
 
@@ -48,7 +48,7 @@ API 안정성
 
 - :doc:`시그널 </topics/signals>`
 
-- :doc:`템플릿 </topics/templates>`, 언어 포함, 파이썬 수준의 :doc:`template APIs </ref/templates/index>` 및 :doc:`맞춤 템플릿 태그 및 라이브러리 </howto/custom-template-tags>`. 앞으로 새로운 템플릿 태그를 추가할 수 있으며 그 이름은 의도하지 않게 외부의 템플릿 태그와 충돌할 수 있습니다. 그러한 태그를 추가하기 전에, Django 중복되는 이름을 가진 태그를 로드하려고 할 때에는 오류를 일으키게끔 할 것입니다.
+- :doc:`템플릿 </topics/templates>`. 언어, 파이썬 수준의 :doc:`template APIs </ref/templates/index>` 및 :doc:`맞춤 템플릿 태그 및 라이브러리 </howto/custom-template-tags>` 를 포함. 앞으로 새로운 템플릿 태그를 추가할 수 있으며 그 이름은 의도하지 않게 외부의 템플릿 태그와 충돌할 수 있습니다. 그러한 태그를 추가하기 전에, 우리는 Django가 중복되는 이름을 가진 태그를 로드하려고 할 때 오류를 일으키도록 할 것 입니다.
 
 - :doc:`테스팅 </topics/testing>`
 
