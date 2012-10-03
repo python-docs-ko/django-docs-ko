@@ -2,7 +2,7 @@
 첫 번째 Django 앱 만들기! part 2
 =====================================
 
-본 튜토리얼은 :doc:`튜토리얼 1 </intro/tutorial01>`\ 에 이어 계속됩니다. 앞서 개발한 설문조사 애플리케이션과 함께 Django에서 자동으로 생성되는 관리자 사이트에 대해 알아보도록 하겠습니다.
+이 튜토리얼은 :doc:`튜토리얼 1 </intro/tutorial01>`\ 에 이어 계속됩니다. 앞서 개발한 투표 애플리케이션과 함께 Django에서 자동으로 생성되는 관리자 사이트에 대해 알아보도록 하겠습니다.
 
 .. admonition:: 철학
 
@@ -24,9 +24,9 @@
 
 관리자 사이트는 디폴트로 활성화 되지 않습니다. -- 선택사항 입니다. 관리자 사이트를 활성화 시키기 위해 다음 세 가지의 작업이 필요합니다:
 
-* :setting:`INSTALLED_APPS` 설정에 있는 ``"django.contrib.admin"`` 의 주석을 제거하세요.
+* :setting:`INSTALLED_APPS` 설정에 있는 ``"django.contrib.admin"``\ 의 주석을 제거하세요.
 
-* ``python manage.py syncdb`` 명령어를 실행하세요. 여러분이 :setting:`INSTALLED_APPS` 에
+* ``python manage.py syncdb`` 명령어를 실행하세요. 여러분이 :setting:`INSTALLED_APPS`\ 에
   새로운 어플리케이션을 설치하였기 때문에 데이터베이스 테이블을 업데이트 해야 합니다.
 
 * ``mysite/urls.py`` 파일을 열어 관리 사이트와 관련된 행의 주석을
@@ -97,10 +97,10 @@ http://127.0.0.1:8000/admin/. 관리자 사이트의 로그인 화면을 볼 수
 
 Groups, users, sites 등 몇 개의 수정 가능한 컨텐츠를 확인할 수 있는데, 이들은 Django에서 기본적으로 제공하는 핵심 기능 입니다.
 
-관리자 사이트에서 수정 가능한 설문조사 앱 만들기
+관리자 사이트에서 수정 가능한 투표 앱 만들기
 =========================================
 
-그러데 우리의 설문조사 앱은 어디에 있나요? 아직 관리자 사이트 첫 페이지에 보이지 않습니다.
+그러데 우리의 투표 앱은 어디에 있나요? 아직 관리자 사이트 첫 페이지에 보이지 않습니다.
 
 단 한가지 할 일: 우선 관리자 사이트에게 ``Poll``
 개체가 관리자 인터페이스가 필요하다고 알려줘야 합니다. 이를 위해  ``polls`` 디렉토리 안에 ``admin.py`` 파일을 생성하고 아래와 같이 수정합니다.
@@ -117,12 +117,12 @@ Groups, users, sites 등 몇 개의 수정 가능한 컨텐츠를 확인할 수 
 무료 관리 기능 탐험하기
 ====================================
 
-자, 이제 ``Poll`` 이 등록되었고, Django는 ``Poll`` 을 관리 사이트 첫 페이지에 보여줘야 함을 알고 있습니다.
+자, 이제 ``Poll``\ 이 등록되었고, Django는 ``Poll``\ 을 관리 사이트 첫 페이지에 보여줘야 함을 알고 있습니다.
 
 .. image:: _images/admin03t.png
    :alt: polls가 보여지는 Django 관리자 사이트 첫 페이지 
 
-이제 "Polls"를 클릭하면 polls의 "change list" 를 볼 수 있습니다. 이 페이지에서는 데이터베이스의 모든 poll이 보여지게 되며 이중 한개를 선택하여 변경할 수 있습니다.
+이제 "Polls"를 클릭하면 polls의 "change list"를 볼 수 있습니다. 이 페이지에서는 데이터베이스의 모든 poll이 보여지게 되며 이중 한개를 선택하여 변경할 수 있습니다.
 여기에 우리가 첫 번째 튜토리얼에서 생성한 "What's up?" poll을 확인할 수 있습니다.
 
 .. image:: _images/admin04t.png
@@ -142,7 +142,7 @@ Poll을 수정하기 위해 "What's up?" poll을 클릭하세요.
   보여집니다. 각각의 필드는 장고의 관리자 사이트에서 어떻게 보여질지 스스로 알고
   있습니다.
 
-* 각각의 :class:`~django.db.models.DateTimeField` 에는 간편한 JavaScript
+* 각각의 :class:`~django.db.models.DateTimeField`\ 에는 간편한 JavaScript
   기능이 제공됩니다. 날짜는 "Today" 바로입력과 달력 팝업이 제공되며, 시간에는
   "Now" 바로입력과 일반적으로 시간 입력에 사용되는 간편한 팝업이 제공됩니다.
 
@@ -172,7 +172,7 @@ Poll을 수정하기 위해 "What's up?" poll을 클릭하세요.
 관리자 사이트 폼 커스터마이즈 하기
 ========================
 
-몇분 동안 간단히 코드를 살펴보며 감탄한 것 처럼 여러분은 코드를 작성 할 필요가 없습니다. 단지 Poll 모델과 ``admin.site.register(Poll)`` 을 등록 하는 것 만으로, Django는 기본적인 폼의 외형을 생성할 수 있었습니다. 때때로 여러분은 관리자 사이트 폼의 외형과 작업을 커스터마이즈 해야 할 필요가 있을 것 입니다. 이는 여러분이 개채를 등록할 때 필요한 옵션을 Django 에게 알려주면 됩니다..
+몇분 동안 간단히 코드를 살펴보며 감탄한 것 처럼 여러분은 코드를 작성 할 필요가 없습니다. 단지 Poll 모델과 ``admin.site.register(Poll)``\ 을 등록 하는 것 만으로, Django는 기본적인 폼의 외형을 생성할 수 있었습니다. 때때로 여러분은 관리자 사이트 폼의 외형과 작업을 커스터마이즈 해야 할 필요가 있을 것 입니다. 이는 여러분이 개채를 등록할 때 필요한 옵션을 Django 에게 알려주면 됩니다..
 
 수정 폼의 필드를 재 정렬 하는 예제를 통해서 어떻게 커스터마이즈 할 수 있는지 알아봅시다. ``admin.site.register(Poll)`` 라인을 아래와 같이 수정 해 봅시다.
 
@@ -183,7 +183,7 @@ Poll을 수정하기 위해 "What's up?" poll을 클릭하세요.
 
     admin.site.register(Poll, PollAdmin)
 
-여러분은 위와 같은 패턴 -- Model admin 개체 생성, ``admin.site.register()`` 의 두 번째 인자로 전달 -- 을 통해 언제든 개체의 관리 사이트 옵션을 변경할 수 있습니다.
+여러분은 위와 같은 패턴 -- Model admin 개체 생성, ``admin.site.register()``\ 의 두 번째 인자로 전달 -- 을 통해 언제든 개체의 관리 사이트 옵션을 변경할 수 있습니다.
 
 이번 예제는 "Publication date" 필드가 "Question" 필드의 앞에 오도록 수정하였습니다.
 
@@ -244,14 +244,14 @@ Poll을 수정하기 위해 "What's up?" poll을 클릭하세요.
 .. image:: _images/admin10.png
    :alt: Choice 의 관리 페이지
 
-폼 안에서 "Poll" 필드는 선택 박스(Select Box)로서 데이터베이스의 모든 Poll을 포함하고 있습니다. Django는 :class:`~django.db.models.ForeignKey` 가 관리 페이지에서 ``<select>`` 박스로 보여져야 한다는 것을 알고 있습니다. 현재 예제 에서는 한개의 Poll만 존재하는 상태 입니다.
+폼 안에서 "Poll" 필드는 선택 박스(Select Box)로서 데이터베이스의 모든 Poll을 포함하고 있습니다. Django는 :class:`~django.db.models.ForeignKey`\ 가 관리 페이지에서 ``<select>`` 박스로 보여져야 한다는 것을 알고 있습니다. 현재 예제 에서는 한개의 Poll만 존재하는 상태 입니다.
 
 "Poll" 다음에 있는 "Add Another" 링크에 주목하세요. 다른 개체에 대한 ``ForeignKey`` 관계를 가지고 있는 모든 개체는 손쉽게 이용할 수 있습니다. "Add Another" 를 클릭하면 "Add poll" 폼이 있는 팝업 윈도우를 볼 수 있습니다. 팝업 윈도우에서 Poll을 추가 하고 "Save" 버튼을 누르면 Django는 Poll을 데이터베이스에 저장하고 여러분이 보고있는 "Add choice"의 선택된 Choice에 동적으로 추가합니다.
 
 그러나 시스템에 Choice 개체를 추가하는 작업은 비효율적인 작업입니다.
 만약 여러분이 Poll 개체를 만들 때 여러개의 Choice를 추가할 수 있다면 더 좋을 것 입니다. 자, 그럼 어떻게 하는지 알아봅시다.
 
-Choice 모델을 호출하는 ``register()`` 를 제거하세요. 그런 다음 ``Poll`` 을 불러오기 위해 등록 코드를 수정하세요.
+Choice 모델을 호출하는 ``register()``\ 를 제거하세요. 그런 다음 ``Poll``\ 을 불러오기 위해 등록 코드를 수정하세요.
 
 ::
 
@@ -275,9 +275,9 @@ Choice 모델을 호출하는 ``register()`` 를 제거하세요. 그런 다음 
 .. image:: _images/admin11t.png
    :alt: Choice 가 포함된 Poll 페이지
 
-이렇게 작동합니다.: 관련된 세개의 슬롯 -- ``extra`` 에 의해 선택된 -- 이 있고 언제든지 생성된 개체의 "수정" 페이지로 되돌아올 수 있으며, 또다른 세개의 추가 슬롯을 사용할 수도 있다.
+이렇게 작동합니다.: 관련된 세개의 슬롯 -- ``extra``\ 에 의해 선택된 -- 이 있고 언제든지 생성된 개체의 "수정" 페이지로 되돌아올 수 있으며, 또다른 세개의 추가 슬롯을 사용할 수도 있다.
 
-한 가지 작은 문제에 대해 생각 해 봅시다. 관련된 Choice 개체를 입력하기 위해 모든 필드가 넓은 공간에 보여지고 있습니다. 이러한 이유로 Django는 표를 이용하여 연관된 개체를 한 줄로 보여줍니다.; 다른과 같이 ``ChoiceInline`` 를 변경하세요.
+한 가지 작은 문제에 대해 생각 해 봅시다. 관련된 Choice 개체를 입력하기 위해 모든 필드가 넓은 공간에 보여지고 있습니다. 이러한 이유로 Django는 표를 이용하여 연관된 개체를 한 줄로 보여줍니다.; 다음과 같이 ``ChoiceInline`` 를 변경하세요.
 
 ::
 
@@ -299,7 +299,7 @@ Choice 모델을 호출하는 ``register()`` 를 제거하세요. 그런 다음 
 .. image:: _images/admin04t.png
    :alt: Poll 변경 리스트 페이지
 
-기본적으로 Django는 각 개체를 ``str()`` 로 보여줍니다. 그러나 각 필드를 직접 보여주는 것이 더 효과적일 수도 있습니다. 이를 위해 ``list_display`` 관리 옵션을 사용합니다. ``list_display`` 옵션은 개체의 변경 리스트에서 컬럼 이름으로 사용되는 필드 이름의 튜플로 구성됩니다.
+기본적으로 Django는 각 개체를 ``str()``\ 로 보여줍니다. 그러나 각 필드를 직접 보여주는 것이 더 효과적일 수도 있습니다. 이를 위해 ``list_display`` 관리 옵션을 사용합니다. ``list_display`` 옵션은 개체의 변경 리스트에서 컬럼 이름으로 사용되는 필드 이름의 튜플로 구성됩니다.
 
 ::
 
@@ -307,7 +307,7 @@ Choice 모델을 호출하는 ``register()`` 를 제거하세요. 그런 다음 
         # ...
         list_display = ('question', 'pub_date')
 
-좋은 지표로 삼기 위해 첫 번째 튜토리얼에서 만든 커스텀 메소드인 ``was_published_recently`` 을 포함시켜 봅시다.
+좋은 지표로 삼기 위해 첫 번째 튜토리얼에서 만든 커스텀 메소드인 ``was_published_recently``\ 을 포함시켜 봅시다.
 
 ::
 
@@ -320,7 +320,7 @@ Choice 모델을 호출하는 ``register()`` 를 제거하세요. 그런 다음 
 .. image:: _images/admin13t.png
    :alt: 업데이트 된 Poll 변경 리스트 페이지
 
-컬럼 값에 따라 정렬하기 위해 컬럼 헤더를 클릭해 보세요. -- 커스텀 메소드인 ``was_published_recently`` 는 정렬을 지원하지 않습니다. ``was_published_recently`` 의 컬럼 해더는 기본적으로 메소드의 이름으로 포현되며(공백은 밑줄로 대체) 각 컬럼은 문자열로 표현되게 됩니다.
+컬럼 값에 따라 정렬하기 위해 컬럼 헤더를 클릭해 보세요. -- 커스텀 메소드인 ``was_published_recently``\ 는 정렬을 지원하지 않습니다. ``was_published_recently`` 의 컬럼 해더는 기본적으로 메소드의 이름으로 포현되며(공백은 밑줄로 대체) 각 컬럼은 문자열로 표현되게 됩니다.
 
 여러분은 아래와 같이 ``models.py`` 에 있는 몇 개의 어트리뷰트를 변경하여 보다 보기 좋게 만들 수 있습니다.
 
@@ -334,7 +334,7 @@ Choice 모델을 호출하는 ``register()`` 를 제거하세요. 그런 다음 
         was_published_recently.boolean = True
         was_published_recently.short_description = 'Published recently?'
 
-admin.py 파일을 수정하여 Poll 수정 리스트를 향상시킬 수 있습니다.: 필터. ``PollAdmin`` 에 아래 코드를 추가하세요.::
+admin.py 파일을 수정하여 Poll 수정 리스트를 향상시킬 수 있습니다.: 필터. ``PollAdmin``\ 에 아래 코드를 추가하세요.::
 
     list_filter = ['pub_date']
 
@@ -344,7 +344,7 @@ admin.py 파일을 수정하여 Poll 수정 리스트를 향상시킬 수 있습
    :alt: 업데이트 된 Poll 변경 리스트 페이지
 
 여러분이 필터링 하는 필드의 타입에 따라 필터의 타입이 보여지게 됩니다.
-``pub_date`` 은 :class:`~django.db.models.fields.DateTimeField` 이기 때문에 Django는 적절한 옵션을 제공합니다.: "Any date," "Today," "Past 7
+``pub_date``\ 은 :class:`~django.db.models.fields.DateTimeField`\ 이기 때문에 Django는 적절한 옵션을 제공합니다.: "Any date," "Today," "Past 7
 days," "This month," "This year."
 
 꽤 사용하기 편하게 구성되죠?이제 검색 기능을 추가 해 봅시다.
@@ -374,7 +374,7 @@ days," "This month," "This year."
 
 Django의 템플릿 시스템을 이용하면 쉽게 변경할 수 있습니다. Django 관리자 사이트는 Django 기반으로 개발되었기 때문에 Django의 자체 템플릿 시스템을 사용하여 인터페이스를 제공하고 있습니다.
 
-설정 파일(``mysite/settings.py``, 기억하나요?)을 열어 :setting:`TEMPLATE_DIRS` 설정을 봅시다. :setting:`TEMPLATE_DIRS` 은 Django 템플릿을 불러올 때 확인하는 파일 시스템 디렉토리로 구성된 튜플로 구성됩니다. 이는 검색을 위한 패스 입니다.
+설정 파일(``mysite/settings.py``, 기억하나요?)을 열어 :setting:`TEMPLATE_DIRS` 설정을 봅시다. :setting:`TEMPLATE_DIRS`\ 은 Django 템플릿을 불러올 때 확인하는 파일 시스템 디렉토리로 구성된 튜플로 구성됩니다. 이는 검색을 위한 패스 입니다.
 
 기본적으로 :setting:`TEMPLATE_DIRS` 는 비어있습니다. 이제 Django에게 어디에 우리의 템플릿이 있는지 알려주기 위해 한 줄 추가 해 봅시다.
 
@@ -384,28 +384,40 @@ Django의 템플릿 시스템을 이용하면 쉽게 변경할 수 있습니다.
         '/home/my_username/mytemplates', # 여러분의 디렉토리로 변경 해 주세요.
     )
 
-이제 Django 소스코드의 기본 Django 관리자 템플릿 디렉토리 (``django/contrib/admin/templates``) 에 있는 ``admin/base_site.html``를 여러분이 :setting:`TEMPLATE_DIRS`에 지정한 디렉토리의 ``admin`` 하위 디렉토리로 복사합니다. 예를 들어, 만약 여러분의 :setting:`TEMPLATE_DIRS` 에 위와 같이 ``'/home/my_username/mytemplates'`` 가 포함되어 있다면, ``django/contrib/admin/templates/admin/base_site.html`` 를
-``/home/my_username/mytemplates/admin/base_site.html`` 로 복사하세요. ``admin`` 의 하위 디렉토리를 잊지 마세요.
+이제 Django 소스코드의 기본 Django 관리자 템플릿 디렉토리 (``django/contrib/admin/templates``) 에 있는 ``admin/base_site.html``\ 를 여러분이 :setting:`TEMPLATE_DIRS`에 지정한 디렉토리의 ``admin`` 하위 디렉토리로 복사합니다. 예를 들어, 만약 여러분의 :setting:`TEMPLATE_DIRS`\ 에 위와 같이 ``'/home/my_username/mytemplates'``\ 가 포함되어 있다면, ``django/contrib/admin/templates/admin/base_site.html``\ 를
+``/home/my_username/mytemplates/admin/base_site.html``\ 로 복사하세요. ``admin``\ 의 하위 디렉토리를 잊지 마세요.
+
+.. admonition:: Django의 소스파일들은 어디에 있나요?
+
+    독자 여러분의 시스템에서 Django의 소스파일들을 찾기 힘들다면 아래 명령어를 실행해보세요:
+
+    .. code-block:: bash
+
+        python -c "
+        import sys
+        sys.path = sys.path[1:]
+        import django
+        print(django.__path__)"
 
 다음으로, 파일을 수정하여 이미 입력 되어 있는 Django 텍스트를 적절한 여러분의 사이트 이름으로 교체해 주세요.
 
-이 템플릿 파일은 여러개의 ``{% block branding %}`` 과 ``{{ title }}`` 을 포함하고 있습니다. ``{%`` 와 ``{{`` 는 Django 템플릿 언어 중 일부입니다. Django가 ``admin/base_site.html`` 를 출력할 때 HTML 페이지를 완성하기 위하여 이 텀플릿 언어는 평가됩니다.
+이 템플릿 파일은 여러개의 ``{% block branding %}``\ 과 ``{{ title }}``\ 을 포함하고 있습니다. ``{%``\ 와 ``{{``\ 는 Django 템플릿 언어 중 일부입니다. Django가 ``admin/base_site.html`` 를 출력할 때 HTML 페이지를 완성하기 위하여 이 텀플릿 언어는 평가됩니다.
 여러분이 지금 템플릿에 대해 잘 알지 못해도 걱정하지 마세요. 세 번째 튜토리얼에서 Django의 탐플릿 언어에 대해 자세히 알아볼 것 입니다.
 
-Django의 기본 관리자 사이트 템플릿은 재정의(Override) 될 수 있다는 것만 알아두세요. 템플릿을 재정의 하기 위해, 위에서 한 작업들을 ``base_site.html`` 에 해 주세요. --
+Django의 기본 관리자 사이트 템플릿은 재정의(Override) 될 수 있다는 것만 알아두세요. 템플릿을 재정의 하기 위해, 위에서 한 작업들을 ``base_site.html``\ 에 해 주세요. --
 파일을 기본 디렉토리에서 여러분의 커스텀 디렉토리에 복사한 후 수정하세요.
 
-여기서 날카로운 여러분은 의문이 생길겁니다.: 만약 기본적으로 :setting:`TEMPLATE_DIRS` 가 비어있다면,
-Django는 어떻게 기본 관리자 사이트 템플릿을 찾나요? 정답은, Django는 기본적으로 각 앱 패키지의 하위 디렉토리에 있는 ``templates/`` 의 템플릿을 자동으로 대체하여 사용합니다. 보다 자세한 정보를 위해 :ref:`template loader documentation <template-loaders>` 을 참조하세요.
+여기서 날카로운 여러분은 의문이 생길겁니다.: 만약 기본적으로 :setting:`TEMPLATE_DIRS`\ 가 비어있다면,
+Django는 어떻게 기본 관리자 사이트 템플릿을 찾나요? 정답은, Django는 기본적으로 각 앱 패키지의 하위 디렉토리에 있는 ``templates/``\ 의 템플릿을 자동으로 대체하여 사용합니다. 보다 자세한 정보를 위해 :ref:`template loader documentation <template-loaders>` 을 참조하세요.
 
 관리자 사이트 첫 페이지 커스터마이즈 하기
 ==============================
 
 여러분은 이제 Django 관리 사이트의 첫 페이지 룩앤필도 커스터마이즈하고 싶을 것입니다.
 
-기본적으로 첫 페이지는 :setting:`INSTALLED_APPS` 에 등록된 모든 앱을 알파벳 순서로 보여줍니다. 여러분은 아마 레이아웃을 여러분이 원하는데로 변경하고 싶을 것 입니다. 초기 페이지는 관리자 사이트에서 가장 중요한 페이지 이며 쉽게 사용할 수 있어야 합니다.
+기본적으로 첫 페이지는 :setting:`INSTALLED_APPS`\ 에 등록된 모든 앱을 알파벳 순서로 보여줍니다. 여러분은 아마 레이아웃을 여러분이 원하는데로 변경하고 싶을 것 입니다. 초기 페이지는 관리자 사이트에서 가장 중요한 페이지 이며 쉽게 사용할 수 있어야 합니다.
 
-초기 페이지의 커스터마이즈 템플릿은 ``admin/index.html`` 파일 입니다. (이 전 섹션에서 ``admin/base_site.html`` 에서 한 작업들을 그대로 해 주세요. -- 파일을 기본 디렉토리에서 여러분의 커스텀 디렉토리에 복사 한 후 수정하세요.) 파일을 수정 할 때 ``app_list`` 변수를 확인할 수 있을 것 입니다. 변수는 여러분이 설치한 모든 Django 앱이 포함되어 있을 것 입니다. 이 링크를 그대로 사용해도 되지만, 어려분이 생각하는 데로 관리자 페이지의 개체에 링크를 직접 연결할 수도 있습니다. 다시 한번 얘기 드리지만, 템플릿 언어를 모른다고 걱정하지 마세요. -- 세 번째 튜토리얼에서 보다 자세히 알아볼 것 입니다.
+초기 페이지의 커스터마이즈 템플릿은 ``admin/index.html`` 파일 입니다. (이 전 섹션에서 ``admin/base_site.html``\ 에서 한 작업들을 그대로 해 주세요. -- 파일을 기본 디렉토리에서 여러분의 커스텀 디렉토리에 복사 한 후 수정하세요.) 파일을 수정 할 때 ``app_list`` 변수를 확인할 수 있을 것 입니다. 변수는 여러분이 설치한 모든 Django 앱이 포함되어 있을 것 입니다. 이 링크를 그대로 사용해도 되지만, 어려분이 생각하는 데로 관리자 페이지의 개체에 링크를 직접 연결할 수도 있습니다. 다시 한번 얘기 드리지만, 템플릿 언어를 모른다고 걱정하지 마세요. -- 세 번째 튜토리얼에서 보다 자세히 알아볼 것 입니다.
 
 이제 관리자 사이트에 익숙해졌다면, :doc:`세 번째 튜토리얼
 </intro/tutorial03>`\ 를 통해 공개된 poll 뷰에 대해 알아봅시다.
