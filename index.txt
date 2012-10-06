@@ -35,7 +35,7 @@ Django 문서(한국어판)
   :doc:`개요 <intro/overview>` |
   :doc:`설치 <intro/install>`
 
-* **자습서:**
+* **튜토리얼:**
   :doc:`1부 <intro/tutorial01>` |
   :doc:`2부 <intro/tutorial02>` |
   :doc:`3부 <intro/tutorial03>` |
@@ -74,11 +74,11 @@ Django 문서(한국어판)
 템플릿 계층
 ==================
 
-* **For designers:**
-  :doc:`Syntax overview <topics/templates>` |
+* **디자이너:**
+  :doc:`구문 개요 <topics/templates>` |
   :doc:`Built-in tags and filters <ref/templates/builtins>`
 
-* **For programmers:**
+* **프로그래머:**
   :doc:`Template API <ref/templates/api>` |
   :doc:`Custom tags and filters <howto/custom-template-tags>`
 
