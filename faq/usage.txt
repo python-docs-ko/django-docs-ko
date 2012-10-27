@@ -6,7 +6,7 @@ FAQ: Django의 사용
 
 아래 내용을 확인하세요:
 
-* 환경변수 DJANGO_SETTINGS_MODULE는 정규화 된파이썬 모듈
+* 환경변수 DJANGO_SETTINGS_MODULE는 정규화된 파이썬 모듈
   (예: "mysite.settings")로 설정되어 있습니다.
 
 * Said module is on ``sys.path`` (``import mysite.settings``\ 가 작동해야합니다.) 
@@ -41,8 +41,8 @@ Django의 모델/데이터베이스 계층을 사용해야 하나요?
 모델 안에서 :class:`~django.db.models.FileField` 또는
 :class:`~django.db.models.ImageField` 사용은 몇 단계를 따르시면 됩니다:
 
-#. 설정파일에 있는,:setting:`MEDIA_ROOT`\ 에
-   Django로 업로드된 파일들이 저장될 디렉토리의 전체경로를
+#. 설정파일에 있는,:setting:`MEDIA_ROOT`\ 에 Django로 
+   업로드된 파일들이 저장될 디렉토리의 전체경로를
    잊지마세요. (성능을 위해, 이 파일들은 데이터베이스에 저장되지 않습니다.)
    그 디렉토리의 기본 공용 URL로써 :setting:`MEDIA_URL`\ 을 정의하세요.
    웹 서버의 사용자 계정이 이 디렉토리에 쓰기 권한이 있는지 
@@ -57,9 +57,8 @@ Django의 모델/데이터베이스 계층을 사용해야 하나요?
 #. 파일의 (:setting:`MEDIA_ROOT`\ 와 상대적인)경로가
    데이터베이스에 저장됩니다. 당신은 십중팔구 Django의 편리한
    :attr:`~django.core.files.File.url` 속성을 사용하게
-   될 것입니다. 예를들어, ``mug_shot``\ 란 이름의 :class:`~django.db.models.ImageField`\ 가
-    있다면,  템플릿에서 ``{{ object.mug_shot.url }}``\ 을 사용하여 이미지의 절대경로를
-   얻을 수 있습니다.
+   될 것입니다. 예를들어, ``mug_shot``\ 란 이름의 :class:`~django.db.models.ImageField`\ 가 있다면,  
+   템플릿에서 ``{{ object.mug_shot.url }}``\ 을 사용하여 이미지의 절대경로를 얻을 수 있습니다.
 
 모든 템플릿에서 사용할수 있는 변수를 어떻게 만들수있을까요?
 -------------------------------------------------------
