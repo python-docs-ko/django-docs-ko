@@ -1,112 +1,51 @@
-FAQ: Installation
-=================
+FAQ: 설치 =================
 
-How do I get started?
----------------------
+어떻게 시작하나요?---------------------
 
-#. `Download the code`_.
-#. Install Django (read the :doc:`installation guide </intro/install>`).
-#. Walk through the :doc:`tutorial </intro/tutorial01>`.
-#. Check out the rest of the :doc:`documentation </index>`, and `ask questions`_ if you
-   run into trouble.
+#. `소스 다운 받기`_. #. Django 설치하기 (:doc:`빠른 설치 안내</intro/install>` 보기). #. :doc:`튜토리얼 </intro/tutorial01>` 시작하기. #. 하는 중간에 문제가 발생하면 :doc:`Django 문서(한국어판) </index>`\ 과 `ask questions`_\ 을 확인해주세요.
 
-.. _`Download the code`: https://www.djangoproject.com/download/
-.. _ask questions: https://www.djangoproject.com/community/
+.. _`소스 다운 받기`: https://www.djangoproject.com/download/ .. _ask questions: https://www.djangoproject.com/community/
 
-What are Django's prerequisites?
---------------------------------
+Django를 사용하는데에 전제조건은요?--------------------------------
 
-Django requires Python_, specifically any version of Python from 2.5
-through 2.7. No other Python libraries are required for basic Django
-usage.
+Django Python_\ 을 필요로 합니다, 파이썬의 버전이 2.5에서 2.7 사이면 좋습니다.. 기초적인 Django를 사용하는데 다른 파이썬 라이브러리는 필요하지 않아요.
 
-For a development environment -- if you just want to experiment with Django --
-you don't need to have a separate Web server installed; Django comes with its
-own lightweight development server. For a production environment, Django follows
-the WSGI spec, :pep:`3333`, which means it can run on a variety of server
-platforms. See :doc:`Deploying Django </howto/deployment/index>` for some
-popular alternatives. Also, the `server arrangements wiki page`_ contains
-details for several deployment strategies.
+개발환경 측면에서 -- 단지 Django를 살짝 경험만해보고 싶다면 -- 다른 웹 서버를 설치할 필요가 없습니다.; Django는 경량 개발 서버를 가지고 있으니까요. 실제 서비스 환경측면에서, Django는 WSGI 스펙인 :pep:`3333`\ 을 따릅니다, 이 말은 다양한 서버 플랫폼에서 실행될 수 있다는 것을 의미합니다. 인기있는 대안이 있는 :doc:`Deploying Django </howto/deployment/index>`\ 를 참고하세요. 또, `server arrangements wiki page`_\ 에  몇 가지 개발 전략에 대한 설명이 있습니다.
 
-If you want to use Django with a database, which is probably the case, you'll
-also need a database engine. PostgreSQL_ is recommended, because we're
-PostgreSQL fans, and MySQL_, `SQLite 3`_, and Oracle_ are also supported.
+만약 데이터베이스와 Django를 함께 사용하고 싶다면,데이터베이스 엔진이 필요할 것입니다 . 우리는 PostgreSQL_\ 의 팬이므로 PostgreSQL_\  을 추천합니다. 그리고 MySQL_, `SQLite 3`_, and Oracle_\ 도 지원합니다.
 
-.. _Python: http://www.python.org/
-.. _server arrangements wiki page: https://code.djangoproject.com/wiki/ServerArrangements
-.. _PostgreSQL: http://www.postgresql.org/
-.. _MySQL: http://www.mysql.com/
-.. _`SQLite 3`: http://www.sqlite.org/
-.. _Oracle: http://www.oracle.com/
+.. _Python: http://www.python.org/ .. _server arrangements wiki page: https://code.djangoproject.com/wiki/ServerArrangements .. _PostgreSQL: http://www.postgresql.org/ .. _MySQL: http://www.mysql.com/ .. _`SQLite 3`: http://www.sqlite.org/ .. _Oracle: http://www.oracle.com/
 
-Do I lose anything by using Python 2.5 versus newer Python versions, such as Python 2.6 or 2.7?
------------------------------------------------------------------------------------------------
+파이썬 2.6이나 2.7 같이 파이썬 2.5 보다 더 새로운 버전들을 사용할 때 손해보는게 있나요?-----------------------------------------------------------------------------------------------
 
-Not in the core framework. Currently, Django itself officially supports any
-version of Python from 2.5 through 2.7, inclusive. However, newer versions of
-Python are often faster, have more features, and are better supported. If you
-use a newer version of Python you will also have access to some APIs that
-aren't available under older versions of Python. For example, since Python 2.6,
-you can use the advanced string formatting described in :pep:`3101`.
+핵심 프레임워크에서는 없습니다. 현재, Django는 공식적으로 2.5부터 2.7 까지의 모든 파이썬 버전을 지원합니다그러나, 파이썬의 새로운 버전들은 종종 더 빠르고, 더 많은 기능을 가지고 있으며, 더 좋은 지원을 받습니다. 새로운 버전의 파이썬을 사용하신다면 이전 버전에서 사용할 수 없는 일부 API에도 접근할 수 있습니다. 예를 들어보면, 파이썬 2.6 이후부터, :pep:`3101`\ 에 기술된 고급 문자열 서식을 사용할 수 있습니다.
 
-Third-party applications for use with Django are, of course, free to set their
-own version requirements.
+물론, Django와 함께 사용하기위한 서드 파티 어플리케이션들은, 그들 각자의 요구 버전을  자유롭게 지정할 수 있습니다.
 
-Over the next year or two Django will begin dropping support for older Python
-versions as part of a migration which will end with Django running on Python 3
-(see below for details).
+다음 해나 그 이듬해에 걸쳐 파이썬3에서의 실행을 목적으로하는 마이그레이션(자세한 내용은 아래를 참조)의 일부로 이전 버전의 파이썬에 대한 지원을 중단하기 시작할 것입니다.
 
-All else being equal, we recommend that you use the latest 2.x release
-(currently Python 2.7). This will let you take advantage of the numerous
-improvements and optimizations to the Python language since version 2.5, and
-will help ease the process of dropping support for older Python versions on
-the road to Python 3.
+다른 조건이 같다면, 가장 최신  2.x 배포판을 사용할 것을 권장합니다(현재 파이썬 2.7). 그러면 2.5 이후 버전의 파이션이 가지고 있는 개선되고 최적된 많은 장점을 얻을 수 있고, 파이썬 3로 가는 길에 있는 이전 파이썬 버전에 대한 지원을 중단하는 과정을 쉽게하는데 도움이 될 것입니다.
 
-What Python version can I use with Django?
-------------------------------------------
+Django를 사용시에 어떤 파이썬 버전을 사용할 수 있나요?------------------------------------------
 
 ============== ===============
-Django version Python versions
+Django 버전 파이썬 버전들
 ============== ===============
-1.0            2.3, 2.4, 2.5, 2.6
-1.1            2.3, 2.4, 2.5, 2.6
-1.2            2.4, 2.5, 2.6, 2.7
-1.3            2.4, 2.5, 2.6, 2.7
-**1.4**        **2.5, 2.6, 2.7**
-*1.5 (future)* *2.6, 2.7, 3.x (experimental)*
+1.0 2.3, 2.4, 2.5, 2.6 1.1 2.3, 2.4, 2.5, 2.6 1.2 2.4, 2.5, 2.6, 2.7 1.3 2.4, 2.5, 2.6, 2.7 **1.4** **2.5, 2.6, 2.7** *1.5 (장래)* *2.6, 2.7, 3.x (시험적인)*
 ============== ===============
 
-Can I use Django with Python 3?
--------------------------------
+파이썬 3에서 Django를 사용할 수 있나요?-------------------------------
 
-Not at the moment. Python 3.0 introduced a number of
-backwards-incompatible changes to the Python language, and although
-these changes are generally a good thing for Python's future, it will
-be a while before most Python software catches up and is able to run
-on Python 3.0. For larger Python-based software like Django, the
-transition is expected to take at least a year or two (since it
-involves dropping support for older Python releases and so must be
-done gradually).
+아직은 아닙니다. 파이썬 3.0은 하위 파이썬 버전과 호환되지 않는 많은 변경사항을 발표했습니다, 비록 이러한 변경사항들이 파이썬의 마레에 좋은 것들이긴하지만, 대부분의 파이썬 소프트웨어들이 이를 따라잡고, 파이썬 3.0에서 실행될 수 있기까지는 상당한 시간이 걸릴것입니다. Django와 같이 큰 규모의 파이썬 기반 소프트웨어는, 전환하는데 적어도 1~2년 정도의 시간걸릴것으로 예상됩니다(이전 버전의 파이썬에 대한 지원을 중단하면서 점차적으로 진행되야합니다).
 
-In the meantime, Python 2.x releases will be supported and provided
-with bug fixes and security updates by the Python development team, so
-continuing to use a Python 2.x release during the transition should
-not present any risk.
+그 사이에,파이썬 개발팀은 파이썬 2.x 버전들 지원할 것이고, 버그 수정, 보안 업데이트를 제공할 것입니다, 그러므로 전환하는 기간동은 파이썬 2.x 버전을 사용하는 것은 어떤 위험도 없을 것입니다.
 
-Will Django run under shared hosting (like TextDrive or Dreamhost)?
--------------------------------------------------------------------
+Django가 웹호스팅에서 실행되나요?(TextDrive나 Dreamhost같은)?-------------------------------------------------------------------
 
-See our `Django-friendly Web hosts`_ page.
+`Django 친화적인 웹 호스팅`_ 페이지를 봐주세요.
 
-.. _`Django-friendly Web hosts`: https://code.djangoproject.com/wiki/DjangoFriendlyWebHosts
+.. _`Django 친화적인 웹 호스팅`: https://code.djangoproject.com/wiki/DjangoFriendlyWebHosts
 
-Should I use the stable version or development version?
--------------------------------------------------------
+개발버전과 안정 버전중에서 어떤 것을 사용해야할까요?-------------------------------------------------------
 
-Generally, if you're using code in production, you should be using a
-stable release. The Django project publishes a full stable release
-every nine months or so, with bugfix updates in between. These stable
-releases contain the API that is covered by our backwards
-compatibility guarantees; if you write code against stable releases,
-you shouldn't have any problems upgrading when the next official
-version is released.
+보통, 서비스를 제공할 코드를 사용하고 있다면 , 안정 버전을 사용하여야합니다. Django 프로젝트는 안정적인 릴리즈를 9개월마다 발표하고, 그사이에 버그 수정을 업데이트합니다.. 이 안정적인 릴리즈들은 이전 버전에 대한 호환성 보장이 적용되는 API를 포함합니다; 만약 안정적인 릴리즈를 사용하여 코드를 작성하였다면, 다음 공식버전이 릴리스되었을 때, 업그레이드하는데에 문자가 없을 것입니다.
