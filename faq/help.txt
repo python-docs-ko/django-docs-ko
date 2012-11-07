@@ -9,7 +9,7 @@ FAQ: 도움받기
 
 
 
-IRC를 더 좋아하신다면, 당신의 문제를 해결해 할 수 있도록 도와주는 사람들의 커뮤니티가 
+IRC를 더 좋아하신다면, 당신의 문제를 해결해 줄 수 있도록 도와주는 사람들의 커뮤니티가 
 있는 Freenode IRC network의 `django IRC 채널(#django IRC channel)`_\ 이 있습니다.
 
 .. _`djagno-users 메일링 리스트(django-users mailing list)`: http://groups.google.com/group/django-users
@@ -54,10 +54,10 @@ django-users_\ 의 사람들은 자원봉사자들이에요. 당신의 질문에
 
 :ref:`Django에 기여하는 법에 대한 안내(Guide to contributing to Django) <reporting-bugs>` 를 보면 잠재적인 버그를 다루는 법에 대한 자세한 지침서가 있습니다.
 
-내가 보안관련 문제를 찾은거 같아요! 어떻게 하죠?
+내가 보안관련 문제를 찾은것 같아요! 어떻게 하죠?
 --------------------------------------------------------
 
-만약 Django에 관한 보안 관련 문제를 찾은거 같다면, security@djangoproject.com\ 로 메일을 보내주세요.
+만약 Django에 관한 보안 관련 문제를 찾은것 같다면, security@djangoproject.com\ 으로 메일을 보내주세요.
 이 메일은 오랫동안 높은 신뢰를 얻은 Django 개발자들에게만 열려진 비공개 리스트입니다, 
 그 리스트의 기록은 공개적으로 읽을 수 없습니다.
 
