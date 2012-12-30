@@ -24,9 +24,9 @@ __ irc://irc.freenode.net/django
 프로젝트 만들기
 ==================
 
-만약 여러분이 처음으로 Django를 사용하는 것이라면, 여러분은 몇 가지 초기 에 신경써야 합니다. 즉, 여러분은 Django :term:`project`\ 를 구축하는데 몇 가지 자동 생성되는 코드를 필요로 합니다 -- Django의 인스턴스를 위한 세팅들(데이터베이스 설정을 포함), Django의 특별한 옵션과 애플리케이션의 특별한 설정들입니다.
+만약 Django를 처음으로 사용한다면, 몇 가지 초기 설정에 신경써야 합니다. 즉, 여러분은 Django :term:`project`\ 를 구축하는데 몇 가지 자동 생성되는 코드를 필요로 합니다 -- Django의 인스턴스를 위한 세팅들(데이터베이스 설정을 포함), Django의 특별한 옵션과 애플리케이션의 특별한 설정들입니다.
 
-명령행에서, ``cd`` 디렉토리(여러분이 코드를 저장하고싶은 )로 이동 후 다음 명령어 실행하세요:
+명령행에서, ``cd`` 디렉토리(여러분이 코드를 저장하고자 하는 디렉토리)로 이동 후 다음의 명령을 실행하세요.
 
 .. code-block:: bash
 
@@ -80,7 +80,7 @@ __ irc://irc.freenode.net/django
 
 .. admonition:: 여러분이 보시는 것과 다른가요?
 
-    최근에 기본적인 프로젝트 레이아웃이 변경이 되었습니다. 만약 여러분이 "flat"이 보인다면( :file:`mysite/` 디렉토리 안의), 여러분은 아마도 
+    최근에 기본적인 프로젝트 레이아웃이 변경이 되었습니다. 만약 (내부에 :file:`mysite/` 디렉토리가 없는) "수평적인" 레이아웃이 보인다면, 여러분이 
     이 튜토리얼과 다른 버전의 Django를 사용하고 있는 것입니다. 이럴 경우 여러분은 예전 튜토리얼로 공부를 하는 방법과, 새로운 Django 버전을 설치하는 방법을 선택할 수 있습니다.
 
 이러한 파일은:
@@ -118,12 +118,12 @@ __ irc://irc.freenode.net/django
     Development server is running at http://127.0.0.1:8000/
     Quit the server with CONTROL-C.
 
-이제 여러분은 Django 개발 서버를 시작했습니다. 이것은 경량 웹 서버로서 순수하게 파이썬으로 제작되었습니다. 우리는 여러분이 프로덕션 서버 -- Apache와 같은 -- 를 구축하지 않고
-서버가 준비되기 전까지 뭔가를 빨리 개발할 수 있도록 이것을 Django에 포함시켰습니다.
+이제 여러분은 Django 개발 서버를 시작했습니다. 이것은 경량 웹 서버로서 순수하게 파이썬으로 제작되었습니다. 여러분이 Apache와 같은 프로덕션 서버를 구축하지 않고도
+서버가 준비되기 전까지 뭔가를 빨리 개발할 수 있도록 Django에 포함되어 있습니다.
 
 중요사항: 절대 서비스 서버 환경으로 사용하지 마십시오. 이 서버는 오직 개발하는 동안만 사용하도록 계획된 것입니다. (우리의 목적은 웹 프레임워크를 만드는 것이지 웹 서버를 만드는 것이 아닙니다.)
 
-서버 동작을 확인하기 위해서 웹 브라우저에서 http://127.0.0.1:8000/\ 를 방문해 보세요. 여러분은 유쾌하고 라이트 블루 파스텔톤의 "Welcome to Django" 페이지를 볼 수 있을 것입니다.
+서버 동작을 확인하기 위해서 웹 브라우저에서 http://127.0.0.1:8000/\ 를 방문해 보세요. 예쁜 라이트 블루 파스텔 톤의 "Welcome to Django" 페이지를 볼 수 있을 것입니다.
 성공!
 
 .. admonition:: 포트 변경하기
@@ -138,7 +138,7 @@ __ irc://irc.freenode.net/django
         python manage.py runserver 8080
 
     여러분이 서버 IP도 변경하길 원한다면 포트와 함께 전달하면 됩니다. 그렇게 하면 모든 공용 IP에서 수신을 대기할 수 있습니다.(여러분이 다른 컴퓨터에서 여러분의 사이트를 보여주길 원한다면
-    유용합니다), 사용법:
+    유용합니다) 사용법은 다음과 같습니다.
 
     .. code-block:: bash
 
@@ -154,13 +154,12 @@ __ irc://irc.freenode.net/django
 * :setting:`ENGINE <DATABASE-ENGINE>` --
   ``'django.db.backends.postgresql_psycopg2'``,
   ``'django.db.backends.mysql'``, ``'django.db.backends.sqlite3'`` 또는
-  ``'django.db.backends.oracle'`` 중 선택하세요. 다른 백엔드 또한 준비 되어 있습니다.( :setting:`also available <DATABASE-ENGINE>`).
+  ``'django.db.backends.oracle'`` 중 선택하세요. :setting:`다른 백엔드들 <DATABASE-ENGINE>`\ 도 준비되어 있습니다.
 
 * :setting:`NAME` -- 여러분의 데이터베이스 이름입니다. 만약 여러분이 SQLite를 사용한다면, 데이터베이스가 여러분의 컴퓨터에 있는 파일이 될 것입니다; 
-  그 경우, :setting:`NAME`\ 은 파일명을 포함하는 절대경로가 됩니다(full path). 만약 파일이 존재하지 않는다면, 여러분이 데이터베이스를 최초 싱크할 때 자동으로 만들어 질 것입니다.(하단 참조).
+  그 경우, :setting:`NAME`\ 의 값으로 파일명을 포함하는 절대경로를 지정합니다. 만약 파일이 존재하지 않는다면, 여러분이 데이터베이스를 최초로 동기화할 때에 자동으로 만들어질 것입니다.(아래에 설명합니다)
 
-  경로를 지정할 경우 항상 슬래쉬 기호(/)를 사용해야 합니다.
-  윈도우에서도 말이죠(e.g. ``C:/homes/user/mysite/sqlite3.db``).
+  경로를 지정할 때에는 항상 정방향의 슬래쉬(/)를 사용해야 하며, 이는 Windows에서도 마찬가지입니다(예: ``C:/homes/user/mysite/sqlite3.db``).
 
 * :setting:`USER` -- 데이터베이스 사용자명(SQLite에서는 사용하지 않습니다).
 
@@ -176,7 +175,7 @@ __ irc://irc.freenode.net/django
 
     여러분이 SQLite을 사용한다면, 여러분은 아무 것도 만들 필요가 없습니다 - 데이터베이스 파일이 필요할 때 자동으로 생성됩니다.
 
-여러분이 :file:`settings.py`\ 을 수정할 때, :setting:`TIME_ZONE`\ 을 여러분의 타임존에 맞게 수정하세요. 기본값은 미국 중부 시간입니다(시카고).
+여러분이 :file:`settings.py`\ 을 수정할 때, :setting:`TIME_ZONE`\ 을 여러분의 시간대에 맞게 수정하세요. 기본값은 미국 중부(시카고) 시간입니다.
 
 또한, 파일 제일 아래쪽에 있는 :setting:`INSTALLED_APPS`\ 을 확인하세요. 여기에는 Django 인스턴스에서 사용하는 모든 애플리케이션의 이름을 갖고 있습니다. 앱은 여러 프로젝트에서 사용할 수 있고, 여러분은 다른 프로젝트에서 사용 가능하도록 패키징하여 재배포할 수 있습니다.
 
@@ -206,7 +205,7 @@ __ irc://irc.freenode.net/django
 
 만약 Django에서 생성한 데이터베이스의 테이블 목록을 보고 싶다면, 해당 데이터베이스에 접속할 수 있는 클라이언트에서 다음 명령어 중 해당 데이터베이스에 맞는 명령어를 입력하세요.(``\dt`` (PostgreSQL), ``SHOW TABLES;`` (MySQL),  ``.schema`` (SQLite)).
 
-.. admonition:: 미니멀리즘을 위해
+.. admonition:: 미니멀리스트를 위한 팁
 
     위에서 말했듯이, 기본 응용 프로그램은 일반적인 케이스에 포함하지만, 모든 사람이 다 필요로 하지 않습니다. 만약 여러분이 일부 또는 전부가 필요없다면,
     :djadmin:`syncdb` 명령은 오직 :setting:`INSTALLED_APPS` 안에 설정된 앱에 대해서만 테이블을 생성하기 때문에 
@@ -217,15 +216,15 @@ __ irc://irc.freenode.net/django
 모델 만들기
 ===============
 
-이제 여러분들은 환경설정 --"프로젝트"-- 을 완료하였습니다. 이제 작업을 시작할 수 있습니다.
+이제 프로젝트를 위한 환경 설정을 완료하였습니다. 이제 작업을 시작할 수 있습니다.
 
 여러분이 작성한 각 애플리케이션은 Django에서 파이썬 패키지로 구성되어 특정 규칙에 따라, `Python path`_ 어딘가에 존재합니다. Django는 자동으로 기본적인 디렉토리 구조를 생성하는 유틸리티를 포함하고 있어서, 여러분은 디렉토리 구조를 생성하는 것보다 코드를 작성하는 것에 초점을 맞출 수 있게 해줍니다.
 
 .. admonition:: 프로젝트 vs. 앱
 
     프로젝트와 앱은 무엇이 다를까요? 앱은 웹 애플리케이션의 기능입니다 -- e.g., 웹 블로그 시스템, 공공 기록의 데이터베이스 또는 간단한 투표 앱. 
-	프로젝트는 웹사이트에 대한 구성 및 특정 앱들의 집합입니다. 프로젝트는 다양한 앱을 포함하고 있습니다.
-	앱은 다양한 프로젝트에서 사용할 수 있습니다.
+    프로젝트는 웹사이트에 대한 구성 및 특정 앱들의 집합입니다. 프로젝트는 다양한 앱을 포함하고 있습니다.
+    앱은 다양한 프로젝트에서 사용할 수 있습니다.
 
 여러분의 앱은 `Python path`_ 어딘가에 있습니다. 이 튜토리얼에서 우리는 :file:`manage.py`\ 을 이용하여 투표 앱을 만들 것입니다. 이것은 ``mysite``\ 의 서브모듈보다도 더 중요한 모듈입니다.
 
@@ -252,10 +251,10 @@ Django에서 데이터베이스 웹 앱 작성의 첫 단계는 데이터베이�
 
 .. admonition:: 철학
 
-   모델은 여러분의 데이터에 대한 최종적인 소스입니다. 이것은 여러분의 데이터에 대한 기본적인 필드와 행동이 포함되어 있습니다. Django는 :ref:`DRY <dry> '원칙을 따릅니다. 이것의 목표는 여러분의 모델을
-   한 곳에서 정의하고 자동으로 결과를 생성해 내는 것입니다.
+   모델은 여러분의 데이터에 대한 최종적인 소스입니다. 이것은 여러분의 데이터에 대한 기본적인 필드와 행동이 포함되어 있습니다. Django는 :ref:`DRY <dry>' 원칙을 따릅니다. 이것의 목표는 여러분의 모델을
+   한 곳에서 정의하고 자동으로 결과를 생성해내는 것입니다.
 
-우리의 간단한 투표 앱에서는 두 개의 모델을 만들 것입니다: polls 그리고 choices. poll은 '질문'과 '발행일' 필드를 갖고 있습니다. choice는 두개의 필드를 갖고 있습니다: '선택지'와 '투표 집계' 각 선택은 poll과 관련이 있습니다.
+우리의 간단한 투표 앱에서는 두 개의 모델, 설문(Poll)과 선택(Choice)을 구현할 것입니다. poll은 '질문'과 '발행일' 필드를 갖고 있습니다. choice는 두개의 필드를 갖고 있습니다: '선택지'와 '투표 집계' 각 선택은 poll과 관련이 있습니다.
 
 이것의 개념은 간단한 파이썬 클래스로 표현이 됩니다. :file:`polls/models.py`\ 을 다음과 같이 수정하세요.
 
@@ -284,15 +283,14 @@ Django에서 데이터베이스 웹 앱 작성의 첫 단계는 데이터베이�
 일부 :class:`~django.db.models.Field` 클래스들은 필수 요소를 필요로 합니다.
 예를 들어 :class:`~django.db.models.CharField`\ 는 :attr:`~django.db.models.Field.max_length`\ 를 필수로 필요합니다. 이것은 데이터베이스 스키마에서만 사용하는 것이 아니라 데이터 검증에서도 사용 합니다. 우리는 그것을 곧 보게 될 것입니다.
 
-마지막으로, :class:`~django.db.models.ForeignKey`\ 를 이용하여 릴레이션십을 정의했습니다. 이것은 Choice가 하나의 Poll과 관계가 있다고 Django에게 알려줍니다. Django는 다음과 같은 공통의 데이터베이스 릴레이션십을 제공합니다:
-many-to-ones, many-to-manys, one-to-ones.
+마지막으로, :class:`~django.db.models.ForeignKey`\ 를 이용하여 릴레이션십을 정의했습니다. 이것은 Choice가 하나의 Poll과 관계가 있다고 Django에게 알려줍니다. Django는 다 대 일, 다 대 다, 일 대 일 등의 공통적인 데이터베이스 릴레이션십을 제공합니다.
 
 .. _`Python path`: http://docs.python.org/tutorial/modules.html#the-module-search-path
 
 모델 활성화하기
 =================
 
-이 작은 모델 코드는 Django에게 많은 정보를 전달합니다. 이것을 통해 Djanog는 다음과 같은 것을 할 수 있습니다.:
+이 작은 모델 코드는 Django에게 많은 정보를 전달합니다. 이것을 통해 Djanog는 다음과 같은 것을 할 수 있습니다.
 
 * 이 앱에서 필요로 하는 데이터베이스 스키마 생성 (``CREATE TABLE`` 문).
 * Poll과 Choice 객체에 접근하기 위한 데이터베이스 액세스 API 생성.
@@ -411,45 +409,45 @@ API와 놀기
 
 ::
 
-    >>> from polls.models import Poll, Choice   # Import the model classes we just wrote.
+    >>> from polls.models import Poll, Choice   # 방금 작성한 모델 클래스들을 임포트.
 
-    # No polls are in the system yet.
+    # 아직 설문이 존재하지 않음.
     >>> Poll.objects.all()
     []
 
-    # Create a new Poll.
-    # Support for time zones is enabled in the default settings file, so
-    # Django expects a datetime with tzinfo for pub_date. Use timezone.now()
-    # instead of datetime.datetime.now() and it will do the right thing.
+    # 새로운 Poll을 생성.
+    # 기본 설정에서 타임 존에 대한 지원이 활성화되어 있으므로,
+    # Django는 pub_date에 대하여 tzinfo의 datetime을 예상합니다.
+    # datetime.datetime.now() 대신에 timezone.now()를 사용하는 것이 올바르게 처리됩니다.
     >>> from django.utils import timezone
     >>> p = Poll(question="What's new?", pub_date=timezone.now())
 
-    # Save the object into the database. You have to call save() explicitly.
+    # 개체를 데이터베이스에 저장. save()를 명시적으로 호출하여야 합니다.
     >>> p.save()
 
-    # Now it has an ID. Note that this might say "1L" instead of "1", depending
-    # on which database you're using. That's no biggie; it just means your
-    # database backend prefers to return integers as Python long integer
-    # objects.
+    # 이제 ID를 갖게 되었습니다. 사용하는 데이터베이스에 따라서, ID가 "1"이 아니라
+    # "1L"이 될 수 있음에 유의하시기 바랍니다. 별로 중요한 것은 아니고, 그저 여러분이
+    # 사용하는 데이터베이스 백엔드가 정수를 파이썬의 long integer 개체로 반환함을 
+    # 의미합니다.
     >>> p.id
     1
 
-    # Access database columns via Python attributes.
+    # 파이썬 속성을 통하여 데이터베이스 컬럼에 접근.
     >>> p.question
     "What's new?"
     >>> p.pub_date
     datetime.datetime(2012, 2, 26, 13, 0, 0, 775217, tzinfo=<UTC>)
 
-    # Change values by changing the attributes, then calling save().
+    # 속성을 변경함으로써 값을 변경하고, save()를 호출.
     >>> p.question = "What's up?"
     >>> p.save()
 
-    # objects.all() displays all the polls in the database.
+    # objects.all()을 하면 데이터베이스의 모든 설문을 볼 수 있습니다.
     >>> Poll.objects.all()
     [<Poll: Poll object>]
 
 
-잠시만요. ``<Poll: Poll object>``\ 는 완전히 이 객체 자체를 표현하지 객체의 내용을 표현하지 않습니다. 우리는 polls 모델을 수정하여(``polls/models.py`` 파일) ``Poll``\ 과 ``Choice``\ 에 :meth:`~django.db.models.Model.__unicode__`\ 를 추가하여 원하는 내용을 표현할 수 있습니다.
+잠시만요. ``<Poll: Poll object>``\ 는 이 개체 자체를 표현하는 것이지 개체의 내용을 표현하지는 않습니다. 우리는 polls 모델을 수정하여(``polls/models.py`` 파일) ``Poll``\ 과 ``Choice``\ 에 :meth:`~django.db.models.Model.__unicode__`\ 를 추가하여 원하는 내용을 표현할 수 있습니다.
 
 ::
 
@@ -495,18 +493,17 @@ API와 놀기
 
     >>> from polls.models import Poll, Choice
 
-    # Make sure our __unicode__() addition worked.
+    # __unicode__()를 추가한 것이 동작하는지 확인.
     >>> Poll.objects.all()
     [<Poll: What's up?>]
 
-    # Django provides a rich database lookup API that's entirely driven by
-    # keyword arguments.
+    # Django는 키워드 인자만으로 구동되는 두터운 데이터베이스 조회 API를 제공합니다.
     >>> Poll.objects.filter(id=1)
     [<Poll: What's up?>]
     >>> Poll.objects.filter(question__startswith='What')
     [<Poll: What's up?>]
 
-    # Get the poll whose year is 2012.
+    # 2012년의 설문을 조회.
     >>> Poll.objects.get(pub_date__year=2012)
     <Poll: What's up?>
 
@@ -515,56 +512,55 @@ API와 놀기
         ...
     DoesNotExist: Poll matching query does not exist.
 
-    # Lookup by a primary key is the most common case, so Django provides a
-    # shortcut for primary-key exact lookups.
-    # The following is identical to Poll.objects.get(id=1).
+    # 기본 키를 통해 조회하는 것은 매우 빈번하므로, Django는 기본 키 추출 조회에 대한
+    # 지름길을 제공합니다.
+    # 다음은 Poll.objects.get(id=1)과 동일합니다.
     >>> Poll.objects.get(pk=1)
     <Poll: What's up?>
 
-    # Make sure our custom method worked.
+    # 우리의 맞춤 메소드가 동작하는지 확인.
     >>> p = Poll.objects.get(pk=1)
     >>> p.was_published_recently()
     True
 
-    # Give the Poll a couple of Choices. The create call constructs a new
-    # choice object, does the INSERT statement, adds the choice to the set
-    # of available choices and returns the new Choice object. Django creates
-    # a set to hold the "other side" of a ForeignKey relation
-    # (e.g. a poll's choices) which can be accessed via the API.
+    # 설문에 두 가지 선택사항을 주도록 하겠습니다. create를 호출하여 새로운 choice를 만들고,
+    # INSERT 문을 수행하여, 기존의 가능한 choice의 집합에 추가하여 새로운 Choice 개체를 반환합니다.
+    # Django는 "다른 편"의 ForeignKey 릴레이션(예: poll의 choice)을 생성하며
+    # 이는 API를 통하여 접근할 수 있습니다.
     >>> p = Poll.objects.get(pk=1)
 
-    # Display any choices from the related object set -- none so far.
+    # 관련된 개체 집합으로부터 choice를 표시하는데, 아직까지는 존재하지 않습니다.
     >>> p.choice_set.all()
     []
 
-    # Create three choices.
+    # 세 가지 choice를 생성.
     >>> p.choice_set.create(choice='Not much', votes=0)
     <Choice: Not much>
     >>> p.choice_set.create(choice='The sky', votes=0)
     <Choice: The sky>
     >>> c = p.choice_set.create(choice='Just hacking again', votes=0)
 
-    # Choice objects have API access to their related Poll objects.
+    # Choice 개체는 API를 통해 관련된 Poll 개체에 접근할 수 있습니다.
     >>> c.poll
     <Poll: What's up?>
 
-    # And vice versa: Poll objects get access to Choice objects.
+    # 그 역도 성립합니다. Poll 개체도 Choice 개체에 접근할 수 있습니다.
     >>> p.choice_set.all()
     [<Choice: Not much>, <Choice: The sky>, <Choice: Just hacking again>]
     >>> p.choice_set.count()
     3
 
-    # The API automatically follows relationships as far as you need.
-    # Use double underscores to separate relationships.
-    # This works as many levels deep as you want; there's no limit.
-    # Find all Choices for any poll whose pub_date is in 2012.
+    # API는 여러분이 필요로 하는 릴레이션십을 자동적으로 따라갑니다.
+    # 릴레이션을 분리하려면 두 개의 밑줄을 사용합니다.
+    # 이는 여러분이 원하는 단계만큼 사용할 수 있으며 제한이 없습니다.
+    # pub_date가 2012인 poll에 대한 모든 Choice를 찾습니다.
     >>> Choice.objects.filter(poll__pub_date__year=2012)
     [<Choice: Not much>, <Choice: The sky>, <Choice: Just hacking again>]
 
-    # Let's delete one of the choices. Use delete() for that.
+    # choice 중 하나를 삭제해봅시다. delete()를 사용하면 됩니다.
     >>> c = p.choice_set.filter(choice__startswith='Just hacking')
     >>> c.delete()
 
-모델 관계에 대한 자세한 사항은 :doc:`Accessing related objects </ref/models/relations>`\ 을 확인하세요. API에서 이중 밑줄(__)을 어떻게 사용하는지에 대한 자세한 사항은 :ref:`Field lookups <field-lookups-intro>`\ 에서 확인하세요. 데이터베이스 API에 대한 자세한 사항은 :doc:`Database API reference </topics/db/queries>`\ 에서 확인하세요.
+모델 릴레이션에 대한 자세한 사항은 :doc:`관계된 개체에 접근하기 </ref/models/relations>`\ 를 참조하세요. API에서 이중 밑줄(__)을 어떻게 사용하는지에 대한 자세한 사항은 :ref:`필드 조회 <field-lookups-intro>`\ 에서 확인하세요. 데이터베이스 API에 대한 자세한 사항은 :doc:`데이터베이스 API 레퍼런스 </topics/db/queries>`\ 에서 확인하세요.
 
 이제 여러분이 API를 익숙하게 사용하신다면, :doc:`튜토리얼 2부 </intro/tutorial02>`\ 로 가서 Django에서 자동으로 생성되는 관리자에 대하여 확인하세요.
