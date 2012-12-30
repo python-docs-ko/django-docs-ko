@@ -251,7 +251,7 @@ Django에서 데이터베이스 웹 앱 작성의 첫 단계는 데이터베이�
 
 .. admonition:: 철학
 
-   모델은 여러분의 데이터에 대한 최종적인 소스입니다. 이것은 여러분의 데이터에 대한 기본적인 필드와 행동이 포함되어 있습니다. Django는 :ref:`DRY <dry>' 원칙을 따릅니다. 이것의 목표는 여러분의 모델을
+   모델은 여러분의 데이터에 대한 최종적인 소스입니다. 이것은 여러분의 데이터에 대한 기본적인 필드와 행동이 포함되어 있습니다. Django는 :ref:`DRY <dry>` 원칙을 따릅니다. 이것의 목표는 여러분의 모델을
    한 곳에서 정의하고 자동으로 결과를 생성해내는 것입니다.
 
 우리의 간단한 투표 앱에서는 두 개의 모델, 설문(Poll)과 선택(Choice)을 구현할 것입니다. poll은 '질문'과 '발행일' 필드를 갖고 있습니다. choice는 두개의 필드를 갖고 있습니다: '선택지'와 '투표 집계' 각 선택은 poll과 관련이 있습니다.
@@ -290,10 +290,10 @@ Django에서 데이터베이스 웹 앱 작성의 첫 단계는 데이터베이�
 모델 활성화하기
 =================
 
-이 작은 모델 코드는 Django에게 많은 정보를 전달합니다. 이것을 통해 Djanog는 다음과 같은 것을 할 수 있습니다.
+이 작은 모델 코드는 Django에게 많은 정보를 전달합니다. 이것을 통해 Django는 다음과 같은 것을 할 수 있습니다.
 
 * 이 앱에서 필요로 하는 데이터베이스 스키마 생성 (``CREATE TABLE`` 문).
-* Poll과 Choice 객체에 접근하기 위한 데이터베이스 액세스 API 생성.
+* Poll과 Choice 개체에 접근하기 위한 데이터베이스 액세스 API 생성.
 
 그 전에 우리는 우리의 프로젝트에게 ``polls`` 앱이 설치되었다고 알려줘야 합니다.
 
@@ -360,9 +360,9 @@ Django에서 데이터베이스 웹 앱 작성의 첫 단계는 데이터베이�
   이 튜토리얼의 저자는 PostgreSQL을 이용하여 실행하였으므로, 예제의 출력물 역시 PostgreSQL 문법을 따릅니다.
 
 * :djadmin:`sql` 명령어는 실제로 여러분의 데이터 베이스에 SQL문을 실행하지 않습니다.
-  이것 단지 화면에 출력해 주는 것입니다.이것은 여러분은 SQL Django가 어떻게 생각하는지 알기 위해 필요합니다. 원한다면 이것을 복사하여 여러분의 데이터베이스 프롬프트에서 사용할 수 있습니다. 그러나, 우리는 SQL을 Django에 맡겨버리는 쉬운 방법을 곧 보게 될 것입니다.
+  이것 단지 화면에 출력해 주는 것입니다. 이것은 여러분은 SQL Django가 어떻게 생각하는지 알기 위해 필요합니다. 원한다면 이것을 복사하여 여러분의 데이터베이스 프롬프트에서 사용할 수 있습니다. 그러나, 우리는 SQL을 Django에 맡겨버리는 쉬운 방법을 곧 보게 될 것입니다.
 
-만약 여러분이 이것에 관심이 있다면 다음 명령어를 실행하세요:
+만약 여러분이 이것에 관심이 있다면 다음 명령어를 실행하세요.
 
 * :djadmin:`python manage.py validate <validate>` -- 모델 구조에 오류가 있는지 확인합니다.
 
@@ -396,7 +396,7 @@ API와 놀기
 
     python manage.py shell
 
-:file:`manage.py` 파일 이 여러분의 :file:`settings.py`\ 에서 Django에게 파이썬 가져오기 경로를 ``DJANGO_SETTINGS_MODULE`` 환경설정을 통해 제공하기 때문에 우리는 단순히 "python"이라고 입력하면 됩니다.
+단순히 "python"이라고 입력하지 않고 위와 같이 하는 이유는, :file:`manage.py` 파일이 :file:`settings.py`\ 에서 Django에게 파이썬 가져오기 경로를 ``DJANGO_SETTINGS_MODULE`` 환경설정을 통해 제공하기 때문입니다.
 
 .. admonition:: manage.py 건너뛰기
 
@@ -485,7 +485,7 @@ API와 놀기
         def was_published_recently(self):
             return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
-참고로 추가한 ``import datetime``\ 과 ``from django.utils import timezone``\ 은 각각 파이썬의 표준 메소드인 :mod:`datetime`\ 과 Django의 time-zone-related 유틸리티에 들어 있는  :mod:`django.utils.timezone`\ 을 참조하세요. 여러분이 파이썬 시간 처리에 대해 익숙하지 않은 경우, 여러분은 :doc:`time zone support docs </topics/i18n/timezones>`\ 에서 배울 수 있습니다.
+참고로 추가한 ``import datetime``\ 과 ``from django.utils import timezone``\ 은 각각 파이썬의 표준 메소드인 :mod:`datetime`\ 과 Django의 time-zone-related 유틸리티에 들어 있는  :mod:`django.utils.timezone`\ 을 참조하세요. 파이썬에서의 시간 처리에 대해 익숙하지 않다면, :doc:`타임 존 지원 문서 </topics/i18n/timezones>`\ 에서 배울 수 있습니다.
 
 저장 후 ``python manage.py shell`` 이용하여 새로운 파이썬 대화형 쉘을 실행하세요.
 
