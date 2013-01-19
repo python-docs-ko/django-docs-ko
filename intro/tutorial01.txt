@@ -275,13 +275,13 @@ Django에서 데이터베이스 웹 앱 작성의 첫 단계는 데이터베이�
 
 각 필드는 :class:`~django.db.models.Field` 클래스의 인스턴스로 표현됩니다. -- e.g., :class:`~django.db.models.CharField`\ 는 character 필드 그리고 :class:`~django.db.models.DateTimeField`\ 은 datetime 필드. 이것은 Django에게 데이터의 필드가 어떤 타입인지 알려줍니다.
 
-각 :class:`~django.db.models.Field` 인스턴스의 이름은(e.g. ``question`` 또는 ``pub_date`` )기계친화적인 필드 이름입니다. 여러분은 이것을 여러분의 파이썬 코드에서 사용하고, 데이터베이스는 필드 이름으로 사용합니다.
+각 :class:`~django.db.models.Field` 인스턴스의 이름은(e.g. ``question`` 또는 ``pub_date``) 기계친화적인 필드 이름입니다. 여러분은 이것을 여러분의 파이썬 코드에서 사용하고, 데이터베이스는 필드 이름으로 사용합니다.
 
 여기에서 여러분은 선택적으로 :class:`~django.db.models.Field`\ 의 첫 번째 인자를 사람이 읽을 수 있는 이름으로 지정할 수 있습니다. 그것은 Django의 내부적으로 사용되고, 두 가지로 설명해 줍니다.
 만약 이 필드를 제공하지 않는다면, Django는 기계가 읽을 수 있는 이름만을 사용해야 합니다. 예제에서, 우리는 ``Poll.pub_date``\ 에 대해서만 사람이 읽을 수 있는 이름을 정의했습니다. 이 모델에서는 다른 모든 필드는 기계가 읽을 수 있는 이름도 충분히 사람이 읽을 수 있는 이름이기 때문입니다.
 
 일부 :class:`~django.db.models.Field` 클래스들은 필수 요소를 필요로 합니다.
-예를 들어 :class:`~django.db.models.CharField`\ 는 :attr:`~django.db.models.Field.max_length`\ 를 필수로 필요합니다. 이것은 데이터베이스 스키마에서만 사용하는 것이 아니라 데이터 검증에서도 사용 합니다. 우리는 그것을 곧 보게 될 것입니다.
+예를 들어 :class:`~django.db.models.CharField`\ 에는 :attr:`~django.db.models.Field.max_length`\ 가 필요합니다. 이것은 데이터베이스 스키마에서만 사용하는 것이 아니라 데이터 검증에서도 사용 합니다. 우리는 그것을 곧 보게 될 것입니다.
 
 마지막으로, :class:`~django.db.models.ForeignKey`\ 를 이용하여 릴레이션십을 정의했습니다. 이것은 Choice가 하나의 Poll과 관계가 있다고 Django에게 알려줍니다. Django는 다 대 일, 다 대 다, 일 대 일 등의 공통적인 데이터베이스 릴레이션십을 제공합니다.
 
@@ -396,7 +396,7 @@ API와 놀기
 
     python manage.py shell
 
-단순히 "python"이라고 입력하지 않고 위와 같이 하는 이유는, :file:`manage.py` 파일이 :file:`settings.py`\ 에서 Django에게 파이썬 가져오기 경로를 ``DJANGO_SETTINGS_MODULE`` 환경설정을 통해 제공하기 때문입니다.
+단순히 "python"이라고 입력하지 않고 위와 같이 하는 이유는, :file:`manage.py` 파일이 :file:`settings.py`\ 에서 Django에게 파이썬 가져오기 경로를 ``DJANGO_SETTINGS_MODULE`` 환경변수를 통해 제공하기 때문입니다.
 
 .. admonition:: manage.py 건너뛰기
 
@@ -463,7 +463,7 @@ API와 놀기
 
 :meth:`~django.db.models.Model.__unicode__` 메소드를 추가하는 것은 여러분의 모델에서 매우 중요합니다. 이것은 대화식 프롬프트에서 사용할 때 뿐만 아니라, Django에서 자동 생성되는 관리자 화면에서 표현할 때도 사용됩니다.
 
-.. admonition:: 왜 :meth:`~django.db.models.Model.__unicode__`\ 은 되고 :meth:`~django.db.models.Model.__str__`\ 은 안되나요?
+.. admonition:: 왜 :meth:`~django.db.models.Model.__unicode__`\ 는 되고 :meth:`~django.db.models.Model.__str__`\ 은 안되나요?
 
     만약 여러분이 파이썬에 익숙한 경우, 여러분은 :meth:`~django.db.models.Model.__unicode__` 메소드 대신 :meth:`~django.db.models.Model.__str__`\ 를 추가하는 습관이 있을 수 있습니다. 우리가
     :meth:`~django.db.models.Model.__unicode__`\ 을 사용하는 이유는 Django 모델에서는 기본적으로 유니코드를 사용하기로 약속했기 때문입니다. 데이터가 반환될 때 여러분의 데이터베이스에 있는 모든 데이터는
@@ -473,7 +473,7 @@ API와 놀기
 
     이 모든 것이 혼란스럽다면 모델에서 :meth:`~django.db.models.Model.__unicode__` 메소드만 사용한다는 것을 기억하세요. 운이 좋다면, 이 모든 것은 잘 동작할 것입니다.
 
-다음은 일반적인 파이썬 방법입니다. 데모를 위해 여기에 사용자 정의 메소드를 추가하세요.
+참고로 이것들은 일반적인 파이썬 메소드입니다. 맞춤 메소드를 추가하는 방법을 살펴보도록 합시다.
 
 ::
 
