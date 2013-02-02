@@ -1,0 +1,804 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Django Software Foundation and contributors
+# This file is distributed under the same license as the Django package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Django 1.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-02 12:52\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../misc/api-stability.txt:3
+# 1ce948b567c44b0d9718311b11dcfcd7
+msgid "API stability"
+msgstr ""
+
+#: ../../misc/api-stability.txt:5
+# cab3c2b87a7948269658865cd21e52fd
+msgid ":doc:`The release of Django 1.0 </releases/1.0>` comes with a promise of API stability and forwards-compatibility. In a nutshell, this means that code you develop against Django 1.0 will continue to work against 1.1 unchanged, and you should need to make only minor changes for any 1.X release."
+msgstr ""
+
+#: ../../misc/api-stability.txt:11
+# fbf904d62ef547c4bbc820724bbe3e83
+msgid "What \"stable\" means"
+msgstr ""
+
+#: ../../misc/api-stability.txt:13
+# 59e9e0b598b14d878b34e612c4351a79
+msgid "In this context, stable means:"
+msgstr ""
+
+#: ../../misc/api-stability.txt:15
+# 827907d039614f3bba4749e6b1cc0d1b
+msgid "All the public APIs -- everything documented in the linked documents below, and all methods that don't begin with an underscore -- will not be moved or renamed without providing backwards-compatible aliases."
+msgstr ""
+
+#: ../../misc/api-stability.txt:19
+# 48a2c4d797df478cb341ab23466b5f63
+msgid "If new features are added to these APIs -- which is quite possible -- they will not break or change the meaning of existing methods. In other words, \"stable\" does not (necessarily) mean \"complete.\""
+msgstr ""
+
+#: ../../misc/api-stability.txt:23
+# bdfa76243cf0440a8a01fe8d813486ee
+msgid "If, for some reason, an API declared stable must be removed or replaced, it will be declared deprecated but will remain in the API for at least two minor version releases. Warnings will be issued when the deprecated method is called."
+msgstr ""
+
+#: ../../misc/api-stability.txt:28
+# dde06947f6ba45a2b31983dd1896bbd3
+msgid "See :ref:`official-releases` for more details on how Django's version numbering scheme works, and how features will be deprecated."
+msgstr ""
+
+#: ../../misc/api-stability.txt:31
+# f5f559beb1cd45e08dc7d73d962b0ec6
+msgid "We'll only break backwards compatibility of these APIs if a bug or security hole makes it completely unavoidable."
+msgstr ""
+
+#: ../../misc/api-stability.txt:35
+# f1bc633bd29e43fbaba7ddc6dc2d875d
+msgid "Stable APIs"
+msgstr ""
+
+#: ../../misc/api-stability.txt:37
+# 7be3f458cf954ad0894ccc7eca319093
+msgid "In general, everything covered in the documentation -- with the exception of anything in the :doc:`internals area </internals/index>` is considered stable as of 1.0. This includes these APIs:"
+msgstr ""
+
+#: ../../misc/api-stability.txt:41
+# 337d810d071943cbb0d6aaf059861a57
+msgid ":doc:`Authorization </topics/auth>`"
+msgstr ""
+
+#: ../../misc/api-stability.txt:43
+# acb5b2730404470aa361ceaf7b66570b
+msgid ":doc:`Caching </topics/cache>`."
+msgstr ""
+
+#: ../../misc/api-stability.txt:45
+# 3357bef57bd447a0a46369bf9fd7b6b9
+msgid ":doc:`Model definition, managers, querying and transactions </topics/db/index>`"
+msgstr ""
+
+#: ../../misc/api-stability.txt:48
+# bb1787c4c39f4cc5b770427da935fdd0
+msgid ":doc:`Sending email </topics/email>`."
+msgstr ""
+
+#: ../../misc/api-stability.txt:50
+# db089d3997e745ae847f32a04d9239b4
+msgid ":doc:`File handling and storage </topics/files>`"
+msgstr ""
+
+#: ../../misc/api-stability.txt:52
+# babd3854583a4b05a67ec5752dc9f8f0
+msgid ":doc:`Forms </topics/forms/index>`"
+msgstr ""
+
+#: ../../misc/api-stability.txt:54
+# 5db54959e9364e64940afaae6728c9f0
+msgid ":doc:`HTTP request/response handling </topics/http/index>`, including file uploads, middleware, sessions, URL resolution, view, and shortcut APIs."
+msgstr ""
+
+#: ../../misc/api-stability.txt:57
+# 2504942ff93d40e5b826614d042f3b71
+msgid ":doc:`Generic views </topics/class-based-views/index>`."
+msgstr ""
+
+#: ../../misc/api-stability.txt:59
+# 65f982df2eff42fbab7da56e5e216a70
+msgid ":doc:`Internationalization </topics/i18n/index>`."
+msgstr ""
+
+#: ../../misc/api-stability.txt:61
+# ccb4e5b682ae490d9f737ff7e41571d7
+msgid ":doc:`Pagination </topics/pagination>`"
+msgstr ""
+
+#: ../../misc/api-stability.txt:63
+# d3cfb239c68c452e998dbdbedb7385ec
+msgid ":doc:`Serialization </topics/serialization>`"
+msgstr ""
+
+#: ../../misc/api-stability.txt:65
+# e0ff74da38334f6da4c8d88e26c5fc8d
+msgid ":doc:`Signals </topics/signals>`"
+msgstr ""
+
+#: ../../misc/api-stability.txt:67
+# 6102da6b74994ea18af55d4c04d1ab65
+msgid ":doc:`Templates </topics/templates>`, including the language, Python-level :doc:`template APIs </ref/templates/index>`, and :doc:`custom template tags and libraries </howto/custom-template-tags>`. We may add new template tags in the future and the names may inadvertently clash with external template tags. Before adding any such tags, we'll ensure that Django raises an error if it tries to load tags with duplicate names."
+msgstr ""
+
+#: ../../misc/api-stability.txt:74
+# 1d6ee21f45f04309bc2b99089bc62e85
+msgid ":doc:`Testing </topics/testing>`"
+msgstr ""
+
+#: ../../misc/api-stability.txt:76
+# d65256ba49834cfaafd4d04d02a24660
+msgid ":doc:`django-admin utility </ref/django-admin>`."
+msgstr ""
+
+#: ../../misc/api-stability.txt:78
+# f5749bd3c01146d09baa67cb3157875c
+msgid ":doc:`Built-in middleware </ref/middleware>`"
+msgstr ""
+
+#: ../../misc/api-stability.txt:80
+# ed5854ecad054faba02ea6374e04e6ba
+msgid ":doc:`Request/response objects </ref/request-response>`."
+msgstr ""
+
+#: ../../misc/api-stability.txt:82
+# 3fcb0da2b1264bccb046b6790b08fdaf
+msgid ":doc:`Settings </ref/settings>`. Note, though that while the :doc:`list of built-in settings </ref/settings>` can be considered complete we may -- and probably will -- add new settings in future versions. This is one of those places where \"'stable' does not mean 'complete.'\""
+msgstr ""
+
+#: ../../misc/api-stability.txt:87
+# 2adc69f6503a44249d2f360c90432dba
+msgid ":doc:`Built-in signals </ref/signals>`. Like settings, we'll probably add new signals in the future, but the existing ones won't break."
+msgstr ""
+
+#: ../../misc/api-stability.txt:90
+# 5095a4ab502b40f9b00c5bade981d487
+msgid ":doc:`Unicode handling </ref/unicode>`."
+msgstr ""
+
+#: ../../misc/api-stability.txt:92
+# bb6a7d8be5294054afdd8fd9556048d5
+msgid "Everything covered by the :doc:`HOWTO guides </howto/index>`."
+msgstr ""
+
+#: ../../misc/api-stability.txt:95
+# 81aeaeb0a00e4ebbadc12afbad49c8ed
+msgid "``django.utils``"
+msgstr ""
+
+#: ../../misc/api-stability.txt:97
+# 4c6ac8fba79d4808bf5a2a45f45ce4ee
+msgid "Most of the modules in ``django.utils`` are designed for internal use. Only the following parts of :doc:`django.utils </ref/utils>` can be considered stable:"
+msgstr ""
+
+#: ../../misc/api-stability.txt:100
+# c6ffa33e1bcd47399aa285ba41d6e4d8
+msgid "``django.utils.cache``"
+msgstr ""
+
+#: ../../misc/api-stability.txt:101
+# ea4697e612bc491f91e994e9e8d07eab
+msgid "``django.utils.datastructures.SortedDict`` -- only this single class; the rest of the module is for internal use."
+msgstr ""
+
+#: ../../misc/api-stability.txt:103
+# cbb0ade60b1e4f77bf9ca6475499988f
+msgid "``django.utils.encoding``"
+msgstr ""
+
+#: ../../misc/api-stability.txt:104
+# 23b718b3c8c34169827cf0410e66de56
+msgid "``django.utils.feedgenerator``"
+msgstr ""
+
+#: ../../misc/api-stability.txt:105
+# ff758aa3378442979b6a6c4f1e2b2503
+msgid "``django.utils.http``"
+msgstr ""
+
+#: ../../misc/api-stability.txt:106
+# 7b969d4dfefb4f7f9c45bf55280cfb62
+msgid "``django.utils.safestring``"
+msgstr ""
+
+#: ../../misc/api-stability.txt:107
+# 50ec6ddcdfc947aab48f0c5c984b299f
+msgid "``django.utils.translation``"
+msgstr ""
+
+#: ../../misc/api-stability.txt:108
+# 779f30758eb040e2be3832da1c8ac773
+msgid "``django.utils.tzinfo``"
+msgstr ""
+
+#: ../../misc/api-stability.txt:111
+# a8e7d8816d3445599c2d0248c057e177
+msgid "Exceptions"
+msgstr ""
+
+#: ../../misc/api-stability.txt:113
+# 670d68cc3d704e408cabbfcf152fbfb4
+msgid "There are a few exceptions to this stability and backwards-compatibility promise."
+msgstr ""
+
+#: ../../misc/api-stability.txt:117
+# 2cdb08d103c5475fb0667aaa54560df7
+msgid "Security fixes"
+msgstr ""
+
+#: ../../misc/api-stability.txt:119
+# a7ab74de356e47b99533e8c107379456
+msgid "If we become aware of a security problem -- hopefully by someone following our :ref:`security reporting policy <reporting-security-issues>` -- we'll do everything necessary to fix it. This might mean breaking backwards compatibility; security trumps the compatibility guarantee."
+msgstr ""
+
+#: ../../misc/api-stability.txt:124
+# 2a2f3b612ad0410f86dd64b8c2df55ad
+msgid "Contributed applications (``django.contrib``)"
+msgstr ""
+
+#: ../../misc/api-stability.txt:126
+# 5c843a8f066f43e79d22ed4766a05c99
+msgid "While we'll make every effort to keep these APIs stable -- and have no plans to break any contrib apps -- this is an area that will have more flux between releases. As the Web evolves, Django must evolve with it."
+msgstr ""
+
+#: ../../misc/api-stability.txt:130
+# 40c10a0dc44042fca8a451cd8e902d73
+msgid "However, any changes to contrib apps will come with an important guarantee: we'll make sure it's always possible to use an older version of a contrib app if we need to make changes. Thus, if Django 1.5 ships with a backwards-incompatible ``django.contrib.flatpages``, we'll make sure you can still use the Django 1.4 version alongside Django 1.5. This will continue to allow for easy upgrades."
+msgstr ""
+
+#: ../../misc/api-stability.txt:136
+# f0b205eab0384eb7a489ce6bd45c88e1
+msgid "Historically, apps in ``django.contrib`` have been more stable than the core, so in practice we probably won't have to ever make this exception. However, it's worth noting if you're building apps that depend on ``django.contrib``."
+msgstr ""
+
+#: ../../misc/api-stability.txt:141
+# 453446f46956471890736477149ee51c
+msgid "APIs marked as internal"
+msgstr ""
+
+#: ../../misc/api-stability.txt:143
+# 3ef798ea7f94424a8e815319f2ece84f
+msgid "Certain APIs are explicitly marked as \"internal\" in a couple of ways:"
+msgstr ""
+
+#: ../../misc/api-stability.txt:145
+# 79e7cab520964fabbc963b2cbb1601d5
+msgid "Some documentation refers to internals and mentions them as such. If the documentation says that something is internal, we reserve the right to change it."
+msgstr ""
+
+#: ../../misc/api-stability.txt:149
+# ccc1b1ba3684488fa4ecf5705a07d64c
+msgid "Functions, methods, and other objects prefixed by a leading underscore (``_``). This is the standard Python way of indicating that something is private; if any method starts with a single ``_``, it's an internal API."
+msgstr ""
+
+#: ../../misc/api-stability.txt:156
+# 28fd0fa7841946049aaf0df290ba21a7
+msgid "Local flavors"
+msgstr ""
+
+#: ../../misc/api-stability.txt:158
+# a55b50a7f91949a49d797bd23a13acbc
+msgid ":mod:`django.contrib.localflavor` contains assorted pieces of code that are useful for particular countries or cultures. This data is local in nature, and is subject to change on timelines that will almost never correlate with Django's own release schedules. For example, a common change is to split a province into two new provinces, or to rename an existing province."
+msgstr ""
+
+#: ../../misc/api-stability.txt:165
+# 538a668c64df49ddb11363194ff0b34f
+msgid "These changes present two competing compatibility issues. Moving forward, displaying the names of deprecated, renamed and dissolved provinces in a selection widget is bad from a user interface perspective. However, maintaining full backwards compatibility requires that we support historical values that may be stored in a database -- including values that may no longer be valid."
+msgstr ""
+
+#: ../../misc/api-stability.txt:172
+# dcc5520600104956a9e5bd40b4823fb0
+msgid "Therefore, Django has the following policy with respect to changes in local flavor:"
+msgstr ""
+
+#: ../../misc/api-stability.txt:175
+# 65e7d866b75741c0854e1e73082e20f1
+msgid "At the time of a Django release, the data and algorithms contained in :mod:`django.contrib.localflavor` will, to the best of our ability, reflect the officially gazetted policies of the appropriate local government authority. If a province has been added, altered, or removed, that change will be reflected in Django's localflavor."
+msgstr ""
+
+#: ../../misc/api-stability.txt:182
+# fbc4cd56f4344d7abc74a582907ee6a4
+msgid "These changes will *not* be backported to the previous stable release. Upgrading a minor version of Django should not require any data migration or audits for UI changes; therefore, if you want to get the latest province list, you will either need to upgrade your Django install, or backport the province list you need."
+msgstr ""
+
+#: ../../misc/api-stability.txt:189
+# b350860eccb44724a2f6182ebaa2ae55
+msgid "For one release, the affected localflavor module will raise a ``RuntimeWarning`` when it is imported."
+msgstr ""
+
+#: ../../misc/api-stability.txt:192
+# 1d502daf0aa64ef5a5b5d5b7cd8de6d1
+msgid "The change will be announced in the release notes as a backwards incompatible change requiring attention. The change will also be annotated in the documentation for the localflavor module."
+msgstr ""
+
+#: ../../misc/api-stability.txt:196
+# 908e4653c9a84679b4c2ba7402048381
+msgid "Where necessary and feasible, a migration script will be provided to aid the migration process."
+msgstr ""
+
+#: ../../misc/api-stability.txt:199
+# 816c9334d3b4451aaf40a5125ec23030
+msgid "For example, Django 1.2 contains an Indonesian localflavor. It has a province list that includes \"Nanggroe Aceh Darussalam (NAD)\" as a province. The Indonesian government has changed the official name of the province to \"Aceh (ACE)\". As a result, Django 1.3 does *not* contain \"Nanggroe Aceh Darussalam (NAD)\" in the province list, but *does* contain \"Aceh (ACE)\"."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:3
+# 0a52857d3e6b4835bae9c5d7f945fe40
+msgid "Design philosophies"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:5
+# c5c20b2337ba47c5ad2d88b29d537bc1
+msgid "This document explains some of the fundamental philosophies Django's developers have used in creating the framework. Its goal is to explain the past and guide the future."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:10
+# f2a36c66e5734b5c92c313430d4ea2fb
+msgid "Overall"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:15
+#: ../../misc/design-philosophies.txt:155
+#: ../../misc/design-philosophies.txt:303
+# 62a78a1dece34685929b21bcef904954
+# 154d83a7be044507a59d66d863b6d147
+# 57734c616a8f483e8cc4ae023558cfbf
+msgid "Loose coupling"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:19
+# 28bab3b9dcfd46cd8ca34d7b940f3fe1
+msgid "A fundamental goal of Django's stack is `loose coupling and tight cohesion`_. The various layers of the framework shouldn't \"know\" about each other unless absolutely necessary."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:23
+# 209a39b7955c40a2b68c9f88de3a1964
+msgid "For example, the template system knows nothing about Web requests, the database layer knows nothing about data display and the view system doesn't care which template system a programmer uses."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:27
+# 9cea46f1946e44e1b72c6b3c4e643211
+msgid "Although Django comes with a full stack for convenience, the pieces of the stack are independent of another wherever possible."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:35
+# 4fa3c0b8ee694189837f91676bfae97b
+msgid "Less code"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:37
+# 5458f4358ffb44729183c9a94d7a39ad
+msgid "Django apps should use as little code as possible; they should lack boilerplate. Django should take full advantage of Python's dynamic capabilities, such as introspection."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:44
+# 55a7eca85a754fb18789c6e6215b8c50
+msgid "Quick development"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:46
+# 1f0a00028b2143b4be513da66d492499
+msgid "The point of a Web framework in the 21st century is to make the tedious aspects of Web development fast. Django should allow for incredibly quick Web development."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:53
+# 82a5545f2702496caaed386689c48090
+msgid "Don't repeat yourself (DRY)"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:59
+# 6b9870b7133b4032bd1464881966261e
+msgid "Every distinct concept and/or piece of data should live in one, and only one, place. Redundancy is bad. Normalization is good."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:62
+# af70b027f5f4429d8fafa8014238a96c
+msgid "The framework, within reason, should deduce as much as possible from as little as possible."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:67
+# 352cd8a7d24e49289bb8c8aae5dae1ad
+msgid "The `discussion of DRY on the Portland Pattern Repository`__"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:74
+#: ../../misc/design-philosophies.txt:95
+# 16da875b74344119a253462325f976c9
+# 18979f08fda341638624da44c4fd5f72
+msgid "Explicit is better than implicit"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:76
+# 6b8441dca2a04478875a4de9e498489e
+msgid "This is a core Python principle listed in :pep:`20`, and it means Django shouldn't do too much \"magic.\" Magic shouldn't happen unless there's a really good reason for it. Magic is worth using only if it creates a huge convenience unattainable in other ways, and it isn't implemented in a way that confuses developers who are trying to learn how to use the feature."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:85
+# a028c802f7e847f8afd04ea5d267a82c
+msgid "Consistency"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:87
+# 9f0bf4ccb0db4af6adec068697c40f3b
+msgid "The framework should be consistent at all levels. Consistency applies to everything from low-level (the Python coding style used) to high-level (the \"experience\" of using Django)."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:92
+# f826f32dbebd4feba12cbcf3257d5b4f
+msgid "Models"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:97
+# 411c076375cc45f480b0d972ee69fca7
+msgid "Fields shouldn't assume certain behaviors based solely on the name of the field. This requires too much knowledge of the system and is prone to errors. Instead, behaviors should be based on keyword arguments and, in some cases, on the type of the field."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:103
+# 9598af6a05864387af9fc06e6215cf66
+msgid "Include all relevant domain logic"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:105
+# a8db330944fb4fa0bd2495b7830ed6c8
+msgid "Models should encapsulate every aspect of an \"object,\" following Martin Fowler's `Active Record`_ design pattern."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:108
+# 2a0cc256b6174e91a15c2c27af3504b3
+msgid "This is why both the data represented by a model and information about it (its human-readable name, options like default ordering, etc.) are defined in the model class; all the information needed to understand a given model should be stored *in* the model."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:116
+# a6d0eb56d34b428d9100e797d525b665
+msgid "Database API"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:118
+# dfb5c7d3eb7f49fe88ce43d38311dfba
+msgid "The core goals of the database API are:"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:121
+# f3a66bf223ac4e8fbb19c685be5bed03
+msgid "SQL efficiency"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:123
+# 13f87083129e4d77a8feda3d515d5b07
+msgid "It should execute SQL statements as few times as possible, and it should optimize statements internally."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:126
+# b0fd1ac6572b4c619aa0326d187f0147
+msgid "This is why developers need to call ``save()`` explicitly, rather than the framework saving things behind the scenes silently."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:129
+# cf088a01fdb14096bf1c68eb0a255039
+msgid "This is also why the ``select_related()`` ``QuerySet`` method exists. It's an optional performance booster for the common case of selecting \"every related object.\""
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:134
+# 51e5b6bcc6d24676abf2cbe51acdb0e5
+msgid "Terse, powerful syntax"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:136
+# 2d00c8e34a08452ea67ea63386133c2f
+msgid "The database API should allow rich, expressive statements in as little syntax as possible. It should not rely on importing other modules or helper objects."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:139
+# f0b713cc56d44520ad5c7adf0998297c
+msgid "Joins should be performed automatically, behind the scenes, when necessary."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:141
+# 88dc92e148e64ace89fefc3253666034
+msgid "Every object should be able to access every related object, systemwide. This access should work both ways."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:145
+# 4091a306e9ba47eca3a69eb75ef577a9
+msgid "Option to drop into raw SQL easily, when needed"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:147
+# ae243816c0d149c985219cddeebf379e
+msgid "The database API should realize it's a shortcut but not necessarily an end-all-be-all. The framework should make it easy to write custom SQL -- entire statements, or just custom ``WHERE`` clauses as custom parameters to API calls."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:152
+# f12ac3d98a20429f8d71eb5a593450b6
+msgid "URL design"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:157
+# 7642ff3885444c4b9cbeb48f8e72c913
+msgid "URLs in a Django app should not be coupled to the underlying Python code. Tying URLs to Python function names is a Bad And Ugly Thing."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:160
+# 3f21d89bbfa84c98836d5f78ac7922dd
+msgid "Along these lines, the Django URL system should allow URLs for the same app to be different in different contexts. For example, one site may put stories at ``/stories/``, while another may use ``/news/``."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:165
+# 10cd6421e46a404d973b53365fed16f7
+msgid "Infinite flexibility"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:167
+# a1236206706749c2b98500c7f7c74f61
+msgid "URLs should be as flexible as possible. Any conceivable URL design should be allowed."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:171
+# 37ec32ae3e4149dfb149eb62a36365a5
+msgid "Encourage best practices"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:173
+# 8d8848ba0955481097ed77b78b110973
+msgid "The framework should make it just as easy (or even easier) for a developer to design pretty URLs than ugly ones."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:176
+# 7c7fb26ffa894d6abf644924e10a4e1b
+msgid "File extensions in Web-page URLs should be avoided."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:178
+# 9a46d6ec017b4d6b9541f51629d45097
+msgid "Vignette-style commas in URLs deserve severe punishment."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:183
+# 52b0d3f868b44bf68151eaa46e0f0785
+msgid "Definitive URLs"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:187
+# 03c777280b2943608afb81ffc8ca4a30
+msgid "Technically, ``foo.com/bar`` and ``foo.com/bar/`` are two different URLs, and search-engine robots (and some Web traffic-analyzing tools) would treat them as separate pages. Django should make an effort to \"normalize\" URLs so that search-engine robots don't get confused."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:192
+# 02ac060ddb4242628f129814541a2504
+msgid "This is the reasoning behind the :setting:`APPEND_SLASH` setting."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:195
+# a6bb8a2801e649c596a3e8b2cc98f3b7
+msgid "Template system"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:200
+# 73b53fa193e34ecd9fb1e166bfe98380
+msgid "Separate logic from presentation"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:202
+# 4f443e95525346d49fe78a6491cea77d
+msgid "We see a template system as a tool that controls presentation and presentation-related logic -- and that's it. The template system shouldn't support functionality that goes beyond this basic goal."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:206
+# 8d0f0d64c5a74e9cb0fd8928d2ce44d0
+msgid "If we wanted to put everything in templates, we'd be using PHP. Been there, done that, wised up."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:210
+# f500f9b56dca4110a782d1d7a7191b6d
+msgid "Discourage redundancy"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:212
+# 41705a0d9aa1437fa8f7c3b08954366c
+msgid "The majority of dynamic Web sites use some sort of common sitewide design -- a common header, footer, navigation bar, etc. The Django template system should make it easy to store those elements in a single place, eliminating duplicate code."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:217
+# 84d559e30d9046d78056a8fc2462e636
+msgid "This is the philosophy behind :ref:`template inheritance <template-inheritance>`."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:221
+# 2c5ecd98ab024b1480c495817f6e2a79
+msgid "Be decoupled from HTML"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:223
+# 98ed2f70d3c04a49a27d36e04dff5bba
+msgid "The template system shouldn't be designed so that it only outputs HTML. It should be equally good at generating other text-based formats, or just plain text."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:228
+# 4ffea5f1d8f64a6a82d4f2d75a939ce9
+msgid "XML should not be used for template languages"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:232
+# a9a944d6875b4a32953251e19ea82257
+msgid "Using an XML engine to parse templates introduces a whole new world of human error in editing templates -- and incurs an unacceptable level of overhead in template processing."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:237
+# 17dfdfdf7d154ab2aa784e06bcfbe517
+msgid "Assume designer competence"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:239
+# ba4f807ebe6e407ba6ae78cd4e192e45
+msgid "The template system shouldn't be designed so that templates necessarily are displayed nicely in WYSIWYG editors such as Dreamweaver. That is too severe of a limitation and wouldn't allow the syntax to be as nice as it is. Django expects template authors are comfortable editing HTML directly."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:245
+# b5b2adf3830e48ab83df125ef26aec02
+msgid "Treat whitespace obviously"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:247
+# a27989d743b3459d8487f94adbe2d9bf
+msgid "The template system shouldn't do magic things with whitespace. If a template includes whitespace, the system should treat the whitespace as it treats text -- just display it. Any whitespace that's not in a template tag should be displayed."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:253
+# 657078ea9425400294c30c421bf1530e
+msgid "Don't invent a programming language"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:255
+# 69bbcf532c314beba1c71ddf4ae6fdb8
+msgid "The template system intentionally doesn't allow the following:"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:257
+# f0ce2b54af4c47a385c8e1e2638483c2
+msgid "Assignment to variables"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:258
+# aed4a87ce0ea4506a255d893cd21db0f
+msgid "Advanced logic"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:260
+# e90bb42cef734f78a6e759c35ca9ad7a
+msgid "The goal is not to invent a programming language. The goal is to offer just enough programming-esque functionality, such as branching and looping, that is essential for making presentation-related decisions."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:264
+# 7fd3a9163c654b1c8378e164212e89d1
+msgid "The Django template system recognizes that templates are most often written by *designers*, not *programmers*, and therefore should not assume Python knowledge."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:269
+# 6eb17d26a40243baaa8c811af4a9a106
+msgid "Safety and security"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:271
+# 023c8f25c7dd4de38d012786dee7edd8
+msgid "The template system, out of the box, should forbid the inclusion of malicious code -- such as commands that delete database records."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:274
+# 4bd0833378984bf4b6f04d33f4fe22d0
+msgid "This is another reason the template system doesn't allow arbitrary Python code."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:277
+# 2683cb47e0fd4070a568c3db0860d7aa
+msgid "Extensibility"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:279
+# 83b18c3579b24bc4a3e87cc62706dcb5
+msgid "The template system should recognize that advanced template authors may want to extend its technology."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:282
+# a8fcb50525c0411fb66ec0a9f10bb678
+msgid "This is the philosophy behind custom template tags and filters."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:285
+# 57ea6c745c704e26a4dd39805afcfbc0
+msgid "Views"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:288
+# 917704ad03b941c99aac2ff3ef8947df
+msgid "Simplicity"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:290
+# a07e0c5c09bc4b04beec15c77551242e
+msgid "Writing a view should be as simple as writing a Python function. Developers shouldn't have to instantiate a class when a function will do."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:294
+# 5206c998746e4ea39c5e383480c2868e
+msgid "Use request objects"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:296
+# d74c785cba314254a061f8654c064278
+msgid "Views should have access to a request object -- an object that stores metadata about the current request. The object should be passed directly to a view function, rather than the view function having to access the request data from a global variable. This makes it light, clean and easy to test views by passing in \"fake\" request objects."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:305
+# ec67ed7969ba4068b43952a9c93236f1
+msgid "A view shouldn't care about which template system the developer uses -- or even whether a template system is used at all."
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:309
+# 9ead952328e64d06876b6518c8f2f59e
+msgid "Differentiate between GET and POST"
+msgstr ""
+
+#: ../../misc/design-philosophies.txt:311
+# 7b1770803dac4e9182559cb6585c0207
+msgid "GET and POST are distinct; developers should explicitly use one or the other. The framework should make it easy to distinguish between GET and POST data."
+msgstr ""
+
+#: ../../misc/distributions.txt:3
+# 7998353b12ae455c9e07c44c33816dd3
+msgid "Third-party distributions of Django"
+msgstr ""
+
+#: ../../misc/distributions.txt:5
+# db27e2890be34a608264cf51fe4a196c
+msgid "Many third-party distributors are now providing versions of Django integrated with their package-management systems. These can make installation and upgrading much easier for users of Django since the integration includes the ability to automatically install dependencies (like database adapters) that Django requires."
+msgstr ""
+
+#: ../../misc/distributions.txt:11
+# 119e8f98a1a94aa797f6baadd9342f73
+msgid "Typically, these packages are based on the latest stable release of Django, so if you want to use the development version of Django you'll need to follow the instructions for :ref:`installing the development version <installing-development-version>` from our Git repository."
+msgstr ""
+
+#: ../../misc/distributions.txt:16
+# 007d4ef1a2524cedb50c1db6abb93d4d
+msgid "If you're using Linux or a Unix installation, such as OpenSolaris, check with your distributor to see if they already package Django. If you're using a Linux distro and don't know how to find out if a package is available, then now is a good time to learn.  The Django Wiki contains a list of `Third Party Distributions`_ to help you out."
+msgstr ""
+
+#: ../../misc/distributions.txt:26
+# f7d8bd651e0845ff941a8c7cc02207d3
+msgid "For distributors"
+msgstr ""
+
+#: ../../misc/distributions.txt:28
+# 89c8ca2155364b17bca9b8985ce9ab09
+msgid "If you'd like to package Django for distribution, we'd be happy to help out! Please join the `django-developers mailing list`_ and introduce yourself."
+msgstr ""
+
+#: ../../misc/distributions.txt:31
+# e2fd56790bc3474b9aec1b7ef2a1a90a
+msgid "We also encourage all distributors to subscribe to the `django-announce mailing list`_, which is a (very) low-traffic list for announcing new releases of Django and important bugfixes."
+msgstr ""
+
+#: ../../misc/index.txt:2
+# e730dfd37f834b23954f99e2ca967555
+msgid "Meta-documentation and miscellany"
+msgstr ""
+
+#: ../../misc/index.txt:4
+# f92c81274eae4ec6bb64c40dac6d6ee9
+msgid "Documentation that we can't find a more organized place for. Like that drawer in your kitchen with the scissors, batteries, duct tape, and other junk."
+msgstr ""
+

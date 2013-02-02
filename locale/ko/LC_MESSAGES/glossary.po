@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Django Software Foundation and contributors
+# This file is distributed under the same license as the Django package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Django 1.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-02 12:52\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../glossary.txt:5
+# 877815b475bd473dbbfc2ea0aef05a16
+msgid "Glossary"
+msgstr ""
+
+#: ../../glossary.txt:10
+# f82cecf9beeb48cb94590602dda4caec
+msgid "An attribute on a :term:`model`; a given field usually maps directly to a single database column."
+msgstr ""
+
+#: ../../glossary.txt:13
+#: ../../glossary.txt:24
+# adfa4114222b4fed9d45add147c2622e
+# 01b088955e654940ad9c59fddda53e00
+msgid "See :doc:`/topics/db/models`."
+msgstr ""
+
+#: ../../glossary.txt:16
+# 614fa292867d4e3e877d90ba33644f0d
+msgid "A higher-order :term:`view` function that provides an abstract/generic implementation of a common idiom or pattern found in view development."
+msgstr ""
+
+#: ../../glossary.txt:19
+# 4b7ae7d8dbec49efa4411d7e86bacfe8
+msgid "See :doc:`/topics/class-based-views/index`."
+msgstr ""
+
+#: ../../glossary.txt:22
+# 022d681e359640258d9a0e6a44569723
+msgid "Models store your application's data."
+msgstr ""
+
+#: ../../glossary.txt:27
+# 03479f2f7aa7409cae2833c89d3634a4
+msgid "\"Model-template-view\"; a software pattern, similar in style to MVC, but a better description of the way Django does things."
+msgstr ""
+
+#: ../../glossary.txt:30
+# ea9b95405e5c4cb48cbfeaf1cbe0e215
+msgid "See :ref:`the FAQ entry <faq-mtv>`."
+msgstr ""
+
+#: ../../glossary.txt:33
+# e08d616b6e9743eca908a78037bbdcb9
+msgid "`Model-view-controller`__; a software pattern. Django :ref:`follows MVC to some extent <faq-mtv>`."
+msgstr ""
+
+#: ../../glossary.txt:39
+# 8e56c45b208743b18e226f7b88bb58c1
+msgid "A Python package -- i.e. a directory of code -- that contains all the settings for an instance of Django. This would include database configuration, Django-specific options and application-specific settings."
+msgstr ""
+
+#: ../../glossary.txt:45
+# f3facfe6acdf46daadab39f620a8156f
+msgid "Also known as \"managed attributes\", and a feature of Python since version 2.2. This is a neat way to implement attributes whose usage resembles attribute access, but whose implementation uses method calls."
+msgstr ""
+
+#: ../../glossary.txt:49
+# f876a11340e341fb839ba874f263ee60
+msgid "See :func:`property`."
+msgstr ""
+
+#: ../../glossary.txt:52
+# 3b34cf8bac6a4439b09727f7bb1f99d6
+msgid "An object representing some set of rows to be fetched from the database."
+msgstr ""
+
+#: ../../glossary.txt:54
+# 33f8ce9d76fa4b0f8ad09a9a31f408f4
+msgid "See :doc:`/topics/db/queries`."
+msgstr ""
+
+#: ../../glossary.txt:57
+# 6cddc8bf8f754e109dfa5f2a6fda35d8
+msgid "A short label for something, containing only letters, numbers, underscores or hyphens. They're generally used in URLs. For example, in a typical blog entry URL:"
+msgstr ""
+
+#: ../../glossary.txt:65
+# ea5209bc0a1a406f8c014ac3ecae186e
+msgid "the last bit (``spring``) is the slug."
+msgstr ""
+
+#: ../../glossary.txt:68
+# 0c366511134d4eb289c519a5ffc4fc33
+msgid "A chunk of text that acts as formatting for representing data. A template helps to abstract the presentation of data from the data itself."
+msgstr ""
+
+#: ../../glossary.txt:72
+# ff05321bc72744ea8221de4474946ad4
+msgid "See :doc:`/topics/templates`."
+msgstr ""
+
+#: ../../glossary.txt:75
+# 44f8a3391add400a98c3909f70294847
+msgid "A function responsible for rending a page."
+msgstr ""
+

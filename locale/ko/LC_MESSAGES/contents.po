@@ -1,0 +1,43 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Django Software Foundation and contributors
+# This file is distributed under the same license as the Django package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Django 1.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-02 12:52\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../contents.txt:5
+# 048932f8f3c04966924e2b50bab5937c
+msgid "Django documentation contents"
+msgstr ""
+
+#: ../../contents.txt:26
+# d52d32fef1d94ae3b705579724a2a746
+msgid "Indices, glossary and tables"
+msgstr ""
+
+#: ../../contents.txt:28
+# d112704797284c3eba3947564f401bb3
+msgid ":ref:`genindex`"
+msgstr ""
+
+#: ../../contents.txt:29
+# 9a5e7a776ffd403b95a0aed87505fcb9
+msgid ":ref:`modindex`"
+msgstr ""
+
+#: ../../contents.txt:30
+# 0a9b885b77fa415b9afab31bcdba433d
+msgid ":ref:`glossary`"
+msgstr ""
+
