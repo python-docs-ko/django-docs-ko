@@ -1,22 +1,25 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) Django Software Foundation and contributors
 # This file is distributed under the same license as the Django package.
-# 
+#
 # Translators:
 # Hangi Kim <hgk617@naver.com>, 2013.
+# Yong Choi <sk8er.choi@gmail.com>, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: Django Docs Korean\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-12-13 09:00\n"
-"PO-Revision-Date: 2013-01-14 18:03+0000\n"
-"Last-Translator: Hangi Kim <hgk617@naver.com>\n"
-"Language-Team: Korean (http://www.transifex.com/projects/p/django-docs-korean/language/ko/)\n"
+"PO-Revision-Date: 2013-02-02 23:21+0900\n"
+"Last-Translator: Yong Choi <sk8er.choi@gmail.com>\n"
+"Language-Team: Korean (http://www.transifex.com/projects/p/django-docs-"
+"korean/language/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.5.4\n"
 
 # 0a400198cebf4dd28dfc286dffbe8c35
 #: ../../index.txt:6
@@ -42,7 +45,8 @@ msgstr "문제가 있나요? 도와드리고 싶어요!"
 #: ../../index.txt:15
 msgid ""
 "Try the :doc:`FAQ <faq/index>` -- it's got answers to many common questions."
-msgstr ":doc:`FAQ <faq/index>`\\ 를 참고하세요 -- 가장 흔한 질문에 대한 답변들입니다."
+msgstr ""
+":doc:`FAQ <faq/index>`\\ 를 참고하세요 -- 가장 흔한 질문에 대한 답변들입니다."
 
 # 790e77c1a05a438b87772b87af4235ed
 #: ../../index.txt:17
@@ -78,7 +82,7 @@ msgstr "첫걸음"
 # 77243abfdb14453583053dcffdeaf32a
 #: ../../index.txt:37
 msgid "Are you new to Django or to programming? This is the place to start!"
-msgstr ""
+msgstr "Django 또는 프로그래밍이 처음이신가요? 이곳에서 시작하세요!"
 
 # a868a057fab04791a44ea4db06e5574a
 #: ../../index.txt:39
@@ -90,9 +94,9 @@ msgstr ""
 # ac33818614344260be37788df005f11f
 #: ../../index.txt:43
 msgid ""
-"**Tutorial:** :doc:`Part 1 <intro/tutorial01>` | :doc:`Part 2 "
-"<intro/tutorial02>` | :doc:`Part 3 <intro/tutorial03>` | :doc:`Part 4 "
-"<intro/tutorial04>`"
+"**Tutorial:** :doc:`Part 1 <intro/tutorial01>` | :doc:`Part 2 <intro/"
+"tutorial02>` | :doc:`Part 3 <intro/tutorial03>` | :doc:`Part 4 <intro/"
+"tutorial04>`"
 msgstr ""
 
 # cd5aa7505cab47ee9bcf61ae71a8255c
@@ -117,39 +121,39 @@ msgstr ""
 # 2b8f59a59f7a4d0a92c7dc3f79740e5d
 #: ../../index.txt:59
 msgid ""
-"**Models:** :doc:`Model syntax <topics/db/models>` | :doc:`Field types "
-"<ref/models/fields>` | :doc:`Meta options <ref/models/options>`"
+"**Models:** :doc:`Model syntax <topics/db/models>` | :doc:`Field types <ref/"
+"models/fields>` | :doc:`Meta options <ref/models/options>`"
 msgstr ""
 
 # 005487e743304cf795f7c75c65d9c128
 #: ../../index.txt:64
 msgid ""
-"**QuerySets:** :doc:`Executing queries <topics/db/queries>` | :doc:`QuerySet"
-" method reference <ref/models/querysets>`"
+"**QuerySets:** :doc:`Executing queries <topics/db/queries>` | :doc:`QuerySet "
+"method reference <ref/models/querysets>`"
 msgstr ""
 
 # ee954b99eb7a4b868902985ecddc2b80
 #: ../../index.txt:68
 msgid ""
-"**Model instances:** :doc:`Instance methods <ref/models/instances>` | "
-":doc:`Accessing related objects <ref/models/relations>`"
+"**Model instances:** :doc:`Instance methods <ref/models/instances>` | :doc:"
+"`Accessing related objects <ref/models/relations>`"
 msgstr ""
 
 # 0c09677245834c75853d49bd37ff86ae
 #: ../../index.txt:72
 msgid ""
-"**Advanced:** :doc:`Managers <topics/db/managers>` | :doc:`Raw SQL "
-"<topics/db/sql>` | :doc:`Transactions <topics/db/transactions>` | "
-":doc:`Aggregation <topics/db/aggregation>` | :doc:`Custom fields <howto"
-"/custom-model-fields>` | :doc:`Multiple databases <topics/db/multi-db>`"
+"**Advanced:** :doc:`Managers <topics/db/managers>` | :doc:`Raw SQL <topics/"
+"db/sql>` | :doc:`Transactions <topics/db/transactions>` | :doc:`Aggregation "
+"<topics/db/aggregation>` | :doc:`Custom fields <howto/custom-model-fields>` "
+"| :doc:`Multiple databases <topics/db/multi-db>`"
 msgstr ""
 
 # 9d60cb7e653245b398b389d719319305
 #: ../../index.txt:80
 msgid ""
 "**Other:** :doc:`Supported databases <ref/databases>` | :doc:`Legacy "
-"databases <howto/legacy-databases>` | :doc:`Providing initial data <howto"
-"/initial-data>` | :doc:`Optimize database access <topics/db/optimization>`"
+"databases <howto/legacy-databases>` | :doc:`Providing initial data <howto/"
+"initial-data>` | :doc:`Optimize database access <topics/db/optimization>`"
 msgstr ""
 
 # aec994b1452d4e7191b2a0eb2e0ccc7c
@@ -160,8 +164,8 @@ msgstr "뷰 계층"
 # ee284e13f21747559cc274689aa71c60
 #: ../../index.txt:89
 msgid ""
-"Django has the concept of \"views\" to encapsulate the logic responsible for"
-" processing a user's request and for returning the response. Find all you "
+"Django has the concept of \"views\" to encapsulate the logic responsible for "
+"processing a user's request and for returning the response. Find all you "
 "need to know about views via the links below:"
 msgstr ""
 
@@ -169,42 +173,42 @@ msgstr ""
 #: ../../index.txt:93
 msgid ""
 "**The basics:** :doc:`URLconfs <topics/http/urls>` | :doc:`View functions "
-"<topics/http/views>` | :doc:`Shortcuts <topics/http/shortcuts>` | "
-":doc:`Decorators <topics/http/decorators>`"
+"<topics/http/views>` | :doc:`Shortcuts <topics/http/shortcuts>` | :doc:"
+"`Decorators <topics/http/decorators>`"
 msgstr ""
 
 # 6959489d59594013b3efed01351daed8
 #: ../../index.txt:99
 msgid ""
-"**Reference:** :doc:`Request/response objects <ref/request-response>` | "
-":doc:`TemplateResponse objects <ref/template-response>`"
+"**Reference:** :doc:`Request/response objects <ref/request-response>` | :doc:"
+"`TemplateResponse objects <ref/template-response>`"
 msgstr ""
 
 # 68165af5c75d40689fe3c7613915f254
 #: ../../index.txt:103
 msgid ""
 "**File uploads:** :doc:`Overview <topics/http/file-uploads>` | :doc:`File "
-"objects <ref/files/file>` | :doc:`Storage API <ref/files/storage>` | "
-":doc:`Managing files <topics/files>` | :doc:`Custom storage <howto/custom-"
-"file-storage>`"
+"objects <ref/files/file>` | :doc:`Storage API <ref/files/storage>` | :doc:"
+"`Managing files <topics/files>` | :doc:`Custom storage <howto/custom-file-"
+"storage>`"
 msgstr ""
 
 # 8da4d76dd8ac45d5b890253c951e33d1
 #: ../../index.txt:110
 msgid ""
-"**Class-based views:** :doc:`Overview <topics/class-based-views/index>` | "
-":doc:`Built-in display views <topics/class-based-views/generic-display>` | "
-":doc:`Built-in editing views <topics/class-based-views/generic-editing>` | "
-":doc:`Using mixins <topics/class-based-views/mixins>` | :doc:`API reference "
-"<ref/class-based-views/index>` | :doc:`Flattened index<ref/class-based-views"
-"/flattened-index>`"
+"**Class-based views:** :doc:`Overview <topics/class-based-views/index>` | :"
+"doc:`Built-in display views <topics/class-based-views/generic-display>` | :"
+"doc:`Built-in editing views <topics/class-based-views/generic-editing>` | :"
+"doc:`Using mixins <topics/class-based-views/mixins>` | :doc:`API reference "
+"<ref/class-based-views/index>` | :doc:`Flattened index<ref/class-based-views/"
+"flattened-index>`"
 msgstr ""
 
 # 12bcfea0df004336b02c5ddae269f44f
 #: ../../index.txt:118
 msgid ""
-"**Advanced:** :doc:`Generating CSV <howto/outputting-csv>` | "
-":doc:`Generating PDF <howto/outputting-pdf>`"
+"**Advanced:** :doc:`Generating CSV <howto/outputting-csv>` | :doc:"
+"`Generating PDF <howto/outputting-pdf>`"
 msgstr ""
 
 # 153acef9bd4340d8b061ef46c6b1ef5f
@@ -212,7 +216,9 @@ msgstr ""
 msgid ""
 "**Middleware:** :doc:`Overview <topics/http/middleware>` | :doc:`Built-in "
 "middleware classes <ref/middleware>`"
-msgstr "**미들웨어:** :doc:`개요 <topics/http/middleware>` | :doc:`Built-in middleware classes <ref/middleware>`"
+msgstr ""
+"**미들웨어:** :doc:`개요 <topics/http/middleware>` | :doc:`Built-in "
+"middleware classes <ref/middleware>`"
 
 # 12fc076240a2483cb31072fd0467927e
 #: ../../index.txt:127
@@ -250,32 +256,33 @@ msgstr "폼"
 # f89f819a370d405c8fe9c8d158bfd728
 #: ../../index.txt:146
 msgid ""
-"Django provides a rich framework to facilitate the creation of forms and the"
-" manipulation of form data."
+"Django provides a rich framework to facilitate the creation of forms and the "
+"manipulation of form data."
 msgstr ""
+"Django는 양식을 생성하고 양식 데이터를 조작하는 기능을 갖춘 두터운 프레임워크"
+"를 제공합니다."
 
 # 0cfc8d717cdd4471883e2f5dcfd15c93
 #: ../../index.txt:149
 msgid ""
-"**The basics:** :doc:`Overview <topics/forms/index>` | :doc:`Form API "
-"<ref/forms/api>` | :doc:`Built-in fields <ref/forms/fields>` | :doc:`Built-"
-"in widgets <ref/forms/widgets>`"
+"**The basics:** :doc:`Overview <topics/forms/index>` | :doc:`Form API <ref/"
+"forms/api>` | :doc:`Built-in fields <ref/forms/fields>` | :doc:`Built-in "
+"widgets <ref/forms/widgets>`"
 msgstr ""
 
 # 432d6741058c4472883cf1b0485634fe
 #: ../../index.txt:155
 msgid ""
-"**Advanced:** :doc:`Forms for models <topics/forms/modelforms>` | "
-":doc:`Integrating media <topics/forms/media>` | :doc:`Formsets "
-"<topics/forms/formsets>` | :doc:`Customizing validation "
-"<ref/forms/validation>`"
+"**Advanced:** :doc:`Forms for models <topics/forms/modelforms>` | :doc:"
+"`Integrating media <topics/forms/media>` | :doc:`Formsets <topics/forms/"
+"formsets>` | :doc:`Customizing validation <ref/forms/validation>`"
 msgstr ""
 
 # 37aa417732d54fbe9cd0992fc629ad64
 #: ../../index.txt:161
 msgid ""
-"**Extras:** :doc:`Form preview <ref/contrib/formtools/form-preview>` | "
-":doc:`Form wizard <ref/contrib/formtools/form-wizard>`"
+"**Extras:** :doc:`Form preview <ref/contrib/formtools/form-preview>` | :doc:"
+"`Form wizard <ref/contrib/formtools/form-wizard>`"
 msgstr ""
 
 # d1940e68dce8477fa7b12419ba9afbbf
@@ -295,7 +302,9 @@ msgstr ""
 msgid ""
 "**Settings:** :doc:`Overview <topics/settings>` | :doc:`Full list of "
 "settings <ref/settings>`"
-msgstr "**설정:** :doc:`개요 <topics/settings>` | :doc:`Full list of settings <ref/settings>`"
+msgstr ""
+"**설정:** :doc:`개요 <topics/settings>` | :doc:`Full list of settings <ref/"
+"settings>`"
 
 # 85d03788326b4b7697ea5c1d22885698
 #: ../../index.txt:175
@@ -305,8 +314,8 @@ msgstr "**예외:** :doc:`개요 <ref/exceptions>`"
 # d936a1b70f3a49a6801efeece7f1478b
 #: ../../index.txt:178
 msgid ""
-"**django-admin.py and manage.py:** :doc:`Overview <ref/django-admin>` | "
-":doc:`Adding custom commands <howto/custom-management-commands>`"
+"**django-admin.py and manage.py:** :doc:`Overview <ref/django-admin>` | :doc:"
+"`Adding custom commands <howto/custom-management-commands>`"
 msgstr ""
 
 # d8638a0625f64ec49cfcf8fac8a310ad
@@ -318,9 +327,9 @@ msgstr "**테스팅:**  :doc:`개요 <topics/testing>`"
 #: ../../index.txt:184
 msgid ""
 "**Deployment:** :doc:`Overview <howto/deployment/index>` | :doc:`WSGI "
-"servers <howto/deployment/wsgi/index>` | :doc:`FastCGI/SCGI/AJP "
-"<howto/deployment/fastcgi>` | :doc:`Handling static files <howto/static-"
-"files>` | :doc:`Tracking code errors by email <howto/error-reporting>`"
+"servers <howto/deployment/wsgi/index>` | :doc:`FastCGI/SCGI/AJP <howto/"
+"deployment/fastcgi>` | :doc:`Handling static files <howto/static-files>` | :"
+"doc:`Tracking code errors by email <howto/error-reporting>`"
 msgstr ""
 
 # 2b19c4a7b7f04889b390de68a75903ba
@@ -413,8 +422,8 @@ msgstr ""
 # 0ccdf82952624002897b1e80bacb27ea
 #: ../../index.txt:225
 msgid ""
-"Django aims to be compatible with multiple different flavors and versions of"
-" Python:"
+"Django aims to be compatible with multiple different flavors and versions of "
+"Python:"
 msgstr ""
 
 # ebb4fdcbda344daeb7dd7551c500fbb6
@@ -480,9 +489,9 @@ msgstr ""
 # 72789271edfd4df085e8ff77d6623f81
 #: ../../index.txt:249
 msgid ""
-":doc:`Comments <ref/contrib/comments/index>`, :doc:`comment moderation "
-"<ref/contrib/comments/moderation>` and :doc:`custom comments "
-"<ref/contrib/comments/custom>`"
+":doc:`Comments <ref/contrib/comments/index>`, :doc:`comment moderation <ref/"
+"contrib/comments/moderation>` and :doc:`custom comments <ref/contrib/"
+"comments/custom>`"
 msgstr ""
 
 # 4ac8cf871f774da796219d3445eee226
@@ -586,10 +595,10 @@ msgstr ""
 # 8eccd3c40b534a73be3ed814af0ea003
 #: ../../index.txt:278
 msgid ""
-"**Community:** :doc:`How to get involved <internals/contributing/index>` | "
-":doc:`The release process <internals/release-process>` | :doc:`Team of "
-"committers <internals/committers>` | :doc:`The Django source code repository"
-" <internals/git>` | :doc:`Security policies <internals/security>`"
+"**Community:** :doc:`How to get involved <internals/contributing/index>` | :"
+"doc:`The release process <internals/release-process>` | :doc:`Team of "
+"committers <internals/committers>` | :doc:`The Django source code repository "
+"<internals/git>` | :doc:`Security policies <internals/security>`"
 msgstr ""
 
 # 56baf27417c243b68e47dfba7af9b33d
@@ -600,9 +609,11 @@ msgstr "**디자인 철학:** :doc:`개요 <misc/design-philosophies>`"
 # a2250ab132ae4394ac3ae4e0931a2b42
 #: ../../index.txt:288
 msgid ""
-"**Documentation:** :doc:`About this documentation <internals/contributing"
-"/writing-documentation>`"
-msgstr "**문서:** :doc:`이 문서에 대하여 <internals/contributing/writing-documentation>`"
+"**Documentation:** :doc:`About this documentation <internals/contributing/"
+"writing-documentation>`"
+msgstr ""
+"**문서:** :doc:`이 문서에 대하여 <internals/contributing/writing-"
+"documentation>`"
 
 # 109177361e3c420983fdd8b6785a4d0d
 #: ../../index.txt:291
@@ -612,7 +623,7 @@ msgstr ""
 # b006bff69b0144469e5320cd30528e09
 #: ../../index.txt:294
 msgid ""
-"**Django over time:** :doc:`API stability <misc/api-stability>` | "
-":doc:`Release notes and upgrading instructions <releases/index>` | "
-":doc:`Deprecation Timeline <internals/deprecation>`"
+"**Django over time:** :doc:`API stability <misc/api-stability>` | :doc:"
+"`Release notes and upgrading instructions <releases/index>` | :doc:"
+"`Deprecation Timeline <internals/deprecation>`"
 msgstr ""
