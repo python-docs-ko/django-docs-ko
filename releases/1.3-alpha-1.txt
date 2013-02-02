@@ -39,9 +39,9 @@ along with a completely generic view base class that can be used as
 the basis for reusable applications that can be easily extended.
 
 See :doc:`the documentation on Class-based Generic Views
-</topics/class-based-views>` for more details. There is also a document to
-help you :doc:`convert your function-based generic views to class-based
-views</topics/generic-views-migration>`.
+</topics/class-based-views/index>` for more details. There is also a document to
+help you `convert your function-based generic views to class-based
+views <https://docs.djangoproject.com/en/1.4/topics/generic-views-migration/>`_.
 
 Logging
 ~~~~~~~
