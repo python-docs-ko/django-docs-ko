@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Django Docs Korean\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-12-13 09:00\n"
-"PO-Revision-Date: 2013-02-02 23:26+0900\n"
+"PO-Revision-Date: 2013-02-03 23:11+0900\n"
 "Last-Translator: Yong Choi <sk8er.choi@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/projects/p/django-docs-"
 "korean/language/ko/)\n"
@@ -122,6 +122,12 @@ msgid ""
 "that command as many times as you'd like, and each time it'll only install "
 "what's needed."
 msgstr ""
+"참고로, 디폴트로 생성된 :file:`settings.py` 파일의 :setting:`INSTALLED_APPS` "
+"에는 편의를 위해 ``'django.contrib.auth'`` 와 ``'django.contrib."
+"contenttypes'`` 가 포함되어 있습니다. 만약 :setting:`INSTALLED_APPS` 에 이미 "
+"이러한 앱들이 포함되어 있더라도, 걱정말고 :djadmin:`manage.py syncdb "
+"<syncdb>` 를 실행하면 됩니다. 여러 번 실행하더라도 그때그때 필요한 것만 설치"
+"하므로 괜찮습니다."
 
 # 0165a9b777fd478fa5e38be8c1841d21
 #: ../../topics/auth.txt:43
@@ -130,11 +136,14 @@ msgid ""
 "permission objects for all installed apps that need 'em, and prompts you to "
 "create a superuser account the first time you run it."
 msgstr ""
+":djadmin:`syncdb` 명령은 필요한 데이터베이스 테이블을 생성하고, 설치된 앱에"
+"서 필요로 하는 권한 개체를 생성하며, 처음 실행하는 경우에는 슈퍼유저 계정을 "
+"생성할 것인지 물어봅니다."
 
 # 250f21670a414a508bf405b71527c68b
 #: ../../topics/auth.txt:47
 msgid "Once you've taken those steps, that's it."
-msgstr ""
+msgstr "이 단계는 한번만 거치면 됩니다."
 
 # ea7fc79e5a8749dc8b882607badb1069
 # 664bc87d114249cfaee0538923bd311c
@@ -142,7 +151,7 @@ msgstr ""
 #: ../../topics/auth.txt:55 ../../topics/auth.txt:1611
 #: ../../topics/auth.txt:1767
 msgid "API reference"
-msgstr ""
+msgstr "API 레퍼런스"
 
 # 7356dedf21604755b892f8d9d91ecd19
 # bbe227e1feab499a9f9c73bbefcd0e8e
@@ -151,13 +160,14 @@ msgstr ""
 #: ../../topics/auth.txt:58 ../../topics/auth.txt:1618
 #: ../../topics/auth.txt:1772 ../../topics/db/models.txt:83
 msgid "Fields"
-msgstr ""
+msgstr "Fields"
 
 # 0fde0b9282354b0da08cf96b4b810305
 #: ../../topics/auth.txt:62
 msgid ""
 ":class:`~django.contrib.auth.models.User` objects have the following fields:"
 msgstr ""
+":class:`~django.contrib.auth.models.User` 개체는 다음의 필드를 갖습니다:"
 
 # aaf1ce87be5e4c869d1d9f085ba9705c
 #: ../../topics/auth.txt:67
@@ -165,17 +175,19 @@ msgid ""
 "Required. 30 characters or fewer. Usernames may contain alphanumeric, ``_``, "
 "``@``, ``+``, ``.`` and ``-`` characters."
 msgstr ""
+"필수. 30 자 이하. 사용자명에는 영문자, ``_``, ``@``, ``+``, ``.`` 및 ``-`` 문"
+"자를 사용할 수 있습니다."
 
 # df5659ce4ec847c9ba8235a056fb3487
 # 5cb184a680a345acaca05a6f48febbc0
 #: ../../topics/auth.txt:72 ../../topics/auth.txt:76
 msgid "Optional. 30 characters or fewer."
-msgstr ""
+msgstr "선택. 30 자 이하."
 
 # cf18c4df6de245a69e2a704077205bbd
 #: ../../topics/auth.txt:80
 msgid "Optional. Email address."
-msgstr ""
+msgstr "선택. 이메일 주소."
 
 # 2569fdb79c49472ebb816830bd92f465
 #: ../../topics/auth.txt:84
@@ -184,11 +196,14 @@ msgid ""
 "the raw password.) Raw passwords can be arbitrarily long and can contain any "
 "character. See the \"Passwords\" section below."
 msgstr ""
+"필수. 비밀번호에 대한 메타데이터 해쉬. (장고는 비밀번호를 평문으로 저장하지 "
+"않습니다.) 평문 패스워드는 임의의 길이로 어떠한 문자든 포함할 수 있습니다. 아"
+"래의 \"Passwords\" 섹션을 참조하세요."
 
 # 56c5f8f56b314ef38a4eb8cd7108e205
 #: ../../topics/auth.txt:90
 msgid "Boolean. Designates whether this user can access the admin site."
-msgstr ""
+msgstr "부울. 이 사용자가 관리자 사이트에 접근할 수 있는지를 지정합니다."
 
 # 81c664eb9fdf4bc495d2cde5bd95a172
 #: ../../topics/auth.txt:94
@@ -198,6 +213,10 @@ msgid ""
 "accounts; that way, if your applications have any foreign keys to users, the "
 "foreign keys won't break."
 msgstr ""
+"부울. 이 사용자 계정을 활성 상태로 간주할 것인지를 지정합니다. 계정을 지우기"
+"보다는 이 값을 ``False`` 로 두는 것을 권장합니다. 그렇게 함으로써, 여러분의 "
+"애플리케이션이 사용자에 대한 외부 키를 갖고 있는 경우에 문제가 생기는 것을 피"
+"할 수 있습니다."
 
 # 2daf7db2ef4543b2bf7499c9fd62b166
 #: ../../topics/auth.txt:99
@@ -3256,7 +3275,7 @@ msgstr ""
 # 36ef803f50d34a36a8a1043b14b7f600
 #: ../../topics/cache.txt:57
 msgid "Memcached"
-msgstr ""
+msgstr "Memcached"
 
 # 8b96b2eda5d2400eb6acb8cb8e57ebf8
 #: ../../topics/cache.txt:59
@@ -3849,7 +3868,7 @@ msgstr "잘못된 인자나, 알려진 인자에 대한 잘못된 값은 조용�
 # 02289ad223e5405e9d578940b6279ee1
 #: ../../topics/cache.txt:413
 msgid "The per-site cache"
-msgstr ""
+msgstr "사이트 별 캐시"
 
 # 2bb4dca3e1c6453d887de06ce29396a2
 #: ../../topics/cache.txt:415
@@ -3860,6 +3879,11 @@ msgid ""
 "FetchFromCacheMiddleware'`` to your :setting:`MIDDLEWARE_CLASSES` setting, "
 "as in this example::"
 msgstr ""
+"일단 캐시가 설정된 후에는, 캐시를 사용하는 가장 단순한 방법은 사이트 전체를 "
+"캐시하는 것입니다. 다음의 예와 같이, ``'django.middleware.cache."
+"UpdateCacheMiddleware'`` 와 ``'django.middleware.cache."
+"FetchFromCacheMiddleware'`` 를 :setting:`MIDDLEWARE_CLASSES` 설정에 추가합니"
+"다.::"
 
 # 4511890e8ef1471b81f12c50b2595ad3
 #: ../../topics/cache.txt:429
@@ -3868,17 +3892,21 @@ msgid ""
 "and the \"fetch\" middleware must be last. The details are a bit obscure, "
 "but see `Order of MIDDLEWARE_CLASSES`_ below if you'd like the full story."
 msgstr ""
+"아니오, 그것은 타이포가 아닙니다: \"update\" 미들웨어가 리스트의 처음에 나와"
+"야하며, \"fetch\" 미들웨어는 마지막에 나와야 합니다. 세부적으로 들어가면 다"
+"소 모호함이 있는데, 자초지종을 알려면 아래의 `Order of MIDDLEWARE_CLASSES`_ "
+"를 참조하세요."
 
 # 126b5d39a0784011802ce652be755ab8
 #: ../../topics/cache.txt:433
 msgid "Then, add the following required settings to your Django settings file:"
-msgstr ""
+msgstr "그런 다음, 다음의 필요 설정을 장고 설정 파일에 추가합니다:"
 
 # 01393e5372f047569c49e43858ee5afb
 #: ../../topics/cache.txt:435
 msgid ""
 ":setting:`CACHE_MIDDLEWARE_ALIAS` -- The cache alias to use for storage."
-msgstr ""
+msgstr ":setting:`CACHE_MIDDLEWARE_ALIAS` -- 스토리지의 사용을 위한 캐시 별칭."
 
 # 0f512bd31a904ccab81e7516a460bc54
 #: ../../topics/cache.txt:436
@@ -3886,6 +3914,8 @@ msgid ""
 ":setting:`CACHE_MIDDLEWARE_SECONDS` -- The number of seconds each page "
 "should be cached."
 msgstr ""
+":setting:`CACHE_MIDDLEWARE_SECONDS` -- 각 페이지가 캐시되어야 할 초 단위의 시"
+"간."
 
 # 39414a4bdeff4fba91da62b4fe1b3491
 #: ../../topics/cache.txt:438
@@ -3895,6 +3925,10 @@ msgid ""
 "the site, or some other string that is unique to this Django instance, to "
 "prevent key collisions. Use an empty string if you don't care."
 msgstr ""
+":setting:`CACHE_MIDDLEWARE_KEY_PREFIX` -- 캐시가 동일한 장고 설치를 사용하는 "
+"여러 사이트 간에서 공유되는 경우, 이것을 사이트의 이름으로 지정하거나, 이 장"
+"고 인스턴스에 대하여 유일한 문자열로 지정하여 키의 충돌을 방지합니다. 상관하"
+"지 않는 경우에는 빈 문자열을 사용합니다."
 
 # 43936c13688d447e93af38e4cb5da8ad
 #: ../../topics/cache.txt:443
@@ -3912,6 +3946,17 @@ msgid ""
 "request is answered with the same response headers as the corresponding GET "
 "request; in which case it can return a cached GET response for HEAD request."
 msgstr ""
+"캐시 미들웨어는 요청과 응답 헤더가 허용하는 경우, GET과 상태값이 200인 HEAD "
+"응답을 캐시합니다. 동일한 URL에 대하여 쿼리 파라메터가 다른 요청에 대한 응답"
+"은 유일한 페이지로 간주되어 각각 캐시됩니다. 선택사항으로서, :setting:"
+"`CACHE_MIDDLEWARE_ANONYMOUS_ONLY` 설정이 ``True`` 인 경우, 익명의 요청(예를 "
+"들어, 로그인한 사용자로부터의 요청이 아닌 것) 이 캐시됩니다. 이것은 특정 사용"
+"자에 국한된 페이지(장고 관리자 인터페이스를 포함)를 캐시하지 않도록 하는 데"
+"에 있어 단순하고도 효과적인 방법입니다. :setting:"
+"`CACHE_MIDDLEWARE_ANONYMOUS_ONLY` 를 사용하는 경우, "
+"``AuthenticationMiddleware`` 를 활성화해야 함에 유의하세요. 캐시 미들웨어는 "
+"GET 요청에 대응하는 HEAD 요청이 동일한 응답 헤더를 가질 것으로 기대하므로, "
+"이 경우 HEAD 요청에 대하여 캐시된 GET 응답을 반환할 수 있습니다."
 
 # 054363ba3a3342dc8c57b0d6cb0359a3
 #: ../../topics/cache.txt:456
@@ -3919,6 +3964,8 @@ msgid ""
 "Additionally, the cache middleware automatically sets a few headers in each :"
 "class:`~django.http.HttpResponse`:"
 msgstr ""
+"더불어, 캐시 미들웨어는 각 :class:`~django.http.HttpResponse` 내의 몇몇 헤더"
+"를 자동적으로 설정합니다.:"
 
 # 07f923d77afa4334b395effcf4da3c88
 #: ../../topics/cache.txt:459
@@ -3926,6 +3973,8 @@ msgid ""
 "Sets the ``Last-Modified`` header to the current date/time when a fresh "
 "(uncached) version of the page is requested."
 msgstr ""
+"페이지의 신선한(캐시되지 않은) 버전이 요청될 때 ``Last-Modified`` 헤더를 현"
+"재 날짜/시간으로 설정합니다."
 
 # 92c7c8d016344bd5b1ac026e6d7cea65
 #: ../../topics/cache.txt:462
@@ -3933,6 +3982,8 @@ msgid ""
 "Sets the ``Expires`` header to the current date/time plus the defined :"
 "setting:`CACHE_MIDDLEWARE_SECONDS`."
 msgstr ""
+"``Expires`` 헤더를 현재 날짜/시간과 정의된 :setting:"
+"`CACHE_MIDDLEWARE_SECONDS` 를 더한 값으로 설정합니다."
 
 # 035373d1bf804e1a8fe110d9b214de88
 #: ../../topics/cache.txt:465
@@ -3940,11 +3991,14 @@ msgid ""
 "Sets the ``Cache-Control`` header to give a max age for the page -- again, "
 "from the :setting:`CACHE_MIDDLEWARE_SECONDS` setting."
 msgstr ""
+"``Cache-Control`` 헤더를 페이지에 대한 최대 age를 주도록 설정합니다 -- 역"
+"시, :setting:`CACHE_MIDDLEWARE_SECONDS` 설정을 따릅니다."
 
 # 65f4ec49f58e47598d7575eb462fe186
 #: ../../topics/cache.txt:468
 msgid "See :doc:`/topics/http/middleware` for more on middleware."
 msgstr ""
+"미들웨어에 대한 자세한 내용은 :doc:`/topics/http/middleware` 를 참조하세요."
 
 # 85eb4697dc6c490d88127c938a6fc958
 #: ../../topics/cache.txt:470
@@ -3957,6 +4011,13 @@ msgid ""
 "view (using the ``never_cache`` decorator). See the `using other headers`__ "
 "section for more on these decorators."
 msgstr ""
+"뷰에 자체적인 캐시 만료 시간이 설정된 경우(즉, ``Cache-Control`` 헤더에 "
+"``max-age`` 섹션이 있는 경우) 페이지는 :setting:`CACHE_MIDDLEWARE_SECONDS` "
+"를 지키지 않고 만료 시간까지 캐시됩니다. ``django.views.decorators.cache`` 내"
+"의 장식자를 사용하여 뷰의 만료 시간을 쉽게 설정하거나(``cache_control`` 장식"
+"자를 사용), 뷰에 대한 캐시를 사용하지 않도록 할 수 있습니다(``never_cache`` "
+"장식자를 사용). 이러한 장식자에 대해서는 `using other headers`__ 섹션을 참조"
+"하세요."
 
 # 46f21a8d74064551a2f7d557e56414d5
 #: ../../topics/cache.txt:480
@@ -3966,6 +4027,10 @@ msgid ""
 "ref:`how-django-discovers-language-preference`). This allows you to easily "
 "cache multilingual sites without having to create the cache key yourself."
 msgstr ""
+":setting:`USE_I18N` 설정이 ``True`` 인 경우 생성된 캐시 키는 활성화된 :term:"
+"`language<language code>` 를 포함합니다(:ref:`how-django-discovers-language-"
+"preference` 참조). 다국어 사이트에서 캐시 키를 직접 만드느라 애쓰지 않아도 됩"
+"니다."
 
 # 4667d05ac00c4e6e9203aa94c6d8c2ae
 #: ../../topics/cache.txt:487
@@ -3974,6 +4039,9 @@ msgid ""
 "setting:`USE_L10N` is set to ``True`` and the :ref:`current time zone "
 "<default-current-time-zone>` when :setting:`USE_TZ` is set to ``True``."
 msgstr ""
+"또한 :setting:`USE_L10N` 이 ``True`` 이고 :ref:`current time zone <default-"
+"current-time-zone>` :setting:`USE_TZ` 설정이 ``True`` 일 때 캐시 키에는 활성"
+"화된 :term:`language <language code>` 를 포함합니다"
 
 # 705e71f6e0244c3c846e1a86f17e35d3
 #: ../../topics/cache.txt:494
