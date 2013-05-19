@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Django Docs Korean\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-12-13 09:00\n"
-"PO-Revision-Date: 2013-02-02 21:27+0900\n"
+"PO-Revision-Date: 2013-02-03 16:51+0900\n"
 "Last-Translator: Yong Choi <sk8er.choi@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/projects/p/django-docs-"
 "korean/language/ko/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 # 5081f3cce5fe47528f72b78c93e86ffa
 #: ../../faq/admin.txt:2
 msgid "FAQ: The admin"
-msgstr "ÀÚÁÖ ¹¯´Â Áú¹®: °ü¸®ÀÚ"
+msgstr "ìì£¼ ë¬»ëŠ” ì§ˆë¬¸: ê´€ë¦¬ì"
 
 # 22869876a4aa435cb7957ec295fd48ec
 #: ../../faq/admin.txt:5
@@ -30,8 +30,8 @@ msgid ""
 "I can't log in. When I enter a valid username and password, it just brings "
 "up the login page again, with no error messages."
 msgstr ""
-"·Î±×ÀÎÇÒ ¼ö ¾ø½À´Ï´Ù. À¯È¿ÇÑ »ç¿ëÀÚ¸í°ú ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÏ¿´Áö¸¸, ¾Æ¹«·± ¿À·ù "
-"¸Ş½ÃÁö ¾øÀÌ ·Î±×ÀÎ ÆäÀÌÁö¸¸ ´Ù½Ã ³ª¿É´Ï´Ù."
+"ë¡œê·¸ì¸í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ìœ íš¨í•œ ì‚¬ìš©ìëª…ê³¼ ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì˜€ì§€ë§Œ, ì•„ë¬´ëŸ° ì˜¤ë¥˜ "
+"ë©”ì‹œì§€ ì—†ì´ ë¡œê·¸ì¸ í˜ì´ì§€ë§Œ ë‹¤ì‹œ ë‚˜ì˜µë‹ˆë‹¤."
 
 # 25719c379aa64af387f15d844ae370d0
 #: ../../faq/admin.txt:7
@@ -242,7 +242,7 @@ msgstr ""
 # 56f93870b72e482082b2d0067ed52aaa
 #: ../../faq/admin.txt:117
 msgid ""
-"There *may* be minor stylistic differences between supported browsers?ë´£or "
+"There *may* be minor stylistic differences between supported browsers?éŠì¦£r "
 "example, some browsers may not support rounded corners. These are considered "
 "acceptable variations in rendering."
 msgstr ""
@@ -435,7 +435,7 @@ msgstr ""
 # a04a8b0e5bb34b65a5d28a4b2e0fc905
 #: ../../faq/general.txt:2
 msgid "FAQ: General"
-msgstr "FAQ: ??°ì»²"
+msgstr "ìì£¼ ë¬»ëŠ” ì§ˆë¬¸: ì¼ë°˜"
 
 # 711e70bbb8004109b0deac10571ade14
 #: ../../faq/general.txt:5
@@ -496,7 +496,7 @@ msgstr ""
 # d3d0fa6af062407aa4242730dbf3aa83
 #: ../../faq/general.txt:37
 msgid "Listen to his music. You'll like it."
-msgstr "ê·¸ì˜ ?Œì•…???¤ì–´ë³´ì„¸?? ì¢‹ì•„?˜ì‹¤ ê²ë‹ˆ??"
+msgstr "ê·¸ì˜ ìŒì•…ì„ ë“¤ì–´ë³´ì„¸ìš”. ì¢‹ì•„í•˜ì‹¤ ê²ë‹ˆë‹¤."
 
 # d3c79fdbedf144719d5c3f40c8a6ca74
 #: ../../faq/general.txt:39
