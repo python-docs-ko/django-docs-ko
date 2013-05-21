@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Django Docs Korean\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-27 10:43\n"
-"PO-Revision-Date: 2013-05-21 17:16+0900\n"
+"PO-Revision-Date: 2013-05-21 18:59+0900\n"
 "Last-Translator: Yong Choi <sk8er.choi@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/projects/p/django-docs-"
 "korean/language/ko/)\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.5\n"
 
 # 3ad91db2a03e474a807c410658a078c1
 #: ../../intro/contributing.txt:3
@@ -92,7 +92,7 @@ msgid ""
 "For the most part though, this tutorial tries to explain as much as "
 "possible, so that it can be of use to the widest audience."
 msgstr ""
-"하지만 대부분의 경우,이 튜토리얼은 폭넓은 독자에게 사용이 될 수 있도록 최대"
+"하지만 대부분의 경우, 이 튜토리얼은 폭넓은 독자에게 사용이 될 수 있도록 최대"
 "한 설명하려고 합니다."
 
 # 1ad43bd1beee4f3a881d4d78f24b3a3f
@@ -126,7 +126,7 @@ msgstr ""
 # d00c755b1b314df98c5730ab93f0155c
 #: ../../intro/contributing.txt:52
 msgid "Installing Git."
-msgstr "GIT를 설치합니다."
+msgstr "GIT를 설치."
 
 # 34697a55fe354533be7f05b31bbde7b6
 #: ../../intro/contributing.txt:53
@@ -136,7 +136,7 @@ msgstr "장고의 개발 사본을 다운로드하는 방법."
 # 935359abf3d2455a9932471caf63f34c
 #: ../../intro/contributing.txt:54
 msgid "Running Django's test suite."
-msgstr "장고의 테스트 스위트를 실행할 수 있습니다."
+msgstr "장고의 테스트 스위트를 실행."
 
 # 657930f4850544bc9c99d5dae2a00662
 #: ../../intro/contributing.txt:55
@@ -151,7 +151,7 @@ msgstr "패치의 코드를 작성."
 # ba3b5dcacf5443c99f026ab498b26fee
 #: ../../intro/contributing.txt:57
 msgid "Testing your patch."
-msgstr "패치를 테스트합니다."
+msgstr "패치를 테스트."
 
 # b7702ec95bbd40939c7141fe8664e12e
 #: ../../intro/contributing.txt:58
@@ -536,6 +536,9 @@ msgid ""
 "py`` file. Add the following code on line 269 right before the "
 "``AdminFileWidgetTest`` class::"
 msgstr ""
+"Django의 ``tests/admin_widgets/`` 폴더로 이동하여 ``tests.py`` 파일을 엽니"
+"다. 269 행의 다음과 같은 코드를 ``AdminFileWidgetTest`` 클래스의 바로 앞에 추"
+"가합니다. ::"
 
 # 26afc7946a6f47d4830db0680a1bcdcd
 #: ../../intro/contributing.txt:276
@@ -586,7 +589,7 @@ msgstr ""
 # e66eb911053d4dd6aad4535256e327af
 #: ../../intro/contributing.txt:297
 msgid "Running your new test"
-msgstr ""
+msgstr "테스트를 수행"
 
 # 6f14a87cfb9c4c9ab6c5a220b91364ff
 #: ../../intro/contributing.txt:299
@@ -597,6 +600,10 @@ msgid ""
 "what happens. From the command line, ``cd`` into the Django ``tests/`` "
 "directory and run::"
 msgstr ""
+"우리는 아직 ``AdminURLFieldWidget``\\ 를 실제로 수정하지 않았으므로, 우리의 "
+"테스트는 실패할 것이라는 점을 기억하세요. ``model_forms_regress`` 폴더의 모"
+"든 테스트를 수행하여 정말 그렇게 되는지 확인해보도록 하겠습니다. 명령행에서 "
+"Django ``tests/`` 디렉토리로 ``cd``\\ 하여 다음과 같이 실행합니다. ::"
 
 # a7ee3bfb6edd44aa855207ce92e4f725
 #: ../../intro/contributing.txt:307
@@ -606,11 +613,14 @@ msgid ""
 "want to make sure that you added the new test shown above to the appropriate "
 "folder and class."
 msgstr ""
+"테스트가 올바로 수행되면, 우리가 추가한 테스트 메소드 각각에 관련된 세 건의 "
+"실패를 확인할 수 있을 것입니다. 모든 테스트가 성공했다면, 새로운 테스트를 올"
+"바른 폴더와 클래스에 추가한 것인지 다시 확인해보시기 바랍니다."
 
 # 524be2786746439c99cad364728aaf3f
 #: ../../intro/contributing.txt:313
 msgid "Writing the code for your ticket"
-msgstr ""
+msgstr "티켓에 대한 코드를 작성"
 
 # 2bdba2f2376e49b795b523f71987b526
 #: ../../intro/contributing.txt:315
@@ -618,11 +628,13 @@ msgid ""
 "Next we'll be adding the functionality described in `ticket #17549`__ to "
 "Django."
 msgstr ""
+"다음으로는 `ticket #17549`__\\ 에서 기술한 기능을 Django에 추가해보도록 하겠"
+"습니다."
 
 # 249672646dc54eb88598941b88450744
 #: ../../intro/contributing.txt:318
 msgid "Writing the code for ticket #17549"
-msgstr ""
+msgstr "티켓 #17549에 대한 코드를 작성"
 
 # ba505af736344898b86cc93cd45bd203
 #: ../../intro/contributing.txt:320
@@ -631,11 +643,14 @@ msgid ""
 "``widgets.py`` file. Find the ``AdminURLFieldWidget`` class on line 302 and "
 "add the following ``render`` method after the existing ``__init__`` method::"
 msgstr ""
+"``django/django/contrib/admin/`` 폴더로 이동하여 ``widgets.py`` 파일을 엽니"
+"다. 302 행의 ``AdminURLFieldWidget`` 클래스를 찾아서 기존의 ``__init__`` 메소"
+"드 이후에 다음과 같이 ``render`` 메소드를 추가합니다. ::"
 
 # 6a3ccbb1380e433b8aced1117e5931fd
 #: ../../intro/contributing.txt:337
 msgid "Verifying your test now passes"
-msgstr ""
+msgstr "이제 테스트가 통과하는지 확인"
 
 # 58dec04dcfa240da8c34e7c51c67329d
 #: ../../intro/contributing.txt:339
@@ -645,6 +660,10 @@ msgid ""
 "correctly. To run the tests in the ``admin_widgets`` folder, ``cd`` into the "
 "Django ``tests/`` directory and run::"
 msgstr ""
+"일단 Django에 대한 수정을 하였으면, 우리는 앞서 우리가 작성한 테스트가 통과하"
+"는지 확인함으로써, 우리가 위에서 작성한 코드가 제대로 작동하는지 확인할 수 있"
+"습니다. ``admin_widgets`` 폴더에서 테스트를 실행하려면, Django ``tests/`` 디"
+"렉토리로 ``cd``\\ 하여 다음과 같이 실해합니다. ::"
 
 # c00ddec456be4e139d9654bdaff3e121
 #: ../../intro/contributing.txt:346
@@ -652,6 +671,8 @@ msgid ""
 "Oops, good thing we wrote those tests! You should still see 3 failures with "
 "the following exception::"
 msgstr ""
+"이런, 테스트를 작성해두길 잘 했군요! 여전히 다음과 같은 예외가 발생하여 세 건"
+"이 실패했습니다. ::"
 
 # 7dc0903da79245fdab91ffc367eca934
 #: ../../intro/contributing.txt:351
@@ -660,6 +681,9 @@ msgid ""
 "``smart_urlquote`` import at the end of line 13 of ``django/contrib/admin/"
 "widgets.py`` so it looks as follows::"
 msgstr ""
+"그 메소드에 대해 import를 추가하는 것을 잊었습니다. 계속해서 다음과 같이 "
+"``smart_urlquote`` import를 ``django/contrib/admin/widgets.py``\\ 의 13 행 끝"
+"에 추가합니다. ::"
 
 # d06414a9cf5049e4be8032ec473fc09f
 #: ../../intro/contributing.txt:357
@@ -668,6 +692,9 @@ msgid ""
 "correctly modified the ``AdminURLFieldWidget`` class as shown above and "
 "copied the new tests correctly."
 msgstr ""
+"테스트를 재수행하면 모두 통과할 것입니다. 그렇지 않다면, "
+"``AdminURLFieldWidget`` 클래스를 위와 같이 올바로 수정하였고 새로운 테스트를 "
+"올바로 복사했는지 확인해보시기 바랍니다."
 
 # 59576ee8b324416ab0e431df50c57364
 #: ../../intro/contributing.txt:364
@@ -782,6 +809,11 @@ msgid ""
 "more :doc:`git oriented workflow </internals/contributing/writing-code/"
 "working-with-git>` is recommended."
 msgstr ""
+"축하합니다, 당신은 첫 번째 장고 패치를 생성했습니다! 지금 당신은 당신의 벨트 "
+"아래에, 당신은 장고의 코드베이스를 개선하는 데 도움으로 잘 사용하는 기술을 습"
+"득했습니다. 패치를 생성하고 Trac에 티켓에 붙이는 것은 유용하지만, 우리는 git"
+"을 사용하므로  :doc:`git oriented workflow </internals/contributing/writing-"
+"code/working-with-git>`\\ 를 추천합니다."
 
 # 96e041da5d1748cbbf7783f7fe701647
 #: ../../intro/contributing.txt:523
@@ -811,6 +843,10 @@ msgid ""
 "yourself, expected coding style for patches, and many other important "
 "details."
 msgstr ""
+"Django의 :doc:`claiming tickets and submitting patches </internals/"
+"contributing/writing-code/submitting-patches>` 문서를 꼭 읽어보시기 바랍니"
+"다. Trac의 에티켓, 티켓을 만드는 방법, 패치에서 기대하는 코딩 스타일, 기타 중"
+"요한 세부 사항을 다룹니다."
 
 # 862084a800e040988ea1d824dc65d537
 #: ../../intro/contributing.txt:540
@@ -833,7 +869,7 @@ msgstr ""
 # 1aa1fd1f1a09485191b8a0f037ae630d
 #: ../../intro/contributing.txt:551
 msgid "Finding your first real ticket"
-msgstr ""
+msgstr "첫번재 진짜 티켓을 찾기"
 
 # a30100da224544bdb1d651ad18a4a98b
 #: ../../intro/contributing.txt:553
@@ -845,6 +881,11 @@ msgid ""
 "Once you're familiar with contributing to Django, you can move on to writing "
 "patches for more difficult and complicated tickets."
 msgstr ""
+"위의 내용을 살펴보았으므로, 여러분은 스스로 패치를 작성할 만한 티켓을 찾으러 "
+"나갈 준비가 되었습니다. \"easy pickings\"로 분류된 티켓들을 특히 주의를 기울"
+"이세요. 이런 티켓들은 간단한 것들이라 처음 기여하려는 사람들에게 적당합니다. "
+"일단 Django에 기여하는 것에 익숙해지고 나면, 더 어렵고 복잡한 티켓에 대한 패"
+"치를 작성할 수 있게 될 것입니다."
 
 # cb51b49e4137427087aaf64e1e8d2cdb
 #: ../../intro/contributing.txt:560
@@ -858,6 +899,12 @@ msgid ""
 "`claiming tickets and submitting patches </internals/contributing/writing-"
 "code/submitting-patches>`."
 msgstr ""
+"당장 시작하고 싶다면 (아무도 비난하지 않을 거예요!), `easy tickets that need "
+"patches`_ 와 `easy tickets that have patches which need improvement`__ 목록"
+"을 살펴보시기 바랍니다. 테스트를 작성하는 데에 익숙하다면, `easy tickets "
+"that need tests`__ 목록도 살펴보시기 바랍니다. :doc:`claiming tickets and "
+"submitting patches </internals/contributing/writing-code/submitting-"
+"patches>` 문서의 안내를 잘 따르는 것만 기억하시면 됩니다."
 
 # 300fdf3132874d05a4b4f10f2b4b7669
 # 76ceea6d44264a44840d0c3518eac155
@@ -878,6 +925,12 @@ msgid ""
 "existing patches is also a very helpful contribution. See :doc:`/internals/"
 "contributing/triaging-tickets` for details."
 msgstr ""
+"티켓이 패치를 갖게 된 후에는, 다른 이들에게 검토를 받아야 합니다. 패치를 업로"
+"드하거나 pull 요청을 한 후에는, \"has patch\", \"doesn't need tests\" 등 티켓"
+"에 대한 플래그를 설정함으로써 메타데이터를 수정하여, 다른 사람들이 검토가 필"
+"요한 것을 찾을 수 있도록 해야 합니다. 공헌이라는 것은 패치를 처음부터 작성하"
+"는 것만을 의미하는 것이 아닙니다. 기존의 패치를 검토하는 것도 큰 도움이 됩니"
+"다. :doc:`/internals/contributing/triaging-tickets`\\ 를 참조하시기 바랍니다."
 
 # 2b4475e3b2be46388b73357073032837
 #: ../../intro/index.txt:2
@@ -898,6 +951,9 @@ msgid ""
 "the language is like. Django is 100% Python, so if you've got minimal "
 "comfort with Python you'll probably get a lot more out of Django."
 msgstr ""
+"Python_\\ 이 처음이라면, 그것이 어떤 언어인지 알아보고 싶을 것입니다. Django"
+"는 100% 파이썬으로 작성되었으므로, 파이썬에 대해 익숙하다면 Django에 대해서 "
+"보다 잘 알 수 있을 것입니다."
 
 # b102091c4757477c97d2de2654ae8519
 #: ../../intro/index.txt:28
@@ -905,6 +961,8 @@ msgid ""
 "If you're new to programming entirely, you might want to start with this "
 "`list of Python resources for non-programmers`_"
 msgstr ""
+"프로그래밍을 전혀 해보지 않았다면 `list of Python resources for non-"
+"programmers`_\\ 에서 시작하시기를 권합니다."
 
 # b6f06e635d8246e6b381b7eb5d96cf7e
 #: ../../intro/index.txt:31
@@ -914,6 +972,9 @@ msgid ""
 "`Python 3`_, also available in a `dead-tree version`_). If that's not quite "
 "your style, there are quite a few other `books about Python`_."
 msgstr ""
+"다른 몇 가지 언어를 이미 알고 있어서 파이썬을 재빨리 배우고 싶다면, \"파이썬"
+"으로 뛰어들기\"(`Python 2`_, `Python 3`_ 및 `dead-tree version`_)을 추천합니"
+"다. 여러분의 취향에 맞지 않다면, 다른 `books about Python`_\\ 들도 있습니다."
 
 # 6f82d1d2f447430ba6c6e533d05559a7
 #: ../../intro/install.txt:2
@@ -1154,6 +1215,9 @@ msgid ""
 "queries>` to access your data. The API is created on the fly, no code "
 "generation necessary:"
 msgstr ""
+"여러분의 데이터에 접근하기 위한 무료의 풍성한 :doc:`Python API </topics/db/"
+"queries>`\\ 가 있습니다. API는 즉석에서 만들어지며, 코드 생성이 필요하지 않습"
+"니다."
 
 # 15353a0173244d3880f7050e318ef112
 #: ../../intro/overview.txt:133
@@ -1174,7 +1238,9 @@ msgstr ""
 "일단 모델이 정의되었다면 Django는 전문적이고 바로 써먹을수 있는 :doc:`관리자 "
 "인터페이스 </ref/contrib/admin/index>`\\ 를 자동으로 만들수 있습니다 -- 관리"
 "자 인터페이스는 인증된 사용자가 개체를 추가하고 변경하고 삭제할 수 있는 웹사"
-"이트입니다. 관리자 사이트에 모델 개체를 등록하는건 정말 쉽습니다.::"
+"이트입니다. 관리자 사이트에 모델 개체를 등록하는건 정말 쉽습니다.\n"
+"\n"
+"::"
 
 # b86e68066a3f4b8994a78cf8ae0c5a9a
 #: ../../intro/overview.txt:158
@@ -1306,8 +1372,10 @@ msgid ""
 "view for ``year_archive`` from above::"
 msgstr ""
 "일반적으로 뷰는 파라미터들에 따라 데이터를 가져오며 템플릿을 로드하고 템플릿"
-"을 가져온 데이타로 렌더링합니다. 아래는 위에서 만든 ``year_archive`` 에 대한 "
-"예제 뷰 입니다.::"
+"을 가져온 데이타로 렌더링합니다. 아래는 위에서 만든 ``year_archive``\\ 에 대"
+"한 예제 뷰입니다.\n"
+"\n"
+"::"
 
 # 9b062b86f49245e68decaed7d26355a8
 #: ../../intro/overview.txt:221
@@ -1338,6 +1406,10 @@ msgid ""
 "to check for templates. If a template doesn't exist in the first directory, "
 "it checks the second, and so on."
 msgstr ""
+"Django는 템플릿들 간의 중복을 최소화 할수 있도록 템플릿 검색경로를 가지고 있"
+"습니다. 여러분의 Django 설정에서 템플릿들을 불러올 디렉토리 목록을 정의합니"
+"다. 만약 첫번째 디렉토리에서 템플릿이 존재하지 않는다면 두번째를 확인하는 식"
+"으로 쭉 나아갑니다."
 
 # 82d3869b69124452886a46e346f7647b
 #: ../../intro/overview.txt:235
@@ -1345,6 +1417,10 @@ msgid ""
 "Let's say the ``news/year_archive.html`` template was found. Here's what "
 "that might look like:"
 msgstr ""
+"``news/year_archive.html`` 템플릿을 발견 했다고 합시다. 아마도 이런 모양일 것"
+"입니다.\n"
+"\n"
+"::"
 
 # 4cb2c1306e2e4edaa483489b06418a82
 #: ../../intro/overview.txt:254
@@ -1354,6 +1430,10 @@ msgid ""
 "aren't used only for attribute lookup: They also can do dictionary-key "
 "lookup, index lookup and function calls."
 msgstr ""
+"변수는 이중 중괄호로 둘러싸입니다. ``{{ article.headline }}``\\ 의 뜻은 "
+"“article의 headline 어트리뷰트의 값을 출력하겠다.” 입니다. 하지만 마침표가 어"
+"트리뷰트의 조회에만 사용되는것은 아닙니다. 점은 사전의 키 조회에도 사용될수 "
+"있으며 인덱스 조회와 함수 호출에도 사용될 수 있습니다."
 
 # c8c223e41bee4bb2a8df85094d27732e
 #: ../../intro/overview.txt:259
@@ -1363,6 +1443,11 @@ msgid ""
 "to filter the value of a variable. In this case, the date filter formats a "
 "Python datetime object in the given format (as found in PHP's date function)."
 msgstr ""
+"참고로 ``{{ article.pub_date|date:\"F j, Y\" }}``\\ 는 유닉스 스타일의 “파이"
+"프”(“|” 문자)를 사용한것입니다. 이 파이프는 템플릿 필터를 호출하며 이를 통해 "
+"변수의 값을 필터링 할 수 있습니다. 이 코드에서 date 필터는 파이썬의 datetime "
+"개체를 지정한 포맷으로 변환 시킵니다.(PHP의 date 함수처럼 말이죠, 네 PHP 의 "
+"좋은 아이디어 중에 하나입니다.)"
 
 # 4f339c7dee5c4d4e92035c7c3ba7d6f2
 #: ../../intro/overview.txt:264
@@ -1371,6 +1456,8 @@ msgid ""
 "filters. You can write custom template tags, which run custom Python code "
 "behind the scenes."
 msgstr ""
+"여러분은 많은 수의 필터를 원하는대로 연결시킬 수 있습니다. 그리고 뒤에서 커스"
+"텀 파이썬 코드를 실행시키는 커스텀 탬플릿 태그들을 작성할수 있습니다."
 
 # 631e9953db2c4c96b6e9dfc68ac546c7
 #: ../../intro/overview.txt:268
@@ -1382,6 +1469,12 @@ msgid ""
 "redundancy in templates: each template has to define only what's unique to "
 "that template."
 msgstr ""
+"이제 마지막으로 Django의 “템플릿 상속” 개념을 사용해 보죠. 이를 통해 ``{% "
+"extends \"base.html\" %}`` 코드가 무슨 일을 하는지 알 수 있습니다. 이 코드의 "
+"의미는 ” 한 뭉치의 block들이 정의된 ‘base’라는 템플릿을 먼저 로드하고 뒤따르"
+"는 block들로 이 block들을 채운다는것” 입니다. 간단히 말해 템플릿안의 중복을 "
+"극적으로 낮추게 합니다. 각각의 템플릿은 자신이 표현하려는 내용들만 정의할수 "
+"있게 되기 때문입니다."
 
 # c8407b55207d4efaab2e8e603b43ddfe
 #: ../../intro/overview.txt:274
@@ -1389,6 +1482,8 @@ msgid ""
 "Here's what the \"base.html\" template, including the use of :doc:`static "
 "files </howto/static-files/index>`, might look like:"
 msgstr ""
+"“base.html” 템플릿은 :doc:`static files </howto/static-files/index>`\\ 의 사"
+"용을 포함하여, 다음과 같이 채워져 있을 것입니다."
 
 # be7c7ee367204960a629fb3ea99ec60f
 #: ../../intro/overview.txt:290
@@ -1397,6 +1492,9 @@ msgid ""
 "logo), and provides \"holes\" for child templates to fill. This makes a site "
 "redesign as easy as changing a single file -- the base template."
 msgstr ""
+"간단하게 사이트의 룩앤필(사이트의 로고)을 정의하고 자식 템플릿이 내용을 채워"
+"넣을 “구멍”들을 제공합니다. 이러한 방식은 사이트의 디자인 변경을 ‘base’ 템플"
+"릿 파일 하나를 바꾸는 것 같이 쉬운 방법으로 가능하게 해줍니다."
 
 # cfafd9c4fa7241cebea0b7b8267528c4
 #: ../../intro/overview.txt:294
@@ -1406,6 +1504,9 @@ msgid ""
 "technique to create strikingly different cell-phone editions of sites -- "
 "simply by creating a new base template."
 msgstr ""
+"또한 자식 템플릿을 재활용해서 서로 다른 base 템플릿으로 여러 버전의 사이트를 "
+"만들수 있게 합니다. Django의 제작자는 이러한 테크닉으로 완전히 다른 모바일 버"
+"전의 사이트를 만들었습니다. 간단히 새로운 base 템플릿을 만드는것으로 말이죠."
 
 # 2736d20d38d34346afb07ed8d039d9c0
 #: ../../intro/overview.txt:299
@@ -1418,11 +1519,18 @@ msgid ""
 "files off disk, or anything you want. Each piece of Django -- models, views, "
 "templates -- is decoupled from the next."
 msgstr ""
+"여러분이 선호하는 템플릿 시스템이 있다면 꼭 Django의 템플릿 시스템을 사용할 "
+"필요는 없습니다. Django의 템플릿 시스템은 Django의 모델계층과 매우 잘 통합되"
+"어 있지만 꼭 이를 사용하도록 강제하는 것은 아닙니다. 이러한 이유들로 Django"
+"의 database API 역시 반드시 써야할 필요는 없습니다. 여러분은 다른 데이터베이"
+"스 추상화 계층을 사용할수 있으며 XML 파일이나 디스크에서 다른파일을 사용하거"
+"나 여러분이 원하는 다른 여러가지 방식으로 사용할수도 있습니다. 각각의 Django "
+"구성요소들 – 모델, 뷰, 템플릿 – 은 서로 결합도가 낮게 되어있습니다."
 
 # 2da8fa7fef3f4593a17d64b5f81c6758
 #: ../../intro/overview.txt:308
 msgid "This is just the surface"
-msgstr ""
+msgstr "이건 단지 껍데기일 뿐"
 
 # 060ed53a00ad48f09c48aa3dff1e0d5f
 #: ../../intro/overview.txt:310
@@ -1430,6 +1538,8 @@ msgid ""
 "This has been only a quick overview of Django's functionality. Some more "
 "useful features:"
 msgstr ""
+"이건 Django의 기능에 대한 간략한 개요에 불과합니다. 다음과 같이 좀 더 유용한 "
+"기능들도 많습니다."
 
 # 003264306d8c450a878a75fe50eddd8a
 #: ../../intro/overview.txt:313
@@ -1437,6 +1547,7 @@ msgid ""
 "A :doc:`caching framework </topics/cache>` that integrates with memcached or "
 "other backends."
 msgstr ""
+"memached 및 기타 백엔드와 통합된 :doc:`캐시 프레임워크 </topics/cache>`."
 
 # 9446be2ddb2640f8b236deb3d4e07b9d
 #: ../../intro/overview.txt:316
@@ -1444,13 +1555,15 @@ msgid ""
 "A :doc:`syndication framework </ref/contrib/syndication>` that makes "
 "creating RSS and Atom feeds as easy as writing a small Python class."
 msgstr ""
+"RSS와 Atom 피드를 매우 적은 파이썬 클래스 작성으로 쉽게 만들어주는 :doc:`신디"
+"케이션 프레임워크 </ref/contrib/syndication>`."
 
 # 828711010efe4259a2c61e04de0984b5
 #: ../../intro/overview.txt:319
 msgid ""
 "More sexy automatically-generated admin features -- this overview barely "
 "scratched the surface."
-msgstr ""
+msgstr "아주 매력적인 자동 생성 관리자 기능 – 이 개요문서는 맛보기일 뿐입니다."
 
 # e675148c9d354b598639b7ed9a37bb73
 #: ../../intro/overview.txt:322
@@ -1459,6 +1572,9 @@ msgid ""
 "tutorial </intro/tutorial01>` and join `the community`_. Thanks for your "
 "interest!"
 msgstr ""
+"여러분이 앞으로 거쳐갈 단계는 `download Django`_, :doc:`튜토리얼 </intro/"
+"tutorial01>`\\ 을 읽고 `the community`_\\ 에 참여하는 것입니다. 여러분의 관심"
+"에 감사드립니다."
 
 # 39c843979ebf47e495286de546cab2fa
 #: ../../intro/reusable-apps.txt:3
@@ -5890,6 +6006,9 @@ msgid ""
 "monitor the ticket system and use your feedback to improve the documentation "
 "for everybody."
 msgstr ""
+"문서를 개선할 수 있도록 돕는, `ticket system`_\\ 을 통한 교정과 제안도 환영합"
+"니다. Django 개발자는 티켓 시스템을 주시하고 있으며 여러분이 주시는 의견은 우"
+"리 모두를 위한 문서를 개선하는 데에 도움이 됩니다."
 
 # 6bfd42095d3d4df1b77e2aeff3ba530d
 #: ../../intro/whatsnext.txt:121
@@ -5899,6 +6018,10 @@ msgid ""
 "particular Django setup, try the `django-users mailing list`_ or the "
 "`#django IRC channel`_ instead."
 msgstr ""
+"한 가지 주의할 점은, 티켓은 명시적으로 문서에 관련되어야 하며, 기술적인 질문"
+"을 하는 용도로 쓰여서는 안됩니다. Django 설치에 대해 도움이 필요하실 때에는 "
+"`django-users mailing list`_ 또는 `#django IRC channel`_ \\ 에서 말씀하시기 "
+"바랍니다."
 
 # d31b635b3ae54b8184b2c76a535d2372
 #: ../../intro/whatsnext.txt:131
