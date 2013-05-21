@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Django Docs Korean\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-27 10:43\n"
-"PO-Revision-Date: 2013-05-19 11:51+0900\n"
+"PO-Revision-Date: 2013-05-21 17:16+0900\n"
 "Last-Translator: Yong Choi <sk8er.choi@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/projects/p/django-docs-"
 "korean/language/ko/)\n"
@@ -67,6 +67,12 @@ msgid ""
 "`Python 3`__) is a fantastic (and free) online book for beginning Python "
 "programmers."
 msgstr ""
+"이 튜토리얼에서는 독자가 Django가 어떻게 동작하는지에 대한 기초 지식을 갖고 "
+"있다고 가정합니다. 즉, :doc:`첫 번째 Django 앱 만들기 </intro/tutorial01>`\\ "
+"에서 다루는 내용에 대해서 숙지하고 있어야 합니다. 그외에 여러분은 파이썬 자체"
+"에 대해 잘 이해하고 있어야 합니다. 그렇지 않은 분은, 초보 파이썬 프로그래머"
+"를 위한 훌륭한 온라인북인 \"파이썬으로 뛰어들기\" (`Python 2`__, `Python "
+"3`__)를 읽어보시기를 권합니다."
 
 # b5fa0cfc8a944efbad9cf96fcd3b1ef6
 #: ../../intro/contributing.txt:26
@@ -130,7 +136,7 @@ msgstr "장고의 개발 사본을 다운로드하는 방법."
 # 935359abf3d2455a9932471caf63f34c
 #: ../../intro/contributing.txt:54
 msgid "Running Django's test suite."
-msgstr "장고의 테스트를 실행할 수 있습니다."
+msgstr "장고의 테스트 스위트를 실행할 수 있습니다."
 
 # 657930f4850544bc9c99d5dae2a00662
 #: ../../intro/contributing.txt:55
@@ -193,9 +199,9 @@ msgid ""
 "command line. If you get messages saying that this command could be found, "
 "you'll have to download and install it, see `Git's download page`__."
 msgstr ""
-"Git이 설치되었는지 확인하기 위해서는, 명령행에 ``git``을 입력합니다. 명령을 "
-"찾을 수 없다는 메시지가 보인다면, `Git's download page`__\\ 를 참조하여 다운"
-"로드하고 설치합니다."
+"Git이 설치되었는지 확인하기 위해서는, 명령행에 ``git``\\ 을 입력합니다. 명령"
+"을 찾을 수 없다는 메시지가 보인다면, `Git's download page`__\\ 를 참조하여 다"
+"운로드하고 설치합니다."
 
 # d9ad275828c949e39d6ae58cb7483a11
 #: ../../intro/contributing.txt:78
@@ -242,6 +248,10 @@ msgid ""
 "option to isolate your development copy of Django from the rest of your "
 "system and avoids potential package conflicts."
 msgstr ""
+"(``django``\\ 는 ``setup.py``\\ 를 포함하는 클론의 디렉토리입니다) 가상 환경"
+"으로 복제 체크 아웃을 연결합니다. 이것은 Django의 개발 사본을 시스템의 다른 "
+"부분으로부터 분리함으로써 패키지 충돌이 일어나는 것을 피할 수 있는 좋은 방법"
+"입니다."
 
 # 4687966aba7a48ec8b56ac0eef8a42e0
 #: ../../intro/contributing.txt:108
@@ -258,8 +268,8 @@ msgid ""
 msgstr ""
 "이 튜토리얼에서, 우리는 `ticket #17549`__\\ 에 대한 사례 연구를 통해, 해당 티"
 "켓의 패치를 적용하기에 앞서 git에서 Django의 버전 히스토리를 반추할 것입니"
-"다. 이를 통해 Django의 테스트 슈트를 실행하는 것을 포함하여, 패치를 작성하는 "
-"데에 있어서 거치는 단계를 차근차근 따라가보도록 하겠습니다."
+"다. 이를 통해 Django의 테스트 스위트를 실행하는 것을 포함하여, 패치를 작성하"
+"는 데에 있어서 거치는 단계를 차근차근 따라가보도록 하겠습니다."
 
 # 523f62715f0344339b68b6d1a6096023
 #: ../../intro/contributing.txt:115
@@ -299,7 +309,7 @@ msgstr ""
 # 691de78639da4623998efe2e72994442
 #: ../../intro/contributing.txt:137
 msgid "Running Django's test suite for the first time"
-msgstr "Django의 테스트 슈트를 처음으로 실행하기"
+msgstr "Django의 테스트 스위트를 처음으로 실행하기"
 
 # 886489561f424fcf9d3050e23772e9a7
 #: ../../intro/contributing.txt:139
@@ -328,8 +338,7 @@ msgid ""
 "Unix, run::"
 msgstr ""
 "테스트 스위트는 단순히 Django의 ``tests/`` 디렉토리로 ``cd``\\ 해서, GNU/"
-"Linux, Mac OS X 또는 기타 유닉스 계열에서는 다음을 수행합니다.\n"
-"::"
+"Linux, Mac OS X 또는 기타 유닉스 계열에서는 다음을 수행합니다. ::"
 
 # 0c36b0013b5b4f12a4f835bc767ffba2
 #: ../../intro/contributing.txt:153
@@ -439,7 +448,7 @@ msgstr ""
 # 20b8e6e0d2104660b1371e59378cbc60
 #: ../../intro/contributing.txt:204
 msgid "Writing some tests for your ticket"
-msgstr ""
+msgstr "티켓에 대한 테스트를 작성하기"
 
 # 55c5aed18bec446892f2a7105e2d5d61
 #: ../../intro/contributing.txt:206
@@ -453,6 +462,13 @@ msgid ""
 "correctly. They too should fail when the new feature is not present, and "
 "then pass once it has been implemented."
 msgstr ""
+"대부분의 경우에, Django에 대한 패치를 접수할 때에는 테스트를 포함합니다. 버"
+"그 수정 패치의 경우, 이것은 그 버그가 나중에 Django에서 다시 발생하지 않도록 "
+"회귀 테스트를 작성하는 것을 의미합니다. 회귀 테스트는 버그가 존재하는 동안 실"
+"패하다가 일단 버그가 수정되면 통과하도록 작성하여야 합니다. 새로운 기능을 포"
+"함하는 패치의 경우 새로운 기능이 올바르게 작동하는지 확인하는 테스트를 포함해"
+"야 합니다. 그러한 테스트들은 새로운 기능이 존재하지 않는 경우에는 실패하고, "
+"구현이 되면 통과합니다."
 
 # 85218aaf928b4397ae0e3943714ce785
 #: ../../intro/contributing.txt:215
@@ -466,21 +482,29 @@ msgid ""
 "all, a regression test that passes regardless of whether a bug is present is "
 "not very helpful at preventing that bug from reoccurring down the road."
 msgstr ""
+"이 작업을 수행하는 좋은 방법은 코드를 변경하기 전에, 먼저 새로운 테스트부터 "
+"작성하는 것입니다. 이러한 개발 스타일은 `test-driven development`__\\ 이라고 "
+"불리우며, 낱개의 패치에서부터 전체 프로젝트에 이르기까지 적용이 가능합니다. "
+"테스트를 작성한 후에는 (당신이 버그를 수정하거나 아직이 기능을 추가하지 않았"
+"기 때문에) 그것들이 실제로 실패하는지 확인하기 위해 실행시켜보도록 합니다. "
+"새 테스트가 실패하지 않을 경우, 테스트가 실패하도록 수정해야합니다. 버그가 있"
+"든없든 통과하는 회귀 테스트라면 다시 발생하는 버그를 방지하는 데에 그다지 도"
+"움이 되지 않습니다."
 
 # 252e8dfdf2274a7485a3ced9abb98098
 #: ../../intro/contributing.txt:224
 msgid "Now for our hands-on example."
-msgstr ""
+msgstr "이제 우리 예제를 살펴보도록 하겠습니다."
 
 # cf9c042d45e245bba633f3659090fb45
 #: ../../intro/contributing.txt:229
 msgid "Writing some tests for ticket #17549"
-msgstr ""
+msgstr "티켓 #17549에 대한 테스트 작성하기"
 
 # c4093ae249ed4a4798739a37502d9b65
 #: ../../intro/contributing.txt:231
 msgid "`Ticket #17549`__ describes the following, small feature addition:"
-msgstr ""
+msgstr "`Ticket #17549`__\\ 는 다음과 같은, 간단한 기능 추가입니다."
 
 # 0799a796104c4dababd3cf6ccad69bc8
 #: ../../intro/contributing.txt:233
@@ -488,6 +512,8 @@ msgid ""
 "It's useful for URLField to give you a way to open the URL; otherwise you "
 "might as well use a CharField."
 msgstr ""
+"URLField는 URL을 열 수 있는 방법을 제공하므로 쓸모가 있습니다. 이것이 없으면 "
+"CharField을 사용할 수도 있습니다."
 
 # 1fecdfb7224e40aa96ccb3d863fc1741
 #: ../../intro/contributing.txt:236
@@ -498,6 +524,10 @@ msgid ""
 "tests to verify that our modification functions correctly and continues to "
 "function correctly in the future."
 msgstr ""
+"이 티켓을 해결하기 위해, 우리는 ``AdminURLFieldWidget``\\ 에 ``render`` 메소"
+"드를 추가함으로써 입력 위젯 위에 클릭 할 수 있는 링크를 표시할 예정입니다. 우"
+"리는 이러한 변경을 하기 전에, 수정 사항이 올바르게 기능하며 앞으로도 제대로 "
+"작동하는지 확인하기 위해 몇 가지 테스트를 작성하는 것입니다."
 
 # 9259d34af8e14119a5d3153f32b11246
 #: ../../intro/contributing.txt:242
@@ -513,6 +543,8 @@ msgid ""
 "The new tests check to see that the ``render`` method we'll be adding works "
 "correctly in a couple different situations."
 msgstr ""
+"새로운 테스트는 우리가 추가할 ``render`` 메소드가 몇 가지 다른 상황에서 제대"
+"로 작동하는지 확인합니다."
 
 # 369da1ebbd3f4a66b8818127a2d2de5c
 #: ../../intro/contributing.txt:281
@@ -521,6 +553,9 @@ msgid ""
 "to write at first glance. Fortunately, testing is a *very* big subject in "
 "computer programming, so there's lots of information out there:"
 msgstr ""
+"이전에 테스트를 한번도 다뤄보지 않았다면, 처음에는 작성하기에 까다로울 수도 "
+"있습니다. 다행히도, 테스트는 컴퓨터 프로그래밍에서 *매우* 큰 주제이기 때문"
+"에, 많은 정보를 얻을 수 있습니다."
 
 # 7719ce5f6c5c43119e470dcf74990899
 #: ../../intro/contributing.txt:285
@@ -536,6 +571,8 @@ msgid ""
 "Dive Into Python (a free online book for beginning Python developers) "
 "includes a great `introduction to Unit Testing`__."
 msgstr ""
+"파이썬으로 뛰어들기(초보 파이썬 개발자를 위한 무료 온라인북)에 훌륭한 "
+"`introduction to Unit Testing`__\\ 이 있습니다."
 
 # 5b47eea6a96a489bbbe975f0291e4204
 #: ../../intro/contributing.txt:289
@@ -543,6 +580,8 @@ msgid ""
 "After reading those, if you want something a little meatier to sink your "
 "teeth into, there's always the `Python unittest documentation`__."
 msgstr ""
+"그것들을 읽어본 후에, 좀 더 음미해보고 싶다면,`Python unittest "
+"documentation`__\\ 를 읽어보기 바랍니다."
 
 # e66eb911053d4dd6aad4535256e327af
 #: ../../intro/contributing.txt:297
@@ -633,7 +672,7 @@ msgstr ""
 # 59576ee8b324416ab0e431df50c57364
 #: ../../intro/contributing.txt:364
 msgid "Running Django's test suite for the second time"
-msgstr ""
+msgstr "Django의 테스트 스위트를 두번째로 실행"
 
 # f77de5bd78f141b294aa9d10aca7c92b
 #: ../../intro/contributing.txt:366
@@ -645,6 +684,11 @@ msgid ""
 "bug free, it does help identify many bugs and regressions that might "
 "otherwise go unnoticed."
 msgstr ""
+"패치와 태스트가 올바로 작동하는 것을 확인하였다면, 여러분이 변경한 부분이 "
+"Django의 다른 부분에 어떠한 버그를 만들어내지 않았는지 확인하기 위해 전체 "
+"Django 테스트 스위트를 실행해보는 것이 좋습니다. 전체 테스트 스위트를 통과하"
+"였다고해서 버그가 없다고 확신할 수는 없지만, 모르고 지나쳤을 수도 있는 많은 "
+"버그와 잘못을 찾아내는 데에 도움이 됩니다."
 
 # 6166a442a2804b7188c84b320e594791
 #: ../../intro/contributing.txt:372
@@ -652,6 +696,9 @@ msgid ""
 "To run the entire Django test suite, ``cd`` into the Django ``tests/`` "
 "directory and run::"
 msgstr ""
+"Django 테스트 스위트 전체를 실행하려면, Django ``tests/`` 디렉토리로 ``cd``"
+"\\ 하여 다음과 같이 실행합니다.\n"
+"::"
 
 # bcd3414654594bc2a1c77deb0a201b82
 #: ../../intro/contributing.txt:377
