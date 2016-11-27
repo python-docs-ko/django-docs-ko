@@ -64,7 +64,12 @@ different needs:
   trying to learn. Instead, details about individual classes, functions,
   methods, and modules are kept in the :doc:`reference </ref/index>`. This is
   where you'll turn to find the details of a particular function or
-  whathaveyou.
+  whatever you need.
+
+* If you are interested in deploying a project for public use, our docs have
+  :doc:`several guides</howto/deployment/index>` for various deployment
+  setups as well as a :doc:`deployment checklist</howto/deployment/checklist>`
+  for some things you'll need to think about.
 
 * Finally, there's some "specialized" documentation not usually relevant to
   most developers. This includes the :doc:`release notes </releases/index>` and
@@ -120,11 +125,10 @@ ticket system and use your feedback to improve the documentation for everybody.
 
 Note, however, that tickets should explicitly relate to the documentation,
 rather than asking broad tech-support questions. If you need help with your
-particular Django setup, try the `django-users mailing list`_ or the `#django
+particular Django setup, try the |django-users| mailing list or the `#django
 IRC channel`_ instead.
 
-.. _ticket system: https://code.djangoproject.com/newticket?component=Documentation
-.. _django-users mailing list: http://groups.google.com/group/django-users
+.. _ticket system: https://code.djangoproject.com/
 .. _#django IRC channel: irc://irc.freenode.net/django
 
 In plain text
@@ -146,7 +150,7 @@ Unix ``grep`` utility to search for a phrase in all of the documentation. For
 example, this will show you each mention of the phrase "max_length" in any
 Django document:
 
-.. code-block:: bash
+.. code-block:: console
 
     $ grep -r max_length /path/to/django/docs/
 
@@ -157,16 +161,16 @@ You can get a local copy of the HTML documentation following a few easy steps:
 
 * Django's documentation uses a system called Sphinx__ to convert from
   plain text to HTML. You'll need to install Sphinx by either downloading
-  and installing the package from the Sphinx Web site, or with ``pip``:
+  and installing the package from the Sphinx website, or with ``pip``:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-        $ sudo pip install Sphinx
+        $ pip install Sphinx
 
 * Then, just use the included ``Makefile`` to turn the documentation into
   HTML:
 
-  .. code-block:: bash
+  .. code-block:: console
 
         $ cd path/to/django/docs
         $ make html
@@ -182,13 +186,8 @@ You can get a local copy of the HTML documentation following a few easy steps:
 
 * The HTML documentation will be placed in ``docs/_build/html``.
 
-.. note::
-
-    Generation of the Django documentation will work with Sphinx version 0.6
-    or newer, but we recommend going straight to Sphinx 1.0.2 or newer.
-
-__ http://sphinx.pocoo.org/
-__ http://www.gnu.org/software/make/
+__ http://sphinx-doc.org/
+__ https://www.gnu.org/software/make/
 
 .. _differences-between-doc-versions:
 

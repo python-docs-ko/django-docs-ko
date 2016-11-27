@@ -14,20 +14,19 @@ For example, Django was used at kusports.com_ to generate customized,
 printer-friendly NCAA tournament brackets, as PDF files, for people
 participating in a March Madness contest.
 
-.. _ReportLab: http://www.reportlab.com/software/opensource/rl-toolkit/
+.. _ReportLab: http://www.reportlab.com/opensource/
 .. _kusports.com: http://www.kusports.com/
 
 Install ReportLab
 =================
 
-Download and install the ReportLab library from
-http://www.reportlab.com/software/opensource/rl-toolkit/download/.
-The `user guide`_ (not coincidentally, a PDF file) explains how to install it.
-Alternatively, you can also install it with ``pip``:
+The ReportLab library is `available on PyPI`_. A `user guide`_ (not
+coincidentally, a PDF file) is also available for download.
+You can install ReportLab with ``pip``:
 
-.. code-block:: bash
+.. code-block:: console
 
-    $ sudo pip install reportlab
+    $ pip install reportlab
 
 Test your installation by importing it in the Python interactive interpreter::
 
@@ -35,6 +34,7 @@ Test your installation by importing it in the Python interactive interpreter::
 
 If that command doesn't raise any errors, the installation worked.
 
+.. _available on PyPI: https://pypi.python.org/pypi/reportlab
 .. _user guide: http://www.reportlab.com/docs/reportlab-userguide.pdf
 
 Write your view
@@ -51,7 +51,7 @@ Here's a "Hello World" example::
 
     def some_view(request):
         # Create the HttpResponse object with the appropriate PDF headers.
-        response = HttpResponse(mimetype='application/pdf')
+        response = HttpResponse(content_type='application/pdf')
         response['Content-Disposition'] = 'attachment; filename="somefilename.pdf"'
 
         # Create the PDF object, using the response object as its "file."
@@ -77,8 +77,7 @@ mention:
 
 * The response gets an additional ``Content-Disposition`` header, which
   contains the name of the PDF file. This filename is arbitrary: Call it
-  whatever you want. It'll be used by browsers in the "Save as..."
-  dialogue, etc.
+  whatever you want. It'll be used by browsers in the "Save as..." dialog, etc.
 
 * The ``Content-Disposition`` header starts with ``'attachment; '`` in this
   example. This forces Web browsers to pop-up a dialog box
@@ -120,7 +119,7 @@ Here's the above "Hello World" example rewritten to use :mod:`io`::
 
     def some_view(request):
         # Create the HttpResponse object with the appropriate PDF headers.
-        response = HttpResponse(mimetype='application/pdf')
+        response = HttpResponse(content_type='application/pdf')
         response['Content-Disposition'] = 'attachment; filename="somefilename.pdf"'
 
         buffer = BytesIO()
@@ -142,21 +141,6 @@ Here's the above "Hello World" example rewritten to use :mod:`io`::
         response.write(pdf)
         return response
 
-Further resources
-=================
-
-* PDFlib_ is another PDF-generation library that has Python bindings. To
-  use it with Django, just use the same concepts explained in this article.
-* `Pisa XHTML2PDF`_ is yet another PDF-generation library. Pisa ships with
-  an example of how to integrate Pisa with Django.
-* HTMLdoc_ is a command-line script that can convert HTML to PDF. It
-  doesn't have a Python interface, but you can escape out to the shell
-  using ``system`` or ``popen`` and retrieve the output in Python.
-
-.. _PDFlib: http://www.pdflib.org/
-.. _`Pisa XHTML2PDF`: http://www.xhtml2pdf.com/
-.. _HTMLdoc: http://www.htmldoc.org/
-
 Other formats
 =============
 
@@ -165,3 +149,9 @@ bits using ``reportlab``. You can use a similar technique to generate any
 arbitrary format that you can find a Python library for. Also see
 :doc:`/howto/outputting-csv` for another example and some techniques you can use
 when generated text-based formats.
+
+.. seealso::
+
+    Django Packages provides a `comparison of packages
+    <https://djangopackages.org/grids/g/pdf/>`_ that help generate PDF files
+    from Django.

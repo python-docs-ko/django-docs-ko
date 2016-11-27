@@ -1,46 +1,42 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) Django Software Foundation and contributors
 # This file is distributed under the same license as the Django package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
 #
-# Translators:
-# Hangi Kim <hgk617@naver.com>, 2013.
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Django Docs Korean\n"
+"Project-Id-Version: Django 1.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-13 09:00\n"
-"PO-Revision-Date: 2013-02-02 21:02+0900\n"
-"Last-Translator: Yong Choi <sk8er.choi@gmail.com>\n"
-"Language-Team: Korean (http://www.transifex.com/projects/p/django-docs-"
-"korean/language/ko/)\n"
+"POT-Creation-Date: 2016-08-24 11:11+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ko\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.5.4\n"
+"Generated-By: Babel 2.3.4\n"
 
-# 84cc551351f9404f9354ca42410a26ba
-#: ../../contents.txt:5
+#: ../../contents.txt:3
 msgid "Django documentation contents"
-msgstr "장고 문서 목차"
+msgstr ""
 
-# ad55d5b05b4b407190153a55b5d3da35
-#: ../../contents.txt:26
+#: ../../contents.txt:24
 msgid "Indices, glossary and tables"
 msgstr ""
 
-# 1d54a0bd728f4f7db8b1364f86a749c2
-#: ../../contents.txt:28
+#: ../../contents.txt:26
 msgid ":ref:`genindex`"
 msgstr ""
 
-# 0fd4758f1b864e67b5bafe7823988a6a
-#: ../../contents.txt:29
+#: ../../contents.txt:27
 msgid ":ref:`modindex`"
 msgstr ""
 
-# 3e14d28d05584c4a900bffbf176bffde
-#: ../../contents.txt:30
-msgid ":ref:`glossary`"
+#: ../../contents.txt:28
+msgid ":doc:`glossary`"
 msgstr ""
+
+#~ msgid ":ref:`glossary`"
+#~ msgstr ""
+

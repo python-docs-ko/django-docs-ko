@@ -79,8 +79,8 @@ see `the admin`_ below for more details.
     A contributor to djangosnippets__ has written a script that'll `scan your
     models.py and generate a corresponding admin.py`__.
 
-    __ http://www.djangosnippets.org/
-    __ http://www.djangosnippets.org/snippets/603/
+    __ https://www.djangosnippets.org/
+    __ https://www.djangosnippets.org/snippets/603/
 
 Example
 ~~~~~~~
@@ -277,8 +277,9 @@ Handle uploaded files using the new API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Replace use of uploaded files -- that is, entries in ``request.FILES`` -- as
-simple dictionaries with the new :class:`~django.core.files.UploadedFile`. The
-old dictionary syntax no longer works.
+simple dictionaries with the new
+:class:`~django.core.files.uploadedfile.UploadedFile`. The old dictionary
+syntax no longer works.
 
 Thus, in a view like::
 
@@ -301,7 +302,7 @@ Work with file fields using the new API
 
 The internal implementation of :class:`django.db.models.FileField` have changed.
 A visible result of this is that the way you access special attributes (URL,
-filename, image size, etc) of these model fields has changed. You will need to
+filename, image size, etc.) of these model fields has changed. You will need to
 make the following changes, assuming your model's
 :class:`~django.db.models.FileField` is called ``myfile``:
 
@@ -391,8 +392,8 @@ Comments
 --------
 
 If you were using Django 0.96's ``django.contrib.comments`` app, you'll need to
-upgrade to the new comments app introduced in 1.0. See
-:doc:`/ref/contrib/comments/upgrade` for details.
+upgrade to the new comments app introduced in 1.0. See the upgrade guide
+for details.
 
 Template tags
 -------------
@@ -410,7 +411,7 @@ U.S. local flavor
 ~~~~~~~~~~~~~~~~~
 
 ``django.contrib.localflavor.usa`` has been renamed to
-:mod:`django.contrib.localflavor.us`. This change was made to match the naming
+``django.contrib.localflavor.us``. This change was made to match the naming
 scheme of other local flavors. To migrate your code, all you need to do is
 change the imports.
 
@@ -439,9 +440,10 @@ Settings
 Better exceptions
 ~~~~~~~~~~~~~~~~~
 
-The old :exc:`EnvironmentError` has split into an :exc:`ImportError` when
-Django fails to find the settings module and a :exc:`RuntimeError` when you try
-to reconfigure settings after having already used them
+The old :exc:`EnvironmentError` has split into an
+:exc:`ImportError` when Django fails to find the settings module
+and a :exc:`RuntimeError` when you try to reconfigure settings
+after having already used them.
 
 :setting:`LOGIN_URL` has moved
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -476,8 +478,8 @@ Smaller model changes
 Different exception from ``get()``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Managers now return a :exc:`MultipleObjectsReturned` exception
-instead of :exc:`AssertionError`:
+Managers now return a :exc:`~django.core.exceptions.MultipleObjectsReturned`
+exception instead of :exc:`AssertionError`:
 
 Old (0.96)::
 
@@ -548,13 +550,13 @@ need to reload your data. Do this after you have made the change to using
   **Back up your database first!**
 
   For SQLite, this means making a copy of the single file that stores the
-  database (the name of that file is the :setting:`DATABASE_NAME` in your
+  database (the name of that file is the ``DATABASE_NAME`` in your
   settings.py file).
 
 To upgrade each application to use a ``DecimalField``, you can do the
 following, replacing ``<app>`` in the code below with each app's name:
 
-.. code-block:: bash
+.. code-block:: console
 
       $ ./manage.py dumpdata --format=xml <app> > data-dump.xml
       $ ./manage.py reset <app>
@@ -642,7 +644,7 @@ Testing
 -------
 
 :meth:`django.test.Client.login` has changed
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Old (0.96)::
 
@@ -683,13 +685,13 @@ Subcommands must now precede options
 ``django-admin.py`` and ``manage.py`` now require subcommands to precede
 options. So:
 
-.. code-block:: bash
+.. code-block:: console
 
       $ django-admin.py --settings=foo.bar runserver
 
 ...no longer works and should be changed to:
 
-.. code-block:: bash
+.. code-block:: console
 
       $ django-admin.py runserver --settings=foo.bar
 
@@ -712,15 +714,15 @@ Data structures
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``django.newforms.forms.SortedDictFromList`` was removed.
-:class:`django.utils.datastructures.SortedDict` can now be instantiated with
+``django.utils.datastructures.SortedDict`` can now be instantiated with
 a sequence of tuples.
 
 To update your code:
 
-1. Use :class:`django.utils.datastructures.SortedDict` wherever you were
+1. Use ``django.utils.datastructures.SortedDict`` wherever you were
    using ``django.newforms.forms.SortedDictFromList``.
 
-2. Because :meth:`django.utils.datastructures.SortedDict.copy` doesn't
+2. Because ``django.utils.datastructures.SortedDict.copy`` doesn't
    return a deepcopy as ``SortedDictFromList.copy()`` did, you will need
    to update your code if you were relying on a deepcopy. Do this by using
    ``copy.deepcopy`` directly.
@@ -769,4 +771,3 @@ Old (0.96)                               New (1.0)
 ``backend.uses_case_insensitive_names``  ``connection.features.uses_case_insensitive_names``
 ``backend.uses_custom_queryset``         ``connection.features.uses_custom_queryset``
 =======================================  ===================================================
-

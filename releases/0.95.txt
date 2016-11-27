@@ -16,8 +16,8 @@ wanting to work on production-level applications that use Django.
 
 However, it's not the 1.0 release, and we'll be introducing further changes
 before 1.0. For a clear look at which areas of the framework will change (and
-which ones will *not* change) before 1.0, see the api-stability.txt file, which
-lives in the docs/ directory of the distribution.
+which ones will *not* change) before 1.0, see the ``api-stability.txt`` file,
+which lives in the docs/ directory of the distribution.
 
 You may have a need to use some of the features that are marked as
 "subject to API change" in that document, but that's OK with us as long as it's
@@ -98,9 +98,9 @@ Problem reports and getting help
 ================================
 
 Need help resolving a problem with Django? The documentation in the
-distribution is also available :doc:`online </index>` at the `Django Web
-site`_. The :doc:`FAQ </faq/index>` document is especially recommended, as it
-contains a number of issues that come up time and again.
+distribution is also available :doc:`online </index>` at the `Django website`_.
+The :doc:`FAQ </faq/index>` document is especially recommended, as it contains
+a number of issues that come up time and again.
 
 For more personalized help, the `django-users`_ mailing list is a very active
 list, with more than 2,000 subscribers who can help you solve any sort of
@@ -113,11 +113,10 @@ there's a #django channel on irc.freenode.net that is regularly populated by
 Django users and developers from around the world. Friendly people are usually
 available at any hour of the day -- to help, or just to chat.
 
-.. _Django Web site: https://www.djangoproject.com/
-.. _django-users: http://groups.google.com/group/django-users
+.. _Django website: https://www.djangoproject.com/
+.. _django-users: https://groups.google.com/group/django-users
 
 Thanks for using Django!
 
 The Django Team
 July 2006
-

@@ -29,7 +29,7 @@ Essentially, Django does two things:
   their preferences.
 
 Obviously, translation depends on the target language, and formatting usually
-depends on the target country. These informations are provided by browsers in
+depends on the target country. This information is provided by browsers in
 the ``Accept-Language`` header. However, the time zone isn't readily available.
 
 Definitions
@@ -49,8 +49,8 @@ here's a simplified definition:
 More details can be found in the `W3C Web Internationalization FAQ`_, the `Wikipedia article`_ or the `GNU gettext documentation`_.
 
 .. _W3C Web Internationalization FAQ: http://www.w3.org/International/questions/qa-i18n
-.. _GNU gettext documentation: http://www.gnu.org/software/gettext/manual/gettext.html#Concepts
-.. _Wikipedia article: http://en.wikipedia.org/wiki/Internationalization_and_localization
+.. _GNU gettext documentation: https://www.gnu.org/software/gettext/manual/gettext.html#Concepts
+.. _Wikipedia article: https://en.wikipedia.org/wiki/Internationalization_and_localization
 
 .. warning::
 
@@ -67,14 +67,15 @@ Here are some other terms that will help us to handle a common language:
       A locale name, either a language specification of the form ``ll`` or a
       combined language and country specification of the form ``ll_CC``.
       Examples: ``it``, ``de_AT``, ``es``, ``pt_BR``. The language part is
-      always is lower case and the country part in upper case. The separator
+      always in lower case and the country part in upper case. The separator
       is an underscore.
 
     language code
       Represents the name of a language. Browsers send the names of the
       languages they accept in the ``Accept-Language`` HTTP header using this
-      format. Examples: ``it``, ``de-at``, ``es``, ``pt-br``. Both the language
-      and the country parts are in lower case. The separator is a dash.
+      format. Examples: ``it``, ``de-at``, ``es``, ``pt-br``. Language codes
+      are generally represented in lower-case, but the HTTP ``Accept-Language``
+      header is case-insensitive. The separator is a dash.
 
     message file
       A message file is a plain-text file, representing a single language,

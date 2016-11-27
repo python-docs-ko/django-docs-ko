@@ -46,23 +46,23 @@ Then either:
 
 3. Add an entry in your URLconf. For example::
 
-    urlpatterns = patterns('',
-        ('^pages/', include('django.contrib.flatpages.urls')),
-    )
+    urlpatterns = [
+        url(r'^pages/', include('django.contrib.flatpages.urls')),
+    ]
 
 or:
 
 3. Add ``'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware'``
-   to your :setting:`MIDDLEWARE_CLASSES` setting.
+   to your :setting:`MIDDLEWARE` setting.
 
-4. Run the command :djadmin:`manage.py syncdb <syncdb>`.
+4. Run the command :djadmin:`manage.py migrate <migrate>`.
 
 .. currentmodule:: django.contrib.flatpages.middleware
 
 How it works
 ============
 
-``manage.py syncdb`` creates two tables in your database: ``django_flatpage``
+``manage.py migrate`` creates two tables in your database: ``django_flatpage``
 and ``django_flatpage_sites``. ``django_flatpage`` is a simple lookup table
 that simply maps a URL to a title and bunch of text content.
 ``django_flatpage_sites`` associates a flatpage with a site.
@@ -73,26 +73,36 @@ Using the URLconf
 There are several ways to include the flat pages in your URLconf. You can
 dedicate a particular path to flat pages::
 
-    urlpatterns = patterns('',
-        ('^pages/', include('django.contrib.flatpages.urls')),
-    )
+    urlpatterns = [
+        url(r'^pages/', include('django.contrib.flatpages.urls')),
+    ]
 
 You can also set it up as a "catchall" pattern. In this case, it is important
 to place the pattern at the end of the other urlpatterns::
 
+    from django.contrib.flatpages import views
+
     # Your other patterns here
-    urlpatterns += patterns('django.contrib.flatpages.views',
-        (r'^(?P<url>.*)$', 'flatpage'),
-    )
+    urlpatterns += [
+        url(r'^(?P<url>.*/)$', views.flatpage),
+    ]
+
+.. warning::
+
+    If you set :setting:`APPEND_SLASH` to ``False``, you must remove the slash
+    in the catchall pattern or flatpages without a trailing slash will not be
+    matched.
 
 Another common setup is to use flat pages for a limited set of known pages and
 to hard code the urls, so you can reference them with the :ttag:`url` template
 tag::
 
-    urlpatterns += patterns('django.contrib.flatpages.views',
-        url(r'^about-us/$', 'flatpage', {'url': '/about-us/'}, name='about'),
-        url(r'^license/$', 'flatpage', {'url': '/license/'}, name='license'),
-    )
+    from django.contrib.flatpages import views
+
+    urlpatterns += [
+        url(r'^about-us/$', views.flatpage, {'url': '/about-us/'}, name='about'),
+        url(r'^license/$', views.flatpage, {'url': '/license/'}, name='license'),
+    ]
 
 Using the middleware
 --------------------
@@ -117,17 +127,9 @@ can do all of the work.
       :class:`~django.template.RequestContext` in rendering the
       template.
 
-    .. versionchanged:: 1.4
-       The middleware will only add a trailing slash and redirect (by looking
-       at the :setting:`APPEND_SLASH` setting) if the resulting URL refers to
-       a valid flatpage. Previously requesting a non-existent flatpage
-       would redirect to the same URL with an apppended slash first and
-       subsequently raise a 404.
-
-    .. versionchanged:: 1.4
-       Redirects by the middleware are permanent (301 status code) instead of
-       temporary (302) to match behavior of the
-       :class:`~django.middleware.common.CommonMiddleware`.
+    The middleware will only add a trailing slash and redirect (by looking
+    at the :setting:`APPEND_SLASH` setting) if the resulting URL refers to
+    a valid flatpage. Redirects are permanent (301 status code).
 
     If it doesn't find a match, the request continues to be processed as usual.
 
@@ -142,8 +144,7 @@ can do all of the work.
    methods. Only requests which are successfully routed to a view via
    normal URL resolution apply view middleware.
 
-Note that the order of :setting:`MIDDLEWARE_CLASSES` matters. Generally, you
-can put
+Note that the order of :setting:`MIDDLEWARE` matters. Generally, you can put
 :class:`~django.contrib.flatpages.middleware.FlatpageFallbackMiddleware` at the
 end of the list. This means it will run first when processing the response, and
 ensures that any other response-processing middlewares see the real flatpage
@@ -168,12 +169,46 @@ For more on middleware, read the :doc:`middleware docs
 How to add, change and delete flatpages
 =======================================
 
+.. _flatpages-admin:
+
 Via the admin interface
 -----------------------
 
 If you've activated the automatic Django admin interface, you should see a
 "Flatpages" section on the admin index page. Edit flatpages as you edit any
 other object in the system.
+
+The ``FlatPage`` model has an ``enable_comments`` field that isn't used by
+``contrib.flatpages``, but that could be useful for your project or third-party
+apps. It doesn't appear in the admin interface, but you can add it by
+registering a custom ``ModelAdmin`` for ``FlatPage``::
+
+    from django.contrib import admin
+    from django.contrib.flatpages.admin import FlatPageAdmin
+    from django.contrib.flatpages.models import FlatPage
+    from django.utils.translation import ugettext_lazy as _
+
+    # Define a new FlatPageAdmin
+    class FlatPageAdmin(FlatPageAdmin):
+        fieldsets = (
+            (None, {'fields': ('url', 'title', 'content', 'sites')}),
+            (_('Advanced options'), {
+                'classes': ('collapse', ),
+                'fields': (
+                    'enable_comments',
+                    'registration_required',
+                    'template_name',
+                ),
+            }),
+        )
+
+    # Re-register FlatPageAdmin
+    admin.site.unregister(FlatPage)
+    admin.site.register(FlatPage, FlatPageAdmin)
+
+.. versionchanged:: 1.9
+
+    The ``enable_comments`` field was removed from ``FlatPageAdmin``.
 
 Via the Python API
 ------------------
@@ -194,7 +229,7 @@ Via the Python API
     If you add or modify flatpages via your own code, you will likely want to
     check for duplicate flatpage URLs within the same site. The flatpage form
     used in the admin performs this validation check, and can be imported from
-    :class:`django.contrib.flatpages.forms.FlatPageForm` and used in your own
+    ``django.contrib.flatpages.forms.FlatpageForm`` and used in your own
     views.
 
 Flatpage templates
@@ -264,7 +299,7 @@ Displaying ``registration_required`` flatpages
 By default, the :ttag:`get_flatpages` templatetag will only show
 flatpages that are marked ``registration_required = False``. If you
 want to display registration-protected flatpages, you need to specify
-an authenticated user using a``for`` clause.
+an authenticated user using a ``for`` clause.
 
 For example:
 
@@ -291,3 +326,38 @@ For example:
     {% get_flatpages '/about/' as about_pages %}
     {% get_flatpages about_prefix as about_pages %}
     {% get_flatpages '/about/' for someuser as about_pages %}
+
+Integrating with :mod:`django.contrib.sitemaps`
+===============================================
+
+.. currentmodule:: django.contrib.flatpages.sitemaps
+
+.. class:: FlatPageSitemap
+
+    The :class:`sitemaps.FlatPageSitemap
+    <django.contrib.flatpages.sitemaps.FlatPageSitemap>` class looks at all
+    publicly visible :mod:`~django.contrib.flatpages` defined for the current
+    :setting:`SITE_ID` (see the :mod:`sites documentation
+    <django.contrib.sites>`) and creates an entry in the sitemap. These entries
+    include only the :attr:`~django.contrib.sitemaps.Sitemap.location`
+    attribute -- not :attr:`~django.contrib.sitemaps.Sitemap.lastmod`,
+    :attr:`~django.contrib.sitemaps.Sitemap.changefreq` or
+    :attr:`~django.contrib.sitemaps.Sitemap.priority`.
+
+Example
+-------
+
+Here's an example of a URLconf using :class:`FlatPageSitemap`::
+
+    from django.conf.urls import url
+    from django.contrib.flatpages.sitemaps import FlatPageSitemap
+    from django.contrib.sitemaps.views import sitemap
+
+    urlpatterns = [
+        # ...
+
+        # the sitemap
+        url(r'^sitemap\.xml$', sitemap,
+            {'sitemaps': {'flatpages': FlatPageSitemap}},
+            name='django.contrib.sitemaps.views.sitemap'),
+    ]

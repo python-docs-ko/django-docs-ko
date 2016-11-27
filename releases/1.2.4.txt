@@ -19,7 +19,7 @@ Backwards incompatible changes
 ==============================
 
 Restricted filters in admin interface
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------
 
 The Django administrative interface, django.contrib.admin, supports
 filtering of displayed lists of objects by fields on the corresponding
@@ -76,9 +76,9 @@ GeoDjango
 =========
 
 The function-based :setting:`TEST_RUNNER` previously used to execute
-the GeoDjango test suite, :func:`django.contrib.gis.tests.run_gis_tests`,
+the GeoDjango test suite, ``django.contrib.gis.tests.run_gis_tests``,
 was finally deprecated in favor of a class-based test runner,
-:class:`django.contrib.gis.tests.GeoDjangoTestSuiteRunner`, added in this
+``django.contrib.gis.tests.GeoDjangoTestSuiteRunner``, added in this
 release.
 
 In addition, the GeoDjango test suite is now included when

@@ -13,7 +13,7 @@ serializer to handle any format (text-based or not).
     form, you could use the :djadmin:`dumpdata` management command.
 
 Serializing data
-----------------
+================
 
 At the highest level, serializing data is a very simple operation::
 
@@ -25,6 +25,8 @@ to (see `Serialization formats`_) and a
 :class:`~django.db.models.query.QuerySet` to serialize. (Actually, the second
 argument can be any iterator that yields Django model instances, but it'll
 almost always be a QuerySet).
+
+.. function:: django.core.serializers.get_serializer(format)
 
 You can also use a serializer object directly::
 
@@ -43,10 +45,12 @@ This is useful if you want to serialize data directly to a file-like object
 
     Calling :func:`~django.core.serializers.get_serializer` with an unknown
     :ref:`format <serialization-formats>` will raise a
-    :class:`~django.core.serializers.SerializerDoesNotExist` exception.
+    ``django.core.serializers.SerializerDoesNotExist`` exception.
+
+.. _subset-of-fields:
 
 Subset of fields
-~~~~~~~~~~~~~~~~
+----------------
 
 If you only want a subset of fields to be serialized, you can
 specify a ``fields`` argument to the serializer::
@@ -55,7 +59,8 @@ specify a ``fields`` argument to the serializer::
     data = serializers.serialize('xml', SomeModel.objects.all(), fields=('name','size'))
 
 In this example, only the ``name`` and ``size`` attributes of each model will
-be serialized.
+be serialized. The primary key is always serialized as the ``pk`` element in the
+resulting output; it never appears in the ``fields`` part.
 
 .. note::
 
@@ -64,8 +69,8 @@ be serialized.
     serialized object doesn't specify all the fields that are required by a
     model, the deserializer will not be able to save deserialized instances.
 
-Inherited Models
-~~~~~~~~~~~~~~~~
+Inherited models
+----------------
 
 If you have a model that is defined using an :ref:`abstract base class
 <abstract-base-classes>`, you don't have to do anything special to serialize
@@ -82,23 +87,23 @@ model will be serialized. For example, consider the following models::
         name = models.CharField(max_length=50)
 
     class Restaurant(Place):
-        serves_hot_dogs = models.BooleanField()
+        serves_hot_dogs = models.BooleanField(default=False)
 
 If you only serialize the Restaurant model::
 
     data = serializers.serialize('xml', Restaurant.objects.all())
 
-the fields on the serialized output will only contain the `serves_hot_dogs`
-attribute. The `name` attribute of the base class will be ignored.
+the fields on the serialized output will only contain the ``serves_hot_dogs``
+attribute. The ``name`` attribute of the base class will be ignored.
 
-In order to fully serialize your Restaurant instances, you will need to
-serialize the Place models as well::
+In order to fully serialize your ``Restaurant`` instances, you will need to
+serialize the ``Place`` models as well::
 
     all_objects = list(Restaurant.objects.all()) + list(Place.objects.all())
     data = serializers.serialize('xml', all_objects)
 
 Deserializing data
-------------------
+==================
 
 Deserializing data is also a fairly simple operation::
 
@@ -115,6 +120,11 @@ object and any associated relationship data.
 
 Calling ``DeserializedObject.save()`` saves the object to the database.
 
+.. note::
+
+    If the ``pk`` attribute in the serialized data doesn't exist or is
+    null, a new instance will be saved to the database.
+
 This ensures that deserializing is a non-destructive operation even if the
 data in your serialized representation doesn't match what's currently in the
 database. Usually, working with these ``DeserializedObject`` instances looks
@@ -129,19 +139,16 @@ sure that they are "appropriate" for saving before doing so.  Of course, if you
 trust your data source you could just save the object and move on.
 
 The Django object itself can be inspected as ``deserialized_object.object``.
-
-.. versionadded:: 1.5
-
-If fields in the serialized data do not exist on a model,
-a ``DeserializationError`` will be raised unless the ``ignorenonexistent``
-argument is passed in as True::
+If fields in the serialized data do not exist on a model, a
+``DeserializationError`` will be raised unless the ``ignorenonexistent``
+argument is passed in as ``True``::
 
     serializers.deserialize("xml", data, ignorenonexistent=True)
 
 .. _serialization-formats:
 
 Serialization formats
----------------------
+=====================
 
 Django supports a number of serialization formats, some of which require you
 to install third-party Python modules:
@@ -160,32 +167,153 @@ Identifier  Information
 .. _json: http://json.org/
 .. _PyYAML: http://www.pyyaml.org/
 
-Notes for specific serialization formats
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+XML
+---
 
-json
-^^^^
+The basic XML serialization format is quite simple::
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <django-objects version="1.0">
+        <object pk="123" model="sessions.session">
+            <field type="DateTimeField" name="expire_date">2013-01-16T08:16:59.844560+00:00</field>
+            <!-- ... -->
+        </object>
+    </django-objects>
+
+The whole collection of objects that is either serialized or de-serialized is
+represented by a ``<django-objects>``-tag which contains multiple
+``<object>``-elements. Each such object has two attributes: "pk" and "model",
+the latter being represented by the name of the app ("sessions") and the
+lowercase name of the model ("session") separated by a dot.
+
+Each field of the object is serialized as a ``<field>``-element sporting the
+fields "type" and "name". The text content of the element represents the value
+that should be stored.
+
+Foreign keys and other relational fields are treated a little bit differently::
+
+    <object pk="27" model="auth.permission">
+        <!-- ... -->
+        <field to="contenttypes.contenttype" name="content_type" rel="ManyToOneRel">9</field>
+        <!-- ... -->
+    </object>
+
+In this example we specify that the auth.Permission object with the PK 27 has
+a foreign key to the contenttypes.ContentType instance with the PK 9.
+
+ManyToMany-relations are exported for the model that binds them. For instance,
+the auth.User model has such a relation to the auth.Permission model::
+
+    <object pk="1" model="auth.user">
+        <!-- ... -->
+        <field to="auth.permission" name="user_permissions" rel="ManyToManyRel">
+            <object pk="46"></object>
+            <object pk="47"></object>
+        </field>
+    </object>
+
+This example links the given user with the permission models with PKs 46 and 47.
+
+.. admonition:: Control characters
+
+    .. versionchanged:: 1.9
+
+    If the content to be serialized contains control characters that are not
+    accepted in the XML 1.0 standard, the serialization will fail with a
+    :exc:`ValueError` exception. Read also the W3C's explanation of `HTML,
+    XHTML, XML and Control Codes
+    <http://www.w3.org/International/questions/qa-controls>`_.
+
+.. _serialization-formats-json:
+
+JSON
+----
+
+When staying with the same example data as before it would be serialized as
+JSON in the following way::
+
+    [
+        {
+            "pk": "4b678b301dfd8a4e0dad910de3ae245b",
+            "model": "sessions.session",
+            "fields": {
+                "expire_date": "2013-01-16T08:16:59.844Z",
+                ...
+            }
+        }
+    ]
+
+The formatting here is a bit simpler than with XML. The whole collection
+is just represented as an array and the objects are represented by JSON objects
+with three properties: "pk", "model" and "fields". "fields" is again an object
+containing each field's name and value as property and property-value
+respectively.
+
+Foreign keys just have the PK of the linked object as property value.
+ManyToMany-relations are serialized for the model that defines them and are
+represented as a list of PKs.
 
 Be aware that not all Django output can be passed unmodified to :mod:`json`.
-In particular, :ref:`lazy translation objects <lazy-translations>` need a
-`special encoder`_ written for them. Something like this will work::
+For example, if you have some custom type in an object to be serialized, you'll
+have to write a custom :mod:`json` encoder for it. Something like this will
+work::
 
-    import json
-    from django.utils.functional import Promise
     from django.utils.encoding import force_text
+    from django.core.serializers.json import DjangoJSONEncoder
 
-    class LazyEncoder(json.JSONEncoder):
+    class LazyEncoder(DjangoJSONEncoder):
         def default(self, obj):
-            if isinstance(obj, Promise):
+            if isinstance(obj, YourCustomType):
                 return force_text(obj)
             return super(LazyEncoder, self).default(obj)
 
-.. _special encoder: http://docs.python.org/library/json.html#encoders-and-decoders
+Also note that GeoDjango provides a :doc:`customized GeoJSON serializer
+</ref/contrib/gis/serializers>`.
+
+``DjangoJSONEncoder``
+~~~~~~~~~~~~~~~~~~~~~
+
+.. class:: django.core.serializers.json.DjangoJSONEncoder
+
+The JSON serializer uses ``DjangoJSONEncoder`` for encoding. A subclass of
+:class:`~json.JSONEncoder`, it handles these additional types:
+
+:class:`~datetime.datetime`
+   A string of the form ``YYYY-MM-DDTHH:mm:ss.sssZ`` or
+   ``YYYY-MM-DDTHH:mm:ss.sss+HH:MM`` as defined in `ECMA-262`_.
+
+:class:`~datetime.date`
+   A string of the form ``YYYY-MM-DD`` as defined in `ECMA-262`_.
+
+:class:`~datetime.time`
+   A string of the form ``HH:MM:ss.sss`` as defined in `ECMA-262`_.
+
+:class:`~decimal.Decimal`, ``Promise`` (``django.utils.functional.lazy()`` objects), :class:`~uuid.UUID`
+   A string representation of the object.
+
+.. versionchanged:: 1.10
+
+    Support for ``Promise`` was added.
+
+.. _ecma-262: http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15
+
+YAML
+----
+
+YAML serialization looks quite similar to JSON. The object list is serialized
+as a sequence mappings with the keys "pk", "model" and "fields". Each field is
+again a mapping with the key being name of the field and the value the value::
+
+    -   fields: {expire_date: !!timestamp '2013-01-16 08:16:59.844560+00:00'}
+        model: sessions.session
+        pk: 4b678b301dfd8a4e0dad910de3ae245b
+
+Referential fields are again just represented by the PK or sequence of PKs.
 
 .. _topics-serialization-natural-keys:
 
 Natural keys
-------------
+============
 
 The default serialization strategy for foreign keys and many-to-many relations
 is to serialize the value of the primary key(s) of the objects in the relation.
@@ -193,12 +321,12 @@ This strategy works well for most objects, but it can cause difficulty in some
 circumstances.
 
 Consider the case of a list of objects that have a foreign key referencing
-:class:`~django.contrib.conttenttypes.models.ContentType`. If you're going to
+:class:`~django.contrib.contenttypes.models.ContentType`. If you're going to
 serialize an object that refers to a content type, then you need to have a way
 to refer to that content type to begin with. Since ``ContentType`` objects are
 automatically created by Django during the database synchronization process,
 the primary key of a given content type isn't easy to predict; it will
-depend on how and when :djadmin:`syncdb` was executed. This is true for all
+depend on how and when :djadmin:`migrate` was executed. This is true for all
 models which automatically generate objects, notably including
 :class:`~django.contrib.auth.models.Permission`,
 :class:`~django.contrib.auth.models.Group`, and
@@ -221,7 +349,7 @@ key is a tuple of values that can be used to uniquely identify an
 object instance without using the primary key value.
 
 Deserialization of natural keys
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------
 
 Consider the following two models::
 
@@ -238,7 +366,7 @@ Consider the following two models::
 
     class Book(models.Model):
         name = models.CharField(max_length=100)
-        author = models.ForeignKey(Person)
+        author = models.ForeignKey(Person, on_delete=models.CASCADE)
 
 Ordinarily, serialized data for ``Book`` would use an integer to refer to
 the author. For example, in JSON, a Book might be serialized as::
@@ -309,8 +437,12 @@ into the primary key of an actual ``Person`` object.
     fields will be effectively unique, you can still use those fields
     as a natural key.
 
+Deserialization of objects with no primary key will always check whether the
+model's manager has a ``get_by_natural_key()`` method and if so, use it to
+populate the deserialized object's primary key.
+
 Serialization of natural keys
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
 
 So how do you get Django to emit a natural key when serializing an object?
 Firstly, you need to add another method -- this time to the model itself::
@@ -331,17 +463,39 @@ Firstly, you need to add another method -- this time to the model itself::
 
 That method should always return a natural key tuple -- in this
 example, ``(first name, last name)``. Then, when you call
-``serializers.serialize()``, you provide a ``use_natural_keys=True``
-argument::
+``serializers.serialize()``, you provide ``use_natural_foreign_keys=True``
+or ``use_natural_primary_keys=True`` arguments::
 
-    >>> serializers.serialize('json', [book1, book2], indent=2, use_natural_keys=True)
+    >>> serializers.serialize('json', [book1, book2], indent=2,
+    ...      use_natural_foreign_keys=True, use_natural_primary_keys=True)
 
-When ``use_natural_keys=True`` is specified, Django will use the
-``natural_key()`` method to serialize any reference to objects of the
-type that defines the method.
+When ``use_natural_foreign_keys=True`` is specified, Django will use the
+``natural_key()`` method to serialize any foreign key reference to objects
+of the type that defines the method.
 
-If you are using :djadmin:`dumpdata` to generate serialized data, you
-use the `--natural` command line flag to generate natural keys.
+When ``use_natural_primary_keys=True`` is specified, Django will not provide the
+primary key in the serialized data of this object since it can be calculated
+during deserialization::
+
+    ...
+    {
+        "model": "store.person",
+        "fields": {
+            "first_name": "Douglas",
+            "last_name": "Adams",
+            "birth_date": "1952-03-11",
+        }
+    }
+    ...
+
+This can be useful when you need to load serialized data into an existing
+database and you cannot guarantee that the serialized primary key value is not
+already in use, and do not need to ensure that deserialized objects retain the
+same primary keys.
+
+If you are using :djadmin:`dumpdata` to generate serialized data, use the
+:option:`dumpdata --natural-foreign` and :option:`dumpdata --natural-primary`
+command line flags to generate natural keys.
 
 .. note::
 
@@ -356,15 +510,15 @@ use the `--natural` command line flag to generate natural keys.
     key values, just don't define the ``get_by_natural_key()`` method.
 
 Dependencies during serialization
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
 Since natural keys rely on database lookups to resolve references, it
 is important that the data exists before it is referenced. You can't make
-a `forward reference` with natural keys -- the data you're referencing
+a "forward reference" with natural keys -- the data you're referencing
 must exist before you include a natural key reference to that data.
 
 To accommodate this limitation, calls to :djadmin:`dumpdata` that use
-the :djadminopt:`--natural` option will serialize any model with a
+the :option:`dumpdata --natural-foreign` option will serialize any model with a
 ``natural_key()`` method before serializing standard primary key objects.
 
 However, this may not always be enough. If your natural key refers to
@@ -382,7 +536,7 @@ example above::
 
     class Book(models.Model):
         name = models.CharField(max_length=100)
-        author = models.ForeignKey(Person)
+        author = models.ForeignKey(Person, on_delete=models.CASCADE)
 
         def natural_key(self):
             return (self.name,) + self.author.natural_key()

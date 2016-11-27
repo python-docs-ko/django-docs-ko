@@ -18,7 +18,7 @@ action; Django ships with a "delete selected objects" action available to all
 models. For example, here's the user module from Django's built-in
 :mod:`django.contrib.auth` app:
 
-.. image:: _images/user_actions.png
+.. image:: _images/admin-actions.png
 
 .. warning::
 
@@ -57,7 +57,7 @@ simple news application with an ``Article`` model::
         body = models.TextField()
         status = models.CharField(max_length=1, choices=STATUS_CHOICES)
 
-        def __unicode__(self):
+        def __str__(self):              # __unicode__ on Python 2
             return self.title
 
 A common task we might perform with a model like this is to update an
@@ -70,7 +70,7 @@ Writing action functions
 ------------------------
 
 First, we'll need to write a function that gets called when the action is
-trigged from the admin. Action functions are just regular functions that take
+triggered from the admin. Action functions are just regular functions that take
 three arguments:
 
 * The current :class:`ModelAdmin`
@@ -134,7 +134,7 @@ the action and its registration would look like::
 
 That code will give us an admin change list that looks something like this:
 
-.. image:: _images/article_actions.png
+.. image:: _images/adding-actions-to-the-modeladmin.png
 
 That's really all there is to it! If you're itching to write your own actions,
 you now know enough to get started. The rest of this document just covers more
@@ -145,7 +145,7 @@ Handling errors in actions
 
 If there are foreseeable error conditions that may occur while running your
 action, you should gracefully inform the user of the problem. This means
-handling exceptions and and using
+handling exceptions and using
 :meth:`django.contrib.admin.ModelAdmin.message_user` to display a user friendly
 description of the problem in the response.
 
@@ -175,7 +175,7 @@ That's easy enough to do::
         make_published.short_description = "Mark selected stories as published"
 
 Notice first that we've moved ``make_published`` into a method and renamed the
-`modeladmin` parameter to `self`, and second that we've now put the string
+``modeladmin`` parameter to ``self``, and second that we've now put the string
 ``'make_published'`` in ``actions`` instead of a direct function reference. This
 tells the :class:`ModelAdmin` to look up the action as a method.
 
@@ -202,7 +202,7 @@ that the action was successful::
 This make the action match what the admin itself does after successfully
 performing an action:
 
-.. image:: _images/article_actions_message.png
+.. image:: _images/actions-as-modeladmin-methods.png
 
 Actions that provide intermediate pages
 ---------------------------------------
@@ -223,7 +223,7 @@ objects as JSON::
     from django.core import serializers
 
     def export_as_json(modeladmin, request, queryset):
-        response = HttpResponse(mimetype="text/javascript")
+        response = HttpResponse(content_type="application/json")
         serializers.serialize("json", queryset, stream=response)
         return response
 
@@ -257,7 +257,7 @@ Writing this view is left as an exercise to the reader.
 Making actions available site-wide
 ----------------------------------
 
-.. method:: AdminSite.add_action(action[, name])
+.. method:: AdminSite.add_action(action, name=None)
 
     Some actions are best if they're made available to *any* object in the admin
     site -- the export action defined above would be a good candidate. You can
@@ -268,9 +268,9 @@ Making actions available site-wide
 
         admin.site.add_action(export_selected_objects)
 
-    This makes the `export_selected_objects` action globally available as an
-    action named `"export_selected_objects"`. You can explicitly give the action
-    a name -- good if you later want to programatically :ref:`remove the action
+    This makes the ``export_selected_objects`` action globally available as an
+    action named "export_selected_objects". You can explicitly give the action
+    a name -- good if you later want to programmatically :ref:`remove the action
     <disabling-admin-actions>` -- by passing a second argument to
     :meth:`AdminSite.add_action()`::
 
@@ -356,5 +356,3 @@ Conditionally enabling or disabling actions
                     if 'delete_selected' in actions:
                         del actions['delete_selected']
                 return actions
-
-

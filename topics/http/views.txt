@@ -15,9 +15,7 @@ application directory.
 A simple view
 =============
 
-Here's a view that returns the current date and time, as an HTML document:
-
-.. code-block:: python
+Here's a view that returns the current date and time, as an HTML document::
 
     from django.http import HttpResponse
     import datetime
@@ -70,6 +68,8 @@ documentation.  Just return an instance of one of those subclasses instead of
 a normal :class:`~django.http.HttpResponse` in order to signify an error. For
 example::
 
+    from django.http import HttpResponse, HttpResponseNotFound
+
     def my_view(request):
         # ...
         if foo:
@@ -83,6 +83,8 @@ the :class:`~django.http.HttpResponse` documentation, you can also pass the
 HTTP status code into the constructor for :class:`~django.http.HttpResponse`
 to create a return class for any status code you like. For example::
 
+    from django.http import HttpResponse
+
     def my_view(request):
         # ...
 
@@ -92,8 +94,8 @@ to create a return class for any status code you like. For example::
 Because 404 errors are by far the most common HTTP error, there's an easier way
 to handle those errors.
 
-The Http404 exception
----------------------
+The ``Http404`` exception
+-------------------------
 
 .. class:: django.http.Http404()
 
@@ -110,118 +112,57 @@ standard error page for your application, along with an HTTP error code 404.
 Example usage::
 
     from django.http import Http404
+    from django.shortcuts import render
+    from polls.models import Poll
 
     def detail(request, poll_id):
         try:
             p = Poll.objects.get(pk=poll_id)
         except Poll.DoesNotExist:
-            raise Http404
-        return render_to_response('polls/detail.html', {'poll': p})
+            raise Http404("Poll does not exist")
+        return render(request, 'polls/detail.html', {'poll': p})
 
-In order to use the ``Http404`` exception to its fullest, you should create a
-template that is displayed when a 404 error is raised. This template should be
-called ``404.html`` and located in the top level of your template tree.
+In order to show customized HTML when Django returns a 404, you can create an
+HTML template named ``404.html`` and place it in the top level of your
+template tree. This template will then be served when :setting:`DEBUG` is set
+to ``False``.
+
+When :setting:`DEBUG` is ``True``, you can provide a message to ``Http404`` and
+it will appear in the standard 404 debug template. Use these messages for
+debugging purposes; they generally aren't suitable for use in a production 404
+template.
 
 .. _customizing-error-views:
 
 Customizing error views
 =======================
 
-.. _http_not_found_view:
+The default error views in Django should suffice for most Web applications,
+but can easily be overridden if you need any custom behavior. Simply specify
+the handlers as seen below in your URLconf (setting them anywhere else will
+have no effect).
 
-The 404 (page not found) view
------------------------------
+The :func:`~django.views.defaults.page_not_found` view is overridden by
+:data:`~django.conf.urls.handler404`::
 
-When you raise an ``Http404`` exception, Django loads a special view devoted
-to handling 404 errors. By default, it's the view
-``django.views.defaults.page_not_found``, which either produces a very simple
-"Not Found" message or loads and renders the template ``404.html`` if you
-created it in your root template directory.
+    handler404 = 'mysite.views.my_custom_page_not_found_view'
 
-The default 404 view will pass one variable to the template: ``request_path``,
-which is the URL that resulted in the error.
-
-The ``page_not_found`` view should suffice for 99% of Web applications, but if
-you want to override it, you can specify ``handler404`` in your URLconf, like
-so::
-
-    handler404 = 'mysite.views.my_custom_404_view'
-
-Behind the scenes, Django determines the 404 view by looking for
-``handler404`` in your root URLconf, and falling back to
-``django.views.defaults.page_not_found`` if you did not define one.
-
-Three things to note about 404 views:
-
-* The 404 view is also called if Django doesn't find a match after
-  checking every regular expression in the URLconf.
-
-* The 404 view is passed a :class:`~django.template.RequestContext` and
-  will have access to variables supplied by your
-  :setting:`TEMPLATE_CONTEXT_PROCESSORS` setting (e.g., ``MEDIA_URL``).
-
-* If :setting:`DEBUG` is set to ``True`` (in your settings module), then
-  your 404 view will never be used, and your URLconf will be displayed
-  instead, with some debug information.
-
-.. _http_internal_server_error_view:
-
-The 500 (server error) view
-----------------------------
-
-Similarly, Django executes special-case behavior in the case of runtime errors
-in view code. If a view results in an exception, Django will, by default, call
-the view ``django.views.defaults.server_error``, which either produces a very
-simple "Server Error" message or loads and renders the template ``500.html`` if
-you created it in your root template directory.
-
-The default 500 view passes no variables to the ``500.html`` template and is
-rendered with an empty ``Context`` to lessen the chance of additional errors.
-
-This ``server_error`` view should suffice for 99% of Web applications, but if
-you want to override the view, you can specify ``handler500`` in your URLconf,
-like so::
+The :func:`~django.views.defaults.server_error` view is overridden by
+:data:`~django.conf.urls.handler500`::
 
     handler500 = 'mysite.views.my_custom_error_view'
 
-Behind the scenes, Django determines the 500 view by looking for
-``handler500`` in your root URLconf, and falling back to
-``django.views.defaults.server_error`` if you did not define one.
-
-One thing to note about 500 views:
-
-* If :setting:`DEBUG` is set to ``True`` (in your settings module), then
-  your 500 view will never be used, and the traceback will be displayed
-  instead, with some debug information.
-
-.. _http_forbidden_view:
-
-The 403 (HTTP Forbidden) view
------------------------------
-
-.. versionadded:: 1.4
-
-In the same vein as the 404 and 500 views, Django has a view to handle 403
-Forbidden errors. If a view results in a 403 exception then Django will, by
-default, call the view ``django.views.defaults.permission_denied``.
-
-This view loads and renders the template ``403.html`` in your root template
-directory, or if this file does not exist, instead serves the text
-"403 Forbidden", as per :rfc:`2616` (the HTTP 1.1 Specification).
-
-``django.views.defaults.permission_denied`` is triggered by a
-:exc:`~django.core.exceptions.PermissionDenied` exception. To deny access in a
-view you can use code like this::
-
-    from django.core.exceptions import PermissionDenied
-
-    def edit(request, pk):
-        if not request.user.is_staff:
-            raise PermissionDenied
-        # ...
-
-It is possible to override ``django.views.defaults.permission_denied`` in the
-same way you can for the 404 and 500 views by specifying a ``handler403`` in
-your URLconf::
+The :func:`~django.views.defaults.permission_denied` view is overridden by
+:data:`~django.conf.urls.handler403`::
 
     handler403 = 'mysite.views.my_custom_permission_denied_view'
+
+The :func:`~django.views.defaults.bad_request` view is overridden by
+:data:`~django.conf.urls.handler400`::
+
+    handler400 = 'mysite.views.my_custom_bad_request_view'
+
+.. seealso::
+
+    Use the :setting:`CSRF_FAILURE_VIEW` setting to override the CSRF error
+    view.

@@ -1,9 +1,9 @@
-=================
-Class-based views
-=================
+==============================
+Built-in class-based views API
+==============================
 
-Class-based views API reference. For introductory material, see
-:doc:`/topics/class-based-views/index`.
+Class-based views API reference. For introductory material, see the
+:doc:`/topics/class-based-views/index` topic guide.
 
 .. toctree::
    :maxdepth: 3
@@ -16,7 +16,7 @@ Class-based views API reference. For introductory material, see
    flattened-index
 
 Specification
--------------
+=============
 
 Each request served by a class-based view has an independent state; therefore,
 it is safe to store state variables on the instance (i.e., ``self.foo = 3`` is
@@ -25,14 +25,14 @@ a thread-safe operation).
 A class-based view is deployed into a URL pattern using the
 :meth:`~django.views.generic.base.View.as_view()` classmethod::
 
-    urlpatterns = patterns('',
-        (r'^view/$', MyView.as_view(size=42)),
-    )
+    urlpatterns = [
+        url(r'^view/$', MyView.as_view(size=42)),
+    ]
 
 .. admonition:: Thread safety with view arguments
 
     Arguments passed to a view are shared between every instance of a view.
-    This means that you shoudn't use a list, dictionary, or any other
+    This means that you shouldn't use a list, dictionary, or any other
     mutable object as an argument to a view. If you do and the shared object
     is modified, the actions of one user visiting your view could have an
     effect on subsequent users visiting the same view.
@@ -44,7 +44,7 @@ previous example, this means that every request on ``MyView`` is able to use
 the class (return ``True`` on a ``hasattr`` check).
 
 Base vs Generic views
----------------------
+=====================
 
 Base class-based views can be thought of as *parent* views, which can be
 used by themselves or inherited from. They may not provide all the

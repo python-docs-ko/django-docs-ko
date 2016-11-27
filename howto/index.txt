@@ -1,3 +1,4 @@
+===============
 "How-to" guides
 ===============
 
@@ -12,16 +13,21 @@ you quickly accomplish common tasks.
    auth-remote-user
    custom-management-commands
    custom-model-fields
+   custom-lookups
    custom-template-tags
    custom-file-storage
    deployment/index
+   upgrade-version
    error-reporting
    initial-data
    jython
    legacy-databases
    outputting-csv
    outputting-pdf
-   static-files
+   static-files/index
+   static-files/deployment
+   windows
+   writing-migrations
 
 .. seealso::
 

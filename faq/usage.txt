@@ -1,8 +1,9 @@
+=================
 FAQ: Using Django
 =================
 
 Why do I get an error about importing DJANGO_SETTINGS_MODULE?
--------------------------------------------------------------
+=============================================================
 
 Make sure that:
 
@@ -14,15 +15,15 @@ Make sure that:
 * The module doesn't contain syntax errors (of course).
 
 I can't stand your template language. Do I have to use it?
-----------------------------------------------------------
+==========================================================
 
 We happen to think our template engine is the best thing since chunky bacon,
 but we recognize that choosing a template language runs close to religion.
 There's nothing about Django that requires using the template language, so
-if you're attached to ZPT, Cheetah, or whatever, feel free to use those.
+if you're attached to Jinja2, Mako, or whatever, feel free to use those.
 
 Do I have to use your model/database layer?
--------------------------------------------
+===========================================
 
 Nope. Just like the template system, the model/database layer is decoupled from
 the rest of the framework.
@@ -32,7 +33,7 @@ use Django's automatically-generated admin site. That app is coupled to the
 Django database layer.
 
 How do I use image and file fields?
------------------------------------
+===================================
 
 Using a :class:`~django.db.models.FileField` or an
 :class:`~django.db.models.ImageField` in a model takes a few steps:
@@ -45,20 +46,20 @@ Using a :class:`~django.db.models.FileField` or an
    account.
 
 #. Add the :class:`~django.db.models.FileField` or
-   :class:`~django.db.models.ImageField` to your model, making sure to
-   define the :attr:`~django.db.models.FileField.upload_to` option to tell
-   Django to which subdirectory of :setting:`MEDIA_ROOT` it should upload
-   files.
+   :class:`~django.db.models.ImageField` to your model, defining the
+   :attr:`~django.db.models.FileField.upload_to` option to specify a
+   subdirectory of :setting:`MEDIA_ROOT` to use for uploaded files.
 
 #. All that will be stored in your database is a path to the file
    (relative to :setting:`MEDIA_ROOT`). You'll most likely want to use the
-   convenience :attr:`~django.core.files.File.url` attribute provided by
-   Django. For example, if your :class:`~django.db.models.ImageField` is
-   called ``mug_shot``, you can get the absolute path to your image in a
-   template with ``{{ object.mug_shot.url }}``.
+   convenience :attr:`~django.db.models.fields.files.FieldFile.url` attribute
+   provided by Django. For example, if your
+   :class:`~django.db.models.ImageField` is called ``mug_shot``, you can get
+   the absolute path to your image in a template with
+   ``{{ object.mug_shot.url }}``.
 
 How do I make a variable available to all my templates?
--------------------------------------------------------
+=======================================================
 
 Sometimes your templates just all need the same thing. A common example would
 be dynamically-generated menus. At first glance, it seems logical to simply

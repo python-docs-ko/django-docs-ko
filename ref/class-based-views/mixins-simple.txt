@@ -2,12 +2,10 @@
 Simple mixins
 =============
 
-ContextMixin
-------------
+``ContextMixin``
+================
 
 .. class:: django.views.generic.base.ContextMixin
-
-    .. versionadded:: 1.5
 
     **Methods**
 
@@ -33,8 +31,8 @@ ContextMixin
             the documentation on :ref:`rendering a template context
             <alters-data-description>`.
 
-TemplateResponseMixin
----------------------
+``TemplateResponseMixin``
+=========================
 
 .. class:: django.views.generic.base.TemplateResponseMixin
 
@@ -48,21 +46,33 @@ TemplateResponseMixin
     .. attribute:: template_name
 
         The full name of a template to use as defined by a string. Not defining
-        a template_name will raise a
+        a ``template_name`` will raise a
         :class:`django.core.exceptions.ImproperlyConfigured` exception.
+
+    .. attribute:: template_engine
+
+        The :setting:`NAME <TEMPLATES-NAME>` of a template engine to use for
+        loading the template. ``template_engine`` is passed as the ``using``
+        keyword argument to ``response_class``. Default is ``None``, which
+        tells Django to search for the template in all configured engines.
 
     .. attribute:: response_class
 
         The response class to be returned by ``render_to_response`` method.
-        Default is
-        :class:`TemplateResponse <django.template.response.TemplateResponse>`.
-        The template and context of ``TemplateResponse`` instances can be
-        altered later (e.g. in
+        Default is :class:`TemplateResponse
+        <django.template.response.TemplateResponse>`. The template and context
+        of ``TemplateResponse`` instances can be altered later (e.g. in
         :ref:`template response middleware <template-response-middleware>`).
 
         If you need custom template loading or custom context object
         instantiation, create a ``TemplateResponse`` subclass and assign it to
         ``response_class``.
+
+    .. attribute:: content_type
+
+        The content type to use for the response. ``content_type`` is passed
+        as a keyword argument to ``response_class``. Default is ``None`` --
+        meaning that Django uses :setting:`DEFAULT_CONTENT_TYPE`.
 
     **Methods**
 
@@ -73,15 +83,13 @@ TemplateResponseMixin
         If any keyword arguments are provided, they will be passed to the
         constructor of the response class.
 
-        Calls :meth:`~TemplateResponseMixin.get_template_names()` to obtain the
-        list of template names that will be searched looking for an existent
-        template.
+        Calls :meth:`get_template_names()` to obtain the list of template names
+        that will be searched looking for an existent template.
 
     .. method:: get_template_names()
 
         Returns a list of template names to search for when rendering the
-        template.
+        template. The first template that is found will be used.
 
-        If :attr:`TemplateResponseMixin.template_name` is specified, the
-        default implementation will return a list containing
-        :attr:`TemplateResponseMixin.template_name` (if it is specified).
+        If :attr:`template_name` is specified, the default implementation will
+        return a list containing :attr:`template_name` (if it is specified).
