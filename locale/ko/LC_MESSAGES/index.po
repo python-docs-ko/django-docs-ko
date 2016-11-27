@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Django 1.8\n"
+"Project-Id-Version: Django 1.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-24 11:11+0900\n"
+"POT-Creation-Date: 2016-11-27 22:24+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../index.txt:3
 msgid "Django documentation"
-msgstr "장고 문서"
+msgstr ""
 
 #: ../../index.txt:6
 msgid "Everything you need to know about Django."
@@ -84,10 +84,7 @@ msgid ""
 ":doc:`Topic guides </topics/index>` discuss key topics and concepts at a "
 "fairly high level and provide useful background information and "
 "explanation."
-msgstr ":doc:`Tutorials </intro/index>`take you by the hand through a series of "
-"steps to create a Web application. Start here if you're new to Django or "
-"Web application development. Also look at the \":ref:`index-first-"
-"steps`\"아래의."
+msgstr ""
 
 #: ../../index.txt:44
 msgid ""
@@ -107,7 +104,7 @@ msgstr ""
 
 #: ../../index.txt:55
 msgid "First steps"
-msgstr "첫삽 뜨기"
+msgstr ""
 
 #: ../../index.txt:57
 msgid "Are you new to Django or to programming? This is the place to start!"
@@ -149,25 +146,24 @@ msgstr ""
 #: ../../index.txt:82
 msgid ""
 "**Models:** :doc:`Introduction to models <topics/db/models>` | "
-":doc:`Field types <ref/models/fields>` | :doc:`Indexes "
-"<ref/models/indexes>` | :doc:`Meta options <ref/models/options>` | "
-":doc:`Model class <ref/models/class>`"
+":doc:`Field types <ref/models/fields>` | :doc:`Meta options "
+"<ref/models/options>` | :doc:`Model class <ref/models/class>`"
 msgstr ""
 
-#: ../../index.txt:89
+#: ../../index.txt:88
 msgid ""
 "**QuerySets:** :doc:`Executing queries <topics/db/queries>` | "
 ":doc:`QuerySet method reference <ref/models/querysets>` | :doc:`Lookup "
 "expressions <ref/models/lookups>`"
 msgstr ""
 
-#: ../../index.txt:94
+#: ../../index.txt:93
 msgid ""
 "**Model instances:** :doc:`Instance methods <ref/models/instances>` | "
 ":doc:`Accessing related objects <ref/models/relations>`"
 msgstr ""
 
-#: ../../index.txt:98
+#: ../../index.txt:97
 msgid ""
 "**Migrations:** :doc:`Introduction to Migrations<topics/migrations>` | "
 ":doc:`Operations reference <ref/migration-operations>` | "
@@ -175,7 +171,7 @@ msgid ""
 "/writing-migrations>`"
 msgstr ""
 
-#: ../../index.txt:104
+#: ../../index.txt:103
 msgid ""
 "**Advanced:** :doc:`Managers <topics/db/managers>` | :doc:`Raw SQL "
 "<topics/db/sql>` | :doc:`Transactions <topics/db/transactions>` | "
@@ -188,7 +184,7 @@ msgid ""
 "/database-functions>`"
 msgstr ""
 
-#: ../../index.txt:117
+#: ../../index.txt:116
 msgid ""
 "**Other:** :doc:`Supported databases <ref/databases>` | :doc:`Legacy "
 "databases <howto/legacy-databases>` | :doc:`Providing initial data <howto"
@@ -197,32 +193,32 @@ msgid ""
 "<ref/contrib/postgres/index>`"
 msgstr ""
 
-#: ../../index.txt:125
+#: ../../index.txt:124
 msgid "The view layer"
 msgstr ""
 
-#: ../../index.txt:127
+#: ../../index.txt:126
 msgid ""
 "Django has the concept of \"views\" to encapsulate the logic responsible "
 "for processing a user's request and for returning the response. Find all "
 "you need to know about views via the links below:"
 msgstr ""
 
-#: ../../index.txt:131
+#: ../../index.txt:130
 msgid ""
 "**The basics:** :doc:`URLconfs <topics/http/urls>` | :doc:`View functions"
 " <topics/http/views>` | :doc:`Shortcuts <topics/http/shortcuts>` | "
 ":doc:`Decorators <topics/http/decorators>`"
 msgstr ""
 
-#: ../../index.txt:137
+#: ../../index.txt:136
 msgid ""
 "**Reference:** :doc:`Built-in Views <ref/views>` | :doc:`Request/response"
 " objects <ref/request-response>` | :doc:`TemplateResponse objects <ref"
 "/template-response>`"
 msgstr ""
 
-#: ../../index.txt:142
+#: ../../index.txt:141
 msgid ""
 "**File uploads:** :doc:`Overview <topics/http/file-uploads>` | :doc:`File"
 " objects <ref/files/file>` | :doc:`Storage API <ref/files/storage>` | "
@@ -230,7 +226,7 @@ msgid ""
 "/custom-file-storage>`"
 msgstr ""
 
-#: ../../index.txt:149
+#: ../../index.txt:148
 msgid ""
 "**Class-based views:** :doc:`Overview <topics/class-based-views/index>` |"
 " :doc:`Built-in display views <topics/class-based-views/generic-display>`"
@@ -240,64 +236,64 @@ msgid ""
 "index<ref/class-based-views/flattened-index>`"
 msgstr ""
 
-#: ../../index.txt:157
+#: ../../index.txt:156
 msgid ""
 "**Advanced:** :doc:`Generating CSV <howto/outputting-csv>` | "
 ":doc:`Generating PDF <howto/outputting-pdf>`"
 msgstr ""
 
-#: ../../index.txt:161
+#: ../../index.txt:160
 msgid ""
 "**Middleware:** :doc:`Overview <topics/http/middleware>` | :doc:`Built-in"
 " middleware classes <ref/middleware>`"
 msgstr ""
 
-#: ../../index.txt:166
+#: ../../index.txt:165
 msgid "The template layer"
 msgstr ""
 
-#: ../../index.txt:168
+#: ../../index.txt:167
 msgid ""
 "The template layer provides a designer-friendly syntax for rendering the "
 "information to be presented to the user. Learn how this syntax can be "
 "used by designers and how it can be extended by programmers:"
 msgstr ""
 
-#: ../../index.txt:172
+#: ../../index.txt:171
 msgid "**The basics:** :doc:`Overview <topics/templates>`"
 msgstr ""
 
-#: ../../index.txt:175
+#: ../../index.txt:174
 msgid ""
 "**For designers:** :doc:`Language overview <ref/templates/language>` | "
 ":doc:`Built-in tags and filters <ref/templates/builtins>` | "
 ":doc:`Humanization <ref/contrib/humanize>`"
 msgstr ""
 
-#: ../../index.txt:180
+#: ../../index.txt:179
 msgid ""
 "**For programmers:** :doc:`Template API <ref/templates/api>` | "
 ":doc:`Custom tags and filters <howto/custom-template-tags>`"
 msgstr ""
 
-#: ../../index.txt:185
+#: ../../index.txt:184
 msgid "Forms"
 msgstr ""
 
-#: ../../index.txt:187
+#: ../../index.txt:186
 msgid ""
 "Django provides a rich framework to facilitate the creation of forms and "
 "the manipulation of form data."
 msgstr ""
 
-#: ../../index.txt:190
+#: ../../index.txt:189
 msgid ""
 "**The basics:** :doc:`Overview <topics/forms/index>` | :doc:`Form API "
 "<ref/forms/api>` | :doc:`Built-in fields <ref/forms/fields>` | :doc"
 ":`Built-in widgets <ref/forms/widgets>`"
 msgstr ""
 
-#: ../../index.txt:196
+#: ../../index.txt:195
 msgid ""
 "**Advanced:** :doc:`Forms for models <topics/forms/modelforms>` | "
 ":doc:`Integrating media <topics/forms/media>` | :doc:`Formsets "
@@ -305,37 +301,37 @@ msgid ""
 "<ref/forms/validation>`"
 msgstr ""
 
-#: ../../index.txt:203
+#: ../../index.txt:202
 msgid "The development process"
 msgstr ""
 
-#: ../../index.txt:205
+#: ../../index.txt:204
 msgid ""
 "Learn about the various components and tools to help you in the "
 "development and testing of Django applications:"
 msgstr ""
 
-#: ../../index.txt:208
+#: ../../index.txt:207
 msgid ""
 "**Settings:** :doc:`Overview <topics/settings>` | :doc:`Full list of "
 "settings <ref/settings>`"
 msgstr ""
 
-#: ../../index.txt:212
+#: ../../index.txt:211
 msgid "**Applications:** :doc:`Overview <ref/applications>`"
 msgstr ""
 
-#: ../../index.txt:215
+#: ../../index.txt:214
 msgid "**Exceptions:** :doc:`Overview <ref/exceptions>`"
 msgstr ""
 
-#: ../../index.txt:218
+#: ../../index.txt:217
 msgid ""
 "**django-admin and manage.py:** :doc:`Overview <ref/django-admin>` | "
 ":doc:`Adding custom commands <howto/custom-management-commands>`"
 msgstr ""
 
-#: ../../index.txt:222
+#: ../../index.txt:221
 msgid ""
 "**Testing:** :doc:`Introduction <topics/testing/index>` | :doc:`Writing "
 "and running tests <topics/testing/overview>` | :doc:`Included testing "
@@ -343,7 +339,7 @@ msgid ""
 "<topics/testing/advanced>`"
 msgstr ""
 
-#: ../../index.txt:228
+#: ../../index.txt:227
 msgid ""
 "**Deployment:** :doc:`Overview <howto/deployment/index>` | :doc:`WSGI "
 "servers <howto/deployment/wsgi/index>` | :doc:`Deploying static files "
@@ -351,75 +347,75 @@ msgid ""
 "<howto/error-reporting>`"
 msgstr ""
 
-#: ../../index.txt:235
+#: ../../index.txt:234
 msgid "The admin"
 msgstr ""
 
-#: ../../index.txt:237
+#: ../../index.txt:236
 msgid ""
 "Find all you need to know about the automated admin interface, one of "
 "Django's most popular features:"
 msgstr ""
 
-#: ../../index.txt:240
+#: ../../index.txt:239
 msgid ":doc:`Admin site <ref/contrib/admin/index>`"
 msgstr ""
 
-#: ../../index.txt:241
+#: ../../index.txt:240
 msgid ":doc:`Admin actions <ref/contrib/admin/actions>`"
 msgstr ""
 
-#: ../../index.txt:242
+#: ../../index.txt:241
 msgid ":doc:`Admin documentation generator<ref/contrib/admin/admindocs>`"
 msgstr ""
 
-#: ../../index.txt:245
+#: ../../index.txt:244
 msgid "Security"
 msgstr ""
 
-#: ../../index.txt:247
+#: ../../index.txt:246
 msgid ""
 "Security is a topic of paramount importance in the development of Web "
 "applications and Django provides multiple protection tools and "
 "mechanisms:"
 msgstr ""
 
-#: ../../index.txt:250
+#: ../../index.txt:249
 msgid ":doc:`Security overview <topics/security>`"
 msgstr ""
 
-#: ../../index.txt:251
+#: ../../index.txt:250
 msgid ":doc:`Disclosed security issues in Django <releases/security>`"
 msgstr ""
 
-#: ../../index.txt:252
+#: ../../index.txt:251
 msgid ":doc:`Clickjacking protection <ref/clickjacking>`"
 msgstr ""
 
-#: ../../index.txt:253
+#: ../../index.txt:252
 msgid ":doc:`Cross Site Request Forgery protection <ref/csrf>`"
 msgstr ""
 
-#: ../../index.txt:254
+#: ../../index.txt:253
 msgid ":doc:`Cryptographic signing <topics/signing>`"
 msgstr ""
 
-#: ../../index.txt:255
+#: ../../index.txt:254
 msgid ":ref:`Security Middleware <security-middleware>`"
 msgstr ""
 
-#: ../../index.txt:258
+#: ../../index.txt:257
 msgid "Internationalization and localization"
 msgstr ""
 
-#: ../../index.txt:260
+#: ../../index.txt:259
 msgid ""
 "Django offers a robust internationalization and localization framework to"
 " assist you in the development of applications for multiple languages and"
 " world regions:"
 msgstr ""
 
-#: ../../index.txt:264
+#: ../../index.txt:263
 msgid ""
 ":doc:`Overview <topics/i18n/index>` | :doc:`Internationalization "
 "<topics/i18n/translation>` | :ref:`Localization <how-to-create-language-"
@@ -427,47 +423,47 @@ msgid ""
 "<topics/i18n/formatting>`"
 msgstr ""
 
-#: ../../index.txt:268
+#: ../../index.txt:267
 msgid ":doc:`Time zones </topics/i18n/timezones>`"
 msgstr ""
 
-#: ../../index.txt:271
+#: ../../index.txt:270
 msgid "Performance and optimization"
 msgstr ""
 
-#: ../../index.txt:273
+#: ../../index.txt:272
 msgid ""
 "There are a variety of techniques and tools that can help get your code "
 "running more efficiently - faster, and using fewer system resources."
 msgstr ""
 
-#: ../../index.txt:276
+#: ../../index.txt:275
 msgid ":doc:`Performance and optimization overview <topics/performance>`"
 msgstr ""
 
-#: ../../index.txt:279
+#: ../../index.txt:278
 msgid "Python compatibility"
 msgstr ""
 
-#: ../../index.txt:281
+#: ../../index.txt:280
 msgid ""
 "Django aims to be compatible with multiple different flavors and versions"
 " of Python:"
 msgstr ""
 
-#: ../../index.txt:284
+#: ../../index.txt:283
 msgid ":doc:`Jython support <howto/jython>`"
 msgstr ""
 
-#: ../../index.txt:285
+#: ../../index.txt:284
 msgid ":doc:`Python 3 compatibility <topics/python3>`"
 msgstr ""
 
-#: ../../index.txt:288
+#: ../../index.txt:287
 msgid "Geographic framework"
 msgstr ""
 
-#: ../../index.txt:290
+#: ../../index.txt:289
 msgid ""
 ":doc:`GeoDjango <ref/contrib/gis/index>` intends to be a world-class "
 "geographic Web framework. Its goal is to make it as easy as possible to "
@@ -475,17 +471,17 @@ msgid ""
 "data."
 msgstr ""
 
-#: ../../index.txt:295
+#: ../../index.txt:294
 msgid "Common Web application tools"
 msgstr ""
 
-#: ../../index.txt:297
+#: ../../index.txt:296
 msgid ""
 "Django offers multiple tools commonly needed in the development of Web "
 "applications:"
 msgstr ""
 
-#: ../../index.txt:300
+#: ../../index.txt:299
 msgid ""
 "**Authentication:** :doc:`Overview <topics/auth/index>` | :doc:`Using the"
 " authentication system <topics/auth/default>` | :doc:`Password management"
@@ -493,101 +489,101 @@ msgid ""
 "<topics/auth/customizing>` | :doc:`API Reference <ref/contrib/auth>`"
 msgstr ""
 
-#: ../../index.txt:306
+#: ../../index.txt:305
 msgid ":doc:`Caching <topics/cache>`"
 msgstr ""
 
-#: ../../index.txt:307
+#: ../../index.txt:306
 msgid ":doc:`Logging <topics/logging>`"
 msgstr ""
 
-#: ../../index.txt:308
+#: ../../index.txt:307
 msgid ":doc:`Sending emails <topics/email>`"
 msgstr ""
 
-#: ../../index.txt:309
+#: ../../index.txt:308
 msgid ":doc:`Syndication feeds (RSS/Atom) <ref/contrib/syndication>`"
 msgstr ""
 
-#: ../../index.txt:310
+#: ../../index.txt:309
 msgid ":doc:`Pagination <topics/pagination>`"
 msgstr ""
 
-#: ../../index.txt:311
+#: ../../index.txt:310
 msgid ":doc:`Messages framework <ref/contrib/messages>`"
 msgstr ""
 
-#: ../../index.txt:312
+#: ../../index.txt:311
 msgid ":doc:`Serialization <topics/serialization>`"
 msgstr ""
 
-#: ../../index.txt:313
+#: ../../index.txt:312
 msgid ":doc:`Sessions <topics/http/sessions>`"
 msgstr ""
 
-#: ../../index.txt:314
+#: ../../index.txt:313
 msgid ":doc:`Sitemaps <ref/contrib/sitemaps>`"
 msgstr ""
 
-#: ../../index.txt:315
+#: ../../index.txt:314
 msgid ":doc:`Static files management <ref/contrib/staticfiles>`"
 msgstr ""
 
-#: ../../index.txt:316
+#: ../../index.txt:315
 msgid ":doc:`Data validation <ref/validators>`"
 msgstr ""
 
-#: ../../index.txt:319
+#: ../../index.txt:318
 msgid "Other core functionalities"
 msgstr ""
 
-#: ../../index.txt:321
+#: ../../index.txt:320
 msgid "Learn about some other core functionalities of the Django framework:"
 msgstr ""
 
-#: ../../index.txt:323
+#: ../../index.txt:322
 msgid ":doc:`Conditional content processing <topics/conditional-view-processing>`"
 msgstr ""
 
-#: ../../index.txt:324
+#: ../../index.txt:323
 msgid ":doc:`Content types and generic relations <ref/contrib/contenttypes>`"
 msgstr ""
 
-#: ../../index.txt:325
+#: ../../index.txt:324
 msgid ":doc:`Flatpages <ref/contrib/flatpages>`"
 msgstr ""
 
-#: ../../index.txt:326
+#: ../../index.txt:325
 msgid ":doc:`Redirects <ref/contrib/redirects>`"
 msgstr ""
 
-#: ../../index.txt:327
+#: ../../index.txt:326
 msgid ":doc:`Signals <topics/signals>`"
 msgstr ""
 
-#: ../../index.txt:328
+#: ../../index.txt:327
 msgid ":doc:`System check framework <topics/checks>`"
 msgstr ""
 
-#: ../../index.txt:329
+#: ../../index.txt:328
 msgid ":doc:`The sites framework <ref/contrib/sites>`"
 msgstr ""
 
-#: ../../index.txt:330
+#: ../../index.txt:329
 msgid ":doc:`Unicode in Django <ref/unicode>`"
 msgstr ""
 
-#: ../../index.txt:333
+#: ../../index.txt:332
 msgid "The Django open-source project"
 msgstr ""
 
-#: ../../index.txt:335
+#: ../../index.txt:334
 msgid ""
 "Learn about the development process for the Django project itself and "
 "about how you can contribute:"
 msgstr ""
 
-#: ../../index.txt:338
+#: ../../index.txt:337
 msgid ""
 "**Community:** :doc:`How to get involved <internals/contributing/index>` "
 "| :doc:`The release process <internals/release-process>` | :doc:`Team "
@@ -597,56 +593,24 @@ msgid ""
 "<internals/security>` | :doc:`Mailing lists <internals/mailing-lists>`"
 msgstr ""
 
-#: ../../index.txt:348
+#: ../../index.txt:347
 msgid "**Design philosophies:** :doc:`Overview <misc/design-philosophies>`"
 msgstr ""
 
-#: ../../index.txt:351
+#: ../../index.txt:350
 msgid ""
 "**Documentation:** :doc:`About this documentation <internals/contributing"
 "/writing-documentation>`"
 msgstr ""
 
-#: ../../index.txt:354
+#: ../../index.txt:353
 msgid "**Third-party distributions:** :doc:`Overview <misc/distributions>`"
 msgstr ""
 
-#: ../../index.txt:357
+#: ../../index.txt:356
 msgid ""
 "**Django over time:** :doc:`API stability <misc/api-stability>` | "
 ":doc:`Release notes and upgrading instructions <releases/index>` | "
 ":doc:`Deprecation Timeline <internals/deprecation>`"
 msgstr ""
-
-#~ msgid ""
-#~ msgstr ""
-
-#~ msgid ":doc:`\"Local flavor\" <topics/localflavor>`"
-#~ msgstr ""
-
-#~ msgid ":doc:`Authentication <topics/auth/index>`"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "**Models:** :doc:`Introduction to models "
-#~ "<topics/db/models>` | :doc:`Field types "
-#~ "<ref/models/fields>` | :doc:`Meta options "
-#~ "<ref/models/options>` | :doc:`Model class "
-#~ "<ref/models/class>`"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "**Advanced:** :doc:`Managers <topics/db/managers>` |"
-#~ " :doc:`Raw SQL <topics/db/sql>` | "
-#~ ":doc:`Transactions <topics/db/transactions>` | "
-#~ ":doc:`Aggregation <topics/db/aggregation>` | "
-#~ ":doc:`Custom fields <howto/custom-model-"
-#~ "fields>` | :doc:`Multiple databases <topics/db"
-#~ "/multi-db>` | :doc:`Custom lookups <howto"
-#~ "/custom-lookups>` | :doc:`Query Expressions "
-#~ "<ref/models/expressions>` | :doc:`Conditional "
-#~ "Expressions <ref/models/conditional-expressions>` |"
-#~ " :doc:`Database Functions <ref/models/database-"
-#~ "functions>`"
-#~ msgstr ""
 

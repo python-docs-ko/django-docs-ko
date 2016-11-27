@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Django 1.8\n"
+"Project-Id-Version: Django 1.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-15 11:42+0900\n"
+"POT-Creation-Date: 2016-11-27 22:24+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -643,69 +643,14 @@ msgid ""
 "releases of Django and important bugfixes."
 msgstr ""
 
-#: ../../misc/index.txt:2
+#: ../../misc/index.txt:3
 msgid "Meta-documentation and miscellany"
 msgstr ""
 
-#: ../../misc/index.txt:4
+#: ../../misc/index.txt:5
 msgid ""
 "Documentation that we can't find a more organized place for. Like that "
 "drawer in your kitchen with the scissors, batteries, duct tape, and other"
 " junk."
 msgstr ""
-
-#~ msgid ""
-#~ ":doc:`The release of Django 1.0 "
-#~ "</releases/1.0>` comes with a promise of"
-#~ " API stability and forwards-compatibility."
-#~ " In a nutshell, this means that "
-#~ "code you develop against a 1.X "
-#~ "version of Django will continue to "
-#~ "work with future 1.X releases. You "
-#~ "may need to make minor changes "
-#~ "when upgrading the version of Django "
-#~ "your project uses: see the \"Backwards"
-#~ " incompatible changes\" section of the "
-#~ ":doc:`release note </releases/index>` for the"
-#~ " version or versions to which you "
-#~ "are upgrading."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "If, for some reason, an API "
-#~ "declared stable must be removed or "
-#~ "replaced, it will be declared deprecated"
-#~ " but will remain in the API for"
-#~ " at least two minor version releases."
-#~ " Warnings will be issued when the "
-#~ "deprecated method is called."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "The majority of dynamic Web sites "
-#~ "use some sort of common sitewide "
-#~ "design -- a common header, footer, "
-#~ "navigation bar, etc. The Django template"
-#~ " system should make it easy to "
-#~ "store those elements in a single "
-#~ "place, eliminating duplicate code."
-#~ msgstr ""
-
-#~ msgid "The template system intentionally doesn't allow the following:"
-#~ msgstr ""
-
-#~ msgid "Assignment to variables"
-#~ msgstr ""
-
-#~ msgid "Advanced logic"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "The goal is not to invent a "
-#~ "programming language. The goal is to "
-#~ "offer just enough programming-esque "
-#~ "functionality, such as branching and "
-#~ "looping, that is essential for making"
-#~ " presentation-related decisions."
-#~ msgstr ""
 

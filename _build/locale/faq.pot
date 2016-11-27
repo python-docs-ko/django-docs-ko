@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Django 1.11\n"
+"Project-Id-Version: Django 1.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-24 11:11+0900\n"
+"POT-Creation-Date: 2016-11-27 22:24+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -569,46 +569,62 @@ msgid "2.7, 3.2 (until the end of 2016), 3.3, 3.4, 3.5"
 msgstr ""
 
 #: ../../faq/install.txt:50
-msgid "**1.9, 1.10**"
+msgid "1.9, 1.10"
 msgstr ""
 
 #: ../../faq/install.txt:50
-msgid "**2.7, 3.4, 3.5**"
+msgid "2.7, 3.4, 3.5"
 msgstr ""
 
-#: ../../faq/install.txt:53
+#: ../../faq/install.txt:51
+msgid "1.11"
+msgstr ""
+
+#: ../../faq/install.txt:51
+msgid "2.7, 3.4, 3.5, 3.6"
+msgstr ""
+
+#: ../../faq/install.txt:52
+msgid "2.0"
+msgstr ""
+
+#: ../../faq/install.txt:52
+msgid "3.5+"
+msgstr ""
+
+#: ../../faq/install.txt:55
 msgid "For each version of Python, only the latest micro release (A.B.C) is officially supported. You can find the latest micro version for each series on the `Python download page <https://www.python.org/downloads/>`_."
 msgstr ""
 
-#: ../../faq/install.txt:57
+#: ../../faq/install.txt:59
 msgid "Typically, we will support a Python version up to and including the first Django LTS release whose security support ends after security support for that version of Python ends. For example, Python 3.3 security support ends September 2017 and Django 1.8 LTS security support ends April 2018. Therefore Django 1.8 is the last version to support Python 3.3."
 msgstr ""
 
-#: ../../faq/install.txt:64
+#: ../../faq/install.txt:66
 msgid "What Python version should I use with Django?"
 msgstr ""
 
-#: ../../faq/install.txt:66
+#: ../../faq/install.txt:68
 msgid "As of Django 1.6, Python 3 support is considered stable and you can safely use it in production. See also :doc:`/topics/python3`. However, the community is still in the process of migrating third-party packages and applications to Python 3."
 msgstr ""
 
-#: ../../faq/install.txt:71
+#: ../../faq/install.txt:73
 msgid "If you're starting a new project, and the dependencies you plan to use work on Python 3, you should use Python 3. If they don't, consider contributing to the porting efforts, or stick to Python 2."
 msgstr ""
 
-#: ../../faq/install.txt:75
+#: ../../faq/install.txt:77
 msgid "Since newer versions of Python are often faster, have more features, and are better supported, all else being equal, we recommend that you use the latest 2.x.y or 3.x.y release."
 msgstr ""
 
-#: ../../faq/install.txt:79
+#: ../../faq/install.txt:81
 msgid "You don't lose anything in Django by using an older release, but you don't take advantage of the improvements and optimizations in newer Python releases. Third-party applications for use with Django are, of course, free to set their own version requirements."
 msgstr ""
 
-#: ../../faq/install.txt:85
+#: ../../faq/install.txt:87
 msgid "Should I use the stable version or development version?"
 msgstr ""
 
-#: ../../faq/install.txt:87
+#: ../../faq/install.txt:89
 msgid "Generally, if you're using code in production, you should be using a stable release. The Django project publishes a full stable release every nine months or so, with bugfix updates in between. These stable releases contain the API that is covered by our backwards compatibility guarantees; if you write code against stable releases, you shouldn't have any problems upgrading when the next official version is released."
 msgstr ""
 

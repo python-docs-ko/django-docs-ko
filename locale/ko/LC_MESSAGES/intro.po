@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Django 1.8\n"
+"Project-Id-Version: Django 1.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-24 11:11+0900\n"
+"POT-Creation-Date: 2016-11-27 22:24+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -154,7 +154,7 @@ msgid ""
 msgstr ""
 
 #: ../../intro/contributing.txt:77 ../../intro/contributing.txt:99
-#: ../../intro/contributing.txt:144 ../../intro/contributing.txt:180
+#: ../../intro/contributing.txt:145 ../../intro/contributing.txt:181
 msgid "For Windows users"
 msgstr ""
 
@@ -215,15 +215,17 @@ msgstr ""
 #: ../../intro/contributing.txt:113
 msgid ""
 "The first step to contributing to Django is to get a copy of the source "
-"code. From the command line, use the ``cd`` command to navigate to the "
-"directory where you'll want your local copy of Django to live."
+"code. First, `fork Django on GitHub <https://github.com/django/django"
+"#fork-destination-box>`__. Then, from the command line, use the ``cd`` "
+"command to navigate to the directory where you'll want your local copy of"
+" Django to live."
 msgstr ""
 
-#: ../../intro/contributing.txt:117
+#: ../../intro/contributing.txt:118
 msgid "Download the Django source code repository using the following command:"
 msgstr ""
 
-#: ../../intro/contributing.txt:123
+#: ../../intro/contributing.txt:124
 msgid ""
 "Now that you have a local copy of Django, you can install it just like "
 "you would install any package using ``pip``. The most convenient way to "
@@ -233,22 +235,22 @@ msgid ""
 "interfere with each other."
 msgstr ""
 
-#: ../../intro/contributing.txt:129
+#: ../../intro/contributing.txt:130
 msgid ""
 "It's a good idea to keep all your virtualenvs in one place, for example "
 "in ``.virtualenvs/`` in your home directory. Create it if it doesn't "
 "exist yet:"
 msgstr ""
 
-#: ../../intro/contributing.txt:136
+#: ../../intro/contributing.txt:137
 msgid "Now create a new virtualenv by running:"
 msgstr ""
 
-#: ../../intro/contributing.txt:142
+#: ../../intro/contributing.txt:143
 msgid "The path is where the new environment will be saved on your computer."
 msgstr ""
 
-#: ../../intro/contributing.txt:146
+#: ../../intro/contributing.txt:147
 msgid ""
 "Using the built-in ``venv`` module will not work if you are also using "
 "the Git Bash shell on Windows, since activation scripts are only created "
@@ -256,38 +258,38 @@ msgid ""
 "``virtualenv`` package instead:"
 msgstr ""
 
-#: ../../intro/contributing.txt:156
+#: ../../intro/contributing.txt:157
 msgid "For Ubuntu users"
 msgstr ""
 
-#: ../../intro/contributing.txt:158
+#: ../../intro/contributing.txt:159
 msgid ""
 "On some versions of Ubuntu the above command might fail. Use the "
 "``virtualenv`` package instead, first making sure you have ``pip3``:"
 msgstr ""
 
-#: ../../intro/contributing.txt:168
+#: ../../intro/contributing.txt:169
 msgid "The final step in setting up your virtualenv is to activate it:"
 msgstr ""
 
-#: ../../intro/contributing.txt:174
+#: ../../intro/contributing.txt:175
 msgid ""
 "If the ``source`` command is not available, you can try using a dot "
 "instead:"
 msgstr ""
 
-#: ../../intro/contributing.txt:182
+#: ../../intro/contributing.txt:183
 msgid "To activate your virtualenv on Windows, run:"
 msgstr ""
 
-#: ../../intro/contributing.txt:188
+#: ../../intro/contributing.txt:189
 msgid ""
 "You have to activate the virtualenv whenever you open a new terminal "
 "window. virtualenvwrapper__ is a useful tool for making this more "
 "convenient."
 msgstr ""
 
-#: ../../intro/contributing.txt:193
+#: ../../intro/contributing.txt:194
 msgid ""
 "Anything you install through ``pip`` from now on will be installed in "
 "your new virtualenv, isolated from other environments and system-wide "
@@ -296,18 +298,18 @@ msgid ""
 " using. Go ahead and install the previously cloned copy of Django:"
 msgstr ""
 
-#: ../../intro/contributing.txt:203
+#: ../../intro/contributing.txt:204
 msgid ""
 "The installed version of Django is now pointing at your local copy. You "
 "will immediately see any changes you make to it, which is of great help "
 "when writing your first patch."
 msgstr ""
 
-#: ../../intro/contributing.txt:208
+#: ../../intro/contributing.txt:209
 msgid "Rolling back to a previous revision of Django"
 msgstr ""
 
-#: ../../intro/contributing.txt:210
+#: ../../intro/contributing.txt:211
 msgid ""
 "For this tutorial, we'll be using ticket :ticket:`24788` as a case study,"
 " so we'll rewind Django's version history in git to before that ticket's "
@@ -316,7 +318,7 @@ msgid ""
 "test suite."
 msgstr ""
 
-#: ../../intro/contributing.txt:215
+#: ../../intro/contributing.txt:216
 msgid ""
 "**Keep in mind that while we'll be using an older revision of Django's "
 "trunk for the purposes of the tutorial below, you should always use the "
@@ -324,7 +326,7 @@ msgid ""
 " a ticket!**"
 msgstr ""
 
-#: ../../intro/contributing.txt:221
+#: ../../intro/contributing.txt:222
 msgid ""
 "The patch for this ticket was written by Paweł Marczewski, and it was "
 "applied to Django as `commit 4df7e8483b2679fc1cba3410f08960bac6f51115`__."
@@ -332,7 +334,7 @@ msgid ""
 "`commit 4ccfc4439a7add24f8db4ef3960d02ef8ae09887`__."
 msgstr ""
 
-#: ../../intro/contributing.txt:229
+#: ../../intro/contributing.txt:230
 msgid ""
 "Navigate into Django's root directory (that's the one that contains "
 "``django``, ``docs``, ``tests``, ``AUTHORS``, etc.). You can then check "
@@ -340,11 +342,11 @@ msgid ""
 "below:"
 msgstr ""
 
-#: ../../intro/contributing.txt:238
+#: ../../intro/contributing.txt:239
 msgid "Running Django's test suite for the first time"
 msgstr ""
 
-#: ../../intro/contributing.txt:240
+#: ../../intro/contributing.txt:241
 msgid ""
 "When contributing to Django it's very important that your code changes "
 "don't introduce bugs into other areas of Django. One way to check that "
@@ -355,13 +357,13 @@ msgid ""
 "just to get familiar with what its output is supposed to look like."
 msgstr ""
 
-#: ../../intro/contributing.txt:248
+#: ../../intro/contributing.txt:249
 msgid ""
 "Before running the test suite, install its dependencies by first "
 "``cd``-ing into the Django ``tests/`` directory and then running:"
 msgstr ""
 
-#: ../../intro/contributing.txt:255
+#: ../../intro/contributing.txt:256
 msgid ""
 "If you encounter an error during the installation, your system might be "
 "missing a dependency for one or more of the Python packages. Consult the "
@@ -369,20 +371,20 @@ msgid ""
 "that you encounter."
 msgstr ""
 
-#: ../../intro/contributing.txt:260
+#: ../../intro/contributing.txt:261
 msgid ""
 "Now we are ready to run the test suite. If you're using GNU/Linux, Mac OS"
 " X or some other flavor of Unix, run:"
 msgstr ""
 
-#: ../../intro/contributing.txt:267
+#: ../../intro/contributing.txt:268
 msgid ""
 "Now sit back and relax. Django's entire test suite has over 9,600 "
 "different tests, so it can take anywhere from 5 to 15 minutes to run, "
 "depending on the speed of your computer."
 msgstr ""
 
-#: ../../intro/contributing.txt:271
+#: ../../intro/contributing.txt:272
 msgid ""
 "While Django's test suite is running, you'll see a stream of characters "
 "representing the status of each test as it's run. ``E`` indicates that an"
@@ -392,7 +394,7 @@ msgid ""
 " respectively. Dots indicate passing tests."
 msgstr ""
 
-#: ../../intro/contributing.txt:278
+#: ../../intro/contributing.txt:279
 msgid ""
 "Skipped tests are typically due to missing external libraries required to"
 " run the test; see :ref:`running-unit-tests-dependencies` for a list of "
@@ -404,7 +406,7 @@ msgid ""
 "unit-tests-settings`."
 msgstr ""
 
-#: ../../intro/contributing.txt:286
+#: ../../intro/contributing.txt:287
 msgid ""
 "Once the tests complete, you should be greeted with a message informing "
 "you whether the test suite passed or failed. Since you haven't yet made "
@@ -416,7 +418,7 @@ msgid ""
 "fixed in Django."
 msgstr ""
 
-#: ../../intro/contributing.txt:294
+#: ../../intro/contributing.txt:295
 msgid ""
 "Note that the latest Django trunk may not always be stable. When "
 "developing against trunk, you can check `Django's continuous integration "
@@ -426,7 +428,7 @@ msgid ""
 " failures broken down by Python version and database backend."
 msgstr ""
 
-#: ../../intro/contributing.txt:305
+#: ../../intro/contributing.txt:306
 msgid ""
 "For this tutorial and the ticket we're working on, testing against SQLite"
 " is sufficient, however, it's possible (and sometimes necessary) to "
@@ -434,11 +436,11 @@ msgid ""
 "settings>`."
 msgstr ""
 
-#: ../../intro/contributing.txt:311
+#: ../../intro/contributing.txt:312
 msgid "Writing some tests for your ticket"
 msgstr ""
 
-#: ../../intro/contributing.txt:313
+#: ../../intro/contributing.txt:314
 msgid ""
 "In most cases, for a patch to be accepted into Django it has to include "
 "tests. For bug fix patches, this means writing a regression test to "
@@ -450,7 +452,7 @@ msgid ""
 " feature is not present, and then pass once it has been implemented."
 msgstr ""
 
-#: ../../intro/contributing.txt:322
+#: ../../intro/contributing.txt:323
 msgid ""
 "A good way to do this is to write your new tests first, before making any"
 " changes to the code. This style of development is called `test-driven "
@@ -463,21 +465,21 @@ msgid ""
 "reoccurring down the road."
 msgstr ""
 
-#: ../../intro/contributing.txt:331
+#: ../../intro/contributing.txt:332
 msgid "Now for our hands-on example."
 msgstr ""
 
-#: ../../intro/contributing.txt:336
+#: ../../intro/contributing.txt:337
 msgid "Writing some tests for ticket #24788"
 msgstr ""
 
-#: ../../intro/contributing.txt:338
+#: ../../intro/contributing.txt:339
 msgid ""
 "Ticket :ticket:`24788` proposes a small feature addition: the ability to "
 "specify the class level attribute ``prefix`` on Form classes, so that::"
 msgstr ""
 
-#: ../../intro/contributing.txt:345
+#: ../../intro/contributing.txt:346
 msgid ""
 "In order to resolve this ticket, we'll add a ``prefix`` attribute to the "
 "``BaseForm`` class. When creating instances of this class, passing a "
@@ -488,25 +490,25 @@ msgid ""
 "correctly and continues to function correctly in the future."
 msgstr ""
 
-#: ../../intro/contributing.txt:353
+#: ../../intro/contributing.txt:354
 msgid ""
 "Navigate to Django's ``tests/forms_tests/tests/`` folder and open the "
 "``test_forms.py`` file. Add the following code on line 1674 right before "
 "the ``test_forms_with_null_boolean`` function::"
 msgstr ""
 
-#: ../../intro/contributing.txt:369
+#: ../../intro/contributing.txt:370
 msgid ""
 "This new test checks that setting a class level prefix works as expected,"
 " and that passing a ``prefix`` parameter when creating an instance still "
 "works too."
 msgstr ""
 
-#: ../../intro/contributing.txt:372
+#: ../../intro/contributing.txt:373
 msgid "But this testing thing looks kinda hard..."
 msgstr ""
 
-#: ../../intro/contributing.txt:374
+#: ../../intro/contributing.txt:375
 msgid ""
 "If you've never had to deal with tests before, they can look a little "
 "hard to write at first glance. Fortunately, testing is a *very* big "
@@ -514,29 +516,29 @@ msgid ""
 "there:"
 msgstr ""
 
-#: ../../intro/contributing.txt:378
+#: ../../intro/contributing.txt:379
 msgid ""
 "A good first look at writing tests for Django can be found in the "
 "documentation on :doc:`/topics/testing/overview`."
 msgstr ""
 
-#: ../../intro/contributing.txt:380
+#: ../../intro/contributing.txt:381
 msgid ""
 "Dive Into Python (a free online book for beginning Python developers) "
 "includes a great `introduction to Unit Testing`__."
 msgstr ""
 
-#: ../../intro/contributing.txt:382
+#: ../../intro/contributing.txt:383
 msgid ""
 "After reading those, if you want something a little meatier to sink your "
 "teeth into, there's always the Python :mod:`unittest` documentation."
 msgstr ""
 
-#: ../../intro/contributing.txt:388
+#: ../../intro/contributing.txt:389
 msgid "Running your new test"
 msgstr ""
 
-#: ../../intro/contributing.txt:390
+#: ../../intro/contributing.txt:391
 msgid ""
 "Remember that we haven't actually made any modifications to ``BaseForm`` "
 "yet, so our tests are going to fail. Let's run all the tests in the "
@@ -544,7 +546,7 @@ msgid ""
 "command line, ``cd`` into the Django ``tests/`` directory and run:"
 msgstr ""
 
-#: ../../intro/contributing.txt:399
+#: ../../intro/contributing.txt:400
 msgid ""
 "If the tests ran correctly, you should see one failure corresponding to "
 "the test method we added. If all of the tests passed, then you'll want to"
@@ -552,32 +554,32 @@ msgid ""
 "folder and class."
 msgstr ""
 
-#: ../../intro/contributing.txt:404
+#: ../../intro/contributing.txt:405
 msgid "Writing the code for your ticket"
 msgstr ""
 
-#: ../../intro/contributing.txt:406
+#: ../../intro/contributing.txt:407
 msgid ""
 "Next we'll be adding the functionality described in ticket "
 ":ticket:`24788` to Django."
 msgstr ""
 
-#: ../../intro/contributing.txt:410
+#: ../../intro/contributing.txt:411
 msgid "Writing the code for ticket #24788"
 msgstr ""
 
-#: ../../intro/contributing.txt:412
+#: ../../intro/contributing.txt:413
 msgid ""
 "Navigate to the ``django/django/forms/`` folder and open the ``forms.py``"
 " file. Find the ``BaseForm`` class on line 72 and add the ``prefix`` "
 "class attribute right after the ``field_order`` attribute::"
 msgstr ""
 
-#: ../../intro/contributing.txt:425
+#: ../../intro/contributing.txt:426
 msgid "Verifying your test now passes"
 msgstr ""
 
-#: ../../intro/contributing.txt:427
+#: ../../intro/contributing.txt:428
 msgid ""
 "Once you're done modifying Django, we need to make sure that the tests we"
 " wrote earlier pass, so we can see whether the code we wrote above is "
@@ -585,31 +587,31 @@ msgid ""
 " into the Django ``tests/`` directory and run:"
 msgstr ""
 
-#: ../../intro/contributing.txt:436
+#: ../../intro/contributing.txt:437
 msgid ""
 "Oops, good thing we wrote those tests! You should still see one failure "
 "with the following exception::"
 msgstr ""
 
-#: ../../intro/contributing.txt:441
+#: ../../intro/contributing.txt:442
 msgid ""
 "We forgot to add the conditional statement in the ``__init__`` method. Go"
 " ahead and change ``self.prefix = prefix`` that is now on line 87 of "
 "``django/forms/forms.py``, adding a conditional statement::"
 msgstr ""
 
-#: ../../intro/contributing.txt:448
+#: ../../intro/contributing.txt:449
 msgid ""
 "Re-run the tests and everything should pass. If it doesn't, make sure you"
 " correctly modified the ``BaseForm`` class as shown above and copied the "
 "new test correctly."
 msgstr ""
 
-#: ../../intro/contributing.txt:453
+#: ../../intro/contributing.txt:454
 msgid "Running Django's test suite for the second time"
 msgstr ""
 
-#: ../../intro/contributing.txt:455
+#: ../../intro/contributing.txt:456
 msgid ""
 "Once you've verified that your patch and your test are working correctly,"
 " it's a good idea to run the entire Django test suite just to verify that"
@@ -619,35 +621,35 @@ msgid ""
 "otherwise go unnoticed."
 msgstr ""
 
-#: ../../intro/contributing.txt:461
+#: ../../intro/contributing.txt:462
 msgid ""
 "To run the entire Django test suite, ``cd`` into the Django ``tests/`` "
 "directory and run:"
 msgstr ""
 
-#: ../../intro/contributing.txt:468
+#: ../../intro/contributing.txt:469
 msgid "As long as you don't see any failures, you're good to go."
 msgstr ""
 
-#: ../../intro/contributing.txt:471
+#: ../../intro/contributing.txt:472
 msgid "Writing Documentation"
 msgstr ""
 
-#: ../../intro/contributing.txt:473
+#: ../../intro/contributing.txt:474
 msgid ""
 "This is a new feature, so it should be documented. Add the following "
 "section on line 1068 (at the end of the file) of "
 "``django/docs/ref/forms/api.txt``::"
 msgstr ""
 
-#: ../../intro/contributing.txt:486
+#: ../../intro/contributing.txt:487
 msgid ""
 "Since this new feature will be in an upcoming release it is also added to"
 " the release notes for Django 1.9, on line 164 under the \"Forms\" "
 "section in the file ``docs/releases/1.9.txt``::"
 msgstr ""
 
-#: ../../intro/contributing.txt:493
+#: ../../intro/contributing.txt:494
 msgid ""
 "For more information on writing documentation, including an explanation "
 "of what the ``versionadded`` bit is all about, see "
@@ -656,25 +658,25 @@ msgid ""
 "locally, so you can preview the HTML that will be generated."
 msgstr ""
 
-#: ../../intro/contributing.txt:500
+#: ../../intro/contributing.txt:501
 msgid "Generating a patch for your changes"
 msgstr ""
 
-#: ../../intro/contributing.txt:502
+#: ../../intro/contributing.txt:503
 msgid ""
 "Now it's time to generate a patch file that can be uploaded to Trac or "
 "applied to another copy of Django. To get a look at the content of your "
 "patch, run the following command:"
 msgstr ""
 
-#: ../../intro/contributing.txt:510
+#: ../../intro/contributing.txt:511
 msgid ""
 "This will display the differences between your current copy of Django "
 "(with your changes) and the revision that you initially checked out "
 "earlier in the tutorial."
 msgstr ""
 
-#: ../../intro/contributing.txt:514
+#: ../../intro/contributing.txt:515
 msgid ""
 "Once you're done looking at the patch, hit the ``q`` key to exit back to "
 "the command line. If the patch's content looked okay, you can run the "
@@ -682,18 +684,18 @@ msgid ""
 "directory:"
 msgstr ""
 
-#: ../../intro/contributing.txt:522
+#: ../../intro/contributing.txt:523
 msgid ""
 "You should now have a file in the root Django directory called "
 "``24788.diff``. This patch file contains all your changes and should look"
 " this:"
 msgstr ""
 
-#: ../../intro/contributing.txt:606
+#: ../../intro/contributing.txt:607
 msgid "So what do I do next?"
 msgstr ""
 
-#: ../../intro/contributing.txt:608
+#: ../../intro/contributing.txt:609
 msgid ""
 "Congratulations, you've generated your very first Django patch! Now that "
 "you've got that under your belt, you can put those skills to good use by "
@@ -703,23 +705,23 @@ msgid ""
 "/writing-code/working-with-git>` is recommended."
 msgstr ""
 
-#: ../../intro/contributing.txt:615
+#: ../../intro/contributing.txt:616
 msgid ""
 "Since we never committed our changes locally, perform the following to "
 "get your git branch back to a good starting point:"
 msgstr ""
 
-#: ../../intro/contributing.txt:624
+#: ../../intro/contributing.txt:625
 msgid "More information for new contributors"
 msgstr ""
 
-#: ../../intro/contributing.txt:626
+#: ../../intro/contributing.txt:627
 msgid ""
 "Before you get too into writing patches for Django, there's a little more"
 " information on contributing that you should probably take a look at:"
 msgstr ""
 
-#: ../../intro/contributing.txt:629
+#: ../../intro/contributing.txt:630
 msgid ""
 "You should make sure to read Django's documentation on :doc:`claiming "
 "tickets and submitting patches </internals/contributing/writing-code"
@@ -728,7 +730,7 @@ msgid ""
 "details."
 msgstr ""
 
-#: ../../intro/contributing.txt:634
+#: ../../intro/contributing.txt:635
 msgid ""
 "First time contributors should also read Django's :doc:`documentation for"
 " first time contributors</internals/contributing/new-contributors/>`. It "
@@ -736,7 +738,7 @@ msgid ""
 "Django."
 msgstr ""
 
-#: ../../intro/contributing.txt:638
+#: ../../intro/contributing.txt:639
 msgid ""
 "After those, if you're still hungry for more information about "
 "contributing, you can always browse through the rest of :doc:`Django's "
@@ -745,11 +747,11 @@ msgid ""
 "answering any questions you might have."
 msgstr ""
 
-#: ../../intro/contributing.txt:645
+#: ../../intro/contributing.txt:646
 msgid "Finding your first real ticket"
 msgstr ""
 
-#: ../../intro/contributing.txt:647
+#: ../../intro/contributing.txt:648
 msgid ""
 "Once you've looked through some of that information, you'll be ready to "
 "go out and find a ticket of your own to write a patch for. Pay special "
@@ -759,7 +761,7 @@ msgid ""
 "move on to writing patches for more difficult and complicated tickets."
 msgstr ""
 
-#: ../../intro/contributing.txt:654
+#: ../../intro/contributing.txt:655
 msgid ""
 "If you just want to get started already (and nobody would blame you!), "
 "try taking a look at the list of `easy tickets that need patches`__ and "
@@ -771,12 +773,12 @@ msgid ""
 "</internals/contributing/writing-code/submitting-patches>`."
 msgstr ""
 
-#: ../../intro/contributing.txt:668 ../../intro/tutorial05.txt:679
+#: ../../intro/contributing.txt:669 ../../intro/tutorial05.txt:669
 #: ../../intro/tutorial07.txt:415
 msgid "What's next?"
 msgstr ""
 
-#: ../../intro/contributing.txt:670
+#: ../../intro/contributing.txt:671
 msgid ""
 "After a ticket has a patch, it needs to be reviewed by a second set of "
 "eyes. After uploading a patch or submitting a pull request, be sure to "
@@ -2109,7 +2111,7 @@ msgid ""
 " you're just interested in trying Django, this is the easiest choice. "
 "SQLite is included in Python, so you won't need to install anything else "
 "to support your database. When starting your first real project, however,"
-" you may want to use a more robust database like PostgreSQL, to avoid "
+" you may want to use a more scalable database like PostgreSQL, to avoid "
 "database-switching headaches down the road."
 msgstr ""
 
@@ -2268,7 +2270,7 @@ msgid ""
 msgstr ""
 
 #: ../../intro/tutorial02.txt:118 ../../intro/tutorial02.txt:201
-#: ../../intro/tutorial02.txt:582 ../../intro/tutorial03.txt:331
+#: ../../intro/tutorial02.txt:585 ../../intro/tutorial03.txt:331
 msgid "Philosophy"
 msgstr ""
 
@@ -2394,27 +2396,30 @@ msgstr ""
 
 #: ../../intro/tutorial02.txt:207
 msgid ""
-"Edit the :file:`mysite/settings.py` file again, and change the "
-":setting:`INSTALLED_APPS` setting to include the string "
-"``'polls.apps.PollsConfig'``. It'll look like this:"
+"To include the app in our project, we need to add a reference to its "
+"configuration class in the :setting:`INSTALLED_APPS` setting. The "
+"``PollsConfig`` class is in the :file:`polls/apps.py` file, so its dotted"
+" path is ``'polls.apps.PollsConfig'``. Edit the "
+":file:`mysite/settings.py` file and add that dotted path to the "
+":setting:`INSTALLED_APPS` setting. It'll look like this:"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:224
+#: ../../intro/tutorial02.txt:227
 msgid "Now Django knows to include the ``polls`` app. Let's run another command:"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:230
+#: ../../intro/tutorial02.txt:233
 msgid "You should see something similar to the following:"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:240
+#: ../../intro/tutorial02.txt:243
 msgid ""
 "By running ``makemigrations``, you're telling Django that you've made "
 "some changes to your models (in this case, you've made new ones) and that"
 " you'd like the changes to be stored as a *migration*."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:244
+#: ../../intro/tutorial02.txt:247
 msgid ""
 "Migrations are how Django stores changes to your models (and thus your "
 "database schema) - they're just files on disk. You can read the migration"
@@ -2424,7 +2429,7 @@ msgid ""
 "editable in case you want to manually tweak how Django changes things."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:251
+#: ../../intro/tutorial02.txt:254
 msgid ""
 "There's a command that will run the migrations for you and manage your "
 "database schema automatically - that's called :djadmin:`migrate`, and "
@@ -2433,40 +2438,40 @@ msgid ""
 "names and returns their SQL:"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:260
+#: ../../intro/tutorial02.txt:263
 msgid ""
 "You should see something similar to the following (we've reformatted it "
 "for readability):"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:296
+#: ../../intro/tutorial02.txt:299
 msgid "Note the following:"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:298
+#: ../../intro/tutorial02.txt:301
 msgid ""
 "The exact output will vary depending on the database you are using. The "
 "example above is generated for PostgreSQL."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:301
+#: ../../intro/tutorial02.txt:304
 msgid ""
 "Table names are automatically generated by combining the name of the app "
 "(``polls``) and the lowercase name of the model -- ``question`` and "
 "``choice``. (You can override this behavior.)"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:305
+#: ../../intro/tutorial02.txt:308
 msgid "Primary keys (IDs) are added automatically. (You can override this, too.)"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:307
+#: ../../intro/tutorial02.txt:310
 msgid ""
 "By convention, Django appends ``\"_id\"`` to the foreign key field name. "
 "(Yes, you can override this, as well.)"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:310
+#: ../../intro/tutorial02.txt:313
 msgid ""
 "The foreign key relationship is made explicit by a ``FOREIGN KEY`` "
 "constraint. Don't worry about the ``DEFERRABLE`` parts; that's just "
@@ -2474,7 +2479,7 @@ msgid ""
 "transaction."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:314
+#: ../../intro/tutorial02.txt:317
 msgid ""
 "It's tailored to the database you're using, so database-specific field "
 "types such as ``auto_increment`` (MySQL), ``serial`` (PostgreSQL), or "
@@ -2483,7 +2488,7 @@ msgid ""
 "double quotes or single quotes."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:320
+#: ../../intro/tutorial02.txt:323
 msgid ""
 "The :djadmin:`sqlmigrate` command doesn't actually run the migration on "
 "your database - it just prints it to the screen so that you can see what "
@@ -2492,20 +2497,20 @@ msgid ""
 "scripts for changes."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:326
+#: ../../intro/tutorial02.txt:329
 msgid ""
 "If you're interested, you can also run :djadmin:`python manage.py check "
 "<check>`; this checks for any problems in your project without making "
 "migrations or touching the database."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:330
+#: ../../intro/tutorial02.txt:333
 msgid ""
 "Now, run :djadmin:`migrate` again to create those model tables in your "
 "database:"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:341
+#: ../../intro/tutorial02.txt:344
 msgid ""
 "The :djadmin:`migrate` command takes all the migrations that haven't been"
 " applied (Django tracks which ones are applied using a special table in "
@@ -2514,7 +2519,7 @@ msgid ""
 " with the schema in the database."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:347
+#: ../../intro/tutorial02.txt:350
 msgid ""
 "Migrations are very powerful and let you change your models over time, as"
 " you develop your project, without the need to delete your database or "
@@ -2524,23 +2529,23 @@ msgid ""
 "model changes:"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:353
+#: ../../intro/tutorial02.txt:356
 msgid "Change your models (in ``models.py``)."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:354
+#: ../../intro/tutorial02.txt:357
 msgid ""
 "Run :djadmin:`python manage.py makemigrations <makemigrations>` to create"
 " migrations for those changes"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:356
+#: ../../intro/tutorial02.txt:359
 msgid ""
 "Run :djadmin:`python manage.py migrate <migrate>` to apply those changes "
 "to the database."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:359
+#: ../../intro/tutorial02.txt:362
 msgid ""
 "The reason that there are separate commands to make and apply migrations "
 "is because you'll commit migrations to your version control system and "
@@ -2548,23 +2553,23 @@ msgid ""
 "they're also useable by other developers and in production."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:364
+#: ../../intro/tutorial02.txt:367
 msgid ""
 "Read the :doc:`django-admin documentation </ref/django-admin>` for full "
 "information on what the ``manage.py`` utility can do."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:368
+#: ../../intro/tutorial02.txt:371
 msgid "Playing with the API"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:370
+#: ../../intro/tutorial02.txt:373
 msgid ""
 "Now, let's hop into the interactive Python shell and play around with the"
 " free API Django gives you. To invoke the Python shell, use this command:"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:377
+#: ../../intro/tutorial02.txt:380
 msgid ""
 "We're using this instead of simply typing \"python\", because "
 ":file:`manage.py` sets the ``DJANGO_SETTINGS_MODULE`` environment "
@@ -2572,44 +2577,44 @@ msgid ""
 ":file:`mysite/settings.py` file."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:381
+#: ../../intro/tutorial02.txt:384
 msgid "Bypassing manage.py"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:383
+#: ../../intro/tutorial02.txt:386
 msgid ""
 "If you'd rather not use :file:`manage.py`, no problem. Just set the "
 ":envvar:`DJANGO_SETTINGS_MODULE` environment variable to "
 "``mysite.settings``, start a plain Python shell, and set up Django:"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:392
+#: ../../intro/tutorial02.txt:395
 msgid ""
 "If this raises an :exc:`AttributeError`, you're probably using a version "
 "of Django that doesn't match this tutorial version. You'll want to either"
 " switch to the older tutorial or the newer Django version."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:396
+#: ../../intro/tutorial02.txt:399
 msgid ""
 "You must run ``python`` from the same directory :file:`manage.py` is in, "
 "or ensure that directory is on the Python path, so that ``import mysite``"
 " works."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:400
+#: ../../intro/tutorial02.txt:403
 msgid ""
 "For more information on all of this, see the :doc:`django-admin "
 "documentation </ref/django-admin>`."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:403
+#: ../../intro/tutorial02.txt:406
 msgid ""
 "Once you're in the shell, explore the :doc:`database API "
 "</topics/db/queries>`::"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:442
+#: ../../intro/tutorial02.txt:445
 msgid ""
 "Wait a minute. ``<Question: Question object>`` is, utterly, an unhelpful "
 "representation of this object. Let's fix that by editing the ``Question``"
@@ -2618,7 +2623,7 @@ msgid ""
 "``Choice``:"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:466
+#: ../../intro/tutorial02.txt:469
 msgid ""
 "It's important to add :meth:`~django.db.models.Model.__str__` methods to "
 "your models, not only for your own convenience when dealing with the "
@@ -2626,13 +2631,13 @@ msgid ""
 "throughout Django's automatically-generated admin."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:471
+#: ../../intro/tutorial02.txt:474
 msgid ""
 "Note these are normal Python methods. Let's add a custom method, just for"
 " demonstration:"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:488
+#: ../../intro/tutorial02.txt:491
 msgid ""
 "Note the addition of ``import datetime`` and ``from django.utils import "
 "timezone``, to reference Python's standard :mod:`datetime` module and "
@@ -2642,13 +2647,13 @@ msgid ""
 "</topics/i18n/timezones>`."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:494
+#: ../../intro/tutorial02.txt:497
 msgid ""
 "Save these changes and start a new Python interactive shell by running "
 "``python manage.py shell`` again::"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:573
+#: ../../intro/tutorial02.txt:576
 msgid ""
 "For more information on model relations, see :doc:`Accessing related "
 "objects </ref/models/relations>`. For more on how to use double "
@@ -2657,11 +2662,11 @@ msgid ""
 ":doc:`Database API reference </topics/db/queries>`."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:580
+#: ../../intro/tutorial02.txt:583
 msgid "Introducing the Django Admin"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:584
+#: ../../intro/tutorial02.txt:587
 msgid ""
 "Generating admin sites for your staff or clients to add, change, and "
 "delete content is tedious work that doesn't require much creativity. For "
@@ -2669,7 +2674,7 @@ msgid ""
 "models."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:588
+#: ../../intro/tutorial02.txt:591
 msgid ""
 "Django was written in a newsroom environment, with a very clear "
 "separation between \"content publishers\" and the \"public\" site. Site "
@@ -2679,58 +2684,58 @@ msgid ""
 "content."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:594
+#: ../../intro/tutorial02.txt:597
 msgid ""
 "The admin isn't intended to be used by site visitors. It's for site "
 "managers."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:598
+#: ../../intro/tutorial02.txt:601
 msgid "Creating an admin user"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:600
+#: ../../intro/tutorial02.txt:603
 msgid ""
 "First we'll need to create a user who can login to the admin site. Run "
 "the following command:"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:607
+#: ../../intro/tutorial02.txt:610
 msgid "Enter your desired username and press enter."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:613
+#: ../../intro/tutorial02.txt:616
 msgid "You will then be prompted for your desired email address:"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:619
+#: ../../intro/tutorial02.txt:622
 msgid ""
 "The final step is to enter your password. You will be asked to enter your"
 " password twice, the second time as a confirmation of the first."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:629
+#: ../../intro/tutorial02.txt:632
 msgid "Start the development server"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:631
+#: ../../intro/tutorial02.txt:634
 msgid ""
 "The Django admin site is activated by default. Let's start the "
 "development server and explore it."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:634
+#: ../../intro/tutorial02.txt:637
 msgid "If the server is not running start it like so:"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:640
+#: ../../intro/tutorial02.txt:643
 msgid ""
 "Now, open a Web browser and go to \"/admin/\" on your local domain -- "
 "e.g., http://127.0.0.1:8000/admin/. You should see the admin's login "
 "screen:"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:646
+#: ../../intro/tutorial02.txt:649
 msgid ""
 "Since :doc:`translation </topics/i18n/translation>` is turned on by "
 "default, the login screen may be displayed in your own language, "
@@ -2738,49 +2743,49 @@ msgid ""
 "this language."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:651
+#: ../../intro/tutorial02.txt:654
 msgid "Enter the admin site"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:653
+#: ../../intro/tutorial02.txt:656
 msgid ""
 "Now, try logging in with the superuser account you created in the "
 "previous step. You should see the Django admin index page:"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:659
+#: ../../intro/tutorial02.txt:662
 msgid ""
 "You should see a few types of editable content: groups and users. They "
 "are provided by :mod:`django.contrib.auth`, the authentication framework "
 "shipped by Django."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:664
+#: ../../intro/tutorial02.txt:667
 msgid "Make the poll app modifiable in the admin"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:666
+#: ../../intro/tutorial02.txt:669
 msgid "But where's our poll app? It's not displayed on the admin index page."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:668
+#: ../../intro/tutorial02.txt:671
 msgid ""
 "Just one thing to do: we need to tell the admin that ``Question`` objects"
 " have an admin interface. To do this, open the :file:`polls/admin.py` "
 "file, and edit it to look like this:"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:682
+#: ../../intro/tutorial02.txt:685
 msgid "Explore the free admin functionality"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:684
+#: ../../intro/tutorial02.txt:687
 msgid ""
 "Now that we've registered ``Question``, Django knows that it should be "
 "displayed on the admin index page:"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:690
+#: ../../intro/tutorial02.txt:693
 msgid ""
 "Click \"Questions\". Now you're at the \"change list\" page for "
 "questions. This page displays all the questions in the database and lets "
@@ -2788,19 +2793,19 @@ msgid ""
 "created earlier:"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:697
+#: ../../intro/tutorial02.txt:700
 msgid "Click the \"What's up?\" question to edit it:"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:702
+#: ../../intro/tutorial02.txt:705
 msgid "Things to note here:"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:704
+#: ../../intro/tutorial02.txt:707
 msgid "The form is automatically generated from the ``Question`` model."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:706
+#: ../../intro/tutorial02.txt:709
 msgid ""
 "The different model field types "
 "(:class:`~django.db.models.DateTimeField`, "
@@ -2809,7 +2814,7 @@ msgid ""
 "Django admin."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:711
+#: ../../intro/tutorial02.txt:714
 msgid ""
 "Each :class:`~django.db.models.DateTimeField` gets free JavaScript "
 "shortcuts. Dates get a \"Today\" shortcut and calendar popup, and times "
@@ -2817,33 +2822,33 @@ msgid ""
 " times."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:715
+#: ../../intro/tutorial02.txt:718
 msgid "The bottom part of the page gives you a couple of options:"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:717
+#: ../../intro/tutorial02.txt:720
 msgid ""
 "Save -- Saves changes and returns to the change-list page for this type "
 "of object."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:720
+#: ../../intro/tutorial02.txt:723
 msgid ""
 "Save and continue editing -- Saves changes and reloads the admin page for"
 " this object."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:723
+#: ../../intro/tutorial02.txt:726
 msgid ""
 "Save and add another -- Saves changes and loads a new, blank form for "
 "this type of object."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:726
+#: ../../intro/tutorial02.txt:729
 msgid "Delete -- Displays a delete confirmation page."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:728
+#: ../../intro/tutorial02.txt:731
 msgid ""
 "If the value of \"Date published\" doesn't match the time when you "
 "created the question in :doc:`Tutorial 1</intro/tutorial01>`, it probably"
@@ -2852,7 +2857,7 @@ msgid ""
 "appears."
 msgstr ""
 
-#: ../../intro/tutorial02.txt:733
+#: ../../intro/tutorial02.txt:736
 msgid ""
 "Change the \"Date published\" by clicking the \"Today\" and \"Now\" "
 "shortcuts. Then click \"Save and continue editing.\" Then click "
@@ -2861,7 +2866,7 @@ msgid ""
 " of the person who made the change:"
 msgstr ""
 
-#: ../../intro/tutorial02.txt:741
+#: ../../intro/tutorial02.txt:744
 msgid ""
 "When you're comfortable with the models API and have familiarized "
 "yourself with the admin site, read :doc:`part 3 of this "
@@ -4154,59 +4159,62 @@ msgid ""
 "responses such as ``response.context`` that otherwise wouldn't be "
 "available. Note that this method *does not* setup a test database, so the"
 " following will be run against the existing database and the output may "
-"differ slightly depending on what questions you already created."
+"differ slightly depending on what questions you already created. You "
+"might get unexpected results if your ``TIME_ZONE`` in ``settings.py`` "
+"isn't correct. If you don't remember setting it earlier, check it before "
+"continuing."
 msgstr ""
 
-#: ../../intro/tutorial05.txt:348
+#: ../../intro/tutorial05.txt:350
 msgid ""
 "Next we need to import the test client class (later in ``tests.py`` we "
 "will use the :class:`django.test.TestCase` class, which comes with its "
 "own client, so this won't be required)::"
 msgstr ""
 
-#: ../../intro/tutorial05.txt:356
+#: ../../intro/tutorial05.txt:358
 msgid "With that ready, we can ask the client to do some work for us::"
 msgstr ""
 
-#: ../../intro/tutorial05.txt:389
+#: ../../intro/tutorial05.txt:379
 msgid "Improving our view"
 msgstr ""
 
-#: ../../intro/tutorial05.txt:391
+#: ../../intro/tutorial05.txt:381
 msgid ""
 "The list of polls shows polls that aren't published yet (i.e. those that "
 "have a ``pub_date`` in the future). Let's fix that."
 msgstr ""
 
-#: ../../intro/tutorial05.txt:394
+#: ../../intro/tutorial05.txt:384
 msgid ""
 "In :doc:`Tutorial 4 </intro/tutorial04>` we introduced a class-based "
 "view, based on :class:`~django.views.generic.list.ListView`:"
 msgstr ""
 
-#: ../../intro/tutorial05.txt:408
+#: ../../intro/tutorial05.txt:398
 msgid ""
 "We need to amend the ``get_queryset()`` method and change it so that it "
 "also checks the date by comparing it with ``timezone.now()``. First we "
 "need to add an import:"
 msgstr ""
 
-#: ../../intro/tutorial05.txt:417
+#: ../../intro/tutorial05.txt:407
 msgid "and then we must amend the ``get_queryset`` method like so:"
 msgstr ""
 
-#: ../../intro/tutorial05.txt:431
+#: ../../intro/tutorial05.txt:421
 msgid ""
 "``Question.objects.filter(pub_date__lte=timezone.now())`` returns a "
 "queryset containing ``Question``\\s whose ``pub_date`` is less than or "
 "equal to - that is, earlier than or equal to - ``timezone.now``."
 msgstr ""
 
-#: ../../intro/tutorial05.txt:436
+#: ../../intro/tutorial05.txt:426
 msgid "Testing our new view"
 msgstr ""
 
-#: ../../intro/tutorial05.txt:438
+#: ../../intro/tutorial05.txt:428
 msgid ""
 "Now you can satisfy yourself that this behaves as expected by firing up "
 "the runserver, loading the site in your browser, creating ``Questions`` "
@@ -4216,27 +4224,27 @@ msgid ""
 "create a test, based on our :djadmin:`shell` session above."
 msgstr ""
 
-#: ../../intro/tutorial05.txt:445
+#: ../../intro/tutorial05.txt:435
 msgid "Add the following to ``polls/tests.py``:"
 msgstr ""
 
-#: ../../intro/tutorial05.txt:452
+#: ../../intro/tutorial05.txt:442
 msgid ""
 "and we'll create a shortcut function to create questions as well as a new"
 " test class:"
 msgstr ""
 
-#: ../../intro/tutorial05.txt:526
+#: ../../intro/tutorial05.txt:516
 msgid "Let's look at some of these more closely."
 msgstr ""
 
-#: ../../intro/tutorial05.txt:528
+#: ../../intro/tutorial05.txt:518
 msgid ""
 "First is a question shortcut function, ``create_question``, to take some "
 "repetition out of the process of creating questions."
 msgstr ""
 
-#: ../../intro/tutorial05.txt:531
+#: ../../intro/tutorial05.txt:521
 msgid ""
 "``test_index_view_with_no_questions`` doesn't create any questions, but "
 "checks the message: \"No polls are available.\" and verifies the "
@@ -4247,13 +4255,13 @@ msgid ""
 ":meth:`~django.test.TransactionTestCase.assertQuerysetEqual()`."
 msgstr ""
 
-#: ../../intro/tutorial05.txt:538
+#: ../../intro/tutorial05.txt:528
 msgid ""
 "In ``test_index_view_with_a_past_question``, we create a question and "
 "verify that it appears in the list."
 msgstr ""
 
-#: ../../intro/tutorial05.txt:541
+#: ../../intro/tutorial05.txt:531
 msgid ""
 "In ``test_index_view_with_a_future_question``, we create a question with "
 "a ``pub_date`` in the future. The database is reset for each test method,"
@@ -4261,7 +4269,7 @@ msgid ""
 "shouldn't have any questions in it."
 msgstr ""
 
-#: ../../intro/tutorial05.txt:546
+#: ../../intro/tutorial05.txt:536
 msgid ""
 "And so on. In effect, we are using the tests to tell a story of admin "
 "input and user experience on the site, and checking that at every state "
@@ -4269,36 +4277,36 @@ msgid ""
 " are published."
 msgstr ""
 
-#: ../../intro/tutorial05.txt:551
+#: ../../intro/tutorial05.txt:541
 msgid "Testing the ``DetailView``"
 msgstr ""
 
-#: ../../intro/tutorial05.txt:553
+#: ../../intro/tutorial05.txt:543
 msgid ""
 "What we have works well; however, even though future questions don't "
 "appear in the *index*, users can still reach them if they know or guess "
 "the right URL. So we need to add a similar  constraint to ``DetailView``:"
 msgstr ""
 
-#: ../../intro/tutorial05.txt:568
+#: ../../intro/tutorial05.txt:558
 msgid ""
 "And of course, we will add some tests, to check that a ``Question`` whose"
 " ``pub_date`` is in the past can be displayed, and that one with a "
 "``pub_date`` in the future is not:"
 msgstr ""
 
-#: ../../intro/tutorial05.txt:597
+#: ../../intro/tutorial05.txt:587
 msgid "Ideas for more tests"
 msgstr ""
 
-#: ../../intro/tutorial05.txt:599
+#: ../../intro/tutorial05.txt:589
 msgid ""
 "We ought to add a similar ``get_queryset`` method to ``ResultsView`` and "
 "create a new test class for that view. It'll be very similar to what we "
 "have just created; in fact there will be a lot of repetition."
 msgstr ""
 
-#: ../../intro/tutorial05.txt:603
+#: ../../intro/tutorial05.txt:593
 msgid ""
 "We could also improve our application in other ways, adding tests along "
 "the way. For example, it's silly that ``Questions`` can be published on "
@@ -4309,7 +4317,7 @@ msgid ""
 "published."
 msgstr ""
 
-#: ../../intro/tutorial05.txt:610
+#: ../../intro/tutorial05.txt:600
 msgid ""
 "Perhaps logged-in admin users should be allowed to see unpublished "
 "``Questions``, but not ordinary visitors. Again: whatever needs to be "
@@ -4319,17 +4327,17 @@ msgid ""
 "it."
 msgstr ""
 
-#: ../../intro/tutorial05.txt:616
+#: ../../intro/tutorial05.txt:606
 msgid ""
 "At a certain point you are bound to look at your tests and wonder whether"
 " your code is suffering from test bloat, which brings us to:"
 msgstr ""
 
-#: ../../intro/tutorial05.txt:620
+#: ../../intro/tutorial05.txt:610
 msgid "When testing, more is better"
 msgstr ""
 
-#: ../../intro/tutorial05.txt:622
+#: ../../intro/tutorial05.txt:612
 msgid ""
 "It might seem that our tests are growing out of control. At this rate "
 "there will soon be more code in our tests than in our application, and "
@@ -4337,14 +4345,14 @@ msgid ""
 " rest of our code."
 msgstr ""
 
-#: ../../intro/tutorial05.txt:626
+#: ../../intro/tutorial05.txt:616
 msgid ""
 "**It doesn't matter**. Let them grow. For the most part, you can write a "
 "test once and then forget about it. It will continue performing its "
 "useful function as you continue to develop your program."
 msgstr ""
 
-#: ../../intro/tutorial05.txt:630
+#: ../../intro/tutorial05.txt:620
 msgid ""
 "Sometimes tests will need to be updated. Suppose that we amend our views "
 "so that only ``Questions`` with ``Choices`` are published. In that case, "
@@ -4353,43 +4361,43 @@ msgid ""
 "help look after themselves."
 msgstr ""
 
-#: ../../intro/tutorial05.txt:635
+#: ../../intro/tutorial05.txt:625
 msgid ""
 "At worst, as you continue developing, you might find that you have some "
 "tests that are now redundant. Even that's not a problem; in testing "
 "redundancy is a *good* thing."
 msgstr ""
 
-#: ../../intro/tutorial05.txt:639
+#: ../../intro/tutorial05.txt:629
 msgid ""
 "As long as your tests are sensibly arranged, they won't become "
 "unmanageable. Good rules-of-thumb include having:"
 msgstr ""
 
-#: ../../intro/tutorial05.txt:642
+#: ../../intro/tutorial05.txt:632
 msgid "a separate ``TestClass`` for each model or view"
 msgstr ""
 
-#: ../../intro/tutorial05.txt:643
+#: ../../intro/tutorial05.txt:633
 msgid "a separate test method for each set of conditions you want to test"
 msgstr ""
 
-#: ../../intro/tutorial05.txt:644
+#: ../../intro/tutorial05.txt:634
 msgid "test method names that describe their function"
 msgstr ""
 
-#: ../../intro/tutorial05.txt:647
+#: ../../intro/tutorial05.txt:637
 msgid "Further testing"
 msgstr ""
 
-#: ../../intro/tutorial05.txt:649
+#: ../../intro/tutorial05.txt:639
 msgid ""
 "This tutorial only introduces some of the basics of testing. There's a "
 "great deal more you can do, and a number of very useful tools at your "
 "disposal to achieve some very clever things."
 msgstr ""
 
-#: ../../intro/tutorial05.txt:653
+#: ../../intro/tutorial05.txt:643
 msgid ""
 "For example, while our tests here have covered some of the internal logic"
 " of a model and the way our views publish information, you can use an "
@@ -4402,7 +4410,7 @@ msgid ""
 "integration with tools like Selenium."
 msgstr ""
 
-#: ../../intro/tutorial05.txt:662
+#: ../../intro/tutorial05.txt:652
 msgid ""
 "If you have a complex application, you may want to run tests "
 "automatically with every commit for the purposes of `continuous "
@@ -4410,7 +4418,7 @@ msgid ""
 "automated."
 msgstr ""
 
-#: ../../intro/tutorial05.txt:666
+#: ../../intro/tutorial05.txt:656
 msgid ""
 "A good way to spot untested parts of your application is to check code "
 "coverage. This also helps identify fragile or even dead code. If you "
@@ -4419,19 +4427,19 @@ msgid ""
 ":`topics-testing-code-coverage` for details."
 msgstr ""
 
-#: ../../intro/tutorial05.txt:672
+#: ../../intro/tutorial05.txt:662
 msgid ""
 ":doc:`Testing in Django </topics/testing/index>` has comprehensive "
 "information about testing."
 msgstr ""
 
-#: ../../intro/tutorial05.txt:681
+#: ../../intro/tutorial05.txt:671
 msgid ""
 "For full details on testing, see :doc:`Testing in Django "
 "</topics/testing/index>`."
 msgstr ""
 
-#: ../../intro/tutorial05.txt:684
+#: ../../intro/tutorial05.txt:674
 msgid ""
 "When you're comfortable with testing Django views, read :doc:`part 6 of "
 "this tutorial</intro/tutorial06>` to learn about static files management."
@@ -5387,309 +5395,4 @@ msgid ""
 "all previous versions. Be sure you are using the version of the docs "
 "corresponding to the version of Django you are using!"
 msgstr ""
-
-#~ msgid ""
-#~ msgstr ""
-
-#~ msgid "For users who wish to use `virtualenv`__, you can use::"
-#~ msgstr ""
-
-#~ msgid "Writing some tests for ticket #17549"
-#~ msgstr ""
-
-#~ msgid "Ticket :ticket:`17549` describes the following, small feature addition:"
-#~ msgstr ""
-
-#~ msgid "Writing the code for ticket #17549"
-#~ msgstr ""
-
-#~ msgid "Upload the package on your Web site."
-#~ msgstr ""
-
-#~ msgid "An admin site that lets you add, change and delete polls."
-#~ msgstr ""
-
-#~ msgid "``__str__`` or ``__unicode__``?"
-#~ msgstr ""
-
-#~ msgid "If all of this is gibberish to you, just use Python 3."
-#~ msgstr ""
-
-#~ msgid "Recall from Tutorial 1 that you start the development server like so:"
-#~ msgstr ""
-
-#~ msgid "You can also see this using the :djadmin:`shell`::"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Skipped tests are typically due to "
-#~ "missing external libraries required to "
-#~ "run the test; see :ref:`running-unit-"
-#~ "tests-dependencies` for a list of "
-#~ "dependencies and be sure to install "
-#~ "any for tests related to the "
-#~ "changes you are making (we won't "
-#~ "need any for this tutorial)."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Once the tests complete, you should "
-#~ "be greeted with a message informing "
-#~ "you whether the test suite passed "
-#~ "or failed. Since you haven't yet "
-#~ "made any changes to Django's code, "
-#~ "the entire test suite **should** pass."
-#~ " If you get failures or errors "
-#~ "make sure you've followed all of "
-#~ "the previous steps properly. See :ref"
-#~ ":`running-unit-tests` for more information."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "After reading those, if you want "
-#~ "something a little meatier to sink "
-#~ "your teeth into, there's always the "
-#~ "`Python unittest documentation`__."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "The code above maps URLs, as "
-#~ "simple `regular expressions`_, to the "
-#~ "location of Python callback functions "
-#~ "(\"views\"). The regular expressions use "
-#~ "parenthesis to \"capture\" values from "
-#~ "the URLs. When a user requests a"
-#~ " page, Django runs through each "
-#~ "pattern, in order, and stops at "
-#~ "the first one that matches the "
-#~ "requested URL. (If none of them "
-#~ "matches, Django calls a special-case "
-#~ "404 view.) This is blazingly fast, "
-#~ "because the regular expressions are "
-#~ "compiled at load time."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "This advanced tutorial begins where "
-#~ ":doc:`Tutorial 6 </intro/tutorial06>` left "
-#~ "off. We'll be turning our Web-poll"
-#~ " into a standalone Python package you"
-#~ " can reuse in new projects and "
-#~ "share with other people."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "If you haven't recently completed "
-#~ "Tutorials 1–6, we encourage you to "
-#~ "review these so that your example "
-#~ "project matches the one described below."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "A Python `package "
-#~ "<https://docs.python.org/tutorial/modules.html#packages>`_ "
-#~ "provides a way of grouping related "
-#~ "Python code for easy reuse. A "
-#~ "package contains one or more files "
-#~ "of Python code (also known as "
-#~ "\"modules\")."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "You created ``mysite/templates`` in "
-#~ ":doc:`Tutorial 2 </intro/tutorial02>`, and "
-#~ "``polls/templates`` in :doc:`Tutorial 3 "
-#~ "</intro/tutorial03>`. Now perhaps it is "
-#~ "clearer why we chose to have "
-#~ "separate template directories for the "
-#~ "project and application: everything that "
-#~ "is part of the polls application "
-#~ "is in ``polls``. It makes the "
-#~ "application self-contained and easier to"
-#~ " drop into a new project."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Next we'll create a ``setup.py`` file"
-#~ " which provides details about how to"
-#~ " build and install the app.  A "
-#~ "full explanation of this file is "
-#~ "beyond the scope of this tutorial, "
-#~ "but the `setuptools docs "
-#~ "<https://pythonhosted.org/setuptools/setuptools.html>`_ have "
-#~ "a good explanation. Create a file "
-#~ "``django-polls/setup.py`` with the following "
-#~ "contents:"
-#~ msgstr ""
-
-#~ msgid ""
-#~ ":file:`mysite/__init__.py`: An empty file that"
-#~ " tells Python that this directory "
-#~ "should be considered a Python package."
-#~ " (Read `more about packages`_ in the"
-#~ " official Python docs if you're a "
-#~ "Python beginner.)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Your apps can live anywhere on "
-#~ "your `Python path`_. In this tutorial,"
-#~ " we'll create our poll app right "
-#~ "next to your :file:`manage.py` file so"
-#~ " that it can be imported as its"
-#~ " own top-level module, rather than"
-#~ " a submodule of ``mysite``."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Naming your URL lets you refer to"
-#~ " it unambiguously from elsewhere in "
-#~ "Django especially templates. This powerful "
-#~ "feature allows you to make  global "
-#~ "changes to the url patterns of "
-#~ "your project while only touching a "
-#~ "single file."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "If you're using PostgreSQL or MySQL, "
-#~ "make sure you've created a database "
-#~ "by this point. Do that with "
-#~ "\"``CREATE DATABASE database_name;``\" within "
-#~ "your database's interactive prompt."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "This tutorial provides basic instruction "
-#~ "in the use of URLconfs, and you"
-#~ " can refer to :mod:`django.core.urlresolvers` "
-#~ "for more information."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "When somebody requests a page from "
-#~ "your website -- say, \"/polls/34/\", "
-#~ "Django will load the ``mysite.urls`` "
-#~ "Python module because it's pointed to"
-#~ " by the :setting:`ROOT_URLCONF` setting. It"
-#~ " finds the variable named ``urlpatterns``"
-#~ " and traverses the regular expressions "
-#~ "in order. The :func:`~django.conf.urls.include` "
-#~ "functions we are using simply reference"
-#~ " other URLconfs. Note that the "
-#~ "regular expressions for the "
-#~ ":func:`~django.conf.urls.include` functions don't "
-#~ "have a ``$`` (end-of-string match"
-#~ " character) but rather a trailing "
-#~ "slash. Whenever Django encounters "
-#~ ":func:`~django.conf.urls.include`, it chops off "
-#~ "whatever part of the URL matched "
-#~ "up to that point and sends the "
-#~ "remaining string to the included URLconf"
-#~ " for further processing."
-#~ msgstr ""
-
-#~ msgid "Here's what happens if a user goes to \"/polls/34/\" in this system:"
-#~ msgstr ""
-
-#~ msgid "Django will find the match at ``'^polls/'``"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Then, Django will strip off the "
-#~ "matching text (``\"polls/\"``) and send "
-#~ "the remaining text -- ``\"34/\"`` -- "
-#~ "to the 'polls.urls' URLconf for further"
-#~ " processing which matches "
-#~ "``r'^(?P<question_id>[0-9]+)/$'`` resulting in a "
-#~ "call to the ``detail()`` view like "
-#~ "so::"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Note that once we've done this in"
-#~ " all these views, we no longer "
-#~ "need to import :mod:`~django.template.loader`, "
-#~ ":class:`~django.template.RequestContext` and "
-#~ ":class:`~django.http.HttpResponse` (you'll want to"
-#~ " keep ``HttpResponse`` if you still "
-#~ "have the stub methods for ``detail``,"
-#~ " ``results``, and ``vote``)."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "We are using the "
-#~ ":func:`~django.core.urlresolvers.reverse` function in "
-#~ "the :class:`~django.http.HttpResponseRedirect` constructor"
-#~ " in this example. This function helps"
-#~ " avoid having to hardcode a URL "
-#~ "in the view function. It is given"
-#~ " the name of the view that we"
-#~ " want to pass control to and "
-#~ "the variable portion of the URL "
-#~ "pattern that points to that view. "
-#~ "In this case, using the URLconf we"
-#~ " set up in :doc:`Tutorial 3 "
-#~ "</intro/tutorial03>`, this "
-#~ ":func:`~django.core.urlresolvers.reverse` call will "
-#~ "return a string like ::"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "... and using the ``assertEqual()`` "
-#~ "method, it discovered that its "
-#~ "``was_published_recently()`` returns ``True``, "
-#~ "though we wanted it to return "
-#~ "``False``"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "``{% load staticfiles %}`` loads the "
-#~ ":ttag:`{% static %} <staticfiles-static>` "
-#~ "template tag from the ``staticfiles`` "
-#~ "template library. The ``{% static %}``"
-#~ " template tag generates the absolute "
-#~ "URL of the static file."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "This tutorial begins where :doc:`Tutorial "
-#~ "6 </intro/tutorial06>` left off. We're "
-#~ "continuing the Web-poll application and"
-#~ " will focus on customizing the "
-#~ "Django's automatically-generated admin site"
-#~ " that we first explored in "
-#~ ":doc:`Tutorial 2 </intro/tutorial02>`."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "You'll follow this pattern -- create "
-#~ "a model admin class, then pass it"
-#~ " as the second argument to "
-#~ "``admin.site.register()`` -- any time you "
-#~ "need to change the admin options "
-#~ "for an model."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Just like the static files, we "
-#~ "*could* have all our templates together,"
-#~ " in one big templates directory, and"
-#~ " it would work perfectly well. "
-#~ "However, templates that  belongs to a"
-#~ " particular application, we should put "
-#~ "in the application’s template directory "
-#~ "(e.g. ``polls/templates``) rather than the "
-#~ "project’s (``templates``). We'll discuss in"
-#~ " more detail in the :doc:`reusable "
-#~ "apps tutorial </intro/reusable-apps>` *why*"
-#~ " we do this."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Generation of the Django documentation "
-#~ "will work with Sphinx version 0.6 "
-#~ "or newer, but we recommend going "
-#~ "straight to Sphinx 1.0.2 or newer."
-#~ msgstr ""
 

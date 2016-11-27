@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Django 1.8\n"
+"Project-Id-Version: Django 1.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-24 11:11+0900\n"
+"POT-Creation-Date: 2016-11-27 22:24+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -148,7 +148,7 @@ msgstr ""
 msgid "Using ``REMOTE_USER`` on login pages only"
 msgstr ""
 
-#: ../../howto/auth-remote-user.txt:116
+#: ../../howto/auth-remote-user.txt:118
 msgid ""
 "The ``RemoteUserMiddleware`` authentication middleware assumes that the "
 "HTTP request header ``REMOTE_USER`` is present with all authenticated "
@@ -160,7 +160,7 @@ msgid ""
 "application is supposed to maintain the authenticated session itself."
 msgstr ""
 
-#: ../../howto/auth-remote-user.txt:125
+#: ../../howto/auth-remote-user.txt:127
 msgid ""
 ":class:`~django.contrib.auth.middleware.PersistentRemoteUserMiddleware` "
 "provides support for this use case. It will maintain the authenticated "
@@ -312,14 +312,20 @@ msgid ""
 "safe filenames."
 msgstr ""
 
-#: ../../howto/custom-file-storage.txt:97
+#: ../../howto/custom-file-storage.txt:99
+msgid ""
+"In older versions, this method was not called when ``upload_to`` was a "
+"callable."
+msgstr ""
+
+#: ../../howto/custom-file-storage.txt:102
 msgid ""
 "The code provided on ``Storage`` retains only alpha-numeric characters, "
 "periods and underscores from the original filename, removing everything "
 "else."
 msgstr ""
 
-#: ../../howto/custom-file-storage.txt:102
+#: ../../howto/custom-file-storage.txt:107
 msgid ""
 "Returns a filename that is available in the storage mechanism, possibly "
 "taking the provided filename into account. The ``name`` argument passed "
@@ -328,7 +334,7 @@ msgid ""
 "above."
 msgstr ""
 
-#: ../../howto/custom-file-storage.txt:107
+#: ../../howto/custom-file-storage.txt:112
 msgid ""
 "The length of the filename will not exceed ``max_length``, if provided. "
 "If a free unique filename cannot be found, a "
@@ -336,7 +342,7 @@ msgid ""
 "<django.core.exceptions.SuspiciousOperation>` exception is raised."
 msgstr ""
 
-#: ../../howto/custom-file-storage.txt:111
+#: ../../howto/custom-file-storage.txt:116
 msgid ""
 "If a file with ``name`` already exists, an underscore plus a random 7 "
 "character alphanumeric string is appended to the filename before the "
@@ -2150,7 +2156,7 @@ msgid ""
 "module, put the following::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:72
+#: ../../howto/custom-template-tags.txt:74
 msgid ""
 "Alternatively, template tag modules can be registered through the "
 "``'libraries'`` argument to "
@@ -2160,46 +2166,46 @@ msgid ""
 "installing an application."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:79
+#: ../../howto/custom-template-tags.txt:81
 msgid "Behind the scenes"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:81
+#: ../../howto/custom-template-tags.txt:83
 msgid ""
 "For a ton of examples, read the source code for Django's default filters "
 "and tags. They're in ``django/template/defaultfilters.py`` and "
 "``django/template/defaulttags.py``, respectively."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:85
+#: ../../howto/custom-template-tags.txt:87
 msgid "For more information on the :ttag:`load` tag, read its documentation."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:90
+#: ../../howto/custom-template-tags.txt:92
 msgid "Writing custom template filters"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:92
+#: ../../howto/custom-template-tags.txt:94
 msgid "Custom filters are just Python functions that take one or two arguments:"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:94
+#: ../../howto/custom-template-tags.txt:96
 msgid "The value of the variable (input) -- not necessarily a string."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:95
+#: ../../howto/custom-template-tags.txt:97
 msgid ""
 "The value of the argument -- this can have a default value, or be left "
 "out altogether."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:98
+#: ../../howto/custom-template-tags.txt:100
 msgid ""
 "For example, in the filter ``{{ var|foo:\"bar\" }}``, the filter ``foo`` "
 "would be passed the variable ``var`` and the argument ``\"bar\"``."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:101
+#: ../../howto/custom-template-tags.txt:103
 msgid ""
 "Since the template language doesn't provide exception handling, any "
 "exception raised from a template filter will be exposed as a server "
@@ -2209,57 +2215,57 @@ msgid ""
 "silent failure which hides the bug."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:108
+#: ../../howto/custom-template-tags.txt:110
 msgid "Here's an example filter definition::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:114
+#: ../../howto/custom-template-tags.txt:116
 msgid "And here's an example of how that filter would be used:"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:120
+#: ../../howto/custom-template-tags.txt:122
 msgid ""
 "Most filters don't take arguments. In this case, just leave the argument "
 "out of your function. Example::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:128
+#: ../../howto/custom-template-tags.txt:130
 msgid "Registering custom filters"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:132
+#: ../../howto/custom-template-tags.txt:134
 msgid ""
 "Once you've written your filter definition, you need to register it with "
 "your ``Library`` instance, to make it available to Django's template "
 "language::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:138
+#: ../../howto/custom-template-tags.txt:140
 msgid "The ``Library.filter()`` method takes two arguments:"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:140
+#: ../../howto/custom-template-tags.txt:142
 msgid "The name of the filter -- a string."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:141
-#: ../../howto/custom-template-tags.txt:933
+#: ../../howto/custom-template-tags.txt:143
+#: ../../howto/custom-template-tags.txt:942
 msgid ""
 "The compilation function -- a Python function (not the name of the "
 "function as a string)."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:144
+#: ../../howto/custom-template-tags.txt:146
 msgid "You can use ``register.filter()`` as a decorator instead::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:154
+#: ../../howto/custom-template-tags.txt:156
 msgid ""
 "If you leave off the ``name`` argument, as in the second example above, "
 "Django will use the function's name as the filter name."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:157
+#: ../../howto/custom-template-tags.txt:159
 msgid ""
 "Finally, ``register.filter()`` also accepts three keyword arguments, "
 "``is_safe``, ``needs_autoescape``, and ``expects_localtime``. These "
@@ -2267,11 +2273,11 @@ msgid ""
 "escaping>` and :ref:`filters and time zones <filters-timezones>` below."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:163
+#: ../../howto/custom-template-tags.txt:165
 msgid "Template filters that expect strings"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:167
+#: ../../howto/custom-template-tags.txt:169
 msgid ""
 "If you're writing a template filter that only expects a string as the "
 "first argument, you should use the decorator ``stringfilter``. This will "
@@ -2279,32 +2285,32 @@ msgid ""
 "function::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:181
+#: ../../howto/custom-template-tags.txt:183
 msgid ""
 "This way, you'll be able to pass, say, an integer to this filter, and it "
 "won't cause an ``AttributeError`` (because integers don't have "
 "``lower()`` methods)."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:188
+#: ../../howto/custom-template-tags.txt:190
 msgid "Filters and auto-escaping"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:190
+#: ../../howto/custom-template-tags.txt:192
 msgid ""
 "When writing a custom filter, give some thought to how the filter will "
 "interact with Django's auto-escaping behavior. Note that three types of "
 "strings can be passed around inside the template code:"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:194
+#: ../../howto/custom-template-tags.txt:196
 msgid ""
 "**Raw strings** are the native Python ``str`` or ``unicode`` types. On "
 "output, they're escaped if auto-escaping is in effect and presented "
 "unchanged, otherwise."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:198
+#: ../../howto/custom-template-tags.txt:200
 msgid ""
 "**Safe strings** are strings that have been marked safe from further "
 "escaping at output time. Any necessary escaping has already been done. "
@@ -2312,18 +2318,18 @@ msgid ""
 "to be interpreted as-is on the client side."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:203
+#: ../../howto/custom-template-tags.txt:205
 msgid ""
 "Internally, these strings are of type ``SafeBytes`` or ``SafeText``. They"
 " share a common base class of ``SafeData``, so you can test for them "
 "using code like::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:211
+#: ../../howto/custom-template-tags.txt:213
 msgid "Template filter code falls into one of two situations:"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:213
+#: ../../howto/custom-template-tags.txt:215
 msgid ""
 "Your filter does not introduce any HTML-unsafe characters (``<``, ``>``, "
 "``'``, ``\"`` or ``&``) into the result that were not already present. In"
@@ -2332,20 +2338,20 @@ msgid ""
 "``True`` when you register your filter function, like so::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:223
+#: ../../howto/custom-template-tags.txt:225
 msgid ""
 "This flag tells Django that if a \"safe\" string is passed into your "
 "filter, the result will still be \"safe\" and if a non-safe string is "
 "passed in, Django will automatically escape it, if necessary."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:227
+#: ../../howto/custom-template-tags.txt:229
 msgid ""
 "You can think of this as meaning \"this filter is safe -- it doesn't "
 "introduce any possibility of unsafe HTML.\""
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:230
+#: ../../howto/custom-template-tags.txt:232
 msgid ""
 "The reason ``is_safe`` is necessary is because there are plenty of normal"
 " string operations that will turn a ``SafeData`` object back into a "
@@ -2354,7 +2360,7 @@ msgid ""
 "filter has completed."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:236
+#: ../../howto/custom-template-tags.txt:238
 msgid ""
 "For example, suppose you have a filter that adds the string ``xx`` to the"
 " end of any input. Since this introduces no dangerous HTML characters to "
@@ -2362,20 +2368,20 @@ msgid ""
 "your filter with ``is_safe``::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:245
+#: ../../howto/custom-template-tags.txt:247
 msgid ""
 "When this filter is used in a template where auto-escaping is enabled, "
 "Django will escape the output whenever the input is not already marked as"
 " \"safe\"."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:249
+#: ../../howto/custom-template-tags.txt:251
 msgid ""
 "By default, ``is_safe`` is ``False``, and you can omit it from any "
 "filters where it isn't required."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:252
+#: ../../howto/custom-template-tags.txt:254
 msgid ""
 "Be careful when deciding if your filter really does leave safe strings as"
 " safe. If you're *removing* characters, you might inadvertently leave "
@@ -2388,7 +2394,7 @@ msgid ""
 "reviewing your code."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:262
+#: ../../howto/custom-template-tags.txt:264
 msgid ""
 "Marking a filter ``is_safe`` will coerce the filter's return value to a "
 "string.  If your filter should return a boolean or other non-string "
@@ -2396,7 +2402,7 @@ msgid ""
 "(such as converting a boolean False to the string 'False')."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:268
+#: ../../howto/custom-template-tags.txt:270
 msgid ""
 "Alternatively, your filter code can manually take care of any necessary "
 "escaping. This is necessary when you're introducing new HTML markup into "
@@ -2405,13 +2411,13 @@ msgid ""
 " input yourself."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:274
+#: ../../howto/custom-template-tags.txt:276
 msgid ""
 "To mark the output as a safe string, use "
 ":func:`django.utils.safestring.mark_safe`."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:277
+#: ../../howto/custom-template-tags.txt:279
 msgid ""
 "Be careful, though. You need to do more than just mark the output as "
 "safe. You need to ensure it really *is* safe, and what you do depends on "
@@ -2420,7 +2426,7 @@ msgid ""
 " make things easier for your template authors."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:283
+#: ../../howto/custom-template-tags.txt:285
 msgid ""
 "In order for your filter to know the current auto-escaping state, set the"
 " ``needs_autoescape`` flag to ``True`` when you register your filter "
@@ -2433,13 +2439,13 @@ msgid ""
 "default."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:292
+#: ../../howto/custom-template-tags.txt:294
 msgid ""
 "For example, let's write a filter that emphasizes the first character of "
 "a string::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:311
+#: ../../howto/custom-template-tags.txt:313
 msgid ""
 "The ``needs_autoescape`` flag and the ``autoescape`` keyword argument "
 "mean that our function will know whether automatic escaping is in effect "
@@ -2453,14 +2459,14 @@ msgid ""
 "unchanged."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:321
+#: ../../howto/custom-template-tags.txt:323
 msgid ""
 "Finally, in the above example, we remember to mark the result as safe so "
 "that our HTML is inserted directly into the template without further "
 "escaping."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:325
+#: ../../howto/custom-template-tags.txt:327
 msgid ""
 "There's no need to worry about the ``is_safe`` flag in this case "
 "(although including it wouldn't hurt anything). Whenever you manually "
@@ -2468,51 +2474,51 @@ msgid ""
 " flag won't change anything either way."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:330
+#: ../../howto/custom-template-tags.txt:332
 msgid "Avoiding XSS vulnerabilities when reusing built-in filters"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:332
+#: ../../howto/custom-template-tags.txt:334
 msgid ""
 "Django's built-in filters have ``autoescape=True`` by default in order to"
 " get the proper autoescaping behavior and avoid a cross-site script "
 "vulnerability."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:336
+#: ../../howto/custom-template-tags.txt:338
 msgid ""
 "In older versions of Django, be careful when reusing Django's built-in "
 "filters as ``autoescape`` defaults to ``None``. You'll need to pass "
 "``autoescape=True`` to get autoescaping."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:340
+#: ../../howto/custom-template-tags.txt:342
 msgid ""
 "For example, if you wanted to write a custom filter called "
 "``urlize_and_linebreaks`` that combined the :tfilter:`urlize` and "
 ":tfilter:`linebreaksbr` filters, the filter would look like::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:353
+#: ../../howto/custom-template-tags.txt:355
 msgid "Then:"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:359
+#: ../../howto/custom-template-tags.txt:361
 msgid "would be equivalent to:"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:368
+#: ../../howto/custom-template-tags.txt:370
 msgid "Filters and time zones"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:370
+#: ../../howto/custom-template-tags.txt:372
 msgid ""
 "If you write a custom filter that operates on :class:`~datetime.datetime`"
 " objects, you'll usually register it with the ``expects_localtime`` flag "
 "set to ``True``::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:381
+#: ../../howto/custom-template-tags.txt:383
 msgid ""
 "When this flag is set, if the first argument to your filter is a time "
 "zone aware datetime, Django will convert it to the current time zone "
@@ -2521,11 +2527,11 @@ msgid ""
 "templates>`."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:389
+#: ../../howto/custom-template-tags.txt:391
 msgid "Writing custom template tags"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:391
+#: ../../howto/custom-template-tags.txt:393
 msgid ""
 "Tags are more complex than filters, because tags can do anything. Django "
 "provides a number of shortcuts that make writing most types of tags "
@@ -2534,11 +2540,11 @@ msgid ""
 "enough."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:399
+#: ../../howto/custom-template-tags.txt:401
 msgid "Simple tags"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:403
+#: ../../howto/custom-template-tags.txt:405
 msgid ""
 "Many template tags take a number of arguments -- strings or template "
 "variables -- and return a result after doing some processing based solely"
@@ -2547,7 +2553,7 @@ msgid ""
 "a string formatted accordingly."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:409
+#: ../../howto/custom-template-tags.txt:411
 msgid ""
 "To ease the creation of these types of tags, Django provides a helper "
 "function, ``simple_tag``. This function, which is a method of "
@@ -2556,33 +2562,33 @@ msgid ""
 " mentioned above and registers it with the template system."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:415
+#: ../../howto/custom-template-tags.txt:417
 msgid "Our ``current_time`` function could thus be written like this::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:426
+#: ../../howto/custom-template-tags.txt:428
 msgid "A few things to note about the ``simple_tag`` helper function:"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:428
+#: ../../howto/custom-template-tags.txt:430
 msgid ""
 "Checking for the required number of arguments, etc., has already been "
 "done by the time our function is called, so we don't need to do that."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:430
+#: ../../howto/custom-template-tags.txt:432
 msgid ""
 "The quotes around the argument (if any) have already been stripped away, "
 "so we just receive a plain string."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:432
+#: ../../howto/custom-template-tags.txt:434
 msgid ""
 "If the argument was a template variable, our function is passed the "
 "current value of the variable, not the variable itself."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:435
+#: ../../howto/custom-template-tags.txt:437
 msgid ""
 "Unlike other tag utilities, ``simple_tag`` passes its output through "
 ":func:`~django.utils.html.conditional_escape` if the template context is "
@@ -2590,7 +2596,7 @@ msgid ""
 "vulnerabilities."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:440
+#: ../../howto/custom-template-tags.txt:442
 msgid ""
 "If additional escaping is not desired, you will need to use "
 ":func:`~django.utils.safestring.mark_safe` if you are absolutely sure "
@@ -2599,35 +2605,41 @@ msgid ""
 "``mark_safe()`` is strongly recommended."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:446
+#: ../../howto/custom-template-tags.txt:450
+msgid ""
+"Auto-escaping for ``simple_tag`` as described in the previous two "
+"paragraphs was added."
+msgstr ""
+
+#: ../../howto/custom-template-tags.txt:453
 msgid ""
 "If your template tag needs to access the current context, you can use the"
 " ``takes_context`` argument when registering your tag::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:454
+#: ../../howto/custom-template-tags.txt:461
 msgid "Note that the first argument *must* be called ``context``."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:456
+#: ../../howto/custom-template-tags.txt:463
 msgid ""
 "For more information on how the ``takes_context`` option works, see the "
 "section on :ref:`inclusion tags<howto-custom-template-tags-inclusion-"
 "tags>`."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:459
+#: ../../howto/custom-template-tags.txt:466
 msgid "If you need to rename your tag, you can provide a custom name for it::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:467
+#: ../../howto/custom-template-tags.txt:474
 msgid ""
 "``simple_tag`` functions may accept any number of positional or keyword "
 "arguments. For example::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:477
-#: ../../howto/custom-template-tags.txt:623
+#: ../../howto/custom-template-tags.txt:484
+#: ../../howto/custom-template-tags.txt:632
 msgid ""
 "Then in the template any number of arguments, separated by spaces, may be"
 " passed to the template tag. Like in Python, the values for keyword "
@@ -2635,7 +2647,7 @@ msgid ""
 "after the positional arguments. For example:"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:486
+#: ../../howto/custom-template-tags.txt:495
 msgid ""
 "It's possible to store the tag results in a template variable rather than"
 " directly outputting it. This is done by using the ``as`` argument "
@@ -2643,11 +2655,11 @@ msgid ""
 " yourself where you see fit:"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:499
+#: ../../howto/custom-template-tags.txt:508
 msgid "Inclusion tags"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:503
+#: ../../howto/custom-template-tags.txt:512
 msgid ""
 "Another common type of template tag is the type that displays some data "
 "by rendering *another* template. For example, Django's admin interface "
@@ -2659,11 +2671,11 @@ msgid ""
 "tag.)"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:511
+#: ../../howto/custom-template-tags.txt:520
 msgid "These sorts of tags are called \"inclusion tags\"."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:513
+#: ../../howto/custom-template-tags.txt:522
 msgid ""
 "Writing inclusion tags is probably best demonstrated by example. Let's "
 "write a tag that outputs a list of choices for a given ``Poll`` object, "
@@ -2671,11 +2683,11 @@ msgid ""
 "the tag like this:"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:521
+#: ../../howto/custom-template-tags.txt:530
 msgid "...and the output will be something like this:"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:531
+#: ../../howto/custom-template-tags.txt:540
 msgid ""
 "First, define the function that takes the argument and produces a "
 "dictionary of data for the result. The important point here is we only "
@@ -2683,14 +2695,14 @@ msgid ""
 " as a template context for the template fragment. Example::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:540
+#: ../../howto/custom-template-tags.txt:549
 msgid ""
 "Next, create the template used to render the tag's output. This template "
 "is a fixed feature of the tag: the tag writer specifies it, not the "
 "template designer. Following our example, the template is very simple:"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:552
+#: ../../howto/custom-template-tags.txt:561
 msgid ""
 "Now, create and register the inclusion tag by calling the "
 "``inclusion_tag()`` method on a ``Library`` object. Following our "
@@ -2699,17 +2711,17 @@ msgid ""
 "like this::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:562
+#: ../../howto/custom-template-tags.txt:571
 msgid ""
 "Alternatively it is possible to register the inclusion tag using a "
 ":class:`django.template.Template` instance::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:569
+#: ../../howto/custom-template-tags.txt:578
 msgid "...when first creating the function."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:571
+#: ../../howto/custom-template-tags.txt:580
 msgid ""
 "Sometimes, your inclusion tags might require a large number of arguments,"
 " making it a pain for template authors to pass in all the arguments and "
@@ -2720,7 +2732,7 @@ msgid ""
 " as of when the tag was called."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:578
+#: ../../howto/custom-template-tags.txt:587
 msgid ""
 "For example, say you're writing an inclusion tag that will always be used"
 " in a context that contains ``home_link`` and ``home_title`` variables "
@@ -2728,33 +2740,33 @@ msgid ""
 "look like::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:589
+#: ../../howto/custom-template-tags.txt:598
 msgid ""
 "Note that the first parameter to the function *must* be called "
 "``context``."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:591
+#: ../../howto/custom-template-tags.txt:600
 msgid ""
 "In that ``register.inclusion_tag()`` line, we specified "
 "``takes_context=True`` and the name of the template. Here's what the "
 "template ``link.html`` might look like:"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:599
+#: ../../howto/custom-template-tags.txt:608
 msgid ""
 "Then, any time you want to use that custom tag, load its library and call"
 " it without any arguments, like so:"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:606
+#: ../../howto/custom-template-tags.txt:615
 msgid ""
 "Note that when you're using ``takes_context=True``, there's no need to "
 "pass arguments to the template tag. It automatically gets access to the "
 "context."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:609
+#: ../../howto/custom-template-tags.txt:618
 msgid ""
 "The ``takes_context`` parameter defaults to ``False``. When it's set to "
 "``True``, the tag is passed the context object, as in this example. "
@@ -2762,23 +2774,23 @@ msgid ""
 "``inclusion_tag`` example."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:613
+#: ../../howto/custom-template-tags.txt:622
 msgid ""
 "``inclusion_tag`` functions may accept any number of positional or "
 "keyword arguments. For example::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:633
+#: ../../howto/custom-template-tags.txt:642
 msgid "Assignment tags"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:639
+#: ../../howto/custom-template-tags.txt:648
 msgid ""
 "``simple_tag`` can now store results in a template variable and should be"
 " used instead."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:642
+#: ../../howto/custom-template-tags.txt:651
 msgid ""
 "To ease the creation of tags setting a variable in the context, Django "
 "provides a helper function, ``assignment_tag``. This function works the "
@@ -2787,40 +2799,40 @@ msgid ""
 "directly outputting it."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:647
+#: ../../howto/custom-template-tags.txt:656
 msgid "Our earlier ``current_time`` function could thus be written like this::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:653
+#: ../../howto/custom-template-tags.txt:662
 msgid ""
 "You may then store the result in a template variable using the ``as`` "
 "argument followed by the variable name, and output it yourself where you "
 "see fit:"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:662
+#: ../../howto/custom-template-tags.txt:671
 msgid "Advanced custom template tags"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:664
+#: ../../howto/custom-template-tags.txt:673
 msgid ""
 "Sometimes the basic features for custom template tag creation aren't "
 "enough. Don't worry, Django gives you complete access to the internals "
 "required to build a template tag from the ground up."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:669
+#: ../../howto/custom-template-tags.txt:678
 msgid "A quick overview"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:671
+#: ../../howto/custom-template-tags.txt:680
 msgid ""
 "The template system works in a two-step process: compiling and rendering."
 " To define a custom template tag, you specify how the compilation works "
 "and how the rendering works."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:675
+#: ../../howto/custom-template-tags.txt:684
 msgid ""
 "When Django compiles a template, it splits the raw template text into "
 "''nodes''. Each node is an instance of ``django.template.Node`` and has a"
@@ -2831,18 +2843,18 @@ msgid ""
 "output of the template."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:682
+#: ../../howto/custom-template-tags.txt:691
 msgid ""
 "Thus, to define a custom template tag, you specify how the raw template "
 "tag is converted into a ``Node`` (the compilation function), and what the"
 " node's ``render()`` method does."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:687
+#: ../../howto/custom-template-tags.txt:696
 msgid "Writing the compilation function"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:689
+#: ../../howto/custom-template-tags.txt:698
 msgid ""
 "For each template tag the template parser encounters, it calls a Python "
 "function with the tag contents and the parser object itself. This "
@@ -2850,7 +2862,7 @@ msgid ""
 "contents of the tag."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:693
+#: ../../howto/custom-template-tags.txt:702
 #, python-format
 msgid ""
 "For example, let's write a full implementation of our simple template "
@@ -2861,31 +2873,31 @@ msgid ""
 "this:"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:703
+#: ../../howto/custom-template-tags.txt:712
 msgid ""
 "The parser for this function should grab the parameter and create a "
 "``Node`` object::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:722
-#: ../../howto/custom-template-tags.txt:774
+#: ../../howto/custom-template-tags.txt:731
+#: ../../howto/custom-template-tags.txt:783
 msgid "Notes:"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:724
+#: ../../howto/custom-template-tags.txt:733
 msgid ""
 "``parser`` is the template parser object. We don't need it in this "
 "example."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:727
+#: ../../howto/custom-template-tags.txt:736
 #, python-format
 msgid ""
 "``token.contents`` is a string of the raw contents of the tag. In our "
 "example, it's ``'current_time \"%Y-%m-%d %I:%M %p\"'``."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:730
+#: ../../howto/custom-template-tags.txt:739
 msgid ""
 "The ``token.split_contents()`` method separates the arguments on spaces "
 "while keeping quoted strings together. The more straightforward "
@@ -2894,14 +2906,14 @@ msgid ""
 " idea to always use ``token.split_contents()``."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:736
+#: ../../howto/custom-template-tags.txt:745
 msgid ""
 "This function is responsible for raising "
 "``django.template.TemplateSyntaxError``, with helpful messages, for any "
 "syntax error."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:740
+#: ../../howto/custom-template-tags.txt:749
 msgid ""
 "The ``TemplateSyntaxError`` exceptions use the ``tag_name`` variable. "
 "Don't hard-code the tag's name in your error messages, because that "
@@ -2910,7 +2922,7 @@ msgid ""
 "arguments."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:746
+#: ../../howto/custom-template-tags.txt:755
 #, python-format
 msgid ""
 "The function returns a ``CurrentTimeNode`` with everything the node needs"
@@ -2919,7 +2931,7 @@ msgid ""
 "template tag are removed in ``format_string[1:-1]``."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:751
+#: ../../howto/custom-template-tags.txt:760
 msgid ""
 "The parsing is very low-level. The Django developers have experimented "
 "with writing small frameworks on top of this parsing system, using "
@@ -2927,32 +2939,32 @@ msgid ""
 " engine too slow. It's low-level because that's fastest."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:757
+#: ../../howto/custom-template-tags.txt:766
 msgid "Writing the renderer"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:759
+#: ../../howto/custom-template-tags.txt:768
 msgid ""
 "The second step in writing custom tags is to define a ``Node`` subclass "
 "that has a ``render()`` method."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:762
+#: ../../howto/custom-template-tags.txt:771
 msgid "Continuing the above example, we need to define ``CurrentTimeNode``::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:776
+#: ../../howto/custom-template-tags.txt:785
 msgid ""
 "``__init__()`` gets the ``format_string`` from ``do_current_time()``. "
 "Always pass any options/parameters/arguments to a ``Node`` via its "
 "``__init__()``."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:780
+#: ../../howto/custom-template-tags.txt:789
 msgid "The ``render()`` method is where the work actually happens."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:782
+#: ../../howto/custom-template-tags.txt:791
 msgid ""
 "``render()`` should generally fail silently, particularly in a production"
 " environment. In some cases however, particularly if "
@@ -2962,18 +2974,18 @@ msgid ""
 "or type of arguments."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:789
+#: ../../howto/custom-template-tags.txt:798
 msgid ""
 "Ultimately, this decoupling of compilation and rendering results in an "
 "efficient template system, because a template can render multiple "
 "contexts without having to be parsed multiple times."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:796
+#: ../../howto/custom-template-tags.txt:805
 msgid "Auto-escaping considerations"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:798
+#: ../../howto/custom-template-tags.txt:807
 msgid ""
 "The output from template tags is **not** automatically run through the "
 "auto-escaping filters (with the exception of "
@@ -2982,7 +2994,7 @@ msgid ""
 "a template tag."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:804
+#: ../../howto/custom-template-tags.txt:813
 msgid ""
 "If the ``render()`` function of your template stores the result in a "
 "context variable (rather than returning the result in a string), it "
@@ -2992,7 +3004,7 @@ msgid ""
 "further escaping needs to be marked as such."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:811
+#: ../../howto/custom-template-tags.txt:820
 msgid ""
 "Also, if your template tag creates a new context for performing some sub-"
 "rendering, set the auto-escape attribute to the current context's value. "
@@ -3000,13 +3012,13 @@ msgid ""
 "called ``autoescape`` that you can use for this purpose. For example::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:823
+#: ../../howto/custom-template-tags.txt:832
 msgid ""
 "This is not a very common situation, but it's useful if you're rendering "
 "a template yourself. For example::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:830
+#: ../../howto/custom-template-tags.txt:839
 msgid ""
 "If we had neglected to pass in the current ``context.autoescape`` value "
 "to our new ``Context`` in this example, the results would have *always* "
@@ -3015,11 +3027,11 @@ msgid ""
 "block."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:838
+#: ../../howto/custom-template-tags.txt:847
 msgid "Thread-safety considerations"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:840
+#: ../../howto/custom-template-tags.txt:849
 msgid ""
 "Once a node is parsed, its ``render`` method may be called any number of "
 "times. Since Django is sometimes run in multi-threaded environments, a "
@@ -3028,7 +3040,7 @@ msgid ""
 " your template tags are thread safe."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:846
+#: ../../howto/custom-template-tags.txt:855
 msgid ""
 "To make sure your template tags are thread safe, you should never store "
 "state information on the node itself. For example, Django provides a "
@@ -3036,48 +3048,48 @@ msgid ""
 "strings each time it's rendered:"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:859
+#: ../../howto/custom-template-tags.txt:868
 msgid "A naive implementation of ``CycleNode`` might look something like this::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:871
+#: ../../howto/custom-template-tags.txt:880
 msgid ""
 "But, suppose we have two templates rendering the template snippet from "
 "above at the same time:"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:874
+#: ../../howto/custom-template-tags.txt:883
 msgid ""
 "Thread 1 performs its first loop iteration, ``CycleNode.render()`` "
 "returns 'row1'"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:876
+#: ../../howto/custom-template-tags.txt:885
 msgid ""
 "Thread 2 performs its first loop iteration, ``CycleNode.render()`` "
 "returns 'row2'"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:878
+#: ../../howto/custom-template-tags.txt:887
 msgid ""
 "Thread 1 performs its second loop iteration, ``CycleNode.render()`` "
 "returns 'row1'"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:880
+#: ../../howto/custom-template-tags.txt:889
 msgid ""
 "Thread 2 performs its second loop iteration, ``CycleNode.render()`` "
 "returns 'row2'"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:883
+#: ../../howto/custom-template-tags.txt:892
 msgid ""
 "The CycleNode is iterating, but it's iterating globally. As far as Thread"
 " 1 and Thread 2 are concerned, it's always returning the same value. This"
 " is obviously not what we want!"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:887
+#: ../../howto/custom-template-tags.txt:896
 msgid ""
 "To address this problem, Django provides a ``render_context`` that's "
 "associated with the ``context`` of the template that is currently being "
@@ -3086,13 +3098,13 @@ msgid ""
 "``render`` method."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:892
+#: ../../howto/custom-template-tags.txt:901
 msgid ""
 "Let's refactor our ``CycleNode`` implementation to use the "
 "``render_context``::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:904
+#: ../../howto/custom-template-tags.txt:913
 msgid ""
 "Note that it's perfectly safe to store global information that will not "
 "change throughout the life of the ``Node`` as an attribute. In the case "
@@ -3103,7 +3115,7 @@ msgid ""
 "the ``CycleNode``, should be stored in the ``render_context``."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:913
+#: ../../howto/custom-template-tags.txt:922
 msgid ""
 "Notice how we used ``self`` to scope the ``CycleNode`` specific "
 "information within the ``render_context``. There may be multiple "
@@ -3114,44 +3126,44 @@ msgid ""
 " dictionary."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:921
+#: ../../howto/custom-template-tags.txt:930
 msgid "Registering the tag"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:923
+#: ../../howto/custom-template-tags.txt:932
 msgid ""
 "Finally, register the tag with your module's ``Library`` instance, as "
 "explained in :ref:`writing custom template filters<howto-writing-custom-"
 "template-tags>` above. Example::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:929
+#: ../../howto/custom-template-tags.txt:938
 msgid "The ``tag()`` method takes two arguments:"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:931
+#: ../../howto/custom-template-tags.txt:940
 msgid ""
 "The name of the template tag -- a string. If this is left out, the name "
 "of the compilation function will be used."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:936
+#: ../../howto/custom-template-tags.txt:945
 msgid ""
 "As with filter registration, it is also possible to use this as a "
 "decorator::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:946
+#: ../../howto/custom-template-tags.txt:955
 msgid ""
 "If you leave off the ``name`` argument, as in the second example above, "
 "Django will use the function's name as the tag name."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:950
+#: ../../howto/custom-template-tags.txt:959
 msgid "Passing template variables to the tag"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:952
+#: ../../howto/custom-template-tags.txt:961
 msgid ""
 "Although you can pass any number of arguments to a template tag using "
 "``token.split_contents()``, the arguments are all unpacked as string "
@@ -3159,7 +3171,7 @@ msgid ""
 " (a template variable) to a template tag as an argument."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:957
+#: ../../howto/custom-template-tags.txt:966
 msgid ""
 "While the previous examples have formatted the current time into a string"
 " and returned the string, suppose you wanted to pass in a "
@@ -3167,19 +3179,19 @@ msgid ""
 "template tag format that date-time:"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:966
+#: ../../howto/custom-template-tags.txt:975
 msgid "Initially, ``token.split_contents()`` will return three values:"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:968
+#: ../../howto/custom-template-tags.txt:977
 msgid "The tag name ``format_time``."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:969
+#: ../../howto/custom-template-tags.txt:978
 msgid "The string ``'blog_entry.date_updated'`` (without the surrounding quotes)."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:971
+#: ../../howto/custom-template-tags.txt:980
 #, python-format
 msgid ""
 "The formatting string ``'\"%Y-%m-%d %I:%M %p\"'``. The return value from "
@@ -3187,36 +3199,36 @@ msgid ""
 "string literals like this."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:975
+#: ../../howto/custom-template-tags.txt:984
 msgid "Now your tag should begin to look like this::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:993
+#: ../../howto/custom-template-tags.txt:1002
 msgid ""
 "You also have to change the renderer to retrieve the actual contents of "
 "the ``date_updated`` property of the ``blog_entry`` object.  This can be "
 "accomplished by using the ``Variable()`` class in ``django.template``."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:997
+#: ../../howto/custom-template-tags.txt:1006
 msgid ""
 "To use the ``Variable`` class, simply instantiate it with the name of the"
 " variable to be resolved, and then call ``variable.resolve(context)``. "
 "So, for example::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:1013
+#: ../../howto/custom-template-tags.txt:1022
 msgid ""
 "Variable resolution will throw a ``VariableDoesNotExist`` exception if it"
 " cannot resolve the string passed to it in the current context of the "
 "page."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:1017
+#: ../../howto/custom-template-tags.txt:1026
 msgid "Setting a variable in the context"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:1019
+#: ../../howto/custom-template-tags.txt:1028
 msgid ""
 "The above examples simply output a value. Generally, it's more flexible "
 "if your template tags set template variables instead of outputting "
@@ -3224,7 +3236,7 @@ msgid ""
 "template tags create."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:1023
+#: ../../howto/custom-template-tags.txt:1032
 msgid ""
 "To set a variable in the context, just use dictionary assignment on the "
 "context object in the ``render()`` method. Here's an updated version of "
@@ -3232,22 +3244,22 @@ msgid ""
 "instead of outputting it::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:1038
+#: ../../howto/custom-template-tags.txt:1047
 msgid ""
 "Note that ``render()`` returns the empty string. ``render()`` should "
 "always return string output. If all the template tag does is set a "
 "variable, ``render()`` should return the empty string."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:1042
+#: ../../howto/custom-template-tags.txt:1051
 msgid "Here's how you'd use this new version of the tag:"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:1048
+#: ../../howto/custom-template-tags.txt:1057
 msgid "Variable scope in context"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:1050
+#: ../../howto/custom-template-tags.txt:1059
 msgid ""
 "Any variable set in the context will only be available in the same "
 "``block`` of the template in which it was assigned. This behavior is "
@@ -3255,7 +3267,7 @@ msgid ""
 "conflict with context in other blocks."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:1055
+#: ../../howto/custom-template-tags.txt:1064
 #, python-format
 msgid ""
 "But, there's a problem with ``CurrentTimeNode2``: The variable name "
@@ -3266,19 +3278,19 @@ msgid ""
 "output variable, like so:"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:1067
+#: ../../howto/custom-template-tags.txt:1076
 msgid ""
 "To do that, you'll need to refactor both the compilation function and "
 "``Node`` class, like so::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:1099
+#: ../../howto/custom-template-tags.txt:1108
 msgid ""
 "The difference here is that ``do_current_time()`` grabs the format string"
 " and the variable name, passing both to ``CurrentTimeNode3``."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:1102
+#: ../../howto/custom-template-tags.txt:1111
 msgid ""
 "Finally, if you only need to have a simple syntax for your custom "
 "context-updating template tag, consider using the "
@@ -3286,11 +3298,11 @@ msgid ""
 "assigning the tag results to a template variable."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:1108
+#: ../../howto/custom-template-tags.txt:1117
 msgid "Parsing until another block tag"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:1110
+#: ../../howto/custom-template-tags.txt:1119
 #, python-format
 msgid ""
 "Template tags can work in tandem. For instance, the standard :ttag:`{% "
@@ -3299,12 +3311,12 @@ msgid ""
 "compilation function."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:1115
+#: ../../howto/custom-template-tags.txt:1124
 #, python-format
 msgid "Here's how a simplified ``{% comment %}`` tag might be implemented::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:1127
+#: ../../howto/custom-template-tags.txt:1136
 #, python-format
 msgid ""
 "The actual implementation of :ttag:`{% comment %}<comment>` is slightly "
@@ -3316,7 +3328,7 @@ msgid ""
 "list."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:1134
+#: ../../howto/custom-template-tags.txt:1143
 msgid ""
 "``parser.parse()`` takes a tuple of names of block tags ''to parse "
 "until''. It returns an instance of ``django.template.NodeList``, which is"
@@ -3324,7 +3336,7 @@ msgid ""
 " encountered any of the tags named in the tuple."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:1139
+#: ../../howto/custom-template-tags.txt:1148
 #, python-format
 msgid ""
 "In ``\"nodelist = parser.parse(('endcomment',))\"`` in the above example,"
@@ -3333,7 +3345,7 @@ msgid ""
 "%}`` themselves."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:1144
+#: ../../howto/custom-template-tags.txt:1153
 #, python-format
 msgid ""
 "After ``parser.parse()`` is called, the parser hasn't yet \"consumed\" "
@@ -3341,18 +3353,18 @@ msgid ""
 "``parser.delete_first_token()``."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:1148
+#: ../../howto/custom-template-tags.txt:1157
 #, python-format
 msgid ""
 "``CommentNode.render()`` simply returns an empty string. Anything between"
 " ``{% comment %}`` and ``{% endcomment %}`` is ignored."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:1152
+#: ../../howto/custom-template-tags.txt:1161
 msgid "Parsing until another block tag, and saving contents"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:1154
+#: ../../howto/custom-template-tags.txt:1163
 #, python-format
 msgid ""
 "In the previous example, ``do_comment()`` discarded everything between "
@@ -3360,30 +3372,30 @@ msgid ""
 "possible to do something with the code between block tags."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:1158
+#: ../../howto/custom-template-tags.txt:1167
 #, python-format
 msgid ""
 "For example, here's a custom template tag, ``{% upper %}``, that "
 "capitalizes everything between itself and ``{% endupper %}``."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:1161
+#: ../../howto/custom-template-tags.txt:1170
 msgid "Usage:"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:1167
+#: ../../howto/custom-template-tags.txt:1176
 msgid ""
 "As in the previous example, we'll use ``parser.parse()``. But this time, "
 "we pass the resulting ``nodelist`` to the ``Node``::"
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:1182
+#: ../../howto/custom-template-tags.txt:1191
 msgid ""
 "The only new concept here is the ``self.nodelist.render(context)`` in "
 "``UpperNode.render()``."
 msgstr ""
 
-#: ../../howto/custom-template-tags.txt:1185
+#: ../../howto/custom-template-tags.txt:1194
 #, python-format
 msgid ""
 "For more examples of complex rendering, see the source code of :ttag:`{% "
@@ -3633,8 +3645,8 @@ msgstr ""
 #: ../../howto/deployment/checklist.txt:150
 msgid ""
 "Media files are uploaded by your users. They're untrusted! Make sure your"
-" web server never attempt to interpret them. For instance, if a user "
-"uploads a ``.php`` file , the web server shouldn't execute it."
+" web server never attempts to interpret them. For instance, if a user "
+"uploads a ``.php`` file, the web server shouldn't execute it."
 msgstr ""
 
 #: ../../howto/deployment/checklist.txt:154
@@ -4633,6 +4645,12 @@ msgstr ""
 
 #: ../../howto/error-reporting.txt:72
 msgid ""
+"In older versions, 404s were not ignored when the referer was equal to "
+"the requested URL."
+msgstr ""
+
+#: ../../howto/error-reporting.txt:77
+msgid ""
 ":class:`~django.middleware.common.BrokenLinkEmailsMiddleware` must appear"
 " before other middleware that intercepts 404 errors, such as "
 ":class:`~django.middleware.locale.LocaleMiddleware` or "
@@ -4640,32 +4658,32 @@ msgid ""
 " Put it towards the top of your :setting:`MIDDLEWARE` setting."
 msgstr ""
 
-#: ../../howto/error-reporting.txt:78
+#: ../../howto/error-reporting.txt:83
 msgid ""
 "You can tell Django to stop reporting particular 404s by tweaking the "
 ":setting:`IGNORABLE_404_URLS` setting. It should be a list of compiled "
 "regular expression objects. For example::"
 msgstr ""
 
-#: ../../howto/error-reporting.txt:88
+#: ../../howto/error-reporting.txt:93
 msgid ""
 "In this example, a 404 to any URL ending with ``.php`` or ``.cgi`` will "
 "*not* be reported. Neither will any URL starting with ``/phpmyadmin/``."
 msgstr ""
 
-#: ../../howto/error-reporting.txt:91
+#: ../../howto/error-reporting.txt:96
 msgid ""
 "The following example shows how to exclude some conventional URLs that "
 "browsers and crawlers often request::"
 msgstr ""
 
-#: ../../howto/error-reporting.txt:101
+#: ../../howto/error-reporting.txt:106
 msgid ""
 "(Note that these are regular expressions, so we put a backslash in front "
 "of periods to escape them.)"
 msgstr ""
 
-#: ../../howto/error-reporting.txt:104
+#: ../../howto/error-reporting.txt:109
 msgid ""
 "If you'd like to customize the behavior of "
 ":class:`django.middleware.common.BrokenLinkEmailsMiddleware` further (for"
@@ -4673,18 +4691,18 @@ msgid ""
 "subclass it and override its methods."
 msgstr ""
 
-#: ../../howto/error-reporting.txt:111
+#: ../../howto/error-reporting.txt:116
 msgid ""
 "404 errors are logged using the logging framework. By default, these log "
 "records are ignored, but you can use them for error reporting by writing "
 "a handler and :doc:`configuring logging </topics/logging>` appropriately."
 msgstr ""
 
-#: ../../howto/error-reporting.txt:118
+#: ../../howto/error-reporting.txt:123
 msgid "Filtering error reports"
 msgstr ""
 
-#: ../../howto/error-reporting.txt:122
+#: ../../howto/error-reporting.txt:127
 msgid ""
 "Filtering sensitive data is a hard problem, and it's nearly impossible to"
 " guarantee that sensitive won't leak into an error report. Therefore, "
@@ -4693,11 +4711,11 @@ msgid ""
 "(such as through email)."
 msgstr ""
 
-#: ../../howto/error-reporting.txt:129
+#: ../../howto/error-reporting.txt:134
 msgid "Filtering sensitive information"
 msgstr ""
 
-#: ../../howto/error-reporting.txt:133
+#: ../../howto/error-reporting.txt:138
 msgid ""
 "Error reports are really helpful for debugging errors, so it is generally"
 " useful to record as much relevant information about those errors as "
@@ -4707,7 +4725,7 @@ msgid ""
 "attributes>`."
 msgstr ""
 
-#: ../../howto/error-reporting.txt:139
+#: ../../howto/error-reporting.txt:144
 msgid ""
 "However, sometimes certain types of information may be too sensitive and "
 "thus may not be appropriate to be kept track of, for example a user's "
@@ -4720,7 +4738,7 @@ msgid ""
 ":func:`sensitive_post_parameters`."
 msgstr ""
 
-#: ../../howto/error-reporting.txt:153
+#: ../../howto/error-reporting.txt:158
 msgid ""
 "If a function (either a view or any regular callback) in your code uses "
 "local variables susceptible to contain sensitive information, you may "
@@ -4728,7 +4746,7 @@ msgid ""
 "reports using the ``sensitive_variables`` decorator::"
 msgstr ""
 
-#: ../../howto/error-reporting.txt:167
+#: ../../howto/error-reporting.txt:172
 msgid ""
 "In the above example, the values for the ``user``, ``pw`` and ``cc`` "
 "variables will be hidden and replaced with stars (`**********`) in the "
@@ -4736,17 +4754,17 @@ msgid ""
 "disclosed."
 msgstr ""
 
-#: ../../howto/error-reporting.txt:172
+#: ../../howto/error-reporting.txt:177
 msgid ""
 "To systematically hide all local variables of a function from error logs,"
 " do not provide any argument to the ``sensitive_variables`` decorator::"
 msgstr ""
 
-#: ../../howto/error-reporting.txt:179
+#: ../../howto/error-reporting.txt:184
 msgid "When using multiple decorators"
 msgstr ""
 
-#: ../../howto/error-reporting.txt:181
+#: ../../howto/error-reporting.txt:186
 msgid ""
 "If the variable you want to hide is also a function argument (e.g. "
 "'``user``’ in the following example), and if the decorated function has "
@@ -4755,7 +4773,7 @@ msgid ""
 "argument as it gets passed through the other decorators::"
 msgstr ""
 
-#: ../../howto/error-reporting.txt:195
+#: ../../howto/error-reporting.txt:200
 msgid ""
 "If one of your views receives an :class:`~django.http.HttpRequest` object"
 " with :attr:`POST parameters<django.http.HttpRequest.POST>` susceptible "
@@ -4764,7 +4782,7 @@ msgid ""
 "``sensitive_post_parameters`` decorator::"
 msgstr ""
 
-#: ../../howto/error-reporting.txt:213
+#: ../../howto/error-reporting.txt:218
 msgid ""
 "In the above example, the values for the ``pass_word`` and "
 "``credit_card_number`` POST parameters will be hidden and replaced with "
@@ -4772,14 +4790,14 @@ msgid ""
 "reports, whereas the value of the ``name`` parameter will be disclosed."
 msgstr ""
 
-#: ../../howto/error-reporting.txt:218
+#: ../../howto/error-reporting.txt:223
 msgid ""
 "To systematically hide all POST parameters of a request in error reports,"
 " do not provide any argument to the ``sensitive_post_parameters`` "
 "decorator::"
 msgstr ""
 
-#: ../../howto/error-reporting.txt:225
+#: ../../howto/error-reporting.txt:230
 msgid ""
 "All POST parameters are systematically filtered out of error reports for "
 "certain :mod:`django.contrib.auth.views` views (``login``, "
@@ -4788,11 +4806,11 @@ msgid ""
 " sensitive information such as user passwords."
 msgstr ""
 
-#: ../../howto/error-reporting.txt:234
+#: ../../howto/error-reporting.txt:239
 msgid "Custom error reports"
 msgstr ""
 
-#: ../../howto/error-reporting.txt:236
+#: ../../howto/error-reporting.txt:241
 msgid ""
 "All :func:`sensitive_variables` and :func:`sensitive_post_parameters` do "
 "is, respectively, annotate the decorated function with the names of "
@@ -4808,40 +4826,40 @@ msgid ""
 ":setting:`DEFAULT_EXCEPTION_REPORTER_FILTER` setting::"
 msgstr ""
 
-#: ../../howto/error-reporting.txt:251
+#: ../../howto/error-reporting.txt:256
 msgid ""
 "You may also control in a more granular way which filter to use within "
 "any given view by setting the ``HttpRequest``’s "
 "``exception_reporter_filter`` attribute::"
 msgstr ""
 
-#: ../../howto/error-reporting.txt:262
+#: ../../howto/error-reporting.txt:267
 msgid ""
 "Your custom filter class needs to inherit from "
 ":class:`django.views.debug.SafeExceptionReporterFilter` and may override "
 "the following methods:"
 msgstr ""
 
-#: ../../howto/error-reporting.txt:270
+#: ../../howto/error-reporting.txt:275
 msgid ""
 "Returns ``True`` to activate the filtering operated in the other methods."
 " By default the filter is active if :setting:`DEBUG` is ``False``."
 msgstr ""
 
-#: ../../howto/error-reporting.txt:275
+#: ../../howto/error-reporting.txt:280
 msgid ""
 "Returns the filtered dictionary of POST parameters. By default it "
 "replaces the values of sensitive parameters with stars (`**********`)."
 msgstr ""
 
-#: ../../howto/error-reporting.txt:280
+#: ../../howto/error-reporting.txt:285
 msgid ""
 "Returns the filtered dictionary of local variables for the given "
 "traceback frame. By default it replaces the values of sensitive variables"
 " with stars (`**********`)."
 msgstr ""
 
-#: ../../howto/error-reporting.txt:286
+#: ../../howto/error-reporting.txt:291
 msgid ""
 "You can also set up custom error reporting by writing a custom piece of "
 ":ref:`exception middleware <exception-middleware>`. If you do write "
@@ -5473,39 +5491,23 @@ msgid ""
 msgstr ""
 
 #: ../../howto/outputting-pdf.txt:145
-msgid "Further resources"
-msgstr ""
-
-#: ../../howto/outputting-pdf.txt:147
-msgid ""
-"PDFlib_ is another PDF-generation library that has Python bindings. To "
-"use it with Django, just use the same concepts explained in this article."
-msgstr ""
-
-#: ../../howto/outputting-pdf.txt:149
-msgid ""
-"`XHTML2PDF`_ is yet another PDF-generation library. It ships with an "
-"example of how to integrate it with Django."
-msgstr ""
-
-#: ../../howto/outputting-pdf.txt:151
-msgid ""
-"HTMLdoc_ is a command-line script that can convert HTML to PDF. It "
-"doesn't have a Python interface, but you can escape out to the shell "
-"using ``system`` or ``popen`` and retrieve the output in Python."
-msgstr ""
-
-#: ../../howto/outputting-pdf.txt:160
 msgid "Other formats"
 msgstr ""
 
-#: ../../howto/outputting-pdf.txt:162
+#: ../../howto/outputting-pdf.txt:147
 msgid ""
 "Notice that there isn't a lot in these examples that's PDF-specific -- "
 "just the bits using ``reportlab``. You can use a similar technique to "
 "generate any arbitrary format that you can find a Python library for. "
 "Also see :doc:`/howto/outputting-csv` for another example and some "
 "techniques you can use when generated text-based formats."
+msgstr ""
+
+#: ../../howto/outputting-pdf.txt:155
+msgid ""
+"Django Packages provides a `comparison of packages "
+"<https://djangopackages.org/grids/g/pdf/>`_ that help generate PDF files "
+"from Django."
 msgstr ""
 
 #: ../../howto/static-files/deployment.txt:3
@@ -5641,7 +5643,7 @@ msgid ""
 "Another common tactic is to serve static files from a cloud storage "
 "provider like Amazon's S3 and/or a CDN (content delivery network). This "
 "lets you ignore the problems of serving static files and can often make "
-"for faster-loading webpages (especially when using a CDN)."
+"for faster-loading Web pages (especially when using a CDN)."
 msgstr ""
 
 #: ../../howto/static-files/deployment.txt:122
@@ -5730,7 +5732,7 @@ msgstr ""
 #: ../../howto/static-files/index.txt:21
 msgid ""
 "In your templates, either hardcode the url like "
-"``/static/my_app/myexample.jpg`` or, preferably, use the :ttag:`static` "
+"``/static/my_app/example.jpg`` or, preferably, use the :ttag:`static` "
 "template tag to build the URL for the given relative path by using the "
 "configured :setting:`STATICFILES_STORAGE` storage (this makes it much "
 "easier when you want to switch to a content delivery network (CDN) for "
@@ -5740,7 +5742,7 @@ msgstr ""
 #: ../../howto/static-files/index.txt:35
 msgid ""
 "Store your static files in a folder called ``static`` in your app. For "
-"example ``my_app/static/my_app/myimage.jpg``."
+"example ``my_app/static/my_app/example.jpg``."
 msgstr ""
 
 #: ../../howto/static-files/index.txt:38
@@ -6519,687 +6521,4 @@ msgid ""
 "migration that contains the operation to change ``Meta.managed`` may not "
 "be applied."
 msgstr ""
-
-#~ msgid ""
-#~ msgstr ""
-
-#~ msgid "Replaced by ``requires_system_checks``"
-#~ msgstr ""
-
-#~ msgid "Replaced with the :djadmin:`check` command"
-#~ msgstr ""
-
-#~ msgid "If ``app`` is None, then all installed apps are checked for errors."
-#~ msgstr ""
-
-#~ msgid "How to use Django with FastCGI, SCGI, or AJP"
-#~ msgstr ""
-
-#~ msgid "FastCGI support is deprecated and will be removed in Django 1.9."
-#~ msgstr ""
-
-#~ msgid "Note"
-#~ msgstr ""
-
-#~ msgid "Why run code in a separate process?"
-#~ msgstr ""
-
-#~ msgid "Prerequisite: flup"
-#~ msgstr ""
-
-#~ msgid "Starting your FastCGI server"
-#~ msgstr ""
-
-#~ msgid "Protocols"
-#~ msgstr ""
-
-#~ msgid "Examples"
-#~ msgstr ""
-
-#~ msgid "Running a threaded server on a TCP port::"
-#~ msgstr ""
-
-#~ msgid "Running a preforked server on a Unix domain socket::"
-#~ msgstr ""
-
-#~ msgid "Socket security"
-#~ msgstr ""
-
-#~ msgid "Stopping the FastCGI daemon"
-#~ msgstr ""
-
-#~ msgid "...where ``$PIDFILE`` is the ``pidfile`` you specified."
-#~ msgstr ""
-
-#~ msgid "Apache setup"
-#~ msgstr ""
-
-#~ msgid "Use ``mod_rewrite`` to point URLs at FastCGI as appropriate."
-#~ msgstr ""
-
-#~ msgid "Specifying the location of the FastCGI server"
-#~ msgstr ""
-
-#~ msgid "Using mod_rewrite to point URLs at FastCGI"
-#~ msgstr ""
-
-#~ msgid "Using mod_fcgid as alternative to mod_fastcgi"
-#~ msgstr ""
-
-#~ msgid "lighttpd setup"
-#~ msgstr ""
-
-#~ msgid "Add the following to your lighttpd config file:"
-#~ msgstr ""
-
-#~ msgid "Running multiple Django sites on one lighttpd"
-#~ msgstr ""
-
-#~ msgid "Cherokee setup"
-#~ msgstr ""
-
-#~ msgid "Running Django on a shared-hosting provider with Apache"
-#~ msgstr ""
-
-#~ msgid "In your Web root directory, add this to a file named ``.htaccess``:"
-#~ msgstr ""
-
-#~ msgid "Restarting the spawned server"
-#~ msgstr ""
-
-#~ msgid "Serving admin media files"
-#~ msgstr ""
-
-#~ msgid "Forcing the URL prefix to a particular value"
-#~ msgstr ""
-
-#~ msgid "If you get a UnicodeEncodeError"
-#~ msgstr ""
-
-#~ msgid "Automatically loading initial data fixtures"
-#~ msgstr ""
-
-#~ msgid "Providing initial SQL data"
-#~ msgstr ""
-
-#~ msgid "Initial SQL data and testing"
-#~ msgstr ""
-
-#~ msgid "Database-backend-specific SQL data"
-#~ msgstr ""
-
-#~ msgid "Managing static files (CSS, images)"
-#~ msgstr ""
-
-#~ msgid "Install Setuptools"
-#~ msgstr ""
-
-#~ msgid "Install PIP"
-#~ msgstr ""
-
-#~ msgid "Run the :djadmin:`makemigrations` command."
-#~ msgstr ""
-
-#~ msgid "Edit the created migration file."
-#~ msgstr ""
-
-#~ msgid "The generated migration class should look similar to this::"
-#~ msgstr ""
-
-#~ msgid "You will need to make three changes:"
-#~ msgstr ""
-
-#~ msgid "The resulting migration should look similar to this::"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "First, you must add the "
-#~ ":class:`django.contrib.auth.middleware.RemoteUserMiddleware` to"
-#~ " the :setting:`MIDDLEWARE_CLASSES` setting "
-#~ "**after** the "
-#~ ":class:`django.contrib.auth.middleware.AuthenticationMiddleware`::"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "In older versions, this method was "
-#~ "not called when ``upload_to`` was a "
-#~ "callable."
-#~ msgstr ""
-
-#~ msgid "The ``max_length`` argument was added."
-#~ msgstr ""
-
-#~ msgid "The ability to use the decorator pattern was added."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "We then need to define the "
-#~ "``as_sql`` method. This takes a "
-#~ "``SQLCompiler`` object, called ``compiler``,  "
-#~ "and the active database connection. "
-#~ "``SQLCompiler`` objects are not documented,"
-#~ " but the only thing we need to"
-#~ " know about them is that they "
-#~ "have a ``compile()`` method which "
-#~ "returns a tuple containing a SQL "
-#~ "string, and the parameters to be "
-#~ "interpolated into that string. In most"
-#~ " cases, you don't need to use "
-#~ "it directly and can pass it on "
-#~ "to ``process_lhs()`` and ``process_rhs()``."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Finally we combine the parts into "
-#~ "a SQL expression with ``<>``, and "
-#~ "supply all the parameters for the "
-#~ "query. We then return a tuple "
-#~ "containing the generated SQL string and"
-#~ " the parameters."
-#~ msgstr ""
-
-#~ msgid "Writing an efficient abs__lt lookup"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "There are a couple of notable "
-#~ "things going on. First, "
-#~ "``AbsoluteValueLessThan`` isn't calling "
-#~ "``process_lhs()``. Instead it skips the "
-#~ "transformation of the ``lhs`` done by"
-#~ " ``AbsoluteValue`` and uses the original"
-#~ " ``lhs``. That is, we want to "
-#~ "get ``27`` not ``ABS(27)``. Referring "
-#~ "directly to ``self.lhs.lhs`` is safe as"
-#~ " ``AbsoluteValueLessThan`` can be accessed "
-#~ "only from the ``AbsoluteValue`` lookup, "
-#~ "that is the ``lhs`` is always an"
-#~ " instance of ``AbsoluteValue``."
-#~ msgstr ""
-
-#~ msgid "Writing custom django-admin commands"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Before Django 1.8, management commands "
-#~ "were based on the :py:mod:`optparse` "
-#~ "module, and positional arguments were "
-#~ "passed in ``*args`` while optional "
-#~ "arguments were passed in ``**options``. "
-#~ "Now that management commands use "
-#~ ":py:mod:`argparse` for argument parsing, all"
-#~ " arguments are passed in ``**options`` "
-#~ "by default, unless you name your "
-#~ "positional arguments to ``args`` "
-#~ "(compatibility mode). You are encouraged "
-#~ "to exclusively use ``**options`` for new"
-#~ " commands."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "The ``handle()`` method takes one or "
-#~ "more ``poll_ids`` and sets ``poll.opened`` "
-#~ "to ``False`` for each one. If the"
-#~ " user referenced any nonexistent polls, "
-#~ "a :class:`CommandError` is raised. The "
-#~ "``poll.opened`` attribute does not exist "
-#~ "in the :doc:`tutorial</intro/tutorial01>` and "
-#~ "was added to ``polls.models.Poll`` for "
-#~ "this example."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Previously, only the standard "
-#~ ":py:mod:`optparse` library was supported and"
-#~ " you would have to extend the "
-#~ "command ``option_list`` variable with "
-#~ "``optparse.make_option()``."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "In addition to being able to add"
-#~ " custom command line options, all "
-#~ ":doc:`management commands</ref/django-admin>` can"
-#~ " accept some default options such as"
-#~ " :djadminopt:`--verbosity` and "
-#~ ":djadminopt:`--traceback`."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "In previous versions, Django forced the"
-#~ " \"en-us\" locale instead of "
-#~ "deactivating translations."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "A string listing the arguments accepted"
-#~ " by the command, suitable for use "
-#~ "in help messages; e.g., a command "
-#~ "which takes a list of application "
-#~ "names might set this to '<app_label "
-#~ "app_label ...>'."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "This should be done now in the "
-#~ ":meth:`~BaseCommand.add_arguments()` method, by "
-#~ "calling the ``parser.add_argument()`` method. "
-#~ "See the ``closepoll`` example above."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "This is the list of ``optparse`` "
-#~ "options which will be fed into the"
-#~ " command's ``OptionParser`` for parsing "
-#~ "arguments."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "You should now override the "
-#~ ":meth:`~BaseCommand.add_arguments` method to add "
-#~ "custom arguments accepted by your "
-#~ "command. See :ref:`the example above "
-#~ "<custom-commands-options>`."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "This option can't be ``False`` when "
-#~ "the :data:`~BaseCommand.can_import_settings` option "
-#~ "is set to ``False`` too because "
-#~ "attempting to set the locale needs "
-#~ "access to settings. This condition will"
-#~ " generate a :class:`CommandError`."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "If you pass the :djadminopt:`--no-color`"
-#~ " option when running your command, "
-#~ "all ``self.style()`` calls will return "
-#~ "the original string uncolored."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Tries to execute this command, "
-#~ "performing system checks if needed (as"
-#~ " controlled by the :attr:`requires_system_checks`"
-#~ " attribute). If the command raises a"
-#~ " :class:`CommandError`, it's intercepted and "
-#~ "printed to stderr."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "``execute()`` should not be called "
-#~ "directly from your code to execute "
-#~ "a command. Use :ref:`call_command <call-"
-#~ "command>` instead."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Uses the system check framework to "
-#~ "inspect the entire Django project for"
-#~ " potential problems. Serious problems are"
-#~ " raised as a :class:`CommandError`; "
-#~ "warnings are output to stderr; minor "
-#~ "notifications are output to stdout."
-#~ msgstr ""
-
-#~ msgid "BaseCommand subclasses"
-#~ msgstr ""
-
-#~ msgid "Use :class:`BaseCommand` instead, which takes no arguments by default."
-#~ msgstr ""
-
-#~ msgid "A command which takes no arguments on the command line."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Rather than implementing "
-#~ ":meth:`~BaseCommand.handle`, subclasses must "
-#~ "implement :meth:`~NoArgsCommand.handle_noargs`; "
-#~ ":meth:`~BaseCommand.handle` itself is overridden "
-#~ "to ensure no arguments are passed "
-#~ "to the command."
-#~ msgstr ""
-
-#~ msgid "Perform this command's actions"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "If a management command is called "
-#~ "from code through :ref:`call_command <call-"
-#~ "command>`, it's up to you to catch"
-#~ " the exception when needed."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "The :meth:`~Field.db_type` method is called"
-#~ " by Django when the framework "
-#~ "constructs the ``CREATE TABLE`` statements "
-#~ "for your application -- that is, "
-#~ "when you first create your tables. "
-#~ "It is also called when constructing "
-#~ "a ``WHERE`` clause that includes the "
-#~ "model field -- that is, when you"
-#~ " retrieve data using QuerySet methods "
-#~ "like ``get()``, ``filter()``, and "
-#~ "``exclude()`` and have the model field"
-#~ " as an argument. It's not called "
-#~ "at any other time, so it can "
-#~ "afford to execute slightly complex code,"
-#~ " such as the ``connection.settings_dict`` "
-#~ "check in the above example."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Historically, Django provided a metaclass "
-#~ "called ``SubfieldBase`` which always called"
-#~ " :meth:`~Field.to_python` on assignment. This "
-#~ "did not play nicely with custom "
-#~ "database transformations, aggregation, or "
-#~ "values queries, so it has been "
-#~ "replaced with :meth:`~Field.from_db_value`."
-#~ msgstr ""
-
-#~ msgid "Preparing values for use in database lookups"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "As with value conversions, preparing a"
-#~ " value for database lookups is a "
-#~ "two phase process."
-#~ msgstr ""
-
-#~ msgid ""
-#~ ":meth:`.get_prep_lookup` performs the first "
-#~ "phase of lookup preparation: type "
-#~ "conversion and data validation."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Prepares the ``value`` for passing to"
-#~ " the database when used in a "
-#~ "lookup (a ``WHERE`` constraint in SQL)."
-#~ " The ``lookup_type`` parameter will be "
-#~ "one of the valid Django filter "
-#~ "lookups: ``exact``, ``iexact``, ``contains``, "
-#~ "``icontains``, ``gt``, ``gte``, ``lt``, "
-#~ "``lte``, ``in``, ``startswith``, ``istartswith``,"
-#~ " ``endswith``, ``iendswith``, ``range``, "
-#~ "``year``, ``month``, ``day``, ``isnull``, "
-#~ "``search``, ``regex``, and ``iregex``."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "If you are using :doc:`custom lookups"
-#~ " </howto/custom-lookups>`, the ``lookup_type``"
-#~ " can be any ``lookup_name`` used by"
-#~ " the project's custom lookups."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Your method must be prepared to "
-#~ "handle all of these ``lookup_type`` "
-#~ "values and should raise either a "
-#~ "``ValueError`` if the ``value`` is of"
-#~ " the wrong sort (a list when "
-#~ "you were expecting an object, for "
-#~ "example) or a ``TypeError`` if your "
-#~ "field does not support that type "
-#~ "of lookup. For many fields, you "
-#~ "can get by with handling the "
-#~ "lookup types that need special handling"
-#~ " for your field and pass the "
-#~ "rest to the :meth:`~Field.get_db_prep_lookup` "
-#~ "method of the parent class."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "If you needed to implement "
-#~ ":meth:`.get_db_prep_save`, you will usually "
-#~ "need to implement :meth:`.get_prep_lookup`. If"
-#~ " you don't, :meth:`.get_prep_value` will be"
-#~ " called by the default implementation, "
-#~ "to manage ``exact``, ``gt``, ``gte``, "
-#~ "``lt``, ``lte``, ``in`` and ``range`` "
-#~ "lookups."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "You may also want to implement "
-#~ "this method to limit the lookup "
-#~ "types that could be used with your"
-#~ " custom field type."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Note that, for ``\"range\"`` and "
-#~ "``\"in\"`` lookups, ``get_prep_lookup`` will "
-#~ "receive a list of objects (presumably"
-#~ " of the right type) and will "
-#~ "need to convert them to a list "
-#~ "of things of the right type for"
-#~ " passing to the database. Most of "
-#~ "the time, you can reuse "
-#~ "``get_prep_value()``, or at least factor "
-#~ "out some common pieces."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "For example, the following code "
-#~ "implements ``get_prep_lookup`` to limit the"
-#~ " accepted lookup types to ``exact`` "
-#~ "and ``in``::"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "For performing database-specific data "
-#~ "conversions required by a lookup, you"
-#~ " can override :meth:`~Field.get_db_prep_lookup`."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "**Strings marked as \"needing escaping\"** "
-#~ "are *always* escaped on output, "
-#~ "regardless of whether they are in "
-#~ "an :ttag:`autoescape` block or not. "
-#~ "These strings are only escaped once, "
-#~ "however, even if auto-escaping applies."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Internally, these strings are of type"
-#~ " ``EscapeBytes`` or ``EscapeText``. Generally "
-#~ "you don't have to worry about "
-#~ "these; they exist for the implementation"
-#~ " of the :tfilter:`escape` filter."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Auto-escaping for ``simple_tag`` as "
-#~ "described in the previous two paragraphs"
-#~ " was added."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "The ``template`` attribute of ``Context`` "
-#~ "objects was added in Django 1.8. "
-#~ ":meth:`context.template.engine.get_template "
-#~ "<django.template.Engine.get_template>` must be used"
-#~ " instead of :func:`django.template.loader.get_template`"
-#~ " because the latter now returns a "
-#~ "wrapper whose ``render`` method doesn't "
-#~ "accept a :class:`~django.template.Context`."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Finally, if you only need to have"
-#~ " a simple syntax for your custom "
-#~ "context-updating template tag, you might"
-#~ " want to consider using the "
-#~ ":ref:`assignment tag <howto-custom-"
-#~ "template-tags-assignment-tags>` shortcut we"
-#~ " introduced above."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Some of the checks described below "
-#~ "can be automated using the "
-#~ ":djadminopt:`--deploy` option of the "
-#~ ":djadmin:`check` command. Be sure to run"
-#~ " it against your production settings "
-#~ "file as described in the option's "
-#~ "documentation."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "It's strongly recommended that you "
-#~ "invoke the Python process running your"
-#~ " Django application using the `-R`_ "
-#~ "option or with the :envvar:`PYTHONHASHSEED`"
-#~ " environment variable set to ``random``."
-#~ msgstr ""
-
-#~ msgid "Authentication with mod_wsgi"
-#~ msgstr ""
-
-#~ msgid "Authorization with mod_wsgi and Django groups"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "WSGI servers obtain the path to "
-#~ "the ``application`` callable from their "
-#~ "configuration. Django's built-in server, "
-#~ "namely the :djadmin:`runserver` command, read"
-#~ " it from the :setting:`WSGI_APPLICATION` "
-#~ "setting. By default, it's set to "
-#~ "``<project_name>.wsgi.application``, which points to"
-#~ " the ``application`` callable in "
-#~ ":file:`<project_name>/wsgi.py`."
-#~ msgstr ""
-
-#~ msgid "How to use Django with Apache and mod_wsgi"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Once you've got mod_wsgi installed and"
-#~ " activated, edit your Apache server's "
-#~ "``httpd.conf`` file and add the "
-#~ "following. If you are using a "
-#~ "version of Apache older than 2.4, "
-#~ "replace ``Require all granted`` with "
-#~ "``Allow from all`` and also add "
-#~ "the line ``Order deny,allow`` above it."
-#~ msgstr ""
-
-#~ msgid "Using a virtualenv"
-#~ msgstr ""
-
-#~ msgid "Using mod_wsgi daemon mode"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "This example sets up Django at the"
-#~ " site root, but explicitly serves "
-#~ "``robots.txt``, ``favicon.ico``, any CSS file,"
-#~ " and anything in the ``/static/`` and"
-#~ " ``/media/`` URL space as a static"
-#~ " file. All other URLs will be "
-#~ "served using mod_wsgi:"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Your :setting:`MIDDLEWARE_CLASSES` setting includes"
-#~ " :class:`django.middleware.common.BrokenLinkEmailsMiddleware`."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "In older versions, 404s were not "
-#~ "ignored when the referer was equal "
-#~ "to the requested URL."
-#~ msgstr ""
-
-#~ msgid ""
-#~ ":class:`~django.middleware.common.BrokenLinkEmailsMiddleware` "
-#~ "must appear before other middleware that"
-#~ " intercepts 404 errors, such as "
-#~ ":class:`~django.middleware.locale.LocaleMiddleware` or "
-#~ ":class:`~django.contrib.flatpages.middleware.FlatpageFallbackMiddleware`."
-#~ " Put it towards the top of your"
-#~ " :setting:`MIDDLEWARE_CLASSES` setting."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "However, sometimes certain types of "
-#~ "information may be too sensitive and "
-#~ "thus may not be appropriate to be"
-#~ " kept track of, for example a "
-#~ "user's password or credit card number."
-#~ " So Django offers a set of "
-#~ "function decorators to help you control"
-#~ " which information should be filtered "
-#~ "out of error reports in a "
-#~ "production environment (that is, where "
-#~ ":setting:`DEBUG` is set to ``False``): "
-#~ ":func:`sensitive_variables` and "
-#~ ":func:`sensitive_post_parameters`."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "`Pisa XHTML2PDF`_ is yet another PDF-"
-#~ "generation library. Pisa ships with an"
-#~ " example of how to integrate Pisa "
-#~ "with Django."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "In your templates, either hardcode the"
-#~ " url like ``/static/my_app/myexample.jpg`` or,"
-#~ " preferably, use the :ttag:`static"
-#~ "<staticfiles-static>` template tag to build"
-#~ " the URL for the given relative "
-#~ "path by using the configured "
-#~ ":setting:`STATICFILES_STORAGE` storage (this makes"
-#~ " it much easier when you want "
-#~ "to switch to a content delivery "
-#~ "network (CDN) for serving static files)."
-#~ msgstr ""
-
-#~ msgid "Serving static files during development."
-#~ msgstr ""
-
-#~ msgid "Serving files uploaded by a user during development."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "When the new environment is set "
-#~ "up, :doc:`run the full test suite "
-#~ "</topics/testing/overview>` for your application."
-#~ " In Python 2.7+, deprecation warnings "
-#~ "are silenced by default. It is "
-#~ "useful to turn the warnings on so"
-#~ " they are shown in the test "
-#~ "output (you can also use the flag"
-#~ " if you test your app manually "
-#~ "using ``manage.py runserver``):"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "To install Python on your machine "
-#~ "go to https://python.org/downloads/. The Web"
-#~ " site should offer you a download "
-#~ "button for the latest Python version."
-#~ " Download the executable installer and "
-#~ "run it. Check the box next to "
-#~ "``Add Python 3.5 to PATH`` and "
-#~ "then click ``Install Now``."
-#~ msgstr ""
-
-#~ msgid "About pip"
-#~ msgstr ""
-
-#~ msgid "Django can be installed easily using ``pip``."
-#~ msgstr ""
-
-#~ msgid "In the command prompt, execute the following command::"
-#~ msgstr ""
 
