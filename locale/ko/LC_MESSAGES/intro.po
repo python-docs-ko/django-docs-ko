@@ -306,7 +306,7 @@ msgid ""
 "``virtualenv`` package instead, first making sure you have ``pip3``:"
 msgstr ""
 "몇몇 버전의 우분투 운영체제에서는 위 명령이 동작하지 않을 수 있습니다. 대신 ``virtualenv`` 패키지를 사용하시고, 그 전에 "
-"``pip3``가 설치되었는지 확인하십시오."
+"``pip3``\\ 가 설치되었는지 확인하십시오."
 
 #: ../../intro/contributing.txt:169
 msgid "The final step in setting up your virtualenv is to activate it:"
@@ -595,7 +595,7 @@ msgid ""
 "``test_forms.py`` file. Add the following code on line 1674 right before the"
 " ``test_forms_with_null_boolean`` function::"
 msgstr ""
-"Django의 ``tests/forms_tests/tests/`` 폴더로 이동하여``test_forms.py`` 파일을 엽니다. 1674"
+"Django의 ``tests/forms_tests/tests/`` 폴더로 이동하여 ``test_forms.py`` 파일을 엽니다. 1674"
 " 행의 다음과 같은 코드를 ``test_forms_with_null_boolean`` 함수 바로 앞에 추가합니다. ::"
 
 #: ../../intro/contributing.txt:370
@@ -1585,7 +1585,7 @@ msgid ""
 msgstr ""
 "이제 우리가 작업했던 것과 같은 설문 조사 앱이 필요하여 새로운 프로젝트를 시작했다고 가정해봅시다. 어떻게 이 앱을 재사용할 수 있게 "
 "만들 수 있을까요? 운 좋게도, 여러분은 이미 방법을 알고 있습니다. :doc:`Tutorial 3 </intro/tutorial03>`"
-" 에서, 우리는 ``include``를 이용하여 프로젝트 수준의 URLconf에서 설문조사를 분리하는 방법을 봤습니다. 이 "
+" 에서, 우리는 ``include``\\ 를 이용하여 프로젝트 수준의 URLconf에서 설문조사를 분리하는 방법을 봤습니다. 이 "
 "튜토리얼에서는, 새로운 프로젝트에서 사용하기 쉬운 앱을 만들기 위해, 설치하고 사용할 다른 사람들을 위해 게시할 준비를 하기 위해 "
 "추가적인 작업을 할 것입니다. "
 
@@ -1608,8 +1608,8 @@ msgid ""
 "bar``. For a directory (like ``polls``) to form a package, it must contain a"
 " special file ``__init__.py``, even if this file is empty."
 msgstr ""
-"``import foo.bar`` 나 ``from foo import bar``로 패키지를 import 할 수 있습니다. "
-"디렉토리(``polls``와 같은)는 패키지를 형성하기 위해, 특별한 파일 ``__init__.py``를 포함하고 있습니다, 그 파일이 "
+"``import foo.bar`` 나 ``from foo import bar`` 로 패키지를 import 할 수 있습니다. "
+"디렉토리(``polls``\\ 와 같은)는 패키지를 형성하기 위해, 특별한 파일 ``__init__.py``\\ 를 포함하고 있습니다, 그 파일이 "
 "빈파일일 경우에도 포함하고 있습니다."
 
 #: ../../intro/reusable-apps.txt:45
@@ -1650,7 +1650,7 @@ msgid ""
 msgstr ""
 "여러분은 :doc:`튜토리얼 7 </intro/tutorial07>` 에서 ``mysite/templates``  나 "
 ":doc:`Tutorial 3 </intro/tutorial03>` 에서 ``polls/templates``  를 생성하였습니다. 이제 "
-"프로젝트와 어플리케이션으로 분리한 이유가 명확합니다. ``polls`` 어플리케이션의 부분들은 ``polls``에 모두 있습니다.  It"
+"프로젝트와 어플리케이션으로 분리한 이유가 명확합니다. ``polls`` 어플리케이션의 부분들은 ``polls``\\ 에 모두 있습니다.  It"
 " makes the application self-contained and easier to drop into a new project."
 
 #: ../../intro/reusable-apps.txt:97
@@ -1699,7 +1699,7 @@ msgid ""
 "First, create a parent directory for ``polls``, outside of your Django "
 "project. Call this directory ``django-polls``."
 msgstr ""
-"먼저, Django 프로젝트 외부에 ``polls`` 의 상위 디렉토리를 만듭니다. 이 디렉토리를 ``django-polls``라 "
+"먼저, Django 프로젝트 외부에 ``polls`` 의 상위 디렉토리를 만듭니다. 이 디렉토리를 ``django-polls``\\ 라 "
 "부르겠습니다."
 
 #: ../../intro/reusable-apps.txt:127
@@ -1734,7 +1734,7 @@ msgstr "``django-polls`` 디렉토리의 ``polls`` 디렉토리로 이동하세�
 
 #: ../../intro/reusable-apps.txt:143
 msgid "Create a file ``django-polls/README.rst`` with the following contents:"
-msgstr "다음과 같은 내용으로 ``django-polls/README.rst``를 생성합니다:"
+msgstr "다음과 같은 내용으로 ``django-polls/README.rst``\\ 를 생성합니다:"
 
 #: ../../intro/reusable-apps.txt:178
 msgid ""
@@ -4375,8 +4375,8 @@ msgid ""
 "``results()`` views are very simple -- and, as mentioned above, redundant. "
 "The ``index()`` view, which displays a list of polls, is similar."
 msgstr ""
-"``detail ()``(from:doc:`Tutorial 3 </intro/tutorial03>`)과``results ()``뷰는 매우"
-" 간단합니다. polls리스트를 보여주는``index ()``뷰는 비슷하다."
+"``detail()`` (from :doc:`Tutorial 3 </intro/tutorial03>`)과 ``results()`` 뷰는 매우"
+" 간단합니다. polls 리스트를 보여주는 ``index()`` 뷰는 비슷하다."
 
 #: ../../intro/tutorial04.txt:202
 msgid ""
@@ -4446,14 +4446,14 @@ msgstr "URLconf 수정"
 
 #: ../../intro/tutorial04.txt:235
 msgid "First, open the ``polls/urls.py`` URLconf and change it like so:"
-msgstr "먼저,``polls/urls.py`` URLconf를 열어 다음과 같이 변경하십시오:"
+msgstr "먼저, ``polls/urls.py`` URLconf를 열어 다음과 같이 변경하십시오:"
 
 #: ../../intro/tutorial04.txt:252
 msgid ""
 "Note that the name of the matched pattern in the regexes of the second and "
 "third patterns has changed from ``<question_id>`` to ``<pk>``."
 msgstr ""
-"두 번째와 세 번째 패턴의 정규식에서 일치하는 패턴의 이름이``<question_id>``에서``<pk>``로 변경되었습니다."
+"두 번째와 세 번째 패턴의 정규식에서 일치하는 패턴의 이름이 ``<question_id>``\\ 에서 ``<pk>``\\ 로 변경되었습니다."
 
 #: ../../intro/tutorial04.txt:256
 msgid "Amend views"
@@ -4465,8 +4465,8 @@ msgid ""
 "views and use Django's generic views instead. To do so, open the "
 "``polls/views.py`` file and change it like so:"
 msgstr ""
-"다음으로 이전의``index``,``detail``,``results`` 뷰를 제거하고 장고의 일반적인 뷰를 대신 사용하겠습니다. "
-"그렇게하려면``polls/views.py`` 파일을 열고 다음과 같이 변경하십시오:"
+"다음으로 이전의 ``index``, ``detail``, ``results``\\ 뷰를 제거하고 장고의 일반적인 뷰를 대신 사용하겠습니다. "
+"그렇게하려면 ``polls/views.py`` 파일을 열고 다음과 같이 변경하십시오:"
 
 #: ../../intro/tutorial04.txt:295
 msgid ""
@@ -4484,7 +4484,7 @@ msgstr ""
 msgid ""
 "Each generic view needs to know what model it will be acting upon. This is "
 "provided using the ``model`` attribute."
-msgstr "각 일반 뷰는 어떤 모델이 적용될 것인지를 알아야합니다. 이것은``model`` 속성을 사용하여 제공됩니다."
+msgstr "각 일반 뷰는 어떤 모델이 적용될 것인지를 알아야합니다. 이것은 ``model`` 속성을 사용하여 제공됩니다."
 
 #: ../../intro/tutorial04.txt:304
 msgid ""
@@ -4493,7 +4493,7 @@ msgid ""
 "we've changed ``question_id`` to ``pk`` for the generic views."
 msgstr ""
 ":class:`~ django.views.generic.detail.DetailView` 일반 뷰는 URL에서 캡쳐 된 기본 키 값이``"
-" \"pk\"``라고 기대하기 때문에``question_id``를` 일반 뷰는 'pk`입니다."
+" \"pk\"``라고 기대하기 때문에 ``question_id``\\ 를 일반 뷰는 ``pk``\\ 입니다."
 
 #: ../../intro/tutorial04.txt:309
 msgid ""
@@ -4507,12 +4507,12 @@ msgid ""
 "rendered, even though they're both a "
 ":class:`~django.views.generic.detail.DetailView` behind the scenes."
 msgstr ""
-"기본적으로:class:`~ django.views.generic.detail.DetailView` 일반 뷰는``<app "
-"name>/<model name> _detail.html`` 템플릿을 사용합니다. 우리의 경우에는`` "
-"\"polls/question_detail.html\"``템플릿을 사용할 것입니다. ``template_name`` 속성은 장고에게 자동"
-" 생성 된 기본 템플릿 이름 대신에 특정 템플릿 이름을 사용하도록 알려주기 위해 사용됩니다. ``results``리스트 뷰에 "
-"대해서``template_name``을 지정합니다 - 결과 뷰와 상세 뷰가 렌더링 될 때 서로 다른 모습을 갖도록합니다:class:`~ "
-"django .views.generic.detail.DetailView`를 사용하십시오."
+"기본적으로 :class:`~django.views.generic.detail.DetailView` 일반 뷰는 ``<app "
+"name>/<model name>_detail.html`` 템플릿을 사용합니다. 우리의 경우에는 ``"
+"\"polls/question_detail.html\"``\\ 템플릿을 사용할 것입니다. ``template_name`` 속성은 장고에게 자동"
+" 생성 된 기본 템플릿 이름 대신에 특정 템플릿 이름을 사용하도록 알려주기 위해 사용됩니다. ``results``\\ 리스트 뷰에 "
+"대해서 ``template_name``\\ 을 지정합니다 - 결과 뷰와 상세 뷰가 렌더링 될 때 서로 다른 모습을 갖도록합니다:class:`~"
+"django.views.generic.detail.DetailView`\\ 를 사용하십시오."
 
 #: ../../intro/tutorial04.txt:319
 msgid ""
@@ -4541,10 +4541,10 @@ msgid ""
 "use the variable you want."
 msgstr ""
 "이 튜토리얼의 이전 부분에서 템플릿에는 ``question`` 및 ``latest_question_list`` 컨텍스트 변수가 포함 된 "
-"컨텍스트가 제공되었습니다. ``DetailView``\\ 의 경우,``question`` 변수가 자동으로 제공됩니다 - Django 모델"
+"컨텍스트가 제공되었습니다. ``DetailView``\\ 의 경우, ``question`` 변수가 자동으로 제공됩니다 - Django 모델"
 " (``Question``)\\ 을 사용하기 때문에 Django는 컨텍스트 변수의 적절한 이름을 결정할 수 있습니다. 그러나 "
-"ListView의 경우 자동 생성 된 컨텍스트 변수는``question_list`` 입니다. 이것을 덮어 쓰려면 "
-"``context_object_name`` 속성을 제공하고, 대신에``latest_question_list``\\ 를 사용하도록 "
+"ListView의 경우 자동 생성 된 컨텍스트 변수는 ``question_list`` 입니다. 이것을 덮어 쓰려면 "
+"``context_object_name`` 속성을 제공하고, 대신에 ``latest_question_list``\\ 를 사용하도록 "
 "지정하십시오. 다른 접근 방법으로, 템플릿을 새로운 기본 컨텍스트 변수와 일치하도록 변경할 수 있습니다. 그러나 원하는 변수를 사용하도록"
 " Django에 지시하는 것이 훨씬 쉽습니다."
 
@@ -4829,7 +4829,7 @@ msgid ""
 msgstr ""
 "다행스럽게도 ``polls`` 어플리케이션에는 우리가 즉시 해결할수있는 약간의 버그가 있습니다. "
 "``Question.was_published_recently()`` 메소드는 ``Question``\\ 이 어제 안에 게시 된 경우 "
-"``True``\\ 를 반환하며(올바른 동작) 그뿐 아니라 ``Question``\\ 의``pub_date`` 필드가 미래로 설정되어 "
+"``True``\\ 를 반환하며(올바른 동작) 그뿐 아니라 ``Question``\\ 의 ``pub_date`` 필드가 미래로 설정되어 "
 "있을때도 그렇습니다(틀린 동작)."
 
 #: ../../intro/tutorial05.txt:137
@@ -4880,7 +4880,7 @@ msgid ""
 msgstr ""
 "우리가 여기서 한 것은 미래로 설정된 ``pub_date``\\ 를 가진 ``Question``\\ 인스턴스를 생성하는 메소드를 가진 "
 "class:`django.test.TestCase` 서브 클래스를 생성 한 것입니다. 그런 "
-"다음``was_published_recently()``\\ 의 결과를 확인합니다. - 이는 *반드시* False가 되어야 합니다."
+"다음 ``was_published_recently()``\\ 의 결과를 확인합니다. - 이는 *반드시* False가 되어야 합니다."
 
 #: ../../intro/tutorial05.txt:191
 msgid "Running tests"
@@ -4902,7 +4902,7 @@ msgstr "무슨 일이 일어 났습니까?"
 msgid ""
 "``python manage.py test polls`` looked for tests in the ``polls`` "
 "application"
-msgstr "``python manage.py test polls``\\ 는``polls`` 어플리케이션에서 테스트를 찾았습니다"
+msgstr "``python manage.py test polls``\\ 는 ``polls`` 어플리케이션에서 테스트를 찾았습니다"
 
 #: ../../intro/tutorial05.txt:219
 msgid "it found a subclass of the :class:`django.test.TestCase` class"
@@ -5092,7 +5092,7 @@ msgstr ""
 ":meth:`~django.test.utils.setup_test_environment`\\ 를 사용하여 템플릿 렌더러를 설치합니다. 이"
 " 메소드는 테스트 데이터베이스를 셋업하지 *않습니다*. 그렇기때문에 테스트는 현재 사용중인 데이터베이스위에서 돌게되며 결과는 "
 "데이터베이스에 이미 만들어져있는 질문들에 따라서 조금씩 달라질수 있습니다. 또한 ``settings.py``\\ "
-"의``TIME_ZONE``\\ 이 올바르지 않으면 예기치 않은 결과가 발생할 수 있습니다. 초기에 어떻게 설정해놨는지 기억나지 않는다면 "
+"의 ``TIME_ZONE``\\ 이 올바르지 않으면 예기치 않은 결과가 발생할 수 있습니다. 초기에 어떻게 설정해놨는지 기억나지 않는다면 "
 "진행하기전에 먼저 확인하십시오."
 
 #: ../../intro/tutorial05.txt:350
@@ -5135,7 +5135,7 @@ msgid ""
 " checks the date by comparing it with ``timezone.now()``. First we need to "
 "add an import:"
 msgstr ""
-"우리는``get_queryset()`` 메소드를 수정하여 ``timezone.now()`` 와 비교하여 날짜를 검사하도록 변경해야합니다."
+"우리는 ``get_queryset()`` 메소드를 수정하여 ``timezone.now()`` 와 비교하여 날짜를 검사하도록 변경해야합니다."
 " 먼저 가져 오기를 추가해야합니다:"
 
 #: ../../intro/tutorial05.txt:407
@@ -5199,8 +5199,8 @@ msgid ""
 ":meth:`~django.test.SimpleTestCase.assertContains()` and "
 ":meth:`~django.test.TransactionTestCase.assertQuerysetEqual()`."
 msgstr ""
-"``test_index_view_with_no_questions``는 질문을 작성하지 않지만, \"설문조사가 없습니다.\" 라는 메시지를"
-" 확인하고, ``latest_question_list``가 비어 있음을 확인합니다. :class:`django.test.TestCase`"
+"``test_index_view_with_no_questions``\\ 는 질문을 작성하지 않지만, \"설문조사가 없습니다.\" 라는 메시지를"
+" 확인하고, ``latest_question_list``\\ 가 비어 있음을 확인합니다. :class:`django.test.TestCase`"
 " 클래스는 몇 가지 추가적인 선언 메소드를 제공합니다. 이 예제에서 우리는:meth:`~ "
 "django.test.SimpleTestCase.assertContains ()` 와 :meth:`~ "
 "django.test.TransactionTestCase.assertQuerysetEqual ()`\\을 사용합니다."
@@ -5242,8 +5242,8 @@ msgid ""
 "in the *index*, users can still reach them if they know or guess the right "
 "URL. So we need to add a similar  constraint to ``DetailView``:"
 msgstr ""
-"우리가 만든 것이 잘 작동합니다; 그러나 미래의 설문들은 *목록*\\에 나타나지는 않지만, 사용자가 URL을 알고 있거나, 추측하면 "
-"접근할 수 있습니다. 그래서 우리는``DetailView``\\에 비슷한 제약 조건을 추가 할 필요가 있습니다:"
+"우리가 만든 것이 잘 작동합니다; 그러나 미래의 설문들은 *목록*\\ 에 나타나지는 않지만, 사용자가 URL을 알고 있거나, 추측하면 "
+"접근할 수 있습니다. 그래서 우리는 ``DetailView``\\ 에 비슷한 제약 조건을 추가 할 필요가 있습니다:"
 
 #: ../../intro/tutorial05.txt:558
 msgid ""
@@ -5276,10 +5276,10 @@ msgid ""
 "``Choices`` and then test that it's not published, as well as create a "
 "similar ``Question`` *with* ``Choices``, and test that it *is* published."
 msgstr ""
-"테스트를 추가하면서 다른 방법으로 애플리케이션을 개선 할 수도 있습니다. 예를 들어, ``선택 사항``\\이 없는 사이트에 "
-"``설문``\\을 게시 할 수 있다는 것은 바보같은 일입니다. 그래서 우리의 뷰는 이를 확인하고 그러한 질문을 배제 할 것입니다. 우리의"
-" 테스트는 ``선택사항``\\이 없는``설문``\\을 생성 한 다음, 실제로 게시되지 않는지 테스트하고, ``선택사항``\\이 "
-"있는``설문``\\을 작성하고 게시 여부를 테스트합니다."
+"테스트를 추가하면서 다른 방법으로 애플리케이션을 개선 할 수도 있습니다. 예를 들어, ``선택 사항``\\ 이 없는 사이트에 "
+"``설문``\\ 을 게시 할 수 있다는 것은 바보같은 일입니다. 그래서 우리의 뷰는 이를 확인하고 그러한 질문을 배제 할 것입니다. 우리의"
+" 테스트는 ``선택사항``\\ 이 없는 ``설문``\\ 을 생성 한 다음, 실제로 게시되지 않는지 테스트하고, ``선택사항``\\ 이 "
+"있는 ``설문``\\ 을 작성하고 게시 여부를 테스트합니다."
 
 #: ../../intro/tutorial05.txt:600
 msgid ""
@@ -5330,7 +5330,7 @@ msgid ""
 " amended to bring them up to date*, so to that extent tests help look after "
 "themselves."
 msgstr ""
-"때로는 테스트를 업데이트해야합니다. 우리가 ``선택지``를 가진 ``설문들``만 출력되도록 뷰를 수정한다고 가정 해 보겠습니다. 이 경우"
+"때로는 테스트를 업데이트해야합니다. 우리가 ``선택지``\\ 를 가진 ``설문들``\\ 만 출력되도록 뷰를 수정한다고 가정 해 보겠습니다. 이 경우"
 " 기존 테스트 중 상당수가 실패 할 것입니다. *테스트 결과를 최신으로 유지하기 위해 어떤 테스트를 수정해야하는지 정확하게 알려주므로* "
 "테스트가 스스로를 돌보는 데 도움이됩니다."
 
@@ -5352,7 +5352,7 @@ msgstr ""
 
 #: ../../intro/tutorial05.txt:632
 msgid "a separate ``TestClass`` for each model or view"
-msgstr "각 모델이나 뷰에 대한 별도의``TestClass``"
+msgstr "각 모델이나 뷰에 대한 별도의 ``TestClass``"
 
 #: ../../intro/tutorial05.txt:633
 msgid "a separate test method for each set of conditions you want to test"
@@ -5476,7 +5476,7 @@ msgid ""
 "from each of your applications (and any other places you specify) into a "
 "single location that can easily be served in production."
 msgstr ""
-"이것이``django.contrib.staticfiles``\\의 목적입니다: 이것은 각 응용 프로그램(및 여러분이 지정한 다른 위치)의"
+"이것이 ``django.contrib.staticfiles``\\ 의 목적입니다: 이것은 각 응용 프로그램(및 여러분이 지정한 다른 위치)의"
 " 정적 파일들을 프로덕션 환경에서 쉽게 제공 할 수있는 단일 위치로 수집합니다."
 
 #: ../../intro/tutorial06.txt:25
@@ -5517,7 +5517,7 @@ msgid ""
 "reference the path for templates."
 msgstr ""
 "방금 생성 한 ``static`` 디렉토리 안에 ``polls`` 라는 또 다른 디렉토리를 만들고 그 안에 ``style.css`` 라는"
-" 파일을 만듭니다. 즉, 스타일 시트는``polls/static/polls/style.css``\\에 있어야합니다. "
+" 파일을 만듭니다. 즉, 스타일 시트는 ``polls/static/polls/style.css``\\ 에 있어야합니다. "
 "``AppDirectoriesFinder`` 정적 파일 파인더가 작동하는 방식에 따라 Django의 정적 파일을 "
 "``polls/style.css`` 라고 간단하게 참조 할 수 있습니다. 이것은 템플릿 경로를 참조하는 것과 유사합니다."
 
@@ -5537,7 +5537,7 @@ msgid ""
 "by putting those static files inside *another* directory named for the "
 "application itself."
 msgstr ""
-"템플릿과 마찬가지로, 정적 파일을 ``polls/static``\\에 직접 둘 수도 있습니다(``polls`` 하위 디렉토리를 만들지 "
+"템플릿과 마찬가지로, 정적 파일을 ``polls/static``\\ 에 직접 둘 수도 있습니다(``polls`` 하위 디렉토리를 만들지 "
 "않고). 하지만 실제로는 좋지 않습니다. Django는 이름이 일치하는 첫 번째 정적 파일을 선택할 것입니다, 그런데 만약 *다른* 응용"
 " 프로그램에 같은 이름의 정적 파일이있는 경우에는 이들을 구별하지 못합니다. Django가 올바른 것을 가리킬 수 있게 해야합니다,  "
 "이것을 보장하는 가장 쉬운 방법은 *네임스페이싱* 입니다. 즉, 정적 파일을 응용 프로그램 자체의 *다른*  디렉토리에 두는 것입니다."
@@ -5551,7 +5551,7 @@ msgstr "그 스타일 시트 (``polls/static/polls/style.css``)에 다음 코드
 #: ../../intro/tutorial06.txt:66
 msgid ""
 "Next, add the following at the top of ``polls/templates/polls/index.html``:"
-msgstr "다음으로, ``polls/templates/polls/index.html``의 맨 위에 다음을 추가하십시오:"
+msgstr "다음으로, ``polls/templates/polls/index.html``\\ 의 맨 위에 다음을 추가하십시오:"
 
 #: ../../intro/tutorial06.txt:75
 msgid ""
@@ -5580,7 +5580,7 @@ msgid ""
 "directory, put an image called ``background.gif``. In other words, put your "
 "image in ``polls/static/polls/images/background.gif``."
 msgstr ""
-"다음으로, 이미지 용 하위 디렉토리를 만듭니다. ``polls/static/polls/`` 디렉토리에``images`` 서브 디렉토리를 "
+"다음으로, 이미지 용 하위 디렉토리를 만듭니다. ``polls/static/polls/`` 디렉토리에 ``images`` 서브 디렉토리를 "
 "만듭니다. 이 디렉토리 안에 ``background.gif``\\라는 이미지를 넣으십시오. 즉, 이미지를 "
 "``polls/static/polls/images/background.gif``\\에 넣으십시오."
 
@@ -5715,7 +5715,7 @@ msgid ""
 "OK, we have our Question admin page, but a ``Question`` has multiple "
 "``Choice``\\s, and the admin page doesn't display choices."
 msgstr ""
-"OK, 우리는 Question 관리자 페이지를 가지고 있습니다. 그러나, ``Question``\\은 여러 개의``Choice``\\들을"
+"OK, 우리는 Question 관리자 페이지를 가지고 있습니다. 그러나, ``Question``\\ 은 여러 개의 ``Choice``\\들을"
 " 가지고 있음에도, admin 페이지는 선택 사항을 표시하지 않습니다."
 
 #: ../../intro/tutorial07.txt:79
@@ -5727,7 +5727,7 @@ msgid ""
 "There are two ways to solve this problem. The first is to register "
 "``Choice`` with the admin just as we did with ``Question``. That's easy:"
 msgstr ""
-"이 문제를 해결하는 데는 두 가지 방법이 있습니다. 첫 번째는 ``Question``\\에서 했던 것처럼 관리자에 "
+"이 문제를 해결하는 데는 두 가지 방법이 있습니다. 첫 번째는 ``Question``\\ 에서 했던 것처럼 관리자에 "
 "``Choice``\\를 등록하는 것입니다. 간단합니다:"
 
 #: ../../intro/tutorial07.txt:93
@@ -5744,7 +5744,7 @@ msgid ""
 "a ``<select>`` box. In our case, only one question exists at this point."
 msgstr ""
 "이 양식에서 \"Question\" 필드는 데이터베이스의 모든 질문을 포함하는 select box입니다. Django는 "
-":class:`~django.db.models.ForeignKey`\\가 admin에서``<select>``\\로 표현되어야 함을 알고 "
+":class:`~django.db.models.ForeignKey`\\ 가 admin에서 ``<select>``\\ 로 표현되어야 함을 알고 "
 "있습니다. 우리의 경우, 지금은 단 하나의 질문 만이 존재합니다."
 
 #: ../../intro/tutorial07.txt:104
@@ -5767,7 +5767,7 @@ msgid ""
 "system. It'd be better if you could add a bunch of Choices directly when you"
 " create the ``Question`` object. Let's make that happen."
 msgstr ""
-"그러나 실제로 이것은``Choice`` 객체를 시스템에 추가하는 비효율적 인 방법입니다. ``Question`` 객체를 생성 할 때 "
+"그러나 실제로 이것은 ``Choice`` 객체를 시스템에 추가하는 비효율적 인 방법입니다. ``Question`` 객체를 생성 할 때 "
 "여러개의 Choices를 직접 추가 할 수 있다면 더 좋을 것입니다. 그 것을 만들어 봅시다."
 
 #: ../../intro/tutorial07.txt:115
@@ -5783,7 +5783,7 @@ msgid ""
 "This tells Django: \"``Choice`` objects are edited on the ``Question`` admin"
 " page. By default, provide enough fields for 3 choices.\""
 msgstr ""
-"위 소소는 Django에게  \" ``Choice`` 객체는``Question`` 관리자 페이지에서 편집됩니다. 기본적으로 3 가지 선택"
+"위 소소는 Django에게  \" ``Choice`` 객체는 ``Question`` 관리자 페이지에서 편집됩니다. 기본적으로 3 가지 선택"
 " 항목을 제공합니다.\"라고 알려줍니다."
 
 #: ../../intro/tutorial07.txt:143
@@ -5796,7 +5796,7 @@ msgid ""
 "specified by ``extra`` -- and each time you come back to the \"Change\" page"
 " for an already-created object, you get another three extra slots."
 msgstr ""
-"그것은 다음과 같이 작동합니다: 관련된 선택 사항을 위한 슬롯이 세 개 있습니다 -- ``extra``로 지정됨 -- 이미 생성된 객체의"
+"그것은 다음과 같이 작동합니다: 관련된 선택 사항을 위한 슬롯이 세 개 있습니다 -- ``extra``\\ 로 지정됨 -- 이미 생성된 객체의"
 " \"Change\" 페이지의 경우에도 빈 세 개의 슬롯이 생깁니다."
 
 #: ../../intro/tutorial07.txt:152
@@ -5827,7 +5827,7 @@ msgid ""
 "With that ``TabularInline`` (instead of ``StackedInline``), the related "
 "objects are displayed in a more compact, table-based format:"
 msgstr ""
-"``StackedInline`` 대신에``TabularInline``을 사용하여, 관련된 객체는 좀 더 조밀하고 테이블 기반 형식으로 "
+"``StackedInline`` 대신에 ``TabularInline``\\ 을 사용하여, 관련된 객체는 좀 더 조밀하고 테이블 기반 형식으로 "
 "표시됩니다:"
 
 #: ../../intro/tutorial07.txt:177
@@ -5912,7 +5912,7 @@ msgid ""
 msgstr ""
 ":file:`polls/admin.py` 파일을 다시 편집하고 `Question`  변경 목록 페이지에 개선점을 추가하십시오: "
 ":attr:`~django.contrib.admin.ModelAdmin.list_filter`를 사용하는 필터. "
-"``QuestionAdmin``에 다음 줄을 추가하십시오::"
+"``QuestionAdmin``\\ 에 다음 줄을 추가하십시오::"
 
 #: ../../intro/tutorial07.txt:251
 msgid ""
@@ -5944,7 +5944,7 @@ msgid ""
 "behind the scenes, limiting the number of search fields to a reasonable "
 "number will make it easier for your database to do the search."
 msgstr ""
-"그러면 변경 목록 맨 위에 검색 창이 추가됩니다. 누군가가 검색어를 입력하면, 장고는``question_text`` 필드를 검색합니다. "
+"그러면 변경 목록 맨 위에 검색 창이 추가됩니다. 누군가가 검색어를 입력하면, 장고는 ``question_text`` 필드를 검색합니다. "
 "당신이 원하는만큼의 필드를 사용할 수 있습니다 -- 그것은 내부적으로 ``LIKE`` 쿼리를 사용하기 때문에 검색 필드의 수를 적당한 "
 "수로 제한하면 데이터베이스가 검색을 더 쉽게 할 수 있습니다."
 
@@ -5999,7 +5999,7 @@ msgid ""
 "However, keeping your templates within the project is a good convention to "
 "follow."
 msgstr ""
-"프로젝트 디렉토리 (``manage.py``를 포함하고있는)에``templates`` 디렉토리를 만듭니다. 템플릿은 장고가 액세스 할 "
+"프로젝트 디렉토리 (``manage.py``\\ 를 포함하고있는)에 ``templates`` 디렉토리를 만듭니다. 템플릿은 장고가 액세스 할 "
 "수있는 파일 시스템 어디에서나 사용할 수 있습니다. (Django는 서버가 실행되는 사용자로 실행됩니다.) 그러나 프로젝트 내에 템플릿을"
 " 유지하는 것은 따라야 할 좋은 규칙입니다."
 
@@ -6034,8 +6034,8 @@ msgid ""
 msgstr ""
 "정적 파일과 마찬가지로, 하나의 커다란 템플릿 디렉토리에 모든 템플릿을 함께 넣을 수 있습니다. 그렇게해도 완벽하게 잘 작동할것입니다. "
 "그러나 특정 애플리케이션에 속한 템플릿은 프로젝트(``templates``)가 아닌 해당 애플리케이션의 템플릿 디렉토리 "
-"(예:``polls/templates``)에 있어야합니다. 우리는 더 자세한 내용을:doc:`reusable apps tutorial "
-"</intro/reusable-apps>`\\에서 논의할 것입니다."
+"(예: ``polls/templates``)에 있어야합니다. 우리는 더 자세한 내용을:doc:`reusable apps tutorial "
+"</intro/reusable-apps>`\\ 에서 논의할 것입니다."
 
 #: ../../intro/tutorial07.txt:335
 msgid ""
@@ -6044,7 +6044,7 @@ msgid ""
 "template directory in the source code of Django itself "
 "(``django/contrib/admin/templates``) into that directory."
 msgstr ""
-"이제``templates` 디렉토리에``admin`이라는 디렉토리를 만들고 장고 자체 소스 코드 "
+"이제 ``templates`` 디렉토리에 ``admin``\\ 이라는 디렉토리를 만들고 장고 자체 소스 코드 "
 "(``django/contrib/admin/templates``)을 해당 디렉토리에 복사합니다."
 
 #: ../../intro/tutorial07.txt:340
@@ -6085,9 +6085,9 @@ msgid ""
 "language will be evaluated to produce the final HTML page, just like we saw "
 "in :doc:`Tutorial 3 </intro/tutorial03>`."
 msgstr ""
-"이 템플릿 파일에는``{% block branding %}``및 {`{{title}}` '과 같은 텍스트가 많이 포함되어 있습니다. "
-"``{%``와``{{``태그들은 장고의 템플릿 언어의 일부입니다. Django가``admin/base_site.html``을 렌더링 할 "
-"때,이 템플릿 언어는:doc:`Tutorial 3 </intro/tutorial03>에서 보았 듯이 최종 HTML 페이지를 생성하기 위해"
+"이 템플릿 파일에는 ``{% block branding %}``\\ 및 ``{{title}}``\\ 과 같은 텍스트가 많이 포함되어 있습니다. "
+"``{%``\\ 와 ``{{``\\ 태그들은 장고의 템플릿 언어의 일부입니다. Django가 ``admin/base_site.html``\\ 을 렌더링 할 "
+"때, 이 템플릿 언어는 :doc:`Tutorial 3 </intro/tutorial03>` 에서 보았 듯이 최종 HTML 페이지를 생성하기 위해"
 " 평가 될 것입니다."
 
 #: ../../intro/tutorial07.txt:371
@@ -6156,7 +6156,7 @@ msgid ""
 "want to make significant changes to the layout. After all, the index is "
 "probably the most important page of the admin, and it should be easy to use."
 msgstr ""
-"기본적으로 admin 어플리케이션과 함께 등록 된 :settings:`INSTALLED_APPS`\\ 의 모든 어플리케이션을 사전 순으로"
+"기본적으로 admin 어플리케이션과 함께 등록 된 :setting:`INSTALLED_APPS`\\ 의 모든 어플리케이션을 사전 순으로"
 " 표시합니다. 어쩌면 레이아웃을 크게 변경하고자 할 수 있습니다. 설사 그렇게 하더라도 인덱스는 admin의 가장 중요한 페이지이고, "
 "사용하기 쉬워야합니다."
 
@@ -6279,8 +6279,8 @@ msgid ""
 "</topics/templates>`, :doc:`forms framework </topics/forms/index>`, and much"
 " more."
 msgstr ""
-"반면에:doc:`주제 가이드 </topics/index>`는 장고의 각 부분에 깊이 들어가 있습니다. Django에 대한 완전한 가이드가"
-" 있습니다:doc:`모델 시스템 </topics/db/index>``,``doc engine``/forms/forms/`, 그리고 훨씬 "
+"반면에 :doc:`주제 가이드 </topics/index>`\\ 는 장고의 각 부분에 깊이 들어가 있습니다. Django에 대한 완전한 가이드가"
+" 있습니다 :doc:`모델 시스템 </topics/db/index>`, :doc:`템플릿 엔진 </topics/templates>`, :doc:`폼 프레임워크 </topics/forms/index>`, 그리고 훨씬 "
 "더."
 
 #: ../../intro/whatsnext.txt:49
@@ -6462,7 +6462,7 @@ msgid ""
 " the ``docs/`` directory contains all of the documentation. You can update "
 "your Git checkout to get the latest changes."
 msgstr ""
-"Django (일명 \"트렁크\")의 개발 버전을 사용하고 있다면,``docs/``디렉토리에는 모든 문서가 들어 있습니다. Git 체크 "
+"Django (일명 \"트렁크\")의 개발 버전을 사용하고 있다면, ``docs/`` 디렉토리에는 모든 문서가 들어 있습니다. Git 체크 "
 "아웃을 업데이트하여 최신 변경 사항을 적용 할 수 있습니다."
 
 #: ../../intro/whatsnext.txt:148
@@ -6472,7 +6472,7 @@ msgid ""
 "documentation. For example, this will show you each mention of the phrase "
 "\"max_length\" in any Django document:"
 msgstr ""
-"텍스트 문서를 활용하는 하나의 최첨단 기술은 Unix의``grep`` 유틸리티를 사용하여 모든 문서에서 문구를 검색하는 것입니다. 예를 "
+"텍스트 문서를 활용하는 하나의 최첨단 기술은 Unix의 ``grep``\\ 유틸리티를 사용하여 모든 문서에서 문구를 검색하는 것입니다. 예를 "
 "들어 Django 문서에서 \"max_length\"라는 문구를 볼 수 있습니다:"
 
 #: ../../intro/whatsnext.txt:158
@@ -6498,7 +6498,7 @@ msgstr ""
 msgid ""
 "Then, just use the included ``Makefile`` to turn the documentation into "
 "HTML:"
-msgstr "그런 다음, 포함 된``Makefile``을 사용하여 문서를 HTML로 변환하십시오:"
+msgstr "그런 다음, 포함 된 ``Makefile``\\ 을 사용하여 문서를 HTML로 변환하십시오:"
 
 #: ../../intro/whatsnext.txt:178
 msgid "You'll need `GNU Make`__ installed for this."
@@ -6511,7 +6511,7 @@ msgstr "Windows를 사용하는 경우 포함 된 배치 파일을 대신 사용
 
 #: ../../intro/whatsnext.txt:187
 msgid "The HTML documentation will be placed in ``docs/_build/html``."
-msgstr "HTML 문서는``docs/_build/html``에 있습니다."
+msgstr "HTML 문서는 ``docs/_build/html``\\ 에 있습니다."
 
 #: ../../intro/whatsnext.txt:195
 msgid "Differences between versions"
