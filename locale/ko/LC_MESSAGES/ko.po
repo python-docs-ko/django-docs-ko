@@ -8,7 +8,7 @@
 # JunoJunho <wnsgh611@gmail.com>, 2015
 # Kyoung Up, Jung <perhapsspy@gmail.com>, 2016
 # Kyoung Up, Jung <perhapsspy@gmail.com>, 2016
-# seok woojing <woojing.seok@gmail.com>, 2016-2017
+# seok woojing <woojing.seok@gmail.com>, 2016
 # Subin Choi <os1742@gmail.com>, 2016
 # Yeonsu Bak <yeonsubak@gmail.com>, 2015
 # Yong Choi <sk8er.choi@gmail.com>, 2013
@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-04 19:36-0600\n"
-"PO-Revision-Date: 2017-01-07 10:38+0000\n"
+"POT-Creation-Date: 2016-11-17 12:27-0600\n"
+"PO-Revision-Date: 2016-08-24 04:24+0000\n"
 "Last-Translator: seok woojing <woojing.seok@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/django/django-docs/language/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -570,7 +570,7 @@ msgstr ":doc:`sites 프레임워크 <ref/contrib/sites>`"
 
 #: ../../../../sources/1.10/docs/index.txt:329
 msgid ":doc:`Unicode in Django <ref/unicode>`"
-msgstr ":doc:`Django의 유니코드 <ref/unicode>`"
+msgstr ":doc:`Django의 유니코드 <ref/unicode>"
 
 #: ../../../../sources/1.10/docs/index.txt:332
 msgid "The Django open-source project"
