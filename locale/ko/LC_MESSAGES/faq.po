@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) Django Software Foundation and contributors
 # This file is distributed under the same license as the Django package.
-# 
+#
 # Translators:
 # yangbeom <yangbeomsu@gmail.com>, 2016
 # Hwayoung Choe <jesschoe84@gmail.com>, 2016
@@ -38,14 +38,20 @@ msgid ""
 "the :setting:`SESSION_COOKIE_DOMAIN` setting to match your domain. For "
 "example, if you're going to \"https://www.example.com/admin/\" in your "
 "browser, set ``SESSION_COOKIE_DOMAIN = 'www.example.com'``."
-msgstr "로그인 쿠키가 재대로 설정되어 있지 않습니다.  Django가 전송한 도메인의 쿠키가 브라우저의 도메인과 일치하지 않기 때문입니다. :setting:`SESSION_COOKIE_DOMAIN` 설정을 당신의 도메인과 맞게 설정해 주십시오. 만약 브라우저에서 가려고 하는 페이지가 \"https://www.example.com/admin/\" 이라면 \"SESSION_COOKIE_DOMAIN = 'www.example.com'\" 과 같이 설정해야 합니다. "
+msgstr ""
+"로그인 쿠키가 재대로 설정되어 있지 않습니다.  Django가 전송한 도메인의 쿠키가 브라우저의 도메인과 일치하지 않기 때문입니다. "
+":setting:`SESSION_COOKIE_DOMAIN` 설정을 당신의 도메인과 맞게 설정해 주십시오. 만약 브라우저에서 가려고 하는 "
+"페이지가 \"https://www.example.com/admin/\" 이라면 \"SESSION_COOKIE_DOMAIN = "
+"'www.example.com'\" 과 같이 설정해야 합니다. "
 
 #: ../../../../sources/1.10/docs/faq/admin.txt:15
 msgid ""
 "I can't log in. When I enter a valid username and password, it brings up the"
 " login page again, with a \"Please enter a correct username and password\" "
 "error."
-msgstr "로그인을 할 수 없습니다. 유효한 아이디와 패스워드를 입력해도 다시 로그인 페이지가 나오면서 \"올바른 아이디와 패스워드를 입력해주세요\" 에러가 나타납니다."
+msgstr ""
+"로그인을 할 수 없습니다. 유효한 아이디와 패스워드를 입력해도 다시 로그인 페이지가 나오면서 \"올바른 아이디와 패스워드를 "
+"입력해주세요\" 에러가 나타납니다."
 
 #: ../../../../sources/1.10/docs/faq/admin.txt:17
 msgid ""
@@ -53,7 +59,11 @@ msgid ""
 "account has :attr:`~django.contrib.auth.models.User.is_active` and "
 ":attr:`~django.contrib.auth.models.User.is_staff` set to True. The admin "
 "site only allows access to users with those two fields both set to True."
-msgstr "만약 입력하신 아이디와 패스워드가 확실히 올바르다면, 당신의 사용자 계정이 :attr:`~django.contrib.auth.models.User.is_active` 속성과 :attr:`~django.contrib.auth.models.User.is_staff` 속성이 True로 설정돼있는지 확인하십시오. 관리자 사이트는 두 필드가 모두 True인 유저에게만 접근을 허가합니다."
+msgstr ""
+"만약 입력하신 아이디와 패스워드가 확실히 올바르다면, 당신의 사용자 계정이 "
+":attr:`~django.contrib.auth.models.User.is_active` 속성과 "
+":attr:`~django.contrib.auth.models.User.is_staff` 속성이 True로 설정돼있는지 확인하십시오. "
+"관리자 사이트는 두 필드가 모두 True인 유저에게만 접근을 허가합니다."
 
 #: ../../../../sources/1.10/docs/faq/admin.txt:23
 msgid ""
@@ -70,6 +80,11 @@ msgid ""
 "you can update an object to reflect the user that edited it. See :ref:`the "
 "documentation on ModelAdmin methods <model-admin-methods>` for an example."
 msgstr ""
+":class:`~ django.contrib.admin.ModelAdmin` 클래스는 요청의 세부 사항을 사용하여 객체를 저장하면서 변환"
+" 할 수있는 커스터마이징 후크를 제공합니다. 요청에서 현재 사용자를 추출하고:meth:`~ "
+"django.contrib.admin.ModelAdmin.save_model` 훅을 커스터마이징함으로써 객체를 편집하여 그것을 편집 한 "
+"사용자를 반영 할 수 있습니다. 예제를 보시려면:ref:`ModelAdmin 메소드 문서 <model-admin-"
+"methods>`를보십시오."
 
 #: ../../../../sources/1.10/docs/faq/admin.txt:33
 msgid ""
@@ -86,30 +101,38 @@ msgid ""
 ":meth:`~django.contrib.admin.ModelAdmin.has_change_permission` can be used "
 "to control the visibility and editability of objects in the admin."
 msgstr ""
+":class:`~ django.contrib.admin.ModelAdmin` 클래스는 관리자가 객체의 가시성과 편집 가능성을 제어 할 "
+"수있게 해주는 커스터마이징 훅을 제공합니다. 요청에서 사용자를 추출하는 것과 동일한 트릭을 사용하여:meth:`~ "
+"django.contrib.admin.ModelAdmin.get_queryset` 및:meth:`~ "
+"django.contrib.admin.ModelAdmin.has_change_permission`을 사용하여 관리자의 객체 가시성 및 "
+"편집 가능성."
 
 #: ../../../../sources/1.10/docs/faq/admin.txt:43
 msgid ""
 "My admin-site CSS and images showed up fine using the development server, "
 "but they're not displaying when using mod_wsgi."
-msgstr "내 관리자 사이트의 CSS와 이미지들이 개발 서버에서는 잘 보여지지만 mod_wsgi를 이용할 때는 재대로 보여지지 않습니다."
+msgstr ""
+"내 관리자 사이트의 CSS와 이미지들이 개발 서버에서는 잘 보여지지만 mod_wsgi를 이용할 때는 재대로 보여지지 않습니다."
 
 #: ../../../../sources/1.10/docs/faq/admin.txt:45
 msgid ""
 "See :ref:`serving the admin files <serving-the-admin-files>` in the \"How to"
 " use Django with mod_wsgi\" documentation."
-msgstr " :ref:`serving the admin files <serving-the-admin-files>`  의  \"How to use Django with mod_wsgi\" 문서를 참고 하시기 바랍니다."
+msgstr ""
+" :ref:`serving the admin files <serving-the-admin-files>` 의 \"How to use "
+"Django with mod_wsgi\" 문서를 참고 하시기 바랍니다."
 
 #: ../../../../sources/1.10/docs/faq/admin.txt:49
 msgid ""
 "My \"list_filter\" contains a ManyToManyField, but the filter doesn't "
 "display."
-msgstr ""
+msgstr "내 \"list_filter\"ManyToManyField 포함되어 있지만 필터가 표시되지 않습니다."
 
 #: ../../../../sources/1.10/docs/faq/admin.txt:51
 msgid ""
 "Django won't bother displaying the filter for a ``ManyToManyField`` if there"
 " are fewer than two related objects."
-msgstr ""
+msgstr "Django는 관련된 오브젝트가 두 개보다 적 으면 ``ManyToManyField``\ 에 대한 필터를 표시하지 않아도됩니다."
 
 #: ../../../../sources/1.10/docs/faq/admin.txt:54
 msgid ""
@@ -118,10 +141,13 @@ msgid ""
 "your database, it won't display a \"Site\" filter. In that case, filtering "
 "by site would be meaningless."
 msgstr ""
+"예를 들어,:attr:`~ django.contrib.admin.ModelAdmin.list_filter`:doc:`sites "
+"</ref/contrib/sites>`를 포함하고 데이터베이스에 하나의 사이트 만 있다면, 표시되지 않습니다 \"사이트\"필터. 이 경우"
+" 사이트별로 필터링하는 것은 의미가 없습니다."
 
 #: ../../../../sources/1.10/docs/faq/admin.txt:60
 msgid "Some objects aren't appearing in the admin."
-msgstr ""
+msgstr "일부 개체가 관리자에게 나타나지 않습니다."
 
 #: ../../../../sources/1.10/docs/faq/admin.txt:62
 msgid ""
@@ -134,10 +160,15 @@ msgid ""
 "be shown in the admin changelist because the Django model is declaring an "
 "integrity constraint that is not implemented at the database level."
 msgstr ""
+"일치하지 않는 행 수는 누락 된 외부 키 값 또는 foreign 키 필드가 attr:`null = False "
+"<django.db.models.Field.null> '으로 잘못 설정되어 발생할 수 있습니다. 존재하지 않는 객체를 "
+"가리키는:class:`~ django.db.models.ForeignKey`가있는 레코드가 있고 그 외래 키가 포함되어있는 레코드가 "
+"있다면:attr:`~ django.contrib.admin.ModelAdmin.list_display`, Django 모델이 데이터베이스"
+" 레벨에서 구현되지 않은 무결성 제약 조건을 선언하고 있기 때문에 레코드가 관리자 변경 목록에 표시되지 않습니다."
 
 #: ../../../../sources/1.10/docs/faq/admin.txt:72
 msgid "How can I customize the functionality of the admin interface?"
-msgstr ""
+msgstr "관리자 인터페이스의 기능을 어떻게 사용자 정의 할 수 있습니까?"
 
 #: ../../../../sources/1.10/docs/faq/admin.txt:74
 msgid ""
@@ -148,6 +179,10 @@ msgid ""
 " as strings, pointing to JavaScript modules that will be included within the"
 " admin form via a ``<script>`` tag."
 msgstr ""
+"몇 가지 옵션이 있습니다. Django가 자동으로 생성하는 추가/변경 폼 위에 피기 백하려는 경우 모델의 클래스 Admin:ref:`js"
+" 매개 변수 <modeladmin-asset-definitions>를 통해 임의의 JavaScript 모듈을 페이지에 첨부 할 수 "
+"있습니다. 이 매개 변수는 URL 형식의 문자열로서 JavaScript 모듈을 가리키며 \"<script>\"태그를 통해 관리 양식에 "
+"포함됩니다."
 
 #: ../../../../sources/1.10/docs/faq/admin.txt:81
 msgid ""
@@ -157,16 +192,19 @@ msgid ""
 "authentication system, check permissions and do whatever else they need to "
 "do."
 msgstr ""
+"단순히 자동으로 생성 된 양식을 조정하는 것보다 더 많은 유연성을 원할 경우 관리자 용 사용자 정의보기를 자유롭게 작성하십시오. 관리자는"
+" Django 자체에 의해 구동되며 인증 시스템에 연결하고 권한을 확인하며 필요한 다른 작업을 수행하는 사용자 정의보기를 작성할 수 "
+"있습니다."
 
 #: ../../../../sources/1.10/docs/faq/admin.txt:86
 msgid ""
 "If you want to customize the look-and-feel of the admin interface, read the "
 "next question."
-msgstr ""
+msgstr "관리자 인터페이스의 모양과 느낌을 사용자 정의하려면 다음 질문을 읽으십시오."
 
 #: ../../../../sources/1.10/docs/faq/admin.txt:90
 msgid "The dynamically-generated admin site is ugly! How can I change it?"
-msgstr ""
+msgstr "동적으로 생성 된 관리 사이트는 추악합니다! 어떻게 변경할 수 있습니까?"
 
 #: ../../../../sources/1.10/docs/faq/admin.txt:92
 msgid ""
@@ -175,16 +213,19 @@ msgid ""
 "The site is built using semantic HTML and plenty of CSS hooks, so any "
 "changes you'd like to make should be possible by editing the stylesheet."
 msgstr ""
+"우리가 좋아하지만 동의하지 않으면 CSS 스타일 시트 및/또는 관련 이미지 파일을 편집하여 관리 사이트의 프레젠테이션을 수정할 수 "
+"있습니다. 사이트는 의미 론적 HTML과 많은 CSS 후크를 사용하여 만들어 졌으므로 스타일 시트를 편집하여 변경 사항을 적용 할 수 "
+"있어야합니다."
 
 #: ../../../../sources/1.10/docs/faq/admin.txt:98
 msgid "What browsers are supported for using the admin?"
-msgstr ""
+msgstr "어떤 브라우저가 관리자를 지원합니까?"
 
 #: ../../../../sources/1.10/docs/faq/admin.txt:100
 msgid ""
 "The admin provides a fully-functional experience to `YUI's A-grade`_ "
 "browsers, with the notable exception of IE6, which is not supported."
-msgstr ""
+msgstr "관리자는 지원되지 않는 IE6의 예외를 제외하고`유이의 A 등급 '브라우저에 완전한 기능을 제공합니다."
 
 #: ../../../../sources/1.10/docs/faq/admin.txt:103
 msgid ""
@@ -192,6 +233,8 @@ msgid ""
 "example, some browsers may not support rounded corners. These are considered"
 " acceptable variations in rendering."
 msgstr ""
+"지원되는 브라우저간에 약간의 문체상의 차이가있을 수 있습니다. 예를 들어 일부 브라우저는 둥근 모서리를 지원하지 않을 수 있습니다. "
+"이들은 렌더링에서 허용되는 변형으로 간주됩니다."
 
 #: ../../../../sources/1.10/docs/faq/contributing.txt:3
 msgid "FAQ: Contributing code"
@@ -207,16 +250,18 @@ msgid ""
 "question. It's titled :doc:`Contributing to Django "
 "</internals/contributing/index>`."
 msgstr ""
+"질문 주셔서 감사합니다! 이 질문에 대한 전체 문서를 작성했습니다. 그것은 제목이:doc:`장고에 기여하기 "
+"</internals/contributing/index>`."
 
 #: ../../../../sources/1.10/docs/faq/contributing.txt:12
 msgid ""
 "I submitted a bug fix in the ticket system several weeks ago. Why are you "
 "ignoring my patch?"
-msgstr ""
+msgstr "몇 주 전에 티켓 시스템에 버그 수정을 제출했습니다. 왜 내 패치를 무시하니?"
 
 #: ../../../../sources/1.10/docs/faq/contributing.txt:14
 msgid "Don't worry: We're not ignoring you!"
-msgstr ""
+msgstr "걱정하지 마라. 우리는 당신을 무시하지 않고있다!"
 
 #: ../../../../sources/1.10/docs/faq/contributing.txt:16
 msgid ""
@@ -226,6 +271,8 @@ msgid ""
 "impact on end-user functionality, and Django's developers have to review and"
 " prioritize."
 msgstr ""
+"\"티켓은 무시되고\" \"티켓에는 아직 참석하지 않았습니다.\"라는 차이점을 이해하는 것이 중요합니다. Django의 티켓 시스템에는 "
+"최종 사용자 기능에 다양한 영향을 미치는 수백 개의 티켓이 포함되어 있으며 Django 개발자는 검토하고 우선 순위를 지정해야합니다."
 
 #: ../../../../sources/1.10/docs/faq/contributing.txt:21
 msgid ""
@@ -234,6 +281,8 @@ msgid ""
 "and will vary from week to week depending on our spare time. If we're busy, "
 "we may not be able to spend as much time on Django as we might want."
 msgstr ""
+"그것의 꼭대기에:Django에서 일하는 사람들은 모두 자원 봉사자입니다. 따라서 프레임 워크에서 작업해야하는 시간은 제한적이며 여가 "
+"시간에 따라 주마다 다를 수 있습니다. 우리가 바쁘다면 우리는 장고에 대해 많은 시간을 할애하지 못할 수도 있습니다."
 
 #: ../../../../sources/1.10/docs/faq/contributing.txt:26
 msgid ""
@@ -241,6 +290,8 @@ msgid ""
 "is to make it dead easy, even for someone who may not be intimately familiar"
 " with that area of the code, to understand the problem and verify the fix:"
 msgstr ""
+"티켓을 체크인하는 동안 방해받지 않도록하는 가장 좋은 방법은 코드의 해당 영역을 잘 알고 있지 않은 사람이라 할지라도 문제를 이해하고 "
+"수정 사항을 확인하기 쉽도록 죽이는 것입니다."
 
 #: ../../../../sources/1.10/docs/faq/contributing.txt:30
 msgid ""
@@ -248,12 +299,16 @@ msgid ""
 "dependency (such as Pillow), a contrib module, or a specific database, are "
 "those instructions clear enough even for someone not familiar with it?"
 msgstr ""
+"버그를 재현하는 방법에 대한 명확한 지침이 있습니까? 이것이 의존성 (베개 같은), 기여 모듈 또는 특정 데이터베이스와 접촉한다면, "
+"익숙하지 않은 사람들을 위해서조차도 그러한 지시가 명확한가?"
 
 #: ../../../../sources/1.10/docs/faq/contributing.txt:35
 msgid ""
 "If there are several patches attached to the ticket, is it clear what each "
 "one does, which ones can be ignored and which matter?"
 msgstr ""
+"티켓에 첨부 된 패치가 여러 개인 경우 각 패치가 수행하는 작업이 무엇인지, 어떤 내용을 무시할 수 있는지, 그리고 어떤 문제가 있는지를"
+" 명확히 밝혀야합니까?"
 
 #: ../../../../sources/1.10/docs/faq/contributing.txt:38
 msgid ""
@@ -261,6 +316,8 @@ msgid ""
 "explanation why not? A test expresses succinctly what the problem is, and "
 "shows that the patch actually fixes it."
 msgstr ""
+"패치에 단위 테스트가 포함되어 있습니까? 그렇지 않다면 아주 명확한 이유가 있습니까? 테스트는 문제가 무엇인지 간결하게 표현하고 패치로 "
+"실제로 수정되었음을 보여줍니다."
 
 #: ../../../../sources/1.10/docs/faq/contributing.txt:42
 msgid ""
@@ -269,10 +326,12 @@ msgid ""
 "mean we're ignoring you; it just means we haven't had time to look at it "
 "yet."
 msgstr ""
+"패치가 Django에 포함될 가능성이 없다면, 우리는 그것을 무시하지 않을 것입니다 - 우리는 단지 티켓을 닫을 것입니다. 그래서 티켓이"
+" 아직 열려 있다면, 우리가 당신을 무시한다는 것을 의미하지는 않습니다. 그것은 우리가 아직 그것을 볼 시간이 없다는 것을 의미합니다."
 
 #: ../../../../sources/1.10/docs/faq/contributing.txt:47
 msgid "When and how might I remind the core team of a patch I care about?"
-msgstr ""
+msgstr "핵심 팀에게 언제 내가 신경 써야 할 패치를 상기 시켜줄 수 있습니까?"
 
 #: ../../../../sources/1.10/docs/faq/contributing.txt:49
 msgid ""
@@ -285,12 +344,17 @@ msgid ""
 "just before a bug fixing sprint, or in the lead up to a beta release for "
 "example -- you're much more likely to get a productive response."
 msgstr ""
+"메일 링리스트에 정중하고 시간을 초월한 메시지는 관심을 끄는 한 가지 방법입니다. 적절한 시간을 결정하려면 일정을 주시해야합니다. 핵심 "
+"개발자가 마감 기한을 맞추거나 계획 단계를 관리하려고 할 때 메시지를 게시하면 원하는주의를 끌지 못할 것입니다. 그러나 핵심 개발자가 "
+"버그에 특히주의를 기울일 때 티켓에주의를 끌면 버그 수정 전이나 예를 들어 베타 버전 출시 전까지는 티켓을 얻을 확률이 훨씬 더 "
+"높습니다. 생산적인 반응."
 
 #: ../../../../sources/1.10/docs/faq/contributing.txt:58
 msgid ""
 "Gentle IRC reminders can also work -- again, strategically timed if "
 "possible. During a bug sprint would be a very good time, for example."
 msgstr ""
+"적절한 IRC 알리미는 또한 가능하면 전략적으로 다시 작동합니다. 버그 스프린트 동안 예를 들어, 아주 좋은 시간이 될 것입니다."
 
 #: ../../../../sources/1.10/docs/faq/contributing.txt:61
 msgid ""
@@ -302,6 +366,10 @@ msgid ""
 " as the cost of coming up to speed on an area of code can be spread over "
 "multiple tickets."
 msgstr ""
+"견인력을 얻는 또 다른 방법은 여러 관련 티켓을 함께 가져 오는 것입니다. 핵심 개발자가 잠시 동안 만진 적이없는 영역에서 버그를 "
+"수정하기 위해 앉아있을 때 코드 영역이 어떻게 작동하는지 모든 세부 정보를 기억하는 데 몇 분이 걸릴 수 있습니다. 비슷한 주제 그룹에 "
+"여러 개의 작은 버그 수정을 모으는 경우 코드 영역에서 속도를 높이는 비용이 여러 티켓에 분산 될 수 있기 때문에 매력적인 대상을 "
+"만듭니다."
 
 #: ../../../../sources/1.10/docs/faq/contributing.txt:68
 msgid ""
@@ -310,10 +378,12 @@ msgid ""
 "you any additional attention -- certainly not the attention that you need in"
 " order to get your pet bug addressed."
 msgstr ""
+"핵심 개발자에게 개인적으로 이메일을 보내거나 동일한 문제를 반복해서 제기하는 것은 삼가 주시기 바랍니다. 이런 종류의 행동은 당신에게 "
+"추가적인주의를주지는 않습니다 - 당신의 애완 동물 버그를 해결하기 위해 당신이 필요로하는 관심이 아닙니다."
 
 #: ../../../../sources/1.10/docs/faq/contributing.txt:74
 msgid "But I've reminded you several times and you keep ignoring my patch!"
-msgstr ""
+msgstr "하지만 나는 여러 번 생각 나게하고 내 패치를 무시하고있다!"
 
 #: ../../../../sources/1.10/docs/faq/contributing.txt:76
 msgid ""
@@ -322,6 +392,8 @@ msgid ""
 "need to prioritize our efforts, which means that some tickets will be "
 "addressed before others."
 msgstr ""
+"진심으로 우리는 당신을 무시하지 않고 있습니다. 패치가 Django에 포함될 가능성이 없다면 티켓을 닫을 것입니다. 다른 모든 티켓의 "
+"경우 우선 순위를 정해야합니다. 즉, 일부 티켓은 다른 티켓보다 먼저 처리됩니다."
 
 #: ../../../../sources/1.10/docs/faq/contributing.txt:81
 msgid ""
@@ -330,6 +402,8 @@ msgid ""
 "potential to affect many people will generally get priority over those that "
 "are edge cases."
 msgstr ""
+"버그 수정의 우선 순위를 결정하는 데 사용되는 기준 중 하나는 특정 버그의 영향을받는 사용자 수입니다. 많은 사람들에게 영향을 줄 "
+"가능성이있는 버그는 일반적으로 엣지 케이스보다 우선 순위가 높습니다."
 
 #: ../../../../sources/1.10/docs/faq/contributing.txt:86
 msgid ""
@@ -343,6 +417,11 @@ msgid ""
 " at once, and hopefully prevent other little bugs from appearing in the "
 "future."
 msgstr ""
+"버그가 더 큰 문제의 증상 인 경우 버그가 무시 될 수있는 또 다른 이유가 있습니다. 우리는 시간을 들여 작은 패치를 많이 작성하고 "
+"테스트하고 적용 할 수 있지만 때때로 올바른 해결책은 다시 작성하는 것입니다. 특정 구성 요소의 재 작성 또는 리팩터링이 제안되었거나 "
+"진행 중이면 해당 구성 요소에 영향을주는 버그가별로 주목받지 못할 수 있습니다. 다시 말하지만, 이것은 희소 자원의 우선 순위를 정하는 "
+"문제 일뿐입니다. 다시 빌드하는 데 집중함으로써 모든 작은 버그를 한꺼번에 닫을 수 있으며 앞으로 다른 작은 버그가 나타나지 않도록 할 "
+"수 있습니다."
 
 #: ../../../../sources/1.10/docs/faq/contributing.txt:95
 msgid ""
@@ -356,14 +435,19 @@ msgid ""
 "that in the limited time we have available, we will always err on the side "
 "of making 10 people happy rather than making 1 person happy."
 msgstr ""
+"그 이유가 무엇이든, 정기적으로 특정 버그를 치는 동안, 반드시 모든 단일 장고 사용자가 동일한 버그에 부딪 힐 것은 반드시 따르지는 "
+"않습니다. 다른 사용자들은 Django를 여러 가지 방법으로 사용합니다. 서로 다른 조건에서 코드의 다른 부분을 강조합니다. 상대적 우선"
+" 순위를 평가할 때 일반적으로 특정 사용자의 심각성뿐만 아니라 전체 커뮤니티의 요구 사항을 고려하려고합니다. 우리가 사용할 수있는 제한된"
+" 시간 내에 문제가 중요하지 않다고 생각하는 것은 아닙니다. 1 인을 행복하게 만드는 것보다 10 명의 사람들을 행복하게 만드는 측면에서"
+" 항상 잘못을 저지르는 것입니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:3
 msgid "FAQ: General"
-msgstr ""
+msgstr "FAQ:일반"
 
 #: ../../../../sources/1.10/docs/faq/general.txt:6
 msgid "Why does this project exist?"
-msgstr ""
+msgstr "왜이 프로젝트가 존재합니까?"
 
 #: ../../../../sources/1.10/docs/faq/general.txt:8
 msgid ""
@@ -373,12 +457,15 @@ msgid ""
 "only a matter of hours to take a complicated Web application from concept to"
 " public launch."
 msgstr ""
+"Django는 매우 실용적인 필요성에서 자랐습니다. 신문 웹 작업 인 World Online은 저널리즘 마감 시간에 집중적 인 웹 응용 "
+"프로그램을 구축 할 책임이 있습니다. 빠르게 변화하는 뉴스 룸에서 World Online은 복잡한 웹 응용 프로그램을 컨셉에서 공개 "
+"출시하는 데 몇 시간 밖에 걸리지 않습니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:13
 msgid ""
 "At the same time, the World Online Web developers have consistently been "
 "perfectionists when it comes to following best practices of Web development."
-msgstr ""
+msgstr "동시에 World Online Web 개발자는 웹 개발 모범 사례를 따르는 데있어서 완벽 주의자로 꾸준히 노력해 왔습니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:16
 msgid ""
@@ -389,6 +476,10 @@ msgid ""
 " applications more and more quickly. They tweaked this framework constantly,"
 " adding improvements over two years."
 msgstr ""
+"2003 년 가을 세계 온라인 개발자 (Adrian Holovaty와 Simon Willison)는 PHP를 버리고 Python을 "
+"사용하여 웹 사이트를 개발하기 시작했습니다. Lawrence.com과 같이 집중적이고 풍부한 대화 형 사이트를 구축하면서 점점 더 빠르게"
+" 웹 응용 프로그램을 구축 할 수있는 일반적인 웹 개발 프레임 워크를 추출하기 시작했습니다. 그들은이 프레임 워크를 끊임없이 수정하여 2"
+" 년 동안 개선 사항을 추가했습니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:23
 msgid ""
@@ -398,10 +489,13 @@ msgid ""
 "we're thrilled to be able to give something back to the open-source "
 "community."
 msgstr ""
+"2005 년 여름에 World Online은 최종 소프트웨어 인 Django를 오픈 소스 화하기로 결정했습니다. Django는 오픈 소스"
+" 프로젝트 (`Apache`_, `Python`_, `PostgreSQL`_)의 모든 호스트가 없으면 가능하지 않을 것입니다. 우리는 "
+"뭔가를 돌려 줄 수있어서 기쁩니다. 오픈 소스 커뮤니티."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:33
 msgid "What does \"Django\" mean, and how do you pronounce it?"
-msgstr ""
+msgstr "\"Django\"의 의미는 무엇이며 어떻게 발음합니까?"
 
 #: ../../../../sources/1.10/docs/faq/general.txt:35
 msgid ""
@@ -409,23 +503,25 @@ msgid ""
 "the 1930s to early 1950s. To this day, he's considered one of the best "
 "guitarists of all time."
 msgstr ""
+"Django는 1930 년대부터 1950 년대 초까지 재즈 마누치 기타리스트 인 Django Reinhardt_의 이름을 따서 "
+"명명되었습니다. 오늘날까지 그는 항상 최고의 기타리스트 중 한 명으로 간주됩니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:38
 msgid "Listen to his music. You'll like it."
-msgstr ""
+msgstr "그의 음악을 들어라. 너는 그걸 좋아할거야."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:40
 msgid ""
 "Django is pronounced **JANG**-oh. Rhymes with FANG-oh. The \"D\" is silent."
-msgstr ""
+msgstr "Django는 ** JANG ** - 오 발음입니다. 송곳니 오. \"D\"는 침묵합니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:42
 msgid "We've also recorded an `audio clip of the pronunciation`_."
-msgstr ""
+msgstr "우리는 또한`발음의 오디오 클립`을 녹음했습니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:48
 msgid "Is Django stable?"
-msgstr ""
+msgstr "장고는 안정적입니까?"
 
 #: ../../../../sources/1.10/docs/faq/general.txt:50
 msgid ""
@@ -433,16 +529,19 @@ msgid ""
 "Mozilla have been using Django for many years. Sites built on Django have "
 "weathered traffic spikes of over 50 thousand hits per second."
 msgstr ""
+"네, 꽤 안정적입니다. Disqus, Instagram, Pinterest 및 Mozilla와 같은 회사는 수년 동안 Django를 "
+"사용해 왔습니다. Django에 구축 된 사이트는 초당 5 만 개가 넘는 트래픽 스파이크를 발생 시켰습니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:55
 msgid "Does Django scale?"
-msgstr ""
+msgstr "장고가 확장 할 수 있습니까?"
 
 #: ../../../../sources/1.10/docs/faq/general.txt:57
 msgid ""
 "Yes. Compared to development time, hardware is cheap, and so Django is "
 "designed to take advantage of as much hardware as you can throw at it."
 msgstr ""
+"예. 개발 시간과 비교할 때, 하드웨어는 싸다. 그래서 장고는 당신이 던질 수있는만큼의 하드웨어를 이용할 수 있도록 고안되었다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:60
 msgid ""
@@ -450,6 +549,8 @@ msgid ""
 "hardware at any level -- database servers, caching servers or "
 "Web/application servers."
 msgstr ""
+"Django는 \"비공유\"아키텍처를 사용합니다. 즉, 데이터베이스 서버, 캐싱 서버 또는 웹/응용 프로그램 서버와 같은 모든 수준의 "
+"하드웨어를 추가 할 수 있습니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:63
 msgid ""
@@ -457,10 +558,12 @@ msgid ""
 "application layer. And it ships with a simple-yet-powerful :doc:`cache "
 "framework </topics/cache>`."
 msgstr ""
+"프레임 워크는 데이터베이스 계층과 응용 프로그램 계층과 같은 구성 요소를 깔끔하게 구분합니다. 그리고 간단하면서도 강력한:doc:`캐시 "
+"프레임 워크 </topics/cache>`와 함께 제공됩니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:68
 msgid "Who's behind this?"
-msgstr ""
+msgstr "이게 누구 뒤에있는거야?"
 
 #: ../../../../sources/1.10/docs/faq/general.txt:70
 msgid ""
@@ -468,16 +571,18 @@ msgid ""
 "newspaper in Lawrence, Kansas, USA. Django's now run by an international "
 ":doc:`team of volunteers </internals/team>`."
 msgstr ""
+"Django는 원래 미국 캔사스 주 로렌스에 소재한 신문 웹 사이트 인 World Online에서 개발되었습니다. Django는 이제 "
+"international:doc:`자원 봉사자 </internals/team> 팀에 의해 운영됩니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:75
 msgid "Which sites use Django?"
-msgstr ""
+msgstr "어떤 사이트가 장고를 사용합니까?"
 
 #: ../../../../sources/1.10/docs/faq/general.txt:77
 msgid ""
 "`DjangoSites.org`_ features a constantly growing list of Django-powered "
 "sites."
-msgstr ""
+msgstr "`DjangoSites.org`_에는 Django 기반 사이트 목록이 지속적으로 늘어나고 있습니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:84
 msgid ""
@@ -485,10 +590,12 @@ msgid ""
 "\"view\", and the View the \"template\". How come you don't use the standard"
 " names?"
 msgstr ""
+"Django는 MVC 프레임 워크 인 것처럼 보이지만 Controller를 뷰라고 부르고 View는 \"템플릿\"이라고 부릅니다. 표준 "
+"이름을 어떻게 사용하지 않습니까?"
 
 #: ../../../../sources/1.10/docs/faq/general.txt:86
 msgid "Well, the standard names are debatable."
-msgstr ""
+msgstr "표준 이름은 논쟁의 여지가 있습니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:88
 msgid ""
@@ -497,12 +604,16 @@ msgid ""
 "*which* data is presented. The view describes *which data you see*, not *how"
 " you see it.* It's a subtle distinction."
 msgstr ""
+"MVC에 대한 우리의 해석에서, \"뷰\"는 사용자에게 표시되는 데이터를 설명합니다. 반드시 * 데이터 *가 * 보이는 * 것은 아니지만"
+" * 데이터가 표시됩니다. 이 뷰는 * 보는 데이터가 아닌 * 보는 데이터를 * 설명합니다. * 미묘한 차이입니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:93
 msgid ""
 "So, in our case, a \"view\" is the Python callback function for a particular"
 " URL, because that callback function describes which data is presented."
 msgstr ""
+"따라서 우리의 경우 \"view\"는 특정 URL에 대한 파이썬 콜백 함수입니다. 콜백 함수는 어떤 데이터가 표시되는지 설명하기 "
+"때문입니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:96
 msgid ""
@@ -511,6 +622,8 @@ msgid ""
 "presented, but a view normally delegates to a template, which describes "
 "*how* the data is presented."
 msgstr ""
+"또한, 템플릿이 들어오는 곳에서 프리젠 테이션을 분리하는 것이 바람직합니다. Django에서 \"보기\"는 어떤 데이터가 표시되는지를 "
+"설명하지만 일반적으로 뷰는 데이터가 어떻게 표시되는지를 설명하는 템플릿에 위임합니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:101
 msgid ""
@@ -518,6 +631,8 @@ msgid ""
 "the framework itself: the machinery that sends a request to the appropriate "
 "view, according to the Django URL configuration."
 msgstr ""
+"\"컨트롤러\"는 어디에 적합합니까? Django의 경우에는 아마 프레임 워크 자체 일 것입니다:Django URL 구성에 따라 "
+"적절한보기로 요청을 보내는 기계류."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:105
 msgid ""
@@ -525,6 +640,8 @@ msgid ""
 "framework -- that is, \"model\", \"template\", and \"view.\" That breakdown "
 "makes much more sense."
 msgstr ""
+"두문자어가 궁금하다면 장고는 \"모델\", \"템플릿\"및 \"보기\"와 같은 \"MTV\"프레임 워크라고 말할 수 있습니다. 그 고장은"
+" 훨씬 더 의미가 있습니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:109
 msgid ""
@@ -532,10 +649,12 @@ msgid ""
 "regardless of how things are named, Django gets stuff done in a way that's "
 "most logical to us."
 msgstr ""
+"물론 하루가 끝나면 물건을 얻는 데 달려 있습니다. Django는 이름이 어떻게 지어 졌는지에 관계없이 우리에게 가장 논리적 인 방식으로"
+" 작업을 완료합니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:114
 msgid "<Framework X> does <feature Y> -- why doesn't Django?"
-msgstr ""
+msgstr "<Framework X>는 <feature Y>를 수행합니다 - 왜 장고를 사용하지 않습니까?"
 
 #: ../../../../sources/1.10/docs/faq/general.txt:116
 msgid ""
@@ -545,12 +664,15 @@ msgid ""
 "be aware that \"because <Framework X> does it\" is not going to be "
 "sufficient reason to add a given feature to Django."
 msgstr ""
+"우리는 거기에 다른 멋진 웹 프레임 워크가 있음을 잘 알고 있으며 적절한 경우 아이디어를 빌려주지 않습니다. 그러나 Django는 현상 "
+"유지에 만족하지 않아서 개발되었으므로 <Framework X>가 \"Django에 특정 기능을 추가 할 충분한 이유가되지 않기 "
+"때문에\"장고 (Django)는 개발되었습니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:123
 msgid ""
 "Why did you write all of Django from scratch, instead of using other Python "
 "libraries?"
-msgstr ""
+msgstr "다른 Python 라이브러리를 사용하는 대신 장고를 처음부터 모두 작성한 이유는 무엇입니까?"
 
 #: ../../../../sources/1.10/docs/faq/general.txt:125
 msgid ""
@@ -558,14 +680,16 @@ msgid ""
 "spent quite a bit of time exploring the various Python Web frameworks "
 "available."
 msgstr ""
+"Django가 2 년 전에 처음 작성되었을 때 Adrian과 Simon은 사용 가능한 다양한 Python 웹 프레임 워크를 탐색하는 데 "
+"꽤 많은 시간을 보냈습니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:129
 msgid "In our opinion, none of them were completely up to snuff."
-msgstr ""
+msgstr "우리 의견에, 그들 중 누구도 완전히 스너프까지하지 못했습니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:131
 msgid "We're picky. You might even call us perfectionists. (With deadlines.)"
-msgstr ""
+msgstr "우리는 까다 롭다. 당신은 우리를 완벽 주의자라고 부를지도 모른다. (기한 있음)"
 
 #: ../../../../sources/1.10/docs/faq/general.txt:133
 msgid ""
@@ -575,6 +699,9 @@ msgid ""
 "We'd already written, tested and implemented our own framework bits in "
 "several production settings -- and our own code met our needs delightfully."
 msgstr ""
+"시간이 지남에 따라 우리는 이미 구현 한 것을 수행 한 오픈 소스 라이브러리를 발견했습니다. 다른 사람들이 유사한 문제를 비슷한 방식으로"
+" 해결하는 것을 안심 시키려고했지만 외부 코드를 통합하기에는 너무 늦었습니다. 우리는 이미 여러 프로덕션 설정에서 자체 프레임 워크 "
+"비트를 작성, 테스트 및 구현했으며 자체 코드가 우리의 요구를 충족 시켰습니다 즐겁게."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:139
 msgid ""
@@ -582,20 +709,22 @@ msgid ""
 "had some sort of fundamental, fatal flaw that made us squeamish. No tool fit"
 " our philosophies 100%."
 msgstr ""
+"그러나 대부분의 경우 기존 프레임 워크/도구에는 필연적으로 근본적인 치명적인 결함이있어 필연적으로 우리를 부끄럽게 만들었습니다. 우리의 "
+"철학에 맞는 도구는 100 % 없습니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:143
 msgid "Like we said: We're picky."
-msgstr ""
+msgstr "우리가 말했듯이:우리는 까다 롭다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:145
 msgid ""
 "We've documented our philosophies on the :doc:`design philosophies page "
 "</misc/design-philosophies>`."
-msgstr ""
+msgstr "우리는 우리의 철학을 \"doc:`디자인 철학 페이지 </misc/design-philosophies>에 문서화했습니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:149
 msgid "Is Django a content-management-system (CMS)?"
-msgstr ""
+msgstr "장고는 콘텐츠 관리 시스템 (CMS)입니까?"
 
 #: ../../../../sources/1.10/docs/faq/general.txt:151
 msgid ""
@@ -603,12 +732,16 @@ msgid ""
 "itself. It's a Web framework; it's a programming tool that lets you build "
 "websites."
 msgstr ""
+"아니, Django는 CMS 또는 그 자체의 \"턴키 제품\"일종이 아닙니다. 그것은 웹 프레임 워크입니다. 웹 사이트를 구축 할 수있는"
+" 프로그래밍 도구입니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:154
 msgid ""
 "For example, it doesn't make much sense to compare Django to something like "
 "Drupal_, because Django is something you use to *create* things like Drupal."
 msgstr ""
+"예를 들어, Django를 Drupal과 같은 것으로 비교하는 것은별로 의미가 없습니다. Django는 Drupal과 같은 것을 만들기 "
+"위해 사용하기 때문입니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:157
 msgid ""
@@ -618,10 +751,13 @@ msgid ""
 "mean it's not just as appropriate for building \"non-CMS-y\" apps (whatever "
 "that means!)."
 msgstr ""
+"물론 Django의 자동 관리 사이트는 훌륭하고 시간이 절약됩니다.하지만 관리 사이트는 Django 프레임 워크의 하나의 모듈입니다. "
+"또한 Django는 \"CMS-y\"앱을 만드는 데 특별한 편의를 제공하지만, \"CMS-y가 아닌\"앱을 만드는 것이 적절하지 않다는 "
+"것을 의미하지는 않습니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:166
 msgid "How can I download the Django documentation to read it offline?"
-msgstr ""
+msgstr "어떻게 장고 문서를 다운로드하여 오프라인에서 읽을 수 있습니까?"
 
 #: ../../../../sources/1.10/docs/faq/general.txt:168
 msgid ""
@@ -629,12 +765,16 @@ msgid ""
 "tarball release. These docs are in reST (reStructuredText) format, and each "
 "text file corresponds to a Web page on the official Django site."
 msgstr ""
+"장고 문서는 각 장고 타르볼 릴리스의 ``docs`` 디렉토리에 있습니다. 이 문서는 reST (reStructuredText) "
+"형식으로되어 있으며 각 텍스트 파일은 공식 Django 사이트의 웹 페이지에 해당합니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:172
 msgid ""
 "Because the documentation is `stored in revision control`_, you can browse "
 "documentation changes just like you can browse code changes."
 msgstr ""
+"문서가`revision control`_에 저장되어 있기 때문에 코드 변경 사항을 탐색 할 수있는 것처럼 문서 변경 사항을 탐색 할 수 "
+"있습니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:175
 msgid ""
@@ -643,59 +783,61 @@ msgid ""
 " may offer more information than the docs that come with the latest Django "
 "release."
 msgstr ""
+"기술적으로, Django 사이트의 문서는 최신 버전의 개발 문서에서 생성되므로 Django 사이트의 문서는 최신 Django 릴리스와 "
+"함께 제공되는 문서보다 많은 정보를 제공 할 수 있습니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:182
 msgid "How do I cite Django?"
-msgstr ""
+msgstr "어떻게 장고를 인용하나요?"
 
 #: ../../../../sources/1.10/docs/faq/general.txt:184
 msgid ""
 "It's difficult to give an official citation format, for two reasons: "
 "citation formats can vary wildly between publications, and citation "
 "standards for software are still a matter of some debate."
-msgstr ""
+msgstr "인용 형식은 출판물마다 크게 다를 수 있으며 소프트웨어 인용 기준은 여전히 논쟁의 여지가 있습니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:188
 msgid "For example, `APA style`_,  would dictate something like::"
-msgstr ""
+msgstr "예를 들어,`APA style`_는 다음과 같은 것을 지시 할 것이다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:192
 msgid ""
 "However, the only true guide is what your publisher will accept, so get a "
 "copy of those guidelines and fill in the gaps as best you can."
-msgstr ""
+msgstr "그러나 유일한 진정한 가이드는 게시자가 수락하는 가이드이므로 가이드 라인 사본을 받아 최대한 잘 채워야합니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:195
 msgid ""
 "If your referencing style guide requires a publisher name, use \"Django "
 "Software Foundation\"."
-msgstr ""
+msgstr "참조 스타일 가이드에 게시자 이름이 필요한 경우 \"Django Software Foundation\"을 사용하십시오."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:198
 msgid "If you need a publishing location, use \"Lawrence, Kansas\"."
-msgstr ""
+msgstr "게시 위치가 필요하면 \"Lawrence, Kansas\"를 사용하십시오."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:200
 msgid "If you need a web address, use https://djangoproject.com."
-msgstr ""
+msgstr "웹 주소가 필요하면 https://djangoproject.com을 사용하십시오."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:202
 msgid "If you need a name, just use \"Django\", without any tagline."
-msgstr ""
+msgstr "이름이 필요하다면 태그 라인없이 \"Django\"만 사용하면됩니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:204
 msgid ""
 "If you need a publication date, use the year of release of the version "
 "you're referencing (e.g., 2013 for v1.5)"
-msgstr ""
+msgstr "게시 날짜가 필요한 경우 참조하는 버전의 출시 연도를 사용하십시오 (예:v1.5의 경우 2013)."
 
 #: ../../../../sources/1.10/docs/faq/help.txt:3
 msgid "FAQ: Getting Help"
-msgstr ""
+msgstr "FAQ:도움말 얻기"
 
 #: ../../../../sources/1.10/docs/faq/help.txt:6
 msgid "How do I do X? Why doesn't Y work? Where can I go to get help?"
-msgstr ""
+msgstr "엑스는 어떻게합니까? Y가 왜 작동하지 않습니까? 어디서 도움을 얻을 수 있습니까?"
 
 #: ../../../../sources/1.10/docs/faq/help.txt:8
 msgid ""
@@ -703,17 +845,19 @@ msgid ""
 "try the |django-users| mailing list. Feel free to ask any question related "
 "to installing, using, or debugging Django."
 msgstr ""
+"이 FAQ에 질문에 대한 답이 없다면, django-users | 메일 링리스트. 장고 설치, 사용 또는 디버깅과 관련된 질문은 언제든지"
+" 물어보십시오."
 
 #: ../../../../sources/1.10/docs/faq/help.txt:12
 msgid ""
 "If you prefer IRC, the `#django IRC channel`_ on the Freenode IRC network is"
 " an active community of helpful individuals who may be able to solve your "
 "problem."
-msgstr ""
+msgstr "IRC를 선호한다면`"
 
 #: ../../../../sources/1.10/docs/faq/help.txt:20
 msgid "Why hasn't my message appeared on `django-users`?"
-msgstr ""
+msgstr "왜 내 메시지가`django-users`에 나타나지 않았습니까?"
 
 #: ../../../../sources/1.10/docs/faq/help.txt:22
 msgid ""
@@ -722,6 +866,8 @@ msgid ""
 "Unfortunately, it also means that |django-users| is an attractive target for"
 " spammers."
 msgstr ""
+"django-users | 구독자가 많습니다. 이는 많은 사람들이 질문에 대한 답변을 제공 할 수 있음을 의미하므로 커뮤니티에 "
+"도움이됩니다. 불행히도, 그것은 또한 django-users | 스팸 발송자를위한 매력적인 대상입니다."
 
 #: ../../../../sources/1.10/docs/faq/help.txt:27
 msgid ""
@@ -731,16 +877,19 @@ msgid ""
 "question to the list might take a little longer to get answered. We "
 "apologize for any inconvenience that this policy may cause."
 msgstr ""
+"스팸 문제를 해결하기 위해 django-users | 메일 링리스트에 메일을 보내면 목록에 보내는 첫 번째 메시지를 수동으로 검토합니다."
+" 즉, 스팸 발송자가 잡히지 만 목록에 대한 첫 번째 질문에 답을 얻는 데 조금 더 시간이 걸릴 수도 있음을 의미합니다. 이 정책으로 "
+"인해 불편을 끼쳐 드려 사과드립니다."
 
 #: ../../../../sources/1.10/docs/faq/help.txt:34
 msgid "Nobody on `django-users` answered my question! What should I do?"
-msgstr ""
+msgstr "`django-users`에 아무도 내 질문에 대답하지 않았습니다! 어떻게해야합니까?"
 
 #: ../../../../sources/1.10/docs/faq/help.txt:36
 msgid ""
 "Try making your question more specific, or provide a better example of your "
 "problem."
-msgstr ""
+msgstr "보다 구체적인 질문을하거나 문제의 더 좋은 예를 제공하십시오."
 
 #: ../../../../sources/1.10/docs/faq/help.txt:39
 msgid ""
@@ -751,6 +900,9 @@ msgid ""
 "to ask the question on IRC -- visit the `#django IRC channel`_ on the "
 "Freenode IRC network."
 msgstr ""
+"대부분의 오픈 소스 메일 링리스트와 마찬가지로 django-users | 자원 봉사자입니다. 아무도 귀하의 질문에 답변하지 않은 경우 "
+"아무도 대답을 알 수 없기 때문에 아무도 그 질문을 이해할 수 없거나 도움이 될 수있는 모든 사람이 바쁘다고 볼 수 있습니다. 시도해 볼"
+" 수있는 한 가지 방법은 IRC에서 질문하는 것입니다."
 
 #: ../../../../sources/1.10/docs/faq/help.txt:46
 msgid ""
@@ -759,20 +911,23 @@ msgid ""
 "is for discussion of the development of Django itself. Asking a tech support"
 " question there is considered quite impolite."
 msgstr ""
+"django-developers라고 불리는 두 번째 메일 링리스트가 있음을 알 수 있습니다. - 그러나이 메일 링리스트에 지원 질문을 "
+"이메일로 보내지 마십시오. 이 목록은 장고 자체 개발에 대한 토론 용입니다. 기술 지원 질문을하면 무례한 것으로 간주됩니다."
 
 #: ../../../../sources/1.10/docs/faq/help.txt:52
 msgid "I think I've found a bug! What should I do?"
-msgstr ""
+msgstr "나는 내가 버그를 발견했다고 생각한다! 어떻게해야합니까?"
 
 #: ../../../../sources/1.10/docs/faq/help.txt:54
 msgid ""
 "Detailed instructions on how to handle a potential bug can be found in our "
 ":ref:`Guide to contributing to Django <reporting-bugs>`."
 msgstr ""
+"잠재적 버그를 처리하는 방법에 대한 자세한 지침은 ref:`장고에 기여하는 방법 <reporting-bugs> '에서 찾을 수 있습니다."
 
 #: ../../../../sources/1.10/docs/faq/help.txt:58
 msgid "I think I've found a security problem! What should I do?"
-msgstr ""
+msgstr "나는 보안 문제를 발견했다고 생각한다! 어떻게해야합니까?"
 
 #: ../../../../sources/1.10/docs/faq/help.txt:60
 msgid ""
@@ -781,6 +936,8 @@ msgid ""
 "long-time, highly trusted Django developers, and its archives are not "
 "publicly readable."
 msgstr ""
+"장고에 보안 문제가 있다고 생각되면 security@djangoproject.com으로 메시지를 보내주십시오. 이것은 장시간에 신뢰할 "
+"수있는 Django 개발자에게만 공개되는 비공개 목록이며 해당 아카이브는 공개적으로 읽을 수 없습니다."
 
 #: ../../../../sources/1.10/docs/faq/help.txt:64
 msgid ""
@@ -791,40 +948,44 @@ msgid ""
 "to minimize any damage that could be inflicted through public knowledge of "
 "that defect."
 msgstr ""
+"보안 문제의 민감한 특성으로 인해 보안 문제를 발견했다고 생각되면 * 공개 * 메일 링리스트 중 하나에 메시지를 보내지 마십시오. "
+"Django는:ref:`보안 문제 처리 정책 <reporting-security-issues>`를 가지고 있습니다; 결함이 뚜렷한 동안,"
+" 우리는 그 결함에 대한 대중의 인식을 통해 발생할 수있는 모든 손상을 최소화하고자합니다."
 
 #: ../../../../sources/1.10/docs/faq/index.txt:3
 msgid "Django FAQ"
-msgstr ""
+msgstr "장고 FAQ"
 
 #: ../../../../sources/1.10/docs/faq/install.txt:3
 msgid "FAQ: Installation"
-msgstr ""
+msgstr "FAQ:설치"
 
 #: ../../../../sources/1.10/docs/faq/install.txt:6
 msgid "How do I get started?"
-msgstr ""
+msgstr "시작하려면 어떻게해야합니까?"
 
 #: ../../../../sources/1.10/docs/faq/install.txt:8
 msgid "`Download the code`_."
-msgstr ""
+msgstr "`코드 다운로드 '."
 
 #: ../../../../sources/1.10/docs/faq/install.txt:9
 msgid "Install Django (read the :doc:`installation guide </intro/install>`)."
-msgstr ""
+msgstr "Django를 설치하십시오 (:doc:`설치 안내서 </intro/install>`읽기)."
 
 #: ../../../../sources/1.10/docs/faq/install.txt:10
 msgid "Walk through the :doc:`tutorial </intro/tutorial01>`."
-msgstr ""
+msgstr ":doc:`tutorial </intro/tutorial01>`을 살펴보십시오."
 
 #: ../../../../sources/1.10/docs/faq/install.txt:11
 msgid ""
 "Check out the rest of the :doc:`documentation </index>`, and `ask "
 "questions`_ if you run into trouble."
 msgstr ""
+"문제가 생기면:doc:`documentation </index>`의 나머지 부분과`ask questions`_를 확인하십시오."
 
 #: ../../../../sources/1.10/docs/faq/install.txt:18
 msgid "What are Django's prerequisites?"
-msgstr ""
+msgstr "장고의 전제 조건은 무엇입니까?"
 
 #: ../../../../sources/1.10/docs/faq/install.txt:20
 msgid ""
@@ -833,6 +994,8 @@ msgid ""
 "be required for some uses, but you'll receive an error about it as they're "
 "needed."
 msgstr ""
+"Django에는 Python이 필요합니다. Django의 각 버전에서 작동하는 Python 버전에 대해서는 다음 질문의 표를 "
+"참조하십시오. 일부 용도에는 다른 Python 라이브러리가 필요할 수 있지만 필요한 경우 오류가 표시됩니다."
 
 #: ../../../../sources/1.10/docs/faq/install.txt:24
 msgid ""
@@ -843,6 +1006,9 @@ msgid ""
 "variety of server platforms. See :doc:`Deploying Django "
 "</howto/deployment/index>` for some popular alternatives."
 msgstr ""
+"개발 환경 - Django를 실험하고 싶다면 별도의 웹 서버를 설치할 필요가 없습니다. Django는 자체 경량 개발 서버를 제공합니다."
+" 프로덕션 환경에서 Django는 WSGI 스펙 인:pep:`3333`을 따르므로 다양한 서버 플랫폼에서 실행될 수 있습니다. "
+"See:doc:`Deploying Django </howto/deployment/index>`몇 가지 일반적인 대안을보십시오."
 
 #: ../../../../sources/1.10/docs/faq/install.txt:31
 msgid ""
@@ -851,50 +1017,52 @@ msgid ""
 "we're PostgreSQL fans, and MySQL_, `SQLite 3`_, and Oracle_ are also "
 "supported."
 msgstr ""
+"Django를 데이터베이스와 함께 사용하고자한다면 아마도 데이터베이스 엔진이 필요할 것이다. 우리는 PostgreSQL 팬이고 "
+"MySQL_,`SQLite 3`_ 및 Oracle_도 지원되기 때문에 PostgreSQL_이 권장됩니다."
 
 #: ../../../../sources/1.10/docs/faq/install.txt:44
 msgid "What Python version can I use with Django?"
-msgstr ""
+msgstr "Django에서 사용할 수있는 Python 버전은 무엇입니까?"
 
 #: ../../../../sources/1.10/docs/faq/install.txt:47
 msgid "Django version"
-msgstr ""
+msgstr "장고 버전"
 
 #: ../../../../sources/1.10/docs/faq/install.txt:47
 msgid "Python versions"
-msgstr ""
+msgstr "파이썬 버전"
 
 #: ../../../../sources/1.10/docs/faq/install.txt:49
 msgid "1.8"
-msgstr ""
+msgstr "1.8"
 
 #: ../../../../sources/1.10/docs/faq/install.txt:49
 msgid "2.7, 3.2 (until the end of 2016), 3.3, 3.4, 3.5"
-msgstr ""
+msgstr "2.7, 3.2 (2016 년 말까지), 3.3, 3.4, 3.5"
 
 #: ../../../../sources/1.10/docs/faq/install.txt:50
 msgid "1.9, 1.10"
-msgstr ""
+msgstr "1.9, 1.10"
 
 #: ../../../../sources/1.10/docs/faq/install.txt:50
 msgid "2.7, 3.4, 3.5"
-msgstr ""
+msgstr "2.7, 3.4, 3.5"
 
 #: ../../../../sources/1.10/docs/faq/install.txt:51
 msgid "1.11"
-msgstr ""
+msgstr "1.11"
 
 #: ../../../../sources/1.10/docs/faq/install.txt:51
 msgid "2.7, 3.4, 3.5, 3.6"
-msgstr ""
+msgstr "2.7, 3.4, 3.5, 3.6"
 
 #: ../../../../sources/1.10/docs/faq/install.txt:52
 msgid "2.0"
-msgstr ""
+msgstr "2.0"
 
 #: ../../../../sources/1.10/docs/faq/install.txt:52
 msgid "3.5+"
-msgstr ""
+msgstr "3.5"
 
 #: ../../../../sources/1.10/docs/faq/install.txt:55
 msgid ""
@@ -902,6 +1070,8 @@ msgid ""
 "officially supported. You can find the latest micro version for each series "
 "on the `Python download page <https://www.python.org/downloads/>`_."
 msgstr ""
+"파이썬의 각 버전에 대해 최신 마이크로 릴리즈 (A.B.C) 만 공식적으로 지원됩니다. 각 시리즈의 최신 마이크로 버전은`Python "
+"다운로드 페이지 <https://www.python.org/downloads/>`_에서 찾을 수 있습니다."
 
 #: ../../../../sources/1.10/docs/faq/install.txt:59
 msgid ""
@@ -911,10 +1081,13 @@ msgid ""
 "September 2017 and Django 1.8 LTS security support ends April 2018. "
 "Therefore Django 1.8 is the last version to support Python 3.3."
 msgstr ""
+"일반적으로 Python 버전의 보안 지원이 끝난 후 보안 지원이 끝나는 Django LTS 첫 번째 버전까지 지원합니다. 예를 들어, "
+"Python 3.3 보안 지원은 2017 년 9 월에 끝나고 Django 1.8 LTS 보안 지원은 2018 년 4 월에 끝납니다. "
+"따라서 Django 1.8은 Python 3.3을 지원하는 마지막 버전입니다."
 
 #: ../../../../sources/1.10/docs/faq/install.txt:66
 msgid "What Python version should I use with Django?"
-msgstr ""
+msgstr "Django에서 어떤 Python 버전을 사용해야합니까?"
 
 #: ../../../../sources/1.10/docs/faq/install.txt:68
 msgid ""
@@ -923,6 +1096,9 @@ msgid ""
 "community is still in the process of migrating third-party packages and "
 "applications to Python 3."
 msgstr ""
+"Django 1.6부터 Python 3 지원은 안정적인 것으로 간주되므로 안전하게 사용할 수 있습니다. "
+"참고:doc:`/topics/python3`. 그러나 커뮤니티는 제 3 자 패키지 및 응용 프로그램을 Python 3으로 마이그레이션하는"
+" 과정에 있습니다."
 
 #: ../../../../sources/1.10/docs/faq/install.txt:73
 msgid ""
@@ -930,6 +1106,8 @@ msgid ""
 "on Python 3, you should use Python 3. If they don't, consider contributing "
 "to the porting efforts, or stick to Python 2."
 msgstr ""
+"새 프로젝트를 시작하고 Python 3에서 사용할 계획 인 종속성이 있다면 Python 3을 사용해야합니다. 그렇지 않으면 포팅 작업에 "
+"기여하거나 Python 2를 사용하십시오."
 
 #: ../../../../sources/1.10/docs/faq/install.txt:77
 msgid ""
@@ -937,6 +1115,8 @@ msgid ""
 " better supported, all else being equal, we recommend that you use the "
 "latest 2.x.y or 3.x.y release."
 msgstr ""
+"최신 버전의 Python은 더 빨라지고, 더 많은 기능을 제공하며 더 잘 지원되며 다른 모든 기능은 동일하므로 최신 2.x.y 또는 "
+"3.x.y 버전을 사용하는 것이 좋습니다."
 
 #: ../../../../sources/1.10/docs/faq/install.txt:81
 msgid ""
@@ -945,10 +1125,12 @@ msgid ""
 "releases. Third-party applications for use with Django are, of course, free "
 "to set their own version requirements."
 msgstr ""
+"Django에서 이전 버전을 사용하면 아무 것도 잃지 않지만 최신 Python 릴리스에서는 개선과 최적화를 이용하지 않습니다. "
+"Django와 함께 사용되는 타사 응용 프로그램은 물론 자신의 버전 요구 사항을 자유롭게 설정할 수 있습니다."
 
 #: ../../../../sources/1.10/docs/faq/install.txt:87
 msgid "Should I use the stable version or development version?"
-msgstr ""
+msgstr "안정 버전이나 개발 버전을 사용해야합니까?"
 
 #: ../../../../sources/1.10/docs/faq/install.txt:89
 msgid ""
@@ -959,20 +1141,23 @@ msgid ""
 "write code against stable releases, you shouldn't have any problems "
 "upgrading when the next official version is released."
 msgstr ""
+"일반적으로 프로덕션 환경에서 코드를 사용하는 경우 안정적인 릴리스를 사용해야합니다. Django 프로젝트는 매 9 개월마다 완전 안정판을"
+" 발표하고 중간에 버그 수정 업데이트를 게시합니다. 이 안정적인 릴리즈에는 이전 버전과의 호환성 보장이 적용되는 API가 포함되어 "
+"있습니다. 안정적인 릴리스에 대한 코드를 작성하면 다음 공식 버전이 출시 될 때 업그레이드하는 데 문제가 없어야합니다."
 
 #: ../../../../sources/1.10/docs/faq/models.txt:3
 msgid "FAQ: Databases and models"
-msgstr ""
+msgstr "FAQ:데이터베이스 및 모델"
 
 #: ../../../../sources/1.10/docs/faq/models.txt:8
 msgid "How can I see the raw SQL queries Django is running?"
-msgstr ""
+msgstr "어떻게 장고가 실행중인 원시 SQL 쿼리를 볼 수 있습니까?"
 
 #: ../../../../sources/1.10/docs/faq/models.txt:10
 msgid ""
 "Make sure your Django :setting:`DEBUG` setting is set to ``True``. Then, "
 "just do this::"
-msgstr ""
+msgstr "장고 :setting:`DEBUG` 설정이 ``True``\ 로 설정되어 있는지 확인하십시오. 그런 다음이 작업을 수행하십시오::"
 
 #: ../../../../sources/1.10/docs/faq/models.txt:18
 msgid ""
@@ -980,6 +1165,8 @@ msgid ""
 "It's a list of dictionaries in order of query execution. Each dictionary has"
 " the following::"
 msgstr ""
+"``connection.queries``\ 는 다음과 같은 경우에만 사용할 수 있습니다 :setting:`DEBUG`\ 는 ``True`` 입니다. 쿼리 실행"
+" 순서에 따라 사전 목록입니다. 각 사전에는 다음이 있습니다::"
 
 #: ../../../../sources/1.10/docs/faq/models.txt:25
 msgid ""
@@ -987,38 +1174,43 @@ msgid ""
 "SELECTs, etc. Each time your app hits the database, the query will be "
 "recorded."
 msgstr ""
+"``connection.queries``\ 는 모든 SQL 문 (INSERT, UPDATES, SELECT 등)을 포함합니다. 앱이 "
+"데이터베이스에 접근 할 때마다 쿼리가 기록됩니다."
 
 #: ../../../../sources/1.10/docs/faq/models.txt:28
 msgid ""
 "If you are using :doc:`multiple databases</topics/db/multi-db>`, you can use"
 " the same interface on each member of the ``connections`` dictionary::"
 msgstr ""
+":doc:`다중 데이터베이스 </topics/db/multi-db>`\ 를 사용하고 있다면 ``connections`` 사전의 각 멤버에서 "
+"같은 인터페이스를 사용할 수 있습니다::"
 
 #: ../../../../sources/1.10/docs/faq/models.txt:34
 msgid ""
 "If you need to clear the query list manually at any point in your functions,"
 " just call ``reset_queries()``, like this::"
-msgstr ""
+msgstr "함수의 어느 지점에서든 수동으로 쿼리 목록을 지우려면, 다음과 같이 ``reset_queries ()`` 를 호출하십시오::"
 
 #: ../../../../sources/1.10/docs/faq/models.txt:41
 msgid "Can I use Django with a pre-existing database?"
-msgstr ""
+msgstr "Django를 기존 데이터베이스와 함께 사용할 수 있습니까?"
 
 #: ../../../../sources/1.10/docs/faq/models.txt:43
 msgid ""
 "Yes. See :doc:`Integrating with a legacy database </howto/legacy-"
 "databases>`."
-msgstr ""
+msgstr "예. 참고 자료:doc:`레거시 데이터베이스와의 통합 </howto/legacy-databases>`."
 
 #: ../../../../sources/1.10/docs/faq/models.txt:46
 msgid "If I make changes to a model, how do I update the database?"
-msgstr ""
+msgstr "모델을 변경하면 데이터베이스를 어떻게 업데이트합니까?"
 
 #: ../../../../sources/1.10/docs/faq/models.txt:48
 msgid ""
 "Take a look at Django's support for :mod:`schema migrations "
 "<django.db.migrations>`."
 msgstr ""
+"Django가 mod:`schema migrations <django.db.migrations> '에 대한 지원을 살펴보십시오."
 
 #: ../../../../sources/1.10/docs/faq/models.txt:51
 msgid ""
@@ -1026,14 +1218,16 @@ msgid ""
 ":djadmin:`flush` option to reset the database to the state it was in "
 "immediately after :djadmin:`migrate` was executed."
 msgstr ""
+"데이타를 지우는 데 신경 쓰지 않는다면, 프로젝트의 ``manage.py`` 유틸리티는 :djadmin:`flush` 옵션을 가지고 "
+"있습니다 :djadmin:`migrate`\ 가 실행 된 직후의 상태로 데이터베이스를 재설정하십시오."
 
 #: ../../../../sources/1.10/docs/faq/models.txt:56
 msgid "Do Django models support multiple-column primary keys?"
-msgstr ""
+msgstr "Django 모델은 다중 컬럼 기본 키를 지원합니까?"
 
 #: ../../../../sources/1.10/docs/faq/models.txt:58
 msgid "No. Only single-column primary keys are supported."
-msgstr ""
+msgstr "단일 열 기본 키만 지원됩니다."
 
 #: ../../../../sources/1.10/docs/faq/models.txt:60
 msgid ""
@@ -1044,10 +1238,14 @@ msgid ""
 "such as the admin interface to work; e.g., you need a simple way of being "
 "able to specify an object to edit or delete."
 msgstr ""
+"그러나 이것은 실제적으로는 문제가되지 않습니다. 왜냐하면 다른 제약 조건 (``unique_together`` 모델 옵션을 사용하거나 "
+"데이터베이스에서 직접 제약 조건을 생성하는 것)을 추가하는 것을 멈추게 할 것이고 그 수준에서 고유성을 강요하는 것이 없기 때문입니다. "
+"단일 열 기본 키는 관리 인터페이스와 같은 작업에 필요합니다. 예를 들어 편집하거나 삭제할 객체를 지정할 수있는 간단한 방법이 "
+"필요합니다."
 
 #: ../../../../sources/1.10/docs/faq/models.txt:68
 msgid "Does Django support NoSQL databases?"
-msgstr ""
+msgstr "장고는 NoSQL 데이터베이스를 지원합니까?"
 
 #: ../../../../sources/1.10/docs/faq/models.txt:70
 msgid ""
@@ -1055,18 +1253,20 @@ msgid ""
 "however, a number of side project and forks which allow NoSQL functionality "
 "in Django, like `Django non-rel`_."
 msgstr ""
+"NoSQL 데이터베이스는 장고 자체에서 공식적으로 지원하지 않습니다. 그러나 Django에서 NoSQL을 사용할 수있게 해주는 여러 "
+"프로젝트와 포크가 있습니다. 예를 들어 Django non-rel`_입니다."
 
 #: ../../../../sources/1.10/docs/faq/models.txt:74
 msgid ""
 "You can also take a look on `the wiki page`_ which discusses some "
 "alternatives."
-msgstr ""
+msgstr "또한`wiki page`_에서 몇 가지 대안을 논의 할 수 있습니다."
 
 #: ../../../../sources/1.10/docs/faq/models.txt:80
 msgid ""
 "How do I add database-specific options to my CREATE TABLE statements, such "
 "as specifying MyISAM as the table type?"
-msgstr ""
+msgstr "MyISAM을 테이블 형식으로 지정하는 것과 같은 CREATE TABLE 문에 데이터베이스 관련 옵션을 어떻게 추가합니까?"
 
 #: ../../../../sources/1.10/docs/faq/models.txt:82
 msgid ""
@@ -1076,12 +1276,15 @@ msgid ""
 ":class:`~django.db.migrations.operations.RunSQL` operation that contains "
 "``ALTER TABLE`` statements that do what you want to do."
 msgstr ""
+"Django 코드에 특별한 경우를 추가하여 테이블 유형과 같은 모든 데이터베이스 별 옵션을 수용하는 것을 피하려고합니다. 이러한 옵션을 "
+"사용하려면 :class:`~ django. db.migrations.operations.RunSQL` 연산을 수행합니다.이 연산은 "
+"당신이하고 싶은 일을하는 ``ALTER TABLE`` 문을 포함합니다."
 
 #: ../../../../sources/1.10/docs/faq/models.txt:88
 msgid ""
 "For example, if you're using MySQL and want your tables to use the MyISAM "
 "table type, use the following SQL::"
-msgstr ""
+msgstr "예를 들어, MySQL을 사용하고 테이블에 MyISAM 테이블 유형을 사용하려면 다음 SQL::"
 
 #: ../../../../sources/1.10/docs/faq/troubleshooting.txt:3
 msgid "Troubleshooting"
@@ -1091,25 +1294,29 @@ msgstr "문제해결"
 msgid ""
 "This page contains some advice about errors and problems commonly "
 "encountered during the development of Django applications."
-msgstr ""
+msgstr "이 페이지는 Django 응용 프로그램을 개발할 때 일반적으로 발생하는 오류 및 문제점에 대한 조언을 담고 있습니다."
 
 #: ../../../../sources/1.10/docs/faq/troubleshooting.txt:11
 msgid "Problems running ``django-admin``"
-msgstr ""
+msgstr "``django-admin` 문제"
 
 #: ../../../../sources/1.10/docs/faq/troubleshooting.txt:14
 msgid "\"command not found: `django-admin`\""
-msgstr ""
+msgstr "\"명령을 찾을 수 없습니다:`django-admin`\""
 
 #: ../../../../sources/1.10/docs/faq/troubleshooting.txt:16
 msgid ""
 ":doc:`django-admin </ref/django-admin>` should be on your system path if you"
 " installed Django via ``python setup.py``. If it's not on your path, you can"
 " find it in ``site-packages/django/bin``, where ``site-packages`` is a "
-"directory within your Python installation. Consider symlinking to :doc"
-":`django-admin </ref/django-admin>` from some place on your path, such as "
-":file:`/usr/local/bin`."
+"directory within your Python installation. Consider symlinking to "
+":doc:`django-admin </ref/django-admin>` from some place on your path, such "
+"as :file:`/usr/local/bin`."
 msgstr ""
+"``python setup.py`` 를 통해 Django를 설치했다면 :doc:`django-admin </ref/django-"
+"admin>`\ 이 시스템 경로에 있어야합니다. 경로 상에 없다면, ``site-packages/django/bin`` 에서 찾을 수 "
+"있습니다. ``site-packages``\ 는 파이썬 설치 내의 디렉토리입니다. :file:`/usr/local/bin`\ 과 같이 경로상의 어떤"
+" 위치에서 :doc:`django-admin </ref/django-admin>`\ 으로의 심볼릭 링크를 고려하십시오."
 
 #: ../../../../sources/1.10/docs/faq/troubleshooting.txt:23
 msgid ""
@@ -1117,10 +1324,12 @@ msgid ""
 "probably using a version of Django that doesn't match the version of this "
 "documentation. ``django-admin`` is new in Django 1.7."
 msgstr ""
+"``django-admin``\ 이 작동하지 않고 ``django-admin.py``\ 가 수행한다면 아마도이 문서의 버전과 일치하지 않는 "
+"Django 버전을 사용하고있을 것입니다. ``django-admin``\ 은 Django 1.7의 새로운 기능입니다."
 
 #: ../../../../sources/1.10/docs/faq/troubleshooting.txt:28
 msgid "Mac OS X permissions"
-msgstr ""
+msgstr "Mac OS X 권한"
 
 #: ../../../../sources/1.10/docs/faq/troubleshooting.txt:30
 msgid ""
@@ -1131,14 +1340,18 @@ msgid ""
 "command) to the directory where :doc:`django-admin </ref/django-admin>` is "
 "installed, then run the command ``sudo chmod +x django-admin``."
 msgstr ""
+"Mac OS X 사용자는 ``django-admin``\ 을 실행할 때 \"permission denied\"라는 메시지가 나타날 수 "
+"있습니다. 이것은 OS X와 같은 유닉스 기반 시스템에서 파일을 프로그램으로 실행하기 전에 \"실행 가능\"으로 표시해야하기 때문입니다."
+" 이를 위해 Terminal.app를 열고 ``cd`` 명령을 사용하여 :doc:`django-admin </ref/django-"
+"admin>` 이 설치된 디렉토리로 이동 한 다음, ``sudo chmod +x django-admin``."
 
 #: ../../../../sources/1.10/docs/faq/troubleshooting.txt:38
 msgid "Miscellaneous"
-msgstr ""
+msgstr "여러 가지 잡다한"
 
 #: ../../../../sources/1.10/docs/faq/troubleshooting.txt:41
 msgid "I'm getting a ``UnicodeDecodeError``. What am I doing wrong?"
-msgstr ""
+msgstr "나는 ``UnicodeDecodeError``\ 를 얻고 있습니다. 내가 뭘 잘못 했니?"
 
 #: ../../../../sources/1.10/docs/faq/troubleshooting.txt:43
 msgid ""
@@ -1146,12 +1359,14 @@ msgid ""
 " is transformed into a Unicode string and the specified encoding is "
 "incorrect. The output generally looks like this::"
 msgstr ""
+"이 오류 클래스는 비 ASCII 시퀀스가 포함 된 바이트 코드가 유니 코드 문자열로 변환되고 지정된 인코딩이 잘못되었을 때 발생합니다. "
+"출력은 일반적으로 다음과 같습니다."
 
 #: ../../../../sources/1.10/docs/faq/troubleshooting.txt:50
 msgid ""
 "The resolution mostly depends on the context, however here are two common "
 "pitfalls producing this error:"
-msgstr ""
+msgstr "해상도는 주로 컨텍스트에 따라 다르지만이 오류를 생성하는 일반적인 함정은 두 가지입니다."
 
 #: ../../../../sources/1.10/docs/faq/troubleshooting.txt:53
 msgid ""
@@ -1160,10 +1375,12 @@ msgid ""
 "case, please refer to your system documentation to learn how you can change "
 "this to a UTF-8 locale."
 msgstr ""
+"시스템 로케일은 UNIX 계열 시스템의 \"C\"로켈과 같은 기본 ASCII 로켈 일 수 있습니다 ( \"locale\"명령으로 확인할 "
+"수 있음). 이 경우 UTF-8 로켈로 변경하는 방법은 시스템 설명서를 참조하십시오."
 
 #: ../../../../sources/1.10/docs/faq/troubleshooting.txt:58
 msgid "You created raw bytestrings, which is easy to do on Python 2::"
-msgstr ""
+msgstr "Python 2에서 쉽게 할 수있는 원시 바이트 테스트를 만들었습니다."
 
 #: ../../../../sources/1.10/docs/faq/troubleshooting.txt:62
 msgid ""
@@ -1171,14 +1388,16 @@ msgid ""
 "import unicode_literals`` line at the top of your file so that your code "
 "will be compatible with Python 3.2 which doesn't support the ``u''`` prefix."
 msgstr ""
+"``u''`` 접두사를 사용하거나 파일의 맨 위에있는 ``from __future__ import unicode_literals`` 행을 추가하면"
+" 코드가 파이썬 3.2와 호환 될 것입니다."
 
 #: ../../../../sources/1.10/docs/faq/troubleshooting.txt:67
 msgid "Related resources:"
-msgstr ""
+msgstr "관련 리소스:"
 
 #: ../../../../sources/1.10/docs/faq/troubleshooting.txt:69
 msgid ":doc:`Unicode in Django </ref/unicode>`"
-msgstr ""
+msgstr ":doc:`장고의 유니 코드 </ref/unicode>`"
 
 #: ../../../../sources/1.10/docs/faq/troubleshooting.txt:70
 msgid "https://wiki.python.org/moin/UnicodeDecodeError"
@@ -1186,34 +1405,34 @@ msgstr ""
 
 #: ../../../../sources/1.10/docs/faq/usage.txt:3
 msgid "FAQ: Using Django"
-msgstr ""
+msgstr "FAQ:장고 사용하기"
 
 #: ../../../../sources/1.10/docs/faq/usage.txt:6
 msgid "Why do I get an error about importing DJANGO_SETTINGS_MODULE?"
-msgstr ""
+msgstr "DJANGO_SETTINGS_MODULE을 (를) 가져 오는 중 오류가 발생하는 이유는 무엇입니까?"
 
 #: ../../../../sources/1.10/docs/faq/usage.txt:8
 msgid "Make sure that:"
-msgstr ""
+msgstr "다음 사항을 확인하십시오."
 
 #: ../../../../sources/1.10/docs/faq/usage.txt:10
 msgid ""
 "The environment variable DJANGO_SETTINGS_MODULE is set to a fully-qualified "
 "Python module (i.e. \"mysite.settings\")."
-msgstr ""
+msgstr "환경 변수 DJANGO_SETTINGS_MODULE은 완전한 파이썬 모듈 (예:\"mysite.settings\")로 설정됩니다."
 
 #: ../../../../sources/1.10/docs/faq/usage.txt:13
 msgid ""
 "Said module is on ``sys.path`` (``import mysite.settings`` should work)."
-msgstr ""
+msgstr "이 모듈은 ``sys.path``\ 에 있습니다 (``import mysite.settings``)."
 
 #: ../../../../sources/1.10/docs/faq/usage.txt:15
 msgid "The module doesn't contain syntax errors (of course)."
-msgstr ""
+msgstr "모듈은 구문 오류를 포함하지 않습니다 (당연히)."
 
 #: ../../../../sources/1.10/docs/faq/usage.txt:18
 msgid "I can't stand your template language. Do I have to use it?"
-msgstr ""
+msgstr "나는 귀하의 템플릿 언어를 참을 수 없어. 그것을 사용해야합니까?"
 
 #: ../../../../sources/1.10/docs/faq/usage.txt:20
 msgid ""
@@ -1222,16 +1441,19 @@ msgid ""
 "There's nothing about Django that requires using the template language, so "
 "if you're attached to Jinja2, Mako, or whatever, feel free to use those."
 msgstr ""
+"우리는 템플릿 엔진이 chunky bacon 이후 가장 좋은 도구라고 생각합니다. 그러나 우리는 템플릿 언어를 선택하는 것이 종교에 "
+"가깝다는 것을 알고 있습니다. 템플릿 언어를 사용해야하는 Django에 대해서는 아무 것도 없으므로 Jinja2, Mako 등에 첨부되어"
+" 있다면 자유롭게 사용할 수 있습니다."
 
 #: ../../../../sources/1.10/docs/faq/usage.txt:26
 msgid "Do I have to use your model/database layer?"
-msgstr ""
+msgstr "모델/데이터베이스 계층을 사용해야합니까?"
 
 #: ../../../../sources/1.10/docs/faq/usage.txt:28
 msgid ""
 "Nope. Just like the template system, the model/database layer is decoupled "
 "from the rest of the framework."
-msgstr ""
+msgstr "아니. 템플릿 시스템과 마찬가지로 모델/데이터베이스 계층은 나머지 프레임 워크와 분리되어 있습니다."
 
 #: ../../../../sources/1.10/docs/faq/usage.txt:31
 msgid ""
@@ -1239,16 +1461,20 @@ msgid ""
 " to use Django's automatically-generated admin site. That app is coupled to "
 "the Django database layer."
 msgstr ""
+"단 하나의 예외는:다른 데이터베이스 라이브러리를 사용한다면 장고 자동 생성 관리 사이트를 사용하지 않을 것입니다. 이 앱은 Django "
+"데이터베이스 레이어에 연결됩니다."
 
 #: ../../../../sources/1.10/docs/faq/usage.txt:36
 msgid "How do I use image and file fields?"
-msgstr ""
+msgstr "이미지 및 파일 필드는 어떻게 사용합니까?"
 
 #: ../../../../sources/1.10/docs/faq/usage.txt:38
 msgid ""
 "Using a :class:`~django.db.models.FileField` or an "
 ":class:`~django.db.models.ImageField` in a model takes a few steps:"
 msgstr ""
+"모델에서:class:`~ django.db.models.FileField` 또는:class:`~ "
+"django.db.models.ImageField`를 사용하는 것은 몇 단계를 거칩니다:"
 
 #: ../../../../sources/1.10/docs/faq/usage.txt:41
 msgid ""
@@ -1258,6 +1484,9 @@ msgid ""
 ":setting:`MEDIA_URL` as the base public URL of that directory. Make sure "
 "that this directory is writable by the Web server's user account."
 msgstr ""
+"설정 파일에서 Django가 업로드 된 파일을 저장할 디렉토리의 전체 경로로:setting:`MEDIA_ROOT`을 정의해야합니다. "
+"(성능을 위해,이 파일들은 데이터베이스에 저장되지 않습니다.) 정의:해당 디렉토리의 기본 공개 URL로`MEDIA_URL`을 "
+"설정하십시오. 이 디렉터리에 웹 서버의 사용자 계정이 쓸 수 있는지 확인하십시오."
 
 #: ../../../../sources/1.10/docs/faq/usage.txt:48
 msgid ""
@@ -1266,6 +1495,10 @@ msgid ""
 ":attr:`~django.db.models.FileField.upload_to` option to specify a "
 "subdirectory of :setting:`MEDIA_ROOT` to use for uploaded files."
 msgstr ""
+"모델에:class:`~ django.db.models.FileField` 또는:class:`~ "
+"django.db.models.ImageField`를 추가하여:attr:`~ "
+"django.db.models.FileField.upload_to`를 정의하십시오. 옵션:설정:업로드 된 파일에 "
+"사용할`MEDIA_ROOT` 하위 디렉토리를 지정하십시오."
 
 #: ../../../../sources/1.10/docs/faq/usage.txt:53
 msgid ""
@@ -1276,10 +1509,14 @@ msgid ""
 " ``mug_shot``, you can get the absolute path to your image in a template "
 "with ``{{ object.mug_shot.url }}``."
 msgstr ""
+"데이터베이스에 저장 될 파일은 (:setting:`MEDIA_ROOT`\ 에 상대적인) 파일에 대한 경로입니다. Django가 제공하는 "
+"편의 :attr:`~ django.db.models.fields.files.FieldFile.url` 속성을 사용하고 싶을 것입니다. 예를"
+" 들어, :class:`~ django.db.models.ImageField`\ 를 ``mug_shot``\ 이라 "
+"부르면, ``{{object.mug_shot.url}}``\ 템플릿을 사용하여 이미지의 절대 경로를 얻을 수 있습니다. ``."
 
 #: ../../../../sources/1.10/docs/faq/usage.txt:62
 msgid "How do I make a variable available to all my templates?"
-msgstr ""
+msgstr "내 모든 템플릿에서 변수를 사용하려면 어떻게해야합니까?"
 
 #: ../../../../sources/1.10/docs/faq/usage.txt:64
 msgid ""
@@ -1287,9 +1524,13 @@ msgid ""
 "would be dynamically-generated menus. At first glance, it seems logical to "
 "simply add a common dictionary to the template context."
 msgstr ""
+"때로는 템플릿에 모두 똑같은 것이 필요합니다. 일반적인 예는 동적으로 생성 된 메뉴입니다. 언뜻보기에 템플릿 사전에 공통 사전을 추가하는"
+" 것이 논리적 인 것처럼 보입니다."
 
 #: ../../../../sources/1.10/docs/faq/usage.txt:68
 msgid ""
 "The correct solution is to use a ``RequestContext``. Details on how to do "
 "this are here: :ref:`subclassing-context-requestcontext`."
 msgstr ""
+"올바른 해결책은 ``RequestContext``\ 를 사용하는 것입니다. 이것을하는 방법에 대한 자세한 것은 "
+"여기::ref:`subclassing-context-requestcontext`."
