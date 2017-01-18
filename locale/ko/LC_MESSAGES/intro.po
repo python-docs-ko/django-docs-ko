@@ -20,8 +20,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-04 19:36-0600\n"
-"PO-Revision-Date: 2017-01-08 07:22+0000\n"
+"POT-Creation-Date: 2017-01-14 08:34-0600\n"
+"PO-Revision-Date: 2017-01-18 00:09+0000\n"
 "Last-Translator: seok woojing <woojing.seok@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/django/django-docs/language/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -902,18 +902,17 @@ msgstr "세 가지 방법으로 장고를 설치할 수 있습니다."
 
 #: ../../../../sources/1.10/docs/intro/install.txt:56
 msgid ""
-"Install a version of Django :doc:`provided by your operating system "
-"distribution </misc/distributions>`. This is the quickest option for those "
-"who have operating systems that distribute Django."
-msgstr ":doc:`운영체제</misc/distributions>` 에서 제공하는 Django 를 설치하세요. 운영체제에서 Django 를 제공한다면 이 방법이 가장 간편하고 빠릅니다. "
-
-#: ../../../../sources/1.10/docs/intro/install.txt:60
-msgid ""
 ":ref:`Install an official release <installing-official-release>`. This is "
 "the best approach for most users."
 msgstr "대부분의 유저들에게는 :ref:`공식 릴리즈 <installing-official-release>`\\ 를 추천합니다."
 
-#: ../../../../sources/1.10/docs/intro/install.txt:63
+#: ../../../../sources/1.10/docs/intro/install.txt:59
+msgid ""
+"Install a version of Django :ref:`provided by your operating system "
+"distribution <installing-distribution-package>`."
+msgstr ":doc:`운영체제 <installing-distribution-package>` 에서 제공하는 Django 를 설치하세요."
+
+#: ../../../../sources/1.10/docs/intro/install.txt:62
 msgid ""
 ":ref:`Install the latest development version <installing-development-"
 "version>`. This option is for enthusiasts who want the latest-and-greatest "
@@ -924,13 +923,13 @@ msgid ""
 "stable release."
 msgstr ":ref:`최신 개발 버전 설치하기 <installing-development-version>`. 이 옵션은 가장 최신 버전의 기능을 사용하기 원하는 열정적이고 도전적인 사람들을 위한 옵션입니다. 개발 버전을 사용할 경우 예기치 못한 새로운 버그에 맞닥뜨릴수도 있습니다. 이런 버그들을 발견하실 경우 버그 리포팅을 통해 Django개발에 도움을 주실 수 있습니다. 또한, 3rd-party-패키지의 경우에는 현재 Stable로 제공되는 릴리즈 버전보다는 호환성이 떨어질 수 있습니다."
 
-#: ../../../../sources/1.10/docs/intro/install.txt:71
+#: ../../../../sources/1.10/docs/intro/install.txt:70
 msgid ""
 "Always refer to the documentation that corresponds to the version of Django "
 "you're using!"
 msgstr "현재 사용하는 버전의 공식문서를 참고하세요."
 
-#: ../../../../sources/1.10/docs/intro/install.txt:74
+#: ../../../../sources/1.10/docs/intro/install.txt:73
 msgid ""
 "If you do either of the first two steps, keep an eye out for parts of the "
 "documentation marked **new in development version**. That phrase flags "
@@ -938,25 +937,25 @@ msgid ""
 " likely won't work with an official release."
 msgstr "여러분이 처음 두 단계중 하나를 실행한다면, 문서에서 **new in development version** 라고 표시된 부분을 주의해서 보세요. 그 구문 플래그는 Django 개발 버전에서만 사용가능하고, 공식 릴리즈에서는 작동하지 않을것을 알려주는 기능을 합니다."
 
-#: ../../../../sources/1.10/docs/intro/install.txt:81
+#: ../../../../sources/1.10/docs/intro/install.txt:80
 msgid "Verifying"
 msgstr "검토하기"
 
-#: ../../../../sources/1.10/docs/intro/install.txt:83
+#: ../../../../sources/1.10/docs/intro/install.txt:82
 msgid ""
 "To verify that Django can be seen by Python, type ``python`` from your "
 "shell. Then at the Python prompt, try to import Django:"
 msgstr "파이썬이 Djagno를 보여줄 수 있다는 것을 확인하기 위해서, 여러분의 쉘에서 ``python`` 이라고 입력하세요. 파이썬 프롬프트에서 Django를 임포트 해보세요."
 
-#: ../../../../sources/1.10/docs/intro/install.txt:92
+#: ../../../../sources/1.10/docs/intro/install.txt:91
 msgid "You may have another version of Django installed."
 msgstr "여러분은 다른 버전의 장고가 설치되어있을 수도 있습니다."
 
-#: ../../../../sources/1.10/docs/intro/install.txt:95
+#: ../../../../sources/1.10/docs/intro/install.txt:94
 msgid "That's it!"
 msgstr "끝입니다!"
 
-#: ../../../../sources/1.10/docs/intro/install.txt:97
+#: ../../../../sources/1.10/docs/intro/install.txt:96
 msgid ""
 "That's it -- you can now :doc:`move onto the tutorial </intro/tutorial01>`."
 msgstr "이게 끝입니다. 이제, :doc:`튜토리얼 </intro/tutorial01>` 을 시작해보세요."
@@ -1331,7 +1330,7 @@ msgid ""
 "intended for use in a Django project. An application may use common Django "
 "conventions, such as having ``models``, ``tests``, ``urls``, and ``views`` "
 "submodules."
-msgstr "Django *애플리케이션*은 Django 프로젝트에 사용하기 위한 파이썬 패키지일 뿐입니다. 애플리케이션은 ``models``, ``tests``, ``urls``, ``views`` 서브모듈들을 포함하고 있는 공통적인 Django 규칙을 이요할 수 있습니다."
+msgstr "Django *애플리케이션*\\ 은 Django 프로젝트에 사용하기 위한 파이썬 패키지일 뿐입니다. 애플리케이션은 ``models``, ``tests``, ``urls``, ``views`` 서브모듈들을 포함하고 있는 공통적인 Django 규칙을 이용할 수 있습니다."
 
 #: ../../../../sources/1.10/docs/intro/reusable-apps.txt:50
 msgid ""
@@ -3908,7 +3907,7 @@ msgstr "버그가 실제로 존재하는지 확인하기위해 Admin을 사용�
 
 #: ../../../../sources/1.10/docs/intro/tutorial05.txt:149
 msgid "Since things in the future are not 'recent', this is clearly wrong."
-msgstr "미래는 '최근(recent)'가 아니기 때문에 이는 분명히 틀린 말입니다."
+msgstr "미래는 '최근(recent)'이 아니기 때문에 이는 분명히 틀린 말입니다."
 
 #: ../../../../sources/1.10/docs/intro/tutorial05.txt:152
 msgid "Create a test to expose the bug"
@@ -3939,7 +3938,7 @@ msgid ""
 "with a method that creates a ``Question`` instance with a ``pub_date`` in "
 "the future. We then check the output of ``was_published_recently()`` - which"
 " *ought* to be False."
-msgstr "우리가 여기서 한 것은 미래로 설정된 ``pub_date``\\ 를 가진 ``Question``\\ 인스턴스를 생성하는 메소드를 가진 class:`django.test.TestCase` 서브 클래스를 생성 한 것입니다. 그런 다음 ``was_published_recently()``\\ 의 결과를 확인합니다. - 이는 *반드시* False가 되어야 합니다."
+msgstr "우리가 여기서 한 것은 미래로 설정된 ``pub_date``\\ 를 가진 ``Question``\\ 인스턴스를 생성하는 메소드를 가진 :class:`django.test.TestCase` 서브 클래스를 생성 한 것입니다. 그런 다음 ``was_published_recently()``\\ 의 결과를 확인합니다. - 이는 *반드시* False가 되어야 합니다."
 
 #: ../../../../sources/1.10/docs/intro/tutorial05.txt:191
 msgid "Running tests"
@@ -4179,7 +4178,7 @@ msgid ""
 "published are listed.  You don't want to have to do that *every single time "
 "you make any change that might affect this* - so let's also create a test, "
 "based on our :djadmin:`shell` session above."
-msgstr " runserver를 가동하고, 브라우저에 사이트를 로드하고, 과거와 미래의 날짜가 포함 된 ``Questions``\\를 작성하고, 게시 된 것만 나열되는 것이 예상대로 동작하니 이제 좋습니다. *여러분이 이것에 영향을 줄 수있는 변경을 할 때마다* 그렇게하지 않으려합니다 - 위의 :djadmin:`shell` 세션을 기반으로 테스트를 만들어 봅시다."
+msgstr " runserver를 가동하고, 브라우저에 사이트를 로드하고, 과거와 미래의 날짜가 포함 된 ``Questions``\\ 를 작성하고, 게시 된 것만 나열되는 것이 예상대로 동작하니 이제 좋습니다. *여러분이 이것에 영향을 줄 수있는 변경을 할 때마다* 그렇게하지 않으려합니다 - 위의 :djadmin:`shell` 세션을 기반으로 테스트를 만들어 봅시다."
 
 #: ../../../../sources/1.10/docs/intro/tutorial05.txt:435
 msgid "Add the following to ``polls/tests.py``:"
@@ -4210,7 +4209,7 @@ msgid ""
 "methods. In these examples, we use "
 ":meth:`~django.test.SimpleTestCase.assertContains()` and "
 ":meth:`~django.test.TransactionTestCase.assertQuerysetEqual()`."
-msgstr "``test_index_view_with_no_questions``\\ 는 질문을 작성하지 않지만, \"설문조사가 없습니다.\" 라는 메시지를 확인하고, ``latest_question_list``\\ 가 비어 있음을 확인합니다. :class:`django.test.TestCase` 클래스는 몇 가지 추가적인 선언 메소드를 제공합니다. 이 예제에서 우리는:meth:`~django.test.SimpleTestCase.assertContains()` 와 :meth:`~django.test.TransactionTestCase.assertQuerysetEqual()`\\ 을 사용합니다."
+msgstr "``test_index_view_with_no_questions``\\ 는 질문을 작성하지 않지만, \"설문조사가 없습니다.\" 라는 메시지를 확인하고, ``latest_question_list``\\ 가 비어 있음을 확인합니다. :class:`django.test.TestCase` 클래스는 몇 가지 추가적인 선언 메소드를 제공합니다. 이 예제에서 우리는 :meth:`~django.test.SimpleTestCase.assertContains()`\\ 와 :meth:`~django.test.TransactionTestCase.assertQuerysetEqual()`\\ 을 사용합니다."
 
 #: ../../../../sources/1.10/docs/intro/tutorial05.txt:528
 msgid ""
@@ -4547,7 +4546,7 @@ msgid ""
 "files/index>` and :doc:`the staticfiles reference "
 "</ref/contrib/staticfiles>`. :doc:`Deploying static files </howto/static-"
 "files/deployment>` discusses how to use static files on a real server."
-msgstr "지금까지 내용은 **기본**\\입니다. 프레임 워크에 포함된 설정 및 다른 것들에 대한 자세한 내용은 doc:`정적 파일 howto </howto/static-files/index>` 와 :doc:`정적파일 레퍼런스 </ref/contrib/staticfiles> '를 참조하십시오. :doc:`정적 파일 배포 </howto/static-files/deployment>`는 실제 서버에서 정적 파일을 사용하는 방법을 설명합니다."
+msgstr "지금까지 내용은 **기본**\\ 입니다. 프레임 워크에 포함된 설정 및 다른 것들에 대한 자세한 내용은 :doc:`정적 파일 howto </howto/static-files/index>` 와 :doc:`정적파일 레퍼런스 </ref/contrib/staticfiles>`\\ 를 참조하십시오. :doc:`정적 파일 배포 </howto/static-files/deployment>`\\ 는 실제 서버에서 정적 파일을 사용하는 방법을 설명합니다."
 
 #: ../../../../sources/1.10/docs/intro/tutorial06.txt:117
 msgid ""
@@ -4751,7 +4750,7 @@ msgstr "기본적으로 Django는 각 객체의 ``str()``\\ 을 표시합니다.
 msgid ""
 "Just for good measure, let's also include the ``was_published_recently()`` "
 "method from :doc:`Tutorial 2 </intro/tutorial02>`:"
-msgstr ":doc:`Tutorial 2 </intro/tutorial02>``\\ 에서 사용한  ``was_published_recently()``\\ 를 추가해봅시다:"
+msgstr ":doc:`튜토리얼 2장 </intro/tutorial02>`\\ 에서 사용한  ``was_published_recently()``\\ 를 추가해봅시다:"
 
 #: ../../../../sources/1.10/docs/intro/tutorial07.txt:214
 msgid "Now the question change list page looks like this:"
@@ -4880,7 +4879,7 @@ msgid ""
 "application’s template directory (e.g. ``polls/templates``) rather than the "
 "project’s (``templates``). We'll discuss in more detail in the "
 ":doc:`reusable apps tutorial </intro/reusable-apps>` *why* we do this."
-msgstr "정적 파일과 마찬가지로, 하나의 커다란 템플릿 디렉토리에 모든 템플릿을 함께 넣을 수 있습니다. 그렇게해도 완벽하게 잘 작동할것입니다. 그러나 특정 애플리케이션에 속한 템플릿은 프로젝트(``templates``)가 아닌 해당 애플리케이션의 템플릿 디렉토리 (예: ``polls/templates``)에 있어야합니다. 우리는 더 자세한 내용을:doc:`reusable apps tutorial </intro/reusable-apps>`\\ 에서 논의할 것입니다."
+msgstr "정적 파일과 마찬가지로, 하나의 커다란 템플릿 디렉토리에 모든 템플릿을 함께 넣을 수 있습니다. 그렇게해도 완벽하게 잘 작동할것입니다. 그러나 특정 애플리케이션에 속한 템플릿은 프로젝트(``templates``)가 아닌 해당 애플리케이션의 템플릿 디렉토리 (예: ``polls/templates``)에 있어야합니다. 우리는 더 자세한 내용을 :doc:`reusable apps tutorial </intro/reusable-apps>`\\ 에서 논의할 것입니다."
 
 #: ../../../../sources/1.10/docs/intro/tutorial07.txt:335
 msgid ""
@@ -4944,7 +4943,7 @@ msgid ""
 "Django automatically looks for a ``templates/`` subdirectory within each "
 "application package, for use as a fallback (don't forget that "
 "``django.contrib.admin`` is an application)."
-msgstr "그러나 :settings:`DIRS <TEMPLATES-DIRS>`\\ 가 기본설정으로 비어 있다면, 장고는 기본 관리자 템플릿을 어떻게 찾을까요? 그 해답은 :settings:`APP_DIRS <TEMPLATES-APP_DIRS>` 설정이 ``True``\\ 로 설정되어 있기 때문에 Django는 각 어플리케이션 패키지 내에서 ``templates/`` 서브 디렉토리를 자동으로 찾아서 대체하게 됩니다. (``django.contrib.admin``\\ 이 어플리케이션 임을 잊지 마십시오.)"
+msgstr "그러나 :setting:`DIRS <TEMPLATES-DIRS>`\\ 가 기본설정으로 비어 있다면, 장고는 기본 관리자 템플릿을 어떻게 찾을까요? 그 해답은 :setting:`APP_DIRS <TEMPLATES-APP_DIRS>` 설정이 ``True``\\ 로 설정되어 있기 때문에 Django는 각 어플리케이션 패키지 내에서 ``templates/`` 서브 디렉토리를 자동으로 찾아서 대체하게 됩니다. (``django.contrib.admin``\\ 이 어플리케이션 임을 잊지 마십시오.)"
 
 #: ../../../../sources/1.10/docs/intro/tutorial07.txt:386
 msgid ""

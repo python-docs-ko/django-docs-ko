@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-04 19:36-0600\n"
-"PO-Revision-Date: 2017-01-02 05:24+0000\n"
+"POT-Creation-Date: 2017-01-14 08:34-0600\n"
+"PO-Revision-Date: 2017-01-13 09:53+0000\n"
 "Last-Translator: Jannis Leidel <jannis@leidel.info>\n"
 "Language-Team: Korean (http://www.transifex.com/django/django-docs/language/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -8469,7 +8469,7 @@ msgid "You can delete using a JOIN in the query::"
 msgstr ""
 
 #: ../../../../sources/1.10/docs/topics/db/examples/one_to_one.txt:3
-#: ../../../../sources/1.10/docs/topics/db/models.txt:591
+#: ../../../../sources/1.10/docs/topics/db/models.txt:589
 #: ../../../../sources/1.10/docs/topics/db/queries.txt:1282
 msgid "One-to-one relationships"
 msgstr ""
@@ -8803,8 +8803,7 @@ msgstr ""
 msgid ""
 "If you override the ``get_queryset()`` method and filter out any rows, "
 "Django will return incorrect results. Don't do that. A manager that filters "
-"results in ``get_queryset()`` is not appropriate for use as a default "
-"manager."
+"results in ``get_queryset()`` is not appropriate for use as a base manager."
 msgstr ""
 
 #: ../../../../sources/1.10/docs/topics/db/managers.txt:238
@@ -9597,7 +9596,7 @@ msgid ""
 "or ``set()`` to create relationships::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:523
+#: ../../../../sources/1.10/docs/topics/db/models.txt:521
 msgid ""
 "Why? You can't just create a relationship between a ``Person`` and a "
 "``Group`` - you need to specify all the detail for the relationship required"
@@ -9608,7 +9607,7 @@ msgid ""
 "the intermediate model."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:531
+#: ../../../../sources/1.10/docs/topics/db/models.txt:529
 msgid ""
 "The :meth:`~django.db.models.fields.related.RelatedManager.remove` method is"
 " disabled for similar reasons. For example, if the custom through table "
@@ -9617,14 +9616,14 @@ msgid ""
 "information as to which intermediate model instance should be deleted::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:545
+#: ../../../../sources/1.10/docs/topics/db/models.txt:543
 msgid ""
 "However, the :meth:`~django.db.models.fields.related.RelatedManager.clear` "
 "method can be used to remove all many-to-many relationships for an "
 "instance::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:554
+#: ../../../../sources/1.10/docs/topics/db/models.txt:552
 msgid ""
 "Once you have established the many-to-many relationships by creating "
 "instances of your intermediate model, you can issue queries. Just as with "
@@ -9632,45 +9631,45 @@ msgid ""
 " many-to-many-related model::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:563
+#: ../../../../sources/1.10/docs/topics/db/models.txt:561
 msgid ""
 "As you are using an intermediate model, you can also query on its "
 "attributes::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:571
+#: ../../../../sources/1.10/docs/topics/db/models.txt:569
 msgid ""
 "If you need to access a membership's information you may do so by directly "
 "querying the ``Membership`` model::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:580
+#: ../../../../sources/1.10/docs/topics/db/models.txt:578
 msgid ""
 "Another way to access the same information is by querying the :ref:`many-to-"
 "many reverse relationship<m2m-reverse-relationships>` from a ``Person`` "
 "object::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:593
+#: ../../../../sources/1.10/docs/topics/db/models.txt:591
 msgid ""
 "To define a one-to-one relationship, use "
 ":class:`~django.db.models.OneToOneField`. You use it just like any other "
 "``Field`` type: by including it as a class attribute of your model."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:597
+#: ../../../../sources/1.10/docs/topics/db/models.txt:595
 msgid ""
 "This is most useful on the primary key of an object when that object "
 "\"extends\" another object in some way."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:600
+#: ../../../../sources/1.10/docs/topics/db/models.txt:598
 msgid ""
 ":class:`~django.db.models.OneToOneField` requires a positional argument: the"
 " class to which the model is related."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:603
+#: ../../../../sources/1.10/docs/topics/db/models.txt:601
 msgid ""
 "For example, if you were building a database of \"places\", you would build "
 "pretty standard stuff such as address, phone number, etc. in the database. "
@@ -9683,26 +9682,26 @@ msgid ""
 "one relation)."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:613
+#: ../../../../sources/1.10/docs/topics/db/models.txt:611
 msgid ""
 "As with :class:`~django.db.models.ForeignKey`, a :ref:`recursive "
 "relationship <recursive-relationships>` can be defined and :ref:`references "
 "to as-yet undefined models <lazy-relationships>` can be made."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:619
+#: ../../../../sources/1.10/docs/topics/db/models.txt:617
 msgid ""
 "See the :doc:`One-to-one relationship model example "
 "</topics/db/examples/one_to_one>` for a full example."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:622
+#: ../../../../sources/1.10/docs/topics/db/models.txt:620
 msgid ""
 ":class:`~django.db.models.OneToOneField` fields also accept an optional "
 ":attr:`~django.db.models.OneToOneField.parent_link` argument."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:625
+#: ../../../../sources/1.10/docs/topics/db/models.txt:623
 msgid ""
 ":class:`~django.db.models.OneToOneField` classes used to automatically "
 "become the primary key on a model. This is no longer true (although you can "
@@ -9711,45 +9710,45 @@ msgid ""
 ":class:`~django.db.models.OneToOneField` on a single model."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:632
+#: ../../../../sources/1.10/docs/topics/db/models.txt:630
 msgid "Models across files"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:634
+#: ../../../../sources/1.10/docs/topics/db/models.txt:632
 msgid ""
 "It's perfectly OK to relate a model to one from another app. To do this, "
 "import the related model at the top of the file where your model is defined."
 " Then, just refer to the other model class wherever needed. For example::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:651
+#: ../../../../sources/1.10/docs/topics/db/models.txt:649
 msgid "Field name restrictions"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:653
+#: ../../../../sources/1.10/docs/topics/db/models.txt:651
 msgid "Django places only two restrictions on model field names:"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:655
+#: ../../../../sources/1.10/docs/topics/db/models.txt:653
 msgid ""
 "A field name cannot be a Python reserved word, because that would result in "
 "a Python syntax error. For example::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:661
+#: ../../../../sources/1.10/docs/topics/db/models.txt:659
 msgid ""
 "A field name cannot contain more than one underscore in a row, due to the "
 "way Django's query lookup syntax works. For example::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:667
+#: ../../../../sources/1.10/docs/topics/db/models.txt:665
 msgid ""
 "These limitations can be worked around, though, because your field name "
 "doesn't necessarily have to match your database column name. See the "
 ":attr:`~Field.db_column` option."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:671
+#: ../../../../sources/1.10/docs/topics/db/models.txt:669
 msgid ""
 "SQL reserved words, such as ``join``, ``where`` or ``select``, *are* allowed"
 " as model field names, because Django escapes all database table names and "
@@ -9757,11 +9756,11 @@ msgid ""
 "your particular database engine."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:677
+#: ../../../../sources/1.10/docs/topics/db/models.txt:675
 msgid "Custom field types"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:679
+#: ../../../../sources/1.10/docs/topics/db/models.txt:677
 msgid ""
 "If one of the existing model fields cannot be used to fit your purposes, or "
 "if you wish to take advantage of some less common database column types, you"
@@ -9769,15 +9768,15 @@ msgid ""
 "is provided in :doc:`/howto/custom-model-fields`."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:687
+#: ../../../../sources/1.10/docs/topics/db/models.txt:685
 msgid "``Meta`` options"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:689
+#: ../../../../sources/1.10/docs/topics/db/models.txt:687
 msgid "Give your model metadata by using an inner ``class Meta``, like so::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:700
+#: ../../../../sources/1.10/docs/topics/db/models.txt:698
 msgid ""
 "Model metadata is \"anything that's not a field\", such as ordering options "
 "(:attr:`~Options.ordering`), database table name "
@@ -9787,21 +9786,21 @@ msgid ""
 "optional."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:706
+#: ../../../../sources/1.10/docs/topics/db/models.txt:704
 msgid ""
 "A complete list of all possible ``Meta`` options can be found in the "
 ":doc:`model option reference </ref/models/options>`."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:712
+#: ../../../../sources/1.10/docs/topics/db/models.txt:710
 msgid "Model attributes"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:721
+#: ../../../../sources/1.10/docs/topics/db/models.txt:719
 msgid "``objects``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:715
+#: ../../../../sources/1.10/docs/topics/db/models.txt:713
 msgid ""
 "The most important attribute of a model is the "
 ":class:`~django.db.models.Manager`. It's the interface through which "
@@ -9812,11 +9811,11 @@ msgid ""
 "model classes, not the model instances."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:726
+#: ../../../../sources/1.10/docs/topics/db/models.txt:724
 msgid "Model methods"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:728
+#: ../../../../sources/1.10/docs/topics/db/models.txt:726
 msgid ""
 "Define custom methods on a model to add custom \"row-level\" functionality "
 "to your objects. Whereas :class:`~django.db.models.Manager` methods are "
@@ -9824,21 +9823,21 @@ msgid ""
 "particular model instance."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:732
+#: ../../../../sources/1.10/docs/topics/db/models.txt:730
 msgid ""
 "This is a valuable technique for keeping business logic in one place -- the "
 "model."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:735
+#: ../../../../sources/1.10/docs/topics/db/models.txt:733
 msgid "For example, this model has a few custom methods::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:759
+#: ../../../../sources/1.10/docs/topics/db/models.txt:757
 msgid "The last method in this example is a :term:`property`."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:761
+#: ../../../../sources/1.10/docs/topics/db/models.txt:759
 msgid ""
 "The :doc:`model instance reference </ref/models/instances>` has a complete "
 "list of :ref:`methods automatically given to each model <model-instance-"
@@ -9847,11 +9846,11 @@ msgid ""
 "want to define:"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:774
+#: ../../../../sources/1.10/docs/topics/db/models.txt:772
 msgid ":meth:`~Model.__str__` (Python 3)"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:767
+#: ../../../../sources/1.10/docs/topics/db/models.txt:765
 msgid ""
 "A Python \"magic method\" that returns a unicode \"representation\" of any "
 "object. This is what Python and Django will use whenever a model instance "
@@ -9860,42 +9859,42 @@ msgid ""
 "admin."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:773
+#: ../../../../sources/1.10/docs/topics/db/models.txt:771
 msgid ""
 "You'll always want to define this method; the default isn't very helpful at "
 "all."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:777
+#: ../../../../sources/1.10/docs/topics/db/models.txt:775
 msgid "``__unicode__()`` (Python 2)"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:777
+#: ../../../../sources/1.10/docs/topics/db/models.txt:775
 msgid "Python 2 equivalent of ``__str__()``."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:785
+#: ../../../../sources/1.10/docs/topics/db/models.txt:783
 msgid ":meth:`~Model.get_absolute_url`"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:780
+#: ../../../../sources/1.10/docs/topics/db/models.txt:778
 msgid ""
 "This tells Django how to calculate the URL for an object. Django uses this "
 "in its admin interface, and any time it needs to figure out a URL for an "
 "object."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:784
+#: ../../../../sources/1.10/docs/topics/db/models.txt:782
 msgid ""
 "Any object that has a URL that uniquely identifies it should define this "
 "method."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:790
+#: ../../../../sources/1.10/docs/topics/db/models.txt:788
 msgid "Overriding predefined model methods"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:792
+#: ../../../../sources/1.10/docs/topics/db/models.txt:790
 msgid ""
 "There's another set of :ref:`model methods <model-instance-methods>` that "
 "encapsulate a bunch of database behavior that you'll want to customize. In "
@@ -9903,24 +9902,24 @@ msgid ""
 ":meth:`~Model.delete` work."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:797
+#: ../../../../sources/1.10/docs/topics/db/models.txt:795
 msgid ""
 "You're free to override these methods (and any other model method) to alter "
 "behavior."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:800
+#: ../../../../sources/1.10/docs/topics/db/models.txt:798
 msgid ""
 "A classic use-case for overriding the built-in methods is if you want "
 "something to happen whenever you save an object. For example (see "
 ":meth:`~Model.save` for documentation of the parameters it accepts)::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:815
+#: ../../../../sources/1.10/docs/topics/db/models.txt:813
 msgid "You can also prevent saving::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:829
+#: ../../../../sources/1.10/docs/topics/db/models.txt:827
 msgid ""
 "It's important to remember to call the superclass method -- that's that "
 "``super(Blog, self).save(*args, **kwargs)`` business -- to ensure that the "
@@ -9929,7 +9928,7 @@ msgid ""
 "get touched."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:835
+#: ../../../../sources/1.10/docs/topics/db/models.txt:833
 msgid ""
 "It's also important that you pass through the arguments that can be passed "
 "to the model method -- that's what the ``*args, **kwargs`` bit does. Django "
@@ -9939,11 +9938,11 @@ msgid ""
 "those arguments when they are added."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:842
+#: ../../../../sources/1.10/docs/topics/db/models.txt:840
 msgid "Overridden model methods are not called on bulk operations"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:844
+#: ../../../../sources/1.10/docs/topics/db/models.txt:842
 msgid ""
 "Note that the :meth:`~Model.delete()` method for an object is not "
 "necessarily called when :ref:`deleting objects in bulk using a QuerySet "
@@ -9953,7 +9952,7 @@ msgid ""
 "and/or :data:`~django.db.models.signals.post_delete` signals."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:852
+#: ../../../../sources/1.10/docs/topics/db/models.txt:850
 msgid ""
 "Unfortunately, there isn't a workaround when "
 ":meth:`creating<django.db.models.query.QuerySet.bulk_create>` or "
@@ -9963,22 +9962,22 @@ msgid ""
 ":data:`~django.db.models.signals.post_save` are called."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:860
+#: ../../../../sources/1.10/docs/topics/db/models.txt:858
 msgid "Executing custom SQL"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:862
+#: ../../../../sources/1.10/docs/topics/db/models.txt:860
 msgid ""
 "Another common pattern is writing custom SQL statements in model methods and"
 " module-level methods. For more details on using raw SQL, see the "
 "documentation on :doc:`using raw SQL</topics/db/sql>`."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:869
+#: ../../../../sources/1.10/docs/topics/db/models.txt:867
 msgid "Model inheritance"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:871
+#: ../../../../sources/1.10/docs/topics/db/models.txt:869
 msgid ""
 "Model inheritance in Django works almost identically to the way normal class"
 " inheritance works in Python, but the basics at the beginning of the page "
@@ -9986,7 +9985,7 @@ msgid ""
 ":class:`django.db.models.Model`."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:876
+#: ../../../../sources/1.10/docs/topics/db/models.txt:874
 msgid ""
 "The only decision you have to make is whether you want the parent models to "
 "be models in their own right (with their own database tables), or if the "
@@ -9994,11 +9993,11 @@ msgid ""
 "through the child models."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:881
+#: ../../../../sources/1.10/docs/topics/db/models.txt:879
 msgid "There are three styles of inheritance that are possible in Django."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:883
+#: ../../../../sources/1.10/docs/topics/db/models.txt:881
 msgid ""
 "Often, you will just want to use the parent class to hold information that "
 "you don't want to have to type out for each child model. This class isn't "
@@ -10006,25 +10005,25 @@ msgid ""
 " you're after."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:887
+#: ../../../../sources/1.10/docs/topics/db/models.txt:885
 msgid ""
 "If you're subclassing an existing model (perhaps something from another "
 "application entirely) and want each model to have its own database table, "
 ":ref:`multi-table-inheritance` is the way to go."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:890
+#: ../../../../sources/1.10/docs/topics/db/models.txt:888
 msgid ""
 "Finally, if you only want to modify the Python-level behavior of a model, "
 "without changing the models fields in any way, you can use :ref:`proxy-"
 "models`."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:897
+#: ../../../../sources/1.10/docs/topics/db/models.txt:895
 msgid "Abstract base classes"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:899
+#: ../../../../sources/1.10/docs/topics/db/models.txt:897
 msgid ""
 "Abstract base classes are useful when you want to put some common "
 "information into a number of other models. You write your base class and put"
@@ -10035,12 +10034,12 @@ msgid ""
 "same name as those in the child (and Django will raise an exception)."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:908
+#: ../../../../sources/1.10/docs/topics/db/models.txt:906
 #: ../../../../sources/1.10/docs/topics/i18n/translation.txt:697
 msgid "An example::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:922
+#: ../../../../sources/1.10/docs/topics/db/models.txt:920
 msgid ""
 "The ``Student`` model will have three fields: ``name``, ``age`` and "
 "``home_group``. The ``CommonInfo`` model cannot be used as a normal Django "
@@ -10048,7 +10047,7 @@ msgid ""
 "table or have a manager, and cannot be instantiated or saved directly."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:927
+#: ../../../../sources/1.10/docs/topics/db/models.txt:925
 msgid ""
 "For many uses, this type of model inheritance will be exactly what you want."
 " It provides a way to factor out common information at the Python level, "
@@ -10056,11 +10055,11 @@ msgid ""
 " level."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:932
+#: ../../../../sources/1.10/docs/topics/db/models.txt:930
 msgid "``Meta`` inheritance"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:934
+#: ../../../../sources/1.10/docs/topics/db/models.txt:932
 msgid ""
 "When an abstract base class is created, Django makes any :ref:`Meta <meta-"
 "options>` inner class you declared in the base class available as an "
@@ -10070,7 +10069,7 @@ msgid ""
 " can subclass it. For example::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:953
+#: ../../../../sources/1.10/docs/topics/db/models.txt:951
 msgid ""
 "Django does make one adjustment to the :ref:`Meta <meta-options>` class of "
 "an abstract base class: before installing the :ref:`Meta <meta-options>` "
@@ -10081,7 +10080,7 @@ msgid ""
 "``abstract=True`` each time."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:960
+#: ../../../../sources/1.10/docs/topics/db/models.txt:958
 msgid ""
 "Some attributes won't make sense to include in the :ref:`Meta <meta-"
 "options>` class of an abstract base class. For example, including "
@@ -10090,11 +10089,11 @@ msgid ""
 "table, which is almost certainly not what you want."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:968
+#: ../../../../sources/1.10/docs/topics/db/models.txt:966
 msgid "Be careful with ``related_name`` and ``related_query_name``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:970
+#: ../../../../sources/1.10/docs/topics/db/models.txt:968
 msgid ""
 "If you are using :attr:`~django.db.models.ForeignKey.related_name` or "
 ":attr:`~django.db.models.ForeignKey.related_query_name` on a ``ForeignKey`` "
@@ -10106,7 +10105,7 @@ msgid ""
 ":attr:`~django.db.models.ForeignKey.related_query_name`) each time."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:979
+#: ../../../../sources/1.10/docs/topics/db/models.txt:977
 msgid ""
 "To work around this problem, when you are using "
 ":attr:`~django.db.models.ForeignKey.related_name` or "
@@ -10115,13 +10114,13 @@ msgid ""
 "``'%(class)s'``."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:985
+#: ../../../../sources/1.10/docs/topics/db/models.txt:983
 msgid ""
 "``'%(class)s'`` is replaced by the lower-cased name of the child class that "
 "the field is used in."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:987
+#: ../../../../sources/1.10/docs/topics/db/models.txt:985
 msgid ""
 "``'%(app_label)s'`` is replaced by the lower-cased name of the app the child"
 " class is contained within. Each installed application name must be unique "
@@ -10129,15 +10128,15 @@ msgid ""
 " resulting name will end up being different."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:992
+#: ../../../../sources/1.10/docs/topics/db/models.txt:990
 msgid "For example, given an app ``common/models.py``::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1012
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1010
 msgid "Along with another app ``rare/models.py``::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1019
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1017
 msgid ""
 "The reverse name of the ``common.ChildA.m2m`` field will be "
 "``common_childa_related`` and the reverse query name will be "
@@ -10151,7 +10150,7 @@ msgid ""
 "system checks (or run :djadmin:`migrate`)."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1030
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1028
 msgid ""
 "If you don't specify a :attr:`~django.db.models.ForeignKey.related_name` "
 "attribute for a field in an abstract base class, the default reverse name "
@@ -10163,17 +10162,17 @@ msgid ""
 "``ChildA`` case and ``childb_set`` for the ``ChildB`` field."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1041
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1039
 msgid ""
 "Interpolation of  ``'%(app_label)s'`` and ``'%(class)s'`` for "
 "``related_query_name`` was added."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1047
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1045
 msgid "Multi-table inheritance"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1049
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1047
 msgid ""
 "The second type of model inheritance supported by Django is when each model "
 "in the hierarchy is a model all by itself. Each model corresponds to its own"
@@ -10183,21 +10182,21 @@ msgid ""
 ":class:`~django.db.models.OneToOneField`). For example::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1066
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1064
 msgid ""
 "All of the fields of ``Place`` will also be available in ``Restaurant``, "
 "although the data will reside in a different database table. So these are "
 "both possible::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1073
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1071
 msgid ""
 "If you have a ``Place`` that is also a ``Restaurant``, you can get from the "
 "``Place`` object to the ``Restaurant`` object by using the lower-case "
 "version of the model name::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1082
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1080
 msgid ""
 "However, if ``p`` in the above example was *not* a ``Restaurant`` (it had "
 "been created directly as a ``Place`` object or was the parent of some other "
@@ -10205,11 +10204,11 @@ msgid ""
 "``Restaurant.DoesNotExist`` exception."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1090
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1088
 msgid "``Meta`` and multi-table inheritance"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1092
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1090
 msgid ""
 "In the multi-table inheritance situation, it doesn't make sense for a child "
 "class to inherit from its parent's :ref:`Meta <meta-options>` class. All the"
@@ -10219,7 +10218,7 @@ msgid ""
 "base class doesn't exist in its own right)."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1099
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1097
 msgid ""
 "So a child model does not have access to its parent's :ref:`Meta <meta-"
 "options>` class. However, there are a few limited cases where the child "
@@ -10229,17 +10228,17 @@ msgid ""
 "these from its parent."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1106
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1104
 msgid ""
 "If the parent has an ordering and you don't want the child to have any "
 "natural ordering, you can explicitly disable it::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1116
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1114
 msgid "Inheritance and reverse relations"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1118
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1116
 msgid ""
 "Because multi-table inheritance uses an implicit "
 ":class:`~django.db.models.OneToOneField` to link the child and the parent, "
@@ -10253,27 +10252,27 @@ msgid ""
 "each such field. If you forget, Django will raise a validation error."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1130
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1128
 msgid ""
 "For example, using the above ``Place`` class again, let's create another "
 "subclass with a :class:`~django.db.models.ManyToManyField`::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1136
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1134
 msgid "This results in the error::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1144
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1142
 msgid ""
 "Adding ``related_name`` to the ``customers`` field as follows would resolve "
 "the error: ``models.ManyToManyField(Place, related_name='provider')``."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1148
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1146
 msgid "Specifying the parent link field"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1150
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1148
 msgid ""
 "As mentioned, Django will automatically create a "
 ":class:`~django.db.models.OneToOneField` linking your child class back to "
@@ -10284,11 +10283,11 @@ msgid ""
 " the link back to the parent class."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1161
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1159
 msgid "Proxy models"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1163
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1161
 msgid ""
 "When using :ref:`multi-table inheritance <multi-table-inheritance>`, a new "
 "database table is created for each subclass of a model. This is usually the "
@@ -10298,7 +10297,7 @@ msgid ""
 "default manager, or add a new method."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1170
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1168
 msgid ""
 "This is what proxy model inheritance is for: creating a *proxy* for the "
 "original model. You can create, delete and update instances of the proxy "
@@ -10308,27 +10307,27 @@ msgid ""
 "to alter the original."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1177
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1175
 msgid ""
 "Proxy models are declared like normal models. You tell Django that it's a "
 "proxy model by setting the :attr:`~django.db.models.Options.proxy` attribute"
 " of the ``Meta`` class to ``True``."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1181
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1179
 msgid ""
 "For example, suppose you want to add a method to the ``Person`` model. You "
 "can do it like this::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1197
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1195
 msgid ""
 "The ``MyPerson`` class operates on the same database table as its parent "
 "``Person`` class. In particular, any new instances of ``Person`` will also "
 "be accessible through ``MyPerson``, and vice-versa::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1205
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1203
 msgid ""
 "You could also use a proxy model to define a different default ordering on a"
 " model. You might not always want to order the ``Person`` model, but "
@@ -10336,23 +10335,23 @@ msgid ""
 "is easy::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1214
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1212
 msgid ""
 "Now normal ``Person`` queries will be unordered and ``OrderedPerson`` "
 "queries will be ordered by ``last_name``."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1217
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1215
 msgid ""
 "Proxy models inherit ``Meta`` attributes :ref:`in the same way as regular "
 "models <meta-and-multi-table-inheritance>`."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1221
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1219
 msgid "``QuerySet``\\s still return the model that was requested"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1223
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1221
 msgid ""
 "There is no way to have Django return, say, a ``MyPerson`` object whenever "
 "you query for ``Person`` objects. A queryset for ``Person`` objects will "
@@ -10363,11 +10362,11 @@ msgid ""
 "something of your own creation."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1232
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1230
 msgid "Base class restrictions"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1234
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1232
 msgid ""
 "A proxy model must inherit from exactly one non-abstract model class. You "
 "can't inherit from multiple non-abstract models as the proxy model doesn't "
@@ -10377,17 +10376,17 @@ msgid ""
 "any number of proxy models that share a common non-abstract parent class."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1243
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1241
 msgid ""
 "In earlier versions, a proxy model couldn't inherit more than one proxy "
 "model that shared the same parent class."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1247
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1245
 msgid "Proxy model managers"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1249
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1247
 msgid ""
 "If you don't specify any model managers on a proxy model, it inherits the "
 "managers from its model parents. If you define a manager on the proxy model,"
@@ -10395,13 +10394,13 @@ msgid ""
 "classes will still be available."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1254
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1252
 msgid ""
 "Continuing our example from above, you could change the default manager used"
 " when you query the ``Person`` model like this::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1269
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1267
 msgid ""
 "If you wanted to add a new manager to the Proxy, without replacing the "
 "existing default, you can use the techniques described in the :ref:`custom "
@@ -10410,24 +10409,24 @@ msgid ""
 "class::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1285
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1283
 msgid ""
 "You probably won't need to do this very often, but, when you do, it's "
 "possible."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1291
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1289
 msgid "Differences between proxy inheritance and unmanaged models"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1293
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1291
 msgid ""
 "Proxy model inheritance might look fairly similar to creating an unmanaged "
 "model, using the :attr:`~django.db.models.Options.managed` attribute on a "
 "model's ``Meta`` class."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1297
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1295
 msgid ""
 "With careful setting of :attr:`Meta.db_table "
 "<django.db.models.Options.db_table>` you could create an unmanaged model "
@@ -10436,18 +10435,18 @@ msgid ""
 "synchronized if you make any changes."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1303
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1301
 msgid ""
 "On the other hand, proxy models are intended to behave exactly like the "
 "model they are proxying for. They are always in sync with the parent model "
 "since they directly inherit its fields and managers."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1307
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1305
 msgid "The general rules are:"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1309
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1307
 msgid ""
 "If you are mirroring an existing model or database table and don't want all "
 "the original database table columns, use ``Meta.managed=False``. That option"
@@ -10455,7 +10454,7 @@ msgid ""
 "control of Django."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1313
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1311
 msgid ""
 "If you are wanting to change the Python-only behavior of a model, but keep "
 "all the same fields as in the original, use ``Meta.proxy=True``. This sets "
@@ -10463,11 +10462,11 @@ msgid ""
 "of the original model when data is saved."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1321
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1319
 msgid "Multiple inheritance"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1323
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1321
 msgid ""
 "Just as with Python's subclassing, it's possible for a Django model to "
 "inherit from multiple parent models. Keep in mind that normal Python name "
@@ -10478,7 +10477,7 @@ msgid ""
 " be ignored."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1330
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1328
 msgid ""
 "Generally, you won't need to inherit from multiple parents. The main use-"
 "case where this is useful is for \"mix-in\" classes: adding a particular "
@@ -10488,23 +10487,23 @@ msgid ""
 "information is coming from."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1337
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1335
 msgid ""
 "Note that inheriting from multiple models that have a common ``id`` primary "
 "key field will raise an error. To properly use multiple inheritance, you can"
 " use an explicit :class:`~django.db.models.AutoField` in the base models::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1352
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1350
 msgid ""
 "Or use a common ancestor to hold the :class:`~django.db.models.AutoField`::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1367
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1365
 msgid "Field name \"hiding\" is not permitted"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1369
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1367
 msgid ""
 "In normal Python class inheritance, it is permissible for a child class to "
 "override any attribute from the parent class. In Django, this isn't usually "
@@ -10513,18 +10512,18 @@ msgid ""
 "attribute called ``author`` in any class that inherits from that base class."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1375
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1373
 msgid ""
 "This restriction doesn't apply to model fields inherited from an abstract "
 "model. Such fields may be overridden with another field or value, or be "
 "removed by setting ``field_name = None``."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1381
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1379
 msgid "The ability to override abstract fields was added."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1385
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1383
 msgid ""
 "Model managers are inherited from abstract base classes. Overriding an "
 "inherited field which is referenced by an inherited "
@@ -10532,7 +10531,7 @@ msgid ""
 "managers and model inheritance <custom-managers-and-inheritance>`."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1392
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1390
 msgid ""
 "Some fields define extra attributes on the model, e.g. a "
 ":class:`~django.db.models.ForeignKey` defines an extra attribute with "
@@ -10540,13 +10539,13 @@ msgid ""
 "``related_query_name`` on the foreign model."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1397
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1395
 msgid ""
 "These extra attributes cannot be overridden unless the field that defines it"
 " is changed or removed so that it no longer defines the extra attribute."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1400
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1398
 msgid ""
 "Overriding fields in a parent model leads to difficulties in areas such as "
 "initializing new instances (specifying which field is being initialized in "
@@ -10556,7 +10555,7 @@ msgid ""
 "inheritance isn't arbitrary."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1407
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1405
 msgid ""
 "This restriction only applies to attributes which are "
 ":class:`~django.db.models.Field` instances. Normal Python attributes can be "
@@ -10567,48 +10566,48 @@ msgid ""
 "database tables)."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1415
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1413
 msgid ""
 "Django will raise a :exc:`~django.core.exceptions.FieldError` if you "
 "override any model field in any ancestor model."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1419
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1417
 msgid "Organizing models in a package"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1421
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1419
 msgid ""
 "The :djadmin:`manage.py startapp <startapp>` command creates an application "
 "structure that includes a ``models.py`` file. If you have many models, "
 "organizing them in separate files may be useful."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1425
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1423
 msgid ""
 "To do so, create a ``models`` package. Remove ``models.py`` and create a "
 "``myapp/models/`` directory with an ``__init__.py`` file and the files to "
 "store your models. You must import the models in the ``__init__.py`` file."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1429
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1427
 msgid ""
 "For example, if you had ``organic.py`` and ``synthetic.py`` in the "
 "``models`` directory:"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1438
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1436
 msgid ""
 "Explicitly importing each model rather than using ``from .models import *`` "
 "has the advantages of not cluttering the namespace, making code more "
 "readable, and keeping code analysis tools useful."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1445
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1443
 msgid ":doc:`The Models Reference </ref/models/index>`"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/db/models.txt:1445
+#: ../../../../sources/1.10/docs/topics/db/models.txt:1443
 msgid ""
 "Covers all the model related APIs including model fields, related objects, "
 "and ``QuerySet``."
@@ -26262,11 +26261,11 @@ msgid ""
 "``pip install Django`` at the shell prompt."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/install.txt:185
+#: ../../../../sources/1.10/docs/topics/install.txt:187
 msgid "Installing a distribution-specific package"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/install.txt:187
+#: ../../../../sources/1.10/docs/topics/install.txt:189
 msgid ""
 "Check the :doc:`distribution specific notes </misc/distributions>` to see if"
 " your platform/distribution provides official Django packages/installers. "
@@ -26275,15 +26274,15 @@ msgid ""
 " will rarely contain the latest release of Django."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/install.txt:196
+#: ../../../../sources/1.10/docs/topics/install.txt:198
 msgid "Installing the development version"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/install.txt:198
+#: ../../../../sources/1.10/docs/topics/install.txt:200
 msgid "Tracking Django development"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/install.txt:200
+#: ../../../../sources/1.10/docs/topics/install.txt:202
 msgid ""
 "If you decide to use the latest development version of Django, you'll want "
 "to pay close attention to `the development timeline`_, and you'll want to "
@@ -26294,27 +26293,27 @@ msgid ""
 "necessary changes are documented in the release notes.)"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/install.txt:211
+#: ../../../../sources/1.10/docs/topics/install.txt:213
 msgid ""
 "If you'd like to be able to update your Django code occasionally with the "
 "latest bug fixes and improvements, follow these instructions:"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/install.txt:214
+#: ../../../../sources/1.10/docs/topics/install.txt:216
 msgid ""
 "Make sure that you have Git_ installed and that you can run its commands "
 "from a shell. (Enter ``git help`` at a shell prompt to test this.)"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/install.txt:217
+#: ../../../../sources/1.10/docs/topics/install.txt:219
 msgid "Check out Django's main development branch like so:"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/install.txt:223
+#: ../../../../sources/1.10/docs/topics/install.txt:225
 msgid "This will create a directory ``django`` in your current directory."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/install.txt:225
+#: ../../../../sources/1.10/docs/topics/install.txt:227
 msgid ""
 "Make sure that the Python interpreter can load Django's code. The most "
 "convenient way to do this is to use virtualenv_, virtualenvwrapper_, and "
@@ -26322,18 +26321,18 @@ msgid ""
 "how to create a virtualenv on Python 3."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/install.txt:230
+#: ../../../../sources/1.10/docs/topics/install.txt:232
 msgid ""
 "After setting up and activating the virtualenv, run the following command:"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/install.txt:236
+#: ../../../../sources/1.10/docs/topics/install.txt:238
 msgid ""
 "This will make Django's code importable, and will also make the ``django-"
 "admin`` utility command available. In other words, you're all set!"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/topics/install.txt:240
+#: ../../../../sources/1.10/docs/topics/install.txt:242
 msgid ""
 "When you want to update your copy of the Django source code, just run the "
 "command ``git pull`` from within the ``django`` directory. When you do this,"
@@ -26784,7 +26783,7 @@ msgstr ""
 
 #: ../../../../sources/1.10/docs/topics/logging.txt:385
 msgid ""
-"``console``, a StreamHandler, which will print any ``DEBUG`` (or higher) "
+"``console``, a StreamHandler, which will print any ``INFO`` (or higher) "
 "message to stderr. This handler uses the ``simple`` output format."
 msgstr ""
 

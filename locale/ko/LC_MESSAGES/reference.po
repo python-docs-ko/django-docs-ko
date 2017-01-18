@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-04 19:36-0600\n"
-"PO-Revision-Date: 2017-01-05 09:25+0000\n"
+"POT-Creation-Date: 2017-01-14 08:34-0600\n"
+"PO-Revision-Date: 2017-01-15 08:21+0000\n"
 "Last-Translator: Jannis Leidel <jannis@leidel.info>\n"
 "Language-Team: Korean (http://www.transifex.com/django/django-docs/language/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -33304,18 +33304,30 @@ msgid ""
 "from field to field.)"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:96
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:95
+msgid ""
+"Widgets of required form fields have the ``required`` HTML attribute. Set "
+"the :attr:`Form.use_required_attribute` attribute to ``False`` to disable "
+"it. The ``required`` attribute isn't included on forms of formsets because "
+"the browser validation may not be correct when adding and deleting formsets."
+msgstr ""
+
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:102
+msgid "Support for the ``required`` HTML attribute was added."
+msgstr ""
+
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:105
 #: ../../../../sources/1.10/docs/ref/models/options.txt:473
 msgid "``label``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:100
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:109
 msgid ""
 "The ``label`` argument lets you specify the \"human-friendly\" label for "
 "this field. This is used when the ``Field`` is displayed in a ``Form``."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:103
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:112
 msgid ""
 "As explained in \"Outputting forms as HTML\" above, the default label for a "
 "``Field`` is generated from the field name by converting all underscores to "
@@ -33323,90 +33335,90 @@ msgid ""
 "behavior doesn't result in an adequate label."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:108
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:117
 msgid ""
 "Here's a full example ``Form`` that implements ``label`` for two of its "
 "fields. We've specified ``auto_id=False`` to simplify the output::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:123
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:132
 msgid "``label_suffix``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:127
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:136
 msgid ""
 "The ``label_suffix`` argument lets you override the form's "
 ":attr:`~django.forms.Form.label_suffix` on a per-field basis::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:141
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:150
 msgid "``initial``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:145
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:154
 msgid ""
 "The ``initial`` argument lets you specify the initial value to use when "
 "rendering this ``Field`` in an unbound ``Form``."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:148
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:157
 msgid ""
 "To specify dynamic initial data, see the :attr:`Form.initial` parameter."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:150
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:159
 msgid ""
 "The use-case for this is when you want to display an \"empty\" form in which"
 " a field is initialized to a particular value. For example::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:164
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:173
 msgid ""
 "You may be thinking, why not just pass a dictionary of the initial values as"
 " data when displaying the form? Well, if you do that, you'll trigger "
 "validation, and the HTML output will include any validation errors::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:179
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:188
 msgid ""
 "This is why ``initial`` values are only displayed for unbound forms. For "
 "bound forms, the HTML output will use the bound data."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:182
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:191
 msgid ""
 "Also note that ``initial`` values are *not* used as \"fallback\" data in "
 "validation if a particular field's value is not given. ``initial`` values "
 "are *only* intended for initial form display::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:198
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:207
 msgid "Instead of a constant, you can also pass any callable::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:206
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:215
 msgid ""
 "The callable will be evaluated only when the unbound form is displayed, not "
 "when it is defined."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:209
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:218
 msgid "``widget``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:213
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:222
 msgid ""
 "The ``widget`` argument lets you specify a ``Widget`` class to use when "
 "rendering this ``Field``. See :doc:`/ref/forms/widgets` for more "
 "information."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:217
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:226
 #: ../../../../sources/1.10/docs/ref/models/fields.txt:256
 msgid "``help_text``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:221
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:230
 msgid ""
 "The ``help_text`` argument lets you specify descriptive text for this "
 "``Field``. If you provide ``help_text``, it will be displayed next to the "
@@ -33414,24 +33426,24 @@ msgid ""
 "methods (e.g., ``as_ul()``)."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:226
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:235
 msgid ""
 "Like the model field's :attr:`~django.db.models.Field.help_text`, this value"
 " isn't HTML-escaped in automatically-generated forms."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:229
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:238
 msgid ""
 "Here's a full example ``Form`` that implements ``help_text`` for two of its "
 "fields. We've specified ``auto_id=False`` to simplify the output::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:256
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:265
 #: ../../../../sources/1.10/docs/ref/models/fields.txt:243
 msgid "``error_messages``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:260
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:269
 msgid ""
 "The ``error_messages`` argument lets you override the default messages that "
 "the field will raise. Pass in a dictionary with keys matching the error "
@@ -33439,54 +33451,54 @@ msgid ""
 "message::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:271
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:280
 msgid "And here is a custom error message::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:279
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:288
 msgid ""
 "In the `built-in Field classes`_ section below, each ``Field`` defines the "
 "error message keys it uses."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:283
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:292
 #: ../../../../sources/1.10/docs/ref/models/fields.txt:362
 msgid "``validators``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:287
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:296
 msgid ""
 "The ``validators`` argument lets you provide a list of validation functions "
 "for this field."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:290
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:299
 msgid ""
 "See the :doc:`validators documentation </ref/validators>` for more "
 "information."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:293
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:302
 msgid "``localize``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:297
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:306
 msgid ""
 "The ``localize`` argument enables the localization of form data input, as "
 "well as the rendered output."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:300
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:309
 msgid ""
 "See the :doc:`format localization </topics/i18n/formatting>` documentation "
 "for more information."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:304
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:313
 msgid "``disabled``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:310
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:319
 msgid ""
 "The ``disabled`` boolean argument, when set to ``True``, disables a form "
 "field using the ``disabled`` HTML attribute so that it won't be editable by "
@@ -33495,71 +33507,71 @@ msgid ""
 "data."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:316
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:325
 msgid "Checking if the field data has changed"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:319
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:328
 msgid "``has_changed()``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:323
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:332
 msgid ""
 "The ``has_changed()`` method is used to determine if the field value has "
 "changed from the initial value. Returns ``True`` or ``False``."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:326
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:335
 msgid ""
 "See the :class:`Form.has_changed()` documentation for more information."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:331
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:340
 msgid "Built-in ``Field`` classes"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:333
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:342
 msgid ""
 "Naturally, the ``forms`` library comes with a set of ``Field`` classes that "
 "represent common validation needs. This section documents each built-in "
 "field."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:336
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:345
 msgid ""
 "For each field, we describe the default widget used if you don't specify "
 "``widget``. We also specify the value returned when you provide an empty "
 "value (see the section on ``required`` above to understand what that means)."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:341
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:350
 #: ../../../../sources/1.10/docs/ref/models/fields.txt:430
 msgid "``BooleanField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:345
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:354
 msgid "Default widget: :class:`CheckboxInput`"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:346
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:355
 msgid "Empty value: ``False``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:347
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:356
 msgid "Normalizes to: A Python ``True`` or ``False`` value."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:348
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:357
 msgid ""
 "Validates that the value is ``True`` (e.g. the check box is checked) if the "
 "field has ``required=True``."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:350
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:359
 msgid "Error message keys: ``required``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:354
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:363
 msgid ""
 "Since all ``Field`` subclasses have ``required=True`` by default, the "
 "validation condition here is important. If you want to include a boolean in "
@@ -33568,110 +33580,110 @@ msgid ""
 "creating the ``BooleanField``."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:361
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:370
 #: ../../../../sources/1.10/docs/ref/models/fields.txt:446
 msgid "``CharField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:365
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:560
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:737
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:819
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:848
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:872
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:914
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:930
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:958
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:374
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:569
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:746
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:828
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:857
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:881
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:923
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:939
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:967
 msgid "Default widget: :class:`TextInput`"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:366
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:393
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:576
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:738
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:820
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:849
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:897
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:915
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:931
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:959
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:375
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:402
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:585
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:747
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:829
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:858
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:906
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:924
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:940
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:968
 msgid "Empty value: ``''`` (an empty string)"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:367
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:394
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:577
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:821
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:850
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:898
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:932
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:376
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:403
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:586
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:830
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:859
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:907
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:941
 msgid "Normalizes to: A Unicode object."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:368
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:377
 msgid ""
 "Validates ``max_length`` or ``min_length``, if they are provided. Otherwise,"
 " all inputs are valid."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:370
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:379
 msgid "Error message keys: ``required``, ``max_length``, ``min_length``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:372
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:381
 msgid "Has three optional arguments for validation:"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:377
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:386
 msgid ""
 "If provided, these arguments ensure that the string is at most or at least "
 "the given length."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:384
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:393
 msgid ""
 "If ``True`` (default), the value will be stripped of leading and trailing "
 "whitespace."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:388
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:397
 msgid "``ChoiceField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:392
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:420
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:619
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1104
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:401
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:429
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:628
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1113
 msgid "Default widget: :class:`Select`"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:395
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:404
 msgid "Validates that the given value exists in the list of choices."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:396
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:426
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:623
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:796
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1108
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:405
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:435
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:632
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:805
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1117
 msgid "Error message keys: ``required``, ``invalid_choice``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:398
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:777
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:798
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:407
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:786
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:807
 msgid ""
 "The ``invalid_choice`` error message may contain ``%(value)s``, which will "
 "be replaced with the selected choice."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:401
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:937
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:973
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:410
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:946
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:982
 msgid "Takes one extra required argument:"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:405
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:414
 msgid ""
 "Either an iterable (e.g., a list or tuple) of 2-tuples to use as choices for"
 " this field, or a callable that returns such an iterable. This argument "
@@ -33681,36 +33693,36 @@ msgid ""
 "the field's form is initialized."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:413
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:422
 msgid "``TypedChoiceField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:417
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:426
 msgid ""
 "Just like a :class:`ChoiceField`, except :class:`TypedChoiceField` takes two"
 " extra arguments, :attr:`coerce` and :attr:`empty_value`."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:421
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:430
 msgid "Empty value: Whatever you've given as :attr:`empty_value`."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:422
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:431
 msgid ""
 "Normalizes to: A value of the type provided by the :attr:`coerce` argument."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:424
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:433
 msgid ""
 "Validates that the given value exists in the list of choices and can be "
 "coerced."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:428
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:437
 msgid "Takes extra arguments:"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:432
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:441
 msgid ""
 "A function that takes one argument and returns a coerced value. Examples "
 "include the built-in ``int``, ``float``, ``bool`` and other types. Defaults "
@@ -33718,7 +33730,7 @@ msgid ""
 "so it is possible to coerce to a value not present in ``choices``."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:440
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:449
 msgid ""
 "The value to use to represent \"empty.\" Defaults to the empty string; "
 "``None`` is another common choice here. Note that this value will not be "
@@ -33726,144 +33738,144 @@ msgid ""
 "accordingly."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:446
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:455
 #: ../../../../sources/1.10/docs/ref/models/fields.txt:493
 msgid "``DateField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:450
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:459
 msgid "Default widget: :class:`DateInput`"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:451
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:490
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:524
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:561
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:592
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:620
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:664
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:680
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:713
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:810
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:873
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1051
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1105
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:460
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:499
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:533
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:570
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:601
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:629
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:673
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:689
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:722
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:819
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:882
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1060
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1114
 msgid "Empty value: ``None``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:452
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:461
 msgid "Normalizes to: A Python ``datetime.date`` object."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:453
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:462
 msgid ""
 "Validates that the given value is either a ``datetime.date``, "
 "``datetime.datetime`` or string formatted in a particular date format."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:455
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:494
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:580
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:742
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:824
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:877
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:900
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:917
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:935
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:464
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:503
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:589
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:751
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:833
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:886
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:909
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:926
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:944
 msgid "Error message keys: ``required``, ``invalid``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:457
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:496
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:879
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1220
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:466
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:505
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:888
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1229
 #: ../../../../sources/1.10/docs/ref/forms/widgets.txt:523
 #: ../../../../sources/1.10/docs/ref/forms/widgets.txt:616
 msgid "Takes one optional argument:"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:461
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1062
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:470
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1071
 msgid ""
 "A list of formats used to attempt to convert a string to a valid "
 "``datetime.date`` object."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:464
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:503
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:886
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:473
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:512
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:895
 msgid ""
 "If no ``input_formats`` argument is provided, the default input formats "
 "are::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:470
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:479
 msgid ""
 "Additionally, if you specify :setting:`USE_L10N=False<USE_L10N>` in your "
 "settings, the following will also be included in the default input formats::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:482
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:515
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:491
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:524
 msgid "See also :doc:`format localization </topics/i18n/formatting>`."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:485
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:494
 #: ../../../../sources/1.10/docs/ref/models/fields.txt:549
 msgid "``DateTimeField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:489
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:498
 msgid "Default widget: :class:`DateTimeInput`"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:491
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1052
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:500
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1061
 msgid "Normalizes to: A Python ``datetime.datetime`` object."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:492
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:501
 msgid ""
 "Validates that the given value is either a ``datetime.datetime``, "
 "``datetime.date`` or string formatted in a particular datetime format."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:500
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:509
 msgid ""
 "A list of formats used to attempt to convert a string to a valid "
 "``datetime.datetime`` object."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:518
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:527
 #: ../../../../sources/1.10/docs/ref/models/fields.txt:561
 msgid "``DecimalField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:522
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:662
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:711
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:531
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:671
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:720
 msgid ""
 "Default widget: :class:`NumberInput` when :attr:`Field.localize` is "
 "``False``, else :class:`TextInput`."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:525
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:534
 msgid "Normalizes to: A Python ``decimal``."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:526
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:535
 msgid ""
 "Validates that the given value is a decimal. Leading and trailing whitespace"
 " is ignored."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:528
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:537
 msgid ""
 "Error message keys: ``required``, ``invalid``, ``max_value``, ``min_value``,"
 " ``max_digits``, ``max_decimal_places``, ``max_whole_digits``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:532
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:541
 msgid ""
 "The ``max_value`` and ``min_value`` error messages may contain "
 "``%(limit_value)s``, which will be substituted by the appropriate limit. "
@@ -33871,102 +33883,102 @@ msgid ""
 "``max_whole_digits`` error messages may contain ``%(max)s``."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:537
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:546
 msgid "Takes four optional arguments:"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:542
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:551
 msgid ""
 "These control the range of values permitted in the field, and should be "
 "given as ``decimal.Decimal`` values."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:547
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:556
 msgid ""
 "The maximum number of digits (those before the decimal point plus those "
 "after the decimal point, with leading zeros stripped) permitted in the "
 "value."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:553
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:562
 msgid "The maximum number of decimal places permitted."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:556
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:565
 #: ../../../../sources/1.10/docs/ref/models/fields.txt:598
 msgid "``DurationField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:562
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:571
 msgid "Normalizes to: A Python :class:`~python:datetime.timedelta`."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:563
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:572
 msgid ""
 "Validates that the given value is a string which can be converted into a "
 "``timedelta``."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:565
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:574
 msgid "Error message keys: ``required``, ``invalid``."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:567
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:576
 msgid ""
 "Accepts any format understood by "
 ":func:`~django.utils.dateparse.parse_duration`."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:571
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:580
 #: ../../../../sources/1.10/docs/ref/models/fields.txt:614
 msgid "``EmailField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:575
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:584
 msgid "Default widget: :class:`EmailInput`"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:578
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:587
 msgid ""
 "Validates that the given value is a valid email address, using a moderately "
 "complex regular expression."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:582
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:591
 msgid ""
 "Has two optional arguments for validation, ``max_length`` and "
 "``min_length``. If provided, these arguments ensure that the string is at "
 "most or at least the given length."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:587
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:596
 #: ../../../../sources/1.10/docs/ref/models/fields.txt:622
 msgid "``FileField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:591
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:679
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:600
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:688
 msgid "Default widget: :class:`ClearableFileInput`"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:593
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:681
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:602
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:690
 msgid ""
 "Normalizes to: An ``UploadedFile`` object that wraps the file content and "
 "file name into a single object."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:595
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:604
 msgid "Can validate that non-empty file data has been bound to the form."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:596
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:605
 msgid ""
 "Error message keys: ``required``, ``invalid``, ``missing``, ``empty``, "
 "``max_length``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:599
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:608
 msgid ""
 "Has two optional arguments for validation, ``max_length`` and "
 "``allow_empty_file``. If provided, these ensure that the file name is at "
@@ -33974,19 +33986,19 @@ msgid ""
 "content is empty."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:604
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:613
 msgid ""
 "To learn more about the ``UploadedFile`` object, see the :doc:`file uploads "
 "documentation </topics/http/file-uploads>`."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:607
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:616
 msgid ""
 "When you use a ``FileField`` in a form, you must also remember to :ref:`bind"
 " the file data to the form <binding-uploaded-files>`."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:610
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:619
 msgid ""
 "The ``max_length`` error refers to the length of the filename. In the error "
 "message for that key, ``%(max)d`` will be replaced with the maximum filename"
@@ -33994,103 +34006,103 @@ msgid ""
 "length."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:615
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:624
 #: ../../../../sources/1.10/docs/ref/models/fields.txt:870
 msgid "``FilePathField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:621
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:630
 msgid "Normalizes to: A unicode object"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:622
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:631
 msgid "Validates that the selected choice exists in the list of choices."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:625
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:634
 msgid ""
 "The field allows choosing from files inside a certain directory. It takes "
 "five extra arguments; only ``path`` is required:"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:630
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:639
 msgid ""
 "The absolute path to the directory whose contents you want listed. This "
 "directory must exist."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:635
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:644
 msgid ""
 "If ``False`` (the default) only the direct contents of ``path`` will be "
 "offered as choices. If ``True``, the directory will be descended into "
 "recursively and all descendants will be listed as choices."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:641
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:650
 msgid ""
 "A regular expression pattern; only files with names matching this expression"
 " will be allowed as choices."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:646
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:655
 msgid ""
 "Optional.  Either ``True`` or ``False``.  Default is ``True``.  Specifies "
 "whether files in the specified location should be included.  Either this or "
 ":attr:`allow_folders` must be ``True``."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:652
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:661
 msgid ""
 "Optional.  Either ``True`` or ``False``.  Default is ``False``.  Specifies "
 "whether folders in the specified location should be included.  Either this "
 "or :attr:`allow_files` must be ``True``."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:658
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:667
 #: ../../../../sources/1.10/docs/ref/models/fields.txt:923
 msgid "``FloatField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:665
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:674
 msgid "Normalizes to: A Python float."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:666
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:675
 msgid ""
 "Validates that the given value is a float. Leading and trailing whitespace "
 "is allowed, as in Python's ``float()`` function."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:668
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:717
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:677
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:726
 msgid ""
 "Error message keys: ``required``, ``invalid``, ``max_value``, ``min_value``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:671
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:680
 msgid ""
 "Takes two optional arguments for validation, ``max_value`` and "
 "``min_value``. These control the range of values permitted in the field."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:675
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:684
 #: ../../../../sources/1.10/docs/ref/models/fields.txt:945
 msgid "``ImageField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:683
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:692
 msgid ""
 "Validates that file data has been bound to the form, and that the file is of"
 " an image format understood by Pillow."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:685
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:694
 msgid ""
 "Error message keys: ``required``, ``invalid``, ``missing``, ``empty``, "
 "``invalid_image``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:688
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:697
 msgid ""
 "Using an ``ImageField`` requires that `Pillow`_ is installed with support "
 "for the image formats you use. If you encounter a ``corrupt image`` error "
@@ -34099,13 +34111,13 @@ msgid ""
 "Pillow."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:694
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:703
 msgid ""
 "When you use an ``ImageField`` on a form, you must also remember to "
 ":ref:`bind the file data to the form <binding-uploaded-files>`."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:697
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:706
 msgid ""
 "After the field has been cleaned and validated, the ``UploadedFile`` object "
 "will have an additional ``image`` attribute containing the Pillow `Image`_ "
@@ -34114,55 +34126,55 @@ msgid ""
 "if Pillow can determine it, otherwise it will be set to ``None``."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:707
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:716
 #: ../../../../sources/1.10/docs/ref/models/fields.txt:980
 msgid "``IntegerField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:714
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:723
 msgid "Normalizes to: A Python integer or long integer."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:715
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:724
 msgid ""
 "Validates that the given value is an integer. Leading and trailing "
 "whitespace is allowed, as in Python's ``int()`` function."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:720
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:729
 msgid ""
 "The ``max_value`` and ``min_value`` error messages may contain "
 "``%(limit_value)s``, which will be substituted by the appropriate limit."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:723
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:732
 msgid "Takes two optional arguments for validation:"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:728
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:737
 msgid "These control the range of values permitted in the field."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:731
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:740
 #: ../../../../sources/1.10/docs/ref/models/fields.txt:990
 msgid "``GenericIPAddressField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:735
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:744
 msgid "A field containing either an IPv4 or an IPv6 address."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:739
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:748
 msgid ""
 "Normalizes to: A Unicode object. IPv6 addresses are normalized as described "
 "below."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:741
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:750
 msgid "Validates that the given value is a valid IP address."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:744
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:753
 #: ../../../../sources/1.10/docs/ref/models/fields.txt:998
 msgid ""
 "The IPv6 address normalization follows :rfc:`4291#section-2.2` section 2.2, "
@@ -34172,18 +34184,18 @@ msgid ""
 "characters are converted to lowercase."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:750
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1058
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:759
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1067
 msgid "Takes two optional arguments:"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:754
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:763
 msgid ""
 "Limits valid inputs to the specified protocol. Accepted values are ``both`` "
 "(default), ``IPv4`` or ``IPv6``. Matching is case insensitive."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:760
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:769
 #: ../../../../sources/1.10/docs/ref/models/fields.txt:1012
 msgid ""
 "Unpacks IPv4 mapped addresses like ``::ffff:192.0.2.1``. If this option is "
@@ -34191,256 +34203,256 @@ msgid ""
 "disabled. Can only be used when ``protocol`` is set to ``'both'``."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:766
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:775
 msgid "``MultipleChoiceField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:770
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:790
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1197
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:779
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:799
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1206
 msgid "Default widget: :class:`SelectMultiple`"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:771
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:780
 msgid "Empty value: ``[]`` (an empty list)"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:772
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:781
 msgid "Normalizes to: A list of Unicode objects."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:773
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:782
 msgid ""
 "Validates that every value in the given list of values exists in the list of"
 " choices."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:775
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:784
 msgid "Error message keys: ``required``, ``invalid_choice``, ``invalid_list``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:780
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:789
 msgid ""
 "Takes one extra required argument, ``choices``, as for :class:`ChoiceField`."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:783
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:792
 msgid "``TypedMultipleChoiceField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:787
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:796
 msgid ""
 "Just like a :class:`MultipleChoiceField`, except "
 ":class:`TypedMultipleChoiceField` takes two extra arguments, ``coerce`` and "
 "``empty_value``."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:791
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:800
 msgid "Empty value: Whatever you've given as ``empty_value``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:792
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:801
 msgid ""
 "Normalizes to: A list of values of the type provided by the ``coerce`` "
 "argument."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:794
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:803
 msgid ""
 "Validates that the given values exists in the list of choices and can be "
 "coerced."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:801
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:810
 msgid ""
 "Takes two extra arguments, ``coerce`` and ``empty_value``, as for "
 ":class:`TypedChoiceField`."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:805
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:814
 #: ../../../../sources/1.10/docs/ref/models/fields.txt:1021
 msgid "``NullBooleanField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:809
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:818
 msgid "Default widget: :class:`NullBooleanSelect`"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:811
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:820
 msgid "Normalizes to: A Python ``True``, ``False`` or ``None`` value."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:812
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:821
 msgid "Validates nothing (i.e., it never raises a ``ValidationError``)."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:815
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:824
 msgid "``RegexField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:822
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:831
 msgid ""
 "Validates that the given value matches against a certain regular expression."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:826
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:835
 msgid "Takes one required argument:"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:830
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:839
 msgid ""
 "A regular expression specified either as a string or a compiled regular "
 "expression object."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:833
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:842
 msgid ""
 "Also takes ``max_length``, ``min_length``, and ``strip``, which work just as"
 " they do for :class:`CharField`."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:840
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:849
 msgid ""
 "Defaults to ``False``. If enabled, stripping will be applied before the "
 "regex validation."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:844
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:853
 #: ../../../../sources/1.10/docs/ref/models/fields.txt:1048
 msgid "``SlugField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:851
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:860
 msgid ""
 "Validates that the given value contains only letters, numbers, underscores, "
 "and hyphens."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:853
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:862
 msgid "Error messages: ``required``, ``invalid``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:855
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:864
 msgid ""
 "This field is intended for use in representing a model "
 ":class:`~django.db.models.SlugField` in forms."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:858
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:867
 msgid "Takes an optional parameter:"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:864
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:873
 msgid ""
 "A boolean instructing the field to accept Unicode letters in addition to "
 "ASCII letters. Defaults to ``False``."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:868
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:877
 #: ../../../../sources/1.10/docs/ref/models/fields.txt:1104
 msgid "``TimeField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:874
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:883
 msgid "Normalizes to: A Python ``datetime.time`` object."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:875
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:884
 msgid ""
 "Validates that the given value is either a ``datetime.time`` or string "
 "formatted in a particular time format."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:883
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1070
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:892
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1079
 msgid ""
 "A list of formats used to attempt to convert a string to a valid "
 "``datetime.time`` object."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:892
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:901
 #: ../../../../sources/1.10/docs/ref/models/fields.txt:1115
 msgid "``URLField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:896
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:905
 msgid "Default widget: :class:`URLInput`"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:899
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:908
 msgid "Validates that the given value is a valid URL."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:902
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:911
 msgid "Takes the following optional arguments:"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:907
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:916
 msgid ""
 "These are the same as ``CharField.max_length`` and ``CharField.min_length``."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:910
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:919
 #: ../../../../sources/1.10/docs/ref/models/fields.txt:1128
 msgid "``UUIDField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:916
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:925
 msgid "Normalizes to: A :class:`~python:uuid.UUID` object."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:919
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:928
 msgid ""
 "This field will accept any string format accepted as the ``hex`` argument to"
 " the :class:`~python:uuid.UUID` constructor."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:923
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:932
 msgid "Slightly complex built-in ``Field`` classes"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:926
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:935
 msgid "``ComboField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:933
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:942
 msgid ""
 "Validates the given value against each of the fields specified as an "
 "argument to the ``ComboField``."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:941
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:950
 msgid ""
 "The list of fields that should be used to validate the field's value (in the"
 " order in which they are provided)."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:954
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:963
 msgid "``MultiValueField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:960
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:969
 msgid ""
 "Normalizes to: the type returned by the ``compress`` method of the subclass."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:961
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:970
 msgid ""
 "Validates the given value against each of the fields specified as an "
 "argument to the ``MultiValueField``."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:963
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:972
 msgid "Error message keys: ``required``, ``invalid``, ``incomplete``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:965
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:974
 msgid ""
 "Aggregates the logic of multiple fields that together produce a single "
 "value."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:968
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:977
 msgid ""
 "This field is abstract and must be subclassed. In contrast with the single-"
 "value fields, subclasses of :class:`MultiValueField` must not implement "
@@ -34448,7 +34460,7 @@ msgid ""
 ":meth:`~MultiValueField.compress`."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:977
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:986
 msgid ""
 "A tuple of fields whose values are cleaned and subsequently combined into a "
 "single value.  Each value of the field is cleaned by the corresponding field"
@@ -34458,17 +34470,17 @@ msgid ""
 ":meth:`~MultiValueField.compress`."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:984
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:993
 msgid "Also takes one extra optional argument:"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:988
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:997
 msgid ""
 "Defaults to ``True``, in which case a ``required`` validation error will be "
 "raised if no value is supplied for any field."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:991
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1000
 msgid ""
 "When set to ``False``, the :attr:`Field.required` attribute can be set to "
 "``False`` for individual fields to make them optional. If no value is "
@@ -34476,21 +34488,21 @@ msgid ""
 "raised."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:996
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1005
 msgid ""
 "A default ``incomplete`` error message can be defined on the "
 ":class:`MultiValueField` subclass, or different messages can be defined on "
 "each individual field. For example::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1032
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1041
 msgid ""
 "Must be a subclass of :class:`django.forms.MultiWidget`. Default value is "
 ":class:`~django.forms.TextInput`, which probably is not very useful in this "
 "case."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1038
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1047
 msgid ""
 "Takes a list of valid values and returns  a \"compressed\" version of those "
 "values -- in a single value. For example, :class:`SplitDateTimeField` is a "
@@ -34498,47 +34510,47 @@ msgid ""
 "object."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1043
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1052
 msgid "This method must be implemented in the subclasses."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1046
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1055
 msgid "``SplitDateTimeField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1050
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1059
 msgid "Default widget: :class:`SplitDateTimeWidget`"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1053
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1062
 msgid ""
 "Validates that the given value is a ``datetime.datetime`` or string "
 "formatted in a particular datetime format."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1055
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1064
 msgid ""
 "Error message keys: ``required``, ``invalid``, ``invalid_date``, "
 "``invalid_time``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1065
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1074
 msgid ""
 "If no ``input_date_formats`` argument is provided, the default input formats"
 " for :class:`DateField` are used."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1073
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1082
 msgid ""
 "If no ``input_time_formats`` argument is provided, the default input formats"
 " for :class:`TimeField` are used."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1077
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1086
 msgid "Fields which handle relationships"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1079
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1088
 msgid ""
 "Two fields are available for representing relationships between models: "
 ":class:`ModelChoiceField` and :class:`ModelMultipleChoiceField`.  Both of "
@@ -34549,26 +34561,26 @@ msgid ""
 "``cleaned_data`` dictionary of the form."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1088
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1097
 msgid ""
 "For more complex uses, you can specify ``queryset=None`` when declaring the "
 "form field and then populate the ``queryset`` in the form's ``__init__()`` "
 "method::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1100
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1109
 msgid "``ModelChoiceField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1106
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1115
 msgid "Normalizes to: A model instance."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1107
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1116
 msgid "Validates that the given id exists in the queryset."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1110
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1119
 msgid ""
 "Allows the selection of a single model object, suitable for representing a "
 "foreign key. Note that the default widget for ``ModelChoiceField`` becomes "
@@ -34576,22 +34588,22 @@ msgid ""
 "for more than 100 items."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1115
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1214
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1124
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1223
 msgid "A single argument is required:"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1119
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1128
 msgid ""
 "A ``QuerySet`` of model objects from which the choices for the field will be"
 " derived, and which will be used to validate the user's selection."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1123
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1132
 msgid "``ModelChoiceField`` also takes two optional arguments:"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1127
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1136
 msgid ""
 "By default the ``<select>`` widget used by ``ModelChoiceField`` will have an"
 " empty choice at the top of the list. You can change the text of this label "
@@ -34600,14 +34612,14 @@ msgid ""
 "``None``::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1139
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1148
 msgid ""
 "Note that if a ``ModelChoiceField`` is required and has a default initial "
 "value, no empty choice is created (regardless of the value of "
 "``empty_label``)."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1145
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1154
 msgid ""
 "This optional argument is used to specify the field to use as the value of "
 "the choices in the field's widget. Be sure it's a unique field for the "
@@ -34616,17 +34628,17 @@ msgid ""
 "will be used. For example::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1154
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1169
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1163
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1178
 msgid "would yield:"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1164
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1173
 #: ../../../../sources/1.10/docs/ref/models/querysets.txt:1642
 msgid "and::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1179
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1188
 msgid ""
 "The ``__str__`` (``__unicode__`` on Python 2) method of the model will be "
 "called to generate string representations of the objects for use in the "
@@ -34636,56 +34648,56 @@ msgid ""
 " it. For example::"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1193
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1202
 msgid "``ModelMultipleChoiceField``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1198
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1207
 msgid "Empty value: An empty ``QuerySet`` (self.queryset.none())"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1199
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1208
 msgid "Normalizes to: A ``QuerySet`` of model instances."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1200
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1209
 msgid ""
 "Validates that every id in the given list of values exists in the queryset."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1202
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1211
 msgid ""
 "Error message keys: ``required``, ``list``, ``invalid_choice``, "
 "``invalid_pk_value``"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1205
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1214
 msgid ""
 "The ``invalid_choice`` message may contain ``%(value)s`` and the "
 "``invalid_pk_value`` message may contain ``%(pk)s``, which will be "
 "substituted by the appropriate values."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1209
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1218
 msgid ""
 "Allows the selection of one or more model objects, suitable for representing"
 " a many-to-many relation. As with :class:`ModelChoiceField`, you can use "
 "``label_from_instance`` to customize the object representations."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1218
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1227
 msgid "Same as :class:`ModelChoiceField.queryset`."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1224
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1233
 msgid "Same as :class:`ModelChoiceField.to_field_name`."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1227
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1236
 msgid "Creating custom fields"
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1229
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1238
 msgid ""
 "If the built-in ``Field`` classes don't meet your needs, you can easily "
 "create custom ``Field`` classes. To do this, just create a subclass of "
@@ -34695,7 +34707,7 @@ msgid ""
 " ``help_text``)."
 msgstr ""
 
-#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1236
+#: ../../../../sources/1.10/docs/ref/forms/fields.txt:1245
 msgid ""
 "You can also customize how a field will be accessed by overriding "
 ":meth:`~django.forms.Field.get_bound_field()`."
