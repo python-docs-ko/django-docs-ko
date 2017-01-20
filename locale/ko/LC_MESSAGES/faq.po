@@ -80,11 +80,11 @@ msgid ""
 "you can update an object to reflect the user that edited it. See :ref:`the "
 "documentation on ModelAdmin methods <model-admin-methods>` for an example."
 msgstr ""
-":class:`~ django.contrib.admin.ModelAdmin` 클래스는 요청의 세부 사항을 사용하여 객체를 저장하면서 변환"
-" 할 수있는 커스터마이징 후크를 제공합니다. 요청에서 현재 사용자를 추출하고:meth:`~ "
+":class:`~django.contrib.admin.ModelAdmin` 클래스는 요청의 세부 사항을 사용하여 객체를 저장하면서 변환"
+" 할 수있는 커스터마이징 후크를 제공합니다. 요청에서 현재 사용자를 추출하고 :meth:`~"
 "django.contrib.admin.ModelAdmin.save_model` 훅을 커스터마이징함으로써 객체를 편집하여 그것을 편집 한 "
-"사용자를 반영 할 수 있습니다. 예제를 보시려면:ref:`ModelAdmin 메소드 문서 <model-admin-"
-"methods>`를보십시오."
+"사용자를 반영 할 수 있습니다. 예제를 보시려면 :ref:`ModelAdmin 메소드 문서 <model-admin-"
+"methods>` 를보십시오."
 
 #: ../../../../sources/1.10/docs/faq/admin.txt:33
 msgid ""
@@ -101,10 +101,10 @@ msgid ""
 ":meth:`~django.contrib.admin.ModelAdmin.has_change_permission` can be used "
 "to control the visibility and editability of objects in the admin."
 msgstr ""
-":class:`~ django.contrib.admin.ModelAdmin` 클래스는 관리자가 객체의 가시성과 편집 가능성을 제어 할 "
-"수있게 해주는 커스터마이징 훅을 제공합니다. 요청에서 사용자를 추출하는 것과 동일한 트릭을 사용하여:meth:`~ "
-"django.contrib.admin.ModelAdmin.get_queryset` 및:meth:`~ "
-"django.contrib.admin.ModelAdmin.has_change_permission`을 사용하여 관리자의 객체 가시성 및 "
+":class:`~django.contrib.admin.ModelAdmin` 클래스는 관리자가 객체의 가시성과 편집 가능성을 제어 할 "
+"수있게 해주는 커스터마이징 훅을 제공합니다. 요청에서 사용자를 추출하는 것과 동일한 트릭을 사용하여 :meth:`~"
+"django.contrib.admin.ModelAdmin.get_queryset` 및 :meth:`~"
+"django.contrib.admin.ModelAdmin.has_change_permission` 을 사용하여 관리자의 객체 가시성 및 "
 "편집 가능성."
 
 #: ../../../../sources/1.10/docs/faq/admin.txt:43
@@ -141,8 +141,8 @@ msgid ""
 "your database, it won't display a \"Site\" filter. In that case, filtering "
 "by site would be meaningless."
 msgstr ""
-"예를 들어,:attr:`~ django.contrib.admin.ModelAdmin.list_filter`:doc:`sites "
-"</ref/contrib/sites>`를 포함하고 데이터베이스에 하나의 사이트 만 있다면, 표시되지 않습니다 \"사이트\"필터. 이 경우"
+"예를 들어, :attr:`~django.contrib.admin.ModelAdmin.list_filter` :doc:`sites "
+"</ref/contrib/sites>` 를 포함하고 데이터베이스에 하나의 사이트 만 있다면, 표시되지 않습니다 \"사이트\"필터. 이 경우"
 " 사이트별로 필터링하는 것은 의미가 없습니다."
 
 #: ../../../../sources/1.10/docs/faq/admin.txt:60
@@ -162,8 +162,8 @@ msgid ""
 msgstr ""
 "일치하지 않는 행 수는 누락 된 외부 키 값 또는 foreign 키 필드가 attr:`null = False "
 "<django.db.models.Field.null> '으로 잘못 설정되어 발생할 수 있습니다. 존재하지 않는 객체를 "
-"가리키는:class:`~ django.db.models.ForeignKey`가있는 레코드가 있고 그 외래 키가 포함되어있는 레코드가 "
-"있다면:attr:`~ django.contrib.admin.ModelAdmin.list_display`, Django 모델이 데이터베이스"
+"가리키는 :class:`~django.db.models.ForeignKey` 가있는 레코드가 있고 그 외래 키가 포함되어있는 레코드가 "
+"있다면 :attr:`~django.contrib.admin.ModelAdmin.list_display`, Django 모델이 데이터베이스"
 " 레벨에서 구현되지 않은 무결성 제약 조건을 선언하고 있기 때문에 레코드가 관리자 변경 목록에 표시되지 않습니다."
 
 #: ../../../../sources/1.10/docs/faq/admin.txt:72
@@ -572,7 +572,7 @@ msgid ""
 ":doc:`team of volunteers </internals/team>`."
 msgstr ""
 "Django는 원래 미국 캔사스 주 로렌스에 소재한 신문 웹 사이트 인 World Online에서 개발되었습니다. Django는 이제 "
-"international:doc:`자원 봉사자 </internals/team> 팀에 의해 운영됩니다."
+"international :doc:`자원 봉사자 </internals/team>` 팀에 의해 운영됩니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:75
 msgid "Which sites use Django?"
@@ -1007,8 +1007,8 @@ msgid ""
 "</howto/deployment/index>` for some popular alternatives."
 msgstr ""
 "개발 환경 - Django를 실험하고 싶다면 별도의 웹 서버를 설치할 필요가 없습니다. Django는 자체 경량 개발 서버를 제공합니다."
-" 프로덕션 환경에서 Django는 WSGI 스펙 인:pep:`3333`을 따르므로 다양한 서버 플랫폼에서 실행될 수 있습니다. "
-"See:doc:`Deploying Django </howto/deployment/index>`몇 가지 일반적인 대안을보십시오."
+" 프로덕션 환경에서 Django는 WSGI 스펙 인 :pep:`3333`\ 을 따르므로 다양한 서버 플랫폼에서 실행될 수 있습니다. "
+"See :doc:`Deploying Django </howto/deployment/index>` 몇 가지 일반적인 대안을보십시오."
 
 #: ../../../../sources/1.10/docs/faq/install.txt:31
 msgid ""
@@ -1018,7 +1018,7 @@ msgid ""
 "supported."
 msgstr ""
 "Django를 데이터베이스와 함께 사용하고자한다면 아마도 데이터베이스 엔진이 필요할 것이다. 우리는 PostgreSQL 팬이고 "
-"MySQL_,`SQLite 3`_ 및 Oracle_도 지원되기 때문에 PostgreSQL_이 권장됩니다."
+"MySQL_,`SQLite 3`_ 및 Oracle_\ 도 지원되기 때문에 PostgreSQL_\ 이 권장됩니다."
 
 #: ../../../../sources/1.10/docs/faq/install.txt:44
 msgid "What Python version can I use with Django?"
@@ -1071,7 +1071,7 @@ msgid ""
 "on the `Python download page <https://www.python.org/downloads/>`_."
 msgstr ""
 "파이썬의 각 버전에 대해 최신 마이크로 릴리즈 (A.B.C) 만 공식적으로 지원됩니다. 각 시리즈의 최신 마이크로 버전은`Python "
-"다운로드 페이지 <https://www.python.org/downloads/>`_에서 찾을 수 있습니다."
+"다운로드 페이지 <https://www.python.org/downloads/>`_\ 에서 찾을 수 있습니다."
 
 #: ../../../../sources/1.10/docs/faq/install.txt:59
 msgid ""
@@ -1147,7 +1147,7 @@ msgstr ""
 
 #: ../../../../sources/1.10/docs/faq/models.txt:3
 msgid "FAQ: Databases and models"
-msgstr "FAQ:데이터베이스 및 모델"
+msgstr "FAQ: 데이터베이스 및 모델"
 
 #: ../../../../sources/1.10/docs/faq/models.txt:8
 msgid "How can I see the raw SQL queries Django is running?"
@@ -1199,7 +1199,7 @@ msgstr "Django를 기존 데이터베이스와 함께 사용할 수 있습니까
 msgid ""
 "Yes. See :doc:`Integrating with a legacy database </howto/legacy-"
 "databases>`."
-msgstr "예. 참고 자료:doc:`레거시 데이터베이스와의 통합 </howto/legacy-databases>`."
+msgstr "예. 참고 자료 :doc:`레거시 데이터베이스와의 통합 </howto/legacy-databases>`."
 
 #: ../../../../sources/1.10/docs/faq/models.txt:46
 msgid "If I make changes to a model, how do I update the database?"
@@ -1210,7 +1210,7 @@ msgid ""
 "Take a look at Django's support for :mod:`schema migrations "
 "<django.db.migrations>`."
 msgstr ""
-"Django가 mod:`schema migrations <django.db.migrations> '에 대한 지원을 살펴보십시오."
+"Django가 :mod:`schema migrations <django.db.migrations>` 에 대한 지원을 살펴보십시오."
 
 #: ../../../../sources/1.10/docs/faq/models.txt:51
 msgid ""
@@ -1254,13 +1254,13 @@ msgid ""
 "in Django, like `Django non-rel`_."
 msgstr ""
 "NoSQL 데이터베이스는 장고 자체에서 공식적으로 지원하지 않습니다. 그러나 Django에서 NoSQL을 사용할 수있게 해주는 여러 "
-"프로젝트와 포크가 있습니다. 예를 들어 Django non-rel`_입니다."
+"프로젝트와 포크가 있습니다. 예를 들어 `Django non-rel`_ 입니다."
 
 #: ../../../../sources/1.10/docs/faq/models.txt:74
 msgid ""
 "You can also take a look on `the wiki page`_ which discusses some "
 "alternatives."
-msgstr "또한`wiki page`_에서 몇 가지 대안을 논의 할 수 있습니다."
+msgstr "또한`wiki page`_\ 에서 몇 가지 대안을 논의 할 수 있습니다."
 
 #: ../../../../sources/1.10/docs/faq/models.txt:80
 msgid ""
@@ -1277,7 +1277,7 @@ msgid ""
 "``ALTER TABLE`` statements that do what you want to do."
 msgstr ""
 "Django 코드에 특별한 경우를 추가하여 테이블 유형과 같은 모든 데이터베이스 별 옵션을 수용하는 것을 피하려고합니다. 이러한 옵션을 "
-"사용하려면 :class:`~ django. db.migrations.operations.RunSQL` 연산을 수행합니다.이 연산은 "
+"사용하려면 :class:`~django.db.migrations.operations.RunSQL` 연산을 수행합니다.이 연산은 "
 "당신이하고 싶은 일을하는 ``ALTER TABLE`` 문을 포함합니다."
 
 #: ../../../../sources/1.10/docs/faq/models.txt:88
@@ -1298,11 +1298,11 @@ msgstr "이 페이지는 Django 응용 프로그램을 개발할 때 일반적�
 
 #: ../../../../sources/1.10/docs/faq/troubleshooting.txt:11
 msgid "Problems running ``django-admin``"
-msgstr "``django-admin` 문제"
+msgstr "``django-admin`` 문제"
 
 #: ../../../../sources/1.10/docs/faq/troubleshooting.txt:14
 msgid "\"command not found: `django-admin`\""
-msgstr "\"명령을 찾을 수 없습니다:`django-admin`\""
+msgstr "\"명령을 찾을 수 없습니다: `django-admin`\""
 
 #: ../../../../sources/1.10/docs/faq/troubleshooting.txt:16
 msgid ""
@@ -1397,7 +1397,7 @@ msgstr "관련 리소스:"
 
 #: ../../../../sources/1.10/docs/faq/troubleshooting.txt:69
 msgid ":doc:`Unicode in Django </ref/unicode>`"
-msgstr ":doc:`장고의 유니 코드 </ref/unicode>`"
+msgstr ":doc:`장고의 유니코드 </ref/unicode>`"
 
 #: ../../../../sources/1.10/docs/faq/troubleshooting.txt:70
 msgid "https://wiki.python.org/moin/UnicodeDecodeError"
@@ -1405,11 +1405,11 @@ msgstr ""
 
 #: ../../../../sources/1.10/docs/faq/usage.txt:3
 msgid "FAQ: Using Django"
-msgstr "FAQ:장고 사용하기"
+msgstr "FAQ: 장고 사용하기"
 
 #: ../../../../sources/1.10/docs/faq/usage.txt:6
 msgid "Why do I get an error about importing DJANGO_SETTINGS_MODULE?"
-msgstr "DJANGO_SETTINGS_MODULE을 (를) 가져 오는 중 오류가 발생하는 이유는 무엇입니까?"
+msgstr "DJANGO_SETTINGS_MODULE을 가져 오는 중 오류가 발생하는 이유는 무엇입니까?"
 
 #: ../../../../sources/1.10/docs/faq/usage.txt:8
 msgid "Make sure that:"
@@ -1473,8 +1473,8 @@ msgid ""
 "Using a :class:`~django.db.models.FileField` or an "
 ":class:`~django.db.models.ImageField` in a model takes a few steps:"
 msgstr ""
-"모델에서:class:`~ django.db.models.FileField` 또는:class:`~ "
-"django.db.models.ImageField`를 사용하는 것은 몇 단계를 거칩니다:"
+"모델에서 :class:`~ django.db.models.FileField` 또는 :class:`~"
+"django.db.models.ImageField` 를 사용하는 것은 몇 단계를 거칩니다:"
 
 #: ../../../../sources/1.10/docs/faq/usage.txt:41
 msgid ""
@@ -1495,9 +1495,9 @@ msgid ""
 ":attr:`~django.db.models.FileField.upload_to` option to specify a "
 "subdirectory of :setting:`MEDIA_ROOT` to use for uploaded files."
 msgstr ""
-"모델에:class:`~ django.db.models.FileField` 또는:class:`~ "
-"django.db.models.ImageField`를 추가하여:attr:`~ "
-"django.db.models.FileField.upload_to`를 정의하십시오. 옵션:설정:업로드 된 파일에 "
+"모델에 :class:`~ django.db.models.FileField` 또는 :class:`~"
+"django.db.models.ImageField` 를 추가하여 :attr:`~"
+"django.db.models.FileField.upload_to` 를 정의하십시오. 옵션:설정:업로드 된 파일에 "
 "사용할`MEDIA_ROOT` 하위 디렉토리를 지정하십시오."
 
 #: ../../../../sources/1.10/docs/faq/usage.txt:53
