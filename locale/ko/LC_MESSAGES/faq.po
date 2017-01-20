@@ -250,7 +250,7 @@ msgid ""
 "question. It's titled :doc:`Contributing to Django "
 "</internals/contributing/index>`."
 msgstr ""
-"질문 주셔서 감사합니다! 이 질문에 대한 전체 문서를 작성했습니다. 그것은 제목이:doc:`장고에 기여하기 "
+"질문 주셔서 감사합니다! 이 질문에 대한 전체 문서를 작성했습니다. 그것은 제목이 :doc:`장고에 기여하기 "
 "</internals/contributing/index>`."
 
 #: ../../../../sources/1.10/docs/faq/contributing.txt:12
@@ -970,18 +970,18 @@ msgstr ""
 
 #: ../../../../sources/1.10/docs/faq/install.txt:9
 msgid "Install Django (read the :doc:`installation guide </intro/install>`)."
-msgstr "Django를 설치하십시오 (:doc:`설치 안내서 </intro/install>`읽기)."
+msgstr "Django를 설치하십시오 (:doc:`설치 안내서 </intro/install>` 읽기)."
 
 #: ../../../../sources/1.10/docs/faq/install.txt:10
 msgid "Walk through the :doc:`tutorial </intro/tutorial01>`."
-msgstr ":doc:`tutorial </intro/tutorial01>`을 살펴보십시오."
+msgstr ":doc:`tutorial </intro/tutorial01>` 을 살펴보십시오."
 
 #: ../../../../sources/1.10/docs/faq/install.txt:11
 msgid ""
 "Check out the rest of the :doc:`documentation </index>`, and `ask "
 "questions`_ if you run into trouble."
 msgstr ""
-"문제가 생기면 :doc:`documentation </index>`\ 의 나머지 부분과`ask questions`_\ 를 확인하십시오."
+"문제가 생기면 :doc:`documentation </index>`\ 의 나머지 부분과 `ask questions`_\ 를 확인하십시오."
 
 #: ../../../../sources/1.10/docs/faq/install.txt:18
 msgid "What are Django's prerequisites?"
@@ -1018,7 +1018,7 @@ msgid ""
 "supported."
 msgstr ""
 "Django를 데이터베이스와 함께 사용하고자한다면 아마도 데이터베이스 엔진이 필요할 것이다. 우리는 PostgreSQL 팬이고 "
-"MySQL_,`SQLite 3`_ 및 Oracle_\ 도 지원되기 때문에 PostgreSQL_\ 이 권장됩니다."
+"MySQL_, `SQLite 3`_ 및 Oracle_\ 도 지원되기 때문에 PostgreSQL_\ 이 권장됩니다."
 
 #: ../../../../sources/1.10/docs/faq/install.txt:44
 msgid "What Python version can I use with Django?"
@@ -1097,7 +1097,7 @@ msgid ""
 "applications to Python 3."
 msgstr ""
 "Django 1.6부터 Python 3 지원은 안정적인 것으로 간주되므로 안전하게 사용할 수 있습니다. "
-"참고:doc:`/topics/python3`. 그러나 커뮤니티는 제 3 자 패키지 및 응용 프로그램을 Python 3으로 마이그레이션하는"
+"참고 :doc:`/topics/python3`. 그러나 커뮤니티는 제 3 자 패키지 및 응용 프로그램을 Python 3으로 마이그레이션하는"
 " 과정에 있습니다."
 
 #: ../../../../sources/1.10/docs/faq/install.txt:73
