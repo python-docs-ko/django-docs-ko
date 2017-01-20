@@ -582,7 +582,7 @@ msgstr "어떤 사이트가 장고를 사용합니까?"
 msgid ""
 "`DjangoSites.org`_ features a constantly growing list of Django-powered "
 "sites."
-msgstr "`DjangoSites.org`_에는 Django 기반 사이트 목록이 지속적으로 늘어나고 있습니다."
+msgstr "`DjangoSites.org`_ 에는 Django 기반 사이트 목록이 지속적으로 늘어나고 있습니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:84
 msgid ""
@@ -773,7 +773,7 @@ msgid ""
 "Because the documentation is `stored in revision control`_, you can browse "
 "documentation changes just like you can browse code changes."
 msgstr ""
-"문서가`revision control`_에 저장되어 있기 때문에 코드 변경 사항을 탐색 할 수있는 것처럼 문서 변경 사항을 탐색 할 수 "
+"문서가`revision control`_ 에 저장되어 있기 때문에 코드 변경 사항을 탐색 할 수있는 것처럼 문서 변경 사항을 탐색 할 수 "
 "있습니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:175
@@ -799,7 +799,7 @@ msgstr "인용 형식은 출판물마다 크게 다를 수 있으며 소프트�
 
 #: ../../../../sources/1.10/docs/faq/general.txt:188
 msgid "For example, `APA style`_,  would dictate something like::"
-msgstr "예를 들어,`APA style`_는 다음과 같은 것을 지시 할 것이다."
+msgstr "예를 들어,`APA style`_ 은 다음과 같은 것을 지시 할 것이다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:192
 msgid ""
@@ -966,7 +966,7 @@ msgstr "시작하려면 어떻게해야합니까?"
 
 #: ../../../../sources/1.10/docs/faq/install.txt:8
 msgid "`Download the code`_."
-msgstr "`코드 다운로드 '."
+msgstr ""
 
 #: ../../../../sources/1.10/docs/faq/install.txt:9
 msgid "Install Django (read the :doc:`installation guide </intro/install>`)."
@@ -981,7 +981,7 @@ msgid ""
 "Check out the rest of the :doc:`documentation </index>`, and `ask "
 "questions`_ if you run into trouble."
 msgstr ""
-"문제가 생기면:doc:`documentation </index>`의 나머지 부분과`ask questions`_를 확인하십시오."
+"문제가 생기면 :doc:`documentation </index>`\ 의 나머지 부분과`ask questions`_\ 를 확인하십시오."
 
 #: ../../../../sources/1.10/docs/faq/install.txt:18
 msgid "What are Django's prerequisites?"
