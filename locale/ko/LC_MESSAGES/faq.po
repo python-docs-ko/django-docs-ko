@@ -558,8 +558,8 @@ msgid ""
 "application layer. And it ships with a simple-yet-powerful :doc:`cache "
 "framework </topics/cache>`."
 msgstr ""
-"프레임 워크는 데이터베이스 계층과 응용 프로그램 계층과 같은 구성 요소를 깔끔하게 구분합니다. 그리고 간단하면서도 강력한:doc:`캐시 "
-"프레임 워크 </topics/cache>`와 함께 제공됩니다."
+"프레임 워크는 데이터베이스 계층과 응용 프로그램 계층과 같은 구성 요소를 깔끔하게 구분합니다. 그리고 간단하면서도 강력한 :doc:`캐시 "
+"프레임 워크 </topics/cache>`\ 가 함께 제공됩니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:68
 msgid "Who's behind this?"
@@ -604,8 +604,8 @@ msgid ""
 "*which* data is presented. The view describes *which data you see*, not *how"
 " you see it.* It's a subtle distinction."
 msgstr ""
-"MVC에 대한 우리의 해석에서, \"뷰\"는 사용자에게 표시되는 데이터를 설명합니다. 반드시 * 데이터 *가 * 보이는 * 것은 아니지만"
-" * 데이터가 표시됩니다. 이 뷰는 * 보는 데이터가 아닌 * 보는 데이터를 * 설명합니다. * 미묘한 차이입니다."
+"MVC에 대한 우리의 해석에서, \"뷰\"는 사용자에게 표시되는 데이터를 설명합니다. 반드시 *데이터* 가 *보이는* 것은 아니지만"
+" *데이터가 표시* 됩니다. 이 뷰는 *보는 데이터가 아닌* 보는 데이터를 *설명합니다*. 미묘한 차이입니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:93
 msgid ""
@@ -720,7 +720,7 @@ msgstr "우리가 말했듯이:우리는 까다 롭다."
 msgid ""
 "We've documented our philosophies on the :doc:`design philosophies page "
 "</misc/design-philosophies>`."
-msgstr "우리는 우리의 철학을 \"doc:`디자인 철학 페이지 </misc/design-philosophies>에 문서화했습니다."
+msgstr "우리는 우리의 철학을 \":doc:`디자인 철학 페이지 </misc/design-philosophies>`\ 에 문서화했습니다."
 
 #: ../../../../sources/1.10/docs/faq/general.txt:149
 msgid "Is Django a content-management-system (CMS)?"
